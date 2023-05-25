@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>チャットログ</title>
+	<style>
+		html {
+			font-size: 14px;
+		}
+		body {
+			-webkit-text-size-adjust: 100%;
+			background-color: #ffffff;
+		}
+		h1 {
+			font-size: 20px;
+			margin: 1rem 1rem 0;
+			color: #000000;
+		}
+		.tab {
+			border: 1px solid #999;
+			margin: 2rem 1rem 1rem;
+			line-height: 1.5;
+			position: relative;
+		}
+		.tabtitle {
+			border: 1px solid transparent;
+			border-color: inherit;
+			background-color: inherit;
+			position: absolute;
+			top: -.8rem;
+			left: 1rem;
+			min-width: 7rem;
+			padding: 0 .5rem;
+			text-align: center;
+			font-size: 1rem;
+			z-index: 9999;
+			line-height: 1.4rem;
+		}
+		.player {
+			margin: 0;
+			padding: 0 .5rem;
+			padding-left: 10.5rem;
+			border-bottom: 1px dotted transparent;
+			border-color: inherit;
+			position: relative;
+		}
+		.player:last-child {
+			border-bottom: 0;
+		}
+		.player b {
+			display: block;
+			height: 100%;
+			width: 9rem;
+			padding: 0 .5rem;
+			border-right: 1px solid transparent;
+			border-color: inherit;
+			position: absolute;
+			top: 0;
+			left: 0;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.tabtitle + .player {
+			padding-top: .7rem;
+		}
+		.tabtitle + .player b {
+			padding-top: .7rem;
+			height: calc(100% - .7rem);
+		}
+		.diceroll {
+			padding: 0 .5em;
+			color: #fffcdb;
+		}
+
+		/* [キャラ作成] タブ */
+		.t0 {
+			background-color: #d3edfb;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [メインタブ] タブ */
+		.t1 {
+			background-color: #fffcdb;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [情報] タブ */
+		.t2 {
+			background-color: #fadce9;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* 発言者：ターキー（タベラレルー）（タクミソ） */
+		.p0 { color: #6c9bd2; }
+		.p0 .diceroll { background-color: #6c9bd2; }
+
+		/* 発言者：BS */
+		.p1 { color: #000000; }
+		.p1 .diceroll { background-color: #000000; }
+
+		/* 発言者：ねむも */
+		.p2 { color: #ded799; }
+		.p2 .diceroll { background-color: #ded799; }
+
+		/* 発言者：まつこ */
+		.p3 { color: #005d30; }
+		.p3 .diceroll { background-color: #005d30; }
+
+		/* 発言者：シェリー・ナツメ */
+		.p4 { color: #6c9bd2; }
+		.p4 .diceroll { background-color: #6c9bd2; }
+
+		/* 発言者：ユミル */
+		.p5 { color: #000; }
+		.p5 .diceroll { background-color: #000; }
+
+		/* 発言者：レナート */
+		.p6 { color: #945e8d; }
+		.p6 .diceroll { background-color: #945e8d; }
+
+		/* 発言者：ターキー（タクミソ） */
+		.p7 { color: #6c9bd2; }
+		.p7 .diceroll { background-color: #6c9bd2; }
+
+		/* 発言者：ネリー・コレット */
+		.p8 { color: #ded799; }
+		.p8 .diceroll { background-color: #ded799; }
+
+		/* 発言者：グライス・バレッド */
+		.p9 { color: #005d30; }
+		.p9 .diceroll { background-color: #005d30; }
+
+		/* 発言者：探空士 */
+		.p10 { color: #666666; }
+		.p10 .diceroll { background-color: #666666; }
+
+		/* 発言者：ジェシー */
+		.p11 { color: #796baf; }
+		.p11 .diceroll { background-color: #796baf; }
+
+		/* 発言者：受付 */
+		.p12 { color: #666666; }
+		.p12 .diceroll { background-color: #666666; }
+
+		/* 発言者：初老の男性 */
+		.p13 { color: #666666; }
+		.p13 .diceroll { background-color: #666666; }
+
+		/* 発言者：依頼人 */
+		.p14 { color: #666666; }
+		.p14 .diceroll { background-color: #666666; }
+
+		/* 発言者：ターキー */
+		.p15 { color: #6c9bd2; }
+		.p15 .diceroll { background-color: #6c9bd2; }
+
+		/* 発言者：下っ端A */
+		.p16 { color: #ef858c; }
+		.p16 .diceroll { background-color: #ef858c; }
+
+		/* 発言者：？？？ */
+		.p17 { color: #ff0000; }
+		.p17 .diceroll { background-color: #ff0000; }
+
+		/* 発言者：ブレイズ */
+		.p18 { color: #ff0000; }
+		.p18 .diceroll { background-color: #ff0000; }
+
+		/* 発言者：下っ端D */
+		.p19 { color: #ef858c; }
+		.p19 .diceroll { background-color: #ef858c; }
+
+		/* 発言者：下っ端C */
+		.p20 { color: #ef858c; }
+		.p20 .diceroll { background-color: #ef858c; }
+
+		/* 発言者：下っ端B */
+		.p21 { color: #ef858c; }
+		.p21 .diceroll { background-color: #ef858c; }
+	</style>
+</head>
+<body>
+	<h1>チャットログ</h1>
+	<div class="tab t0">
+		<div class="tabtitle">キャラ作成</div>
+		<p class="player p0">
+			<b>ターキー（タベラレルー）（タクミソ）</b>
+			https://character-sheets.appspot.com/skynauts/edit.html?key=ahVzfmNoYXJhY3Rlci1zaGVldHMtbXByFwsSDUNoYXJhY3RlckRhdGEYusfPrAMM<br>
+			https://character-sheets.appspot.com/skynauts/edit.html?key=ahVzfmNoYXJhY3Rlci1zaGVldHMtbXByFwsSDUNoYXJhY3RlckRhdGEYxsfPrAMM<br>
+			https://character-sheets.appspot.com/skynauts/edit.html?key=ahVzfmNoYXJhY3Rlci1zaGVldHMtbXByFwsSDUNoYXJhY3RlckRhdGEYw8fPrAMM
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p1">
+			<b>BS</b>
+			テスト
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">キャラ作成</div>
+		<p class="player p1">
+			<b>BS</b>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 6</span>
+		</p>
+		<p class="player p2">
+			<b>ねむも</b>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 4</span>
+		</p>
+		<p class="player p3">
+			<b>まつこ</b>
+			<span class="diceroll">Skynauts : (1D6) → 6</span><br>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 3</span><br>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 3</span>
+		</p>
+		<p class="player p2">
+			<b>ねむも</b>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 5</span>
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			d66<br>
+			<span class="diceroll">Skynauts : (D66) → 65</span><br>
+			d66<br>
+			<span class="diceroll">Skynauts : (D66) → 12</span><br>
+			d66<br>
+			<span class="diceroll">Skynauts : (D66) → 24</span><br>
+			d66<br>
+			<span class="diceroll">Skynauts : (D66) → 62</span>
+		</p>
+		<p class="player p2">
+			<b>ねむも</b>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 6</span>
+		</p>
+		<p class="player p3">
+			<b>まつこ</b>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 5</span>
+		</p>
+		<p class="player p2">
+			<b>ねむも</b>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 6</span>
+		</p>
+		<p class="player p3">
+			<b>まつこ</b>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 5</span>
+		</p>
+		<p class="player p0">
+			<b>ターキー（タベラレルー）（タクミソ）</b>
+			1ｄ6<br>
+			<span class="diceroll">DiceBot : (1D6) → 6</span><br>
+			1ｄ6<br>
+			<span class="diceroll">DiceBot : (1D6) → 4</span><br>
+			ｄ66<br>
+			<span class="diceroll">DiceBot : (D66) → 44</span><br>
+			NV+1<br>
+			<span class="diceroll">Skynauts : 航行チェック(最低1)　(1D6/2+1) → 3 /2+1 → 1+1 → 2エリア進む</span><br>
+			ｄ66<br>
+			<span class="diceroll">Skynauts : (D66) → 22</span><br>
+			1ｄ6<br>
+			<span class="diceroll">Skynauts : (1D6) → 5</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			いぇーーーーーーーーーーーい<br>
+			BOM<br>
+			AVO3@6<br>
+			AVO@8<br>
+			NV<br>
+			<span class="diceroll">Skynauts : 航行チェック(最低1)　(1D6/2+0) → 3 /2+0 → 1+0 → 1エリア進む</span>
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			バフのRを減少 [グライス・バレッド][シェリー・ナツメ][ネリー・コレット][ユミル][レナート]
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">キャラ作成</div>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			AVO9@8[縦1,横4],[縦2,横6],[縦3,横8]<br>
+			<span class="diceroll">Skynauts : AVO9@8 → 《回避運動》(2D6&lt;=9) → 7[2,5] → 7 → 成功</span><br>
+			 → [縦1,横4],[縦2,横6],[縦3,横8] → 《回避運動》:上<br>
+			 → ([縦0,横4]),[縦1,横6],[縦2,横8]
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p1">
+			<b>BS</b>
+			{}
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			5+4
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			5+4　操舵判定
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p5">
+			<b>ユミル</b>
+			sn&lt;=(4+5)　操舵判定<br>
+			sn<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 3[1,2] → 3 → 成功</span><br>
+			SN{教養}+{技術}<br>
+			sn9　操舵判定
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)　操舵判定
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			sn9
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN9<br>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 4[2,2] → 4 → 成功</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN9<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 3[1,2] → 3 → 成功</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 8[6,2] → 8 → 成功</span>
+		</p>
+		<p class="player p7">
+			<b>ターキー（タクミソ）</b>
+			SN({感覚}+{教養})　操舵判定<br>
+			SN({教養}+{身体})　消火判定<br>
+			SN({技術}+{感覚})　砲撃判定<br>
+			SN({感覚}+{身体})　大揺れ判定<br>
+			SN({技術}+{教養})　修理判定<br>
+			SN({感覚}+{身体})　偵察判定<br>
+			SN({技術}+{身体})　白兵判定
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(5+2)　消火判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 9[4,5] → 9 → 失敗</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(4+2)　消火判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=6) → 7[3,4] → 7 → 失敗</span>
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+2)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 10[5,5] → 10 → 失敗</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+2)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 5[3,2] → 5 → 成功</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			1<br>
+			2<br>
+			さて、船名は…<br>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 4</span><br>
+			PUIPUI<br>
+			ギガント<br>
+			スライム<br>
+			サプライズ<br>
+			インベントリ？<br>
+			choice[puipui,ギガント,スライム,サプライズ,インベントリ]<br>
+			<span class="diceroll">Skynauts : (CHOICE[PUIPUI,ギガント,スライム,サプライズ,インベントリ]) → サプライズ</span><br>
+			choice[puipui,ギガント,スライム,サプライズ,インベントリ,グライフ]<br>
+			<span class="diceroll">Skynauts : (CHOICE[PUIPUI,ギガント,スライム,サプライズ,インベントリ,グライフ]) → グライフ</span><br>
+			船団名：「グライフアイボリー」
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			「──これ、預かったんだ。君たちに。」<br>
+			<br>
+			受け取った手紙に書かれていたのは、<br>
+			『さよなら』を告げる手紙。<br>
+			<br>
+			それは、幼いころから共に探空士に憧れ、キミたちと共に<br>
+			腕を磨いてきた親友と呼べる探空士からの手紙。<br>
+			<br>
+			詳しく読むと、とても危険な暴風域に存在する、<br>
+			貴重な資源が眠っている、『黒旗塔』という塔に向かうことになった。<br>
+			恐らく戻ってこれないから、最後の挨拶だ、と書かれていた。<br>
+			<br>
+			それから数日後、キミたちはギルドのクエストボードに<br>
+			１枚の依頼が貼られているのを目にする。<br>
+			<br>
+			『黒旗塔に不時着した飛空艇の乗員回収、及び、資材回収』<br>
+			<br>
+			──キミたちはその依頼書を、無我夢中で、手に取った。<br>
+			<br>
+			<br>
+			歯車の塔の探空士＜スカイノーツ＞<br>
+			「さよならを言いにきた」<br>
+			<br>
+			<br>
+			──さよならなんて、させない。絶対。<br>
+			オープニングフェイズ
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			ふぅ、飯だ飯だ<br>
+			おっさん、坊主！飯いくぞ
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「ネリーは仲間外れかシェリー」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			ちげーよ、女の子にパシリはできねえだろ？
+		</p>
+		<p class="player p2">
+			<b>ねむも</b>
+			「ごはんはぱしりですか？」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「ごはん、ごはん」
+		</p>
+		<p class="player p10">
+			<b>探空士</b>
+			「あ、キミたち！グライス・バレットって君たちの誰かだよね？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ん？」
+		</p>
+		<p class="player p10">
+			<b>探空士</b>
+			「手紙を預かっているんだ。ジェシーから」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「おい人間、呼ばれてるぞ」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「俺だが」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「そうだぞ人間」小突く
+		</p>
+		<p class="player p10">
+			<b>探空士</b>
+			「キミか……これ、たしかに渡したよ」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「坊主も隅に置けねえな」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			「グライスへ<br>
+			<br>
+			　突然の手紙ごめん。どうしても最後に挨拶を言いたくて。<br>
+			　出発の日時が、みんなの帰りに間に合いそうにないから、<br>
+			　手紙を、書きました。<br>
+			　<br>
+			　突然、だけど。<br>
+			　『黒旗塔』というところに資材をとりにいく仕事を<br>
+			　うちの船で受けることになったんだ。<br>
+			　……でも、今の時期の『黒旗塔』はとても危険な区域で、<br>
+			　今までいくつもの飛空艇が轟沈している場所で……。<br>
+			　船長は絶対に帰ってくる、と言ってるけど…<br>
+			　きっと、戻れないと思う。<br>
+			　だから、さよならを言おうと思ったんだ。<br>
+			　…ああ、でも手紙でよかったかもしれない。<br>
+			　顔を直接見たら、行くのが怖くなってしまうかもしれないし。<br>
+			　<br>
+			　こんな手紙書いておいてなんだけどさ、もし、無事に帰ってきたら笑って迎えてくれたら嬉しい。<br>
+			　<br>
+			　一緒に空の夢を見られてよかった。<br>
+			　……どうか、グライスのこれからのフライトが、いい風に恵まれますように。<br>
+			　<br>
+			　今までありがとう。<br>
+			　<br>
+			　ジェシー・ハリス」
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			カレッジス
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「人間、すぐ危ないことする、アホなの？」後ろから盗み見てた
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			(<br>
+			(ゆっくりとタバコを吸う）
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「アホでもなければ探空士にはならないさ」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「ふーん、そいつ家族？」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「むかしのおんなですか？」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「いや、幼馴染だな。よく世話になってた首長の娘だ」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「お前に女の知り合いがいたとはな」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（静かにタバコをくゆらせる）
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「じっしつむかしのおんななのです」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「話せる女はそいつだけだ」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「わたしはのーかんですか？」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「おさななじみ？は、話せる女、覚えた」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「ネリーは仲間だ。問題ない」
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			『黒旗塔に不時着した飛空艇の乗員回収、及び、資材回収』
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ん？どうした坊主、それに行きたいのか？」<br>
+			「あ、マスター　そこのちびっこ3人はミルクでたのむよ」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			(・・・！？)
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「これ好き」牛乳
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			……どうぞ　つミルク×3
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			あたしはハイボールね
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「ウォッカマティーニをステアでなくシェイクで」
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			……これから仕事では？
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ハッ！いいんだよ一杯くらいじゃ変わりゃしねぇ」
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			……私はバーテンダーではありませんので
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「小さい人間、それなあに」グライスくんの方飛ぶよ
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「これからお涙頂戴の話を聞くんだから、一杯くらいはな？」<br>
+			（チラッと見る）
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「どうした。大きい人間にも見せてみろ」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			ミルク舐めながらユミル君についていきます
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（タバコをくゆらせながら遠目から眺める）
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「ミルクは口に合わんな」
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			そちらのお依頼が気になりますか？
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「こんなおいしいのに」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「かんたんないらいだとうれしいですが」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p12">
+			<b>受付</b>
+			・該当の飛空艇の名は『カレッジス』。<br>
+			　2週間前に資材回収の依頼を受け、『黒旗塔』という塔に向かった探空士たちの船である。
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ふぅん、やっぱりこの間のか」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「やべーやつなのです」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p12">
+			<b>受付</b>
+			・先程、航空ギルドの『電信機』にとある客船から連絡があり、<br>
+			　『黒旗塔』の方から微弱な救難信号を偶然にもキャッチしたとのことだった。<br>
+			　通常はこのような依頼を出すことは少ないのだが、『カレッジス』に依頼した<br>
+			　依頼人に問題があり、勇敢な探空士の救出、と一緒に資材回収も行ってほしいという依頼を出したとのこと。
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「ミルク飲んでる場合じゃなさそうだな」
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			『カレッジス』が受けた依頼はギルドに正式に認可されていないものだったようです
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「これうけるですか？やべーやつでは？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ハッ、このご時世に非公式の依頼か」<br>
+			（ネリーの頭を撫でる）「あぁ、そうだな」
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			その事が判明したギルドは依頼人を処罰し、彼らの救出を考えました
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「ギャングの娘が受ける依頼だ、そう驚く展開でもないだろう」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「…船長としては、あまりにも危ない依頼は受けられないが」（ちらりと見る）
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			しかし『黒旗塔』は危険な領域、ギルド職員でもうかつに立ち入ることができず……<br>
+			こうして腕のある探空士に直接依頼を出す形になりました
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「人間同士でひどい目に合わすなんて、やっぱり人間ってアホだね」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「あぁ、アホだな」（ユミルの頭も撫でようとする）
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「キッ！」遠ざかる
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「早く出発しないのか？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（悲しそうな顔をする）<br>
+			「坊主は行きたいのか？」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「俺に空を教えてくれたのはあいつだ」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「…」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「何をしている！？」<br>
+			(地団駄)
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「みうちにもやべーのがいたです」小声
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「わかったわかった、行こう行こう」
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			そちらを受けるのですか？
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「あぁ」<br>
+			「ただし、危険な旅になる。これは全員への借りだと思えよ坊主」
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			しかし……覚悟はよろしいので？
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「わかってる」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「いくですか……やべーのに……」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「あたしがいいって言ったからいいんだよ」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「空に行くの？空に行けるならなんでもいいよ」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「せんちょうのいうことにはしたがわざるをえないです」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ネリー、わりぃな」（頭を撫でる）<br>
+			（ふと思いついた顔をする）<br>
+			「代わりに坊主が仕事3日分変わってくれるってよ」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「ふゅ……まじですか」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「いいだろう、ただし黒旗塔のお宝は俺が頂く」
+		</p>
+		<p class="player p13">
+			<b>初老の男性</b>
+			おや、キミがそれを受けるのですね
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「あぁ、そうだが」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「あんたは？」
+		</p>
+		<p class="player p12">
+			<b>受付</b>
+			……彼が例の
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			…ん
+		</p>
+		<p class="player p14">
+			<b>依頼人</b>
+			いえ、ただのしがない老人ですよ
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「その割には知った顔するじゃねぇか」
+		</p>
+		<p class="player p14">
+			<b>依頼人</b>
+			まぁ被害者みたいなものですから
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ふーん」
+		</p>
+		<p class="player p14">
+			<b>依頼人</b>
+			いえね、私のほんの楽しみが彼らによって台無しにされたもので
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「なにか話があるなら聞くが、ないなら行くぞ」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「だいなし？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「あたしはそこのちびっこたちと遊ぶのに忙しいんでな」
+		</p>
+		<p class="player p14">
+			<b>依頼人</b>
+			しかし『黒旗塔』への救助とは……さすがは探空士<br>
+			後先の考えのない実におろかで愉快な方々だ<br>
+			私は高みの見物をさせてもらいましょう
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「後先考えるやつが空に出るかよ」
+		</p>
+		<p class="player p14">
+			<b>依頼人</b>
+			どうぞ、せいぜい良い空旅を
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「せいぜいたかみのけんぶつするです」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「高いとこ好きなの？やっぱり人間ってアホだね」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「ろくな奴がいやしねーな」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ま、なんとかと煙は高いところに登るっていうしな」（頭を撫でようとする）
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「キッ！」遠ざかる
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（悲しそうな顔をする）<br>
+			「おいおっさん、ちょっとあの老人から詳細の話盗んでこいよ」
+		</p>
+		<p class="player p14">
+			<b>依頼人</b>
+			……（実に愉快なことになってきたな……こいつらがうまいこと事を運べば……）<br>
+			彼らに連絡をしておかねば……
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			シェリーに手のひらを出す。
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ケッ！」<br>
+			「ほらよ」（くしゃくしゃになった金を渡す）
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN2+2<br>
+			SN4<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=4) → 4[1,3] → 4 → 成功</span><br>
+			成功してドヤ顔で「チップも貰おうか」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p1">
+			<b>BS</b>
+			航空ギルド内では有名な資産家らしく、無理難題のクエストをよく吹っ掛けてくるらしい。<br>
+			しかし、金額はよく、金に困った探空士がよく依頼を受けるらしい。<br>
+			バリー・スタージ
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「そんなもんさっきの分に入ってんだよおっさん」<br>
+			「ま、ありがとな」
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			フライトフェイズ
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「お前ら行くぞ！いかりを上げろ！」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			あ
+		</p>
+		<p class="player p15">
+			<b>ターキー</b>
+			「よっし、舵を切るぜ」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			NV<br>
+			<span class="diceroll">Skynauts : 航行チェック(最低1)　(1D6/2+0) → 3 /2+0 → 1+0 → 1エリア進む</span><br>
+			宣言：交流（対象：ネリー）<br>
+			「ネリー、調子はどうだ？」（頭を撫でる）
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「はっ……さぼっていたのがばれたのです」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「さぼっていたのか？」（知らないふりをする）
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			NV+1<br>
+			<span class="diceroll">Skynauts : 航行チェック(最低1)　(1D6/2+1) → 2 /2+1 → 1+1 → 2エリア進む</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「きかなかったことにしていただいて」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「おー？」<br>
+			「お願いするときはどうするんだったか？」<br>
+			（わしゃわしゃする）
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「よろしくおねがいしますです」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「はい、よろしい」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「何にもない、あの子、ここにもいないな…」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			NV<br>
+			<span class="diceroll">Skynauts : 航行チェック(最低1)　(1D6/2+0) → 2 /2+0 → 1+0 → 1エリア進む</span><br>
+			SN(5+3)　偵察判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 10[5,5] → 10 → 失敗</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ほぉ、この先はそんな状態か」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			mv+1<br>
+			ＮＶ＋１<br>
+			<span class="diceroll">Skynauts : 航行チェック(最低1)　(1D6/2+1) → 5 /2+1 → 2+1 → 3エリア進む</span><br>
+			交流
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「大きい人間、変なとこに船とめたな」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「よくあることさ」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			nv1<br>
+			nv<br>
+			<span class="diceroll">Skynauts : 航行チェック(最低1)　(1D6/2+0) → 3 /2+0 → 1+0 → 1エリア進む</span>
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			D/3<br>
+			<span class="diceroll">Skynauts : D/3 → [縦6,横7],[縦3,横8],[縦3,横7]</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「何だこの物音は！？」<br>
+			「チッ、あのおっさんやらかしたな」<br>
+			「おい、どうなってんだ！」<br>
+			NV<br>
+			<span class="diceroll">Skynauts : 航行チェック(最低1)　(1D6/2+0) → 4 /2+0 → 2+0 → 2エリア進む</span><br>
+			「こうすんだよ！」<br>
+			交流<br>
+			「修理しねーとな…」（頭を撫でようとする）
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「キッ！」遠ざかるが船室が狭すぎて遠ざかれなかった
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			ニヤリ<br>
+			「…あ？おっさんじゃまだ」<br>
+			（ジト目）
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「人間も大変だね」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（ワキワキとしていた手が行きどころなくさまよっていた）
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「ユミルが嫌がるもんでな」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ケッ」（タバコを取り出す）<br>
+			「…ッ！！今回の旅は尋常じゃねえな！」
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			●ステージ１<br>
+			対処判定：＜カテゴリ：操舵室＞／【感覚】+【教養】<br>
+			ステージエフェクト：Ｄ／２[大揺れ]<br>
+			Ｄ/２[大揺れ]<br>
+			Ｄ/２<br>
+			<span class="diceroll">Skynauts : D/2 → [縦2,横7],[縦6,横6]</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「厄介な相手が来たな」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			AVO2@[縦6,横6]<br>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 12[6,6] → 12 → 失敗</span><br>
+			「クッ！！揺れるぞ！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+3)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 11[5,6] → 11 → 失敗</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+2)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 11[6,5] → 11 → 失敗</span>
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+3)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 11[6,5] → 11 → 失敗</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(3+2)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=5) → 7[2,5] → 7 → 失敗</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(4+2)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=6) → 8[4,4] → 8 → 失敗</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			修理<br>
+			SN(5+4)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 11[5,6] → 11 → 失敗</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「曲がるぞ！」<br>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 7[3,4] → 7 → 成功</span><br>
+			「しつこいやつだ」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「子供相手のあんたみたいだな！」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「うっせぇ！おっさんも手を動かせ！」<br>
+			「そのためのおっさんだろ！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「今は足で手いっぱいだ！」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「みっともなくコケてたからだろ！」
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			●ステージ２<br>
+			ステージエフェクト：Ｄ／３<br>
+			対処判定：＜カテゴリ：武装＞／【技術】+【感覚】２回成功<br>
+			D/3<br>
+			<span class="diceroll">Skynauts : D/3 → [縦5,横3],[縦6,横7],[縦1,横9]</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			支援する
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)+1　操舵判定<br>
+			SN(5+4+1)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 5[2,3] → 5 → 成功</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 3[1,2] → 3 → 成功</span>
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 10[5,5] → 10 → 成功</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+4)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 8[3,5] → 8 → 成功</span>
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			●ステージ３<br>
+			ステージエフェクト：Ｄ１９／１<br>
+			対処判定：＜船内の一番上のパーツ＞【技術】＋【身体】<br>
+			D19/1<br>
+			<span class="diceroll">Skynauts : D19/1 → [縦5,横7][縦6,横6][縦4,横8]</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 7[6,1] → 7 → 成功</span><br>
+			[<br>
+			「てめぇら！身を粉にして働け！じゃないと命はねえぞ！」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(4+5)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 5[2,3] → 5 → 成功</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+4)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 5[2,3] → 5 → 成功</span>
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			D19/1<br>
+			<span class="diceroll">Skynauts : D19/1 → [縦4,横9][縦5,横8][縦3,横10]</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ちびっこたちも活躍してくれているようだな」<br>
+			「選択肢がねぇ…！」<br>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 2[1,1] → 2 → ファンブル</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 2</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「くっ、よそ見しちまった」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+3)　白兵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 9[5,4] → 9 → 失敗</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 10[6,4] → 10 → 成功</span><br>
+			SN(5+3)　白兵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 9[4,5] → 9 → 失敗</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「おいおっさん！いいとこ見せやがれ」<br>
+			（スキル「畏怖」：振り直し）<br>
+			「失敗したらこの間のことバラすぞ！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+3)　白兵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 7[4,3] → 7 → 成功</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(4+5)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 6[3,3] → 6 → 成功</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「なんのことかはわからんが、後であんたの酒を貰おうか」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+4)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 5[1,4] → 5 → 成功</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ハッ！何すっとぼけてんだ！」
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			●ステージ４<br>
+			ステージエフェクト：ひとつ前の対処判定を行ったＰＣの生命点を１点減少する<br>
+			対処判定：＜カテゴリ：機関室＞／【技術】+【教養】＆＜カテゴリ：操舵室＞／【感覚】+【教養】（それぞれ成功）
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「あたしに酒をつがせるのは30年遅いぜ」<br>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 6[5,1] → 6 → 成功</span><br>
+			「ッラァ！」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+4)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 9[6,3] → 9 → 成功</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(4+5)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 4[2,2] → 4 → 成功</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「いいんだよ、手間賃はそこの坊主からもらってっからな」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			グライス……？！
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「無事だったか」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「あれが話せる女？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（ユミルの手を引っ張って止める）
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「感動の再開だな。さて……」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			どうして……もう会えないって思ってた……
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			（金目の物を戴くとしようか）
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「空がつながりがある限り、俺たちの絆は消えない」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			会えるなんて、思わなかった…それに、助けに来てくれたのがグライスだなんて
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（おっさんの肘を小突く）
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			おっさんの手をひく
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			おっさんをじっと見る
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「おっさん、世話になったな」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「貴重な喋れる女が減らないでよかったな」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「おっさんと首長は知り合いだ」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			レナートさんも一緒だったんだね……
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「なに、礼はこちらで戴いていくさ」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			皆グライスの船の仲間なんだね
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「顔作りすぎだ、おっさん」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「あたしらはそっちのけ、だな」（ユミルとネリーの頭を撫でようとする）
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「キッ！」遠ざかる
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「空の仲間達が協力してくれなければ、ここにはたどり着けなかった」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「ふゅ、しかたないです」なでられる
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「ああ、お前もこっちにくるか？ティーンエイジャーは歓迎されるぞ」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（ネリーをわしゃわしゃする）<br>
+			「んー、ギリギリ許容範囲内だな」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			ふふ……グライスが気を許せるなんて…本当に素敵で……勇敢な人たち<br>
+			……借り、できちゃったね
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（ネリーを撫でるのに満足したのか、ユミルを追い回そうとしている）
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「空の借りは空で返してくれればいいさ」<br>
+			(照れながら)
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			（ネリーを間に挟んで逃げ回っている）
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			！！……
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（悲しそうな顔をする）<br>
+			「フッ、坊主も男前になったな…」（ちょっと残念そう）
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			本当にありがとう……！！
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「べ、別に感謝なんていらないからな」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			……ふふ
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「おいおい、遠足は帰るまでだからな」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「俺には礼はいらないからな」（物色しながら）
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（おっさんの尻を蹴る）
+		</p>
+		<p class="player p16">
+			<b>下っ端A</b>
+			親方！あれですぜ！
+		</p>
+		<p class="player p17">
+			<b>？？？</b>
+			……みりゃわかるよ<br>
+			で？やっちまっていいんで？
+		</p>
+		<p class="player p14">
+			<b>依頼人</b>
+			『私の顔に泥を塗った彼らがそのまま空の藻屑になってくれるところを拝めると思ったのですが……』<br>
+			『ですが、本番はこれからです』<br>
+			『没収された財産の補充のため、黒旗塔の資材を頂き、私を睨んだ無礼な探空士』<br>
+			『彼らをまとめて空の藻屑にして差し上げてください』
+		</p>
+		<p class="player p17">
+			<b>？？？</b>
+			空賊の仕事は略奪、もちろん
+		</p>
+		<p class="player p14">
+			<b>依頼人</b>
+			『たしかに、頼みましたよ……』
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			１ｄ３<br>
+			<span class="diceroll">Skynauts : (1D3) → 3</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(4+5)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 9[5,4] → 9 → 成功</span><br>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 6</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+4)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 6[1,5] → 6 → 成功</span><br>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 2</span>
+		</p>
+		<p class="player p17">
+			<b>？？？</b>
+			待ちな！そこの２隻！『黒旗塔』から持ち帰ったお宝を置いてきな！
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「あ？亡霊か？」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「あの声は……」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			あれは……空賊！？
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「空賊も人間？」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			[]<br>
+			「きなくさいやつなのです」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「人間というよりハイエナだな」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「それ知ってる！家畜だな」
+		</p>
+		<p class="player p17">
+			<b>？？？</b>
+			言ってくれるじゃねぇの……スラムの鼠共が！
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「待てって言われて待つようなお安い女じゃねーんだよ！」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「あれもおさななじみ？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「そうなのか？」（チラ見）
+		</p>
+		<p class="player p17">
+			<b>？？？</b>
+			なんにせよここまでご苦労さん<br>
+			悪いがここが年貢の納め時ってやつだ
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「あの顔どこかで…」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「おさめるねんぐなんてありはしないですが」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「年貢はきっちり毎年収めてるよ！クソッタレにな！」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「首長を殺した奴によく似て…」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「……」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p1">
+			<b>BS</b>
+			ブレイズ・ヒーロ・ダイ
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「なんだ、知り合いなら挨拶しなきゃなぁ？」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			お前らも大将に睨まれちまって大変だなぁ？<br>
+			安心しろ、すぐに楽にしてやるよ
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「あの時の俺とは違う」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「邪魔な人間、どかしていいね」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			（あの面……あいつは……）<br>
+			「ヘッ！野郎ども！戦闘準備！」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「おっさんもみたことあるだろぉ？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「こっちも行くよ！ガキども！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「……ああ、まだ空賊なんかやっていたのか」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			どこかで見た顔だ……てめぇも親のもとに送ってやるよ！スラムのガキ！
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「バリーの差し金か？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 9[5,4] → 9 → 成功</span><br>
+			「先手必勝！
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			てめぇは……レナート！<br>
+			坊主のお守りか？てめぇが！
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+5-2)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 11[6,5] → 11 → 失敗</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「姦しい女に捕まってな」<br>
+			「ここはやめにしないか？」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			ケッ！
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「誰が姦しいだって？」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			「通ると思うか？それがよ！」<br>
+			「どうした？あのころと違うんじゃねぇのかぁ！？スラムのガキ！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「黒旗塔-ここ-をお前の墓石にするにはもったいないといっているんだ」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			テメェらのには丁度いいぜ？
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 8[2,6] → 8 → 成功</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			辛気臭くてよぉ！
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			d/2<br>
+			<span class="diceroll">Skynauts : D/2 → [縦2,横4],[縦3,横7]</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			回避運動上<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 3[1,2] → 3 → 成功</span><br>
+			チィ！
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ハッ！明るい目印になったな！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「掠り傷か……」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+3)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 6[1,5] → 6 → 成功</span><br>
+			d/2<br>
+			<span class="diceroll">Skynauts : D/2 → [縦1,横12],[縦3,横7]</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			回避行動<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 9[4,5] → 9 → 失敗</span><br>
+			ハッ！やってくれやがる！
+		</p>
+		<p class="player p19">
+			<b>下っ端D</b>
+			消化判定<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 7[5,2] → 7 → 成功</span>
+		</p>
+		<p class="player p20">
+			<b>下っ端C</b>
+			消化判定<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 10[4,6] → 10 → 失敗</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			チッ！どけ１<br>
+			消化判定<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 6[4,2] → 6 → 成功</span>
+		</p>
+		<p class="player p21">
+			<b>下っ端B</b>
+			クルップ砲砲撃判定<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 11[5,6] → 11 → 失敗</span>
+		</p>
+		<p class="player p16">
+			<b>下っ端A</b>
+			クルップ砲砲撃判定<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 4[3,1] → 4 → 成功</span><br>
+			D/3<br>
+			<span class="diceroll">Skynauts : D/3 → [縦2,横8],[縦4,横9],[縦5,横7]</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「これは避けれねえな…！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「俺の部屋には当たってないな！」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			楽しくなってきやがった！
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 9[6,3] → 9 → 成功</span><br>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 7[5,2] → 7 → 成功</span><br>
+			SN(5+5-2)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 7[3,4] → 7 → 成功</span><br>
+			d/3<br>
+			<span class="diceroll">Skynauts : D/3 → [縦4,横4],[縦5,横5],[縦6,横4]</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			回避上<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 5[4,1] → 5 → 成功</span><br>
+			当たった……！？あいつの攻撃が！？
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 8[3,5] → 8 → 成功</span><br>
+			D/2<br>
+			<span class="diceroll">Skynauts : D/2 → [縦2,横11],[縦4,横5]</span><br>
+			「もうお前の知るガキじゃあないってことだ」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			回避→<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 3[1,2] → 3 → 成功</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			シルバーバレットで鉄鋼榴弾つかいます<br>
+			SN(5+3)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 7[4,3] → 7 → 成功</span><br>
+			d/2<br>
+			<span class="diceroll">Skynauts : D/2 → [縦5,横11],[縦5,横5]</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			回避運動上<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 6[1,5] → 6 → 成功</span><br>
+			あめぇんだよ！
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 10[6,4] → 10 → 失敗</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(4+5)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 7[1,6] → 7 → 成功</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「揺れるから捕まってろ！」<br>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 4[2,2] → 4 → 成功</span><br>
+			「ついて来れるならついて来な！」
+		</p>
+		<p class="player p20">
+			<b>下っ端C</b>
+			消化判定<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 4[2,2] → 4 → 成功</span>
+		</p>
+		<p class="player p19">
+			<b>下っ端D</b>
+			消化判定<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 10[5,5] → 10 → 失敗</span>
+		</p>
+		<p class="player p16">
+			<b>下っ端A</b>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 5[2,3] → 5 → 成功</span><br>
+			修理<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 6[4,2] → 6 → 成功</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			修理<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 4[3,1] → 4 → 成功</span>
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p5">
+			<b>ユミル</b>
+			燃素入れた
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p5">
+			<b>ユミル</b>
+			燃素入れてた
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+4)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 7[1,6] → 7 → 成功</span>
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">メインタブ</div>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+4)　修理判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 8[5,3] → 8 → 成功</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			入れた後武装Bへ魔法石でテレポ
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「どうした？こないのか？」<br>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 10[5,5] → 10 → 失敗</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「来たよ」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			揺らして挑発する（移動しない）
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			「どうした？こないのか？」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「……」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+5-2)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 6[5,1] → 6 → 成功</span><br>
+			d/3<br>
+			<span class="diceroll">Skynauts : D/3 → [縦3,横10],[縦2,横6],[縦6,横8]</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			回避下<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 9[3,6] → 9 → 失敗</span><br>
+			！？この距離だぞ！？
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「素人か？今どきこの距離も射程圏内なんだよ！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「……」
+		</p>
+		<p class="player p20">
+			<b>下っ端C</b>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 9[4,5] → 9 → 失敗</span>
+		</p>
+		<p class="player p19">
+			<b>下っ端D</b>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 11[5,6] → 11 → 失敗</span>
+		</p>
+		<p class="player p16">
+			<b>下っ端A</b>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 2[1,1] → 2 → ファンブル</span>
+		</p>
+		<p class="player p21">
+			<b>下っ端B</b>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 7[6,1] → 7 → 成功</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 11[5,6] → 11 → 失敗</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「どうした？仲間を裏切ってまで手に入れた力ってのはこの程度なのか？」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			チッ！ずれたこと言ってんじゃねぇぞ！
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 7[2,5] → 7 → 成功</span><br>
+			「総攻撃だ！」<br>
+			「行くぜガキども！！！！」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 6[3,3] → 6 → 成功</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「ああ！」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			d/3<br>
+			<span class="diceroll">Skynauts : D/3 → [縦1,横2],[縦2,横5],[縦6,横9]</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			右に回避<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 8[4,4] → 8 → 成功</span><br>
+			調子に乗ってんじゃねぇぞ！
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「一つ避けたくらいで随分なはしゃぎようだね！」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(4+4-2)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=6) → 2[1,1] → 2 → ファンブル</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+3)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 8[2,6] → 8 → 成功</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「これ以上はずしたらごはん抜きだよ！」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			d/2<br>
+			<span class="diceroll">Skynauts : D/2 → [縦6,横7],[縦6,横10]</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 7[2,5] → 7 → 成功</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「きゅう」反動で壁に打ち付けられた
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			d/2<br>
+			<span class="diceroll">Skynauts : D/2 → [縦2,横11],[縦5,横7]</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			下回避<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 3[2,1] → 3 → 成功</span>
+		</p>
+		<p class="player p20">
+			<b>下っ端C</b>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 2[1,1] → 2 → ファンブル</span>
+		</p>
+		<p class="player p19">
+			<b>下っ端D</b>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 8[3,5] → 8 → 失敗</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			操舵判定<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 4[2,2] → 4 → 成功</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「調子がわるいようだな。熱でも出たか？」
+		</p>
+		<p class="player p16">
+			<b>下っ端A</b>
+			弾道学下方向<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 5[3,2] → 5 → 成功</span><br>
+			D6/2<br>
+			<span class="diceroll">Skynauts : D6/2 → [縦2,横3][縦2,横4],[縦6,横5][縦6,横6]</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 5[4,1] → 5 → 成功</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(3+2)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=5) → 7[1,6] → 7 → 失敗</span>
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+3)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 4[3,1] → 4 → 成功</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+3)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 4[2,2] → 4 → 成功</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「揺れるぞ！！」<br>
+			SN(5+2)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 5[1,4] → 5 → 成功</span>
+		</p>
+		<p class="player p21">
+			<b>下っ端B</b>
+			弾道学下<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 5[4,1] → 5 → 成功</span><br>
+			D6/2<br>
+			<span class="diceroll">Skynauts : D6/2 → [縦2,横9][縦2,横10],[縦5,横8][縦5,横9]</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 5[3,2] → 5 → 成功</span><br>
+			SN(5+2)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 10[4,6] → 10 → 失敗</span>
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+3)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 3[2,1] → 3 → 成功</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「クソッ、激しいやつだ！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+3)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 8[5,3] → 8 → 成功</span><br>
+			「……」
+		</p>
+		<p class="player p1">
+			<b>BS</b>
+			choice(上,下,右,左)<br>
+			choice[上,下,右,左]<br>
+			<span class="diceroll">Skynauts : (CHOICE[上,下,右,左]) → 上</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			ちっ！焼きが回ったか！
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+5-2)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 3[2,1] → 3 → 成功</span><br>
+			d/3<br>
+			<span class="diceroll">Skynauts : D/3 → [縦1,横7],[縦1,横5],[縦6,横10]</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「行け！坊主…いや少年！」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			どうしたぁ！スラムのガキ！
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(4+4-2)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=6) → 8[2,6] → 8 → 失敗</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(5+3)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 5[1,4] → 5 → 成功</span><br>
+			d/2<br>
+			<span class="diceroll">Skynauts : D/2 → [縦3,横8],[縦6,横8]</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「ごはん抜きはいやぁ…」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			左<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 6[4,2] → 6 → 成功</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+5)　砲撃判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=10) → 8[4,4] → 8 → 成功</span><br>
+			d/2<br>
+			<span class="diceroll">Skynauts : D/2 → [縦3,横11],[縦4,横5]</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			回避上<br>
+			SN8<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 11[5,6] → 11 → 失敗</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「だんだんと名前通りの船長室になっているな」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			ハッ！ならテメェらにもあじあわせてやんよ！
+		</p>
+		<p class="player p16">
+			<b>下っ端A</b>
+			弾道学左<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 8[5,3] → 8 → 失敗</span>
+		</p>
+		<p class="player p21">
+			<b>下っ端B</b>
+			弾道学下<br>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 8[2,6] → 8 → 失敗</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「チッ！やけくそ特攻かよ！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「俺たちが味わうのは勝利の美酒だけだ」
+		</p>
+		<p class="player p20">
+			<b>下っ端C</b>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 7[1,6] → 7 → 成功</span>
+		</p>
+		<p class="player p19">
+			<b>下っ端D</b>
+			うおおおおおおおおぉ！！おれは空賊だぁ！！<br>
+			D6/2<br>
+			<span class="diceroll">Skynauts : D6/2 → [縦4,横4][縦4,横5],[縦6,横3][縦6,横4]</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 10[4,6] → 10 → 失敗</span>
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			逝っちまいなぁ！
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「命を無駄にしやがって！！」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			1d6<br>
+			<span class="diceroll">DiceBot : (1D6) → 2</span>
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			1d6<br>
+			<span class="diceroll">Skynauts : (1D6) → 6</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「に、人間！」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「馬鹿野郎！死に急ぐな！」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「いてぇ、いてえよぉぉお」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「グライス！」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			ハッハッハ！傑作だぜぇ！
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「わああ血が出てる、大変なのでは！？」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			テメェの親父とおんなじことしてやがんだからよ！
+		</p>
+		<p class="player p20">
+			<b>下っ端C</b>
+			SN7<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 7[3,4] → 7 → 成功</span><br>
+			オレはオレたちは！<br>
+			空賊だ！<br>
+			D6/2<br>
+			<span class="diceroll">Skynauts : D6/2 → [縦6,横8][縦6,横9],[縦2,横6][縦2,横7]</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+2)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 2[1,1] → 2 → ファンブル</span>
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			SN(5+3)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 6[4,2] → 6 → 成功</span>
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+3)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=8) → 6[3,3] → 6 → 成功</span>
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			SN(4+2)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=6) → 3[2,1] → 3 → 成功</span>
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			SN(3+2)　大揺れ判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=5) → 8[2,6] → 8 → 失敗</span>
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			SN(5+2)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=7) → 8[4,4] → 8 → 失敗</span>
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			SN(5+4)　操舵判定<br>
+			<span class="diceroll">Skynauts : (2D6&lt;=9) → 9[6,3] → 9 → 成功</span>
+		</p>
+		<p class="player p20">
+			<b>下っ端C</b>
+			うわぁあああああ！！も、燃える！
+		</p>
+		<p class="player p21">
+			<b>下っ端B</b>
+			ぎゃあああ！！
+		</p>
+		<p class="player p16">
+			<b>下っ端A</b>
+			た、たすけてくれ……首長！
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「…ッ」
+		</p>
+		<p class="player p19">
+			<b>下っ端D</b>
+			お、おれはぁあああ！！
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			ククッ
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「お前は！おっさんの弟の…！」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			ハッハッハハ！！<br>
+			ようスラムのガキ
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「……」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「やかましい！お前はさっさと燃えな！」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			「ハッ女狐が」<br>
+			「どうやらここまで見てぇだな」<br>
+			「おまえも虫の息だが……」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「勝った…のか？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「…汚え意地だな」（タバコを取り出す）
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			「最後にいいことを教えといてやる」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「おっさんはかつて双頭テクニカルゲッターといわれた兄弟だった」
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			「よく覚えてるじゃねぇか」
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「見間違えか…？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「おい少年、熱くなりすぎだ」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「頭冷やす？」氷出す
+		</p>
+		<p class="player p18">
+			<b>ブレイズ</b>
+			「誰が敵で誰が味方か……よく見とくんだな」<br>
+			（レナートの方をちらりと見る）<br>
+			「ハッハッハ！先に地獄で待ってるぜぇ！」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			ちらりと一瞥する<br>
+			「…」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			グライス！大丈夫？！
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「大丈夫だ。問題ない」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			だってこんな……ボロボロだよ！
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「ジェシーは大丈夫か？」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			……うん、グライスと、皆が来てくれたから<br>
+			私はまたここに戻ってこれた！<br>
+			ここから飛び立つとき、絶対に無理だと思ったのに…
+		</p>
+		<p class="player p9">
+			<b>グライス・バレッド</b>
+			「空の絆は俺たちを裏切らない」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「フッ…」（遠目から眺めている）
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			……もう！また意味分かんないこと言って！<br>
+			昔から、本当に変わんないんだから！<br>
+			……皆さん、本当にありがとう
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「次は騙されちゃダメだよ、人間なんてみんなダメダメなんだから！」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「あぁ、&quot;大人&quot;はみんなダメだ、汚え」
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「こどもはいいです？」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「おう、そうだな」（頭を撫でる）<br>
+			「お前らは純粋でいろよ」
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「子供じゃないんだけど！」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「ん？そうだったか？」（撫でようとする）
+		</p>
+		<p class="player p5">
+			<b>ユミル</b>
+			「キッ！」遠ざかる
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			（悲しそうな顔をする）<br>
+			「さて、」<br>
+			「おいおっさん、傭兵としての契約期間は今日までだ」<br>
+			「あたしとしちゃ汚え大人は乗せておきたくねえが…まあお前なら…いや」<br>
+			「あんたはどうする？」<br>
+			「そうだ、そこの嬢ちゃんもどうだ？」<br>
+			（顔は完全にジェシーに照準があわさっている）
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			え！？私？私は……<br>
+			（グライスの方を見る）
+		</p>
+		<p class="player p8">
+			<b>ネリー・コレット</b>
+			「もうさよならはいわないです？」
+		</p>
+		<p class="player p11">
+			<b>ジェシー</b>
+			……うん、そうだね<br>
+			もう、さよならなんて言わないよ<br>
+			だから、これから、<br>
+			よろしく！
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「言い方は気にくわないが、良いだろう。」
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「おう」
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「それにあんたが道を踏み外さないように監視が必要そうだ」<br>
+			ーーーーー
+		</p>
+		<p class="player p4">
+			<b>シェリー・ナツメ</b>
+			「よし、準備ができたらまた出るぞめえら！」<br>
+			（そうだ…おいおっさん、かわいい妹とかいねえのか？）
+		</p>
+		<p class="player p6">
+			<b>レナート</b>
+			「いたとして、あんたにそれを言うと思うか？」
+		</p>
+	</div>
+</body>
+</html>
