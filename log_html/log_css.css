@@ -338,6 +338,7 @@ body {
 /*ナビゲーション*/
 #g-nav ul {
     /*ナビゲーション天地中央揃え*/
+	padding-left: 0px;
     position: absolute;
     z-index: 999;
     top:50%;
