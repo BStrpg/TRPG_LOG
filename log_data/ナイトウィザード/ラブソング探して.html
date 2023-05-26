@@ -1,0 +1,4030 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>チャットログ</title>
+	<style>
+		html {
+			font-size: 14px;
+		}
+		body {
+			-webkit-text-size-adjust: 100%;
+			background-color: #ffffff;
+		}
+		h1 {
+			font-size: 20px;
+			margin: 1rem 1rem 0;
+			color: #000000;
+		}
+		.tab {
+			border: 1px solid #999;
+			margin: 2rem 1rem 1rem;
+			line-height: 1.5;
+			position: relative;
+		}
+		.tabtitle {
+			border: 1px solid transparent;
+			border-color: inherit;
+			background-color: inherit;
+			position: absolute;
+			top: -.8rem;
+			left: 1rem;
+			min-width: 7rem;
+			padding: 0 .5rem;
+			text-align: center;
+			font-size: 1rem;
+			z-index: 9999;
+			line-height: 1.4rem;
+		}
+		.player {
+			margin: 0;
+			padding: 0 .5rem;
+			padding-left: 10.5rem;
+			border-bottom: 1px dotted transparent;
+			border-color: inherit;
+			position: relative;
+		}
+		.player:last-child {
+			border-bottom: 0;
+		}
+		.player b {
+			display: block;
+			height: 100%;
+			width: 9rem;
+			padding: 0 .5rem;
+			border-right: 1px solid transparent;
+			border-color: inherit;
+			position: absolute;
+			top: 0;
+			left: 0;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.tabtitle + .player {
+			padding-top: .7rem;
+		}
+		.tabtitle + .player b {
+			padding-top: .7rem;
+			height: calc(100% - .7rem);
+		}
+		.diceroll {
+			padding: 0 .5em;
+			color: #ffffff;
+		}
+
+		/* [メイン] タブ */
+		.t0 {
+			background-color: #ffffff;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [秘匿(びっくり..,ターキー..)] タブ */
+		.t1 {
+			background-color: #d3edfb;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [雑談] タブ */
+		.t2 {
+			background-color: #cccccc;
+			border-color: #999999;
+			color: #000000;
+			font-size: .8rem;
+		}
+
+		/* [情報] タブ */
+		.t3 {
+			background-color: #fffcdb;
+			border-color: #000000;
+			color: #000000;
+		}
+
+		/* 発言者：system */
+		.p0 { color: #888888; }
+		.p0 .diceroll { background-color: #888888; }
+
+		/* 発言者：相馬　亜子（あこ） */
+		.p1 { color: #795548; }
+		.p1 .diceroll { background-color: #795548; }
+
+		/* 発言者：GM */
+		.p2 { color: #000000; }
+		.p2 .diceroll { background-color: #000000; }
+
+		/* 発言者：シーン1：樫山綴の相談事 */
+		.p3 { color: #888888; }
+		.p3 .diceroll { background-color: #888888; }
+
+		/* 発言者：柴田 紅葉 */
+		.p4 { color: #f44336; }
+		.p4 .diceroll { background-color: #f44336; }
+
+		/* 発言者：夏目ヒロシ */
+		.p5 { color: #2196f3; }
+		.p5 .diceroll { background-color: #2196f3; }
+
+		/* 発言者：樫山綴 */
+		.p6 { color: #ff69b4; }
+		.p6 .diceroll { background-color: #ff69b4; }
+
+		/* 発言者：シーン2：解き放たれた侵魔 */
+		.p7 { color: #888888; }
+		.p7 .diceroll { background-color: #888888; }
+
+		/* 発言者：ナイトメア */
+		.p8 { color: #483d8b; }
+		.p8 .diceroll { background-color: #483d8b; }
+
+		/* 発言者：？？？ */
+		.p9 { color: #a9a9a9; }
+		.p9 .diceroll { background-color: #a9a9a9; }
+
+		/* 発言者：警備員 */
+		.p10 { color: #888888; }
+		.p10 .diceroll { background-color: #888888; }
+
+		/* 発言者：シーン3：召喚された侵魔 */
+		.p11 { color: #888888; }
+		.p11 .diceroll { background-color: #888888; }
+
+		/* 発言者：DJモブ */
+		.p12 { color: #d2691e; }
+		.p12 .diceroll { background-color: #d2691e; }
+
+		/* 発言者：シーン4：奪われたリリック */
+		.p13 { color: #888888; }
+		.p13 .diceroll { background-color: #888888; }
+
+		/* 発言者：シーン5：放課後の公園 */
+		.p14 { color: #888888; }
+		.p14 .diceroll { background-color: #888888; }
+
+		/* 発言者：シーン6：悪夢の経過報告 */
+		.p15 { color: #888888; }
+		.p15 .diceroll { background-color: #888888; }
+
+		/* 発言者：シーン7：RE悪夢の経過報告 */
+		.p16 { color: #888888; }
+		.p16 .diceroll { background-color: #888888; }
+
+		/* 発言者：シーン8：夢のなかへ */
+		.p17 { color: #888888; }
+		.p17 .diceroll { background-color: #888888; }
+
+		/* 発言者：シーン9：悩めるリリック＆ガール */
+		.p18 { color: #888888; }
+		.p18 .diceroll { background-color: #888888; }
+
+		/* 発言者：ミミックリリック */
+		.p19 { color: #a9a9a9; }
+		.p19 .diceroll { background-color: #a9a9a9; }
+
+		/* 発言者：シーン10：ラブソング見つけて */
+		.p20 { color: #888888; }
+		.p20 .diceroll { background-color: #888888; }
+
+		/* 発言者：闇の音楽隊A */
+		.p21 { color: #a9a9a9; }
+		.p21 .diceroll { background-color: #a9a9a9; }
+
+		/* 発言者：闇の音楽隊B */
+		.p22 { color: #a9a9a9; }
+		.p22 .diceroll { background-color: #a9a9a9; }
+
+		/* 発言者：D(ar)KMob */
+		.p23 { color: #a9a9a9; }
+		.p23 .diceroll { background-color: #a9a9a9; }
+
+		/* 発言者：式神 */
+		.p24 { color: #888888; }
+		.p24 .diceroll { background-color: #888888; }
+	</style>
+</head>
+<body>
+	<h1>チャットログ</h1>
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] HP : 0 → 11
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			NW <br>
+			<span class="diceroll">NightWizard3rd : (NW@0#0) ＞ 0+8[6,2] ＞ 8</span>
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			今回予告<br>
+			<br>
+			今年も、ラブソングの季節がやって来た。<br>
+			――何？それがいつかって？<br>
+			キミと出会ったその時さ！<br>
+			　鳴り止まぬ青春の鼓動に身を任せ、少女は無垢な言葉を綴る。恋を歌う情熱が、声高らかに響き渡る。だが耳を澄ませよ、ウィザードたち。平穏なる世界の影で、邪悪を呼び覚ます声が、確かにする。その悪と戦えるのは、<br>
+			そう。ウィザードだけだ!<br>
+			<br>
+			ナイトウィザード The 3rd Edition<br>
+			『ラブソング探して』<br>
+			紅き月が昇る時、異界の門が開かれる。
+		</p>
+		<p class="player p3">
+			<b>シーン1：樫山綴の相談事</b>
+			&nbsp;
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			①自己紹介<br>
+			②PC間のコネクション<br>
+			③CF決定
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			ｄ６６　邂逅 <br>
+			<span class="diceroll">NightWizard3rd : (D66) ＞ 21</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ｄ６６ <br>
+			<span class="diceroll">NightWizard3rd : (D66) ＞ 46</span><br>
+			choice[振り直す,振り直さない] <br>
+			<span class="diceroll">NightWizard3rd : (CHOICE[振り直す,振り直さない]) ＞ 振り直す</span><br>
+			d66 <br>
+			<span class="diceroll">NightWizard3rd : (D66) ＞ 44</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			d66 <br>
+			<span class="diceroll">NightWizard3rd : (D66) ＞ 54</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			＞夏目　関係：ライバル<br>
+			「彼の賭けの強さをどこかで見かけた事がある。彼には負けられない」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			もみじ　関係：ドキドキ　「危なっかしくて見てられない・・・！」
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			2d6 クリティカル <br>
+			<span class="diceroll">NightWizard3rd : (2D6) ＞ 7[6,1] ＞ 7</span><br>
+			2d6 ファンブル <br>
+			<span class="diceroll">NightWizard3rd : (2D6) ＞ 11[6,5] ＞ 11</span><br>
+			CF修正　Ｆ+1
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			2d6 クリティカル <br>
+			<span class="diceroll">NightWizard3rd : (2D6) ＞ 7[3,4] ＞ 7</span><br>
+			2d6 ファンブル <br>
+			<span class="diceroll">NightWizard3rd : (2D6) ＞ 3[2,1] ＞ 3</span><br>
+			CF　修正　F-1→2へ変更
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] C値 : 0 → 7<br>
+			[ 相馬　亜子（あこ） ] F値 : 0 → 2
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			2d6 クリティカル <br>
+			<span class="diceroll">NightWizard3rd : (2D6) ＞ 6[5,1] ＞ 6</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			＞相馬　亜子　関係：誠意<br>
+			こわい
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			2d6 ファンブル <br>
+			<span class="diceroll">NightWizard3rd : (2D6) ＞ 5[1,4] ＞ 5</span>
+		</p>
+		<p class="player p3">
+			<b>シーン1：樫山綴の相談事</b>
+			シーンプレイヤー：PC①
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			うーん……<br>
+			ダメだな～ちがうんだよなぁ～
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「難儀ですな……」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			そうなんだよぁ～文化祭で披露する新曲なんだけど<br>
+			みんなが&quot;おまえにラブソングなんて書けるわけないって言うからよ。つい大見得切っちまったんだ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「それはひどい」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			だから、ぜってぇ感動のラブソングを書かなきゃなんねぇんだけどなぁ…<br>
+			歌詞がはまらないんだ。途中までは考えて、何度も歌ってみたんだけど何か今イチで<br>
+			何かこう、バチッと恋とか愛とかってのがほしいんだけどなぁ<br>
+			恋ってどんなんだろうな。もみじ、おまえ分かるか？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「拙僧もさっぱりですな」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			～♪
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「いろいろな歌を聞けばなにか思いつくかもしれませぬぞ！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			そっか、そうだよな、わかんねぇよな<br>
+			歌かぁ～う～ん<br>
+			色々聞いたんだけどなぁラブソング。なんかいまいちピンとこねぇんだよ<br>
+			多分あれだな、おれは実体験から学ぶ派なんだよ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ならば答えはひとつ！綴殿が恋愛してみるのですぞ！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			えぇ！……まぁそうか、そうだな<br>
+			けど別に気になる相手とかいないんだよな……
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「でもまあこのクラスの殿方はてんでダメですな」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			そうだなぁ……なぁもみじ誰かいい感じのやつ知らないか？<br>
+			同じくらいの年で……そうだな……歌が好きなやつがいいな！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「良き感じの殿方……はっ！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			いるのか！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「でもダメですな、その方は拙僧にドキドキされておられるから……」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			そっかぁ……<br>
+			……ドキドキ？<br>
+			そいつに聞けばなにかわかるんじゃね―か！？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「それだー！！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			･･･ックシュン！
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			よっし！決まりだ！じゃあそいつ呼んできてくれ！<br>
+			そいつを使ってレンアイの研究だ！<br>
+			よしもみじ、放課後公園で待ち合わせな！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「承知ですぞ！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			デートってやつをすれば何か分かるかもな（ﾌﾞﾂﾌﾞﾂ）
+		</p>
+		<p class="player p7">
+			<b>シーン2：解き放たれた侵魔</b>
+			シーンプレイヤー：PC②
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…ココね
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			そのとおりだ、では行くぞ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ふふ
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			シャドウ、その手腕頼りにしているぞ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…あなたはどうするの？
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			無論、この中だ……行くぞ！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ええ、行きましょうか<br>
+			（命のやりとりの予感…ゾクゾクするわ）<br>
+			あら、どうしたのかしら
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			警護のウィザードだな<br>
+			どうやら封印が解かれ、その衝撃でやられたらしい
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			そのようね…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			こいつの夢を拝ませてもらうとしよう
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ふふ…<br>
+			いつ見ても便利ね
+		</p>
+		<p class="player p9">
+			<b>？？？</b>
+			うおお、オレサマを目覚めさせるのは誰だ？何者かがオレサマを召喚しようとしている<br>
+			この方角…日本…オレサマを喚ぶ者がいるのは東京か
+		</p>
+		<p class="player p10">
+			<b>警備員</b>
+			う～ん……
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			何者かが召喚呪文を唱えたようだな。ここに封印されていた侵魔は霊詩魔王ミミックリリック。強大な侵魔だ<br>
+			以前召喚された時は、ロンギヌスや絶滅社の精鋭が束になっても倒しきれず、ここに封印するしかなかったらしい<br>
+			放っておけば世界の危機となる<br>
+			シャドウよ、手分けして召喚された場所を探すとしよう
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			わかったわ
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			とりあえず場所は日本だ……心当たりはあるか？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			そうねぇ…<br>
+			音楽の聖地…音楽の集まる場所…<br>
+			武道館、なんてどうかしら
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			武道館か……悪くない
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			じゃあ私はそこに賭けるわね
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			その方向で調べていけばいずれ見つかるだろうそちらは任せたぞ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			はぁ～い
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ふっ……さっそくお手並み拝見か……どりーむ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（フフ…）
+		</p>
+		<p class="player p11">
+			<b>シーン3：召喚された侵魔</b>
+			シーンプレイヤー：PC③
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			&lt;宵闇の中、二人は消えていった&gt;
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			YO！侵魔を召喚するぜ
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			そこまでだッ！DJモブ！
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			お前は誰だYO!<br>
+			部外者は乱入！NEWSに乗りな！我が名はDJ！話題のNEWフェイス！YEAH!<br>
+			オレの華麗なラップに乗せて、召喚呪文をチャントだぜ
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			俺は夏目！お前のたくらみを止めに来た！召喚なんてさせはしない！
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			お前のDisなんて聞こえねぇぜ♪YEAH!<br>
+			YO！お前らのってるかい♪<br>
+			オープニングから不穏な展開♪<br>
+			侵魔を呼び出しすべてを破壊♪<br>
+			今日で終わるぜこのクソ世界♪<br>
+			召喚儀式を始めるトゥナイッ♪
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・っ！まずい！
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			いでよ！YO!
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・？
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			WHAT’ｓ!?
+		</p>
+		<p class="player p9">
+			<b>？？？</b>
+			そんなヘナチョコなリズム&amp;ライムでは、オレサマの10分の1も召喚できねぇ。もっとクールな呪文を歌う者を探し出し、完璧な姿でこの世界に顕現してやる。どうやらこの近くに、若い生命が集まる場所がある。そこなら、オレサマにふさわしい唱い手が見つかるはずだ
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			バカなっ!！俺の渾身のラップが奴のソウルに警かなかったっていうのかYO<br>
+			わけわかんねぇ！YO!
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・どうやら失敗みたいだな！
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			……認めねぇぜ！<br>
+			この近くって、輝明学園か……こうしちゃいられねぇ！俺が最強のラッパー！わからないパッパラパーに正義の鉄槌イッパー！……？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			少しおとなしくしてもらうよ！
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			あいにく、残念！ここはおさらば、閉店ガラガラ！YO
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			なっ・・・！？待てっ！<br>
+			くっ・・・スモークで前が・・・！<br>
+			・・・確か輝明学園とか言ってたか。
+		</p>
+		<p class="player p13">
+			<b>シーン4：奪われたリリック</b>
+			シーンプレイヤー：PC③
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ここがあいつの言ってた輝明学園か・・・（キョロキョロ）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あっ！ヒロシ殿ー！！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			確かにここにいるはず・・・ん？あれはたしか・・・
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「なぜここに！？」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			あぁちょっといろいろあってね。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「これは丁度いいですな」<br>
+			「おや？」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			もう来ていたのか・・・！
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			HEY！ガール！ここであったが関ヶ原！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「！？」
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			ム…！貴様はさっきの小僧！YO!なぜここに……！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「不審者！学校に不審者がおりますぞ！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			親切に目的地を教えてくれたからね！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「早く逮捕してくだされ！」
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			月匣（げっこう）を貼ればめぼしい獲物がかかると踏んだが…余計なお荷物HIT!だぜ！YEAH!!
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			紅葉ちゃん、俺はあいつを追ってここにきたんだ。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「こやつが月匣を！？」
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			YEAH!!も一度俺のクールなビートを魔王にお届け！YO！<br>
+			そのためには取り付いてるやつをKILL!<br>
+			だけど誰に取り付いてるかわからんから...手当たりしだいにDIE切断！YEAH!!
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			さっき失敗したくせに何言ってるんだ！このへっぽこウィザード！
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			NOOOOOO!!!
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「こやつ……魔王の手先か！？」
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			おのれウィザード！お前らから血祭りDIE!
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			戦闘
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「どうやら、封印していたこの力、使うしかなさそうですな……」
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			13+7 行動値ジャッジ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「とあーっ！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			11NW@6#3 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (11NW@6#3) ＞ 11+10[5,1]+10[2,4]+4[2,2] ＞ クリティカル ＞ 35</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			7NW@7#12 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (7NW@7#12) ＞ 7+5[1,4] ＞ 12</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			10NW@6#3-2 魔導ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3-2) ＞ 8+10[5,5] ＞ 18</span>
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			6+7= 回避ジャッジ
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			くらえ！さみだれ打ち！！<br>
+			10NW@6#3+14 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3+14) ＞ 24+10[5,1]+11[5,6] ＞ クリティカル ＞ 45</span>
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			2+=7= 魔防ジャッジ<br>
+			2NW魔防ジャッジ<br>
+			2NW 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (2NW@10#5) ＞ 2-10[1,4] ＞ ファンブル ＞ -8</span><br>
+			お前のdisなんて……！？<br>
+			NOOOOOOO!!
+		</p>
+		<p class="player p13">
+			<b>シーン4：奪われたリリック</b>
+			シーンプレイヤー：PC③
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・ふぅ。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「死んだー！？」<br>
+			「拙僧変身した意味ないじゃないですかー！！」
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			お...お前...加減しYO...
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			え？いや、なんかゴメン・・・
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			お、おのれ…こんなところで……！？<br>
+			こ、これは……？か、身体が！？<br>
+			な、なんだ……NOOOOO!!!
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ひとまずこれで一件落着・・・かな？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「そうですな……」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あら…月匣が貼られたようだったから駆けつけてみたけど、もう終わってたみたいね
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「では」<br>
+			「この後デートして下され」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・！？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（あらあらウフフ…）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			何でそうなる！？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（怪しい気配がした気もするけど、青春の邪魔はできないわね…）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「恋愛を教えてくだされ！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			デートって・・・君と・・・俺が！？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「いえ！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・え？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「綴殿ー！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（あら…？）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「……あれ？」
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			-綴は体育の授業をサボっていた-
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「では放課後公園で！！」
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			-回想-
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			『よしもみじ、放課後公園で待ち合わせな！』
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			-回想終わり-
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			え？え！？ちょっと紅葉ちゃん！？どういうことなの！？<br>
+			&nbsp;
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あっ！では拙僧はこれから授業なので失礼！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			行っちゃった・・・よくわからないけど公園に行ってみるか・・・
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（青春ねぇ～）<br>
+			（さて…癒やされたところでさっきの気配を探ってみますか）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・ずっと誰かの視線を感じていたような。
+		</p>
+		<p class="player p14">
+			<b>シーン5：放課後の公園</b>
+			シーンプレイヤー：PC①
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			◎DJモブについて【幸運】
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			7NW@7#2 幸運ジャッジ　「さてさて…っと」 <br>
+			<span class="diceroll">NightWizard3rd : (7NW@7#2) ＞ 7-10[1,1] ＞ ファンブル ＞ -3</span>
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			情報収集（PC②）
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あら？あそこも青春してるわねぇ<br>
+			ふふ…若いっていいわあ<br>
+			うーん、なにもないみたいね…　ハズレだったかしら
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			-放課後-まだ綴は来ていないようだ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（あら…？あそこにいるのはさっきの…）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「綴殿ー！居ない……」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			そろそろ説明してほしいんだけど・・・
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あれっ？」<br>
+			「～～ということでヒロシ殿ならなにか分かるのではないかと思いまして……」<br>
+			「綴殿の為にひと肌脱いでいただきたいのです！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（あ、よく見たらあれは例の&quot;ビギナーズラック&quot;夏目クンだったのね…　ふふ、隅に置けないわね）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・うん、状況は分かった。あまり恋愛とか経験はないけど、俺で力になれるなら・・・
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「そんな顔して謙遜な～」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			おぉ～いもみじ～！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「綴殿～！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			おっ！おまえが！ドキドキのやつ！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			え、ドキドキ！？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			私は綴だ！よろしくな！話は聞いてるな？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			え？あ、まぁついさっき説明されたばっかですけど・・・初めまして、夏目ヒロシです。
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			ヒロシだな！いい名前だな
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			（ちょっと紅葉ちゃん！？あの子にどんな紹介したの！？）
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（あらあら～？）
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			ラブソングのためにレンアイの研究をしたいんだが……なにすればいいかさっぱりなんだ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			なんか変な気配を察知して登場とかできないかな？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			もみじに聞いたらお前が頼れるって聞いてな！頼むぜ！
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">秘匿(びっくり..,ターキー..)</div>
+		<p class="player p2">
+			<b>GM</b>
+			OK<br>
+			登場判定10<br>
+			で登場できる<br>
+			【幸運】10だ
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			うん。頼りになるかはわからないけど、力になるよ。
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">秘匿(びっくり..,ターキー..)</div>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			じゃああとでなんか怪しい気配出してくれ～
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>GM</b>
+			&nbsp;
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			サンキュ！そんじゃあ早速気合い入れていくぜ！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・気合い？
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">秘匿(びっくり..,ターキー..)</div>
+		<p class="player p2">
+			<b>GM</b>
+			怪しい気配～？
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>樫山綴</b>
+			で、何したらいいんだ？なにかあるか？<br>
+			もみじ！提案とかないか？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			うーん、恋愛っていうと・・・恋人らしいことをすれば・・・街にでも行ってみる？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			町か……それって……デートってやつか！？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			うん、何かつかめるんじゃないかなって。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「名案ですなあ」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			そうか……そうだな！よし！じゃあデートだ！行こうぜ！<br>
+			デートか……とりあえず、て、手でもつないでみるか？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			その方がそれっぽいね。いいよ、はい。（手を差し出す）
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			（おそるおそる手を繋ぐ）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「おおう……」遠目から
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			な、何か緊張するな……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（あら？さっきの子じゃない）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			そう？じゃあ・・・行こうか。
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			お、おう！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			（すごく視線を感じる・・・）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「さすがはヒロシ殿……！」
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			-移動中-
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ねぇ、ご一緒してもいいかしら？（紅葉の肩を叩く）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「！！？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			7NW@7#2 幸運ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (7NW@7#2) ＞ 7+9[3,6] ＞ 16</span><br>
+			フフ…
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			ギターだ！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			そのつけ方じゃ、ダメよ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ひえっ……」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			さ、行きましょ！あのお店に入ったわ！
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			-町の楽器屋-
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			楽器かぁ・・・紅葉ちゃんから聞いてた通り、音楽が好きなんだね。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			（なぜ殺し屋のおば、お姉さん殿がこんな所に……！？）
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（無言のウィンク）<br>
+			※圧力を感じる…
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			おう！歌うのが大好きだぜ！<br>
+			ヒロシは歌、好きか？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			まぁ、そこそこ好きかな。よく友達にカラオケに連れてかれるし・・・
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			へぇ…カラオケかぁ…おれ行ったことないなぁ
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			そうなの？・・・意外だね。<br>
+			・・・じゃあ後で行ってみようか。
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			へへ……いいのか！？<br>
+			あ、けど、おれ、金の持ち合わせがあんまり……
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			仕方ない・・・そのくらい俺が出すよ。デートだしね。
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（ちょっと紅葉ちゃん！二人の話してる会話、聞こえた！？）
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			い、いいのか！！サンキュ！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「重いぃ......」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あら、私の胸がごめんなさいね<br>
+			カラオケにはさすがに乗り込めないわね…<br>
+			（歯噛みする）
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			ここがカラオケか……このぴこぴこはなんだ？スイッチってやつか！？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あの、何しにここへ？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ふふ、あなたと一緒よ
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			この機械をこうすれば歌いたい曲を・・・
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ラブソングを探しに！？」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ラブソング、ね<br>
+			ふふ…良い例えをするわね
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>樫山綴</b>
+			へぇ～よく知ってるな！<br>
+			こうだな！
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「お姉さん殿もご存じないのですな……恋愛を」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			うん？なにか言ったかしら？
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			そうそう、じゃあ俺も入れるか。
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			あれ……まちがえたかな？
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ほら、二人はカラオケ行っちゃったわよ？どうする？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「くっ、見えませぬ……」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			待つしか無いわねぇ…<br>
+			お茶、おごってあげるわよ
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>樫山綴</b>
+			は～楽しかった！あぁやって2人で歌うのも面白いな！
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			（ほんとに何しに来たんでしょうか……）
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			それはよかった。それで何かつかめそう？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			……おう！<br>
+			あ、クレープ……
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			いい笑顔だね。曲、出来たら俺にも聞かせてね。<br>
+			クレープ、食べる？
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あ、クレープ……」
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>樫山綴</b>
+			え、けど……
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			よしよし、あとでおごってあげるからね
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			すみませーん、クレープ２つお願いします。
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			毎度……り～いむ
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ッ！！！！
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ありがとうございます。はい、どうぞ。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「やはりヒロシ殿にまかせて正解だったようですなぁ～」
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>樫山綴</b>
+			あ、ありがと……
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（あら？平気そう…？これは彼も苦労しそうねぇ…）
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>樫山綴</b>
+			今日はありがとな急に<br>
+			おれんちビンボーでさ、いろんなことが初めてで楽しかった
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・ホントにね。紅葉ちゃんから急に言われたときはびっくりしたよ。<br>
+			楽しんでくれたなら、それで何よりだよ。
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			おう！おかげで歌詞の続きが浮かんできそうな気がしてきたぜ！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・楽しみにしてるよ。頑張って。
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			おう！今こそできる予感がするぜ！<br>
+			何ていうか、歌った瞬間、おれのなかからすげぇのが飛び出してきそうっていうかよぉ<br>
+			できたらおまえに一番に聴かせてやるからな！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			それは楽しみだ。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「よかったですなぁ～」
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p15">
+			<b>シーン6：悪夢の経過報告</b>
+			シーンプレイヤー：PC②
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ふふ、そう？<br>
+			あ、ちょっとここで私は終わりにするわね（駆け出す）
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>GM</b>
+			&nbsp;
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（急ぎ足でクレープ屋へ向かう）
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			&nbsp;
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「……？？？？？」
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…そちらはどう？
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			……どりーむ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…まさかあなたがそこにいるとはね…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			クレープ屋の店員になりすますくらいには順調だ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			お前はどうだ？シャドウよ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			わ、わたしもよ？（ウインクしてごまかす）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			武道館に手がかりはあったか？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…<br>
+			（無言のウインク）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			おれの調べでは人気アイドルが歌って踊ったりしていただけのようだが……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あれもなかなか&quot;青春&quot;だったわねぇ…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			どりーむ……<br>
+			それで？何がわかった？情報を交換しよう
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…！！<br>
+			さ、さきにそっちからどうぞ…？
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			うむ、どうやら霊詩魔王は哀れなやつのようだ<br>
+			お前のことだ、既に調べは付いているだろうが
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ふふ…（視線を一瞬そらす）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			やつは正しい召喚の呪文を唱えることによって真なる姿を現す<br>
+			だが、逆に召喚されるまで自身の姿を持たない
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			呪文…ね
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			それはやつがヤツ自身を呼び出す正しい呪文を忘却してしまったからにほかならない<br>
+			あいつは自身の正しい姿を忘れてしまった哀れなやつだ<br>
+			やつの呪文が失敗するのもそれが原因……と、わざわざ言う必要もなかったな？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ…そうね（ウィンクする）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			……やつは今、誰かの深層意識にいる<br>
+			心当たりはあるか？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			そうねぇ…<br>
+			ないわね
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			そうか……どりーむ<br>
+			……その行方を知ることが重要だな<br>
+			お前と接触するためにクレープ屋をしていたが……あの尾行していた２人ではないのか？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…（本当のことを知られたらまずい…）<br>
+			（話をずらさないと）<br>
+			そういえば、さっき一瞬だけ輝明学園で月匣が貼られたのよね<br>
+			つまり…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			つまり……？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			9NW@7#12 幸運ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#12) ＞ 9+10[2,5]+2[1,1] ＞ クリティカル ＞ 21</span><br>
+			「おねえさん殿、こんなところで今度はいったい何を……？」←気になってついてきた
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あら…！うふふ
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			キミは……さっきシャドウと一緒にいた協力者か
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「協力者？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			このお兄さんがクレープのおまけをしてくれるって引き止められたのよ（声をかぶせる）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ふふ……なるほど、そういうことか
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ってナイトメア殿！？ナイトメア殿まで手伝っていただけるのですか！？」
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ふふ……ナイトメア特性、紅イモクリームだ、どりーむ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ラブソング作りの！」
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			……何？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（しまったという顔）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「これは恐縮ですなあ」
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			おい、シャドウよ。これはどういうこと……
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「奥様とは一体どんな恋愛をされたのですかな？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（しめた！という顔）<br>
+			そ、そうよ！ぜひ聞かせてあげてくださいな
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ム！それを語るにはまずあの日のことから話さねばなるまい……<br>
+			そう、あれはねぶた祭りの夜のことだった……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（しまった、愛妻の話になるとすごい長いんだった…）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ふむふむ……」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			じゃ、じゃあ私はこのへんで…（小声で言って逃げようとする）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あれ？おねえさん殿？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			うふふ…乙女の時間はそんなに長くないのよ<br>
+			紅葉ちゃんもほどほどにね（全力ダッシュ）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			――そう、それはモケケピロピロだった……ム！<br>
+			……どりーむ
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			（今、何かがすごい勢いで走り抜けていった！）
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（逃げれたはいいけど、そろそろ本気で捜索しないとまずいわね…）
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			-情報収集シーン-
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			昨日はいろいろあって調べられなかったけど、DJモブが消えたのはこのあたりだったか・・・
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			◎DJモブ【幸運】<br>
+			◎樫山綴【感覚】
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「たしかにいろいろと妙でしたな……」<br>
+			＞モブ<br>
+			9NW@7#12 幸運ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#12) ＞ 9+11[5,6] ＞ 20</span>
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">情報</div>
+		<p class="player p2">
+			<b>GM</b>
+			◎DJモブ<br>
+			難易度：12<br>
+			カツとラップを愛するが人は愛さない悪の召喚士。<br>
+			ミミックリリックを召喚しようとするが失敗。諦めきれずに追跡するが、PCたちと交戦した後、謎の現象により消滅してしまう。<br>
+			<br>
+			難易度：14<br>
+			ミミックリリックは召喚される際に召喚者のプラーナを吸収して身体を構成する。<br>
+			DJモブが唱えた呪文は不完全なものだった為、すぐには大事に至らなかったが、PC達と交戦したせいでプラーナを使い切ってしまい消滅した。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			情報ソース：知識　使用<br>
+			11NW@6#3 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (11NW@6#3) ＞ 11+4[2,2] ＞ 15</span>
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">情報</div>
+		<p class="player p2">
+			<b>GM</b>
+			◎樫山綴<br>
+			<br>
+			難易度：15<br>
+			音楽を愛する少女。現在、自作の歌詞がうまく書けずに悩んでいる。<br>
+			趣味は食う・寝る・歌う。先日の体育の授業も、屋上で居眠りをして欠席したという。起き抜けに歌を歌っていたとの証言もある。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ではこの辺りに魔王が！？」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・のはずなんだけど。
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（あら…あそこにいるのは）<br>
+			（そういえば紅葉ちゃんはナイトメアのことを知っていた様子だったわね…ここのこと、聞いてみようかしら）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			昨日DJモブから感じたのと、似たような気配をどこかで感じた気がするんだよね・・・
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			◎霊詩魔王ミミックリリック【理知】
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			11NW@6#3 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (11NW@6#3) ＞ 11+8[2,6] ＞ 19</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			6NW@7#2 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (6NW@7#2) ＞ 6+9[5,4] ＞ 15</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			9NW@7#12 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#12) ＞ 9+6[5,1] ＞ 15</span>
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">情報</div>
+		<p class="player p2">
+			<b>GM</b>
+			◎霊詩魔王ミミックリリック<br>
+			<br>
+			難易度：13<br>
+			召喚されるたびに違う見た目で現れており、正確な姿は判明していない。<br>
+			DJモブに召喚されかけたが、呪文が不完全だったため、人の心のなかに迷い込んだ。現在、誰かの深層意識のなかにひそんでいる。<br>
+			<br>
+			難易度：16<br>
+			ミミックリリックは、取り憑いた人間の深層意識に働きかけ、召喚呪文を歌として唱えさせようとしている。呪文が完璧であるほど完全な姿で召喚される。<br>
+			その正体は、特定の姿形を持たず、召喚者の見た目を奪って顕現するシェイプシフターのようなもの。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			俺の追っていたミミックリリックは・・・（情報共有）
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（…うん？ミミックリリックって聞こえたわね）<br>
+			私もその話に加わっても良いかしら？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			あ、あなたは！確か前にカジノで・・・
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「また不審者！？……なんだおねえさん殿でしたか……」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			紅葉ちゃんは昨日気づいたけど、夏目クンも&quot;そう&quot;だったなんてね
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			そう・・・？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ<br>
+			昨日の月匣も、もしかして貴方達が？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あれはＤＪの仕業ですぞ！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			DJ…？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			あぁ、あれは俺と紅葉ちゃんが・・・ってあなたもウィザードだったんですね！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ、そうよ<br>
+			（この様子ならこの子達が召喚士…てことはなさそうね）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「お二人も知り合い同士だったとは……奇遇でありますな」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ、本当にね<br>
+			この色男さん
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			さて…さっき話していた情報、もう少し詳しく教えてくれるかしら？<br>
+			（二人から情報を聞き、ナイトメアから入手した情報をこちらからも共有した）
+		</p>
+		<p class="player p16">
+			<b>シーン7：RE悪夢の経過報告</b>
+			シーンプレイヤー：PC②
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あら…？
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			どうやらわかったようだな……どりーむ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ナイトメア殿は魔王を調べていたのですな！」
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			そうだ、任務だからな<br>
+			世界の危機に他のことにうつつを抜かすことなどあるまい
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ナイトメア・・・？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…（冷や汗をかく）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・！昨日のクレープ屋の店員さん！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「……あれ？では昨日のお姉さん殿は一体何をされていたので……？」
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			どりーむ……フリーのウィザードだ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			&quot;情報共有&quot;よ
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			……シャドウ。こちらもようやく裏が取れたが……やつが潜んでいる目星はついたか？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ、恐らく。
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ふむ、聞こう
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			私達は呪文、という言葉に私は囚われすぎていたわ
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（さて…どうごまかそうかしら…）<br>
+			もみじちゃん、陰陽道で唱えるのは呪文ではないわよね？<br>
+			&nbsp;
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「そうなのですか！？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			え、えぇ（しまった…！人選を間違えたわ）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			祝詞・・・そうか！詞だ！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（しめた！という顔）<br>
+			そ、そう！
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			詞……？<br>
+			なにがいいたい？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「なるほど！？？」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			えぇと、俺たちはラブソング・・・ある人物の恋の詞を作る手伝いをしていたんです。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「……つまりどういうことで？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…えぇ
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			なに…！？それはまさしくヤツの……！？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「恋の……詩！！？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（ウィンクする）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			えぇ、もしかしたらミミックリリックが関係・・・してしまうかもしれません。
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			……それで、そのラブソングを作っていたものにやつが潜んでいる……ということか<br>
+			そいつの名は？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（焦った顔で二人を見る）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「これはもしかして綴殿危ないのでは？」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			「綴」・・・樫山 綴です。
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（うなずく）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			……どりーむ<br>
+			なるほど、その娘だったか……昨日クレープ屋でみた娘だな？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			はい、俺と一緒にいたあの子です。
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ふっ……なるほどなシャドウ、昨日の尾行はそういうことか
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ（そういえばこの子たち、ラブソングを作るって言ってたわね…まさかあの子が…！？）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			あの・・・相馬さん、すごい汗ですけど・・・<br>
+			大丈夫ですか・・・？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ッ！！　昨日の疲れが出ちゃったかしらね
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「だからお姉さん殿は……、綴殿に最初から目をつけて……！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			うふふ…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ム！熱があるのか？わるいがソーシャルディスタンスに気をつけてくれ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ごめんね、昨日は教えられなくて<br>
+			あら、ありがとう
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「な、なぜ綴殿だと分かったのです！？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…フフ
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ふっ……そもそも最初から武道館を攻めていたからなあんな事は言っていたがシャドウは初めから音楽関係者に絞っていたのだろう
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			さ、さて…わかったところで…行きましょうか？<br>
+			（罪悪感が勝ってきたようだ）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			（笑顔が引きつって見えるような・・・）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			……打てる手はふたつ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ、そうね
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ひとつはその娘を殺すことだ。そうすれば召喚を防ぐことはできる<br>
+			もっとも、ミミックリリックが別の者に取り憑かないという保証はない
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「なんですと！？」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・。
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			娘を傷つけずにと言うならば、敵をあえて表界に召喚するしかあるまい<br>
+			だが敵が完全な召喚呪文で現われれば、倒すのは困難だ<br>
+			さらに娘のプラーナは奪い去られどちらにせよ娘は助からないだろう
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			そうね…
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「！？」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			なら、どうすれば・・・
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「なにか……なには方法はないのですかな！？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			つまり娘を救うには、やつに都合の悪い……つまり間違えた召喚呪文で召喚してやればいい
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			歌わないで秘めておく…ってのはダメなのかしら？
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			彼女から歌を奪うということか？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…！<br>
+			やめておきましょう（即決）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			人柱的な封印だな……調べたところ過去に例はあったようだが<br>
+			大抵の場合耐えられない上、娘はいつ爆発するかもわからん爆弾を抱えることになるぞ
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・だとすると、間違えた召喚呪文・・・というのが理想的ですね。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「つまり……ラップ！」
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			……どりーむ<br>
+			要は、ミミックリリックを弱体化させるかたちで歌詞を完成させればいい、ということだ。夢使いの出番だな<br>
+			彼女は今何処にいる？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ほぉー！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えっと…（ちらりと見る）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「次は体育でしたか！綴殿は昨晩も作曲に更けていたはず！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			だとすると・・・屋上かもしれない。
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ほう……よし！ついてこい！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…
+		</p>
+		<p class="player p17">
+			<b>シーン8：夢のなかへ</b>
+			シーンプレイヤー：PC②
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			すやすや……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			ほう、これは好都合……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			じゃあ任せたわよ、ナイトメアさん
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			いまが好機だ。娘の夢のなかへ、お前たちを送り込む。お前たちが事で娘に働きかけ、歌詞を完成させるのだ<br>
+			夢を通じれば娘の深層意識に働きかけることは容易<br>
+			だが、それは同時にミミックリリックとの接触の危険性もある
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			そうね
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「承知ですぞ！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・わかりました。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「この4人ならたとえ魔王相手でも！！」
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			見つかれば全力で妨害されるだろう、深層意識の中にいるやつは無敵……間違っても戦うなよ……ム！<br>
+			む?待て。(受話器に向かって)もしもし……何だお前か。いま仕事中……何、子どもが熱を!?いやしかしこれから…わ、分かった、すぐ戻る。もう切るぞ……
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ほげぇ！夢って面倒ですなぁ！」
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			え？何？いま？いま言うのか？(小声で)あ、愛しているよ……
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・ナイトメアさん？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			おほん。どうやら急な仕事が入ってしまった。お前たちを夢のなかへと送ったあと、すぐに行かねばならん。あとは任せたぞ。何、お前たちならできるっ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ほえぇ！？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			えぇ！？ナイトメアさんは来てくれないんですか！？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あら…ここからだったのに
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			そうだ！もっと危険な危機が迫っている！最後まで力になれず悪いがこちらも大事だこのご時世！<br>
+			代わりと言っては何だが、これを渡しておこう。健闘を祈る
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			（ハイHPポーションを１つずつ入手した）
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			では、準備はいいな？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「はいな！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ええ、任せて
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			（なんかいろいろ腑に落ちないけど）お願いします。
+		</p>
+		<p class="player p8">
+			<b>ナイトメア</b>
+			では、ナイトメアの夢語りを始めよう<br>
+			「「「どりーむどりーむ……」」」
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あーーーーれーーーー！！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ぜったいさっきのでんわ・・・しごとじゃない・・・ｽﾔｧ
+		</p>
+		<p class="player p18">
+			<b>シーン9：悩めるリリック＆ガール</b>
+			シーンプレイヤー：PC③
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ここは・・・
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			まるで昨日の景色ね
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			うーん…<br>
+			ちがうんだよなぁ～
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			樫山・・・さん・・・？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			ん？あれ？ヒロシ？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「綴殿～！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ふふ…（フードを取る）
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			もみじも！<br>
+			……あ、そっか、手伝ってくれるんだもんな<br>
+			……？<br>
+			ま、いいや！それより早く手伝ってくれよ！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「……え？」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			どうした？もみじ？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「……あれ？いや」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			完成させるんだろ？
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			【筋力】15
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			私も混ぜてもらってもいいかしら？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			ん？おう！<br>
+			良い歌にしてくれよ！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・完成させよう。
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ<br>
+			7NW@7#2 筋力ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (7NW@7#2) ＞ 7+10[4,3]+5[4,1] ＞ クリティカル ＞ 22</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			4NW@6#3 筋力ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (4NW@6#3) ＞ 4+11[6,5] ＞ 15</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			5NW@7#12 筋力ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@7#12) ＞ 5+8[3,5] ＞ 13</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			１ｄ６ <br>
+			<span class="diceroll">NightWizard3rd : (1D6) ＞ 1</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			1d6 <br>
+			<span class="diceroll">NightWizard3rd : (1D6) ＞ 5</span>
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			PC2［ちょっとおめかし］<br>
+			PC3［三陸線赤岩駅］<br>
+			なるほどなぁ～
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			つい地元の駅を・・・
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			女の子なら、そうしたくなるわよね
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			……なぁ流石にヒロシのはないんじゃないか？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ヒロシ殿～」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			こっちのほうがよさそうだしこれにしとくか
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			い、いや！ほら、綺麗ないいところだから！
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			PC3［三陸線赤岩駅］→［この世界滅ぶまで］<br>
+			よし！OK!
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ヨシ！」<br>
+			「あーーーーれーーーー！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			か、変えられてしまった・・・
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「三陸線赤岩駅？」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			【理知】14
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			6NW@7#2 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (6NW@7#2) ＞ 6+4[3,1] ＞ 10</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			9NW@7#12 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#12) ＞ 9-10[6,6] ＞ ファンブル ＞ -1</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			11NW@6#3 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (11NW@6#3) ＞ 11+5[3,2] ＞ 16</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 柴田 紅葉 ] プラーナ : 4 → 3
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			21<br>
+			1d6 <br>
+			<span class="diceroll">NightWizard3rd : (1D6) ＞ 3</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			1d6 <br>
+			<span class="diceroll">NightWizard3rd : (1D6) ＞ 2</span>
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			PC1→［キサマのほう］<br>
+			PC2→［-］<br>
+			PC3→［Like a daydream］<br>
+			うーん……<br>
+			キサマのほうってひどくないか？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「うーん……」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			こっちのほうがいいだろ……決定！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あら…
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			PC1［キサマのほう］→［ナンジのほう］
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			【感覚】12
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			6NW@7#12 感覚ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (6NW@7#12) ＞ 6+10[1,6]+10[4,3]+9[5,4] ＞ クリティカル ＞ 35</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			9NW@7#2 感覚ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#2) ＞ 9+8[4,4] ＞ 17</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			5NW@6#3 感覚ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@6#3) ＞ 5-10[1,2] ＞ ファンブル ＞ -5</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「……？？」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			PC1［キサマのほう］→［闇の底］<br>
+			これで行こう
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			随分とあっさり決めるのね
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「なんか綴殿の歌詞、暗くないですかな？」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			今のこの子は樫山綴であって、樫山綴じゃないんだろう・・・
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「うーん？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			紅葉ちゃん、なにか感じる？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「うーん」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			みんなのおかげで段々といい感じになってきたぜ！<br>
+			ありがとな！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「！？」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			？あ！次の場所だぞ！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あら…？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			6NW@7#12 器用ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (6NW@7#12) ＞ 6+5[2,3] ＞ 11</span>
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			【器用】16
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			9NW@7#2 器用ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#2) ＞ 9+10[3,4]+9[4,5] ＞ クリティカル ＞ 28</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			7NW@6#3 器用ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (7NW@6#3) ＞ 7+9[5,4] ＞ 16</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			1ｄ6 <br>
+			<span class="diceroll">NightWizard3rd : (1D6) ＞ 1</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			1d6 <br>
+			<span class="diceroll">NightWizard3rd : (1D6) ＞ 5</span>
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			PC1→［-］<br>
+			PC2→［恋のトキメキ］<br>
+			PC3→［仮面をつけてる］
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			こうかしら…？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			恋のトキメキ……？うーん歌詞が安易すぎるだろ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…！！！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			仮面は・・・いいよな？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			……うーん？いや？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			こう・・・気持ちを隠すみたいな・・・
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			なんだかなぁ～もっとはっきり歌詞にしろYOな～
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（私のセンス安易すぎ…？）
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・っ
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			どっちもダメだな！これにしようぜ！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「そんな……お姉さん殿が無い経験から絞り出した歌詞を！！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…！！！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あんまりですぞ……」
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			【理知】11
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			9NW@7#12 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#12) ＞ 9+10[4,6] ＞ 19</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			11NW@6#3 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (11NW@6#3) ＞ 11+10[2,4]+3[1,2] ＞ クリティカル ＞ 24</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…（ピキッ）<br>
+			6NW@7#2 理知ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (6NW@7#2) ＞ 6+6[5,1] ＞ 12</span>
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			だよなぁ～経験ないやつほど比喩ってのができないって言うし<br>
+			そんじゃ、ここで変えてお終い！完成だな！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あらあらウフフ…
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			PC1→［-］<br>
+			PC2→［恋のトキメキ］→［世を滅ぼす定め］<br>
+			PC3→［仮面をつけてる］→［眠りから目覚めよ］
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			流石にそれはないんじゃないかしら…？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			えー？そうかー？これでいいと思うけどな～<br>
+			……冷静に考えたらさっきの2つも変だったしオレサマがもっといいのにしとくよ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			比喩を使いすぎたら誰もわからなくなるわよ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「センスが魔王的ですぞ！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			&quot;安易&quot;、なのがみんなの心にも響くのよ
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			ン～？そうだなぁ～<br>
+			まぁいいだろ？そんなのオレサマの勝手だぜ？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・リリック・・・
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「オレサマ！？」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ふふ…
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			お前は・・・<br>
+			ミミックリリック・・・なんだろ？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			ン～？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…！（フードを被り直す）
+		</p>
+		<p class="player p9">
+			<b>？？？</b>
+			私が？<br>
+			俺が？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「そんな、夢の中の綴殿にまで！？」
+		</p>
+		<p class="player p9">
+			<b>？？？</b>
+			✕◎◆◆
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			まずい…！<br>
+			これ以上の接触は避けて！
+		</p>
+		<p class="player p9">
+			<b>？？？</b>
+			そうだ！
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			オレサマがミミックリリックだよぉ！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ほげぇーー！？」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			なんだぁ？ビビってんのかよもみじ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			喧嘩はやめなさい！
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			ちょっとは足りない脳みそ働かせようぜオイ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ビビッてなんかおりませんぞ！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			最初に姿を見た時からそんな気はしてた・・・でも・・・
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			言えねぇよなぁ？ヒロシ昨日あったばっかりのおまえじゃな！？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（まずい…ここでの戦闘は避けてと言われていたはず…）
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			それにしてもこんな間抜けが親友で可愛そうだぜぇ～
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「なんですとー！！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			それとも？覚えられてないほど綴ってやつは存在感が薄いのか？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			昨日会ったばかりだとしても・・・あの子は・・・綴はそんな・・・！人の思いを踏みにじるような人じゃない！<br>
+			あの笑顔は心からの笑顔だった！それ以上その姿で話すな！！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「そうだー！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			お～お～お熱いねぇ～<br>
+			もう少し早く綴にあってりゃ少しは救われたろうに<br>
+			……よし、決めたぜそんなに思ってくれるなら世界を滅ぼすのはやめだ<br>
+			詩を完璧にしてオレサマが樫山綴として成り代わってやる！<br>
+			いいだろ？どうせもともと誰にも相手にされてないんだから……
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ふざけたことをぬかすな！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			綴はこの世に必要ない、オレサマは自分の姿がほしい……winwinってやつだな
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…かわいそうな子<br>
+			必要ないのは…どちらかしら？
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			綴ちゃんだろ？知ってるぜぇ～？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・黙って聞いていれば調子に乗りやがって！！
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			事実だぜ？誰からも興味を持たれないんだからそうだろう？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			友達は紅葉がいる！俺もいる！！そして・・・
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			友達ぃ～？<br>
+			こいつかぁ～？
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あらあら…
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「一体何を見て来てそんなことを！！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			お前は何を見てきたんだぁ？
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			あの子は俺に一番に歌を聞かせてくれると約束した！俺はそれを楽しみに待ってるとも言った！！<br>
+			「期待されてない」なんて、何も知らないお前が言うんじゃない！！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（そういえば、綴ちゃんはなぜラブソングを作ろうとしていたのかしらね？）
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			お～お～かっこいいねぇ～<br>
+			まぁでも、だからこそラブソングは本気で作ってたのかもなぁ～<br>
+			数少ない期待されてた場面だしな……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			そこから輝く青春もあるのよ？
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			まぁ……そんな未来もあったかもな……<br>
+			けど残念！ここで樫山綴の冒険は終わってしまった！ここからはこの霊詩魔王ミミックリリック様のターンよ！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「そうだ！拙僧も、ヒロシ殿も、（なぜか）お姉さん殿も！皆その時を待っておられる！皆がラブソングを待っているんだ！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			乙女の青春を潰す気かしら…？<br>
+			用無しはどっちか明確になったわね
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「汝なんぞにつぶさせはしない！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			……1vs3か、寂しい数字だがしょうがない<br>
+			お前らのdisなんて聞こえねぇけどな！<br>
+			チッ！長話が過ぎたか......<br>
+			ま、ここまで出来てれば残りのプラーナは召喚されてからでも埋め合わせできるだろ……
+		</p>
+		<p class="player p20">
+			<b>シーン10：ラブソング見つけて</b>
+			シーンプレイヤー：PC①
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「……」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			&nbsp;
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			&nbsp;
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			&nbsp;
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			お？もみじじゃん。それにヒロシまで……何してんだ、そんなとこで<br>
+			ま、いいや。そんなことより聞いてくれよ。寝ているあいだに歌詞が思いついたんだよ。今度こそ最高の歌詞だぜ。さっそく歌ってみるから、ちょっと聴いてくれ
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			あぁ・・・またさぼってるんじゃないかと思って様子を見に来たんだ。
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（遠目から見ている）
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			さぁ聞いてくれ！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・出来たんだな・・・聞かせてくれ。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「綴殿……」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			～ラブソング探して～<br>
+			今日はドキ☆ドキ［侵魔召喚］いつもより［ちょっとおめかし］して［もっと呪文詠唱］<br>
+			［闇の底］から［今こそ来たれ］なんて［Like a daydream］<br>
+			［闇が生まれし］時から［世を滅ぼす定め］感じてたキミはいつでも［眠りから目覚めよ］
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			来るわよ…！！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「！！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			ぬおおおおお！！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・。
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			チッ、やっぱり多少はガタがきてるか<br>
+			まぁいいさ！てめぇらを始末して残りのプラーナもいただいてやる！<br>
+			ようやくオレサマが手に入る……私はこの世で唯一つの姿になる！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あやつ！復活は完全ではありませんぞ！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			邪魔だウィザード！おれの前から消えろ！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・今度こそ終わらせてやる。
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…手伝うわ
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			セットアッププロセス<br>
+			1ラウンド
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			《闇のパレード》
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			10NW@7#2 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@7#2) ＞ 10+10[5,2]+8[6,2] ＞ クリティカル ＞ 28</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			7NW@7#12 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (7NW@7#12) ＞ 7+11[6,5] ＞ 18</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			11NW@6#3 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (11NW@6#3) ＞ 11+9[5,4] ＞ 20</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（戦闘こそが&quot;シャドウ&quot;の本懐…ようやく命を賭すスリルが味わえるわ！）<br>
+			ムーブアクション：グランドスラム「攻撃が範囲化」<br>
+			マイナーアクション：サイコポインター「命中＋４」MP-7
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] MP : 23 → 16
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…ソニックアサルト！！<br>
+			9NW+2@7#2 命中ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW+2@7#2) ＞ 11+5[3,2] ＞ 16</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			5NW@10#5 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+6[4,2] ＞ 11</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			20NW+12@7#2 物攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (20NW+12@7#2) ＞ 32+8[2,6] ＞ 40</span>
+		</p>
+		<p class="player p21">
+			<b>闇の音楽隊A</b>
+			《護衛》カバーアップ！→ミミックリリック
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			爆ぜなさいッ！！
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] プラーナ : 5 → 4
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			2d6 <br>
+			<span class="diceroll">NightWizard3rd : (2D6) ＞ 10[5,5] ＞ 10</span>
+		</p>
+		<p class="player p22">
+			<b>闇の音楽隊B</b>
+			「何もせずに帰る」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			出来損ないのコピーだ……未練もないぜ<br>
+			《宵闇の調べ》<br>
+			オレサマの歌を聞かせてやる！！<br>
+			15NW@10#5 魔導ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (15NW@10#5) ＞ 15+8[5,3] ＞ 23</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			9NW@7#2 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#2) ＞ 9+9[5,4] ＞ 18</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			5NW@6#3 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@6#3) ＞ 5+7[1,6] ＞ 12</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			3NW@7#12 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (3NW@7#12) ＞ 3+5[2,3] ＞ 8</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] プラーナ : 5 → 4
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ダイス操作<br>
+			15+2ｄ6NW<br>
+			15NW <br>
+			<span class="diceroll">NightWizard3rd : (15NW@6#0) ＞ 15+11[5,6] ＞ 26</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			25NW@10#5 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (25NW@10#5) ＞ 25-10[4,1] ＞ ファンブル ＞ 15</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			4NW@7#2 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (4NW@7#2) ＞ 4+8[2,6] ＞ 12</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			13NW@7#12 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (13NW@7#12) ＞ 13+10[1,6]+2[1,1] ＞ クリティカル ＞ 25</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] HP : 28 → 25
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			クッ！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あれ？魔王なのに……？」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			ぐすっ……無視しないで皆……<br>
+			てなぁ～ひどいよなぁ～<br>
+			無視ってのは応えるぜぇ～オレサマもわかるよ～
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あやつめー！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			さみだれ打ち！<br>
+			10NW@6#3-2 魔導ジャッジ　対象ミミックリリック <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3-2) ＞ 8+8[3,5] ＞ 16</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			5NW@10#5 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+8[2,6] ＞ 13</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			10NW@6#3 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3) ＞ 10+10[4,6] ＞ 20</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			5NW@10#5 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+10[5,5]+8[5,3] ＞ クリティカル ＞ 23</span><br>
+			痛い……やめてくれヒロシ……
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・やめろ。
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			いやらしいことするわね…
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			……これは初体験だな～お前もか？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ぐぬぬ……」
+		</p>
+		<p class="player p23">
+			<b>D(ar)KMob</b>
+			8NW@10#5 《轢き逃げラップ！！》命中ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (8NW@10#5) ＞ 8+7[6,1] ＞ 15</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			5NW@6#3 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@6#3) ＞ 5-10[1,2] ＞ ファンブル ＞ -5</span>
+		</p>
+		<p class="player p23">
+			<b>D(ar)KMob</b>
+			12NW+3@10#5 《轢き逃げラップ！！》ダメージ <br>
+			<span class="diceroll">NightWizard3rd : (12NW+3@10#5) ＞ 15+7[1,6] ＞ 22</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			3NW@6#3 物防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (3NW@6#3) ＞ 3+5[2,3] ＞ 8</span><br>
+			・・・ッ！マナスクリーン！
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] MP : 28 → 20
+		</p>
+		<p class="player p23">
+			<b>D(ar)KMob</b>
+			YO!YO!DIE!YEAH!!
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] HP : 19 → 12
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			＞主への奉仕<br>
+			「式神どの！起きてくだされ！」
+		</p>
+		<p class="player p24">
+			<b>式神</b>
+			「んん？」<br>
+			「あー、よく寝た」<br>
+			「なんかえらい魔力を感じるわね……」
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「魔王！魔王ですぞ！」
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 柴田 紅葉 ] プラーナ : 3 → 2
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			2ラウンド目セットアップ<br>
+			&nbsp;
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			《闇のパレード》
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			＞シナリオ終了まで魔攻ジャッジ＋１０<br>
+			7NW@7#12 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (7NW@7#12) ＞ 7+5[1,4] ＞ 12</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			10NW@7#2 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@7#2) ＞ 10+10[6,1]+4[1,3] ＞ クリティカル ＞ 24</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			11NW@6#3 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (11NW@6#3) ＞ 11+10[4,2]+7[6,1] ＞ クリティカル ＞ 28</span><br>
+			邪魔をするな！！さみだれ打ち！<br>
+			10NW@6#3 魔導ジャッジ　DJ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3) ＞ 10+9[3,6] ＞ 19</span><br>
+			10NW@6#3+14 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3+14) ＞ 24+8[6,2] ＞ 32</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			《宵闇の調べ》<br>
+			15NW@10#5 魔導ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (15NW@10#5) ＞ 15+11[5,6] ＞ 26</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			9NW@7#2 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#2) ＞ 9+12[6,6] ＞ 21</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			5NW@6#3 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@6#3) ＞ 5+11[5,6] ＞ 16</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			25NW@10#5 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (25NW@10#5) ＞ 25+7[2,5] ＞ 32</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			7NW@6#3 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (7NW@6#3) ＞ 7+4[2,2] ＞ 11</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			4NW@7#2 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (4NW@7#2) ＞ 4+11[5,6] ＞ 15</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] プラーナ : 4 → 3
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			達成値の上昇<br>
+			11+2ｄ6 <br>
+			<span class="diceroll">NightWizard3rd : (11+2D6) ＞ 11+12[6,6] ＞ 23</span><br>
+			マナスクリーン
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] MP : 20 → 13
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			はははは！！聞けぇ！！
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] MP : 13 → 12<br>
+			[ 夏目ヒロシ ] HP : 12 → 10<br>
+			[ 相馬　亜子（あこ） ] HP : 25 → 8
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			マイナー：HHPP使用<br>
+			5nw <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+9[3,6] ＞ 14</span><br>
+			={hp}+14
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] HP : 8 → 22
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ソニックアサルト！<br>
+			9NW-2@7#2 命中ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW-2@7#2) ＞ 7+8[5,3] ＞ 15</span>
+		</p>
+		<p class="player p21">
+			<b>闇の音楽隊A</b>
+			《護衛》
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			5NW@10#5 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+7[3,4] ＞ 12</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			20NW+12@7#2 物攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (20NW+12@7#2) ＞ 32+11[5,6] ＞ 43</span>
+		</p>
+		<p class="player p23">
+			<b>D(ar)KMob</b>
+			8NW@10#5 《轢き逃げラップ！！》命中ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (8NW@10#5) ＞ 8-10[2,3] ＞ ファンブル ＞ -2</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			9NW@7#2 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW@7#2) ＞ 9-10[1,1] ＞ ファンブル ＞ -1</span><br>
+			しまった…！
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] プラーナ : 4 → 3
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…！<br>
+			（ファンブル打ち消し）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			魔法攻撃→ミミックリリック<br>
+			10NW@7#12 魔導ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@7#12) ＞ 10+10[6,4] ＞ 20</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			5NW@10#5 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5-10[3,2] ＞ ファンブル ＞ -5</span>
+		</p>
+		<p class="player p22">
+			<b>闇の音楽隊B</b>
+			《護衛》
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			18NW+10@7#12 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (18NW+10@7#12) ＞ 28+5[1,4] ＞ 33</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 柴田 紅葉 ] プラーナ : 2 → 1
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			2d6 <br>
+			<span class="diceroll">NightWizard3rd : (2D6) ＞ 5[4,1] ＞ 5</span>
+		</p>
+		<p class="player p22">
+			<b>闇の音楽隊B</b>
+			「飲酒せずに帰る」
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			3ラウンド目セットアップ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			10NW@7#2 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@7#2) ＞ 10+6[5,1] ＞ 16</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			11NW@6#3 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (11NW@6#3) ＞ 11+10[3,3]+7[3,4] ＞ クリティカル ＞ 28</span>
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			7NW@7#12 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (7NW@7#12) ＞ 7+10[1,6]+9[5,4] ＞ クリティカル ＞ 26</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] プラーナ : 3 → 2
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			20nw <br>
+			<span class="diceroll">NightWizard3rd : (20NW@7#0) ＞ 20+5[1,4] ＞ 25</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			さみだれ打ち　ミミック<br>
+			10NW@6#3 魔導ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3) ＞ 10+9[3,6] ＞ 19</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			5NW@10#5 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5-10[4,1] ＞ ファンブル ＞ -5</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			10NW@6#3+14 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3+14) ＞ 24+7[4,3] ＞ 31</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			くっ……身体が上手く動かない……<br>
+			5NW@10#5 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+10[5,5]+12[6,6] ＞ クリティカル ＞ 27</span><br>
+			……なぁ～んちゃって
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			魔法攻撃　リリック
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			けど安心したぜ～やっぱりヒロシはやさしいよなぁ～
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			10NW@7#12 魔導ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@7#12) ＞ 10+6[4,2] ＞ 16</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			5NW@10#5 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+11[6,5] ＞ 16</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ミミックリリックゥゥ！！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			18NW+10@7#12 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (18NW+10@7#12) ＞ 28+9[6,3] ＞ 37</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			綴はホントによろこんでたんだぜ～<br>
+			5NW@10#5 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+8[6,2] ＞ 13</span><br>
+			&nbsp;
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「黙れぃ！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			ひどいなもみじ……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			おしゃべりはそこまでよ
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			オレサマにかまってくれたのはもみじだけだぜ……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			サイコポインター「命中＋４」MP-7
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] MP : 16 → 9
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ソニックアサルト！<br>
+			9NW+2@7#2 命中ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW+2@7#2) ＞ 11+10[5,2]+5[2,3] ＞ クリティカル ＞ 26</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			5NW@10#5 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+9[6,3] ＞ 14</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			20NW+12@7#2 物攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (20NW+12@7#2) ＞ 32+9[3,6] ＞ 41</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			2NW@10#5 物防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (2NW@10#5) ＞ 2-10[1,4] ＞ ファンブル ＞ -8</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] プラーナ : 2 → 1
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			41nw <br>
+			<span class="diceroll">NightWizard3rd : (41NW@10#5) ＞ 41+11[6,5] ＞ 52</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] プラーナ : 1 → 0
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			52+2d6 <br>
+			<span class="diceroll">NightWizard3rd : (52+2D6) ＞ 52+9[6,3] ＞ 61</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			《カラミティ》
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			チッ！<br>
+			&gt;52DMG
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			痛い……痛いよぉ……
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「またそんな芝居を！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…いい顔
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			もみじ……どうして助けてくれないの…？変なおばさんがおれを殺そうとするんだ……
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			…！！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あっ……」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			だからこっちが殺してやらなきゃな！<br>
+			《宵闇の調べ》
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（再度照準をあわせる）
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			15NW@10#5 魔導ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (15NW@10#5) ＞ 15+6[4,2] ＞ 21</span>
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">雑談</div>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（ちなみに、数値動かすには「:HP-数字」とするといいわよ）
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			護法童子　あこ
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			5NW@6#3 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@6#3) ＞ 5+10[5,5] ＞ 15</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			9NW+4@7#2 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW+4@7#2) ＞ 13+6[4,2] ＞ 19</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] プラーナ : 3 → 2
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			達成値の上昇<br>
+			15+2ｄ6 <br>
+			<span class="diceroll">NightWizard3rd : (15+2D6) ＞ 15+8[3,5] ＞ 23</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			25NW@10#5 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (25NW@10#5) ＞ 25+10[6,4]+5[4,1] ＞ クリティカル ＞ 40</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			4NW@7#2 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (4NW@7#2) ＞ 4+10[3,4]+5[3,2] ＞ クリティカル ＞ 19</span><br>
+			クッ！！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			マナスクリーン
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] MP : 12 → 4
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			どうだぁ？痛いか？
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 相馬　亜子（あこ） ] HP : 22 → 8
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あはは！このスリルよ！！<br>
+			夏目クン、ありがと
+		</p>
+		<p class="player p12">
+			<b>DJモブ</b>
+			8NW@10#5 《轢き逃げラップ！！》命中ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (8NW@10#5) ＞ 8+4[1,3] ＞ 12</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 柴田 紅葉 ] MP : 22 → 12
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			護法童子　あこ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			9NW+4@7#2 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (9NW+4@7#2) ＞ 13+12[6,6] ＞ 25</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 柴田 紅葉 ] MP : 12 → 2
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			紅葉ちゃんもありがと
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			4ラウンド目セットアップ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「あと一息ですぞ！」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			えぇ！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			（うなづく）
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			なんだよ……仲良さそうに……。
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			7NW@7#12 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (7NW@7#12) ＞ 7+10[4,6] ＞ 17</span>
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			10NW@7#2 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@7#2) ＞ 10+10[6,4] ＞ 20</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			11NW@6#3 行動値ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (11NW@6#3) ＞ 11+10[5,5] ＞ 21</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] プラーナ : 2 → 1
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			達成値の上昇<br>
+			21+2ｄ6 <br>
+			<span class="diceroll">NightWizard3rd : (21+2D6) ＞ 21+6[3,3] ＞ 27</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 柴田 紅葉 ] プラーナ : 1 → 0
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			２ｄ６ <br>
+			<span class="diceroll">NightWizard3rd : (2D6) ＞ 9[6,3] ＞ 9</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			やめてくれヒロシ……
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] MPポーション : 3 → 2
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			嫌だ……
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			NW <br>
+			<span class="diceroll">NightWizard3rd : (NW@6#3) ＞ 0+7[2,5] ＞ 7</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] MP : 4 → 11
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ミミックリリックにさみだれ打ち<br>
+			10NW@6#3 魔導ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3) ＞ 10+10[4,2]+12[6,6] ＞ クリティカル ＞ 32</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			嫌だ……<br>
+			お、おれは……
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			重なった熱き思いが世界を希望の未来に再構築する！
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			おれは……<br>
+			われは……<br>
+			《黒き触手のリズム＆ライム》<br>
+			5NW+10@10#5 回避ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW+10@10#5) ＞ 15-10[1,4] ＞ ファンブル ＞ 5</span>
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			10NW@6#3+14 魔攻ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (10NW@6#3+14) ＞ 24+10[2,4]+4[3,1] ＞ クリティカル ＞ 38</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			5NW@10#5 魔防ジャッジ <br>
+			<span class="diceroll">NightWizard3rd : (5NW@10#5) ＞ 5+6[4,2] ＞ 11</span>
+		</p>
+		<p class="player p0">
+			<b>system</b>
+			[ 夏目ヒロシ ] プラーナ : 1 → 0
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			達成値上昇<br>
+			38+2ｄ6 <br>
+			<span class="diceroll">NightWizard3rd : (38+2D6) ＞ 38+2[1,1] ＞ 40</span>
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			&nbsp;
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「今分かりましたぞ！孤独で寂しいのはミミックリリック！汝自身よ！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			わ、わたしは……
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「拙僧らに構ってほしいからこんなひどいことを言う！」
+		</p>
+		<p class="player p19">
+			<b>ミミックリリック</b>
+			われは……<br>
+			”自分”が欲しかった……あぁ……もう……思い……せ……
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・さよならだ。
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			どうだ!いい歌だっただろ。最高傑作だぜ
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			・・・あぁ、アンコールをお願いしてもいいかな？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			え……<br>
+			も、もう一回？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ええ！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			し、しょうがねぇ……も、も一回だけな！
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			（拍手）
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			（これも青春ねぇ）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「おおおおおお！！！！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			よお、もみじ見ててくれたか？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「無論ですぞー！」
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			ライブ、おつかれさま。さすがだね。
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			へへ、もみじたちのおかげで大盛況だったぜ！ほんと、ありがとな！<br>
+			あ、うん
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			フフ…良かったわよ
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			あ、あぁサンキュ！<br>
+			（誰だろ……どっかで見たような……）
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「最高でしたぞー！！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			……あ！夢の中だ！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			うふふ
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			そうそう皆が夢の中に出てきてさ、そしたらなんか歌詞が湧いてきて……<br>
+			あれ、けどそれを夢のおれが嫌がってたな……うーんなんかごめんな
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			前に聞かせてくれた時よりさらに上手くなってるよ。・・・差し入れ持ってきたけど、いる？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			あ、あぁ、うん！いるいる！
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			相変わらず夏目クンはイイ子ね<br>
+			私が彼女に立候補しちゃおうかしら？
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			え、え、え
+		</p>
+		<p class="player p5">
+			<b>夏目ヒロシ</b>
+			もう・・・からかってますね？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「それは少々きついのでは……」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			ふふふ<br>
+			もみじちゃんはちょっと後でこっちね
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ひぇ……」
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			綴ちゃん！命短し恋せよ乙女、よ
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			お、おぉ……大人だ……
+		</p>
+		<p class="player p2">
+			<b>GM</b>
+			ppppppp.....
+		</p>
+		<p class="player p1">
+			<b>相馬　亜子（あこ）</b>
+			あら、ちょっと失礼するわね（冷や汗）<br>
+			あ…はい、いえ…そんなことは…ウフフ…<br>
+			あの…そうね…（どこかへ消えていった…）
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			いっちゃったな<br>
+			……なぁもみじ
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「ヨシ！」<br>
+			「はい？」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			どうしてもみじはおれに付き合ってくれたんだ？
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「それはもちろん、綴殿が好きだからですぞ！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			！！<br>
+			……おれもだ！
+		</p>
+		<p class="player p4">
+			<b>柴田 紅葉</b>
+			「綴殿ー！！」
+		</p>
+		<p class="player p6">
+			<b>樫山綴</b>
+			もみじ～！！<br>
+			（今わかった、おれは愛も恋もわからないなんて思ってたけど）<br>
+			（ずっと前からこんなに”愛”を知ってたんだ）<br>
+			じゃあ聞いてくれ！<br>
+			ナンバーは……
+		</p>
+	</div>
+</body>
+</html>

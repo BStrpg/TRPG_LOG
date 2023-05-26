@@ -1,0 +1,4998 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>義有りて刃鳴散らし、情有りて花に捧ぐ</title>
+	<style>
+		html {
+			font-size: 14px;
+		}
+		body {
+			-webkit-text-size-adjust: 100%;
+			background-color: #fffcdb;
+		}
+		h1 {
+			font-size: 20px;
+			margin: 1rem 1rem 0;
+			color: #000000;
+		}
+		.tab {
+			border: 1px solid #999;
+			margin: 2rem 1rem 1rem;
+			line-height: 1.5;
+			position: relative;
+		}
+		.tabtitle {
+			border: 1px solid transparent;
+			border-color: inherit;
+			background-color: inherit;
+			position: absolute;
+			top: -.8rem;
+			left: 1rem;
+			min-width: 7rem;
+			padding: 0 .5rem;
+			text-align: center;
+			font-size: 1rem;
+			z-index: 9999;
+			line-height: 1.4rem;
+		}
+		.player {
+			margin: 0;
+			padding: 0 .5rem;
+			padding-left: 10.5rem;
+			border-bottom: 1px dotted transparent;
+			border-color: inherit;
+			position: relative;
+		}
+		.player:last-child {
+			border-bottom: 0;
+		}
+		.player b {
+			display: block;
+			height: 100%;
+			width: 9rem;
+			padding: 0 .5rem;
+			border-right: 1px solid transparent;
+			border-color: inherit;
+			position: absolute;
+			top: 0;
+			left: 0;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.tabtitle + .player {
+			padding-top: .7rem;
+		}
+		.tabtitle + .player b {
+			padding-top: .7rem;
+			height: calc(100% - .7rem);
+		}
+		.diceroll {
+			padding: 0 .5em;
+			color: #ffffff;
+		}
+
+		/* [トレーラー] タブ */
+		.t0 {
+			background-color: #e7d5e8;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [マスターシーン] タブ */
+		.t1 {
+			background-color: #fbdac8;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [メイン] タブ */
+		.t2 {
+			background-color: #ffffff;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [どこか] タブ */
+		.t3 {
+			background-color: #d3def1;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [サイクル] タブ */
+		.t4 {
+			background-color: #fbdac8;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [情報] タブ */
+		.t5 {
+			background-color: #ecf4d9;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [フユキの回想] タブ */
+		.t6 {
+			background-color: #ffffff;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [ラウンド] タブ */
+		.t7 {
+			background-color: #fbdac8;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [ED] タブ */
+		.t8 {
+			background-color: #fadce9;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* 発言者：GM */
+		.p0 { color: #000000; }
+		.p0 .diceroll { background-color: #000000; }
+
+		/* 発言者：マスターシーン1 */
+		.p1 { color: #000000; }
+		.p1 .diceroll { background-color: #000000; }
+
+		/* 発言者：シオン */
+		.p2 { color: #cddc39; }
+		.p2 .diceroll { background-color: #cddc39; }
+
+		/* 発言者：&quot;首刈桜&quot;照由良 半蔵 */
+		.p3 { color: #2196f3; }
+		.p3 .diceroll { background-color: #2196f3; }
+
+		/* 発言者：Dr.斜歯 */
+		.p4 { color: #ef845c; }
+		.p4 .diceroll { background-color: #ef845c; }
+
+		/* 発言者：マスターシーン2 */
+		.p5 { color: #000000; }
+		.p5 .diceroll { background-color: #000000; }
+
+		/* 発言者：梁 芳 */
+		.p6 { color: #4caf50; }
+		.p6 .diceroll { background-color: #4caf50; }
+
+		/* 発言者：フユキ */
+		.p7 { color: #3f51b5; }
+		.p7 .diceroll { background-color: #3f51b5; }
+
+		/* 発言者：猫丸 アヤメ */
+		.p8 { color: #e91e63; }
+		.p8 .diceroll { background-color: #e91e63; }
+
+		/* 発言者：御神楽 ユエ */
+		.p9 { color: #f44336; }
+		.p9 .diceroll { background-color: #f44336; }
+
+		/* 発言者：マスターシーン3 */
+		.p10 { color: #000000; }
+		.p10 .diceroll { background-color: #000000; }
+
+		/* 発言者：system */
+		.p11 { color: #888888; }
+		.p11 .diceroll { background-color: #888888; }
+
+		/* 発言者：マスターシーン4 */
+		.p12 { color: #000000; }
+		.p12 .diceroll { background-color: #000000; }
+
+		/* 発言者：男性 */
+		.p13 { color: #888888; }
+		.p13 .diceroll { background-color: #888888; }
+
+		/* 発言者：女性 */
+		.p14 { color: #888888; }
+		.p14 .diceroll { background-color: #888888; }
+
+		/* 発言者：&quot;双天首刈桜&quot;照由良 半蔵 */
+		.p15 { color: #2196f3; }
+		.p15 .diceroll { background-color: #2196f3; }
+
+		/* 発言者：コシュタ・バワー二世 */
+		.p16 { color: #888888; }
+		.p16 .diceroll { background-color: #888888; }
+	</style>
+</head>
+<body>
+	<h1>義有りて刃鳴散らし、情有りて花に捧ぐ</h1>
+	<div class="tab t0">
+		<div class="tabtitle">トレーラー</div>
+		<p class="player p0">
+			<b>GM</b>
+			斜歯忍軍が為し、影の世界に悪名高き｢忍法狩り｣<br>
+			<br>
+			ある者は言う――己すら守れぬ未熟者に影を生きる資格なしと<br>
+			<br>
+			ある者は言う――影を生きる者なれど守るべき流儀はあると<br>
+			<br>
+			そしてまた一人、｢忍法狩り｣の犠牲になろうとする者がいた<br>
+			<br>
+			此れに集うは六人のシノビ達、彼らは何を胸に戦い、何を成し得るのか<br>
+			<br>
+			忍術バトルRPG　シノビガミ―忍神―<br>
+			『義有りて刃鳴散らし、情有りて花に捧ぐ』<br>
+			<br>
+			―――ここに開幕！
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">マスターシーン</div>
+		<p class="player p1">
+			<b>マスターシーン1</b>
+			導入1：忍法狩り
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			夜、街の明かりが眩い繁華街にて――<br>
+			―路地裏―
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……」<br>
+			「あんたが任務を受けた人？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ああ、俺が”首刈桜”だ」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……あっそう」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シオンの持つ通信端末が振動する。<br>
+			端末の画面には斜歯忍軍のマークが浮かんでいた。<br>
+			クライアントは直接姿を現す気がないらしい。
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「はい……はい、ここにいます」<br>
+			「……わかりました」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			そう言うと彼女は端末を置き、スピーカーモードへと変えた
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「首刈桜だ」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『おや、貴方が例の？』<br>
+			『ご活躍の噂はかねがね…… 』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			首刈桜。誰にも顔を知られていない、伝説のシノビだ。<br>
+			「そうであろう」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『えぇ、存じています。まさか依頼を受けていただけるとは光栄の極み』<br>
+			『期待させていただきます。』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「僥倖であったな」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『では、本題に入りましょうか。』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ああ」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『今回、あなたには私たち斜歯忍軍の忍法狩りの補助をしていただきたい。』<br>
+			『主な内容は二つ。一つは作戦決行の際の戦力として、もう一つは情報収集。』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「&quot;血盟&quot;ということか？」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『はは、そこまでの仲にしていただくつもりはありません。』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「そうか……」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『そこにいるシオンは何度か忍務を行っていたせいで顔が割れてしまっていてね。』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「あの『双天』の首を刈ったんだったな！それは当然か」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『まだ人員募集の呼びかけは続けている。相手方からすればこちらの戦力は不明ということ。』<br>
+			『あなたには素性を隠し、標的とその護衛、彼らの戦力の調査を頼みたい。』<br>
+			『ああ、標的に関してももう一度伝えておくと、標的は二人。』<br>
+			『一人は比良坂機関、梁芳（りゃんふぁん）。』<br>
+			『もう一人はハグレモノ、No.9のシノビであるフユキという男……。』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「比良坂とハグレモノとは！隠忍としては一石二鳥よ！」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『実行の際にこの二名は殺さないようにお願いします。』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「首を刈れないのか……」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『他の護衛に関しては構いませんよ？』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「！！？？」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『シノビの世に轟く”首刈桜”の手腕、期待しています。』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「護衛の情報は知っているのか？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「それを調べるのがあんたの仕事でしょ？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「うむ……」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『シオン。』
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「あっ……」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「？」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『いけませんね。目上の方にはキチンとした言葉を使いなさい。』
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「は……はい……」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「階級は下だからな、別に俺は構わない」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『そうですか、よかったですねシオン。』<br>
+			『お礼を言いなさい。』
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「はい……あ、ありがとうございます」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『……質問はなにかありますか？ 』
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			（さっき言った……）<br>
+			「まあいい、よろしく頼むぞ！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……はい」
+		</p>
+		<p class="player p4">
+			<b>Dr.斜歯</b>
+			『よろしい。標的の回収にはこちらから部隊を送ります。その準備が整うまでは情報収集等、お願いします。 』
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			その言葉を最後に通信が途切れる。二人のシノビの間に静寂が訪れた。
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……そうだ、『双天』の首はどうやって刈ったのだ？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……それ、言う必要ある？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「あるぞ！」<br>
+			「俺は首刈桜だ！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……知らない。言いたくない」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「そ、そうか……」<br>
+			「では良い首刈を……」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……じゃ、これ、私の連絡先だから」<br>
+			「用があったら呼んで」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ああ……」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シノビ達は夜の街へと姿を消していった。<br>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">マスターシーン</div>
+		<p class="player p5">
+			<b>マスターシーン2</b>
+			導入2：集結
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			――夜の繁華街、4人のシノビが集う <br>
+			        忍法狩りの標的となった、比良坂機関、梁芳（りゃんふぁん）。<br>
+			        彼は自身を守る護衛を集め依頼内容を説明していた。
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…というわけなんだ」<br>
+			「なぜ私なのか、私自身でもわからないのだが…」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……忍法狩り」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「よろしく頼むよ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「なるほどぉ。あなたをお守りすればいいんですねぇ？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「そういうことになるね」<br>
+			「先に言っておくけど、私は戦闘はからっきしだ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「願ってもない依頼だわ！なら、戦闘はお姉さんに任せて頂戴ね」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしは猫丸アヤメと言いますぅ。微力ながらお手伝いさせていただきますねぇ」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……フユキ、と申します」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「私は御神楽 ユエ、男の子と女の子で揃って任務なんて久しぶりだわ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「フフ…頼もしい限りだ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「りゃんさん、ふゆきさん、ゆえさんですねぇ。よろしくお願いしますぅ」
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">どこか</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「俺は&quot;首刈桜&quot;照由良 半蔵だ」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……はぁ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「よろしくお願いしますね！ふふ、こんなに可愛い子たちと一緒なんて楽しくなりそうだわ！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「おそらく、狙ってくる首謀者は『シオン』という中忍頭だ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「あぁ、知ってますよぉ。わたしの知人もやられてしまって……強い方ですよねぇ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…？」<br>
+			「きみはもしかして…いや…」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「えぇ？なんですかぁ？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「その話なんだけど……忍法狩りの首謀者の討伐はお姉さんに任せてくれないかしら？私もいろいろあってね」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「忍法狩りのシオン……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ん…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「そしたらちゃんと梁芳くんのことも守れるでしょう？」
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">どこか</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「首刈りの照由良 半蔵……」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「まぁ…そうだね」<br>
+			「無名の私の護衛としては上玉なメンバーが集ってくれたとは思っていたが、それぞれ因縁を持っていそうだね」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……なるほど、ユエさんも義あっての参戦だと」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「そうですねぇ。わたしもシオンさんに関しては思うところがあるので、何とも言えないですが……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…」<br>
+			（まぁ、この世界ではお金だけの関係よりも因縁がある人間のほうが信頼できる…）
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あら？ワケありなのね？私だけじゃなくてちょっと安心したわ」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「忍務はつつがなく……お任せください」<br>
+			「……はぁ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「お仕事は私たちにバッチリ任せて！^^」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「がんばりまぁす」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あぁ、頼もしいね」<br>
+			「まぁ&quot;依頼&quot;通り、私が捕まらないように護ってくれれば好きにしてくれて構わないよ」<br>
+			「ただ…命だけは大切にね」
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">どこか</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「首は置いていけ」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……はい」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「優しいのねえ〜」にこにこ
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			…ｹﾞﾎｹﾞﾎ（咳き込む）
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			護衛を引き受けたシノビ達。<br>
+			        それぞれの思惑を巡らせながら夜は更けていく。<br>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p0">
+			<b>GM</b>
+			1サイクル<br>
+			choice[ユエ,梁芳,照由良,アヤメ] (choice[ユエ,梁芳,照由良,アヤメ]) ＞ 照由良
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			cst 都市シーン表(10) ＞ ビルの谷間を飛び移る。この街のどこかに、「アレ」は存在するはずなのだが……。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場人物：ユエ、梁芳、照由良、アヤメ
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			ドルルン！ドルルン！<br>
+			「お前が梁 芳か」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「誰だキミはッ！？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ご、ゴエーニンムにきた首刈桜だ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…？」<br>
+			「おかしいな…護衛は3人と聞いていたはずだが…」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「」驚いて固まってる
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「いや…」（じっと見据える）
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「え？もうひと方いたんですかぁ？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「そうだ」<br>
+			感情判定→梁芳<br>
+			        2D6&gt;=5 （判定：騎乗術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			ET 感情表(2) ＞ 友情（プラス）／怒り（マイナス）
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			et 感情表(1) ＞ 共感（プラス）／不信（マイナス）
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「まぁいい…遅刻だぞ」<br>
+			「私は遅刻する者は嫌いなんだ」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「だからこうして急いできた」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「フン…そう言って単位を嘆願するヤツが何人いると思う？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「遅刻はいけませんねぇ」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			不信
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「謝ったほうがいいんじゃないかしら…！」オロオロ
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			感情：怒りを獲得<br>
+			（おかしい…予定では、間違いなく&quot;3人&quot;だったはず…）<br>
+			（まぁいい、泳がせることにしよう）
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「お前は『双天』！？相方はお気の毒だったなぁ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あなた、どうしてそれを？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（ピキッ#）<br>
+			「まずは自己紹介が先だろう！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「おれが”首刈桜”だからだ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「あらぁ。お名前がくびかりざくら？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「首刈桜、照由良 半蔵ね？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「首刈桜を知らぬとは……【有名】なのに知らぬとは……」<br>
+			首刈桜。誰にも顔を知られていない、伝説のシノビだ。
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「へぇ、初めて聞くお名前だわぁ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「芸能人だろうが、有名人だろうが特別扱いはしないよ」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「なにーっ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「有名な人だもの、私は存じてるわ。あなたも、一部の間では私たちもね」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「ごめんなさい、存じ上げなくてぇ……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「無理もないわ、偽物だって噂もあるもの」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「&quot;偽物&quot;…ね」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「にせもの……本物もいるのかしらぁ？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「貴様ももう双天とは言えない様であろう！」<br>
+			「……まあいい、本当は首を刈りたい所だが、俺が特別に守ってやろう」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p0">
+			<b>GM</b>
+			choice[ユエ,梁芳,アヤメ] (choice[ユエ,梁芳,アヤメ]) ＞ アヤメ
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			ｃｓｔ 都市シーン表(7) ＞ 無機質な感じのするオフィスビル。それは、まるで都市の墓標のようだ。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シオンは<br>
+			        choice[出る,出ない,出ない] (choice[出る,出ない,出ない]) ＞ 出ない<br>
+			登場人物：照由良、アヤメ
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			朝、学校に向かう学生たちに紛れて2人のシノビが邂逅する。
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「おはようございますぅ。昨日はちょっと中途半端だったので、ご挨拶しておこうかと思いましてぇ」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「お前は……、誰だ？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしは猫丸アヤメと申しますぅ。りゃんさんを一緒にお守りするんですよねぇ？よろしくおねがいしますぅ」そばによってさわっ
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			その胸は豊満であった
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……、ああ、そうだった。」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			感情判定→照由良<br>
+			        ［撫子］にて自動成功<br>
+			et 感情表(2) ＞ 友情（プラス）／怒り（マイナス）<br>
+			友情で
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「あ、あまり首を押し付けるな……！///」<br>
+			et 感情表(6) ＞ 狂信（プラス）／殺意（マイナス）
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「えぇ？なんですかぁ……？」胸ぎゅー
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			（首……）<br>
+			狂信<br>
+			「やめろぉ」<br>
+			（右近よ……）
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたし新参者なんで、さくらさん有名らしいじゃないですかぁ、色々ご教示いただけると嬉しいですぅ……」にこー
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「そうか、ならば俺が首刈桜となった武勇伝をここで語ろう！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「あっすみません、わたしそろそろ行かなくちゃぁ……これわたしの連絡先ですぅ、それでは～」<br>
+			服に差して投げキッスして去る
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「なっ！？どこに行くー！」<br>
+			「……」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			首刈桜の虚しい声がオフィス街に木霊した……<br>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			CST 都市シーン表(6) ＞ 至福の一杯。この一杯のために生きている……って、いつも言ってるような気がするなぁ。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場人物：ユエ、梁芳、フユキ
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ふぅ…これのために毎日生きてるよ」<br>
+			「さて、君たちも一杯どうだい？」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……およびですか？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あらあら、じゃあ私も同じのもらっちゃおうかしら！何飲んでるの？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「何…なんだろう？」<br>
+			「企業秘密ということで」<br>
+			「美味しいのは確かだよ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「やっぱり比良坂の子ね、秘密主義なんだから〜」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「フフ」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「 ……はぁ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			[香術で感情判定] →ユエ
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「じゃあお姉さんはバニラクリームフラペチーノ、エクストラホイップ、キャラメルシロップに変更、エクストラシロップ、キャラメルソース追加、エクストラソース、チョコチップ追加、エクストラチップで〜！」店員さんへ
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			2D6&gt;=5 （判定：香術） (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「フラペ……？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「暑い日はこれに限るわ、ひんやりなんだから〜」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			ET 感情表(6) ＞ 狂信（プラス）／殺意（マイナス）
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			ET 感情表(2) ＞ 友情（プラス）／怒り（マイナス）<br>
+			友情！
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（…なんという冒涜を）<br>
+			殺意を獲得
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「ユエさん、私にもなにか見繕っていただけませんか？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「おい、ここはブラックコーヒーにしなさい！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ふふ、任せて頂戴！フユキくんは甘いのお好き？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「こらー！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ええ〜！梁芳くん甘いのダメなの？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「トッピングしたいなら、私がするからやめておきなさいそんなもの」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……抹茶が」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あら！抹茶が好きなのね！甘すぎないカスタマイズもあるのよ？抹茶クリームフラペチーノ、エクストラホイップ、インホイップ、エクストラパウダーとか……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「耳が痛くなる！！」<br>
+			忍法：淫祠を使用→ユエ<br>
+			2D6&gt;=5 （判定：香術） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「ユエさんのお好きなものを……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「じゃあ決まりね！きっと飲んだら好きになると思うわ、お姉さんのお気に入りなんだからね」<br>
+			「抹茶クリームフラペチーノ、エクストラホイップ、インホイップ、エクストラパウダー一つお願いします〜」店員さんへ
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「くっ！！！！」<br>
+			（まぁいい、これをかければ彼女もこのソースの良さがわかるはずだ）<br>
+			サーッ！！<br>
+			「フッ…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			注文してて全く気づかなかった
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ん？なんだか味変わったかしら？」自分の飲んだ
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（フイッ）
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ま美味しいからいっか〜！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「おい！」（机を叩く）<br>
+			choice[兵糧丸,神通丸,遁甲符] (choice[兵糧丸,神通丸,遁甲符]) ＞ 兵糧丸<br>
+			「フフ…副産物でまた良い出来の物ができたよ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あら？あ、そっか！注文の声、うるさかったわよね、ごめんね嫌がっていたのに」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「そうではない！！」<br>
+			「あんな人工甘味に頼るべきではない！」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……」<br>
+			（ユエを試していると思って黙っていたが……まさか素だったのか？）
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「でも甘党なのよね……？甘味料にこだわりがあるなんて若いのに流石だわ！私たちきっと仲良くなれるわね^^」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……はぁ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（私としたことが取り乱してしまった…）
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			楽しいひと時を過ごした……<br>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			CST 都市シーン表(5) ＞ 人気のない公園。野良猫が一匹、遠くからあなたを見つめているような気がする。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シオンは<br>
+			        choice[出る,出ない] (choice[出る,出ない]) ＞ 出ない<br>
+			登場人物：ユエ、照由良
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「お前が俺を呼び出すとはな……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「こんにちは〜半蔵さん、いきなり呼んじゃってごめんなさいね、忙しいのに」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「俺に何の用だ『単天』」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ほら、私たち一緒のお仕事するでしょ？じゃあ仲良くなっておかなきゃなと思ったんだけど」<br>
+			「半蔵さんにはもしかしてその気はないのかしら？仲良くなりたいのがお姉さんだけだったら寂しいわ」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「たしかに良い首をしているが……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あら！よく言われるのよ^^」<br>
+			「でも、そうね。あなたが怪しいのも事実だものね……」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「この首刈桜が怪しいだと？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			情報判定で秘密をくノ一の術で！ →照由良<br>
+			2D6&gt;=5 （判定：九ノ一の術） (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「戯言を……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「まあ、そう言わずに、ね？」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			その胸は豊満であった。
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「私、ちゃんとあなたとお仕事したいな……」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ああ、俺は俺の仕事をしよう……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ふふ、そうこなくっちゃ。楽しみね、偽物の首刈桜さん」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「なんだと！？」<br>
+			「単天女め……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「女の子にこんなに弱いようじゃだめよ、もっと気をつけなきゃね」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「今ここで首を刈ってやりたい……」<br>
+			神蠅<br>
+			誰かが自分の【秘密】か【居所】を獲得したときに使用できる。自分の【秘密】か【居所】を獲得したキャラクターの中から好きな者を好きな数だけ目標に選ぶ。指定特技の判定に成功したら、目標の【居所】を獲得できる。<br>
+			目標：御神楽 ユエ,梁 芳<br>
+			2D6&gt;=6 （判定：異形化） (2D6&gt;=6) ＞ 6[2,4] ＞ 6 ＞ 成功<br>
+			「貴様だけが優位に立ったと思うなよ……！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			一触即発の空気が流れる――その時<br>
+			――半蔵の持つ携帯端末のバイブが鳴る。
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ぬ」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シオンの名前が表示されている
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「シオンか、どうした？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「！」<br>
+			「シオン、そこにいるのね」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「定時連絡。カフェで待ってるから来て」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「承知ィ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「……女の子にだらしなさすぎやしないかしら？」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">マスターシーン</div>
+		<p class="player p10">
+			<b>マスターシーン3</b>
+			シオンとの交流
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「待たせたなぁ！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……うるさい」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「すまん」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……進捗報告して、Dr.に伝えるから」<br>
+			（ﾓｸﾞﾓｸﾞ）
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ゴエーニンムと称し潜入に成功したぞ」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……そう」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……どうした？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……疑問なんだけど」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「それ、美味くないのか？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「なんで忍法狩りに協力する気になったの？」<br>
+			「誰も見つからないだろうから一人でやることになるだろうって思ってたのに……」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「”それは言う必要はあるか？”」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……別に、言いたくなければいい」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「そうか……」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「不思議に思っただけ……忍法狩りっていい評判ないし」<br>
+			「私も……そう見られてるだろうし」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「義と首刈の為とでも言っておこうか」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「？意味分かんない」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ならばお前も隠忍にならないか？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……！」<br>
+			「ふざけないで……！！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ふざけてなどいない！」<br>
+			「今のお前はどうやら居心地が悪そうだからな……」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「首刈はいいぞぉ！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……わからないよ、アンタじゃ」<br>
+			「……ごちそうさま」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シオンは立ち去っていった<br>
+			シーン終了
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「わかるさ、お前が『双天』を刈ったときいて俺は感銘を受けたのだ……」
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p0">
+			<b>GM</b>
+			2サイクル
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			＞梁 芳に戦闘！　
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場人物：ユエ（乱入）、梁芳、照由良
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「報告がある！」<br>
+			「忍法狩りの協力者は俺だ！！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「梁芳くん、助太刀するわよ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あぁ、ありがとう」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「お前のおかげで居所をつかんだぞ！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…で？どういうことだい？」<br>
+			「まだ泳がせるつもりだったが…」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「こういうことだ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ごめんなさいね、彼せっかちで……待てができない子みたいなの」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「1サイクルも待ったぞ！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…はぁ」<br>
+			「まぁいい、私に策がある」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「いいわ、梁先生。これ以上お待たせしちゃ可哀想だものね」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 御神楽 ユエ ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] がダイスシンボルを公開。出目は 6 です。<br>
+			[ 梁 芳 ] がダイスシンボルを公開。出目は 6 です。
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「さあ！お前の首を数えろ！」<br>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			■奥義<br>
+			《殺闇腐触鬼乱れ咲き<br>
+			ｻｸﾗﾌﾌﾞｷﾐﾀﾞﾚｻﾞｷ》<br>
+			指定特技　：異形化<br>
+			エフェクト：範囲攻撃/乱れ（強み）：対象のキャラクターにランダムに変調を１つ与える。/威力低下（弱み）：対象に失わせる生命力が－1<br>
+			効果・演出：「喰らうがいい！“首刈桜半蔵”が最終奥義ぃ！」半蔵は必殺の構えに入った。<br>
+			　ｻｸﾗﾌﾌﾞｷﾐﾀﾞﾚｻﾞｷ<br>
+			「殺闇腐触鬼乱れ咲きぃ！！！」手裏剣（たらい）に溜められたエネルギー（血液）が解き放たれ（放り投げられ）る、そして空へと舞った桜の如き鮮やかな死の奔流（血液）が標的へと舞い落ちる！
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p11">
+			<b>system</b>
+			[ 御神楽 ユエ ] 頑健 : 2 → 1
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			wt 変調表(3) ＞ 重傷:次の自分の手番に行動すると、ランダムな特技分野１つの【生命力】に１点ダメージ。１サイクルの終了時に、《生存術》で成功すると無効化される。
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…ッ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あら、本当にせっかち」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ｹﾞﾎｹﾞﾎ…」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「首刈桜だぞ！」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 梁 芳 ] 体術 : 1 → 0
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「戦う前から随分弱っているな？くたばる前に上手く捕えねばなぁ！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			コスト7：闇斑<br>
+			2D6&gt;=6 （判定：対人術） (2D6&gt;=6) ＞ 9[3,6] ＞ 9 ＞ 成功
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			2D6-7&gt;=8 （判定：隠形術） (2D6-7&gt;=8) ＞ 8[2,6]-7 ＞ 1 ＞ 失敗
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「この…ッ！」<br>
+			WT 変調表(5) ＞ 忘却:修得済み感情がランダムに１つ使用不能。１サイクルの終了時に、《記憶術》で成功すると無効化される。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			choice[梁芳,アヤメ] (choice[梁芳,アヤメ]) ＞ 梁芳
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			見切り判定<br>
+			        2D6+2&gt;=7 （判定：九ノ一の術） (2D6+2&gt;=7) ＞ 8[3,5]+2 ＞ 10 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			見切り判定<br>
+			        2D6&gt;=9 （判定：傀儡の術） (2D6&gt;=9) ＞ 5[2,3] ＞ 5 ＞ 失敗
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			全員脱落、勝者なし
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「チィ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あらあ、早かったわねえ二人とも……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ハァ…ハァ…」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「お前は手も首も出なかったであろう！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あんなに離れられたら私だって寂しいわよ〜」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p0">
+			<b>GM</b>
+			choice[ユエ,梁芳,アヤメ] (choice[ユエ,梁芳,アヤメ]) ＞ ユエ
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			CST 都市シーン表(10) ＞ ビルの谷間を飛び移る。この街のどこかに、「アレ」は存在するはずなのだが……。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場人物：ユエ、梁芳、アヤメ
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			兵糧丸食って重傷治しときます<br>
+			「あ〜痛かった」<br>
+			「ひどい目にあったのよ！あの子せっかちなんだから」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…本当にね」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「あら～、なにかあったんですかぁ？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「首刈桜の子、私たちのこと襲ったの」<br>
+			「敵よ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「えっ？さくらさん裏切ったんですかぁ？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ボロを出すのはもう少し後だと思ったんだが…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			じゃあ秘密と奥義情報を今いる二人に共有します
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■PC3：【秘密】<br>
+			------------------------<br>
+			　あなたはシオンが殺した血盟「双天」のシノビに恨みがあった。<br>
+			必ず復讐を……そう思っていたが、奴は既に殺されていた。<br>
+			自らの手で復讐を果たせなかったのは残念であるが、シオンには感謝もしている。<br>
+			情報によれば、標的の護衛には血盟の残り一人がいるという。<br>
+			死んだシノビほどの恨みがあるわけでもないが、燻る恨みを晴らさせてもらう。<br>
+			何も為させはしない、そうなれば奴もあの世で無念に思うだろう。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あいつ…」<br>
+			（…ん？さくら？）
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「多分本命は私なんでしょうけど、梁芳くんも巻き込んじゃってごめんなさいね」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「いや、泳がせた私にも責任がある…ｹﾞﾎｹﾞﾎ」<br>
+			「くだらない理由で…」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「なるほどぉ？えぇ、こわいひとだったんですねぇ……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「具合悪そうね？大丈夫？そうだ！お姉さんが調べものしてきてあげるわ！さっき何も手伝えなかったもの。アヤメちゃんにもいいところ見せたいし。」<br>
+			NPC2に情報判定<br>
+			2D6&gt;=5 （判定：憑依術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功<br>
+			「なるほど……？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ふむ…」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「えぇ～なにかわかったんですかぁ、わたしだけ仲間外れですかぁ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ごめんねアヤメちゃん、今はちょっと待っててくれる？」<br>
+			「埋め合わせは絶対するわ！そうだ、紅茶なんて好きかしら？いいお店があるのよ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「おい！また変なトッピングするんじゃないんだろうな！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「え～……しかたないですねぇ、絶対ですよぉ？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「紅茶よ？コーヒーと違ってそんなにたくさんは入れられないわ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「本当か…？」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			CST 都市シーン表(6) ＞ 至福の一杯。この一杯のために生きている……って、いつも言ってるような気がするなぁ。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場人物：ユエ、梁芳、アヤメ
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（紅茶のお店へやってきた）<br>
+			「変なもの頼むんじゃないよ？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ここはお店のおすすめを次々注いでくれるのよ、お砂糖はこのポットに入ってるからね」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「そういう形なんだね」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「へぇぇ。紅茶っていっぱいあるんですねぇ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「わんこ紅茶…」<br>
+			「飲むたびに出てくるぞ！？」<br>
+			調査：アヤメを調査（対人術）
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「美味しいのよ〜！パンケーキも食べられるんだから！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「いい香りですねぇ～」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（真意を確認させてもらう…）<br>
+			2D6&gt;=5 （判定：対人術） (2D6&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功<br>
+			（じっと見据える）<br>
+			「アヤメ、キミは味方かい？それとも…」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしは味方ですよぉ」にこにこ
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			兵糧丸→忘却回復
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■PC4：【秘密】<br>
+			------------------------<br>
+			　あなたはシオンに恨みがある。<br>
+			かつてあなたは「忍法狩り」の標的となり彼女に敗北を喫し、致命傷を負った……はずだ。<br>
+			運良く命を拾うことができたが、何時、何処で、どのように自分がやられたのかも思い出せない。<br>
+			しかし、あのシノビの顔と敗北の苦い記憶だけは覚えている。この怒りを燻ったままにはしておけない。<br>
+			自分が生きていることを悟られぬよう顔と声を変え、あなたは復讐のためにPC②の護衛となった。<br>
+			　あなたの【本当の使命】は『シオンを殺し、復讐を遂げること』である。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「いいわ、その感情、本物だものね」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「本気のようだね」
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">どこか</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「うふふ、そうですねぇ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ならばフユキ君のことも教えて大丈夫そう、じゃあちょっと耳かしてくれるかしら」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「気をつけてね、どこぞの遅刻魔がまた来るとも限らない」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「なんですかぁ？聞かせてくださぁい」<br>
+			「なるほど～。皆さんすごいですねぇ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「どや！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（二人を眺めている…）
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「うふふ、皆さん優秀で素晴らしいです～」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（うーん…）<br>
+			「まぁ、力を合わせていこう」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ええ、やることは変わらないわ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「そうですね～、がんばりましょう」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			場所はそのまま
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場人物：ユエ、梁芳、照由良、アヤメ
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			情報判定→シオン<br>
+			        2D6&gt;=5 （判定：人脈） (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■NPC1：シオン【秘密】<br>
+			------------------------<br>
+			シオンは元一般人のシノビである。<br>
+			どうして自分がシノビとなったのか、それ以前の自分は何をしていたのか。<br>
+			記憶や感情は度重なる”調整”で薄れており、自分が何者であったのかさえ分からない。<br>
+			しかし記憶もない心の中に、自分の幸福を願う誰かがいたことを覚えている。<br>
+			その誰かのために、例え全てを失っていたとしても、生き続けなければならない。<br>
+			シオンの【本当の使命】は『生き続けること』である。
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">どこか</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「ちょっとシオンさんのことも調べたので、おふたりにも共有しておきますね～」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あら！ありがとう〜〜！！助かるわ！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ありがとう、つまり彼女は…」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……みなさんここにいましたか」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あれ？キミは…」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……良ければ食事を、と思いまして」<br>
+			「いかがですか？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あらフユキくん！お誘いできてなくてごめんね、フユキ君さえよければ喜んで！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（人と絡むタイプには見えなかったが…）<br>
+			「うん、いいよ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「よろこんで～」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「ではいいところを知っています……着いてきてください」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">マスターシーン</div>
+		<p class="player p12">
+			<b>マスターシーン4</b>
+			フユキとの交流
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			フユキに連れられて、あなたたちはとあるアパートの前にやってきた。
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「ここです……どうぞ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「…？お家？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「アパート、ですかぁ？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「家に連れ込むとは大物だね」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「今の私の隠れ家です」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あっ！そうよね、ワケアリだものね！」小声
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「それはありがたい、一人すでに裏切った者がいて、怖かったところだ」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「では、待っていてください」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			辺りを見回している…
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「男のひとのお部屋ってどきどきしますね～」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			フユキは台所へと消えていった。<br>
+			いい匂いが漂ってくる
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「お家パーティね！」キャッキャしてる
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……おまたせしました」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「美味しそうだ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わぁ。お料理できるなんて素敵です～」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「きゃ〜〜！美味しそう！凄いわフユキくん！」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……えぇ、どうぞ召し上がってください」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			いただきますした
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「おいしそうですねぇ、いただきまぁす」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「いただきます」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			フユキお手製のモツ鍋だ。味は……絶品だ！
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「美味しい〜〜〜！ねえフユキくんうちの子にならない？お姉さんこれ毎日食べたいな」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「うん、美味しい。これは手慣れてるね」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「おいしぃです～！さすがですねぇ、一人暮らし長かったりするんですかぁ？」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……喜んでいただけたなら、幸いです」<br>
+			「……昔はこうして皆で……」
+		</p>
+	</div>
+
+	<div class="tab t6">
+		<div class="tabtitle">フユキの回想</div>
+		<p class="player p13">
+			<b>男性</b>
+			やっぱ長の料理はうめぇなぁ～！
+		</p>
+		<p class="player p14">
+			<b>女性</b>
+			ほんとねぇ～……あ、お肉いただき！
+		</p>
+		<p class="player p13">
+			<b>男性</b>
+			あっ！こら！それは俺の残してた肉だろ～！
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「フフ……二人共、喧嘩せずともまた作りますよ」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			フユキの脳裏に蘇るかつての日々……<br>
+			―――
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あ、お肉がいい仕上がりだ」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あ！狙ってたのに！」
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">どこか</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			（なんだ今のは……）
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「これは先に私が目をつけてたんだぞ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ここはレディーファーストじゃないの？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「まぁまぁ、お野菜も食べましょうよ～」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「お野菜は譲ってもいいぞ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「好き嫌いは良くないですよ～」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（フイッ）
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「そうよ！大きくならないわ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「う、うるさい！」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……フフ」<br>
+			「三人共、喧嘩せずともまた作りますよ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「フユキくん、お米おかわり！また御馳走して頂戴ね」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「みんなでごはんたべるの、いいですねぇ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「うん、そうだね」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			（忍法狩り……私の忌まわしい記憶……）<br>
+			（貴様の罪は我が義の刃にて償わせる……）
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p0">
+			<b>GM</b>
+			3サイクル<br>
+			choice[ユエ,梁芳,照由良,アヤメ] (choice[ユエ,梁芳,照由良,アヤメ]) ＞ アヤメ
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			ｃｓｔ 都市シーン表(10) ＞ ビルの谷間を飛び移る。この街のどこかに、「アレ」は存在するはずなのだが……。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シオンは<br>
+			        choice[出る,出ない,出ない] (choice[出る,出ない,出ない]) ＞ 出る<br>
+			登場人物：アヤメ、シオン
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「こんばんわぁ。わたしのこと、あなたは知っているんでしたっけ？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「！？誰！？」<br>
+			（背後を取られた……！？）
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「うふふ。わからないならいいんですけどぉ。ちょっと、お話できたらな~と思いましてぇ」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……イヤ！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「なにがいやなんですかぁ？わたし？それとも、他にこわいものがあるんですかぁ……？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……近寄らないで！」<br>
+			（何なのこの人を見てると……あ、頭が……！）<br>
+			「こ、こないで！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「知らない人は怖いですもんね、ごめんなさい……突然びっくりさせちゃいましたよねぇ」
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">どこか</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			（……！？シオンの首が……！？）
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>シオン</b>
+			「あ……あたまが……！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			感情判定→シオン<br>
+			        ［撫子］にて自動成功
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			et 感情表(2) ＞ 友情（プラス）／怒り（マイナス）
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			et 感情表(5) ＞ 憧憬（プラス）／劣等感（マイナス）<br>
+			憧憬（プラス）で
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">どこか</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			（首が……！！）
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしはあなたのこと羨ましいなって思うんですよぉ。そのまんまで生きていけるの、いいなぁって……素敵だなぁって……ねぇ？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「わたしは……」<br>
+			「私はそんなんじゃない！！」<br>
+			「どいつもこいつも！人の気も知らないで！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「そう……なんですか？まぁ、自分が考える自分と人から見た自分、違いますもんねぇ」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「うるさい！いつもいつも好き勝手言って！！」<br>
+			「貴方なんて……キライ！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「あらぁ。嫌われちゃった……わたしがどう見えるか、聞きたかったのに」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p0">
+			<b>GM</b>
+			choice[ユエ,梁芳,照由良] (choice[ユエ,梁芳,照由良]) ＞ 梁芳
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			CST 都市シーン表(9) ＞ 商店街を歩く。人ごみに混じって、不穏な気配もちらほら感じるが……。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場人物：ユエ、梁芳、アヤメ
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（大体の対立関係は読めてきたが…真意がつかめない…）<br>
+			[調査]NPC3 →仕込み<br>
+			2D6&gt;=5 （判定：仕込み） (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■NPC3：Dr.斜歯【秘密】<br>
+			------------------------<br>
+			シオン自身は知らないことであるが、彼女は”神器の欠片”を身に宿した「蛹」である。<br>
+			斜歯忍軍の技術により忍神因子を測定され、力が目覚めぬ一般人の内に拉致されシノビとして覚醒させられた。<br>
+			「蛹」自体が元々短命である上、斜歯忍軍によって人体改造・忍神因子の調整をされているため、定期的なメンテナンスがあったとしても二十まで持ちはしない。<br>
+			彼はシオンに「忍法狩り」と称した任務を与え死地に送り込み、神器の能力の発動プロセスを研究している。<br>
+			この【秘密】は拡散情報である。<br>
+			この【秘密】が公開されたとき、「プライズ：神器の欠片」のハンドアウトを公開する。
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">どこか</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			（……！）<br>
+			（シオンよ……）
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「神器の欠片…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「本当に非道なことをする……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ふぅん…」<br>
+			「相変わらず、非道なことをするね…」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「死地……？死地…………？？」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			CST 都市シーン表(10) ＞ ビルの谷間を飛び移る。この街のどこかに、「アレ」は存在するはずなのだが……。
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場人物：ユエ、梁芳
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…で、用事とは？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「先生はそこで見ててくれる？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あの子のことならなんでもわかるわ、私は……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「まぁいいけど…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			情報判定→プライズ<br>
+			        2D6&gt;=5 （判定：憑依術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功<br>
+			「有益だったかしら？」<br>
+			「ここまで来られたの、梁芳くんが手伝ってくれたおかげよ。私にとっては、とても有益だった」<br>
+			「あなたにとってはどうかしら？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あぁ。だいぶ、有益だった」<br>
+			「そしてキミの出方次第では…」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p0">
+			<b>GM</b>
+			登場人物：ユエ、梁芳、照由良、アヤメ、シオン
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……お前等に聞くことがある」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あら、首刈桜さん。こんばんは」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…遅刻魔か」<br>
+			「全員が立ち会いの下、なら良い」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「首刈桜だ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…遅刻しないようになったら考えてやる」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「うっ……」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「さくらさんおひさしぶりです～」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「なに？定時連絡はまだ……」<br>
+			「！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「やぁ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「シオンさんも先ほどぶりです～」にこにこ手を振る
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（…！？）
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「あ、あんたは……！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「……。」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…待った、アヤメも知り合いなのか？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「ば、馬鹿なの！？くびなし！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「シオンさんとですかぁ？知り合いというか、わたしが一方的に知っているというか……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ふぅん…？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「集まったか、単刀直入に言おう！この首刈桜と血盟を結びたい者はいないか？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「俺が先ほど緑のを襲撃したのはそれがかつての俺の忍務だったからだ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あなたのそれは私を殺すため？それともあなたの今の仕事のため？それともその子が生きるためかしら？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ハッ！そのためにッ人を傷…ｹﾞﾎｹﾞﾎ！！」（咳き込む）
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「だがそれは失われた」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……！？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「俺はシオンを救う！首を刈りたいと思わないシノビは彼女が初めてだ！」<br>
+			「いや、シノビではなかったな……」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「シオンさんと結託してりゃんさんをどうにかするのがお仕事ではないんですかぁ？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「そんなことはどうでもよいのだ！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「相変わらず遅刻魔は意味がわからないな…」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「あ、あ、アンタ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あなたは本当にそれでいいのね？あなたはシオンを助けるために動くのね？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「お仕事より気持ちが大事だと……まぁ、わからなくはないですけどぉ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「で、遅刻魔…いや首を刈らない桜は何をする？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「俺はわからない……、誰の首を刈るべきなのか……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「じゃあ全て終わったら私の首をあげるわ」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……なに？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「わけわかんない……なんなの！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「そういえばお前……、おまえもシオンを気にかけていたな……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ワケアリよ。&quot;単天&quot;だもの」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……」
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■NPC2：フユキ【秘密】<br>
+			------------------------<br>
+			彼はシオンが行っていることが「忍法狩り」などではないことを知っている。<br>
+			特別な才があったわけでもない、ただシノビの世界に疲れ、隠居した者たちの隠れ里。<br>
+			そこに住む仲間たちを、捕らえるでもなく、ただ殺して回った斜歯忍軍の娘。<br>
+			無念は晴らさねば、その行いの報いを受けて貰わねばならない。<br>
+			フユキの【本当の使命】は『犠牲となった仲間の仇討ちをすること』である。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「フユキとアヤメ、シオンの命を狙うのはこの二人なのか……？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「わけわかんない……みんなみんな好き勝手して！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「好き勝手をするには情報が足りんな……」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「好き勝手するのはみぃんなそうですよねぇ？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			（コシュタ・バワーよ、俺はどうすればいい……）<br>
+			ドルルン ドルルン！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			どこからか嘶きが聴こえる気がする……。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			御神楽 ユエを調べる<br>
+			2D6&gt;=5 （判定：騎乗術） (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■PC1：【秘密】<br>
+			------------------------<br>
+			　血盟「双天」のあなたたちにはシノビの世界とは関わりのない、一般人の妹がいる。<br>
+			しかし数年前、あなたたちが忍務で家を離れた時に誘拐されたのだ。<br>
+			あなたたちはシノビとして活動を続けながら行方を探し続け、ようやく斜歯忍軍のシノビとなった妹を見つけた。<br>
+			斜歯忍軍であれば記憶の操作など当たり前だろう、静止を聞かずに助けに行った相棒の死がそれを裏付けている。<br>
+			あなたは慎重に機を待っていたが、過剰戦力とも言える護衛忍務を知り、受けざるを得なかった。<br>
+			この護衛忍務が成功した場合、妹の命はないだろう。これが最後の機会だ、失敗は許されない。<br>
+			　あなたの【本当の使命】は『シオンを助けること』である。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「首刈桜くん、いろんな人と仲良しなんだもの。全部バレちゃったじゃない」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「なるほど…ね」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「初めてづくしだ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「まぁ~……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「でもこれではっきりしたわね、死ぬわけには行かないと思ってたけどあなたがあの子を守ってくれるならこの首は好きにするといい」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「自ら首を捧げようとするか、変わったシノビだ……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「いや、ここで嫉妬するべきは&quot;彼&quot;じゃない」<br>
+			「そこのシオン、&quot;キミ&quot;だ」<br>
+			「人気者だね、キミは」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……！？」<br>
+			「わ、私……？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「フフ…」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「愛いやつよ……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「そうよ。可愛いでしょ、私の妹なんだから」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「わ、私は……し、知らない！！」 <br>
+			        シーンから退場
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「で、この情報を知って遅刻魔はどうする？」<br>
+			「いや…考える時間を渡そう」<br>
+			「先にアヤメだ。アヤメは、どう思っている？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「お前に主導権があるのか？」<br>
+			「まあ聞くが」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「うーん、わたしは、あの子に復讐をしたくて色々調べてたんですけど……わたしは自分が弱いと思ってるので、できなかったら仕方ないというか……あの子のおかげでもありますし……でも……もうよくわかんないですぅ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…？」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「シオンの命を狙うもの、それが俺の敵だ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしがあちら側につくかもしれない情報を持ってらっしゃるってことですかぁ……？でも、それがなんだって、知らないことにはわからないじゃないですかぁ……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ぼｋ…私も渡すべきなのか、迷っているよ」<br>
+			「まぁいい、ユエがそういったんだ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしにはゆだねられないってことですよねぇ？もう……いいです、それなら、わたしはしようと思ってたことするだけですもん……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…ん」<br>
+			「じゃあ、シオンの命を狙うってことか」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「そうですよぉ……わたしはわたしのために、わたしにできることをするんですぅ」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ユエよ、今までの事を詫びよう」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「いいわ、私もひどいこと言ったもの」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「そして俺と血盟を組め！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「考えておくわ、なんにしろあなたはあの子のお兄さんになってもらわなきゃいけないもの」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ならば俺たちは&quot;双天首刈桜&quot;だ！！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「もう知らないですぅ、みんな最初から自分のすることしてるだけじゃないですかぁ、わたしばっかり……わたしばっかり……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「アヤメ…」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">サイクル</div>
+		<p class="player p0">
+			<b>GM</b>
+			「忍法狩り」
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>シオン</b>
+			「にんむ……私は……生きて…生きないと……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「シオン…悪いが、僕の命を狙う以上は戦わせてもらうよ」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……いかなる事情があろうとも」<br>
+			「我が義の刃は貴様を討つ……！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…あぁ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「なにをしてもわたしは……わたしは……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「お姉さんが全部なんとかしてあげるからね」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「シオンに刃を向けるのであれば……。その首を刈る！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ユエ…気持ちはわかるが、僕の命も護ってくれよ？」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「それは最早俺たちの使命ではない……」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「任せて頂戴^^」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「うん、なら良かった」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「それはそれで守るのか……」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			戦闘開始！
+		</p>
+	</div>
+
+	<div class="tab t7">
+		<div class="tabtitle">ラウンド</div>
+		<p class="player p0">
+			<b>GM</b>
+			1ラウンド
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ユエ、さっきの作戦だ」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			影分身<br>
+			「プロット」時、自分のプロットを行う前に使用できる。<br>
+			指定特技の判定に成功すると2つのサイコロを使ってプロットできる。<br>
+			プロットを公開したタイミングで、どちらかのサイコロの目を自分のプロット値にするか決定すること。<br>
+			2D6&gt;=5 （判定：分身の術） (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「それでも上忍か？」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ シオン ] がダイスシンボルを公開。出目は 2 です。<br>
+			[ フユキ ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ 御神楽 ユエ ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ 猫丸 アヤメ ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ &quot;双天首刈桜&quot;照由良 半蔵 ] がダイスシンボルを公開。出目は 5 です。<br>
+			[ 梁 芳 ] がダイスシンボルを公開。出目は 1 です。
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			奥義！！<br>
+			アヤメ、フユキ
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「それは困るな」<br>
+			2D6&gt;=8 （判定：結界術） (2D6&gt;=8) ＞ 8[3,5] ＞ 8 ＞ 成功
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=10 （判定：言霊術） (2D6&gt;=10) ＞ 5[2,3] ＞ 5 ＞ 失敗
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「桜の散り方がなっていないよ、キミ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ごめんなさいねえ、敵だと思って全部教えちゃったのよ」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「なぜ止める？お前も敵か？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「あーーーっもう知らないもん知らないもん！！」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「今の奥義、ユエを狙っていなかったな？」<br>
+			見切り判定<br>
+			        2D6+2&gt;=7 （判定：瞳術） (2D6+2&gt;=7) ＞ 10[4,6]+2 ＞ 12 ＞ 成功<br>
+			「その一撃、見切ったぞ」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「ユエよー！緑のも敵だぞー！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「はあい」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			修羅(しゅら)<br>
+			間合内のキャラクターを好きなだけ目標に選ぶことができる。<br>
+			攻撃が成功すると対象に接近戦ダメージ1点<br>
+			2D6&gt;=5 （判定：分身の術） (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			2D6&gt;=8 （判定：拷問術） (2D6&gt;=8) ＞ 7[1,6] ＞ 7 ＞ 失敗
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			2D6&gt;=8 （判定：隠形術） (2D6&gt;=8) ＞ 9[3,6] ＞ 9 ＞ 成功
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			2D6&gt;=6 （判定：骨法術） (2D6&gt;=6) ＞ 10[5,5] ＞ 10 ＞ 成功
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			1d6 (1D6) ＞ 4
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ シオン ] 謀術 : 1 → 0
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「……ッ！」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「貴様ー！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			アヤメちゃんへ春雷<br>
+			2D6&gt;=5 （判定：骨法術） (2D6&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功<br>
+			2D6&gt;=5 （判定：身体操術） (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=7 （判定：怪力） (2D6&gt;=7) ＞ 11[5,6] ＞ 11 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…ユエ。」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=5 （判定：意気） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			2D6&gt;=7 （判定：記憶術） (2D6&gt;=7) ＞ 4[1,3] ＞ 4 ＞ 失敗<br>
+			1d6 (1D6) ＞ 2<br>
+			1d6 (1D6) ＞ 1
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ シオン ] 器術 : 1 → 0<br>
+			[ シオン ] 体術 : 1 → 0
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=7 （判定：怪力） (2D6&gt;=7) ＞ 8[3,5] ＞ 8 ＞ 成功<br>
+			2D6&gt;=5 （判定：意気） (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功<br>
+			「わたしだってっやるときはやれるはずなんですぅっ！！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			2D6&gt;=7 （判定：記憶術） (2D6&gt;=7) ＞ 4[1,3] ＞ 4 ＞ 失敗<br>
+			「わ、私は……死にたくない！」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「やめろー！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしだってしにたくないですぅ！！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p2">
+			<b>シオン</b>
+			《【邪刀・事象改変（やつるぎ・じしょうかいへん）】》<br>
+			指定特技　：《記憶術》<br>
+			エフェクト：【完全成功】響き/発動条件<br>
+			<br>
+			※【響き】が追加された【完全成功】は通常の判定のサイコロを振ったあとからでも使えるようになる（サイコロの結果、ファンブルになったときも使用可能）。その時は達成値は１０に変更される。<br>
+			<br>
+			※【発動条件】が追加された奥義は、自分の残りの【生命点】が3点以下の時しか使用できなくなる。【発動条件】が追加されたのが【追加忍法】の場合は、自分の残りの【生命力】が3点以下の時しか、【追加忍法】で選んだ忍法を使用できなくなる。<br>
+			<br>
+			効果・演出：　神器「邪刀」の欠片の力により、「自分が体験した」失敗を、成功という事象に改変する。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>シオン</b>
+			「はぁ……はぁ……」<br>
+			「なら……邪魔しないで！」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「これは……？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…今、なにか…？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「忌まわしい斜歯の隠し刀ね」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしを殺そうとしたくせに……！！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			怒具羅<br>
+			痛打(つうだ)<br>
+			兵糧丸使用
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ シオン ] 器術 : 0 → 1
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			2D6&gt;=5 （判定：仕込み） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功<br>
+			凶手<br>
+			2D6&gt;=8 （判定：仕込み） (2D6&gt;=8) ＞ 6[1,5] ＞ 6 ＞ 失敗<br>
+			2D6&gt;=5 （判定：絡繰術） (2D6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			2D6&gt;=12 （判定：仕込み） (2D6&gt;=12) ＞ 6[1,5] ＞ 6 ＞ 失敗
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 梁 芳 ] 戦術 : 1 → 0
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「はぁ……はぁ……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			&quot;禁術&quot;発動<br>
+			2D6&gt;=5 （判定：罠術） (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功<br>
+			「動きを止めさせてもらうよ…」<br>
+			&gt;接近戦攻撃<br>
+			2D6&gt;=5 （判定：対人術） (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			2D6&gt;=8 （判定：記憶術） (2D6&gt;=8) ＞ 3[1,2] ＞ 3 ＞ 失敗<br>
+			1d6 (1D6) ＞ 2
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ シオン ] 忍術 : 1 → 0
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「これでもキミはまだ、僕を狙うのかい？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「い、いやだ……私は…生きたい……！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「狙われたくないだけなのね？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「それは僕に言っているのかい？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「そうよ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「……あぁ」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「わ、私は生きないと……誰かに……お姉ちゃんも言ってた……」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「哀れな小娘か……」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「そんな哀れな小娘を寄ってたかって攻撃する貴様らはなんだ？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「梁芳くん、あなたを見逃せばこの子を見逃してくれるの？」<br>
+			「そんなにあなたが優しいなら、私もそうしたいわ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ではキミにも聞こう。ユエは相棒が殺されかけたとき、やっぱりやめまぁすって言われてその仇を討つのをやめようと思う？」<br>
+			「…そういうことだ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「素晴らしい忍者よあなたは」
+		</p>
+	</div>
+
+	<div class="tab t7">
+		<div class="tabtitle">ラウンド</div>
+		<p class="player p0">
+			<b>GM</b>
+			2ラウンド
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p7">
+			<b>フユキ</b>
+			影分身<br>
+			2D6&gt;=5 （判定：分身の術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ フユキ ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ フユキ ] がダイスシンボルを公開。出目は 5 です。<br>
+			[ 猫丸 アヤメ ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ &quot;双天首刈桜&quot;照由良 半蔵 ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ 梁 芳 ] がダイスシンボルを公開。出目は 6 です。<br>
+			[ 御神楽 ユエ ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ シオン ] がダイスシンボルを公開。出目は 4 です。
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			無拍子(むびょうし)<br>
+			2D6&gt;=6 （判定：手練） (2D6&gt;=6) ＞ 7[1,6] ＞ 7 ＞ 成功
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			■奥義<br>
+			《立花の華》<br>
+			指定特技　：罠術<br>
+			エフェクト：範囲攻撃/乱れ/回数制限<br>
+			<br>
+			効果：範囲攻撃。プロットから3範囲内のキャラクターを好きな数選び、ダメージを2与える。<br>
+			また、任意変調を与えることができる。<br>
+			ただし、使うたびに生命を1削り、2回しか使用ができない。<br>
+			効果・演出：「血のように、舞うといい」<br>
+			桜の花びらが舞う。それはまるで&quot;血&quot;のようだ。<br>
+			そして、それは本当に彼の血なのかもしれない。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「血のように、舞うといい」
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			■奥義！！<br>
+			《月映》<br>
+			指定特技　：憑依術<br>
+			エフェクト：ﾂｷｳﾂｼ<br>
+			範囲攻撃/滅び/人数限定<br>
+			間合3までの2人に射撃戦2点ダメージ。<br>
+			自分以外の誰かがクリティカルヒット・範囲攻撃を宣言した際に当奥義を使用して相殺可能。<br>
+			相殺に使用する際も奥義情報を持っているPCは奥義破りが可能。<br>
+			効果・演出：相手の肉体に狂った心霊を取り憑かせて自傷させる。狂気で大技の体勢を崩すこともある。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「困ったな…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「させないわ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			ｹﾞﾎｹﾞﾎ…<br>
+			「困ったな、困った…」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 梁 芳 ] 器術 : 1 → 0
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「これじゃあ、シオンを殺せないじゃないか！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あなたが優しい子じゃなくて残念よ、本当に」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「僕も残念だよ、本当に」<br>
+			「ユエ、キミのことは心底嫌いだ」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「見事に舞っているなぁ！口から！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			接近戦攻撃→フユキ
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「はは、そうだ…私の命はそんなに長くない」（血を吐く）
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			痛打<br>
+			2D6&gt;=8 （判定：仕込み） (2D6&gt;=8) ＞ 5[2,3] ＞ 5 ＞ 失敗
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「私は可愛いあなたのこと弟みたいで好きだったわよ、最初から敵同士だけどね」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			凶手<br>
+			2D6&gt;=8 （判定：仕込み） (2D6&gt;=8) ＞ 11[5,6] ＞ 11 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「フフ…」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			2D6&gt;=5 （判定：拷問術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			2D6&gt;=8 （判定：飛術） (2D6&gt;=8) ＞ 7[3,4] ＞ 7 ＞ 失敗<br>
+			1d6 (1D6) ＞ 3
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ フユキ ] 忍術 : 1 → 0
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……肉を切らせて」<br>
+			「我が義の刃は汝を断つ！！」<br>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p7">
+			<b>フユキ</b>
+			■奥義<br>
+			《【無影之絶（むえいのたち）】》<br>
+			指定特技　：《隠形術》<br>
+			エフェクト：【クリティカルヒット】貫き/射程低下<br>
+			<br>
+			※【貫き】が追加された奥義は【絶対防御】を使われても、1点だけは目標に選んだキャラクターの【生命力】を失わせることができる。<br>
+			<br>
+			※【射程低下】が追加された奥義は、通常の物よりもプロット値の範囲が1狭い位置にいるキャラクターしか目標として選べなくなる。<br>
+			<br>
+			効果・演出：　影を追うことすら許さない相手の死角を狙いすました一撃。その技術を初撃・不意打ちに特化させた攻撃であり、完全に防ぎきることは困難である。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>シオン</b>
+			「わ、私は……」<br>
+			「死ねない！！」<br>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p2">
+			<b>シオン</b>
+			■奥義<br>
+			《【偽象絡繰『流転八神鏡』（ぎしょうからくり『るてんやくさのかみかがみ』）】》<br>
+			指定特技　：《絡繰術》<br>
+			エフェクト：【クリティカルヒット】滅び/射程低下<br>
+			<br>
+			※【滅び】が追加された大儀は、自分に誰かが使った【クリティカルヒット】か【範囲攻撃】の目標になったときに使用できるようになる。その場合通常の効果の代わりに、相手の使った奥義を無効かできる。【奥義】の【情報】を持っているキャラクターは、この効果に対して奥義破りを試みることが可能である。<br>
+			<br>
+			※【射程低下】が追加された奥義は、通常の物よりもプロット値の範囲が1狭い位置にいるキャラクターしか目標として選べなくなる。<br>
+			<br>
+			効果・演出：　指矩班の技術である【流転】を利用し、隠忍の血統の秘伝忍法【相克】の再現を試みた試作型絡繰。目の前で使用された奥義を即座に解析し、データを直接脳へと打ち込むことによって即興での対抗を可能とする。正確なデータを得る都合、現状では間合いの短い奥義にのみ対応している。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「はは！！その力…！！」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「ハハハ！！」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「こいつ……！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			心臓止まるかと思った
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「はぁ……はぁ……おねぇちゃん……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「さて…私の手の内も全部見えただろう？」<br>
+			「死んでもらうよ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「シオン、生きて、生きるのよ……！！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「わたし……わたし……けど……Dr.からは逃げられない……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「もともと死んでいた命だ、私によこせ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「いいえ逃げられるわ、生きていられれば絶対に、この……首なしさんもついているわ！」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「&quot;双天首刈桜&quot;だ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「偽りの命でも、か？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「うるさいわ、死に損ない！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ははははははははははは！！！！！！！！！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			あやめちゃんへ春雷<br>
+			2D6&gt;=5 （判定：骨法術） (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功<br>
+			2D6&gt;=5 （判定：身体操術） (2D6&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=9 （判定：遁走術） (2D6&gt;=9) ＞ 4[1,3] ＞ 4 ＞ 失敗<br>
+			1ｄ6 (1D6) ＞ 6
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			血断使って生命力-1してだてん＋1
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 御神楽 ユエ ] 頑健 : 1 → 0
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			1ｄ6 (1D6) ＞ 5<br>
+			1ｄ6 (1D6) ＞ 3
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 猫丸 アヤメ ] 忍術 : 1 → 0<br>
+			[ 猫丸 アヤメ ] 妖術 : 1 → 0<br>
+			[ 猫丸 アヤメ ] 戦術 : 1 → 0
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			1ｄ6 (1D6) ＞ 5<br>
+			竜胆をシオンに
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「シオン、シオンを殺れ！！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=5 （判定：意気） (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			2D6&gt;=7 （判定：記憶術） (2D6&gt;=7) ＞ 6[2,4] ＞ 6 ＞ 失敗
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			風饗
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			神通丸使用<br>
+			2D6&gt;=7 （判定：記憶術） (2D6&gt;=7) ＞ 5[1,4] ＞ 5 ＞ 失敗<br>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p2">
+			<b>シオン</b>
+			《【邪刀・事象改変（やつるぎ・じしょうかいへん）】》<br>
+			指定特技　：《記憶術》<br>
+			エフェクト：【完全成功】響き/発動条件<br>
+			<br>
+			※【響き】が追加された【完全成功】は通常の判定のサイコロを振ったあとからでも使えるようになる（サイコロの結果、ファンブルになったときも使用可能）。その時は達成値は１０に変更される。<br>
+			<br>
+			※【発動条件】が追加された奥義は、自分の残りの【生命点】が3点以下の時しか使用できなくなる。【発動条件】が追加されたのが【追加忍法】の場合は、自分の残りの【生命力】が3点以下の時しか、【追加忍法】で選んだ忍法を使用できなくなる。<br>
+			<br>
+			効果・演出：　神器「邪刀」の欠片の力により、「自分が体験した」失敗を、成功という事象に改変する。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			2D6&gt;=7 （判定：対人術） (2D6&gt;=7) ＞ 6[2,4] ＞ 6 ＞ 失敗
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=7 （判定：九ノ一の術） (2D6&gt;=7) ＞ 7[3,4] ＞ 7 ＞ 成功
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			2D6&gt;=8 （判定：瞳術） (2D6&gt;=8) ＞ 3[1,2] ＞ 3 ＞ 失敗
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			1d6 (1D6) ＞ 3<br>
+			1d6 (1D6) ＞ 4
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「欠片の力はすごいな！！！ははははははははははは！！！！！！！！！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			風饗
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ シオン ] 戦術 : 1 → 0<br>
+			[ シオン ] 妖術 : 1 → 0
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=7 （判定：怪力） (2D6&gt;=7) ＞ 5[1,4] ＞ 5 ＞ 失敗<br>
+			「なんで！！なんで！！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「い、いやぁ……」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			アヤメに血旋渦、痛打<br>
+			2D6&gt;=5 （判定：縄術） (2D6&gt;=5) ＞ 10[4,6] ＞ 10 ＞ 成功<br>
+			2D6&gt;=5 （判定：異形化） (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功<br>
+			「”首刈桜”の技を魅せてやろう」半蔵は空高くニンジャジャンプし対象へと手裏剣を振るった（血液が注がれたタライをひっくり返す）。「ニンポー 【殺闇腐触鬼】（ｻｸﾗﾌﾌﾞｷ！」手裏剣（タライ）から放たれたエネルギー（こぼされた血液）はまさに『桜吹雪』のようであった。
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=10 （判定：言霊術） (2D6&gt;=10) ＞ 11[5,6] ＞ 11 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ハッ！！！演出がかぶってるんだよ！！」
+		</p>
+	</div>
+
+	<div class="tab t7">
+		<div class="tabtitle">ラウンド</div>
+		<p class="player p0">
+			<b>GM</b>
+			3ラウンド
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p7">
+			<b>フユキ</b>
+			影分身（かげぶんしん）<br>
+			2D6&gt;=7 （判定：飛術 (2D6&gt;=7) ＞ 10[5,5] ＞ 10 ＞ 成功
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 梁 芳 ] がダイスシンボルを公開。出目は 6 です。<br>
+			[ フユキ ] がダイスシンボルを公開。出目は 5 です。<br>
+			[ 猫丸 アヤメ ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ フユキ ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ &quot;双天首刈桜&quot;照由良 半蔵 ] がダイスシンボルを公開。出目は 6 です。<br>
+			[ 御神楽 ユエ ] がダイスシンボルを公開。出目は 5 です。<br>
+			[ シオン ] がダイスシンボルを公開。出目は 3 です。
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ははははは！！！！！！よかったな！！！！」<br>
+			「姉妹愛は通じたようだね？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「うるさいわ、愛を語らないで頂戴」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			操り人形&quot;発動&quot;！<br>
+			2D6&gt;=5 （判定：傀儡の術） (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)<br>
+			「ははははは！！！！！！」<br>
+			&nbsp;<br>
+			「ユエ！！お前は嫌いだが役に立つ…！」<br>
+			接近攻撃<br>
+			2D6&gt;=5 （判定：対人術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			2D6&gt;=7 （判定：九ノ一の術） (2D6&gt;=7) ＞ 9[4,5] ＞ 9 ＞ 成功
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			アヤメに血旋渦、痛打<br>
+			2D6&gt;=5 （判定：縄術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「はは！攻撃が通らなくとも、お前の意識はいただいたぞ…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「最低男…！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「はは！！」<br>
+			「さぁ、双璧を崩させてもらうよ…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			2D6&gt;=5 （判定：骨法術） (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「はっはっは！！！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			鬼影のマイナス2で不発です、助かった！
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あれ？おかしいな…」<br>
+			「フフ…じゃあもういっかーい」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「耄碌したのかしら…？絶対とめる、絶対止めるわ…！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			竜胆をシオンに
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 猫丸 アヤメ ] 戦術 : 0 → 1
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=5 （判定：意気） (2D6&gt;=5) ＞ 10[4,6] ＞ 10 ＞ 成功
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			2D6&gt;=8 （判定：仕込み） (2D6&gt;=8) ＞ 6[3,3] ＞ 6 ＞ 失敗<br>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p2">
+			<b>シオン</b>
+			《【邪刀・事象改変（やつるぎ・じしょうかいへん）】》<br>
+			指定特技　：《記憶術》<br>
+			エフェクト：【完全成功】響き/発動条件<br>
+			<br>
+			※【響き】が追加された【完全成功】は通常の判定のサイコロを振ったあとからでも使えるようになる（サイコロの結果、ファンブルになったときも使用可能）。その時は達成値は１０に変更される。<br>
+			<br>
+			※【発動条件】が追加された奥義は、自分の残りの【生命点】が3点以下の時しか使用できなくなる。【発動条件】が追加されたのが【追加忍法】の場合は、自分の残りの【生命力】が3点以下の時しか、【追加忍法】で選んだ忍法を使用できなくなる。<br>
+			<br>
+			効果・演出：　神器「邪刀」の欠片の力により、「自分が体験した」失敗を、成功という事象に改変する。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「はははははははは！！！」<br>
+			「ほら、舞え！！！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			2D6&gt;=8 （判定：九ノ一の術） (2D6&gt;=8) ＞ 8[3,5] ＞ 8 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			2D6&gt;=7 （判定：対人術） (2D6&gt;=7) ＞ 2[1,1] ＞ 2 ＞ ファンブル<br>
+			「ははははは！！！！！！芸術作品が成功したな！！！ｹﾞﾎｹﾞﾎ！！」<br>
+			「ｶﾞﾊｯ！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「だ、だめ…！だめ！！」<br>
+			「避けてシオン！死んじゃだめ！死なないで！！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ハッ！！美しい姉妹愛だな！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「わ、わたし……いやっ！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シオンが発動させた”邪刀”による事情改変の奥義。<br>
+			        それは無情にも、梁に操られた姉の手によって阻まれる事となる。<br>
+			        奥義破りにより生じた隙を見逃さず、アヤメが渾身の一撃を叩き込んだ――。
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「あっ！！やった！？わたしやれた！？」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「あ……」<br>
+			「あ、かんな……おねぇちゃん……？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ほら、いけよ！！」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「……！！！！」
+		</p>
+		<p class="player p2">
+			<b>シオン</b>
+			「ご……めんね……？」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ シオン ] 器術 : 1 → 0
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「は？かんな……？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「……！！！！！やだやだやだ！！！そんなの……！！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「……まぁいいや！！！知らないもん！！！わたしのせいじゃない！！！」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 梁 芳 ] 器術 : 0 → 1
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「…」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ははは！！みなぎってきたよ！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「このままじゃ終われないわ………」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「……それで、これから一体どうするんだ？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…狙ってきたのはキミの方だ、シオン」<br>
+			「違うかい？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「そうよぉ！！そうよぉ！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「絶対にあの人たちを殺します。死んでも……」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……残りは二人か」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あの子がしたくてしたと……？忍でもなかった、何も知らなかったはずのあの子が？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「しらないわよぉ！！最初に狙ったのはそっちなのよお！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あぁ、そうだよ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「なら死になさい！あの子のために……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「したくてしてなかったら、人を殺してもいいんだ？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「首刈桜、まだ動けるわね？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「へぇ、そうか」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしだって……わたしだってしにたくないのぉ！！」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「ああ……！」<br>
+			「お前たちに限っては、死んで当然かもな」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……忍務は果たす」<br>
+			万華鏡<br>
+			→デュラハン<br>
+			2D6&gt;=5 （判定：瞳術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗<br>
+			「！？私の瞳力を……？」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「俺に&quot;瞳&quot;が聞くと思うな」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……ほざけ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「私たちのような覚悟のもと死地にいる忍と、あの子は違う」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「一般人が、望まぬ殺意をしたら罪を免れると？」<br>
+			「&quot;法律&quot;では、許されないよなぁ？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「知らない！！知らない！！わたしだって覚悟なんてなかったもん！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「ならば忍なんてやめてしまいなさい！！！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「忍びの家に生まれちゃったんだから仕方ないじゃない！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「&quot;目には目を、歯には歯を&quot;！！」
+		</p>
+	</div>
+
+	<div class="tab t7">
+		<div class="tabtitle">ラウンド</div>
+		<p class="player p0">
+			<b>GM</b>
+			4ラウンド
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			戦場変更極所
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			影分身<br>
+			2D6&gt;=7 （判定：飛術） (2D6&gt;=7) ＞ 9[4,5] ＞ 9 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「私としては、後はそこの遅刻魔さえ倒せれば、自己防衛は終わりなんだが…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「フユキくん、あなたは失う辛さがわかるわよね」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「よわよわの落ちこぼれのわたしを狙ったくせに、いまさら一般人なんて知らないのぉ！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ユエさん、私を攻撃する気ですか？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「自分が何をしているか、何をしようとしているかよく考えて刃を取ることね」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「そうだ、あんだけチートじみた力で、色んな人を屠っておいて知らなかっただ？」<br>
+			「どこの上級国民だ？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「私は何も後悔しないわ、あの子を解放してあなたと一緒に地獄に落ちてやる」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「己の正義を他人に振りかざすな！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしの話も聞いてぇ！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「貴様が正義を語るなァ！！！」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ フユキ ] がダイスシンボルを公開。出目は 5 です。<br>
+			[ フユキ ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 猫丸 アヤメ ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ 御神楽 ユエ ] がダイスシンボルを公開。出目は 6 です。<br>
+			[ &quot;双天首刈桜&quot;照由良 半蔵 ] がダイスシンボルを公開。出目は 6 です。<br>
+			[ 梁 芳 ] がダイスシンボルを公開。出目は 6 です。
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ははははは！！！！！！学んだんだね！！！嬉しいよ？」<br>
+			「だが、乗っ取らせてもらうよ…」<br>
+			「今度はキミだ、遅刻魔」<br>
+			2D6&gt;=5 （判定：傀儡の術） (2D6&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功<br>
+			「ｹﾞﾎｹﾞﾎ！」<br>
+			2D6&gt;=5 （判定：傀儡の術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗<br>
+			「ははははは！！！！！！」<br>
+			2D6&gt;=5 （判定：傀儡の術） (2D6&gt;=5) ＞ 10[5,5] ＞ 10 ＞ 成功<br>
+			「あぁ。生きている」<br>
+			「真なる桜の舞い散る様を見るといい！」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			2D6&gt;=5 （判定：異形化） (2D6&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「首を。刈れ」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「ぬおおおお！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			2D6&gt;=8 （判定：結界術） (2D6&gt;=8) ＞ 6[1,5] ＞ 6 ＞ 失敗<br>
+			2D6&gt;=8 （判定：結界術） (2D6&gt;=8) ＞ 8[2,6] ＞ 8 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「はは！！！！！死ね！！！」」」<br>
+			感情でマイナス１　→失敗に変更
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			1d6 (1D6) ＞ 2
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「お前は気に入らなかったんだよ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「諦めない、諦めないわ…！！」<br>
+			梁芳くんに春雷だ<br>
+			2D6&gt;=5 （判定：骨法術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あははは！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			2D6&gt;=5 （判定：憑依術） (2D6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「どうしたんだ？」<br>
+			「じゃあ、僕の番だ」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「いいえ、まだよ…まだよ…！！私はまだ死んでないわ…！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			闇斑<br>
+			2D6&gt;=6 （判定：対人術） (2D6&gt;=6) ＞ 6[2,4] ＞ 6 ＞ 成功<br>
+			「ｹﾞﾎｹﾞﾎ！！！」<br>
+			「死ぬわけには…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「先に死になさい……！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			■奥義<br>
+			《癇癪玉》<br>
+			指定特技　：言霊術<br>
+			エフェクト：範囲攻撃/撃ち/回数制限<br>
+			効果・演出：大声であることないことを喚き散らし、周囲の人間の鼓膜と強い心をダメにする。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ははははは！！！！！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「犬角カンナじゃあ！！！先生しか見てくれないのお！！！！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			■奥義<br>
+			《月映》<br>
+			指定特技　：憑依術<br>
+			エフェクト：ﾂｷｳﾂｼ<br>
+			範囲攻撃/滅び/人数限定<br>
+			間合3までの2人に射撃戦2点ダメージ。<br>
+			自分以外の誰かがクリティカルヒット・範囲攻撃を宣言した際に当奥義を使用して相殺可能。<br>
+			相殺に使用する際も奥義情報を持っているPCは奥義破りが可能。<br>
+			効果・演出：相手の肉体に狂った心霊を取り憑かせて自傷させる。狂気で大技の体勢を崩すこともある。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「遅刻魔…動け」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「悪いが少し遅れるぞ」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あれ？おかしいな…」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 猫丸 アヤメ ] 妖術 : 0 → 1
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			兵糧丸<br>
+			2D6&gt;=9 （判定：言霊術） (2D6&gt;=9) ＞ 6[2,4] ＞ 6 ＞ 失敗
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			2D6&gt;=7 （判定：瞳術） (2D6&gt;=7) ＞ 9[4,5] ＞ 9 ＞ 成功
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 御神楽 ユエ ] 体術 : 1 → 0<br>
+			[ 御神楽 ユエ ] 器術 : 1 → 0<br>
+			[ 御神楽 ユエ ] 忍術 : 1 → 0<br>
+			[ 御神楽 ユエ ] 戦術 : 1 → 0
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「あ&quot;……っ」<br>
+			「まだ、生きてるわ…よ……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ｹﾞﾎｹﾞﾎ…」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……」<br>
+			万華鏡<br>
+			2D6&gt;=5 （判定：瞳術） (2D6&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 御神楽 ユエ ] 謀術 : 1 → 0<br>
+			[ 御神楽 ユエ ] 妖術 : 1 → 0
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「困った…彼女まで殺したくはなかった…」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			死亡攻撃！
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「おい、それは…！！」<br>
+			「馬鹿！やめろ！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			梁芳くんへ春雷
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ああああああああ！！！」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			2D6&gt;=5 （判定：骨法術） (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ハァ…ハァ…生き延びた？」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			届きませんでした……
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「……」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「…………」
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「おね、さんが……ぜったい…………」<br>
+			「…………。」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…………」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……もういい」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ん」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「……？」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「もういい！」<br>
+			「……忍法狩りは伏した、もはややるべきことは残っていない」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「ユエ……」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「俺が望んでいたのはこんなことだったのか……？」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			戦場から脱落→フユキ
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「わたしが……わたしの、せい？わたしが悪かった……？」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「私も、自己防衛は済んでいる」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「どいつもこいつもふらふらと……」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「ごめんなさい……わたしが……わたしが……しにたくなくて……わたしのせいで……」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「果たしてそうか？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「妹……？妹だったの……？あの子が……？なんで……？し、知らなかったの……知らなかったんだもん……」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…何を言っているんだ？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「知らなかったもん……あの子は結局誰なの……？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「おい。知らないほうがいいこともある」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「お前はこれから一生俺に狙われ生きていく……！残り少ない余生をな……！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ははははは！！！！！！それはどうかな？」<br>
+			ｹﾞﾎｹﾞﾎ
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			遺言→アヤメにプライズの秘密を渡す
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■プライズ：神器の欠片【秘密】<br>
+			------------------------<br>
+			シオンに宿った神器は、過去改変の能力を持つ”邪刀”の欠片である。<br>
+			この”邪刀”の欠片は過去の出来事が記されたもの、即ち人間の脳として発現している。<br>
+			神器の能力の使用には「蛹」であるシオンの肉体が必要であり、現在は代わりとなる義体開発のデータ収集を行っている。<br>
+			そのため邪刀の欠片を摘出する意味は薄く、斜歯忍軍の科学力で成し得ないことを他の流派が行えるはずがないという自負により、邪刀の欠片を宿しているシオンを使い捨てにするような運用をしている。<br>
+			※この【秘密】とPC①の【秘密】をPC④が獲得した場合、PC④の【秘密】は新たな【秘密】に上書きされる。<br>
+			<br>
+			・このプライズには下記の3つの効果がある。<br>
+			①このプライズを所持しているキャラクターは、奥義【完全成功】と【追加忍法】を修得し、使用することができる。<br>
+			（この【秘密】を獲得することによって、同時に奥義の【情報】を獲得したことにはならない）<br>
+			<br>
+			②このプライズは所持者の【生命力】が0でない場合、戦果として選択できない。<br>
+			<br>
+			③このプライズを「NPC1：シオン」が所持している場合、プライズを戦果として奪われたときに死亡する。<br>
+			（「NPCの死亡」のルールによって死亡させることはできない）
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「どういうこと……？仇ってこと……？また死にかけるの……？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「おい、聞くな！」
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■PC4：新たな【秘密】<br>
+			------------------------<br>
+			PC④がPC①の【秘密】と「プライズ：神器の欠片」の【秘密】を獲得した際に書き換わる【秘密】となります。<br>
+			【秘密】<br>
+			あなたは思い出す。<br>
+			自分が血盟「双天」のシノビであり、シオンの姉であったことを。<br>
+			あなたは確かに一度死んだ。しかし、シオンの持つ”邪刀”の力によって生き返ったのだ。<br>
+			”邪刀”の力は不完全のようであり、あなたの記憶は未だに欠けたままではある。<br>
+			しかし、今やるべきこと、果たさなければならないことは分かっている。<br>
+			人生を弄ばれ、負うべきではない罪を背負わされた家族を、斜歯忍軍から助けなければ。<br>
+			あなたの【本当の使命】は『シオンを助けること』である。<br>
+			この【秘密】をPC③が獲得した場合、PC③の【秘密】は新たな【秘密】に上書きされる。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「？　？？？？？敵はりゃんさん……？？？ゆえさんは姉妹……？？？？？あの子は妹で……はえ？？？？え？？？？へ？？？？？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「チッ！」
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■PC3：新たな【秘密】<br>
+			------------------------<br>
+			血盟「双天」のシノビは生きていた。<br>
+			その上、己の所業を都合良く忘れ、今や家族を救う正義の士気取りだ。<br>
+			なんと忌々しい、薄れていた憎しみが蘇る。<br>
+			ただ奴らを殺すだけでは、もはやこの恩讐は消えはしない。<br>
+			だかしかし、シノビに人生を翻弄され続けたシオンを憐れにも思う。<br>
+			血盟に連れ去られようと余命は極僅か、記憶を取り戻せば罪過に苦しむことにもなる。<br>
+			斜歯忍軍のシノビとして生きようとも、その生涯は神器研究の実験台。<br>
+			既に神器の欠片を宿していることを隠せはしない、数多の勢力から狙われるだろう。<br>
+			ならばせめて、何も知らぬうちに終わらせてやるべきではないか。<br>
+			あなたの【本当の使命】は『シオンを死亡させること』である。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「……なんだ、全員の顔色が変わったな」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「……フハハハハハ！！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「あ？どうした、遅刻魔」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「お前ごときに俺の顔色が分かるか！？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「いや、わからないな」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「……ぜぇんぶわたしのせい！！！！！！わたしが悪いの！！！？？わたしが悪かったんでしょ！！！！なんで！？！？正義の士気気取りって何！？！？！？わたしなんにもできないのに！！！！なんにもできなかったのに！！！！！どうしたらよかったの！？わたしがしんでればよかった！？！？今から死ねばいい！？！？みんな殺せばいい！？！？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ハァ…」（やっぱり、そういうことか）<br>
+			（ずっと、ずっと傀儡でいればよかったものを）<br>
+			（あのとき、初めてシオンにアヤメが会った際に仕込んだ術が解けてしまったか）
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「じゃあなんであのこはわたしを襲ったの？？それも記憶の改ざん！？なんで！？なんで！？どうしたらよかったの……？？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「それは、神器の欠片のせいだ」<br>
+			「…さっきのシオンの力でわかっただろう」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「はは、何が双天首刈桜だ！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「……落ちこぼれのまま先生によしよしされてればよかった！！知らないうちに身の程知らずなことしてたってことでしょう！？わたしは永遠にゴミのままでいたほうがみんな幸せだったってことでしょう！？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…あぁ」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「そしてあの憎き『双天』に狂信など……」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「なんで肯定するの！？！？なんでそうじゃないって言ってくれないの！？！？人の心ないの！？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「キミは、忘れたままでいればよかった」<br>
+			「こんな、命の奪い合いからせっかく抜けられたものを…なぜまた戻ってきたんだ？」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「うるせぇな！！！！！そこは肯定しとけや！！！！！これだから男は！！！！！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（鼓膜が潰れる…）<br>
+			「馬鹿らしい…自分で巻き込まれに行って、怒り狂っている」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「このような女がユエの相棒だとはな……」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「犬角カンナでいても猫丸アヤメでいてもわたしはなんにもならないんだ！？これから生きててもどうせ誰かに狙われて殺されるんでしょ！！じゃあいいわ、ふたりとも殺してわたしも死ぬわ！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「戦は終わった…自己防衛は済んでいるんだ、聞いてるか？おい！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			1d6 (1D6) ＞ 2
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			1d6 (1D6) ＞ 1
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			1d6 (1D6) ＞ 2
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] 器術 : 1 → 0
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			1d6 (1D6) ＞ 3
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 梁 芳 ] 器術 : 1 → 0<br>
+			[ 猫丸 アヤメ ] 器術 : 1 → 0
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「なぜ手を止めない！殺さなければならないじゃないか！」
+		</p>
+	</div>
+
+	<div class="tab t7">
+		<div class="tabtitle">ラウンド</div>
+		<p class="player p0">
+			<b>GM</b>
+			5ラウンド
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			アヤメの放った奥義により繁華街は一瞬にして地獄と化した――
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 猫丸 アヤメ ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 梁 芳 ] がダイスシンボルを公開。出目は 4 です。
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			りゃんさんに竜胆<br>
+			2D6&gt;=5 （判定：意気） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「首刈桜…お前は結局、こちら側なんだな」<br>
+			&quot;闇斑&quot;
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「どちらがいいか？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「うーん…」闇を放つ<br>
+			2D6&gt;=6 （判定：対人術） (2D6&gt;=6) ＞ 2[1,1] ＞ 2 ＞ ファンブル<br>
+			「ガハッ！！」<br>
+			ｹﾞﾎｹﾞﾎ「手を止めればいいものを…」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			兵糧丸
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] 器術 : 0 → 1
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「俺のやることは変わらない……」<br>
+			梁 芳へ血旋渦、痛打<br>
+			「八つ当たりだ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「こっちは変わったんですけど……！？え！？何！？」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ハァッ！？」<br>
+			「狙う先が違っているぞ！！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「今一番気に入らないのは貴様だ……！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			（しぬとおもったしぬとおもったしぬとおもった）
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			2D6&gt;=5 （判定：縄術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功<br>
+			2D6&gt;=5 （判定：異形化） (2D6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			感情補正マイナス１<br>
+			「あああああああああ！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			感情補正プラス1
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「お前を刈る。ーーいや、殺す！！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「馬鹿、やめろ！！！！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			-回想-<br>
+			――かつて俺は『双天』御神楽 ユエの首を刈る忍務を受けた。<br>
+			――だが奴は現れた。もう一人の『双天』犬角 カンナだ。<br>
+			――俺の愛馬コシュタ・バワーは奴に殺された<br>
+			――コシュタ・バワーよ……今の俺を見てお前は何を思うだろうか……<br>
+			「首刈桜の誇り、必ず取り戻す！」<br>
+			「悪の華よ！散るがいい！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「何が華だ！」<br>
+			「私の行動は一貫していたはずだ、自己防衛一貫だっただろう！」<br>
+			「私が悪なのか？自己防衛だぞ！」<br>
+			「思い返してみろ！攻撃されたから、反撃をした」<br>
+			「全部、私からかけた禍いではない」<br>
+			「襲いかかってきた人間を打ち返して何が悪い！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「妙な話だな、一番ぶれなかった貴様が一番醜い！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「ブレなかったら、悪なのか！」<br>
+			「そうだ、私はブレていない！何も…ね！」<br>
+			「&quot;法律上&quot;は、全て守っている、何がおかしい？わからない！このバカどもが！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			(また蚊帳の外……わたしはいなくてもいいんじゃ……)
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ここは日本！過剰防衛だ！滅ぶがいい！！！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「遅刻魔は会ったときから嫌いだったが、こんなに頭がおかしいとは計算外だったよ」<br>
+			「真の道化は、お前だったな！ははははは！！！！！！」<br>
+			「お前の真なる目的は知っている。満たせなくて良いんだな？」<br>
+			「そして、私が死ぬことも」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「最後にボロが出たな！遅刻は違法ではない！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「クッ！」<br>
+			「喧嘩両成敗！って正義気取りだな、道化よ！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「いい加減早退するがいい！」
+		</p>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「恨みを忘れた道化め！！」チュドーン<br>
+			（意識を失う）
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			1d6 (1D6) ＞ 6<br>
+			6ラウンド
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「……さあ、全ての因縁に決着をつけよう」<br>
+			「『双天』よ」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「……はい」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			ドルルン！ドルルン！<br>
+			「さあ！お前の首を数えろ！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「ひとつです……」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 猫丸 アヤメ ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] がダイスシンボルを公開。出目は 6 です。
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			カンナへ血旋渦、痛打<br>
+			2D6&gt;=5 （判定：縄術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功<br>
+			2D6&gt;=5 （判定：異形化） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=10 （判定：言霊術） (2D6&gt;=10) ＞ 2[1,1] ＞ 2 ＞ ファンブル<br>
+			「？？？？？」<br>
+			1ｄ6 (1D6) ＞ 1
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 猫丸 アヤメ ] 体術 : 1 → 0
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			1ｄ6 (1D6) ＞ 1
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 猫丸 アヤメ ] 妖術 : 1 → 0
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			■奥義<br>
+			《癇癪玉》<br>
+			指定特技　：言霊術<br>
+			エフェクト：範囲攻撃/撃ち/回数制限<br>
+			効果・演出：大声であることないことを喚き散らし、周囲の人間の鼓膜と強い心をダメにする。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			2D6&gt;=8 （判定：死霊術） (2D6&gt;=8) ＞ 5[2,3] ＞ 5 ＞ 失敗
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] 戦術 : 1 → 0<br>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] 謀術 : 1 → 0<br>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] 体術 : 1 → 0
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ぬおお！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			1ｄ6 (1D6) ＞ 1
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			1d6 (1D6) ＞ 3
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ 猫丸 アヤメ ] 謀術 : 1 → 0<br>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] 忍術 : 1 → 0
+		</p>
+	</div>
+
+	<div class="tab t7">
+		<div class="tabtitle">ラウンド</div>
+		<p class="player p0">
+			<b>GM</b>
+			7ラウンド
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「アーマーナイトニンジャの俺にここまでの傷を……！」<br>
+			「これが『双天』か……！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「そうてん……よくしらないけど買いかぶられているのはいいことなのかも……」
+		</p>
+		<p class="player p11">
+			<b>system</b>
+			[ &quot;首刈桜&quot;照由良 半蔵 ] がダイスシンボルを公開。出目は 6 です。<br>
+			[ 猫丸 アヤメ ] がダイスシンボルを公開。出目は 4 です。
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			奥義！！
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			■奥義<br>
+			《殺闇腐触鬼乱れ咲き<br>
+			ｻｸﾗﾌﾌﾞｷﾐﾀﾞﾚｻﾞｷ》<br>
+			指定特技　：異形化<br>
+			エフェクト：範囲攻撃/乱れ（強み）：対象のキャラクターにランダムに変調を１つ与える。/威力低下（弱み）：対象に失わせる生命力が－1<br>
+			効果・演出：「喰らうがいい！“首刈桜半蔵”が最終奥義ぃ！」半蔵は必殺の構えに入った。<br>
+			　ｻｸﾗﾌﾌﾞｷﾐﾀﾞﾚｻﾞｷ<br>
+			「殺闇腐触鬼乱れ咲きぃ！！！」手裏剣（たらい）に溜められたエネルギー（血液）が解き放たれ（放り投げられ）る、そして空へと舞った桜の如き鮮やかな死の奔流（血液）が標的へと舞い落ちる！
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「終わりだ！俺の咲かす桜となりて散れ！！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			2D6&gt;=11 （判定：意気） (2D6&gt;=11) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「俺の……刈ちだぁぁぁぁ！！！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「死んだ……おわりだ……生きててごめんなさい……しにます……」<br>
+			「死ぬ……？いや……やだ……やだやだやだぁ！！！！！」<br>
+			「先生にほめてもらうもん！！！生き残ったのをほめてもらうもん！！負けるのは得意だもん！！！生き汚いのだけは長所だって言われるもん！！！負けても生き残るもん！！」<br>
+			「ゴキブリみたいにしぶとく生き延びてやるもん……！！いつかさくらさんに首くっつけに行くもん……！！！」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「逃げるか！」<br>
+			「だが『首刈桜』の勝ちだ！名を置いていけ『双天』！」
+		</p>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			「奥義！！土下座！！」<br>
+			「……うぁ」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「2つ目の奥義……？こいつにも神器の欠片が……！？」<br>
+			「引かねば……」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			勝者、首刈桜&quot;照由良 半蔵
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			アヤメから殺意
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			戦闘終了
+		</p>
+	</div>
+
+	<div class="tab t8">
+		<div class="tabtitle">ED</div>
+		<p class="player p0">
+			<b>GM</b>
+			戦闘終了を確認した斜歯の回収部隊が現れる。<br>
+			        倒れていた梁芳、アヤメの回収を行おうとしたが、フユキにより両名とも奪取されてしまう。<br>
+			        残された瀕死のシオンを回収した後、撤退することとなる。<br>
+			        なお、死亡した筈のユエの遺体は何故か姿を消していた。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			シオンに宿った神器はユエを<br>
+			choice[蘇らせた,蘇らせた,蘇らせた,何もおきなかった] (choice[蘇らせた,蘇らせた,蘇らせた,何もおきなかった]) ＞ 蘇らせた
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「なんなのこれは、何があったの………」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			脳裏に靄がかかったように何も思い出せない……
+		</p>
+		<p class="player p9">
+			<b>御神楽 ユエ</b>
+			「帰らなきゃ………どこに？」<br>
+			どこへともなくフラフラ歩いていきますね
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			すべて、大切なものが抜け落ちてしまったようだ……<br>
+			ふと、足が止まる。足元に一輪の花が咲いていた<br>
+			花の名前は――――シオン。<br>
+			花言葉は、追憶、君を忘れない、遠くの人を想う 。
+		</p>
+	</div>
+
+	<div class="tab t8">
+		<div class="tabtitle">ED</div>
+		<p class="player p0">
+			<b>GM</b>
+			――どこかの路地裏。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			（フユキに救助された翌日…）<br>
+			「……」<br>
+			（誰かと連絡をとっている…）<br>
+			「あぁ。任務は失敗した。」<br>
+			「だが、次はうまくやってみせる」<br>
+			「ははh！…おっと、それでは」（ｶﾞﾁｬﾘ）
+		</p>
+	</div>
+
+	<div class="tab t5">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			■PC2：【秘密】<br>
+			------------------------<br>
+			　あなたは流派の上層部から特命を受けている。<br>
+			最近活発になっている斜歯忍軍の「忍法狩り」、その刺客の一人であるシオン。<br>
+			彼女の中忍頭としては異常な能力、それは斜歯忍軍の技術だけでは説明がつかない。<br>
+			別の超常的存在、即ち”神器の欠片”が関わっているのではないか……と。<br>
+			あなたは忍務のため「忍法狩り」の標的として狙われるよう情報を流し、自身を囮とした作戦を決行した。<br>
+			　あなたの【本当の使命】は『事の真偽を確かめ、真ならば神器の欠片を回収すること』である。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>梁 芳</b>
+			「…シオン。お前の神器は、私のものだ。」ｹﾞﾎｹﾞﾎ
+		</p>
+	</div>
+
+	<div class="tab t8">
+		<div class="tabtitle">ED</div>
+		<p class="player p0">
+			<b>GM</b>
+			――私立多羅尾女学院。
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">メイン</div>
+		<p class="player p8">
+			<b>猫丸 アヤメ</b>
+			助け出されて動けるようになったころ<br>
+			「先生～～不肖猫丸アヤメこと犬角カンナ、生き延びました～～～ほめてください～～」<br>
+			「あのね先生、カンナの花言葉は『「情熱」、「快活」、「妄想」、「堅実な未来」、「熱い思い」』で、アヤメの花言葉は『「よい便り」「朗報」「メッセージ」「希望」』なんですって～。わたし、どっちの名前も好きになりましたぁ～。その場に応じてどっちにもなっていこうと思います～。今回もゴミだったんですけど、ゴミなりにまだがんばります～」<br>
+			「まだまだ泥舐めようと思います～。また報告にきますね～」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			――その姿を遠くから眺める2つの影があった。
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「どうやら……あの時のシノビは全員生き延びていたようだな……」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……」<br>
+			「あなたが選んだ結末です」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「はっはっは！そうなるか！」<br>
+			「お前はこれからどうするのだ？」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「……どうしましょうか」<br>
+			「とりあえず……生きてみます」<br>
+			「私が望んだものも……見つかるかもしれません」
+		</p>
+		<p class="player p3">
+			<b>&quot;首刈桜&quot;照由良 半蔵</b>
+			「ならば！その首、いずれは必ず刈ってみせよう！」
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「フフ……」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			そういうと彼は背を向ける、ふと、何かを思い出したかのように振り返る
+		</p>
+		<p class="player p7">
+			<b>フユキ</b>
+			「そういえば、お名前、伺ってませんでしたね」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「”双天首刈桜”誰にも顔を知られていない、伝説のシノビだ！」<br>
+			「行くぞ！コシュタ・バワー！」
+		</p>
+		<p class="player p16">
+			<b>コシュタ・バワー二世</b>
+			「……！！」
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			ZOOOOOOOOOM!!!
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			曇りない青空をシノビが走っていく。まだ見ぬ未来へと向かって―――
+		</p>
+		<p class="player p15">
+			<b>&quot;双天首刈桜&quot;照由良 半蔵</b>
+			「ヨシ！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			忍術バトルRPG -忍神-『義有りて刃鳴散らし、情有りて花に捧ぐ』完
+		</p>
+	</div>
+</body>
+</html>

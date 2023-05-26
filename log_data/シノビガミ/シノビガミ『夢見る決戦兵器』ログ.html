@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>シノビガミ『夢見る決戦兵器』</title>
+	<style>
+		html {
+			font-size: 14px;
+		}
+		body {
+			-webkit-text-size-adjust: 100%;
+			background-color: #d7e7af;
+		}
+		h1 {
+			font-size: 20px;
+			margin: 1rem 1rem 0;
+			color: #000000;
+		}
+		.tab {
+			border: 1px solid #999;
+			margin: 2rem 1rem 1rem;
+			line-height: 1.5;
+			position: relative;
+		}
+		.tabtitle {
+			border: 1px solid transparent;
+			border-color: inherit;
+			background-color: inherit;
+			position: absolute;
+			top: -.8rem;
+			left: 1rem;
+			min-width: 7rem;
+			padding: 0 .5rem;
+			text-align: center;
+			font-size: 1rem;
+			z-index: 9999;
+			line-height: 1.4rem;
+		}
+		.player {
+			margin: 0;
+			padding: 0 .5rem;
+			padding-left: 10.5rem;
+			border-bottom: 1px dotted transparent;
+			border-color: inherit;
+			position: relative;
+		}
+		.player:last-child {
+			border-bottom: 0;
+		}
+		.player b {
+			display: block;
+			height: 100%;
+			width: 9rem;
+			padding: 0 .5rem;
+			border-right: 1px solid transparent;
+			border-color: inherit;
+			position: absolute;
+			top: 0;
+			left: 0;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.tabtitle + .player {
+			padding-top: .7rem;
+		}
+		.tabtitle + .player b {
+			padding-top: .7rem;
+			height: calc(100% - .7rem);
+		}
+		.diceroll {
+			padding: 0 .5em;
+			color: #ffffff;
+		}
+
+		/* [メイン] タブ */
+		.t0 {
+			background-color: #ffffff;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [フェイズ] タブ */
+		.t1 {
+			background-color: #69bd83;
+			border-color: #999999;
+			color: #ffffff;
+		}
+
+		/* [情報] タブ */
+		.t2 {
+			background-color: #fff67f;
+			border-color: #0679ff;
+			color: #000000;
+		}
+
+		/* [プロット] タブ */
+		.t3 {
+			background-color: #f9c270;
+			border-color: #999999;
+			color: #000000;
+		}
+
+		/* [奥義] タブ */
+		.t4 {
+			background-color: #ef858c;
+			border-color: #ffffff;
+			color: #ffffff;
+		}
+
+		/* 発言者：GM */
+		.p0 { color: #000000; }
+		.p0 .diceroll { background-color: #000000; }
+
+		/* 発言者：迷ノ宮ナタク */
+		.p1 { color: #e91e63; }
+		.p1 .diceroll { background-color: #e91e63; }
+
+		/* 発言者：ネイサン=P=カートリッジ */
+		.p2 { color: #3f51b5; }
+		.p2 .diceroll { background-color: #3f51b5; }
+
+		/* 発言者：凪凧　銀之助 */
+		.p3 { color: #03a9f4; }
+		.p3 .diceroll { background-color: #03a9f4; }
+
+		/* 発言者：？？？ */
+		.p4 { color: #ffeb3b; }
+		.p4 .diceroll { background-color: #ffeb3b; }
+
+		/* 発言者：system */
+		.p5 { color: #888888; }
+		.p5 .diceroll { background-color: #888888; }
+
+		/* 発言者：笛吹花音 */
+		.p6 { color: #ffeb3b; }
+		.p6 .diceroll { background-color: #ffeb3b; }
+
+		/* 発言者：猫 */
+		.p7 { color: #333333; }
+		.p7 .diceroll { background-color: #333333; }
+
+		/* 発言者：巳業博士 */
+		.p8 { color: #419cc0; }
+		.p8 .diceroll { background-color: #419cc0; }
+	</style>
+</head>
+<body>
+	<h1>シノビガミ『夢見る決戦兵器』</h1>
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			※このログは流れをわかりやすくするために多少編集してあります。
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">フェイズ</div>
+		<p class="player p0">
+			<b>GM</b>
+			導入
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			――その時、忍界に衝撃が走った。<br>
+			      <br>
+			        斜歯忍軍（はすば）が秘密裏に開発した決戦兵器「武雷（ぶらい）」が消失し、開発者の巳業（みごう）博士が殺害されたというのだ。<br>
+			<br>
+			        <br>
+			        その情報は電光石火の如くまたたく間に広がり、各勢力は我先にと「武雷」、そして時を同じくして外部に流れた「巳業理論（ミゴウ・メソッド）」の行方を探りだした。<br>
+			<br>
+			 <br>
+			        関係者としてリストに名を連ねたのは、4人の忍。<br>
+			<br>
+			        <br>
+			        果たして「武雷」の行方は？博士の殺害の真相は？<br>
+			        「巳業理論」とは一体――？<br>
+			<br>
+			        <br>
+			        忍術バトルRPG　シノビガミ―忍神―<br>
+			        『夢見る決戦兵器』
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			PC1<br>
+			        推奨流派：ハグレモノ or 私立御斎学園<br>
+			<br>
+			<br>
+			        忍界は「武雷（ぶらい）」の消失や斜歯忍軍の博士殺害などで騒がしい。<br>
+			        だが、もともとその界隈とは無縁でいたいあなたは、ただひたすら静かに過ごしたいのだ。<br>
+			<br>
+			<br>
+			        あなたの使命は【なるべく面倒に巻き込まれないで暮らすこと】である。<br>
+			<br>
+			        PC2<br>
+			        推奨流派：比良坂機関<br>
+			<br>
+			<br>
+			        あなたはこの事件が世間の注目を受けないように工作し、巳業理論（ミゴウ・メソッド）の情報を探る忍務を受けている。<br>
+			        このような事態に納得がいっていない。<br>
+			<br>
+			<br>
+			        あなたの使命は【「巳業理論（ミゴウ・メソッド）」の情報または現物を持ち帰ること】である。<br>
+			<br>
+			        PC3<br>
+			        推奨流派：隠忍の血統 or 鞍馬神流<br>
+			<br>
+			<br>
+			        あなたは博士暗殺の忍務をうけて斜歯忍軍に潜入していたが、先を越されてしまった。<br>
+			        このような事態に納得がいっていない。<br>
+			<br>
+			<br>
+			        あなたの使命は【この事件の真相を探ること】である。<br>
+			<br>
+			        PC4<br>
+			        推奨流派：斜歯忍軍<br>
+			<br>
+			<br>
+			        あなたの心臓には消失したはずの「武雷（ぶらい）」が埋めこまれている。<br>
+			<br>
+			<br>
+			        あなたの使命は【「武雷（ぶらい）」を狙ってくる者を倒すこと】である。
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">フェイズ</div>
+		<p class="player p0">
+			<b>GM</b>
+			サイクル1
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			プライズ【巳業理論（ミゴウ・メソッド）】<br>
+			<br>
+			「武雷（ぶらい）」の設計や概要の詳細。現在は行方がわからなくなっている。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			choice[PC1,PC2,PC3,PC4] <br>
+			<span class="diceroll">ShinobiGami : (CHOICE[PC1,PC2,PC3,PC4]) ＞ PC3</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			st <br>
+			<span class="diceroll">ShinobiGami : シーン表(6) ＞ 優しい時間が過ぎていく。影の世界のことを忘れてしまいそうだ。</span><br>
+			cst <br>
+			<span class="diceroll">ShinobiGami : 都市シーン表(8) ＞ 古びた劇場。照明は落ち、あなたたちのほかに観客の姿は見えないが……。</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→ナタク（PC3）、ネイサン（PC4）
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「きみ、学生さんでしょお？こんな時間にこんなとこにいていいの？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「そうなんだよこんな時間に呼ばれちゃって…あんたか？こんばんは！俺のことよんだ？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5  情報判定（ネイサンの秘密）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功</span><br>
+			「僕が呼んだんだっけ？まあいいや、知ってることしゃべって？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「…ハッ！俺、今なんか喋ってなかった？あんたなんかしただろ、俺に！」<br>
+			「やっぱり…お前ニンジャだな！？&gt;&lt;」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「ニンジャ？ニンジャっていえばニンジャなのかなあ、忘れちゃったなぁあ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「ひでえ！言ってよ！完全に油断してたじゃん！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「なぁんでそんなこと初対面のやつに言わなきゃいけないわけぇ？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「え〜確かに……でもフェアじゃねえよ！一方的だったじゃんか！」<br>
+			「今度仕返しするからな！ブライを狙う悪者め！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「じゃああんたもなんかしてみればいんじゃない？別に僕ブライ狙ってるわけじゃないし。真相が知りたいだけだし」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			もうやだあ！って逃げ帰ります
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了<br>
+			choice[PC1,PC2,PC4] <br>
+			<span class="diceroll">ShinobiGami : (CHOICE[PC1,PC2,PC4]) ＞ PC2</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			kst <br>
+			<span class="diceroll">ShinobiGami : 回想シーン表(5) ＞ 目の前に横たわる死体。地面に広がっていく。あれは、私のせいだったのだろうか……？</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→銀之介（PC2）
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「お、思い出せない…」<br>
+			「なんで私はここに……」<br>
+			2D6 &gt;=5 （判定：調査術） 情報判定（花音の秘密）<br>
+			<span class="diceroll">ShinobiGami : (2D6) ＞ 8[2,6] ＞ 8</span><br>
+			「私が追っていた情報と整合が取れそうだ。これは記事になりそうだな。」<br>
+			「宇宙人とおんなじ、いやそれ以上の高揚感か…」
+		</p>
+		<p class="player p4">
+			<b>？？？</b>
+			「……、ついに機関が動き出したか」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			GAST <br>
+			<span class="diceroll">ShinobiGami : 学校シーン表(7) ＞ 廊下。休憩時間か放課後か。生徒たちが、楽しそうにはしゃいでいる。</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→ネイサン（PC4）
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			学校で調べ物するぞう<br>
+			ナタクさんの居所を調べるぞ<br>
+			「ふらついてるピンク頭を探してくれ！」<br>
+			鳥に<br>
+			2D6&gt;=5 （判定：鳥獣術） 情報判定（カノンの居所）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			ナタクは普段は森の中にいるようだ。
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			電撃作戦を使うぞ<br>
+			2D6&gt;=5 （判定：伝達術） <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			『戦闘シーン』（電撃作戦）<br>
+			        登場PC→ナタク（PC3）、ネイサン（PC4）
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「見つけたぞピンク頭！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「わあ。授業サボって悪い学生さんだ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「悪いやつ！あっ俺ももしかして悪いやつ？」<br>
+			「いやいやそんなことは…勝ってすぐ帰ればHR間に合うもん多分！」<br>
+			「そうと決まればさっさと勝負だピンク頭！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「悪い子が喧嘩をしかけてきたなあ。悪い子だなあ」<br>
+			「悪い子にはおしおきかなあ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「俺悪くねえもん！&gt;&lt;」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			戦闘開始
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド1
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>system</b>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 迷ノ宮ナタク ] がダイスシンボルを公開。出目は 3 です。
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：衣装術） 『痛打』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：呪術） 命中判定『血旋渦』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			接近戦攻撃だ！刀術<br>
+			2D6&gt;=5 （判定：刀術） 命中判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=7 （判定：隠蔽術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=7) ＞ 6[3,3] ＞ 6 ＞ 失敗</span><br>
+			肉風船！<br>
+			2D6&gt;=5 （判定：身体操術） <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗</span><br>
+			1ｄ6 <br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 2（接近戦ダメージ：体術）</span><br>
+			「たぁ！」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「勝った！！俺の勝ちだ！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「小僧！おまえよくも……」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「俺の勝ちだ！やったぞ〜〜！兄貴に自慢できる！」<br>
+			「ほら一緒に撮ろうぜ！」ナタク入れて自撮りします<br>
+			そして一方的に友情を取ったぞ （戦果）
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「えっなになになにこわ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「じゃあまた遊ぼうなピンク頭！って名前なんて言うの？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「ぶん殴ってツーショとかサイコパスかよこわひくわ」　<br>
+			「お前から名乗れ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「俺ネイサン！アメリカニンジャ」<br>
+			「名乗ったぞ」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「アメリカニンジャ……僕はナタク……」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「ナタクか！よろしく！俺の名前はアメリカニンジャじゃないぞ！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「ネイサン？？？姉さん？？？」<br>
+			「変な名前！！」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「うっっっせ！！！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			こうして奇妙な友情が芽生えたのであった<br>
+			シーン終了
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			cst <br>
+			<span class="diceroll">ShinobiGami : 都市シーン表(11) ＞ 見知らぬ天井。いつの間にか眠っていたのだろうか？それにしてもここはどこだ？</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→花音（PC1）
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「ああ、新しい俺の部屋か」<br>
+			「機関が動き出したなら、なんとか先に情報を得たいな…」<br>
+			2D6&gt;=5 （判定：分身の術） 情報判定（銀乃介の秘密）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功</span><br>
+			「……！」<br>
+			「早くアレを見つけないと…」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">フェイズ</div>
+		<p class="player p0">
+			<b>GM</b>
+			サイクル2
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			choice[PC1,PC2,PC3,PC4] <br>
+			<span class="diceroll">ShinobiGami : (CHOICE[PC1,PC2,PC3,PC4]) ＞ PC1</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			nst <br>
+			<span class="diceroll">ShinobiGami : 日常シーン表(8) ＞ みんなで食卓を囲むことになる。鍋にしようか？　それとも焼き肉？　お好み焼きなんかもい〜な〜♪</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→花音（PC1）、ナタク（PC3）
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「らっしゃい！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「なに？どいうこと？飯食わせてくれんの？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「もちろん、見てのとおり」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「肉を、焼いてるね」<br>
+			「僕が来なかったら一人焼肉なの？寂しいやつだぜ」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「来てくれるとわかってたさ」<br>
+			「あんたなんだろ、斜歯忍軍に潜入していたの？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「こわ……何で知ってんの……こわ……」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「俺の目はなんでも見通すのさ」<br>
+			2D6&gt;=5 （判定：瞳術） 情報判定（ナタクの秘密）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「こわ……」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=5 （判定：瞳術） 『赤眼』（ナタクが対象）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功</span><br>
+			（左目がポンコツだったけど、まぁ今はいい…）
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「どうでもいいけど肉が焦げる」<br>
+			「早く焼いて」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「まかせて！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「白米に乗せろ」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「注文多い客だな！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			cst <br>
+			<span class="diceroll">ShinobiGami : 都市シーン表(5) ＞ 人気のない公園。野良猫が一匹、遠くからあなたを見つめているような気がする。</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→銀之介（PC2）、ネイサン（PC4）
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「お前もひとりか？」<br>
+			「するめしかないぞ…」
+		</p>
+		<p class="player p7">
+			<b>猫</b>
+			「アァ～ォ……」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「ニック！また人から食べ物もらってんのか！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「ふぁ。君の子かい？」
+		</p>
+		<p class="player p7">
+			<b>猫</b>
+			「ニャァォ～……」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「俺の子だ！ちゃんと言うと俺の家のじゃなくて俺の友達なんだけど…」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「解剖していい？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「おっさんもこいつと友達なのか？腹一杯になりすぎると吐いちゃうからちょっとだけに」<br>
+			「は！？」<br>
+			「何言ってんだよおっさん！聞いてただろ俺の友達だぞ！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「じょーだんだよ、じょーだん。おいしそうだなって思っただけ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「その手に持ってるするめにしとけよ食うなら！ニックは食っちゃダメだ！」<br>
+			「あんたさては悪いやつだな？」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「ふぁ。するめしか食ってねぇんだよ。」<br>
+			「おじさんはな、記者やってんだよ。」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「まじかよ！大変だな…帰ったら食おうと思ってたんだけどライスボール食う？」コンビニおにぎり出す<br>
+			「知ってるぞ！記者って…いいやつなのか？あれ？」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おじさんを養ってくれるのか？嬢ちゃん」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「は！？！？男だし！なんなんだお前！食べて目を覚ませ！」口におにぎりをつめる
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「ふぁぁ。(この嬢ちゃん…どこかで…)」<br>
+			情報判定（ネイサンの秘密）『内偵』により自動成功
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「？なんだよ、人の顔じっと見てさ。ちゃんと噛めよな」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「するめは噛めば噛むほどうまくなるってか」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「そうそれ！わかってんじゃねえかおっさん…って名前は？」<br>
+			「俺、ネイサンって言うんだ！すごいニンジャなんだぜ、こないだも凶暴なピンク頭の…なんだっけ、まあピンク頭に勝ったし」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おっさんはするめ好きだけど名前はたこなんだよな。なぎだこって言うもんさ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「たこのおっさん！」<br>
+			「するめ以外もちゃんと食えよ！塩分過多で死んじまうぞ！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「へばりついて離さないぜ。ふぁぁ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「なんか気持ち悪いなあ、あんた」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「さてと記事まとめっか」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「おう！働いて次は俺にご飯くれよな！」
+		</p>
+		<p class="player p7">
+			<b>猫</b>
+			「ナァォ～…… 」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			cst <br>
+			<span class="diceroll">ShinobiGami : 都市シーン表(7) ＞ 無機質な感じのするオフィスビル。それは、まるで都市の墓標のようだ。</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→花音（PC1）、ナタク（PC3）、ネイサン（PC4）
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「ピンク頭！また夜に呼び出しかよ」<br>
+			「俺明日寝坊できねんだよ、ってあれ、あんた誰だ？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「こないだカノンとかいうやつに飯もらったから、おまえもなんかもらえるんじゃね？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「え！本当に！？飯くれんの？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：呪術） 感情判定（カノン）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功</span><br>
+			et <br>
+			<span class="diceroll">ShinobiGami : 感情表(6) ＞ 狂信（プラス）／殺意（マイナス） （プラスを選択）</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			et <br>
+			<span class="diceroll">ShinobiGami : 感情表(3) ＞ 愛情（プラス）／妬み（マイナス） （プラスを選択）</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「（なんか空気変わったな？）」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「いやなんも持ってないけど…ていうか君誰？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「さっき変なたこのおっさんにご飯あげちゃって腹減っててさ…」<br>
+			「俺はネイサン！すごいニンジャやってる、苦手なのは国語、得意なのは数学！」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「いきなり自分語りしだした！変なやつ」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「飯くれたからいいやつだとおもう」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「あんたが聞いたんだろ！」<br>
+			「飯って何くれたの？イカ？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「肉」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「肉！？いいなあ〜〜！！」<br>
+			羨ましそうな顔
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「晩飯まだだけど、うちくる？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「本当に！？いいのか！？やった〜〜！！ピンク頭の言った通りいいやつだ！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「肉だーーー！！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			軽快な足取りで夜の街をあとにする3人だった<br>
+			シーン終了
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			CST <br>
+			<span class="diceroll">ShinobiGami : 都市シーン表(2) ＞ シャワーを浴び、浴槽に疲れた身体を沈める。時には、癒しも必要だ。</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→花音（PC1）、ナタク（PC3）、ネイサン（PC4）
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			かのんくん家の風呂借りた<br>
+			「サンキュー！えっと…？」<br>
+			「黒人？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「カノンだ、ていうかよく知らん人のシャワー借りたよなー」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「あんたいいやつだから大丈夫だろ、なんかあったらぶん殴ればいいだけだしな」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「やべーやつだよオマエ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「ヤベー奴ってなんだよ！男らしくてわかりやすいだろ！」<br>
+			「じゃあさ、かのん、腕相撲しようぜ！男らしく一勝負だ！ピンクとは前やったもんな」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「やったの？腕相撲？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「あれは勝負なの？一方的に殴られたが？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「勝負だろうが！」<br>
+			2D6&gt;=5 （判定：身体操術） 感情判定（花音）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 10[4,6] ＞ 10 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「こわ、やりたくないんですけど…」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			ET かのんくんへ <br>
+			<span class="diceroll">ShinobiGami : 感情表(6) ＞ 狂信（プラス）／殺意（マイナス）（プラスを選択）</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			et <br>
+			<span class="diceroll">ShinobiGami : 感情表(6) ＞ 狂信（プラス）／殺意（マイナス）（プラスを選択）</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「うおおおあんた強いな！さすがピンクの友達だ！」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「えぇ…、お前ほんとに人間？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「人間…だけど、俺はすごいモノ持ってんだ！ぶらいって機械があってな…」<br>
+			「そうだ！腹もいっぱいだし、調子いいし、おっさんとも勝負しよっかな！」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「・・・・・・ッ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			器術潰して占術<br>
+			2D6&gt;=7 （判定：伝達術） <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=7) ＞ 6[3,3] ＞ 6 ＞ 失敗</span><br>
+			花音からの感情修正+1<br>
+			成功（銀之介の居所）
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			銀之介は普段からあの公園でスルメを食べている
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「ありがとうな！本当いい奴だ、あんた」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「きにするな、俺のためでもある」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			電撃作戦<br>
+			2D6&gt;=5 （判定：伝達術） <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功</span><br>
+			「ありがとうな〜〜！！今度俺も手土産持ってくるぜ！」<br>
+			「ピンクもじゃあな！」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「じゃあな～～僕もそろそろ行くかな」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			『戦闘シーン』（電撃作戦）<br>
+			        登場PC→銀之介（PC2）、ネイサン（PC4）
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「おっさん！まだここにいんのかよ、風邪ひくぞ？」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「するめなくなっちまった…って…さっきの嬢ちゃんじゃねえかい」<br>
+			「おっさんと仲良くするめ　い」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「俺は男だってば！！眼鏡ポンコツか？あんた」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おっさん養ってくれる気になったのかい！！？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「？？？あんた本当に変な奴だな…！？」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「ふぁあ。記者は変なやつしかおらんな」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「へええ、それよか俺と一勝負しないか？俺はすごく調子いいんだ！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おっさん腰痛いんだよ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「おっさんが勝ったらまたなんか奢ってやるよ！な？お願い！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おっさんブランコの靴飛ばし対決がいいな」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「あ〜！確かにそれも楽しそうだな…」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			(よっこらしょ）
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「でもダメ！俺は拳でやりあいてえんだ」<br>
+			「二度と嬢ちゃんなんて呼ばせねえから覚悟しろよな」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			戦闘開始
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド1
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>system</b>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 2 です。<br>
+			[ 凪凧　銀之助 ] がダイスシンボルを公開。出目は 3 です。
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=5 （判定：流言の術） 命中判定『大祓』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			（……！さっそくかかったか）
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			神通丸を使用して振り直し<br>
+			2D6&gt;=5 （判定：流言の術） 命中判定『大祓』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			演出修正-1
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			演出修正-1
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			結果、命中判定は失敗
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			接近戦刀術じゃ<br>
+			2D6&gt;=5 （判定：刀術） <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 10[5,5] ＞ 10 ＞ 成功</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=8 （判定：流言の術）回避判定 <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=8) ＞ 6[3,3] ＞ 6 ＞ 失敗</span><br>
+			1d6 （接近戦ダメージ：謀術）<br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 4</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「俺の勝ち〜〜！！！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「いてて、、それはネイサン…」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「ってかおっさん途中ふらついてたろ？やっぱちゃんと飯食わなきゃダメだって！」<br>
+			共感とります （戦果）<br>
+			「俺コンビニでなんか買ってくっからさ、待ってろよ！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">フェイズ</div>
+		<p class="player p0">
+			<b>GM</b>
+			サイクル3
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			choice[PC1,PC2,PC3,PC4] <br>
+			<span class="diceroll">ShinobiGami : (CHOICE[PC1,PC2,PC3,PC4]) ＞ PC1</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			cst <br>
+			<span class="diceroll">ShinobiGami : 都市シーン表(5) ＞ 人気のない公園。野良猫が一匹、遠くからあなたを見つめているような気がする。</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→花音（PC1）、ナタク（PC3）
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「なあに？飯？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「よう、……俺をご飯製造機と思ってない？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「半分くらい」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「今日はちょっと調べ物をな」<br>
+			2D6&gt;=5 （判定：分身の術） 情報判定（プライズの秘密）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「手伝うってこと？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「いいや、お前が持ってるものについてさ」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「あぁん？それがどうした？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「そいつを渡してほしい」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「なんで？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「悪いが、それは言えない」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「ならだめ」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=11 （判定：瞳術） <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=11) ＞ 9[4,5] ＞ 9 ＞ 失敗</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			↑成功<br>
+			シーン終了<br>
+			choice[PC2,PC3,PC4] <br>
+			<span class="diceroll">ShinobiGami : (CHOICE[PC2,PC3,PC4]) ＞ PC2</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			gast <br>
+			<span class="diceroll">ShinobiGami : 学校シーン表(4) ＞ 誰もいない体育館。バスケットボールがころころと転がっている。</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→花音（PC1）、銀之介（PC2）、ネイサン（PC4）
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「このボール空気入ってないじゃん…」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「おっさん！不法侵入でつかまんぞ！ここニンジャ多いんだから…！」<br>
+			「あと俺今日寝坊したせいでやべえんだって…課題が…おっさんのせいだぞ！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「ネイサン、その黒いのは知り合いか？」<br>
+			「貸切ってんだよぉ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「かのんは俺のダチ、昨日はこいつの飯で元気になったんだぜ。おっさんも今度おいでよ！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「ついにおっさんを養う気になったのか！」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「勝手に人の家にオッサン呼ばないで！」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「えーでも俺子供だからおっさん養えないし…かのんならできるだろ？」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「かのん…ってきみあー、ぶいちゅーばーの…」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「え！かのんVtuberなの！？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「・・・・・・ノーコメント、ていうか何者なの、なんでしってんの？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「確かに、おっさんもVtuber？」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おっさんは記者やってんだぁ。そんくらいは情報にあるさ」<br>
+			「おっさんはちなみに昔曲かいてた」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「P！？！？」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おっさんPだ」<br>
+			「かのんは最近料理動画あげてないのか？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「……そんなこといいって、何のようなの？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「確かに、おっさんから呼んだんだから説明してくれよな」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「あー。きみたちってさ忍者っしょ？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「そう！超強いニンジャ！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「ネイサンはかのんのことは知らないのかい？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「ん〜まだ腕相撲しかしてねんだ、でもニンジャなのはわかるぞ、俺と互角だったからな！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「そうかいな。かのん、おめぇさんのことを聞かせてくれるか」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			なんだろうとワクワクしている
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			それぞれの秘密を交換した<br>
+			        銀之介 →花音の秘密<br>
+			        ネイサン →プライズの秘密<br>
+			全員がプライズの秘密を入手したため、全体公開
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			プライズの秘密<br>
+			【秘密１】全体公開情報<br>
+			書物やファイルなどではなく、「武雷（ぶらい）」を作った巳業博士の脳味噌が詰まった円筒形の缶である。<br>
+			現在はPC3が所持している。<br>
+			<br>
+			あなた（このプライズ）にはもう一つ秘密がある。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「どうせしってるんだろ？機関の犬め」<br>
+			あきらめ顔で語りだす
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おっさんはただのおっさんじゃあねぇ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「へええ、へえ…？？？」<br>
+			「じゃあ、俺とかのん、どっちが強いんだ？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「腕相撲は互角だったけどな」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「じゃあ、今度は斬り合いだな！」にこ！
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おっさんはアームレスリングの世界大会161位だぜ」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「ふふん！じゃあ俺なら一位取れちゃうな！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			情報判定（ナタクの秘密）『内偵』により自動成功
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			情報共有によりナタクの秘密入手
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			それぞれの秘密を交換した<br>
+			        花音 →銀之介の秘密<br>
+			        ネイサン →ナタクの秘密<br>
+			全員がナタクの秘密を入手したため、全体公開
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			PC③の秘密<br>
+			【秘密】<br>
+			あなたはプライズ「巳業理論（ミゴウ・メソッド）」を所持しており、「巳業理論（ミゴウ・メソッド）」の秘密の内容をすでに知っている。<br>
+			なお、あなたの秘密が抜かれた瞬間に、プライズの秘密その1も全体公開される。<br>
+			<br>
+			殺害現場に居合わせたあなたは、現場にあった「巳業理論（ミゴウ・メソッド）」を取得した。これをどうにか守らなければならない。<br>
+			<br>
+			あなたの【本当の使命】は「巳業理論（ミゴウ・メソッド）」を最後まで死守することである。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「お、おお…？？」情報を整理している顔<br>
+			「あんたら…通りで仲悪そうなんだな」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			博士の殺害現場回想
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→ナタク（PC3）
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：隠蔽術） 情報判定（プライズの秘密2）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功</span>
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			-事件発生前-<br>
+			巳業博士の研究室
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「あぁ……やはり……私は…… 」<br>
+			「間違って……おったのか…… 」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「しにたい？」<br>
+			「殺してあげよっか」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「……」<br>
+			「キミは……？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「僕はあなたを殺すためにここにきたんだけど」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「私を狙った刺客……か」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「自分で死ぬのと僕に殺されるのとじゃ多分理由が違ってくるでしょ？」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「……」<br>
+			「私は恐ろしいことに手を染めてしまった……」<br>
+			「失った……わが最愛の息子……」<br>
+			「あの子を蘇らせるためには……斜歯の技術が必要だった」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「ふーん？僕はブライがやばくてあなたが生きてたらやばいことはわかる」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「……そうだ、私は生きていてはいけない」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「共犯する？今なら僕しか知らない」<br>
+			「博士なんでしょ？賢いんでしょ？策があるんじゃないの？」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「……私は、あの子に恐ろしい力を与えてしまった」<br>
+			「私の息子によく似た”彼”に…」<br>
+			「”彼”はあの子ではない……」<br>
+			「あの声、表情、仕草」<br>
+			「どれもよく似た違う”彼”だけのものだ」<br>
+			「…………」<br>
+			「私は償わねば……」<br>
+			「”彼”……に自由を与えたい」<br>
+			「……キミの目的は私の命か？頭脳か？ 」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「うーん、死んだっていう事実かな。だから別に命も頭脳もいらない」<br>
+			「死んだことになってくれればそれでいい」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「…………」<br>
+			「なら、私から提案がある」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「きくよ」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「”彼”を自由に、そして……私が償いを行う手が……」<br>
+			「協力してくれるのかい？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「いいよ。死んだ事実をくれるなら」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「……わかった飲もう」<br>
+			「すべてが終わり、この作戦がすべてうまく行けば……”彼”は自由だ」<br>
+			「……すまない、こうするしかもう思いつかなかった」<br>
+			「許してくれとは言わない、ただ……己のやりたいように生きてくれ」<br>
+			「まぎれもない我がもうひとりの息子……『武雷』よ」<br>
+			「……武器も、雷光ももはやお前には必要ない」<br>
+			「できることなら……花を慈しみ、生きとし生けるものの音色を慮るような子に……」<br>
+			「そうだ、今からお前の名は……」<br>
+			「『花音』だ」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「あなたが望むことのために、僕が何をすればいいのか、教えてくれ」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			「……あぁ、では行こう」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「はいよ」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			銀之介に呼び出された体育館からの続き
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			登場PC→花音（PC1）、ナタク（PC3）、ネイサン（PC4）
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「そっか」<br>
+			「あいつもぶらいなんだ」<br>
+			「じゃあ白黒はっきりつけてえなあ…」<br>
+			「これはフェアにしなきゃダメだ！」<br>
+			と言うわけでかのんくんとナタク呼んだ<br>
+			「俺は全てを把握したぞ！」<br>
+			「でも知らない奴もいるだろ？平等じゃないからさ、最後に殴り合う前に全部言っちまわないか？」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「あんたが知ってることは何？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「なんだよ、さっきのいまで」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			全員がそれぞれの秘密を交換し合い、全員がほぼすべての情報を把握したため全体公開
+		</p>
+	</div>
+
+	<div class="tab t2">
+		<div class="tabtitle">情報</div>
+		<p class="player p0">
+			<b>GM</b>
+			PC①の秘密<br>
+			【秘密】<br>
+			<br>
+			実はあなたは「武雷（ぶらい）」そのものである。<br>
+			逃げ出した斜歯忍軍謹製の有機絡繰人型兵器「電人武雷（でんじんぶらい）」、それがあなたの正体である。<br>
+			<br>
+			あなたの【本当の使命】は「巳業理論（ミゴウ・メソッド）」を手に入れることにより危険な機能をカットし、追手から逃げ切ることである。<br>
+			PC②の秘密<br>
+			【秘密】<br>
+			<br>
+			あなたは巳業博士の監視を担当していたが、この状況になってしまったため、殺害阻止ができなかった失態の責任を取らされることになってしまった。<br>
+			<br>
+			あなたの【本当の使命】は「武雷（ぶらい）」の現物を何としてでも持ち帰ることである。<br>
+			PC④の秘密<br>
+			【秘密】<br>
+			<br>
+			あなたは心臓に「武雷（ぶらい）」が埋め込まれているという妄想に取り憑かれており、斜歯忍軍から腫れ物のように扱われている。<br>
+			力を存分に行使するのが楽しみで仕方がない。<br>
+			<br>
+			あなたの【本当の使命】は「PCの誰かをとにかく倒す」である（何人でも良い）。<br>
+			<br>
+			ただしあなたを「武雷（ぶらい）」ではないと指摘してきたPCがいれば、それでも自分の心臓に武雷が埋め込まれていると頑なに主張できる。<br>
+			その際【本当の使命】は「そのPCを執拗に追って倒す」に変わる。<br>
+			プライズの秘密<br>
+			【秘密2】<br>
+			<br>
+			        あなたは「武雷（ぶらい）」制作の罪深さに恐れ慄いて、半ば自害のように貝のように口を閉ざし、この姿になった。<br>
+			博士殺害の事件は自作自演であり、斜歯忍軍とPC2の目をくらまして逃走するためであった。<br>
+			意識は有り、秘密を脳内に映像のように直接流し込んでくる。<br>
+			<br>
+			<br>
+			あなたの【本当の使命】は斜歯忍軍から逃れ、自律のできる身体を手に入れることである。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「俺が最強ならなんでもいいんだ、誰がなんであろうと関係ないからな」<br>
+			「だから俺と白黒はっきり勝負つけてくれよな！もう一つのぶらいなんだろ？」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「---！、じいさん…」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			それぞれの思惑が交差していく<br>
+			シーン終了<br>
+			マスターシーン<br>
+			花音、カノン、ネイサンが情報交換をしている最中、カノンは脳裏に直接響く”声”と会話をしていた。
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			『……聞こえているか、ナタク君』
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「きこえるよ」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			『私との約束は覚えているか？』<br>
+			『私の自作自演によって巳業博士は死ぬ』<br>
+			『その騒ぎに乗じて花音を逃がす』<br>
+			『ここまでは順調だ』<br>
+			『あとは斜歯の眼を騙し、私は別の人間として蘇る』<br>
+			『……それで約束は果たされる』<br>
+			『だが……花音と君が戦うことになるとは聞いていない』<br>
+			『私の願いを聞いてくれたのではないのか？』
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「成り行き上そうなっちゃっただけだし、あの場のあなたの願いはかなえたよ」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			『たしかにそうだが……結果あの子が危険にさらされれば意味がない！』
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「あなたが別の人間として蘇るところまで責任を負えるかはわかんないし」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			『……どうするつもりだ？』
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「僕はあなたを誰にも渡さないだけ。あなたの大切な奴を壊さない約束はできない」<br>
+			「僕が失敗したことが誰にもばれなければ僕はそれでいい」<br>
+			「何なら戦闘が始まる前にあなたを川に流すとかしちゃってもいいんだぜ？」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			『そんな……私は……』<br>
+			『私は……また、間違えてしまったのか……？』
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「わは。そんなに生きていたい？事実上死んでるのに？」<br>
+			「まあいいよ、ばれないところまでは守ってあげるよ」
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			『わ、私はただ……もう一度あの子と……過ごしたかっただけ……』<br>
+			『その願いを変えても……』<br>
+			『この……悪魔……め……』
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			シーン終了
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">フェイズ</div>
+		<p class="player p0">
+			<b>GM</b>
+			クライマックスフェイズ
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			それぞれの思惑を果たすため、体育館にて一堂に会する。
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「ふーっ。こりゃあ下世話なことになったな。」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「よおし、じゃあ一番を決めるぞ！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おっさんはおっさんの使命を果たすだけだ。容赦はしないぜ」(するめを食いながら)
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「ナタク、逃がしてくれたのには感謝してる…、でもそれを渡してくれないなら力づくだ」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「全員ぶちのめして逃げれば任務成功、まぁ死んだらそのときかな」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「俺はかのんを回収するだけ。あとは嬢ちゃんに養ってもらうだけ。さっさと終わらすぞ」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			戦闘開始！
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド1
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=5 （判定：分身の術） 『影分身』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功</span>
+		</p>
+		<p class="player p5">
+			<b>system</b>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 6 です。<br>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 1 です。<br>
+			[ 凪凧　銀之助 ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 迷ノ宮ナタク ] がダイスシンボルを公開。出目は 4 です。
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=5 （判定：瞳術） 命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=11) ＞ 7[2,5] ＞ 7 ＞ 成功</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=8 （判定：呪術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=8) ＞ 7[3,4] ＞ 7 ＞ 失敗</span><br>
+			2D6&gt;=5 （判定：兵糧術） 『悪食』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功</span><br>
+			ダメージ無効、生命力1点回復
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=6 （判定：分身の術） 『風饗』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 7[3,4] ＞ 7 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：瞳術） 命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 大失敗（ファンブル）</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：衣装術） 『痛打』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：異形化）命中判定『血旋渦』 <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			1d6 （接近戦ダメージ：器術）<br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 1</span><br>
+			1d6 （接近戦ダメージ：器術）<br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 1</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=5 （判定：流言の術） 命中判定『大祓』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=7 （判定：隠蔽術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=7) ＞ 9[3,6] ＞ 9 ＞ 成功</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 7[2,5] ＞ 7 ＞ 成功</span><br>
+			2D6&gt;=6 （判定：伝達術） 命中判定『飛魂』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 8[2,6] ＞ 8 ＞ 成功</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=8 （判定：流言の術）回避判定 <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=8) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)</span>
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド2
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=5 （判定：分身の術） 『影分身』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功</span>
+		</p>
+		<p class="player p5">
+			<b>system</b>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 1 です。<br>
+			[ 迷ノ宮ナタク ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 5 です。<br>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 凪凧　銀之助 ] がダイスシンボルを公開。出目は 3 です。
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=5 （判定：瞳術） 命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=8 （判定：呪術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=8) ＞ 6[1,5] ＞ 6 ＞ 失敗</span><br>
+			2D6&gt;=5 （判定：兵糧術） 『悪食』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=6 （判定：分身の術） 『風饗』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 8[2,6] ＞ 8 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：瞳術） 命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=8 （判定：呪術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=8) ＞ 9[4,5] ＞ 9 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：異形化） 命中判定『血旋渦』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=9 （判定：野戦術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=9) ＞ 2[1,1] ＞ 2 ＞ ファンブル</span><br>
+			1d6 （接近戦ダメージ：器術）<br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 1</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=5 （判定：流言の術） 命中判定『大祓』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 5[1,4] ＞ 5 ＞ 失敗</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=7 （判定：分身の術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=7) ＞ 7[1,6] ＞ 7 ＞ 成功</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			WT <br>
+			<span class="diceroll">ShinobiGami : 変調表(2) ＞ マヒ:修得済み特技がランダムに１つ使用不能になる。１サイクルの終了時に、《身体操術》で成功するとこの効果は無効化される。</span><br>
+			ぼうじゅつに受けて、麻痺は兵糧丸で回復<br>
+			2D6&gt;=6 （判定：伝達術） <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 5[2,3] ＞ 5 ＞ 失敗</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			感情修正+1
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			命中判定に成功
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=6 （判定：流言の術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 9[3,6] ＞ 9 ＞ 成功</span>
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド3
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=5 （判定：分身の術） 『影分身』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功</span>
+		</p>
+		<p class="player p5">
+			<b>system</b>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 1 です。<br>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 1 です。<br>
+			[ 凪凧　銀之助 ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 迷ノ宮ナタク ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 3 です。
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：衣装術） 『痛打』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：異形化） 命中判定『血旋渦』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=9 （判定：野戦術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=9) ＞ 5[1,4] ＞ 5 ＞ 失敗</span><br>
+			1d6 （接近戦ダメージ：謀術） <br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 4</span><br>
+			1d6 （接近戦ダメージ：忍術） <br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 3</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=5 （判定：流言の術） 命中判定『大祓』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 8[3,5] ＞ 8 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=7 （判定：分身の術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=7) ＞ 6[2,4] ＞ 6 ＞ 失敗</span><br>
+			wt <br>
+			<span class="diceroll">ShinobiGami : 変調表(5) ＞ 忘却:修得済み感情がランダムに１つ使用不能。１サイクルの終了時に、《記憶術》で成功すると無効化される。</span><br>
+			1d2 （ネイサンへの感情を忘却）<br>
+			<span class="diceroll">ShinobiGami : (1D2) ＞ 2</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術） 命中判定『飛魂』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 10[4,6] ＞ 10 ＞ 成功</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=7 （判定：流言の術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=7) ＞ 8[2,6] ＞ 8 ＞ 成功</span>
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド4
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>system</b>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 1 です。<br>
+			[ 凪凧　銀之助 ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ 迷ノ宮ナタク ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 6 です。
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=5 （判定：瞳術） 命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 大失敗（ファンブル）</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=5 （判定：流言の術） 命中判定『大祓』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			wt <br>
+			<span class="diceroll">ShinobiGami : 変調表(2) ＞ マヒ:修得済み特技がランダムに１つ使用不能になる。１サイクルの終了時に、《身体操術》で成功するとこの効果は無効化される。</span><br>
+			《瞳術》がマヒ
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：衣装術） 『痛打』 <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：異形化） 命中判定『血旋渦』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 大失敗（ファンブル）</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			『赤眼』の効果発動
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			1ｄ6 （接近戦ダメージ：謀術）<br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 4</span><br>
+			射撃戦ダメージ1
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=5 （判定：刀術）命中判定『接近戦攻撃』 <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			1ｄ6 （接近戦ダメージ：謀術）<br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 4</span><br>
+			射撃戦ダメージ1
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド5
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>system</b>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 1 です。<br>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 迷ノ宮ナタク ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ 凪凧　銀之助 ] がダイスシンボルを公開。出目は 3 です。
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：異形化） 命中判定『血旋渦』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2d6 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6) ＞ 5[1,4] ＞ 5＞ 失敗</span>
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">奥義</div>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			■奥義<br>
+			《超電磁領域》<br>
+			指定特技　：暗号術<br>
+			エフェクト：絶対防御<br>
+			効果・演出：ブライのもつ終末爆発を発動する際に、起動第一フェーズに行われる発動準備中の防御コード。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=5 （判定：刀術） 命中判定『接近戦攻撃』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 10[4,6] ＞ 10 ＞ 成功</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=13 （判定：呪術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=13) ＞ 9[4,5] ＞ 9 ＞ 失敗</span><br>
+			2D6&gt;=5 （判定：兵糧術） 『悪食』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗</span><br>
+			神通丸で振り直し<br>
+			2D6&gt;=5 （判定：兵糧術） 『悪食』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功</span><br>
+			1ｄ6 （接近戦ダメージ：謀術）<br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 4</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=5 （判定：流言の術）命中判定『大祓』 <br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 10[5,5] ＞ 10 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「くっ…、このままお前に連れてかれるくらいなら俺はしぬぞ！」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「どうすんだ？何したいんだおっさん？」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「かのんを生かしてナタクをやる」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「まじかよ！ココロガワリってやつ？」<br>
+			「じゃあ…俺は」<br>
+			「ブライじゃないってわけか？俺が？」<br>
+			「かのんだけが本物なのか？おかしくない？俺もブライだが？」<br>
+			「俺も持ち帰れよーーーっ！」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「情報に誤りがあった」<br>
+			「かのん、お前は俺についてきてもらう」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「ネイサンは本物でしょ？」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「だよな！俺本物だよな！？」<br>
+			「じゃあ俺を持って帰らないおっさんの目がやっぱ節穴なんだな」
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「そうだね？僕とあの二人をぶっ殺す？」
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「おーっと。嬢ちゃんには養ってもらわないとなj
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「そうすっか！ごめんないっぱい殴っちまって」<br>
+			「あんたはどうせ俺のこと偽物だって言うんだろ！」<br>
+			「俺怒ってんだから…！」
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「……どっちにしろ満身創痍なんだが、どうしろってんだ」<br>
+			2D6 &gt;=12 （判定：流言の術） 命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6) ＞ 2[1,1] ＞ 2 ＞ 失敗</span><br>
+			2D6 &gt;=12 （判定：流言の術） 変調回復判定（マヒ）<br>
+			<span class="diceroll">ShinobiGami : (2D6) ＞ 6[2,4] ＞ 6 ＞ 失敗</span><br>
+			2D6 &gt;=12 （判定：流言の術） 変調回復判定（忘却）<br>
+			<span class="diceroll">ShinobiGami : (2D6) ＞ 6[3,3] ＞ 6 ＞ 失敗</span>
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド6
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>system</b>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 1 です。<br>
+			[ 凪凧　銀之助 ] がダイスシンボルを公開。出目は 2 です。<br>
+			[ 迷ノ宮ナタク ] がダイスシンボルを公開。出目は 4 です。<br>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 6 です。
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=12 （判定：瞳術） 命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=12) ＞ 9[4,5] ＞ 9 ＞ 失敗</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：異形化） 命中判定『血旋渦』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=6 （判定：召喚術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 8[3,5] ＞ 8 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：仕込み） 命中判定『接近戦攻撃』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=7 （判定：身体操術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=7) ＞ 10[4,6] ＞ 10 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：刀術） 命中判定『接近戦攻撃』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)</span><br>
+			1d6 <br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 1</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=8 （判定：走法） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=8) ＞ 6[2,4] ＞ 6 ＞ 失敗</span>
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">奥義</div>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			■奥義<br>
+			《音鏡新羅・滅》<br>
+			指定特技　：召喚術<br>
+			エフェクト：絶対防御/同じシーンに登場しているキャラクターが生命力を失ったときに、使用可能。1人に対し、目標の生命力の減少を4点分軽減できる。（0点未満にはならない)<br>
+			効果・演出：音鏡と呼ばれる鏡を使い、自分の周りにはり巡らし、音で幻惑する
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「実践なんて初めてだけど、忍者ってこんなに強いのかよ…」<br>
+			「こんだけ通常戦弱いの俺？兵器の自身なくしちゃうよな…！」<br>
+			2d6 変調回復判定（マヒ）<br>
+			<span class="diceroll">ShinobiGami : (2D6) ＞ 6[1,5] ＞ 6 ＞ 失敗</span><br>
+			2d6 変調回復判定（忘却）<br>
+			<span class="diceroll">ShinobiGami : (2D6) ＞ 4[1,3] ＞ 4 ＞ 失敗</span>
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド7
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>system</b>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 1 です。<br>
+			[ 迷ノ宮ナタク ] がダイスシンボルを公開。出目は 5 です。<br>
+			[ 凪凧　銀之助 ] がダイスシンボルを公開。出目は 3 です。<br>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 6 です。
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=12 （判定：火術） 命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 失敗</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：異形化） 命中判定『血旋渦』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=6 （判定：召喚術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 8[2,6] ＞ 8 ＞ 成功</span><br>
+			2D6&gt;=5 （判定：流言の術） 命中判定『大祓』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功</span>
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">奥義</div>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			《邪術 霞騙し》<br>
+			指定特技　：傀儡の術<br>
+			エフェクト：判定妨害<br>
+			効果・演出：人の半分を思い通りに操ることで相手の術を妨害する。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			3の出目が1になり合計3でファンブル
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術）命中判定『飛魂』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 5[2,3] ＞ 7 ＞ 成功</span>
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">奥義</div>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			■奥義<br>
+			《音鏡新羅・滅》<br>
+			指定特技　：召喚術<br>
+			エフェクト：絶対防御/同じシーンに登場しているキャラクターが生命力を失ったときに、使用可能。1人に対し、目標の生命力の減少を4点分軽減できる。（0点未満にはならない)<br>
+			効果・演出：音鏡と呼ばれる鏡を使い、自分の周りにはり巡らし、音で幻惑する
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術）奥義破り判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 5[2,3] ＞ 5 ＞ 失敗</span><br>
+			ナタクから感情修正+1もらって奥義破りました
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			1d6 <br>
+			<span class="diceroll">ShinobiGami : (1D6) ＞ 2（接近戦ダメージ1）</span><br>
+			（射撃戦ダメージ1）
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=6  変調回復判定（マヒ）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 6[1,5] ＞ 6 ＞ 成功</span><br>
+			2D6&gt;=6  変調回復判定（忘却）<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 7[3,4] ＞ 7 ＞ 成功</span>
+		</p>
+	</div>
+
+	<div class="tab t3">
+		<div class="tabtitle">プロット</div>
+		<p class="player p0">
+			<b>GM</b>
+			ラウンド8
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p5">
+			<b>system</b>
+			[ 笛吹花音 ] がダイスシンボルを公開。出目は 6 です。<br>
+			[ 迷ノ宮ナタク ] がダイスシンボルを公開。出目は 5 です。<br>
+			[ ネイサン=P=カートリッジ ] がダイスシンボルを公開。出目は 1 です。<br>
+			[ 凪凧　銀之助 ] がダイスシンボルを公開。出目は 3 です。
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			2D6&gt;=12  命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=12) ＞ 5[1,4] ＞ 5 ＞ 大失敗（ファンブル）</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=5 （判定：異形化） 命中判定『血旋渦』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功</span>
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">奥義</div>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			■奥義<br>
+			《超電磁領域》<br>
+			指定特技　：暗号術<br>
+			エフェクト：絶対防御<br>
+			効果・演出：ブライのもつ終末爆発を発動する際に、起動第一フェーズに行われる発動準備中の防御コード。
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術） 奥義破り判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 3[1,2] ＞ 3 ＞ 失敗</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=8 （判定：呪術） 奥義破り判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=8) ＞ 9[3,6] ＞ 9 ＞ 成功</span>
+		</p>
+	</div>
+
+	<div class="tab t4">
+		<div class="tabtitle">奥義</div>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			■奥義<br>
+			《音鏡新羅・滅》<br>
+			指定特技　：召喚術<br>
+			エフェクト：絶対防御/同じシーンに登場しているキャラクターが生命力を失ったときに、使用可能。1人に対し、目標の生命力の減少を4点分軽減できる。（0点未満にはならない)<br>
+			効果・演出：音鏡と呼ばれる鏡を使い、自分の周りにはり巡らし、音で幻惑する
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：鳥獣術） 奥義破り判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 10[5,5] ＞ 10 ＞ 成功</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「こんなところで…！」<br>
+			2D6&gt;=12  （最期の一撃）命中判定『魔眼』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=12) ＞ 5[1,4] ＞ 4 ＞ 失敗</span>
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			2D6&gt;=5 （判定：流言の術） 命中判定『大祓』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 9[3,6] ＞ 9 ＞ 成功</span>
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			2D6&gt;=9 （判定：呪術） 回避判定<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=9) ＞ 11[5,6] ＞ 11 ＞ 成功</span>
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			2D6&gt;=6 （判定：伝達術） 命中判定『飛魂』<br>
+			<span class="diceroll">ShinobiGami : (2D6&gt;=6) ＞ 4[1,3] ＞ 4 ＞ 失敗</span>
+		</p>
+		<p class="player p6">
+			<b>笛吹花音</b>
+			「兵器をこの世界に残すくらいなら…！」<br>
+			「ごめんじいさん、ヌワーッ！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			悪しき者の手に渡るくらいなら自ら自死を選んだ花音は自爆装置を起動させる。<br>
+			        刹那、轟音とともに爆炎があたりに広がる。
+		</p>
+		<p class="player p8">
+			<b>巳業博士</b>
+			『やめろ……！やめてくれ……！』<br>
+			『すまない……花音……私は最後まで……』
+		</p>
+		<p class="player p1">
+			<b>迷ノ宮ナタク</b>
+			「博士最後はかのんとしのっか！」<br>
+			「てや！」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			巳業博士の脳が詰まった巳業理論を花音の爆発に巻き込む形で放り投げる。<br>
+			巳業博士が最期に見たのは愛しい息子の勇姿だったのか、それとも無邪気に微笑む悪魔の顔だったのか……。
+		</p>
+		<p class="player p3">
+			<b>凪凧　銀之助</b>
+			「やれやれ、これで俺もしまいか」
+		</p>
+		<p class="player p2">
+			<b>ネイサン=P=カートリッジ</b>
+			「アメリカくる？いいとこだよ」
+		</p>
+		<p class="player p0">
+			<b>GM</b>
+			花音の自爆。それによりここに集った忍たちの目的はそれぞれの結末を迎えることとなった。<br>
+			        爆発によって直に人が集まってくるだろう。<br>
+			        煮えきらぬ表情、あるいは満たされた笑顔を浮かべ、忍達は散り散りにその場を去っていった。<br>
+			クライマックスフェイズ終了
+		</p>
+	</div>
+
+	<div class="tab t1">
+		<div class="tabtitle">フェイズ</div>
+		<p class="player p0">
+			<b>GM</b>
+			エピローグ
+		</p>
+	</div>
+
+	<div class="tab t0">
+		<div class="tabtitle">メイン</div>
+		<p class="player p0">
+			<b>GM</b>
+			決戦兵器『武雷』、そして巳業理論はこの世から完全に消滅した。<br>
+			        これにより斜歯忍軍は大きな損害を受けることとなった。すべては敵対組織の思惑通りだったのか……それを知るものはいない。<br>
+			<br>
+			<br>
+			        事件に関わった忍たちの消息は明らかになっていない。<br>
+			        だが、彼らは闇に生きる者。いずれ運命によって相まみえることもあるだろう。<br>
+			<br>
+			        決戦兵器、電人『武雷』<br>
+			        彼は、奇しくも博士の願い通り、人にやさしく命を慈しむ心を持っていた。<br>
+			        その結末は悲劇的なものではあったが、それにより巳業博士の研究によって人が死ぬ、ということはなくなったと言える。<br>
+			<br>
+			        束の間の自由を謳歌した彼は、夢を見ることができたのだろうか……。<br>
+			『夢見る決戦兵器』了
+		</p>
+	</div>
+</body>
+</html>
