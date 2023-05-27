@@ -130,10 +130,8 @@ $('.splashbg').on('animationend', function () {
 });
 
 //5. iframeのモーダル
-// var iFrameWight = $(window).width();
-// var iFrameHeight = $(window).height() * (80/100);
-var iFrameWight = 800;
-var iFrameHeight = 800;
+var iFrameWight = $(window).width();
+var iFrameHeight = $(window).height() * (80/100);
 
 $(".iframe-open").modaal({
     type:'iframe',
