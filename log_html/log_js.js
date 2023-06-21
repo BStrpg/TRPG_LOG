@@ -112,6 +112,22 @@ function ScrollAnime() {
     }
 }
 
+// CSV読み込み
+function readCsv(data) {
+  var target = '#loglist';
+  var csv = $.csv.toArrays(data);
+  var loglist = '';
+  var titleName = $('#header').find('h1').text();
+
+  $(csv).each(function () {
+    if (this[0].length > 0) {
+      if(this[0] == titleName){
+        loglist += '<a href="../log_data/' + this[0] + '/' + this[1] + '" class="btnarrow5 iframe-open">' + this[2] + '</a>';
+      }
+    }
+  });
+  $(target).append(loglist);
+}
 
 $(window).on('load', function () {
   ScrollAnime();/* スクロールした際の動きの関数を呼ぶ*/
@@ -124,8 +140,14 @@ $(window).on('load', function () {
 $('.splashbg').on('animationend', function () {
   //この中に動かしたいJSを記載
   init();
+
+  var csvfile = './log_data.csv';
+  $(function () {
+    $.get(csvfile, readCsv, 'text');
+  });
 });
 //=====ここまで背景が伸びた後に動かしたいJSをまとめる
+
 
 });
 
@@ -151,7 +173,7 @@ after_close:function(){// モーダルが閉じた後に行う動作
 $(".openbtn").click(function () {//ボタンがクリックされたら
 	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-});
+  });
 
 // $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
     // $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
