@@ -130,8 +130,14 @@ function readCsv(data) {
 }
 
 
-$(window).on('load', function () {
+  //5. iframeのモーダル
+  var iFrameWight = $(window).width();
+  var iFrameHeight = $(window).height() * (80/100);
+  // var iFrameWight = 800;
+  // var iFrameHeight = 800;
 
+
+$(window).on('load', function () {
   // csvファイルを確認してリンクを作成
   var csvfile = './log_data.csv';
   $(function () {
@@ -147,12 +153,6 @@ $(window).on('load', function () {
 $('.splashbg').on('animationend', function () {
   //この中に動かしたいJSを記載
   init();
-
-  //5. iframeのモーダル
-var iFrameWight = $(window).width();
-var iFrameHeight = $(window).height() * (80/100);
-// var iFrameWight = 800;
-// var iFrameHeight = 800;
 
 $(".iframe-open").modaal({
     type:'iframe',
