@@ -144,7 +144,6 @@ $(window).on('load', function () {
     $.get(csvfile, readCsv, 'text');
   });
 
-  ScrollAnime();/* スクロールした際の動きの関数を呼ぶ*/
   $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
 
 //=====ここまでローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
@@ -153,6 +152,8 @@ $(window).on('load', function () {
 $('.splashbg').on('animationend', function () {
   //この中に動かしたいJSを記載
   init();
+  
+  ScrollAnime();/* スクロールした際の動きの関数を呼ぶ*/
 
 $(".iframe-open").modaal({
     type:'iframe',
