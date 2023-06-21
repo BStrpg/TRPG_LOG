@@ -129,10 +129,17 @@ function readCsv(data) {
   $(target).append(loglist);
 }
 
+
 $(window).on('load', function () {
+
+  // csvファイルを確認してリンクを作成
+  var csvfile = './log_data.csv';
+  $(function () {
+    $.get(csvfile, readCsv, 'text');
+  });
+
   ScrollAnime();/* スクロールした際の動きの関数を呼ぶ*/
   $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
-
 
 //=====ここまでローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
 
@@ -141,17 +148,7 @@ $('.splashbg').on('animationend', function () {
   //この中に動かしたいJSを記載
   init();
 
-  var csvfile = './log_data.csv';
-  $(function () {
-    $.get(csvfile, readCsv, 'text');
-  });
-});
-//=====ここまで背景が伸びた後に動かしたいJSをまとめる
-
-
-});
-
-//5. iframeのモーダル
+  //5. iframeのモーダル
 var iFrameWight = $(window).width();
 var iFrameHeight = $(window).height() * (80/100);
 // var iFrameWight = 800;
@@ -174,6 +171,13 @@ $(".openbtn").click(function () {//ボタンがクリックされたら
 	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
   });
+});
+//=====ここまで背景が伸びた後に動かしたいJSをまとめる
+
+
+});
+
+
 
 // $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
     // $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
