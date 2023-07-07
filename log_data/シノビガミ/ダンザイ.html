@@ -3,6 +3,7 @@
 <meta http-equiv="content-type" charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../logCon_Respon.css">
 <style>/* main css */
 body{
     margin: 0 auto;
@@ -29,151 +30,8 @@ body{
     background:url('./ダンザイ画像素材/ダンザイ_背景素材.png') no-repeat ;
     background-size:cover;
 }
-.leftwhite{
-position:fixed;
-top:0;
-left:0;
-height:100%;
-background:transparent;
-width:120px;
-z-index:100;
-}
-.rightwhite{
-position:fixed;
-top:0;
-left:700px;
-height:100%;
-background:transparent;
-width:100%;
-z-index:200;
-}
-.log{
-width:80%;
-left:0;
-top:0;
-margin-left:15px;
-background:transparent;
-}
-.log div.kp{
-position:relative;
-color:#fff;
-word-break:break-word;
-overflow-wrap:break-word;
-margin-left:5px;
-margin-top:20px;
-margin-bottom:10px;
-z-index:200;
-}
-.left{
-margin-left:120px;
-margin-top:15px;
-}
-.left:before{
-content:'';
-position:absolute;
-left:0;
-margin-left:25px;
-margin-top:10px;
-width:90px;
-height:90px;
-z-index:600;
-background:transparent;
-}
-.left p{
-position:relative;
-width:500px;
-background:#fff;
-padding:10px;
-text-align:left;
-border-radius:10px;
--webkit-border-radius:10px;
--moz-border-radius:10px;
-border:2px solid #ccc;
-box-shadow:5px 5px 0 #ccc;
-line-height:1em;
-word-break:break-word;
-overflow-wrap:break-word;
-z-index:0;
-}
-.left p:after{
-border:solid transparent;
-content:'';
-height:0;
-width:0;
-pointer-events:none;
-position:absolute;
-border-color:transparent;
-border-top-width:10px;
-border-bottom-width:10px;
-border-left-width:27px;
-border-right-width:27px;
-margin-top: -10px;
-border-right-color:#ccc;
-right:100%;
-top:20px;
-}
-.right{
-left:0;
-margin-top:15px;
-margin-left:120px;
-}
-.right:before{
-content:'';
-position:absolute;
-left:710px;
-margin-top:10px;
-width:90px;
-height:90px;
-z-index:600;
-background:transparent;
-}
-.right p{
-position:relative;
-width:500px;
-background:#fff;
-padding:10px;
-text-align:left;
-border-radius:10px;
--webkit-border-radius:10px;
--moz-border-radius:10px;
-border:2px solid #ccc;
-box-shadow:5px 5px 0 #ccc;
-line-height:1em;
-word-break:break-word;
-overflow-wrap:break-word;
-z-index:100;
-}
-.right p:after{
-border:solid transparent;
-content:'';
-height:0;
-width:0;
-pointer-events:none;
-position:absolute;
-border-color: transparent;
-border-top-width:10px;
-border-bottom-width:10px;
-border-left-width:27px;
-border-right-width:27px;
-margin-top: -10px;
-border-left-color:#ccc;
-left:525px;
-top:20px;
-}
-.left span,.right span{
-display:block;
-position:relative;
-width:200px;
-background:#ccc;
-margin-bottom:-20px;
-margin-left:10px;
-padding-left:8px;
-border-radius:5px;
-font-size:110%;
-}
 </style>
 <style>/* member */
-
 .mem1 p{border:2px solid rgb(233, 30, 99);box-shadow:5px 5px 0 rgb(233, 30, 99);}
 .mem1 p:after{border-right-color:rgb(233, 30, 99);}
 .mem1 span{background:rgb(233, 30, 99);color:#000;}
@@ -198,104 +56,21 @@ font-size:110%;
 .mem6 p:after{border-left-color:rgb(158, 158, 158);}
 .mem6 span{background:rgb(158, 158, 158);color:#fff;}
 .mem6:before{content:'';background-image:url('./ダンザイ画像素材/icon_npc1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
-</style>
-<style>/* animation */
-.LtoR{
-animation-name:slideL;
-animation-duration:0.8s;
-animation-fill-mode:forwards;
-opacity:0;
-}
-@keyframes slideL{
-from{
-transform:translateX(-100%);
-opacity:0;
-}
-to{
-transform:translateX(0);
-opacity:1;
-}
-}
-.LtoR-delay{
-animation-name:slideL2;
-animation-duration:.1s;
-animation-fill-mode:forwards;
-opacity:0;
-}
-@keyframes slideL2{
-from{
-transform:translateX(-100%);
-opacity:0;
-}
-to{
-transform:translateX(10%);
-opacity:1;
-}
-}
-.LtoR-early{
-animation-name:slideL3;
-animation-duration:0.7s;
-animation-fill-mode:forwards;
-opacity:0;
-}
-@keyframes slideL3{
-from{
-transform:translateX(-100%);
-opacity:0;
-}
-to{
-transform:translateX(0);
-opacity:1;
-}
-}
-.RtoL{
-animation-name:slideR;
-animation-duration:1s;
-animation-fill-mode:forwards;
-opacity:0;
-}
-@keyframes slideR{
-from{
-transform:translateX(100%);
-opacity:0;
-}
-to{
-transform:translateX(0);
-opacity:1;
-}
-}
-.RtoL-delay{
-animation-name:slideR2;
-animation-duration:0.8s;
-animation-fill-mode:forwards;
-opacity:0;
-}
-@keyframes slideR2{
-from{
-transform:translateX(100%);
-opacity:0;
-}
-to{
-transform:translateX(10%);
-opacity:1;
-}
-}
-</style>
-<style>/* priority */
-.log div{
-margin-top:2.5em;
-margin-bottom:2.5em;
-}
-@media only screen and (orientation: portrait){
-.log{
-width:95vw !important;
-}
-.kp{
-width:100% !important;
-}
+
+@media only screen and (max-width: 768px) {
+    .mem1 p:after{border-right-color:rgb(233, 30, 99);border-left-color:transparent;}
+    .mem2 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+    .mem3 p:after{border-right-color:rgb(121, 85, 72);border-left-color:transparent;}
+    .mem4 p:after{border-right-color:rgb(33, 150, 243);border-left-color:transparent;}
+    .mem5 p:after{border-right-color:rgb(139, 195, 74);border-left-color:transparent;}
+    .mem6 p:after{border-right-color:rgb(158, 158, 158);border-left-color:transparent;}
+
+    .mem1:before,.mem2:before,.mem3:before,
+    .mem4:before,.mem5:before,.mem6:before{width:70px;height:70px;}
 }
 </style>
 </head><body>
+    <p id="page-top"><a href="#"><i class="page-top__arrow"></i></a></p>
 <div class="leftwhite"></div>
 <div class="rightwhite"></div>
 <div class="bg-sp">
@@ -4697,106 +4472,7 @@ RCT ランダム分野表(2) ＞ 体術
 <div class="kp">
 『ダンザイ』
 </div>
-</div></div>
-<script>//visibility:kp
-$(function(){
-$(window).scroll(function (){
-$(".kp").each(function(){
-var ePos = $(this).offset().top;
-var scroll = $(window).scrollTop();
-var windowHeight = $(window).height();
-if (scroll > ePos - windowHeight + windowHeight/6){
-$(this).addClass('LtoR-early');
-}
-});
-});
-});
-</script>
-<script>//visibility:left
-$(function(){
-$(window).scroll(function (){
-$(".left").each(function(){
-var ePos = $(this).offset().top;
-var scroll = $(window).scrollTop();
-var windowHeight = $(window).height();
-if (scroll > ePos - windowHeight + windowHeight/6){
-$(this).children('span').addClass('hide');
-$(this).children('p').addClass('hide');
-$(this).css({'opacity':'1'});
-$(this).children('span').css({'opacity':'0'});
-$(this).children('p').css({'opacity':'0'});
-$(this).children('span').removeClass('hide');
-$(this).children('p').removeClass('hide');
-$(this).children('span').addClass('LtoR-delay');
-$(this).children('p').addClass('LtoR');
-}
-});
-});
-});
-</script>
-<script>//visibility:right
-$(function(){
-$(window).scroll(function (){
-$(".right").each(function(){
-var ePos = $(this).offset().top;
-var scroll = $(window).scrollTop();
-var windowHeight = $(window).height();
-if (scroll > ePos - windowHeight + windowHeight/6){
-$(this).children('span').addClass('hide');
-$(this).children('p').addClass('hide');
-$(this).css({'opacity':'1'});
-$(this).children('span').css({'opacity':'0'});
-$(this).children('p').css({'opacity':'0'});
-$(this).children('span').removeClass('hide');
-$(this).children('p').removeClass('hide');
-$(this).children('span').addClass('RtoL-delay');
-$(this).children('p').addClass('RtoL');
-}
-});
-});
-});
-</script>
-<script>
-function opacityON(){
-$(".log div").css({opacity:"0"});
-var end = $(window).height();
-var count = 0;
-
-$(".log div").each(function(){
-var position = $(this).offset().top;
-if(position <= end){
-count++
-}
-});
-for(i = 0 ; i <= count - 2 ; i++){
-var classname = $('.log div').eq(i).attr('class');
-if(classname.indexOf('kp') !== -1){
-$('.log div').eq(i).addClass('LtoR-early');
-}
-else{
-$('.log div').eq(i).css({opacity:"1"});
-if(classname.indexOf('left') !== -1){
-$('.log div').eq(i).children('span').addClass('LtoR-delay');
-$('.log div').eq(i).children('p').addClass('LtoR');
-}
-else if(classname.indexOf('right') !== -1){
-$('.log div').eq(i).children('span').addClass('RtoL-delay');
-$('.log div').eq(i).children('p').addClass('RtoL');
-}
-else{
-$('.log div').eq(i).css({'opacity':'1'});
-}
-}
-}
-}
-function mob_alert(){
-if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){;}
-else{
-alert('スマホ版UIは正常に動作しません。\n閲覧はPC推奨です。');
-}
-}
-opacityON();
-mob_alert();
-</script>
 <br><br><br><br><br><br><br><br><br>
+</div></div>
+<script src="../logCon_Respon.js"></script>
 </body></html>
