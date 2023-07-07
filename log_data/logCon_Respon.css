@@ -603,7 +603,7 @@ background:transparent;
 .left p,.right p{
 position:relative;
 font-size:90%;
-width:60vw;
+width:50vw;
 background:#fff;
 padding:10px;
 text-align:left;
@@ -636,7 +636,7 @@ top:20px;
 .left span,.right span{
 display:block;
 position:relative;
-width:40vw;
+width:35vw;
 height:1.5em;
 background:#ccc;
 margin-bottom:-18px;
