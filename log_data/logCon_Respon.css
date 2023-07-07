@@ -529,7 +529,7 @@ a.page_btn_OFF {
 /* ※未使用 ここまで　*/
 
 /* priority */
-.log div{margin-top:1em;margin-bottom:1em;}
+.log div{margin-top:1.5em;margin-bottom:1.5em;}
 
 .leftwhite{
 position:fixed;
@@ -579,7 +579,7 @@ background:transparent;
 .left p,.right p{
 position:relative;
 font-size:90%;
-width:220px;
+width:60vw;
 background:#fff;
 padding:10px;
 text-align:left;
@@ -612,7 +612,7 @@ top:20px;
 .left span,.right span{
 display:block;
 position:relative;
-width:150px;
+width:40vw;
 height:1.5em;
 background:#ccc;
 margin-bottom:-18px;
