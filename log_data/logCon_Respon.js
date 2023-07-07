@@ -24,25 +24,25 @@
 // var play;
 
 // 再生・停止
-function musicPlay(play_ID,music_NO) {
-    if (play !== play_ID) {
-        if (!music.paused) {
-            play.innerHTML = '<i class="fa-solid fa-music fa-sm"></i>';
-            music.pause();
-        }
-        play = play_ID;
-        music = music_NO;
-        music.currentTime = 0;
-    }
+// function musicPlay(play_ID,music_NO) {
+//     if (play !== play_ID) {
+//         if (!music.paused) {
+//             play.innerHTML = '<i class="fa-solid fa-music fa-sm"></i>';
+//             music.pause();
+//         }
+//         play = play_ID;
+//         music = music_NO;
+//         music.currentTime = 0;
+//     }
 
-    if (!music.paused) {
-        play.innerHTML = '<i class="fa-solid fa-music fa-sm"></i>';
-        music.pause();
-    } else {
-        play.innerHTML = '<i class="fa-solid fa-pause fa-sm"></i>';
-        music.play();
-    }
-};
+//     if (!music.paused) {
+//         play.innerHTML = '<i class="fa-solid fa-music fa-sm"></i>';
+//         music.pause();
+//     } else {
+//         play.innerHTML = '<i class="fa-solid fa-pause fa-sm"></i>';
+//         music.play();
+//     }
+// };
 
 // 再生ボタン
 // function playMc1() {musicPlay(play1,mc1);};
@@ -97,6 +97,7 @@ if (isPcSize) {
 
     //visibility:kp
     $(function () {
+         // スクロール時に反応
         $(window).scroll(function () {
             $(".kp").each(function () {
                 var ePos = $(this).offset().top;
@@ -106,12 +107,8 @@ if (isPcSize) {
                     $(this).addClass('LtoR-early');
                 }
             });
-        });
-    });
 
-    //visibility:left
-    $(function () {
-        $(window).scroll(function () {
+            //visibility:left
             $(".left").each(function () {
                 var ePos = $(this).offset().top;
                 var scroll = $(window).scrollTop();
@@ -128,12 +125,8 @@ if (isPcSize) {
                     $(this).children('p').addClass('LtoR');
                 }
             });
-        });
-    });
 
-    //visibility:right
-    $(function () {
-        $(window).scroll(function () {
+            //visibility:right
             $(".right").each(function () {
                 var ePos = $(this).offset().top;
                 var scroll = $(window).scrollTop();
@@ -149,6 +142,7 @@ if (isPcSize) {
                     $(this).children('p').addClass('RtoL');
                 }
             });
+
         });
     });
 
@@ -191,61 +185,38 @@ if (isPcSize) {
 
 else if (isMobileSize) {
     //スマホ用
+    function winScrLR() {
+        var ePos = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > ePos - windowHeight + windowHeight / 10) {
+            $(this).children('span').addClass('hide');
+            $(this).children('p').addClass('hide');
+            $(this).css({ 'opacity': '1' });
+            $(this).children('span').css({ 'opacity': '0' });
+            $(this).children('p').css({ 'opacity': '0' });
+            $(this).children('span').removeClass('hide');
+            $(this).children('p').removeClass('hide');
+            $(this).children('span').addClass('LtoR-delay');
+            $(this).children('p').addClass('LtoR');
+        }
+    }
 
     //visibility:kp
     $(function () {
+        // タッチホバー対応
+        $('body').attr('ontouchstart', '');
+
+        // スクロール時に反応
         $(window).scroll(function () {
+            $(".left").each(winScrLR);
+            $(".right").each(winScrLR);
             $(".kp").each(function () {
                 var ePos = $(this).offset().top;
                 var scroll = $(window).scrollTop();
                 var windowHeight = $(window).height();
                 if (scroll > ePos - windowHeight + windowHeight / 10) {
                     $(this).addClass('LtoR-early');
-                }
-            });
-        });
-    });
-
-
-    //visibility:left
-    $(function () {
-        $(window).scroll(function () {
-            $(".left").each(function () {
-                var ePos = $(this).offset().top;
-                var scroll = $(window).scrollTop();
-                var windowHeight = $(window).height();
-                if (scroll > ePos - windowHeight + windowHeight / 10) {
-                    $(this).children('span').addClass('hide');
-                    $(this).children('p').addClass('hide');
-                    $(this).css({ 'opacity': '1' });
-                    $(this).children('span').css({ 'opacity': '0' });
-                    $(this).children('p').css({ 'opacity': '0' });
-                    $(this).children('span').removeClass('hide');
-                    $(this).children('p').removeClass('hide');
-                    $(this).children('span').addClass('LtoR-delay');
-                    $(this).children('p').addClass('LtoR');
-                }
-            });
-        });
-    });
-
-    //visibility:right
-    $(function () {
-        $(window).scroll(function () {
-            $(".right").each(function () {
-                var ePos = $(this).offset().top;
-                var scroll = $(window).scrollTop();
-                var windowHeight = $(window).height();
-                if (scroll > ePos - windowHeight + windowHeight / 10) {
-                    $(this).children('span').addClass('hide');
-                    $(this).children('p').addClass('hide');
-                    $(this).css({ 'opacity': '1' });
-                    $(this).children('span').css({ 'opacity': '0' });
-                    $(this).children('p').css({ 'opacity': '0' });
-                    $(this).children('span').removeClass('hide');
-                    $(this).children('p').removeClass('hide');
-                    $(this).children('span').addClass('LtoR-delay');
-                    $(this).children('p').addClass('LtoR');
                 }
             });
         });
@@ -284,9 +255,7 @@ else if (isMobileSize) {
         }
     }
 
-    $(function() {
-        $('body').attr('ontouchstart', '');
-    });
+
 
     opacityON();
 

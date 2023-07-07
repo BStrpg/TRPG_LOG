@@ -1,3 +1,29 @@
+/* メインCSS */
+body{
+  margin: 0 auto;
+}
+.hide{visibility:hidden;}
+.bg-sp{
+  position: relative;
+  padding: 5em 0.5em;
+}
+.bg-over{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+.bg-inner{ 
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  position: sticky;
+  display: block;
+  background: transparent;
+}
+
 /* ページトップボタン */
 #page-top a{
   height: 50px;
@@ -62,7 +88,7 @@ i.page-top__arrow {
 }
 
 
-/* 音楽ボタン */
+/* ※未使用 音楽ボタン */
 a.btn{
   font-size: 1.1rem;
   font-weight: 500;
@@ -98,12 +124,13 @@ a.btn--shadow {
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
 }
+/* ※未使用 ここまで */
 
 
 /* PC用 */
 @media only screen and (min-width: 768px) {
 
-/* ※未使用　ページ遷移ボタン */
+/* ※未使用 ページ遷移ボタン */
 div.page_box{
   display: flex;
   gap: 12px;
@@ -184,8 +211,7 @@ a.page_btn_OFF {
   position: relative;
   pointer-events: none;
 }
-
-/* ※未使用　ここまで */
+/* ※未使用 ここまで */
 
 /* priority */
 .log div{margin-top:2.5em;margin-bottom:2.5em;}
@@ -437,7 +463,7 @@ width:100% !important;
   /* スマホ不要部分非表示 */
   .rightwhite{display: none;}
    
-  /* ※未使用　音楽ボタン */
+  /* ※未使用 音楽ボタン */
   a.btn{
     font-size: 0.9rem;
     font-weight: 200;
@@ -526,7 +552,7 @@ a.page_btn_OFF {
   position: relative;
   pointer-events: none;
 }
-/* ※未使用 ここまで　*/
+/* ※未使用 ここまで */
 
 /* priority */
 .log div{margin-top:1.5em;margin-bottom:1.5em;}
@@ -681,4 +707,3 @@ opacity:1;
 }
 }
 }
-
