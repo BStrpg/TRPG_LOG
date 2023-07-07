@@ -1,7 +1,5 @@
 /* メインCSS */
-body{
-  margin: 0 auto;
-}
+body{margin: 0 auto;}
 .hide{visibility:hidden;}
 .bg-sp{
   position: relative;
@@ -567,7 +565,7 @@ width:80px;
 z-index:100;
 }
 .log{
-width:100%;
+width:auto;
 left:0;
 top:0;
 margin-left:15px;
