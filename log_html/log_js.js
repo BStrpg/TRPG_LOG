@@ -122,7 +122,8 @@ function readCsv(data) {
   $(csv).each(function () {
     if (this[0].length > 0) {
       if(this[0] == titleName){
-        loglist += '<a href="../log_data/' + this[0] + '/' + this[1] + '" class="btnarrow5 iframe-open">' + this[2] + '</a>';
+        // loglist += '<a href="../log_data/' + this[0] + '/' + this[1] + '" class="btnarrow5 iframe-open">' + this[2] + '</a>';
+        loglist += '<a href="../log_data/' + this[0] + '/' + this[1] + '" class="btnarrow5">' + this[2] + '</a>';
       }
     }
   });
