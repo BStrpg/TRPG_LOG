@@ -1,0 +1,7666 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>log</title>
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../logCon_Respon.css">
+<style>
+    /* main css */
+    .bg-inner.bg1{background:url('./箱庭/ライブステージ.png') no-repeat center/cover;}
+    .bg-inner.bg2{background:url('./箱庭/事務所.png') no-repeat center/cover;}
+    .bg-inner.bg3{background:url('./箱庭/アイドル寮.png') no-repeat center/cover;}
+    .bg-inner.bg4{background:url('./箱庭/街中.png') no-repeat center/cover;}
+    .bg-inner.bg5{background:url('./箱庭/放送局.png') no-repeat center/cover;}
+    .bg-inner.bg6{background:url('./箱庭/音楽スタジオ.png') no-repeat center/cover;}
+    .bg-inner.bg7{background:url('./箱庭/暗闇.png') no-repeat center/cover;}
+    .bg-inner.bg8{background:url('./箱庭/研究所.jpg') no-repeat center/cover;}
+    
+    /* member */
+    .mem1 p{border:2px solid rgb(18, 255, 58);box-shadow:5px 5px 0 rgb(18, 255, 58);}
+.mem1 p:after{border-right-color:rgb(18, 255, 58);}
+.mem1 span{background:rgb(18, 255, 58);color:#000;}
+.mem1:before{content:'';background-image:url('./箱庭/icon_cammy_sifuku_02.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem2 p{border:2px solid rgb(179, 48, 255);box-shadow:5px 5px 0 rgb(179, 48, 255);}
+.mem2 p:after{border-left-color:rgb(179, 48, 255);}
+.mem2 span{background:rgb(179, 48, 255);color:#fff;}
+.mem2:before{content:'';background-image:url('./箱庭/icon_seiran_sifuku_01.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem3 p{border:2px solid rgb(194, 49, 49);box-shadow:5px 5px 0 rgb(194, 49, 49);}
+.mem3 p:after{border-right-color:rgb(194, 49, 49);}
+.mem3 span{background:rgb(194, 49, 49);color:#fff;}
+.mem3:before{content:'';background-image:url('./箱庭/icon_maya_sifuku_01.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem4 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem4 p:after{border-left-color:rgb(136, 136, 136);}
+.mem4 span{background:rgb(136, 136, 136);color:#fff;}
+.mem4:before{content:'';background-image:url('4.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem5 p{border:2px solid rgb(194, 49, 49);box-shadow:5px 5px 0 rgb(194, 49, 49);}
+.mem5 p:after{border-right-color:rgb(194, 49, 49);}
+.mem5 span{background:rgb(194, 49, 49);color:#fff;}
+.mem5:before{content:'';background-image:url('./箱庭/icon_maya_kage.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem6 p{border:2px solid rgb(158, 161, 163);box-shadow:5px 5px 0 rgb(158, 161, 163);}
+.mem6 p:after{border-left-color:rgb(158, 161, 163);}
+.mem6 span{background:rgb(158, 161, 163);color:#fff;}
+.mem6:before{content:'';background-image:url('./箱庭/icon_p_01.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem7 p{border:2px solid rgb(255, 212, 0);box-shadow:5px 5px 0 rgb(255, 212, 0);}
+.mem7 p:after{border-right-color:rgb(255, 212, 0);}
+.mem7 span{background:rgb(255, 212, 0);color:#000;}
+.mem7:before{content:'';background-image:url('./箱庭/icon_eris_01.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem7_sihuku:before{content:'';background-image:url('./箱庭/icon_eris_sifuku_01.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem8 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem8 p:after{border-left-color:rgb(136, 136, 136);}
+.mem8 span{background:rgb(136, 136, 136);color:#fff;}
+.mem8:before{content:'';background-image:url('8.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem8_NPC:before{content:'';background-image:url('./箱庭/npc.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem9 p{border:2px solid rgb(255, 225, 0);box-shadow:5px 5px 0 rgb(255, 225, 0);}
+.mem9 p:after{border-right-color:rgb(255, 225, 0);}
+.mem9 span{background:rgb(255, 225, 0);color:#000;}
+.mem9:before{content:'';background-image:url('./箱庭/icon_eris_sinobi.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem10 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem10 p:after{border-left-color:rgb(136, 136, 136);}
+.mem10 span{background:rgb(136, 136, 136);color:#fff;}
+.mem10:before{content:'';background-image:url('10.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem11 p{border:2px solid rgb(179, 48, 255);box-shadow:5px 5px 0 rgb(179, 48, 255);}
+.mem11 p:after{border-right-color:rgb(179, 48, 255);}
+.mem11 span{background:rgb(179, 48, 255);color:#000;}
+.mem11:before{content:'';background-image:url('./箱庭/icon_seiran_sifuku_01.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem12 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem12 p:after{border-left-color:rgb(136, 136, 136);}
+.mem12 span{background:rgb(136, 136, 136);color:#fff;}
+.mem12:before{content:'';background-image:url('12.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem13 p{border:2px solid rgb(194, 49, 49);box-shadow:5px 5px 0 rgb(194, 49, 49);}
+.mem13 p:after{border-right-color:rgb(194, 49, 49);}
+.mem13 span{background:rgb(194, 49, 49);color:#fff;}
+.mem13:before{content:'';background-image:url('./箱庭/icon_maya_sifuku_01.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem14 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem14 p:after{border-left-color:rgb(136, 136, 136);}
+.mem14 span{background:rgb(136, 136, 136);color:#fff;}
+.mem14:before{content:'';background-image:url('14.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem15 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem15 p:after{border-right-color:rgb(136, 136, 136);}
+.mem15 span{background:rgb(136, 136, 136);color:#fff;}
+.mem15:before{content:'';background-image:url('./箱庭/mama_mask.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem16 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem16 p:after{border-left-color:rgb(136, 136, 136);}
+.mem16 span{background:rgb(136, 136, 136);color:#fff;}
+.mem16:before{content:'';background-image:url('16.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    
+    @media only screen and (max-width: 768px) {
+        .mem1 p:after{border-right-color:rgb(18, 255, 58);border-left-color:transparent;}
+        .mem2 p:after{border-right-color:rgb(179, 48, 255);border-left-color:transparent;}
+        .mem3 p:after{border-right-color:rgb(194, 49, 49);border-left-color:transparent;}
+        .mem4 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem5 p:after{border-right-color:rgb(194, 49, 49);border-left-color:transparent;}
+        .mem6 p:after{border-right-color:rgb(158, 161, 163);border-left-color:transparent;}
+        .mem7 p:after{border-right-color:rgb(255, 212, 0);border-left-color:transparent;}
+        .mem8 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem9 p:after{border-right-color:rgb(255, 225, 0);border-left-color:transparent;}
+        .mem10 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem11 p:after{border-right-color:rgb(179, 48, 255);border-left-color:transparent;}
+        .mem12 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem13 p:after{border-right-color:rgb(194, 49, 49);border-left-color:transparent;}
+        .mem14 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem15 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem16 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        
+        .mem1:before,.mem2:before,.mem3:before,
+        .mem4:before,.mem5:before,.mem6:before,
+        .mem7:before,.mem8:before,.mem9:before,
+        .mem10:before,.mem11:before,.mem12:before,
+        .mem13:before,.mem14:before,.mem15:before,
+        .mem16:before{width:70px;height:70px;}
+    }
+</style>
+</head>
+<body>
+    <p id="page-top"><a href="#"><i class="page-top__arrow"></i></a></p>
+	<div class="leftwhite"></div>
+	<div class="rightwhite"></div>
+	<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg2"></div></div>
+	<div class="log">
+    
+        <div class="kp LtoR-early">
+
+            箱庭の綺語始めていきます
+      </div>
+      <div class="kp LtoR-early">
+      
+            10周年ライブや惑星パレードから数か月。<br>各々が様々な時間を過ごしていた。
+      </div>
+      <div class="kp LtoR-early">
+      
+            そんなある日、エリスが事務所に現れなくなった。
+      </div>
+      <div class="kp LtoR-early">
+      
+            ただ、体調不良で休みだと思っていたが…
+      </div>
+      <div class="kp LtoR-early">
+      
+            一日、一日と数日も連絡がとれないままだった。
+      </div>
+      <div class="kp LtoR-early">
+      
+            彼女は一体どこにいるのだろうか…。
+      </div>
+      <div class="kp LtoR-early">
+      
+            導入終了です
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「きゃみみ……エリスは今日も見つかんないのね？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「まったく……どこにいるんでしょうね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「エリス……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「これは機関の陰謀か――あるいは世界の意思が動き始めた……？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「やっぱりこれは……とうとう訪れてしまったようね」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「このままだと夜深は解散するわ！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……」チラとキャミィを見る
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あたし様の予言によると……それを避けるには……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「相も変わらず――？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            キャミィはそう言いよどんだ後、何かを思い出したのか顔をうつむける
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>？？？</span>
+      <p>
+      
+            『忘れるな、カサンドラ。我々は先導者ではないのだ……予言は――変えられない』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……きゃみみ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……さすがのキャミィも、今回は策なしかしら」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「今回も何も、いつも策の用意などせんだろ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……まぁ、そうね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「それが言いよどむほうがらしくないな」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……え？バカにされてる？あたし様バカにされてるの？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「いや、珍しいと思ってな」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「そう……そうね！確かにあたし様らしくなかったわ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「聞きなさい！エリスは必ずみつかるわ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「だからそれまでいつも通りに夜深してればいいのよ！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……エリスがいない時点で、いつも通りではないけどね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「フゥンーーそうだの」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「サンドラモ相方がいないと調子がでないか？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「え？別に？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「そんな予言なんぞを標にしたとてロクな道には進めんぞ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「はぁ？やっぱりバカにしてるでしょ！？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ーー？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「な、なぜ我に言う」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「わ、我は何も――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ーー！？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あぁ？あんたが喧嘩うってきたんでしょう！？あたし様の予言がトンチンカンって」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「ちょっと。喧嘩しないの」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            真夜の頭上にうっすらと同じ姿の人影がみえる
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「なんかいる！？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「お、オバケ！？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……真夜。なんか出てるけど、それは何？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「れ……”邪心”〈レゴン〉！？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「フ、そう喚くな。貴様らのおかげでこの通り霊体じゃ、もう悪さもできんてなぁ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「よもや世界の理に、我様が喰われるとはなーー」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「なんとも、憎いの……運命というやつは」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「うぉおぉぉぉぉ！！キャミィキィック！！」（飛び掛かってそのまま壁に激突する
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「ちょっと。落ち着きなさいよ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「貴様！消滅したはずでは――！？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「しかし七星の儀がこう働くとは……怪我の功名とはいい得て妙か」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「我様に干渉することはできんぞ小娘……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「なに……？その瞳――」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「……粛星院」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「まみぃ……（気絶）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「――我が歌で何度でも消し去ってやる！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「主様よ、何方にせよ今のその有様でどう戦うかね……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「フフ、大方あの目に力を忘れてきたな」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            じゃあそんな時にガチャリとドアを開けて事務所にPが入ってきます
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「白練さん。エリスは見つかった？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            choice[知ってる,知らない] (choice[知ってる,知らない]) ＞ 知ってる
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『お疲れ様です、皆さん』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            半透明の真夜ちゃんにもペコリしますね
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            ぺこり
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『エリスさんの行方ですが、まだ確証がありません』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『引き続き私の方で調査を進めさせていただきます』
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そう……私もできることは協力するわ。エリスがいないとこんなに収拾がつかなくなると思っていなかったし」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「P、目下おかしい状況があると思わないかな？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            人影消えてました
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「あ、あれ……？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『？　半透明の真夜さんのことなら、先に挨拶させていただきました』
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「！？？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『今のところ害はないそうなので。<br>万が一真夜さんが害されることがあれば、比良坂機関に依頼して除霊をしていただきます』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『真夜さんにとっても半身のようなものだと思われるので、あくまで最終手段としてですよ』急いで書いた
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……P、Pがいうなら……？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『ところでお話を戻しますが、エリスさんにつきましてはあくまで深入りしないようお願いいたします』
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「何？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『皆さんの業務に影響がないよう、調査は私主体で行います。わかったことがあれば共有いただけますと助かります』
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……わかったわ。いつも通りでいればいいのね」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ぴぴぴ～～……（気絶中）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……レヴェンダーリア」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            お辞儀をしてまた部屋を出ていきますね
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg6"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            1サイクル目始まります
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            1d6 シーン表 (1D6) ＞ 6
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ６:【音楽スタジオ】<br>練習をするときに利用するスタジオ。<br>今は、練習をする気分ではないかもしれない。
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：キャミィ・P
+      </div>
+      <div class="kp LtoR-early">
+      
+            新曲のリハーサルに来ていた２人
+      </div>
+      <div class="kp LtoR-early">
+      
+            打ち合わせの合間の時間
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ハァ～つかれたつかれた」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ねぇプロデューサー？この曲……『末日大往生』って流石にふざけすぎてない？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「確かに何でもいいから仕事いれてって言ったけど……ほぼ演歌だったわよ？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『今回はキャミィさんのターゲット年齢層を広げる狙いで入れさせていただきました』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『次に時代を取るのは孫み、かもしれないので』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「孫み……いいわね！新しいじゃない！流石未来を見てるわね！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「未来……あっそうだ！そういえば聞こうと思ってたんだけど」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「なんか前の時に言ってたじゃない？あたし様の夢が予知夢だって」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「それから……なんかよく夢を見るようになっちゃって」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「前までただの夢だと思ってたんだけど……予知夢――つまりそれが予言なら……変える事ができないのよね」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「だからエリスも――うーん……どうしたらいいと思う？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『そうですね。キャミィさんの予知夢が正しいのであれば……結果や過程は異なるかもしれませんが、避けるのは難しいかと思います。星とはそういうものですものね』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『何か、ありましたか？』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「きゃみみ……実はちょっとあって……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あんまりよくない夢を見たの……前の時より決定的な」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「その時、エリスは私たちの傍にいなかった」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ねぇプロデューサーはどうしたらいいと思う？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「………」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『あなたはこの件に関わるべきではない、としか』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「え？……そ、そうなの？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『このような言葉選びになってしまって申し訳ありません。今はまだ、そうとしか言えないのです』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『おそらく、あなたの夢は避けられるものではありません。ですが、それが過程の話なら結末を変えることはできるはずです』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『運命に介入することは、危険が伴うものです。それは私よりあなたの方がご存知のはず』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「結末……そう！わかったわ！じゃああたし様はやっぱりいつも通りしてる！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「だから……必要になったら呼んでね！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            感情判定→白練 錫
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『もちろん、主役はいつだって皆さんです。気持ちを汲んでいただいてありがとうございます』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：千里眼の術） (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            BAD communication！
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あ、そうだ！夢の事ばっかりで星を見てなかったわ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            ■奥義<br>《『外した大穴しらんぷり！(Jane dig show !)』》<br>指定特技　：遊芸<br>エフェクト：追加忍法/巡らし/回数制限<br>①星見<br><br>(強)巡らし:自身が取得できない忍法でも一種類だけ選んで追加忍法で使用できる。<br>(弱)回数制限:追加された忍法はそれぞれ2回ずつまで使用できる。<br>効果・演出：夢に見るもの全てが未来とは限らない。<br>しかし見覚えのある現実が起きたならそれは間違いなく予知夢だ！これぞキャミジョン！！<br>
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：遊芸） (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            神通丸
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：遊芸） (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 彼方☆キャミィ ] 忍具 : 2 → 1
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            6d6 (6D6) ＞ [2,4,5,6,6,6]
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            7,10,12[2:5,4:6,6:6]
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あら……よくみえない……フン！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あっ！流れ星！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「さっきもらったブレスケアを食べたらよく見えるようになったわ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「よーし今日もがんばるわよぉ～～！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            シーン終了
+      </p>
+      </div>
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg3"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            1サイクル 2人目
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：星嵐・真夜
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            1ｄ6 (1D6) ＞ 3
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ３:【アイドル寮】<br>寮暮らしのメンバーは自室がある。<br>実家暮らしでもラウンジは所属アイドルなら利用可能になっている。
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「何かが邪魔をしてるみたいなのだけど……真夜は感じるかしら？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「む、邪魔……？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「なんだか……もやがかかったような……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「目に見えない陰謀ならば――それは機関の情報工作、もしくは闇の力が心に干渉してきているか……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……もやか」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「とけるかしら。ちょっと調べてみたいのだけど、協力してくれる？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「無論、どうすればいい？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そうね……ちょっと”目”を貸してくれない？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「何……？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            瞳術でエニグマを調べる、感情修正求
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            感情修正→星嵐
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            情報判定にマイナス2の修正
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            2D6&gt;=6 （判定：瞳術） (2D6&gt;=6) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ：偽装：紀律流情報操作：<br>情報工作：脅威度3<br>解除：計画判定《記憶術》<br>誰かが情報判定を行おうとした時に使用できる。 <br>情報判定を行おうとしたキャラクターを目標に選ぶ。<br>目標の行う情報判定にマイナス2の修正をつける。
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「それ……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……ふぅん？なるほどね。何かの邪魔が入っていたようだわ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「まぁ分かっただけ、少しマシなんじゃないかしら」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「我が深紅の瞳は何をみた？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そうね……あなたの言う通り、機関かなにかの情報工作、ってところかしら」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「やはり機関が動き出したか、エリスの行方不明もやはり世界の意思による――！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そうね。きっと無関係ではない……マネージャーに言うと心配させるかもしれないけど、私たちも調べたほうがよさそうね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「やはりセイラもそう思うか」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……怪しい影が伸びようとも、供に煉獄を渡ろう」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……そうね」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+      
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg3"></div></div>
+<div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            1サイクル目 3人目
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：P
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            1d6 (1D6) ＞ 3
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ３:【アイドル寮】<br>寮暮らしのメンバーは自室がある。<br>実家暮らしでもラウンジは所属アイドルなら利用可能になっている。
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（皆さん、やっぱり気にされていますね……）」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（早くなんとかしなければ……）」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=7 （判定：意気） (2D6&gt;=7) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            エニグマは解除されました
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（情報統制されている。比良坂の十八番ですか……）」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（抜け道はいくらでもある、必ずあなたにたどり着いてみせる）」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg3"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            1サイクル目 4人目
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            1d6 (1D6) ＞ 3
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ３:【アイドル寮】<br>寮暮らしのメンバーは自室がある。<br>実家暮らしでもラウンジは所属アイドルなら利用可能になっている。
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：真夜・星嵐
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーンふたつ前の続き
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ふむ……しかし、手がかりが少ないな。どうしたものか」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そうね……」考えるように
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「あの黄色いのも中々面倒を抱えてるな」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「！……で、出たな」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「早く見つけてやらんと手遅れになるかもの」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……何か知ってるの？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「フ、あの小娘とはリアルフェイスで繋がった仲だからの〜、教えてやろうかの〜？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「話したところで！汝のようなやつの話が信じられるか」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……教えてくれるなら教えてくれてもいいのよ？それを信じるか信じないかは、真夜じゃなく私が判断することだわ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「せ、セイラーしかし……どのような妄言を……ごにょ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「だって手掛かりが少ないんだもの。猫の手みたいなものよ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ぐぅ……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「したたかな女だの、主様の思い人は」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「あら。誉め言葉をどうも」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「というか、主とは思ってるのね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「で、結局何！？早く言うなら言えばいいだろう！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「それが人に聞く態度かの……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            憑依術で「？」に情報判定
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            感情修正を真夜ちゃんに
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            2D6&gt;=4 （判定：憑依術） (2D6&gt;=4) ＞ 4[1,3] ＞ 4 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            感情共有で星嵐とキャミィに
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「――陰謀、それは神の再臨」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「どこの世も求める欲望は同じよな」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「神の、再臨？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……まずいかもしれないわね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「貴様は何者なのだ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「そんなことよりも……早く目を取り戻したほうが良いぞ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「汝様が持っているのだろう？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「元より歌しか能がない主様であるが、我様との契約によりある程度は忍の術もモノにしていたはずが……いまはそれすらないではないか」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「汝様って……私のこと？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「他に誰がおるかの？外に黒子もおったか」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「やはり信用ならん、耳を貸す必要はないぞセイラ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「目って……あぁ、あれね」鞄のポーチから水晶を取り出す
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「リアルフェイス……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「これでしょう？これがあるとなんなの？前はこれでほかならぬエリスが大変なことになったけれど、これにまだをんな力があるというの？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「……さぁ、もう大したものは残っておらんはずだが」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「我様を拒絶した故、自分の力までそこにおいてきているしようもない主様だての。この先――必要になることもあろうなぁ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……まぁ、真夜のためになるならいいわ。必要があったら返してもらうこともあるかもしれないけれど。いわくつきではあったけど……なんだかんだ、大事なものではあるから」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「フゥン、必要なら先刻のようにいつでも主様自身を使えば……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「もはや主様を持ち歩けばいいのでは？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「な、なんなのだこいつは……人のことをもののように！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「あら。常に一緒にいろってこと？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「さぁ――？」消滅していく
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「結局どうしたいのよ……どうする？真夜。必要なら渡しておくし、要るときに私から渡すでもいいけれど」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「う……いい、なんか不吉だし」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そう。じゃあまだ私が持っておくわ。必要になったら言って」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ムン……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      
+            1サイクル目終了
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg4"></div></div>
+<div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            2サイクル目 1人目
+      </div>
+      <div class="kp LtoR-early">
+      
+            choice[真夜,星嵐,キャミィ,P] (choice[真夜,星嵐,キャミィ,P]) ＞ P
+            
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：P
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            1d6 (1D6) ＞ 4
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ４:【街中】<br>人々が行き交う街中。<br>人々の噂話が行き交っている。<br>ちょうど誰かの噂話をしていそうだ……。
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（あとどれくらい時間がある？とにかく急がないと……）」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「？」を調べますね
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=5 （判定：潜伏術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            神通丸使います〜〜〜
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 白練 錫 ] 忍具 : 5 → 4
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=5 （判定：潜伏術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「！　急いでるのに……！」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「はい、ああ……それでしたら本日中に返信させていただきますので……はい、恐れ入ります、よろしくお願いいたします」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            電話対応しながらその場を離れますね
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg5"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            2サイクル目 2人目
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            1d6 シーン表 (1D6) ＞ 5
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ５:【放送局】<br>自分達が出演しているラジオ番組。<br>数人が交代で入れ替わりで回している番組だ。
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：キャミィ・真夜・星嵐・P
+      </div>
+      <div class="kp LtoR-early">
+      
+            宣言通り通常業務を行っているキャミィはラジオの収録に来ていた
+      </div>
+      <div class="kp LtoR-early">
+      
+            本来であればシンメであるエリスと収録する予定であったが彼女は行方知れず
+      </div>
+      <div class="kp LtoR-early">
+      
+            なので彼女は代打として意外な人物を引きずりだしてきたのだった……
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「キャミィの～？『今夜もヨフカシ』！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「今夜はあたし様がMCよ！いつもならエリスもいるけど今日はお休み！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「だから代わりの面子をそろえてあげたから、チリアクタ共はありがたく拝聴しなさい！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「というわけで本日のゲストはその辺にいた真夜と星嵐」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「レヴェンダーリア！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「はいはい、ダーリアダーリア」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「未だにこの挨拶の意味わかんないのよね」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「こんばんは。エリスのことはみんな心配してると思うけど、すぐ帰ってくるから安心して」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「もうそろそろ梅雨入りだしみんなも体調には気をつけなさいよ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「そしてスペシャルなゲスト！あたし様たちのPである白練 錫よ！ほら！拍手喝采！」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「ぁっ……」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「は、はいっ、あの……夜深のプロデューサーを勤めております……よろしくお願いします……！！」カチコチ
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「声震えてるわよ！リラックス！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「まぁ気負うなというほうが無理があるさね」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「ひぇ、あ、はい……！すみません、がんばります……！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あっ！ほら！SNSも大盛り上がりよ！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「ふたりともプロデューサーに無理強いしないの。……まぁ、みんなが喜んでるならいいけど」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「いいのいいの！せっかくだし！さぁ！文字通り神秘のベールに包まれた敏腕Pを交えて今宵も夜深していくわよ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「それじゃ今夜も～～？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「よ、ヨフカシ〜〜〜」震え声
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（えーん、助けてぇ……）」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            感情修正→白練<br>判定：遊芸→判定値7→成功
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            ET 感情表(6) ＞ 狂信（プラス）／殺意（マイナス）
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            ET 感情表(5) ＞ 憧憬（プラス）／劣等感（マイナス）
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            憧憬取りますね
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            白練→狂信（プラス）
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            秘密『シノビガミ復活計画』を渡します
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シノビガミ復活計画<br>・概要・<br>比良坂機関が主として斜歯忍軍が協力する形で行われている計画。<br>そこには、ある一人の女性を媒体にシノビガミを復活させようということが記されている。<br>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『なんで皆さんがこれを』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            ちょっと字が焦ってます
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「キャミキャミキャミキャミ～～（なんかさっき真夜と星嵐が話してたのよ）」ラジオトークしながら筆談してる
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『もう、関わらない方がいいってお二人にも言ったのに……』
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            『そういうわけにもいかないでしょ』筆談
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（ク、意外と冷静だなP……ラジオに中に伝えることでうやむやにさせる作戦が）」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『確かに、私の方での報告も不十分でした……。逆に、気を遣わせてしまいましたね。申し訳ありません』
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            『白練さんが気に病むことじゃないわ。ただ、私たちも知りたいだけ』筆談
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『……正直言いますと、ちょうどその件を調査していたところです。嫌な予感がしていたので……情報提供ありがとうございます』
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            『ムン……しかし、情報源がなんとも怪しい……一概に信用していいものでもないことは心してくれ』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『？　ちなみに情報源は……？』
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            『……”邪心”〈レゴン〉』
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            『真夜の後ろにある奴が教えてくれたのよ』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『なるほど……であれば、時間が限られていることは、間違いないかと。<br>シノビガミともなれば、妖魔にも気配がわかるでしょうから。』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「キャミキャミキャ～ミもひとつキャミ～～（なんでもいいけどそろそろラジオ終わるわよ）」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「それじゃ今夜はこの辺で！来週は星嵐とスペシャルゲストでお届けよ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「それじゃあ来週も～～？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「夜深でお会いいたしましょう。おやすみなさい」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「レヴェンダーリア！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            シーン終了
+      </p>
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg2"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            2サイクル目 3人目
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：星嵐・キャミィ
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            1ｄ6 (1D6) ＞ 2
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ２:【事務所】<br>スタッフが忙しなく動いている。<br>他のアイドルの仕事か、自分たちの仕事か。<br>忙しそうだから話しかけるのはやめておこう。
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「キャミィ。ちょっと話があるのだけれど」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ん？あによ？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「エリスがいなくなって……というより、前回の事件の後から、かしら？なんだか、いつもと様子が違う気がして。……なにかあった？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            キャミィちゃんの秘密を調べます
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            2D6&gt;=5 （判定：第六感） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            秘密がわかります
+      </div>
+      <div class="kp LtoR-early">
+      
+            感情共有：真夜・エリス
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「いつもと……そうねちょっと前にPから聞かされた予知夢の話」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「つまりあたし様が見た夢は予言にして変えようのない”未来”……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「だからあの夢を見て――どうすればいいかわからなかっただけよ！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……そんなの。決まってるじゃない。変えればいいだけよ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「きゃみ……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「らしくないわね。私にハッパをかけたキャミィはどこ行っちゃったの？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「それは……それはダメよ！”未来”を変えたらもっと恐ろしいことになるんだから！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そんなの。それをまた変えればいいだけでしょう？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「どうやってよ！変えた”未来”を知る方法があるの！？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「”未来”を変えようとすればその結果は現実となるまでわからないじゃない！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「急に根性論語りだしてんじゃないわよ！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「変えた未来を知る方法なんて、そんなのないわよ。その場その場で最善をやるだけ。あなたが本当に未来視できるのかどうか、私にはわからないけれど、見た未来視が本当にそうかどうか、それも現実にならないとわからないじゃない」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「なにそれ！？あたし様の予言が信じられないっての！？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「自分が見たものだけを信じていると、視野が狭まるっていう話よ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「むにゅ……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「あなたの見た未来が、他人の未来と同じとは限らない。そうでしょ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「けどばあばが……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「どっちが優先されるかなんて、その時にならないとわからないじゃない。……おばあさんがどうかは知らないけど、キャミィはおばあさんじゃなくてキャミィなんだから。見えたものを信じすぎて足踏みするなんて、キャミィらしくないって言ってるの」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あたし様らしく……きゃみみ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「問題なのは不確定な未来じゃなく、今あなたがどうしたいか、でしょ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あたし様が？それは……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……うーん」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「エリスを助けたくはないの？まぁそれならそれで、尊重はするけれど」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「エリス？……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「エリスは……大切よ……だから苦しんでるなら助けてあげる」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「けど……あの夢ではきっと……それに……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……よくよく考えると本人に話聞いてないわね」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……そうね！決めたわ！とりあえずエリスに会いに行きましょう！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そうね。そのためにも、エリスを探さなきゃ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「えぇ！それは多分プロデューサーがやってくれるから準備できたらいきましょう！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……一応お礼を言っておこうかしら！心配してくれて！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「いいわよべつに。元気になったならそれで。私が気になっただけだし」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            2サイクル目 4人目
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：真夜
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            1d6 (1D6) ＞ 1
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            １:【ライブステージ】<br>いつも利用しているステージ。<br>次のライブがある時もきっとここを使うだろう。
+      </div>
+      <div class="kp LtoR-early">
+      
+            ライブ会場でエリスと共に夜深‹よふかし›で10年も過ごしてきたことを振り返っている
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「むぅエリス……何処に」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「まだ目を畏れているのか？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「またお前か……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「これでは暗部としての素養が問われるなぁ、早く取り戻したほうが良いぞ？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「誰が貴様の口車にのるか！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「貴様、なにを目論んでついてくる…エリスの居場所は知っているのか？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「目的？目的も何も離れられぬからいるだけだが」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「主様よ、我様と主様は……それは深いとこで繋がってるのよ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「たとえ如何なる次元、如何なる時を歩もうとも……その繋がりが消えることはない、たとえ死さえその契を分かつことはできなんだ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「そういう契約なのだ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「つ、つまり我が暗魔心眼と”邪心”〈レゴン〉の契約？！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「なんじゃそら」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「主人格様よ、そのような戯言にいつまでも……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「え、エリスの話はどうした！結局なんの手がかりにもならんな汝は！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「フン――嘆かわしい、我様の知る主様ならば何事も歌で解決してたがの……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「歌……？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「その齢で妄言から抜け出せぬ主様には難しいかの」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ーーッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「できるが？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「我が歌は世界を変える、光の速さすら超えてーーみせてやろう暗魔心眼の力」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「それ関係ある？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「黙れッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝、妖しき眼に何を見たーー廻れ慧眼のルミナス」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「レヴェンダーリア！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「贖えーー……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「(……勢いでいったものの、歌でどうしろというのだ！？何を歌えば！)」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>？</span>
+      <p>
+      
+            「ただ、心の感じるままに歌えばいい」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ーー！？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            規制された視界 無慈悲なー
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            尊い事象の地平へ――
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「(我が歌が震わせるのは聴く者の”心魂”〈ルミナス〉くらいなものーー)」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「(彼奴の心をふるわせたところで――)」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            『心を感じて謡えばいい』
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「自分のルミナスをぶつけるだけじゃない？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（心は響き合うとすれば――”心魂”〈ルミナス〉を感じとれる）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            ーー全てが　　今書き換えられる？
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「呼び声」2D6&gt;=5 （判定：憑依術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「感情判定」2D6&gt;=5 （判定：言霊術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ーー！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「感じる――！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            囚われし盟約 現れた偽証の輪郭
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            生命の天地は”盲目”な時間を刻んだ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            全てが　　今書き換えられるーー<br>
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] 頑健 : 2 → 1
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            ET 感情表(6) ＞ 狂信（プラス）／殺意（マイナス）
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            ET 感情表(4) ＞ 忠誠（プラス）／侮蔑（マイナス）
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            忠誠だぁ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            →狂信
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「魔笑」2D6&gt;=6 （判定：遊芸）
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            2D6&gt;=6 （判定：遊芸） (2D6&gt;=6) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            野望→エリス
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「今――たしかに、エリスの”心魂”〈ルミナス〉を感じた」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「彼の心は闇の野望の中に――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……忍神」
+      </p>
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg7"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      
+            マスターシーン
+      </div>
+      <div class="mem8 right">
+      <span>？？</span>
+      <p>
+      
+            オイデ　無力ナ　個ヨ<br>オイデ　静寂ヲ　アゲル<br>ソシテ　在ルベキ姿ヘ　羽化ノ眠リヘ
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>？？</span>
+      <p>
+      
+            まだ　だいじょうぶ<br>まだ　わたしはわたしのまま
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>？？</span>
+      <p>
+      
+            浸食スル世界　助けを呼ぶ声も<br>視界も　未来も　閉ざされ<br>歯車を埋め込み　チューブを差し込めば<br>わたしが　消えてゆくの<br>消さないで
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>？？</span>
+      <p>
+      
+            オイデ　愚カナ　個ヨ<br>オイデ　真実ヲ　アゲル<br>ソレハ　正シキ未来ヘ　進化のプログラム
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>？？</span>
+      <p>
+      
+            まだ　だイじょウぶ<br>マだ　わたしはわタシはワタシハ
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>？？</span>
+      <p>
+      
+            ――――ダレ？
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            マスターシーン終了
+      </div>
+      <div class="kp LtoR-early">
+      
+            野望だけ解除判定します
+      </div>
+      <div class="kp LtoR-early">
+      
+            SG-1&gt;=5 （判定：憑依術） (SG-1@12#2&gt;=5) ＞ 11[5,6]-1 ＞ 10 ＞ 成功
+            
+      </div>
+      <div class="kp LtoR-early">
+      
+            3サイクル目入ります
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg7"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            3サイクル目 1人目
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：キャミィ
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            エリスの秘密調べる
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            千里眼の術→判定値10→成功
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            獅堂エリス<br>：秘密：<br>行方不明になる数日前様子がおかしかったのを自覚していた。<br>スマホを見て「これで最後」と言ってたことも。<br>そして、現在比良坂機関と斜歯忍軍が共同でシノビガミ復活の計画を目論んでいる。<br>その媒体として自分、獅堂絵理が選ばれてたのである。<br>アイドルを始める前から、親の顔よりも見てきた上司&lt;親&gt;の姿。<br>それは、育ててもらった親という表現をするのであれば正しいかもしれない。<br>その"親"から言われたことは逆らえない。<br>だからこそ、貴方は媒体になることを選ばざるを得ないのであった。<br>貴方の本当の使命は「シノビガミの媒体になる」ことである。
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「この星の動き……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「エリスが望んでいるなら……けど」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「よし！仕事いこ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            考えがまとまらず、諦めたキャミィはそのまま本日の仕事へと向かって行った
+      </div>
+      <div class="mem4 right">
+      <span>？？？</span>
+      <p>
+      
+            「――――我々は先導者では決してない」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>？？？</span>
+      <p>
+      
+            「すべては決められた”未来”の出来事なのだ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>？？？</span>
+      <p>
+      
+            「故にいずれにせよ――」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>？？？</span>
+      <p>
+      
+            『大人気アイドルグループ《夜深》はメンバーの身に起きた悲劇的な事件が原因で解散する』
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>？？？</span>
+      <p>
+      
+            「――これは避けようのない"未来"の出来事だ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            ■奥義<br>《『外した大穴しらんぷり！(Jane dig show !)』》<br>指定特技　：遊芸<br>エフェクト：追加忍法/巡らし/回数制限<br>①星見<br><br>(強)巡らし:自身が取得できない忍法でも一種類だけ選んで追加忍法で使用できる。<br>(弱)回数制限:追加された忍法はそれぞれ2回ずつまで使用できる。<br>効果・演出：夢に見るもの全てが未来とは限らない。<br>しかし見覚えのある現実が起きたならそれは間違いなく予知夢だ！これぞキャミジョン！！
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            遊芸→判定値12→スペシャル
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            6d6 (6D6) ＞ 14[1,2,2,2,3,4] ＞ 14
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            3,5,6[1:2,2:3,2:4]
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            シーン終了
+      </p>
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg3"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            3サイクル目 2人目
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：星嵐
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            1ｄ6 (1D6) ＞ 3
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ３:【アイドル寮】<br>寮暮らしのメンバーは自室がある。<br>実家暮らしでもラウンジは所属アイドルなら利用可能になっている。
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            （エリスの居場所を見つけるには、これを調べておかなくちゃならないわね）
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            ？？？を調べます
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            2D6&gt;=5 （判定：人脈） (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            情報共有で真夜・キャミィ・エリスへ
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            （まずいわね……早くどうにかしないと……白練さんにも伝えなきゃ）
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg3"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            3サイクル目 3人目
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：P
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            1d6 (1D6) ＞ 3
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ３:【アイドル寮】<br>寮暮らしのメンバーは自室がある。<br>実家暮らしでもラウンジは所属アイドルなら利用可能になっている。
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=5 （判定：潜伏術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            情報共有でキャミィへ
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（ああ……いけない、このままでは……）」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（どうしよう、私一人で……は、流石に無理か……でも……）」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg2"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            3サイクル目 4人目
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：真夜・星嵐・キャミィ・P
+      </div>
+      <div class="kp LtoR-early">
+      
+            ２:【事務所】<br>スタッフが忙しなく動いている。<br>他のアイドルの仕事か、自分たちの仕事か。<br>忙しそうだから話しかけるのはやめておこう。
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「プロデューサー、エリスの居所は掴めたようだな」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            情報共有します
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ・シノビガミ・<br>神器の欠片をひとつ取り込むことにより、己の限界を突破し、忍神と呼ばれるに至った忍者の一人。<br>その力は、一撃一撃が奥義にも匹敵する力を満ちている。
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            こっちからも紀律の情報共有します
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ・シノビガミ・<br>：秘密：<br>その姿はまだ媒体とした人物の面影を残している。<br>3サイクル終了時に、生命力18、奥義4つの状態で顕現する。不完全な姿である。<br>4サイクル終了時に、生命力19、奥義5つの状態で顕現する。<br>5サイクル終了時に、生命力20、奥義5つの状態で顕現する。<br>6サイクル終了時に、生命力20、奥義6つの状態で顕現する。完全な姿で顕現する。<br>なお、もう一つ秘密を調べる事ができる。
+      </div>
+      <div class="kp LtoR-early">
+      
+            比良坂機関情報部「紀律」<br>：秘密：<br>獅堂絵理が幼い頃から従ってきた比良坂機関。<br>現在比良坂機関と斜歯忍軍が共同でシノビガミ復活の計画を目論んでいる。<br>神器の欠片「十悪・綺語」を獅堂絵理に埋め込む事でシノビガミを顕現させようと考えている。<br>情報が情報のため、情報規制を引いている。
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『ご報告、ありがとうございます』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あたし様の登場よ！呼んだかしらプロデューサー！」ガチャ
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『キャミィさんも、お疲れ様です。今しがた出揃った情報を共有させていただきます』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「情報！？つまりわかったのね！？エリスの居場所が！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「如何にも」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「まぁそれに関してはあたし様もちょっと前から知ってたけど！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「何……？なぜ言わなんだ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「あやふやだったからよ……エリスに話を聞かせてもらおうじゃないの」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「は？あんたたちが喋ってたのよ？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「まぁいいわ！星嵐の言う通り！エリスには話を聞くわ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「それで本人が望むなら……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「まぁとりあえずアイドル続けるのか次第ね！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「アイドルをやめるのかそれとも新生スーパーデンジャラスウルトラデリシャスエリスとしてリニューアルするのか」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「やめるなら引退ライブかしら！？なんか半年前にも同じようなこと言ってたやつがいたような記憶あるわ！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……悪かったわね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「サンドラ……いやキャミィ、汝に問おう」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「…？あによ？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「仮にエリスが自ら望んで此の状況にあるとすれば、汝はどう出る？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……？ちょっと意味が分からないんだけど……だからアイドル続けるのか聞くだけよ？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……聞ける状況だといいがな」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「望んでないならあんたの時と同じようにちゃちゃっとボコるだけよ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「はぁ！？アンタいよいよ頭やられちゃったワケ？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あたし様が聞くと言ったら聞くのよ！聞けない状況なら聞けるようにするだけじゃない！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……ふふ。それでこそ、キャミィだわ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「まぁ色々思うところもあったけどあんた達に話聞いたり、仕事してたらこの話だいぶシンプルってわかったもの！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ：彼方☆キャミィの秘密：<br>推奨：記憶術<br>あなたは悪夢にうなされる。<br>"エリス"が"何か"を埋め込まれ、敵として立ちはだかってくる場面が幾度も夢に現れるのだ。<br>夢の終わりには、決まってあなた達の倒れている姿が映る。<br>これは現在どこかで起きている事実なのだろうか？<br>あるいは既に起きてしまった過去の出来事かもしれない。<br>この光景をただの夢幻と断じて切り捨てることはできそうにない。<br>しかし、これから起きる未来であるならばそれを防ぐことは可能な筈だ。<br><br>あなたの本当の使命は『エリスを止める』である。
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「これは必ず起こる未来……けどその結末は今のあたし様がどうしたいかなのよ！多分！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「これなら予言も曲げないし平気よ！ばあばもそういうことを言いたかったのね！きっと！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そうね。倒れて起き上がる前かもしれないし」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「必ず起こる未来――結末」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「運命は滅びの扉に導かれていく」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝らはあくまでエリスの意思を尊重するか」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ならばあえて釘をさそう、たとえエリスが何を望もうとも――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「エリスは夜深に引き戻す」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「あ、あのっ……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ふーんそうなの？まぁエリスが嫌がらないなら……あらっ！どうしたの？プロデューサー！」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『その、皆さん本当に行くんですか？』
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『相手は不完全とはいえシノビガミ、それに……姿はエリスさんの面影がある可能性が高いです』
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「え？いまさら何を言ってるの？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「しのびがみ……？」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『エリスさんのことも心配ですが、あまりに危険です……皆さんに何かあったら私は……<br>だからこの件に直接関わらないようお伝えしていたんです……』
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「メンバーが間違えそうになったら正してあげるのが筋ってものじゃない？……私の時もそうだったし」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「え？そうだっけ？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「ちょっと……まぁいいわ」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            『皆さん、考えは変わらないようですね……』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「そらそうよ！プロデューサーばっかりに任せてはいられないわ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「そもそもエリスが黙って勝手にどっか行っちゃったのが問題なわけで！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「文句のひとつも言ってやらないと気が済まないわ！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「如何にも、黙っていられる我らだと思うか？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「何も言わなくても歌いだすのが我が運命――故に！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝の相方だ、ならば通わせるならばサンドラーーお前だッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝、翡翠の瞳で夢を視る。廻れ、星読みのルミナス」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「レヴェンダーリア！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「贖え……『マスカレード』」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            姿も形も顔も見えない
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            それなら僕は誰より"神"に近づける
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            冷たい”太陽”黒き闇を湛え
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            三種の”神器”より<br>導いた明日への"スペル"
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            感情修正→真夜
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            ﾊﾟﾁﾊﾟﾁﾊﾟﾁﾊﾟﾁ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            遊芸で情報判定
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            感情修正を真夜ちゃんに
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            2D6&gt;=3 （判定：遊芸） (2D6&gt;=3) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            感情共有で、星嵐・キャミィ・エリス
+      </div>
+      <div class="kp LtoR-early">
+      
+            そして全体公開へ……
+      </div>
+      <div class="kp LtoR-early">
+      
+            ・シノビガミ・<br>：追加の秘密：<br>貴方はエリスの持つリボンを見つける。<br>それに触れた途端、エリスの感情が入り込んでくる感覚に陥る。<br>シノビガミの奥義情報を二つ知ることが出来る。<br>最初にこの秘密を手にした人物は"プライズ"「エリスのリボン」を手に入れる。<br>※ドラマシーンでのプライズの受け渡しは可能。情報のみ受け渡しも可。プライズは分裂しない。<br>※ドラマシーンでの奥義情報の受け渡しは可能。
+      </div>
+      <div class="kp LtoR-early">
+      
+            ★シノビガミ奥義情報★<br>■奥義<br>《輪廻転生》<br>指定特技　：医術<br>エフェクト：不死身/定め/回数制限<br>不死身：いつでも使用できる。1D6からセッションにこの奥義を使用した回復を引いた値だけ自分の【生命力】を回復し、すべての変調を回復することが出来る。<br>定め：回復する【生命力】の値が、5から【不死身】を使用した回数を引いた値になる。<br>回数制限：一回のセッションに二度までしか使用できない。<br>効果・演出：生と死が廻めくように、体が再生されていく
+      </div>
+      <div class="kp LtoR-early">
+      
+            ■奥義<br>《始まりの御旗》<br>指定特技　：人脈<br>エフェクト：完全成功：判定のサイコロを振らず、自動的にその判定を成功にする（スペシャルではない。達成値が必要になった場合、10として扱う）<br>効果・演出：人々の心に触れ、何をするかを手に取るようにわかる。
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（これは――サンドラが見たという未来？この姿は――）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            少しだけ心から記憶を覗き見たかもしれない
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ：プライズ「エリスのリボン」：<br>エリスのアイドルの時に身に着けているリボン。<br>そこにはエリスの感情が込められており、奥義「☆天照らす光星☆エリス -Hirasaka・great network-」を使用することが出来る。
+      </div>
+      <div class="kp LtoR-early">
+      
+            ■奥義<br>《☆天照らす光星☆エリス<br>-Hirasaka・great network-》<br>指定特技　：人脈<br>エフェクト：完全成功<br>完全成功：判定のサイコロを振らず、自動的にその判定を成功にする（スペシャルではない。達成値が必要になった場合、10として扱う）<br>効果・演出：比良坂機関独自の人脈を使い、様々な特技のシノビが出現して代わりに役目をはたしてもらう。<br>比良坂「それぞれの得意分野のプロフェッショナルを準備しました」
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝には……こいつが似合う」<br>事務所に置き去りにされたリボンを手にとる
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            リボンを懐にしまう
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あら！そのリボン……エリスのやつね！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「私服のままどっか行ったのね……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「まったく、衣装の一部を落としていくなんて……そうだ、真夜。渡しておくわ、これ」巾着袋に入った鏡と水晶を渡す
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プライズ家宝→真夜へ
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ム……また、手鏡」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「我が不調に気付くとは、……何たる慧眼」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「当たり前でしょ。どれだけ一緒にいると思ってるの」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「有難く使わせて貰おう」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            リアルフェイス気づいてない
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あら？なにそれ？お菓子？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「手鏡と水晶……まぁ、今も水晶に力があるかはわからないけどね」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「真夜の……後ろにいるやつが欲しがってたのよ。よく知らないけど、力になるなら貸すって約束をしたの」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ヌッ！？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「後ろ？……あぁあのオバケ！キャミィキックでお祓いしたはずじゃ！？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「つ、使わないけど……まぁ、もっとく」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「まぁ、使うか使わないかは任せるわ。よくわからないし」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「なんかおかしなことし始めたら……その時はビンタでも何でもするわ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あっそう……まぁ真夜がめんどくさいことにならないなら別にいいけど……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……そういえばあたし様の３連プリンがなくなってたのよね……なんか知らない？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「――さぁ、誰ともしらぬプリンならいただいたが。サンドラと名前がかかれたプリンはしらんな」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「あなたたちまた醜い争いしてるの……？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「またアンタじゃないの！百歩譲って食べたとしても何で３つも食べるのよ！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝のプリンならサンドラと名前を書いておけといつも――」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「しでかした事を棚に上げてんじゃないわよ！キャミキャミィ！――――」飛び掛かる
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「クッ……そんなこと今はどうでも良かろう！早く向かうぞッ」抵抗しながら
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「まったく……」呆れつつ
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（大丈夫かしら……）」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      
+            3サイクル目終了
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            家宝「再生」により回復
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] 頑健 : 1 → 2
+      </div>
+      <div class="kp LtoR-early">
+      
+            4サイクル目しますか？
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            無論
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            クライマックスへ
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            わかりました
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg8"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            クライマックスフェイズ入ります
+      </div>
+      <div class="kp LtoR-early">
+      
+            貴方達が調べた結果、知ることが出来たシノビガミ研究所へ向かう事になった。
+      </div>
+      <div class="kp LtoR-early">
+      
+            最奥に、一人の男とチューブに繋がれ拘束具で封じられて、ガラス管に入っているエリスの姿があった。
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「ふっ。どうやら、お前の仲間と呼んでいた連中が来たようだぞ。……ま、聞こえているか知らないがな。」
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「そして、お前らは…どうやら間に合わなかったようだな」
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「どうだ、これが新たなシノビガミの姿だ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「誰よアンタ？突然出てきてベラベラと」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あっ！エリス！ちょっとそういう仕事はアダルティすぎると思うわよ！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「これじゃ話聞けそうにないわね……とりあえず出してあげようかしら！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「エリス……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……シノビガミってのも、人に作られると哀れなものね」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「ちょっと、だれかあのガラス壊してきてよ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あいあい！とう！キャミィキック！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ガラス管に向かって必殺の飛び蹴りをお見舞いする
+      </div>
+      <div class="kp LtoR-early">
+      
+            では、ぶつかりましたがなんともいかないようです
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……はぁ。やっぱり横の誰かもわかんないのに話しかけなきゃダメな感じ？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「かった～い！ちょっと！硬いじゃないの！こうなったらキャミビティで……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝は何者だ、エリスに何をした」
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「ただの実験だ。……シノビガミ復活への一歩のな」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「ふぅん。誰だか知らないしエリスがどう言ったのか知らないけど、私たちに黙ってそんなことするなんて、いい度胸してるじゃない」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「何様のつもりだか知らんが返してもらうだけで済むと思うなよ――我が深紅の瞳が貴様を仄暗き闇へ誘うだろう」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「キャミキャミキャミ」＠チャージ中
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「ふん。」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「帰ってきたら説教ね、エリス」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「エリスさんのご家族であるなら、なおのこと娘と呼ぶ間柄にする仕打ちではない」
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「家族？こいつがどう思っているか知らないが、俺はただの駒だと思ってるがな」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「親であれ上司であれ、あなたに名乗る資格はありません」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「彼女は私の事務所のアイドル、駒でもなければシノビガミなんかでもない。うちに返していただきます」
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「そうか。ならいい。――獅堂絵理、やつらを殺せ」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            拘束から解放されたエリス――獅堂絵理はどこを見ているかわからないが、確かにこちらを敵対している気配を感じる
+      </div>
+      <div class="kp LtoR-early">
+      
+            戦闘開始
+      </div>
+      <div class="kp LtoR-early">
+      
+            1ラウンド目
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            羅眼
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            判定値：3→失敗
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            奈落
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            判定値：5→成功
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「うぉおおおお！！超重力波！キャミビティ！！あっエリス出てきてる！？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝隠した瞳は光を閉ざす。廻れ、神星のルミナス」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「レヴェンダーリア！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「贖え……『鋼の鎧纏う、三百の大司祭』」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロットオープン
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 彼方☆キャミィ ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 白練 錫 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 獅堂絵理 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 淵上 星嵐 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ キャミビティ ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            人には大いなる夢がありそれ故 あわれみ深く――
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            奈落の判定すっぞ
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=9 （判定：隠蔽術） (2D6&gt;=9) ＞ 4[2,2] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem10 right">
+      <span>キャミビティ</span>
+      <p>
+      
+            ゴゴゴゴゴゴ！！
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あぁっ！プロデューサーが！」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            ファンサ食らった
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            終わり
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（おいサンドラーー！）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            荒ぶる その行いに”神”が問うなら 海へ落ちよう
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            D66 (D66) ＞ 13
+            
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            ｄ66 (D66) ＞ 15
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            “日”は闇に変わり “月”は血を選ぶだろう
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            エリスに血旋渦
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            2D6&gt;=5 （判定：異形化） (2D6&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            接近戦攻撃をPに
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            SG@12#3&gt;=5 （判定：憑依術） (SG@12#3&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            RCT ランダム分野表(1) ＞ 器術
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 白練 錫 ] 器術 : 1 → 0
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            天眼をPに
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            SG@12#3&gt;=5 （判定：対人術） (SG@12#3&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            Pの秘密が感情共有で真夜・星嵐へ
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            接近戦攻撃→エリス
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            感情修正→真夜
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            真夜ちゃんに感情修正
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            2D6&gt;=3 （判定：遊芸） (2D6&gt;=3) ＞ 3[1,2] ＞ 3 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：対人術） (SG@12#3&gt;=6) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ちょっと！エリスあんたプロデューサーになにしてんのよ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「いやあたし様もだけど……」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「テキ、ハイジョ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「なに！？カタコトキャラに戻ったの！？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            2ラウンド目
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（おい、コントしてる場合か――！）」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            羅眼
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            判定値：6→成功
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            （私ってもしかして、忍としてはやっぱり……？）
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            奈落
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            感情修正→キャミィ
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6+1&gt;=5 （判定：掘削術） (2D6+1&gt;=5) ＞ 8[3,5]+1 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「こうなったらあたし様の予言も組み合わせて……！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            羅眼→シノビガミ<br>予言値→5
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロットオープン
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 彼方☆キャミィ ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ キャミビティ ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 淵上 星嵐 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 獅堂絵理 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 白練 錫 ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            感情修正→プロデューサー
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            闇景色
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=5 （判定：潜伏術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            d66 (D66) ＞ 13
+            
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            D66 (D66) ＞ 24
+            
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            ｄ66 (D66) ＞ 34
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            d６６ (D66) ＞ 13
+            
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            血旋渦をエリスに
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            2D6&gt;=5 （判定：異形化） (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            禁術→羅眼
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            SG@12#3&gt;=5 （判定：罠術） (SG@12#3&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            三千大戦世界を放って終わる
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（どうにも空間のの流れが悪いな――）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            接近戦攻撃→エリス
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            感情修正を真夜ちゃんに
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            2D6&gt;=4 （判定：遊芸） (2D6&gt;=4) ＞ 5[1,4] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：対人術） (SG@12#3&gt;=6) ＞ 5[1,4] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ シノビガミ  ] 生命力 : 18 → 17
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            夜叉：攻撃：間１：コなし：掘削術：p.79
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            →エリス
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：掘削術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：壊器術） (SG@12#3&gt;=6) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（このままではじり貧というもの――――ッ）」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「オラッ！お話しなさい！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「黙りこくって！そのキャラ変はアイドルとして失敗でしょ！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「うルサい」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            3サイクル目
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            奈落：サポ：間なし：コ２：掘削術：p.86
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：掘削術） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            羅眼：サポ：間なし：コなし：瞳術：p.116
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            　感情修正→キャミィ
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6+1&gt;=6 （判定：千里眼の術） (2D6+1&gt;=6) ＞ 6[2,4]+1 ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あたし様の予言は――」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            羅眼→シノビガミ　予言値→3
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロットオープン
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 彼方☆キャミィ ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 淵上 星嵐 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 白練 錫 ] がダイスシンボルを公開。出目は 6 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ キャミビティ ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 獅堂絵理 ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：壊器術） (SG@12#3&gt;=6) ＞ 4[2,2] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            黒絃
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=5 （判定：潜伏術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ シノビガミ  ] 生命力 : 17 → 16
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（力が足りぬ――このままではじり貧……我が力が本当にこの中に？）」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            《詠み手の魔弾》<br>指定特技　：砲術<br>エフェクト：範囲攻撃<br>効果・演出：様々な方向から撃ち込まれる魔弾
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ーー！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            対象全員ですよ
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            錫奥義
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            ■奥義<br>《母なる無意識<br>「ニル・マーテル・オブリヴィオ」》<br>指定特技　：隠蔽術<br>エフェクト：絶対防御/護り/防御低下<br><br>ダメージを3点軽減する。<br>複数PCが攻撃対象になった場合、防御対象として選べるPCが2人までになる。<br>効果・演出：いつだってあなたのそばにいます<br>あなたの無意識、視界の外のあなたの従者<br><br>ちょっとストーカーじみているかもしれませんが……<br>誰よりも守りたいもの……今でこそ当たり前にある私の奇跡<br><br>あなたを傷つける者があってはならない<br>深い闇の中で煌めくあなたを守るために<br>夜の帳で全てを覆います<br><br>足を掬われて真っ逆さまに<br>沈んだ先があなたにとっての楽園でありますように
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            対象は星嵐ちゃんとキャミィちゃんを守ります
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            真夜奥義
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            ■奥義<br>《星屑麗華[コズミニクス・ダーリア]》<br>指定特技　：言霊術<br>エフェクト：【絶対防御】<br>/護り(一度に2人まで守れる)<br>/防御低下（3点まで守れる）<br>効果・演出：魔を祓う魔性の歌は世界を揺らす――星の力に触れた曲歌は心震わせる者を守る力へ昇華した。
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            対象はP、自分
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            揺り音
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] 頑健 : 2 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 淵上 星嵐 ] 日々の鍛錬 : 1 → 0
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ぎゃらっぷ！……あれ？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「っ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……っ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            判定放棄
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「プロデューサーが守ってくれたのね！ありがと！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ちょっとエリス！そろそろ怒るわよ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            夜叉：攻撃：間１：コなし：掘削術：p.79
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「いえ、あの、真夜さんも……ありがとうございます！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            夜叉→シノビガミ
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（次は守り切れるとも限りません……）」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：掘削術） (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ シノビガミ  ] 生命力 : 16 → 14
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            風饗：サポ：間なし：コ２　：骨法術：p.81
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：骨法術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            夜叉→シノビガミ
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：掘削術） (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ シノビガミ  ] 生命力 : 14 → 12
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「キャミキャミキャミィ！！」パンチ
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「っ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（サンドラーッ）」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            血旋渦をエリスに
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            2D6&gt;=5 （判定：異形化） (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「しのびがみだかなんだか知らないけど！アンタは獅堂エリス！あたし様のシンメでしょうが！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「ウル、さい！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            （私って忍としてはダメなのかもね……）
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（セイラーー！取り返しがつかなくなる前に、我が足を引くわけにはいかない！）」リアルフェイスを目にあてがう
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            開眼
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あんたカタコトキャラやめたでしょうが！！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] 頑健 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] 器術 : 1 → 0
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            特技「砲術」を開放
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「――開け我が魔眼！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ーー！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「贖え……『磔のミサ』！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            先天の日からあなたもその地も――
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「魅るがいい、深紅の華よ――開け！艶花」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            感情修正を真夜ちゃんに
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            感情修正→真夜
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            2D6&gt;=3 （判定：砲術） (2D6&gt;=3) ＞ 3[1,2] ＞ 3 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            エリスの砲術を未収得に
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「双子」<br>頑健→艶花<br>魔笑→神槍<br>開眼→夜叉
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            《始まりの御旗》<br>指定特技　：人脈<br>エフェクト：完全成功<br>効果・演出：人々の心に触れ、何をするかを手に取るようにわかる。
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=9 （判定：千里眼の術） (2D6&gt;=9) ＞ 8[2,6] ＞ 8 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=6 （判定：伝達術） (2D6&gt;=6) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 白練 錫 ] 器術 : 0 → 1
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            2D6&gt;=8 （判定：憑依術） (2D6&gt;=8) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            魔性の薔薇がエリスの身体に纏わりつく
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            忘れてしまった…砲術…
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            4ラウンド目
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            奈落：サポ：間なし：コ２　：掘削術：p.86
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：掘削術） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            羅眼：サポ：間なし：コなし：瞳術：p.116→シノビガミ
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            感情修正→キャミィ
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            2D6+1&gt;=6 （判定：千里眼の術） (2D6+1&gt;=6) ＞ 10[5,5]+1 ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            選ばれし"神の子" 捧げるその瞬間が<br>迫り来る祝福
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「いくわよぉ～！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            羅眼→シノビガミ　予言値→3
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロットオープン
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 彼方☆キャミィ ] がダイスシンボルを公開。出目は 6 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 獅堂絵理 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 淵上 星嵐 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ キャミビティ ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 白練 錫 ] がダイスシンボルを公開。出目は 6 です。
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：壊器術） (SG@12#3&gt;=6) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            ■奥義<br>《『外した大穴しらんぷり！(Jane dig show !)』》<br>指定特技　：遊芸<br>エフェクト：追加忍法/巡らし/回数制限<br>①星見<br>②天狗<br><br>(強)巡らし:自身が取得できない忍法でも一種類だけ選んで追加忍法で使用できる。<br>(弱)回数制限:追加された忍法はそれぞれ2回ずつまで使用できる。<br>効果・演出：<br>地球という星が持つ"重力"を利用し、得意のアクロバットキックを繰り出す。<br>結局のところ暴力！それがキャミビティ！！
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 彼方☆キャミィ ] 忍術 : 1 → 0
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            SG@12#6&gt;=5 （判定：遊芸） (SG@12#6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ シノビガミ  ] 生命力 : 12 → 6
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            《輪廻転生》<br>指定特技　：医術<br>エフェクト：不死身/定め/回数制限<br>効果・演出：生と死が廻めくように、体が再生されていく<br>
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            エリス奥義
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            ■奥義<br>《☆天照らす光星☆エリス<br>-Hirasaka・great network-》<br>指定特技　：人脈<br>エフェクト：完全成功<br>完全成功：判定のサイコロを振らず、自動的にその判定を成功にする（スペシャルではない。達成値が必要になった場合、10として扱う）<br>効果・演出：比良坂機関独自の人脈を使い、様々な特技のシノビが出現して代わりに役目をはたしてもらう。<br>比良坂「それぞれの得意分野のプロフェッショナルを準備しました」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            《始まりの御旗》<br>指定特技　：人脈<br>エフェクト：完全成功<br>効果・演出：人々の心に触れ、何をするかを手に取るようにわかる。
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            感情修正→星嵐
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            2D6&gt;=4 （判定：人脈） (2D6&gt;=4) ＞ 5[2,3] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ゆけ――サンドラ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「キャミミミミィ！誰がポ〇モンよ！？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            風饗：サポ：間なし：コ２　：骨法術：p.81
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            SG@12#6&gt;=5 （判定：骨法術） (SG@12#6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 彼方☆キャミィ ] 忍術 : 0 → 1
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            天狗→シノビガミ
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            SG@12#6&gt;=5 （判定：遊芸） (SG@12#6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            遁甲符使います
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            SG@12#6&gt;=5 （判定：遊芸） (SG@12#6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 白練 錫 ] 忍具 : 4 → 3
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            《星明りの旗》<br>指定特技　：結界術<br>エフェクト：絶対防御<br>効果・演出：周りに結界を張り、相手の攻撃を防ぐ。
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ シノビガミ  ] 生命力 : 6 → 4
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            "忍び"寄る恐怖は 心の幻想で快楽へと導かれ行く<br>
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「キャミビティエクストリームエクセレントダブルダイナマイトツインドリルキャミビジョン流星夜深キィィィィィック！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「これが！アイドルパワーよ！！」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            黒絃
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=5 （判定：潜伏術） (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            遁甲符→白練
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 彼方☆キャミィ ] 忍具 : 1 → 0
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=5 （判定：潜伏術） (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ シノビガミ  ] 生命力 : 4 → 3
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            《詠み手の魔弾》<br>指定特技　：砲術<br>エフェクト：範囲攻撃<br>効果・演出：様々な方向から撃ち込まれる魔弾
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            SG@12#6&gt;=6 （判定：水術） (SG@12#6&gt;=6) ＞ 6[1,5] ＞ 6 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            2D6&gt;=6 （判定：潜伏術） (2D6&gt;=6) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「セイラーー供に行こう！」手を引いて突っ込む
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「え？……えぇ！！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「響け我が言霊、夜叉――」→エリス
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            感情修正→真夜
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            感情修正を真夜ちゃんに
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            2D6&gt;=3 （判定：言霊術） (2D6&gt;=3) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ シノビガミ  ] 生命力 : 3 → 1
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            星嵐奥義
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            ■奥義<br>《淵の上、星の嵐》<br>指定特技　：幻術<br>エフェクト：クリティカルヒット/貫き/威力低下<br>効果・演出：淵とは、水を深く湛える所である。または、流れの水が淀み深くなった所である。または、物事のいずる根源である。その深みに映るように、溢れるように、降るように、貫くように、星の嵐が襲う、深淵へ。
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ シノビガミ  ] 生命力 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            戦闘終了です
+      </div>
+      <div class="kp LtoR-early">
+      
+            チューブは引き千切れ、獅堂絵理は倒れるように地面にぶつかった。
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「……ぁ」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「なん…で、みんなが…」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            どうやら、戦っていた間の記憶がないらしい。<br>そして、あたりを見渡すと理解したのか言葉をこぼす。
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「あはっ。あはは……私は最後の仕事も完遂出来なかったんやな」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ふぅ……ようやく落ち着いたわね！」
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「獅堂絵理！何をしている！そいつらを殺すんだ」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「無理や。埋め込まれてた綺語は壊されてるわ。それに、私自身……みんなと戦いたくないわ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「はぁ！？何勝手にアイドル引退しようとしてんのよ！？あんたの仕事溜まってるわよ！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「はぇ！？ふぁ！？」
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「何を言っている！？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「もう、終いにしようや。私は、自分の為に生きるわ。もう、親孝行は終わり……ナノデース」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「戦う？何言ってんのあんたが暴れてたからちょっとボコっただけじゃない！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……今回は私、何もできなかったから」つかつか？？のほうへ寄ってビンタします
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            拳銃を”親”に向けて放つ。
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            「ぐっ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「ちょっと、撃つなら撃つって言いなさいよ」
+      </p>
+      </div>
+      <div class="mem8 mem8_NPC right">
+      <span>？？</span>
+      <p>
+      
+            絵理に撃たれた傷口を抑えて裏口から出ていく。
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「こんな大それた儀式、何度もできるわけがありません。あなたが巻き込まれた事件もこれまでです」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「みんなごめんなさいです。今回の件ではみんなに迷惑を掛けました……。ほんとに、ごめんなさい！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ちょっと！何撃ってんのよ！あぶないじゃない！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「でも、これでケジメをつけないとっ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……良かったのか？」眼帯付け付け
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「ほんとにごめんなさい。」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「はぁ！？誰に対してのよ？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「はい。良かったなのです」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「アンタ反省してるならちょっとくらい会話しなさいよね！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「今の自分と新しい自分のケジメですの」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……早く帰ってきなさい。あなた、衣装のリボン落としたり、仕事ほっぽり出したり……アイドルとしての自覚まで捨てたの？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「っ。それは……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「はぁ！？勝手に解決してんじゃないわよ！アンタは！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「捨てられないからこそ、最後の仕事を…」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ちょっと！？……ちょっと！？……あら？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「今回のことで思い知ったわ……私はやっぱり、忍にはあんまり向いてないみたい。でも、アイドルとしては……エリスに教えられたから、今度はエリスを鍛える番ね？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「え！？教えたのかな…？でも、鍛えるのもありかもしれないです」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「あなたが本当はアイドルじゃなくて忍だっていうから。……私も少しは、忍としても頑張ろうかなって、思ったんだけど。……駄目ね。らしくないことはするものじゃないわ」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「そう、だったんですね。」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「私にとって忍は、やっぱりアイドルとしてのパフォーマンスの一部。でも……どうなの？エリス。あなたは、まだアイドルよりも忍優先？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「今は、……忍の仕事は休業です。当分はアイドルやってたいと思います」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「だからそのケジメをしてたんですけど…」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「迷惑かけちゃったみたいです」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「そう。なら、鍛えがいがありそう……って、シノビガミになんてなっちゃったらアイドルどころじゃないじゃないの。バカなの？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「極端なのよ、あなた……」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「い、いえ。綺語は分離されたので…今は普通の忍なのでーす」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「極端…だったですかぁ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……せめてアイドルも休業宣言をしてからやってちょうだい。どれだけファンがあなたのこと心配したと思ってるの」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「はっ。そうでした」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「急な予定だったので…」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「つい……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ふむ、まず――アイドルなら、格好には気をつかったほうがいい」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「プロデューサー」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「はい、これを……」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            っアイドル衣装
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「これは…！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝は、やはりこれだろう」リボンを返す
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「ありがとうなのでーす」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            つけつけ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            付け付け
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「……エリスさん」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「は、はい！」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「あんなことになってしまいましたが、目を覚ましてくれたようで安心しました。<br>……エリスさんの状況に気づけず、申し訳ありません」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「ごめんなさい」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            しゅん
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「いいえ、子にとって親というのは大きな存在です。直属の上司となれば、忍の立場では逆らえないでしょう」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「だから、最後に私たちのところへ帰ってきてくれて嬉しいです」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「………そういっていただけると、ありがたいです」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「……エリスさんのこと、私はプロデューサーとして、ファンとしていつまでも応援してます。<br>それこそ、あなたのことを一人の女の子として、私が死ぬまで愛しています」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「っ……」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「そんなエリスさんが、ケジメのためとはいえ親殺しの業を背負うことはありません。<br>……あの男について、鞍馬には私から連絡をつけておきます」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            エリスの目に涙が溢れてくる
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（あなたが無事で本当によかった……）」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「っ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「Pにもリーダーにも断りなく……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「次断りもなくいなくなれば、汝のポジションはプロデューサーが埋めることになると覚えておけ……次はないぞ」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「ぁぅ……。ごめんなさぃ」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>白練 錫</span>
+      <p>
+      
+            「（えっっ）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ーー！な、泣くなよっ」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「ふぇっ…」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「こ、こんなこともあろうかと懐にプリンが……」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「ツメタクナイデース」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「ぬくもりを感じるデース」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「感じる……でーす」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――――――」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「きゃみぃって書いてる…きゃみぃちゃんいっしょに食べよでーす」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ヨシ！一件落着で帰ろうか」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――さ『さぁ！エリスも戻ってきたし帰るわよ！』
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「あ、真夜。鏡と水晶返して」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――――――」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――『プリン？あぁもうしょうがないわね！今度買ってきなさいよ？』
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ン？これもうはまってるんだけど――取れるかな」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「――はい」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「あぁ、でも……水晶はあなたの目だから返してもらわないほうがいいかしら」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「まぁいいわ、エリスがキャミィのプリンのぬくもりなら、真夜は私の水晶ってことで。……もともとあなたの目だしね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「汝と共にあれるならば、まぁそれも悪くないか」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「ふふ。あの後ろのやつはちゃんと封じておいてね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（そういえばライブ会場以来見ていないな――）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「（奴は一体……）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「――？サンドラ？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            『ん？どうかしたのかしら？』
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「キャミィちゃん？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「何か今――、気のせいか」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「プリン、はい。あーん」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            『なに？二人して？それよりエリス。休んだら仕事が待ってるわよ！』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あーん……！」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「あ！そうナノデース！？やらないといけないのでーす」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            一緒に分け合って食べてよ
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「！……――――――」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――……『美味しいわね！疲れた時にはプリンが一番！』
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「そうなのでーす」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「結局いつもの通り、汝の”予言”は当てにならなんだな」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――――――」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――――――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「いや、見方を変えれば結果が変わったといえるのかも……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「……キャミィ？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――――『そうね……けど”未来”は揺るがなく絶対のものよ』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            『だからこれは……初めから決まっていたこと……』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            『つまりエリスが助かるのもシノビガミにならないのも元々そういう”未来”だったのよ！』
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「クック……ならばいつ夜深は解散するというのだ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――――――」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――――」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――『夜深は』――」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「『メンバー』――『事件』――解散」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「……！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            序段交じりで放たれた真夜の質問にキャミィは言葉を詰まらせながら単語だけを話しただけであった
+      </div>
+      <div class="kp LtoR-early">
+      
+            どうしても話したくないのかもしくは……
+      </div>
+      <div class="kp LtoR-early">
+      
+            貴方達はエリスを連れて、自分たちの事務所へと戻る。
+      </div>
+      <div class="kp LtoR-early">
+      
+            暗雲は立ち去ったが、また次の暗雲はやってくるやもしれん。<br>だが、彼女たちなら苦難を越え抗うことが出来るであろう。
+      </div>
+      <div class="kp LtoR-early">
+      
+            箱庭の綺語 完
+      </div>
+      <div class="kp LtoR-early">
+      
+                to be continued
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg2"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            3人でエピローグ
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「あなたの後ろのやつは結局なんだったの？真夜」
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            「え？後ろ？何か背後霊でもいたんですか？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「なんか……いたのよ。前回の残りかす……？なのかしら？あれ」
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            「あーあの」
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            「でも、前消えたですよね？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「ふむ、あれ以来姿は見えず……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「真夜の見た目してて……真夜のことを主様とか言ってたけど」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「試しに目外してみたら、また出てきたりするのかしら。……別に、出てきてほしいわけじゃないけど」
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            「主様……主人格のようなでしょうか。あのリアルフェイスはなにか心を歪める気分がしたのデース」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「契約と言っていたが――そんなものはした覚えもないし」
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            「自分が記憶してないだけで無意識にもないですかー？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「なんかしてたんじゃない？知らないうちに」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「むぅ、そうはいっても生まれた時より共にあった存在だと思うが……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「クク、この話は我が前世、暗魔心眼の始まりまで遡る必要があるのかもしれんな――」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「ずーっと契約状態だったのに乗っ取ってきたってこと？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「『たとえ死さえその契を分かつことはできなんだ』」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……本当にそうなのかな」ボソ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「そんなものは真っ平御免被るが……我が煉獄を供に渡るのは汝であろう？」
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            「（あっ。これはそっと出が正しいパターンかな？）」
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            ｽｽｽｰ
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「えぇ？私があなたを看取れっていうの？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「もし看取ってあれが残ったら、私とあれが二人きりじゃないの」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「おい、まて……何処に行く汝は当分我が支配下に置いておくぞ」エリスの服の袖を掴む
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            「アハハー」
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            「（いちゃいちゃするならそっとするのデース）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「こんなのものはいずれ……我が歌で成仏させてやる」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「成仏ね……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「まぁ、私と真夜の間に入ってきたりとか、みんなの邪魔しないなら、なんでもいいけど」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            会話が一段落したところで事務所の扉が開く
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            『待たせたわね！さぁエリス！仕事に行くわよ！ファンのみんながあたしたちを待ってるわ』ｶﾞﾁｬ
+      </p>
+      </div>
+      <div class="mem7 mem7_sihuku left">
+      <span>エリス</span>
+      <p>
+      
+            「あ、はいナノデース！」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            早着替え
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            『まずは商店街でかき氷つくりよ！おもちで鍛えたあたしの営業トークを見せてあげる』
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「かき氷ナノデース」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「でも営業って地域密着型ナノデース」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            元気そうな2人を見て笑みをこぼす
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>エリス</span>
+      <p>
+      
+            「超小規模型ナノデース」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            「さ、真夜、私たちも仕事よ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「クック……夜深はこうでなくてはな」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            「レヴェンダーリア！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了です
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+      <div class="kp LtoR-early">
+      
+            時は遡り、エリスを解放した直後
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「はぁ！？誰に対してのよ？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「はい。良かったなのです」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「アンタ反省してるならちょっとくらい会話しなさいよね！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「今の自分と新しい自分のケジメですの」
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span> 淵上 星嵐 </span>
+      <p>
+      
+            「……早く帰ってきなさい。あなた、衣装のリボン落としたり、仕事ほっぽり出したり……アイドルとしての自覚まで捨てたの？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「っ。それは……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「はぁ！？勝手に解決してんじゃないわよ！アンタは！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「捨てられないからこそ、最後の仕事を…」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ちょっと！？……ちょっと！？……あら？」
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span> 淵上 星嵐 </span>
+      <p>
+      
+            「今回のことで思い知ったわ……私はやっぱり――」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――返事がない。まるで聞こえていないかのように。
+      </div>
+      <div class="kp LtoR-early">
+      
+            キャミィは自分の喉に触れ、小首をかしげながら不調がないか確かめる。
+      </div>
+      <div class="kp LtoR-early">
+      
+            次いで大声を上げる。甲高く幼い声。未熟さを感じるその声を自身は好んではいなかったが今は安心する。
+      </div>
+      <div class="kp LtoR-early">
+      
+            万全を確認し、無視されていると確信した彼女は怒りを覚えながら皆に向き直る
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――そこには真夜、星嵐、白練の倒れている姿があった.
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「えっ――ど、どうしたの！？ちょっとアンタたち……？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――この光景に覚えがある。そう、何度もあなたを悩ませていたあの悪夢だ。
+      </div>
+      <div class="kp LtoR-early">
+      
+            しかし、その光景は現実とならず結末を変えた筈――
+      </div>
+      <div class="mem4 right">
+      <span>？？？</span>
+      <p>
+      
+            「言っただろう？カサンドラ”未来”は変えられない……変えてはならないのだ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            何処からともなく声が聞こえる。幼い頃によく聞いた、やさしく、すべてを知っているような安心感のあるあの温かい声。
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「えっ……？ば、ばあば？どうして……け、けど聞いて！あたし様は予言を守ったわよ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「見えた光景は過程で――どうしたいのかは今のあたし様が決めることで――結末はあたし様が変えられるって！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「プロデューサーも……星嵐もそう言ってくれた！」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「白練 鈴……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            声は一人の人物の名を嘆く。
+      </div>
+      <div class="kp LtoR-early">
+      
+            しばしの間、キャミィは一人言いようのない不安にさらされていた。
+      </div>
+      <div class="kp LtoR-early">
+      
+            言いつけを破り叱られる子供のような気分。
+      </div>
+      <div class="kp LtoR-early">
+      
+            自分はまだ何も知らない子供のままだったのだろうか？いや、それは――
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「――カサンドラ。お前は"未来"を知りながらそれを歪めた……これは恐ろしい事だ」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「”未来”を知る我々が自由にそれを操ってしまえば、世界はそれを許すまいと罰を与えてくる」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――ッ！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            キャミィの脳裏には幼き日の記憶がよみがえる。
+      </div>
+      <div class="kp LtoR-early">
+      
+            そしてその姿がエリスに重なった。
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「――だが、安心しなさいカサンドラ。その罰は私が請け負おう」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「――えっ？そ、そんな……じゃあばあばが」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「大丈夫さ、私はおまえのばあばだよ？このくらいなんともないさ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「ばあば……」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「――ただ、しばらくは罰の影響を受けるかもしれない」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「だから、お前は”未来”に逆らわないようにするんだ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「み、未来？予言を破るなって事？……うん、気をつけ――」
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span> 夜月 真夜</span>
+      <p>
+      
+            『Pにもリーダーにも断りなく――』
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span> 夜月 真夜</span>
+      <p>
+      
+            「Pにもリーダーにも断りなく――」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「な、なにこれ？真夜が重なって……あれ？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            『全くよ！こういう危ないことがあったらあたしたちに相談する――』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あ、あたし様？なにこれは……？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            彼女の見る景色は一変していた。すべての人が二重にぶれて見え、本人より少し先に動く虚像が映りこんでいる。<br>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「これが定められた”未来”だ。粛星院の当主は常々この力に目覚める」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「おめでとう、カサンドラ。お前が52代目粛星院家当主だ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「え？そ、それって……ばあば？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――返事はない。それは他の者も同じく。
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「こ、これ……は、どういう」
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span> 夜月 真夜</span>
+      <p>
+      
+            『こ、こんなこともあろうかと懐にプリンが……』
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span> 夜月 真夜</span>
+      <p>
+      
+            「こ、こんなこともあろうかと懐にプリンが……」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            『ぬくもりを感じるデース』
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「ぬくもりを感じるデース」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            『そう？じゃあ一緒に食べる？エリス』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「あ！それあたし様のでしょ！ちょっと？ねぇ！？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            『感じる……でーす』
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「感じる……でーす」
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span> 夜月 真夜</span>
+      <p>
+      
+            『ヨシ！一件落着で帰ろうか』
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span> 夜月 真夜</span>
+      <p>
+      
+            「ヨシ！一件落着で帰ろうか」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            『さぁ！エリスも戻ってきたし帰るわよ！』
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「これって……さ、さぁ！エリスも戻ってきたし帰るわよ！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            『きゃみぃって書いてる…きゃみぃちゃんいっしょに食べよでーす』
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>獅堂 絵理</span>
+      <p>
+      
+            「きゃみぃって書いてる…きゃみぃちゃんいっしょに食べよでーす」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「もしかして……ずっとこのまま！？そんな……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>彼方☆キャミィ</span>
+      <p>
+      
+            「もう！『プリン？あぁもうしょうがないわね！今度買ってきなさいよ？』
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg7"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            コトリ。
+      </div>
+      <div class="kp LtoR-early">
+      
+            一人の女性が机にペンを置く。
+      </div>
+      <div class="kp LtoR-early">
+      
+            女性は一仕事が終わったように息を吐く。
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「やれやれ……ようやく捕まえた」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「白練錫……面倒なことをしてくれる――だが、詰めが甘かったな」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「これでカサンドラは”未来”に乗った。あとは罰だが――」
+      </p>
+      </div>
+      <div class="mem14 right">
+      <span>？？？？</span>
+      <p>
+      
+            「――っ……あっ……！」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「あぁ、お疲れ。もう、お前の役目は終わったよ」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「お前にも手を焼いたが――まさか私に手をかけようとは……しかし、おかげで最高の流れでカサンドラに当主の座を渡せた」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「ありがとう、粛清院ファティマ」
+      </p>
+      </div>
+      <div class="mem15 left">
+      <span>ファティマ</span>
+      <p>
+      
+            「ぐ……あっ……きゃ……さ」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「ん？どうした？聞いてやるぞ？”未来”の中にいる者の声は同じく”未来”を見るものしか聞けないからな」
+      </p>
+      </div>
+      <div class="mem15 left">
+      <span>ファティマ</span>
+      <p>
+      
+            「に……にげ……きゃさ……りん」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「キャサリン？……あぁ、カサンドラの事か。そういえばそんな名前を付けていたな」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「まぁ、お前の夫には聞こえていなかったがな――」
+      </p>
+      </div>
+      <div class="mem15 left">
+      <span>ファティマ</span>
+      <p>
+      
+            「…………」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            女性は見るも無残な姿となった自身の子――孫――子孫を一瞥すると空へと視線を移し独り言ちる
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「あぁ、おまえにも礼を言わないとな獅堂絵里」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「それと淵上星嵐もか」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「獅堂絵里、おまえが起こした騒動で白練錫の目はお前に向き……淵上星嵐、お前のおかげでカサンドラは”未来”を破った。それでようやく捕まえたよ」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>ばあば</span>
+      <p>
+      
+            「……お前たちは本当にいい”駒”だったよ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            女性は闇へと消えていく。
+      </div>
+      <div class="kp LtoR-early">
+      
+            夜の深い闇へと――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――――
+      </div>
+      <div class="kp LtoR-early">
+      
+                    to be continued...?
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg2"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+           琴線
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 夜月 真夜 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 彼方☆キャミィ ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ GM ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 淵上 星嵐 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 白練 錫 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="mem16 right">
+      <span>GM</span>
+      <p>
+      
+            PC1：0,1,1,1,0,3 →6点<br>PC2：0,1,1,0,1,3 →6点<br>PC3：0,1,1,0,3,3 →8点<br>PC4：1,1,1,0,1,3 →7点
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      
+            ：夜月 真夜の秘密：<br>貴方は、鞍馬神流の上層部からとある噂を聞いた。<br>比良坂機関と、斜歯忍軍がシノビガミ復活をする計画について。<br>そして、貴方は考えてしまう。<br>エリスはこれに何か関わっているのではないかと。<br>貴方の使命は「エリスを助ける」ことである。<br>この秘密を知っている者は「シノビガミ復活計画」について調べることができる。
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>淵上 星嵐</span>
+      <p>
+      
+            ■PC2 淵上 星嵐<br>勝手にいなくなって、好き勝手してるみたいだわ。<br>エリスが好きでいなくなるのはいいけれど、一言言ってからいなくなればいいじゃない。<br>使命：エリスを探し出す<br><br>：淵上 星嵐の秘密：<br>貴方は隠忍の血統の上忍が噂をしているのを知っている。<br>「シノビガミの復活が近いやもしれない」、と。<br>それに対して、貴方は思うところがあるかもしれないし、ないかもしれない。<br>だが、エリスが居なくなる少し前よりこのことが噂されていて、何か関係あるかもしれないと考える。<br>この秘密を知っている者は「シノビガミ」について追加で調べることができる。<br><br>・シノビガミ・<br>〔概要〕<br>神器の欠片をひとつ取り込むことにより、己の限界を突破し、忍神と呼ばれるに至った忍者の一人。<br>その力は、一撃一撃が奥義にも匹敵する力を満ちている。<br>
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ：白練 錫の秘密：<br>貴方は、エリスが携帯を見ていた際に「もう最終段階、なんですね」と呟いていたのを知っている。<br>そして、貴方は独自の情報網から比良坂機関と斜歯忍軍が共同で「シノビガミ復活計画」を行っていることを知る。<br>それにエリスが関わっているのではないかと直感で思う事だろう。<br>貴方の本当の使命は「エリスを計画から取り戻す」ことである。<br>この秘密を知っている者は「シノビガミ復活計画」について調べることができる。
+      </div>
+      <div class="kp LtoR-early">
+      
+            （予知夢）<br>キャミィは夢を視る。<br><br>多くのシノビを携える男がいる。<br>男が号令をかける。<br><br>「――これより、"情報工作"を行う。」<br><br>「情報を漏らすな」<br><br>「情報を操作しろ」<br><br>「相手を情報を流すな」<br><br>それをいう男の隣に、見覚えのある少女&lt;エリス&gt;の姿が――<br><br><br>そこで目が覚める。
+      </div>
+      <div class="kp LtoR-early">
+      
+            ：偽装：紀律流情報操作：<br>情報工作：脅威度3<br>解除：計画判定《記憶術》<br>誰かが情報判定を行おうとした時に使用できる。 <br>情報判定を行おうとしたキャラクターを目標に選ぶ。<br>目標の行う情報判定にマイナス2の修正をつける。
+      </div>
+      </div>
+
+<br><br><br>
+</div></div>
+<script src="../logCon_Respon.js"></script>
+</body></html>
