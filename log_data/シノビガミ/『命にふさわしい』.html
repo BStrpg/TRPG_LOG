@@ -1,0 +1,7335 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>log</title>
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../logCon_Respon.css">
+<style>
+    /* main css */
+    .bg-inner.bg1{background:url('./命にふさわしい/背景_最初.png') no-repeat center/cover;}
+    .bg-inner.bg2{background:url('./命にふさわしい/背景_廃墟.png') no-repeat center/cover;}
+    .bg-inner.bg3{background:url('./命にふさわしい/背景_弐.png') no-repeat center/cover;}
+    .bg-inner.bg4{background:url('./命にふさわしい/背景_壱.png') no-repeat center/cover;}
+    .bg-inner.bg5{background:url('./命にふさわしい/背景_図書室.png') no-repeat center/cover;}
+    .bg-inner.bg6{background:url('./命にふさわしい/背景_伍号部屋.png') no-repeat center/cover;}
+    .bg-inner.bg7{background:url('./命にふさわしい/背景_ドラマシーン.png') no-repeat center/cover;}
+    .bg-inner.bg8{background:url('./命にふさわしい/背景_クライマックス.png') no-repeat center/cover;}
+    .bg-inner.bg9{background:url('./命にふさわしい/背景_ニルバーナ.png') no-repeat center/cover;}
+    .bg-inner.bg10{background:url('./命にふさわしい/背景_回想1.png') no-repeat center/cover;}
+    .bg-inner.bg11{background:url('./命にふさわしい/背景_回想2.png') no-repeat center/cover;}
+    .bg-inner.bg12{background:url('./命にふさわしい/背景_ED.png') no-repeat center/cover;}
+    .bg-inner.bg13{background:url('./命にふさわしい/背景_最後.png') no-repeat center/cover;}
+
+    /* member */
+    .kyu_gou p{border:2px solid rgb(218, 212, 187);box-shadow:5px 5px 0 rgb(218, 212, 187);}
+.kyu_gou p:after{border-right-color:rgb(218, 212, 187);}
+.kyu_gou span{background:rgb(218, 212, 187);color:#000;}
+.kyu_gou:before{content:'';background-image:url('./命にふさわしい/玖号_通常.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyu_gou_Hi:before{content:'';background-image:url('./命にふさわしい/玖号_Hi.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyu_gou_sekigan:before{content:'';background-image:url('./命にふさわしい/玖号_赤眼.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.soma p{border:2px solid rgb(238, 81, 69);box-shadow:5px 5px 0 rgb(238, 81, 69);}
+.soma p:after{border-left-color:rgb(238, 81, 69);}
+.soma span{background:rgb(238, 81, 69);color:#000;}
+.soma:before{content:'';background-image:url('./命にふさわしい/蒼馬\ 恋糸_通常.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.soma_namida:before{content:'';background-image:url('./命にふさわしい/蒼馬\ 恋糸_通常涙.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.soma_ikari:before{content:'';background-image:url('./命にふさわしい/蒼馬\ 恋糸_怒り.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.soma_ikarinamida:before{content:'';background-image:url('./命にふさわしい/蒼馬\ 恋糸_怒り涙.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.soma_tozime:before{content:'';background-image:url('./命にふさわしい/蒼馬\ 恋糸_閉じ目.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.soma_nirubana:before{content:'';background-image:url('./命にふさわしい/ニル87.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.jin p{border:2px solid rgb(96, 125, 139);box-shadow:5px 5px 0 rgb(96, 125, 139);}
+.jin p:after{border-right-color:rgb(96, 125, 139);}
+.jin span{background:rgb(96, 125, 139);color:#fff;}
+.jin:before{content:'';background-image:url('./命にふさわしい/八雲\ 仁.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.tubaki p{border:2px solid rgb(255, 193, 7);box-shadow:5px 5px 0 rgb(255, 193, 7);}
+.tubaki p:after{border-left-color:rgb(255, 193, 7);}
+.tubaki span{background:rgb(255, 193, 7);color:#000;}
+.tubaki:before{content:'';background-image:url('./命にふさわしい/雷\ ツバキ_通常.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.tubaki_egao:before{content:'';background-image:url('./命にふさわしい/雷\ ツバキ_笑顔.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.tubaki_ikari:before{content:'';background-image:url('./命にふさわしい/雷\ ツバキ_怒り.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.tubaki_naki:before{content:'';background-image:url('./命にふさわしい/雷\ ツバキ_泣き.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.tubaki_aseri:before{content:'';background-image:url('./命にふさわしい/雷\ ツバキ_焦り.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.niru39 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.niru39 p:after{border-right-color:rgb(136, 136, 136);}
+.niru39 span{background:rgb(136, 136, 136);color:#fff;}
+.niru39:before{content:'';background-image:url('./命にふさわしい/にる-三九.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.GM p:after{border-left-color:rgb(136, 136, 136);}
+.GM span{background:rgb(136, 136, 136);color:#fff;}
+.GM:before{content:'';background-image:url('./命にふさわしい/GM.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_PC1:before{content:'';background-image:url('./命にふさわしい/雷\ ツバキ_通常.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_PC2:before{content:'';background-image:url('./命にふさわしい/玖号_通常.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_PC3:before{content:'';background-image:url('./命にふさわしい/蒼馬\ 恋糸_通常.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_PC4:before{content:'';background-image:url('./命にふさわしい/八雲\ 仁.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_NPC:before{content:'';background-image:url('./命にふさわしい/雨宮\ 沙羅.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.roku_gou p{border:2px solid rgb(218, 212, 187);box-shadow:5px 5px 0 rgb(218, 212, 187);}
+.roku_gou p:after{border-right-color:rgb(218, 212, 187);}
+.roku_gou span{background:rgb(218, 212, 187);color:#000;}
+.roku_gou:before{content:'';background-image:url('./命にふさわしい/蜉蝣型_陸号.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.hati_gou p{border:2px solid rgb(218, 212, 187);box-shadow:5px 5px 0 rgb(218, 212, 187);}
+.hati_gou p:after{border-left-color:rgb(218, 212, 187);}
+.hati_gou span{background:rgb(218, 212, 187);color:#000;}
+.hati_gou:before{content:'';background-image:url('./命にふさわしい/蜉蝣型_捌号.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.nana_gou p{border:2px solid rgb(218, 212, 187);box-shadow:5px 5px 0 rgb(218, 212, 187);}
+.nana_gou p:after{border-right-color:rgb(218, 212, 187);}
+.nana_gou span{background:rgb(218, 212, 187);color:#000;}
+.nana_gou:before{content:'';background-image:url('./命にふさわしい/蜉蝣型_漆号.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.iti_gou p{border:2px solid rgb(218, 212, 187);box-shadow:5px 5px 0 rgb(218, 212, 187);}
+.iti_gou p:after{border-left-color:rgb(218, 212, 187);}
+.iti_gou span{background:rgb(218, 212, 187);color:#000;}
+.iti_gou:before{content:'';background-image:url('./命にふさわしい/蜉蝣型_壱号.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.go_gou p{border:2px solid rgb(0, 183, 206);box-shadow:5px 5px 0 rgb(0, 183, 206);}
+.go_gou p:after{border-right-color:rgb(0, 183, 206);}
+.go_gou span{background:rgb(0, 183, 206);color:#000;}
+.go_gou:before{content:'';background-image:url('./命にふさわしい/蜉蝣型_伍号.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.ni_gou p{border:2px solid rgb(218, 212, 187);box-shadow:5px 5px 0 rgb(218, 212, 187);}
+.ni_gou p:after{border-left-color:rgb(218, 212, 187);}
+.ni_gou span{background:rgb(218, 212, 187);color:#000;}
+.ni_gou:before{content:'';background-image:url('./命にふさわしい/蜉蝣型_弐号.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.yon_gou p{border:2px solid rgb(218, 212, 187);box-shadow:5px 5px 0 rgb(218, 212, 187);}
+.yon_gou p:after{border-right-color:rgb(218, 212, 187);}
+.yon_gou span{background:rgb(218, 212, 187);color:#000;}
+.yon_gou:before{content:'';background-image:url('./命にふさわしい/蜉蝣型_肆号.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.san_gou p{border:2px solid rgb(218, 212, 187);box-shadow:5px 5px 0 rgb(218, 212, 187);}
+.san_gou p:after{border-left-color:rgb(218, 212, 187);}
+.san_gou span{background:rgb(218, 212, 187);color:#000;}
+.san_gou:before{content:'';background-image:url('./命にふさわしい/蜉蝣型_参号.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.sara p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.sara p:after{border-right-color:rgb(136, 136, 136);}
+.sara span{background:rgb(136, 136, 136);color:#fff;}
+.sara:before{content:'';background-image:url('./命にふさわしい/雨宮\ 沙羅.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.yuki p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.yuki p:after{border-left-color:rgb(136, 136, 136);}
+.yuki span{background:rgb(136, 136, 136);color:#fff;}
+.yuki:before{content:'';background-image:url('./命にふさわしい/晴嶺\ 悠稀.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.hatena p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.hatena p:after{border-right-color:rgb(136, 136, 136);}
+.hatena span{background:rgb(136, 136, 136);color:#fff;}
+.hatena:before{content:'';background-image:url('17.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.hozuki p{border:2px solid rgb(238, 81, 69);box-shadow:5px 5px 0 rgb(238, 81, 69);}
+.hozuki p:after{border-left-color:rgb(238, 81, 69);}
+.hozuki span{background:rgb(238, 81, 69);color:#000;}
+.hozuki:before{content:'';background-image:url('./命にふさわしい/蒼馬\ 恋糸_閉じ目.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.nirubana p{border:2px solid rgb(0, 183, 206);box-shadow:5px 5px 0 rgb(0, 183, 206);}
+.nirubana p:after{border-right-color:rgb(0, 183, 206);}
+.nirubana span{background:rgb(0, 183, 206);color:#000;}
+.nirubana:before{content:'';background-image:url('./命にふさわしい/ニル87.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.niru87 p{border:2px solid rgb(0, 183, 206);box-shadow:5px 5px 0 rgb(0, 183, 206);}
+.niru87 p:after{border-left-color:rgb(0, 183, 206);}
+.niru87 span{background:rgb(0, 183, 206);color:#000;}
+.niru87:before{content:'';background-image:url('./命にふさわしい/ニル87.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}    
+
+    @media only screen and (max-width: 768px) {
+        .kyu_gou p:after{border-right-color:rgb(218, 212, 187);border-left-color:transparent;}
+        .soma p:after{border-right-color:rgb(238, 81, 69);border-left-color:transparent;}
+        .jin p:after{border-right-color:rgb(96, 125, 139);border-left-color:transparent;}
+        .tubaki p:after{border-right-color:rgb(255, 193, 7);border-left-color:transparent;}
+        .niru39 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .GM p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .roku_gou p:after{border-right-color:rgb(218, 212, 187);border-left-color:transparent;}
+        .hati_gou p:after{border-right-color:rgb(218, 212, 187);border-left-color:transparent;}
+        .nana_gou p:after{border-right-color:rgb(218, 212, 187);border-left-color:transparent;}
+        .iti_gou p:after{border-right-color:rgb(218, 212, 187);border-left-color:transparent;}
+        .go_gou p:after{border-right-color:rgb(0, 183, 206);border-left-color:transparent;}
+        .ni_gou p:after{border-right-color:rgb(218, 212, 187);border-left-color:transparent;}
+        .yon_gou p:after{border-right-color:rgb(218, 212, 187);border-left-color:transparent;}
+        .san_gou p:after{border-right-color:rgb(218, 212, 187);border-left-color:transparent;}
+        .sara p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .yuki p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .hatena p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .hozuki p:after{border-right-color:rgb(238, 81, 69);border-left-color:transparent;}
+        .nirubana p:after{border-right-color:rgb(0, 183, 206);border-left-color:transparent;}
+        .niru87 p:after{border-right-color:rgb(0, 183, 206);border-left-color:transparent;}
+
+        .kyu_gou:before,.soma:before,.jin:before,
+        .tubaki:before,.niru39:before,.GM:before,
+        .roku_gou:before,.hati_gou:before,.nana_gou:before,
+        .iti_gou:before,.go_gou:before,.ni_gou:before,
+        .yon_gou:before,.san_gou:before,.sara:before,
+        .yuki:before,.hatena:before,.hozuki:before,
+        .nirubana:before,.niru87:before{width:70px;height:70px;}
+    }
+</style>
+</head>
+<body>
+    <p id="page-top"><a href="#"><i class="page-top__arrow"></i></a></p>
+	<div class="leftwhite"></div>
+	<div class="rightwhite"></div>
+	<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+	<div class="log">
+    
+        <div class="kp LtoR-early">
+
+            追い詰められた絡繰忍者<br>その前に立つのは３人の討伐部隊<br><br>すべてを破壊してきた者<br>最後に残った者<br>それぞれの想いを胸にその刃を交わす<br>その生命が意味を成すために<br><br>シノビガミ<br>『命にふさわしい』<br><br>心さえ無かったなら
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg2"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            ――朽ち果てた街並みを白い影が走る
+      </div>
+      <div class="kp LtoR-early">
+      
+            何かに追われているのだろうか、息を切らしながらもその表情は無機質なままだ
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「ハァ……ッハァ……ッ」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「見つけたんだから！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「まて！」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「待てええええええい！」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「ここまで来たなら……ッ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「にる！」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            ピピピピピ……
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「急：機功レーザーを放射」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            超小型移動伽藍から射出したレーザーが敵との間の建物を破壊し瓦礫が扉の前になだれ落ちる
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「くそっ！」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「くっ」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「どりゃあああああ！」
+      </p>
+      </div>
+      <div class="tubaki tubaki_ikari right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「こんなもん……こうだっ！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ツバキの拳が瓦礫を砕き、道を開いたときは既に標的の姿はなかった
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「逃がした……んだね」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「逃げられましたか……」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「クソッもうちょっとだったのによぉ……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            付近を眺めると、壊れた表札のようなものに”雨宮ラボ”と書かれているのが目に入る
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――。あの中に……」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「これは、あいつの……」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「なに？ラボ？……読めねえよお～！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            どうやらここは件の研究者、雨宮 沙羅の研究所跡のようだ
+      </div>
+      <div class="kp LtoR-early">
+      
+            奇しくも標的は自らの古巣へと逃げ込んだらしい
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……行くしかないんだね」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「ツバキ君この中ではあまり暴れないように。貴重な資料があるかもしれません」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「うるせえよ　イニ！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「仁です！あほが……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            導入終了
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+<div class="log">
+
+
+      <div class="tubaki right">
+            <span>雷 ツバキ</span>
+            <p>
+            
+                  PC1：雷 ツバキ ‹アズマ -›<br>
+鞍馬神流/蓮華王拳<br>
+中忍<br>
+年齢：19<br>
+表の顔：街の便利屋<br>
+信念：忠<br><br>
+
+あなたは"蜉蝣型絡繰忍者"の破壊任務を請け負っているシノビだ。<br>
+"蜉蝣型絡繰忍者"とは斜歯忍軍の研究者、雨宮 沙羅(ｱﾒﾐﾔ ｻﾗ)によって作られた恐ろしき兵器の事だ。<br><br>
+
+これまで、すべての蜉蝣型を貴方の手で葬ってきた。<br>
+残すはあと一人だが、かなりの強敵だと言われているPC2だ。<br><br>
+
+あなたの使命は『蜉蝣型の最後の1人であるPC2を討伐する』ことだ
+            </p>
+      </div>
+      <div class="tubaki right">
+            <span>雷 ツバキ</span>
+            <p>
+            
+                  街の便利屋さん…？ふらふら生きてる自由人。<br>
+よく言えば人懐っこく誰にでも話しかけるタイプ、悪く言えば空気を読まない性格<br>
+誰にでもタメ語で歯に衣着せぬ物言いをするので、誤解されることも多いが、<br>
+本人はアホなだけなのでなんとなく憎めないキャラになりがち。<br>
+困ってる人を見かけると口より手が先に出るタイプなので、<br>
+商店街のおばあちゃんたちにはとても好かれていて、よく食べ物をめぐんでもらっている。<br>
+生まれつき馬鹿力なので、それをいかして町の便利屋をしている。（引っ越し手伝ったり粗大ごみ処分したり）
+            </p>
+      </div>
+      <div class="kyu_gou left">
+            <span>玖号</span>
+            <p>
+            
+                  PC2：玖号(9) ‹キュウゴウ›<br>
+斜歯忍軍/鍔鑿組<br>
+中忍<br>
+年齢：1<br>
+表の顔：絡繰忍者<br>
+信念：忠<br>
+
+あなたは斜歯忍軍の研究者 雨宮沙羅によって作られた"蜉蝣型絡繰忍者"最後の一体、通称：玖号(9)だ。<br>
+とある研究施設まで逃げ延びてきたが、ついにPC1達に追い詰められてしまった。<br>
+だが、ここで破壊されるわけにはいかない…。<br><br>
+
+あなたの使命は『生き延びる』ことだ
+            </p>
+      </div>
+      <div class="kyu_gou left">
+            <span>玖号</span>
+            <p>
+            
+                  研究者 雨宮沙羅によって作られた絡繰忍者"蜉蝣型"、通称：玖号(9)<br><br>
+
+                  蜉蝣型にはそれぞれモデルが存在するが、９号機はかつて夢見る決戦兵器と呼ばれた絡繰忍者をモデルにしている。<br>
+                  怪しく光る赤い瞳は戦闘や情報集に役立つ。<br><br>
+                  
+                  一人称は「当機」<br><br>
+                  
+                  ●超小型移動伽藍
+                  「にる-三九（さんきゅう）」
+                  玖号の装備するサポートユニット。
+                  機動力は低いがそれを補う電磁シールドと高周波機功レーザーを持つ。<br><br><br>
+                  
+                  
+                  
+                  「ともがらよ、ただ鉄くずに帰る運命なら……それは命にすら足り得ない」
+                  
+            </p>
+      </div>
+      <div class="soma right">
+       <span>蒼馬 恋糸</span>
+       <p>
+            
+            PC2：蒼馬 恋糸 ‹ソウマ コイ›<br>
+            隠忍の血統<br>
+            中忍<br>
+            年齢：13<br>
+            表の顔：放浪者<br>
+            信念：我<br><br>
+            
+            あなたは、PC1と共に"蜉蝣型絡繰忍者"の最後の１人であるPC2を討伐する任務についたシノビだ。<br>
+            蜉蝣型の討伐任務はこれが初であるが、世を乱す存在を放置するわけにはいかない。<br><br>
+            
+            あなたの使命は『蜉蝣型の最後の1人であるPC2を討伐する』ことだ
+       </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシは、使命の為にならなんでもやるよ」<br><br>
+
+
+日本を空中機動仏塔で移動しながら生活する放浪者。<br>
+今回は小遣い稼ぎの感覚で討伐の任を引き受けたわけだが、危険な存在を聞いてビックリ。なんとかしなければ。
+<br><br>
+赤をメインにした色調。<br>
+子供っぽい性格だったが、今は取捨選択がはっきりしている。(自分に大切か否か)<br><br>
+
+「アタシは、蒼馬 恋糸！今回任務が一緒ってだけで仲間扱いされても困るよ！ただのビジネスパートナー、オーケー？」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+       <p>
+            
+            PC2：八雲 仁 ‹ヤクモ ジン›<br>
+            斜歯忍軍/指矩班<br>
+            中忍<br>
+            年齢：24<br>
+            表の顔：研究員<br>
+            信念：忠<br><br>
+            
+            あなたは、PC1と共に"蜉蝣型絡繰忍者"の最後の１人であるPC2を討伐する任務についたシノビだ。<br>
+            蜉蝣型の討伐任務には何度か参加しており、PC1と共に戦った経験は何度かある。<br>
+            これが最後の１人だ。今まで通り任務をこなすだけ……。<br><br>
+            
+            あなたの使命は『蜉蝣型の最後の1人であるPC2を討伐する』ことだ
+       </p>
+      </div>
+      <div class="jin left">
+       <span>八雲 仁</span>
+       <p>
+            
+            「はぁ面倒ですね・・・」<br><br>
+
+            指矩班の研究者で他流派の忍術の解析・研究が主なテーマ。今回は同じ斜歯ではあるが技術が公開されないままこの世を去った雨宮の研究に興味を持ち、技術解析のために任務に参加した。<br>           
+            優秀な研究者ではあるのだが極度のめんどくさがり屋でマウスや検体の申請が面倒だからと言って自らの身で薬の検証などを行ってしまう。それが原因で元々黒髪だったが薬の副作用で白髪になってしまった。<br><br>
+            
+            基本的には自らの研究以外には興味がなく生活力もないためほっとくと食事すらとらないまま研究室に閉じこもっている。<br>
+            研究者ではあるが忍術を自ら受け、再現を行うなど肉体を使っての研究も多いため意外と筋肉質。<br><br>
+            
+            好き：忍術に関する研究論文を読み漁ること、コーヒー<br>
+            嫌い：人込み、片付け、オカルト
+            
+       </p>
+      </div>     
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg1"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            メインフェイズ
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            D66 (D66) ＞ 45
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            D66 (D66) ＞ 33
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            d66 (D66) ＞ 46
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            D66 (D66) ＞ 36
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            九号＞こい＞いに＞つばき
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg3"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            １サイクル目１シーン目
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：九号、ツバキ
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            2d6 (2D6) ＞ 4[1,3] ＞ 4
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            (弐)と扉に書かれた部屋。整った部屋で、主は掃除/整理好きだったようだ。電源が生きている掃除ロボットが稼働している。部屋の主の帰りを待ちながら。
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「ハァ……ハァ……何とか撒けたけどこれでは時間稼ぎにもならない、急がないと」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「にる、消費スロットは」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「朽：３スロット」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「求：【生命力】の回復」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「言われるまでもない」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「オレはここのへーやっ！！」
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「……やべ、ドア壊したらイニに怒られる」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……！」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「って、オマエ！！！！」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            「にる、戦闘態勢！」
+      </p>
+      </div>
+      <div class="tubaki tubaki_ikari right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「ええと……なんて名前なのか読めねーけど！お前は恐ろしいヘイキらしいからここで倒す！」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「どうしてあなた達は蜉蝣型を破壊するの」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「どうしてって恐ろしいって言われてるから……？オレは弱い人を守るんだ！」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「使命のままに、か」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「急：対象の捕捉」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            「――敵を捕捉」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            瞳が鈍い赤色に光りツバキの生体反応から秘密をスキャン<br>ツバキに対して情報判定
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            2D6&gt;=5 （判定：絡繰術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            神通丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 忍具 : 2 → 1
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            2D6&gt;=5 （判定：絡繰術） (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="GM GM_PC1 right">
+      <span>GM</span>
+      <p>
+      
+            ●PC1【秘密】<br>あなたは、本当は蜉蝣型の絡繰忍者の零号機であり、すべての蜉蝣型の要素を元に最後に作られた。<br>そのため、完全なものではないが感情に近い器官を有している。<br>あなたが起動した時、それが雨宮沙羅を見た最初で最後だった。<br>そして、彼女から２つのことを託されている。<br>・あなたを除くすべての蜉蝣型の忍者を破壊すること。<br>・【完全な感情という機能】を得て、その人生を謳歌すること。<br><br>あなたの本当の使命は『【完全な感情という機能】を得た状態で、クライマックスフェイズを終える』ことだ。<br>また、あなたはプライズ「ココロノカケラ：壱」を所持している。
+      </p>
+      </div>
+      <div class="GM right">
+      <span>GM</span>
+      <p>
+      
+            ●プライズ「ココロノカケラ：壱」<br>▼概要<br>PC1には感情に近い器官を搭載されており、その機能により疑似感情データが蓄積されている。<br>このデータ群を便宜上、「ココロノカケラ」と呼称する。<br><br>クライマックスフェイズの終了時、同様の規模のデータ群がもう一つあれば、蜉蝣型のキャラクターは【完全な感情という機能】を得ることができるだろう。<br>この器官は絡繰忍者であるPC1の主要機関に搭載されている。<br><br>※このプライズを奪われた状態でクライマックスフェイズを終了した場合、PC1は死亡する。<br>※このプライズはクライマックスの戦闘終了時の戦果でのみ獲得できる。<br><br>【効果】<br>このプライズを所持しているキャラクターはクライマックスフェイズにて回想シーンを２回使用できる
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「――ッ!?」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「玖？」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            「敵の生体データを獲得。にる、目標を捕捉！」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            ■奥義<br>《memento;RE[メメントリ]》<br>指定特技：絡繰術<br>効果　　：追加忍法/増やし/回数制限<br>【増やし】が追加された奥義の持ち主は、【追加忍法】で使用できるようになる攻撃忍法かサポート忍法の数を一つ増やすことができる。<br>【回数制限】が追加された奥義は、一回のセッションで二度しか使用できなくなる。【回数制限】が追加されたのが【追加忍法】の場合は、【追加忍法】で使用できる忍法を、一回のセッションでそれぞれ二度ずつしか使用できなくなる。<br>①教導<br>演出　　：赤眼第二の能力、対象の記憶を引き出して視ることで目標の戦闘パターンを覚える。<br>「にる-三九……目標を捕捉」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            「メメントリ！」
+      </p>
+      </div>
+            <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            ①教導→ツバキ
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            2D6&gt;=5 （判定：絡繰術） (2D6&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            【教導】でツバキに【移動大伽藍「涅槃」】を特例習得させる
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「ピピピピ……目標を捕捉」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            「――赤眼」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            対象：ツバキ
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            2D6&gt;=5 （判定：絡繰術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「うわっ、なんだこれ　キモチワリィ！イニ～～～～！見てくれ～～～～～～～～！！！」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「まて……ッ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            【人質】⇒忍具を一つ渡す
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            兵糧丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 忍具 : 4 → 3
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「玖：深追いは禁物」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「しかし……」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「給：アイテムドロップを確認」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            落とした兵糧丸を獲得
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 忍具 : 1 → 2
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg4"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            登場人物：こい
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            2D6 (2D6) ＞ 3[1,2] ＞ 3
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            (壱)と扉に書かれた部屋。何もない殺風景な部屋。部屋の中にはぽつんとコンピュータが1台だけ佇んでいる。電源は入らないようだ。
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            【再生】の効果で生命力１点回復
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 追加 : 2 → 3
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……ここは、」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――壱」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……アタシが求めるは――」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「あぁ――」
+      </p>
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            夢に浸る感じで幻術で回復判定
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=5 （判定：幻術） (SG@12#2&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 追加 : 3 → 4
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――、あいたいよ」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg5"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            登場人物：いに、ツバキ
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            2d6 (2D6) ＞ 6[2,4] ＞ 6
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+             (肆)と扉に書かれた部屋。図書室かと思うほどに大量の本棚が並んでいる。机にはフィリップ・K・ディックの小説が開かれたままだ。
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「ここは――資料室か？やけに本が多い」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「フィリップ・K・ディックか……よく読んだものだ」
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「イニ～～～～～～～～～～～～～～～～！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「はぁ……めんどうなのが来ましたね」
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「あっちに恐ろしいヘイキがいたんだけど、なんかキモチワリィのつけられたんだよぉ」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「これは……面倒なものをつけられましたね、体調などは大丈夫ですか？」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「体調は……腹減った」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「全く、あなたは……）」
+      </p>
+      </div>
+            <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「（だが嫌いにはなれなそうだな）」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            2D6&gt;=5 （判定：調査術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「だめだ、こいつが何を考えているかわからん……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            【人質】⇒【裏コード】をツバキに対して
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 器術 : 1 → 0
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「なるほどな」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ツバキの事を信じたい気持ちと猜疑心が複雑に絡み合う
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg5"></div></div>
+    <div class="log">
+
+        <div class="kp LtoR-early">
+      
+            登場人物：ツバキ
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            2D6 (2D6) ＞ 6[3,3] ＞ 6
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+             (肆)と扉に書かれた部屋。図書室かと思うほどに大量の本棚が並んでいる。机にはフィリップ・K・ディックの小説が開かれたままだ。
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「はー…すっげえ本の数だな　目がくらくらしてきた……」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「あん？この本に書いてあるのって」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：調査術） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="GM GM_PC3 right">
+      <span>GM</span>
+      <p>
+      
+            ●PC3【秘密】<br>あなたは蜉蝣型伍号機と親密な関係にあった。<br>だが、ある日に伍号機の住処に訪れると、燃え上がる家屋とバラバラに破壊された伍号機の姿が……。<br>彼女が最後に残した言葉は「君と過ごした日々は楽しかった」という一言だ。<br>そのときに君は見たのだ、PC1の姿を……そして誓った。<br>あのシノビを討つと。<br><br>あなたの本当の使命は『PC1を倒す』ことだ。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「ああ…あの赤髪って……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            本にはとある蜉蝣型についての記述が書かれていた
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg1"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            サイクル2
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            D66 (D66) ＞ 35
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            d66 (D66) ＞ 55
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            D66 (D66) ＞ 35
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            d66 (D66) ＞ 16
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            D66 (D66) ＞ 16
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            D66 (D66) ＞ 26
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            九号＞つばき＞こい＞いに
+      </div>
+      <div class="kp LtoR-early">
+      
+            こい＞つばき＞九号＞いに
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg6"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            登場人物：こい、九号
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            2D6 (2D6) ＞ 8[3,5] ＞ 8
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+             (伍)と扉に書かれた部屋。何の変哲もない部屋。置いてあるものから察するに女性のものらしい。ハート形の割れた写真立てがある。中身は空だ。
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「あっ……ここは……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            割れた写真立てを手に取る
+      </p>
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシはどうしたらいい？」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシは……どう動いたらいい？」
+      </p>
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ねぇ、――？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            扉が開かれる
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「！」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            「バラバラに行動してくれたのは好機、一人ずつ殲滅する」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……玖」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「なぜ構えない」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシは、ビジネスでやってるだけ。別に誰かが狩れば得をするならそれでいい」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「無駄な争いはしないだけ、ただそれだけ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……？」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「争いは……嫌いなの」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機を破壊するのが貴方の使命のはず」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「使命……そうだね」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「けど、それより優先することがあるってことだよ！」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            NPCの秘密を調査術で調べてやる！
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            再生の効果で生命力回復
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 追加 : 4 → 5
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=5 （判定：調査術） (SG@12#2&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「使命より優先すること？理解できない」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――。あの人の考え……」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+            <span>蒼馬 恋糸</span>
+            <p>
+            
+                  「教えて」
+            </p>
+            </div>
+      <div class="GM GM_NPC right">
+      <span>GM</span>
+      <p>
+      
+            ◆NPCの秘密<br>●「雨宮沙羅」【秘密】<br>雨宮とPC4は親しい仲であり、かつて共通の友人である晴嶺悠稀(ﾊﾙﾐﾈ ﾕｳｷ)と共に3人で過ごしていた。<br>彼女が蜉蝣型の絡繰忍者を作り始めたのは任務中に亡くなった晴嶺をこの世に取り戻したたかったからだ。<br>晴嶺の面影を元にして作られたPC1は蜉蝣型の零号機。初めはPC1に友人の面影を見ていたが、徐々に絡繰としてではなく、１人の人間のようにPC1を扱い、大事にしていた。<br>PC1にはどうにか生き延びてほしいと思っている。<br>そのために、自身が作った他の愛しき蜉蝣型の絡繰忍者が犠牲になったとしても……。<br>雨宮は自身の死期を悟り、破壊する側になれば疑われにくくなると想定し、PC1に蜉蝣型の破壊命令を出し、生き残れるよう策を弄した。<br>そして、その過程で【完全な感情という機能】を得て、完全に人と同等の存在にもなって欲しいと。
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「人間は偶に、理解できない行動をとる」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「それが心なの……？」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「………」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「貴方は生き残りたい……？」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「貴方は貴方の意志で生き残りたい……？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機が、生きる？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機達蜉蝣型に心はない、心なき機械が壊れたとしてもそれはただ――動きを止めるだけ」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「違う！」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「貴方達にも心はある！」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「だってそうじゃなきゃ……」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――は」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「………」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「貴方は……、生き残るべき」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「そうじゃないと。――浮かばれない」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「あの子が」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「何を言っているかわからない。戦う意思がないなら、証明が必要」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……アタシの渡せるものは一つだけ」
+      </p>
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「それは、ある人の意志。そして、想い」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            NPCの情報をPC2に渡したいです
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「玖：「雨宮沙羅」の情報データを確認」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「どういうこと……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「これが……ある人の想い、そして願い」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「でも、それをアタシは許さない」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「やらせない」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「――そう」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機は、ともがら達は……そのために」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「貴方は生き残りなさい！」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「絶対よ！」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――のために」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「生きるという概念の定義は置いておいても、当機はまだ破壊されるわけにはいかない」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「にる、対象のロックを解除」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「休：了承」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「それじゃあね」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg7"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            登場人物：ツバキ、いに
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            2D6 (2D6) ＞ 10[4,6] ＞ 10
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            (漆)と扉に書かれた部屋。中には望遠鏡や数多の天体の写真が飾られている。薄暗い部屋で天井を見上げるとプラネタリウムのようになっている。
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「うわ、すっげー綺麗だな！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「ラボには似つかわしいですが確かにきれいです」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「この破壊任務終わったら、宇宙とか行ってみてえなー！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「それはまた、あなたらしいですね」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「ヘヘッ　イニは頭いいのにオレと仲良くしてくれて嬉しいんだ。イニと友達になれてよかった」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            （仲良くしてくれるから好きだけど、そういえば、オレってあんまイニのことしんねーな……？）
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：調査術） (2D6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="GM GM_PC4 right">
+      <span>GM</span>
+      <p>
+      
+            ●PC4【秘密】<br>あなたは「雨宮 沙羅」とは旧知の仲だった。<br>共通の友人である「晴嶺 悠稀(ﾊﾙﾐﾈ ﾕｳｷ)」という人物を交え、3人で過ごすことも多かった。<br><br>だが、とある任務の最中に晴嶺悠稀を失った。<br>その後、雨宮は研究に没頭するようになったが、彼女もまた自身の研究が原因で命を落としてしまった。<br>失意のあなたの前にまるで「晴嶺 悠稀」の生き写しのようなPC1が現れたのだ。<br>二人の友人を失ったあなたは、亡き友人の写し身であるPC1を護ることを心に決めた。<br><br>あなたの本当の使命は『PC1を死なせない』ことだ。
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「――――だから仲良くしてくれたのか」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「でも、なんか、モヤモヤする……」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            八雲 仁に蒼馬 恋糸の情報をわたします
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「イニ、これからもオレと仲良くしてくれよな」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「……ああ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg6"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            登場人物：九号、こい
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            2d6 (2D6) ＞ 8[3,5] ＞ 8
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+             (伍)と扉に書かれた部屋。何の変哲もない部屋。置いてあるものから察するに女性のものらしい。ハート形の割れた写真立てがある。中身は空だ。
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「――待って」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……？」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「なぁに？」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            「――メメントリ」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            ■奥義<br>《memento;RE[メメントリ]》<br>指定特技：絡繰術<br>効果　　：追加忍法/増やし/回数制限<br>【増やし】が追加された奥義の持ち主は、【追加忍法】で使用できるようになる攻撃忍法かサポート忍法の数を一つ増やすことができる。<br>【回数制限】が追加された奥義は、一回のセッションで二度しか使用できなくなる。【回数制限】が追加されたのが【追加忍法】の場合は、【追加忍法】で使用できる忍法を、一回のセッションでそれぞれ二度ずつしか使用できなくなる。<br>①教導<br>演出　　：赤眼第二の能力、対象の記憶を引き出して視ることで目標の戦闘パターンを覚える。
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            玖号の発光する瞳が恋糸の赤い瞳を照らす
+      </p>
+      </div>
+            <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            ①教導→恋糸
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            2D6&gt;=5 （判定：絡繰術） (2D6&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            【教導】により恋糸に【機功】を特例習得させる
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「にる、目標をサポート対象に追加」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……！」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「救：了承」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            赤眼→仁
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_sekigan left">
+      <span>玖号</span>
+      <p>
+      
+            2D6&gt;=5 （判定：絡繰術） (2D6&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機は……証明する必要がある」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            割れた写真立てを拾う
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「これは伍号の……"お気に入り"」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            空になった写真立てに目を落とす
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「――ウッ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            立ち眩む
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg7"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「陸号、今日は一緒に任務を……この音は何？」
+      </p>
+      </div>
+      <div class="roku_gou left">
+      <span>陸号</span>
+      <p>
+      
+            陸号は「地方都市のメメント・モリ」と書かれたレコードを取り上げる
+      </p>
+      </div>
+      <div class="hati_gou right">
+      <span>捌号</span>
+      <p>
+      
+            「メメントモリ？熱いの聴いてんねぇ」
+      </p>
+      </div>
+      <div class="roku_gou left">
+      <span>陸号</span>
+      <p>
+      
+            「お、君も聴く口か？」
+      </p>
+      </div>
+      <div class="hati_gou right">
+      <span>捌号</span>
+      <p>
+      
+            「いやわかねんね、けどメメントモリって確か……」
+      </p>
+      </div>
+      <div class="nana_gou left">
+      <span>漆号</span>
+      <p>
+      
+            「死を想え」
+      </p>
+      </div>
+      <div class="hati_gou right">
+      <span>捌号</span>
+      <p>
+      
+            「ソレだ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            レコードを見つめる
+      </p>
+      </div>
+      <div class="roku_gou left">
+      <span>陸号</span>
+      <p>
+      
+            「音楽をご存じない？」
+      </p>
+      </div>
+      <div class="roku_gou left">
+      <span>陸号</span>
+      <p>
+      
+            「字が如く……人は音の響きを楽しむものさ。それが音楽」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機達蜉蝣型に心はない、ただの音の並びに何の意味があるの？」
+      </p>
+      </div>
+      <div class="roku_gou left">
+      <span>陸号</span>
+      <p>
+      
+            「そうだね。意味のない……音の連なり」
+      </p>
+      </div>
+      <div class="roku_gou left">
+      <span>陸号</span>
+      <p>
+      
+            「しかし私にはこれがお気に入りなのさ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「心がなくても？」
+      </p>
+      </div>
+      <div class="roku_gou left">
+      <span>陸号</span>
+      <p>
+      
+            「ああ、君にもお気に入りくらいあるだろう？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……当機には、ない」
+      </p>
+      </div>
+      <div class="hati_gou right">
+      <span>捌号</span>
+      <p>
+      
+            「なんだよ玖ちゃんお気に入りもないのか？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「貴方たちにもあるの？」
+      </p>
+      </div>
+      <div class="hati_gou right">
+      <span>捌号</span>
+      <p>
+      
+            「そりゃ、俺は料理よ！そういえば漆号は何か好きってイメージないな」
+            
+      </p>
+      </div>
+      <div class="nana_gou left">
+      <span>漆号</span>
+      <p>
+      
+            「私は……星を見るのが好きよ」
+      </p>
+      </div>
+      <div class="hati_gou right">
+      <span>捌号</span>
+      <p>
+      
+            「意外とロマンチック！」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="roku_gou left">
+      <span>陸号</span>
+      <p>
+      
+            「ないなら、探してみるといい」
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg6"></div></div>
+    <div class="log">
+    
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「おーい」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「ハッ」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「いきなりどうしたのさ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「意識が飛んでいた……、エラー？にる」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「求：早急な回復」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            2D6&gt;=5 （判定：絡繰術） (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「そうだった、確かこの辺に」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「あった、単壱〇〇式電池」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 追加 : 0 → 3
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「これで電磁シールド分の燃料も補給できた」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「あなたは当機を破壊するつもりがないなら、なぜまだここにいるの？」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「それは――アタシが居たいから？」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「うん、まだいるべきだと思うから」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機には使命がある、随行を求める」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシもやることはある」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「やらなきゃいけないことが……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg4"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            登場人物：いに、こい、ツバキ
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            2d6 (2D6) ＞ 3[1,2] ＞ 3
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            恋糸【人質】⇒シーンに強制登場
+      </div>
+      <div class="kp LtoR-early">
+      
+            (壱)と扉に書かれた部屋。何もない殺風景な部屋。部屋の中にはぽつんとコンピュータが1台だけ佇んでいる。電源は入らないようだ。
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「皆さん集まったようですね、玖号は見つかりましたか？」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「どうだろうね」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「見たような、見てないような」
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「あっちにいたけど、気持ち悪いのつけられた。うげー」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「………あ、ほんとうだ？」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「実は私も先ほどいつの間にかつけられていました」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「何かほかに手掛かりは」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……うーん、やっぱりただで物をあげるのは嫌かな。ただの慈善であげるのはちょっとー」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「そうですか……まぁ只の協力関係ですからね」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「ん？これは……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「やっぱりぽりしーが」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「PCにUSBが刺さってますね、何か情報が残っているかも……」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「私のこの端末に……こうして……できた！」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「さすがイニ！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「何か……情報は」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="GM GM_PC2 right">
+      <span>GM</span>
+      <p>
+      
+            ●PC2【秘密】<br>あなたには蜉蝣型の絡繰忍者たちの記録データを収集する機能が備わっている。<br>今まで斃れた壱～捌型までの記憶が保存されている。<br>彼女たちはシノビとしてだけでなく、人としての人生を送っていたことを知り、そんな記録に影響を受けたあなたには感情に似た器官が芽生えつつある。<br>たとえ、望まれぬ生であっても、あなたには斃れていった仲間たちの記録、いや記憶を引き継いで生きていく義務があると感じた。<br><br>あなたの本当の使命は『【完全な感情という機能】を得た状態で、クライマックスフェイズを終える』ことだ。<br>また、あなたはプライズ「ココロノカケラ：弐」を所持している。
+      </p>
+      </div>
+      <div class="GM right">
+      <span>GM</span>
+      <p>
+      
+            ●プライズ「ココロノカケラ：弐」<br>▼概要<br>破壊された蜉蝣型の絡繰忍者の記録情報を元に作成されたPC2が持つデータ群。<br>これによりPC2には感情に近しい器官が形成されつつある。このデータ群を便宜上、「ココロノカケラ」と呼称する。<br>クライマックス終了時、同様の規模のデータ群がもう一つあれば、蜉蝣型のキャラクターは【完全な感情という機能】を得ることができるだろう。<br>この器官は絡繰忍者の主要機関に搭載されている。<br><br>※このプライズを奪われた状態でクライマックスフェイズを終了した場合、PC2は死亡する。<br>※このプライズはクライマックスの戦闘終了時の戦果でのみ獲得できる。<br><br>【効果】<br>このプライズを所持しているキャラクターはクライマックスフェイズにて回想シーンを２回使用できる
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「…………」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「なるほど、興味深いデータだ……」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「……ココロノカケラ」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「心とは……あいつらしい」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「心……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「あいつらにも心があったんだ」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「討伐部隊の私たちが知らなくてもよい情報だったのかもしれません……」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「そう……だね」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「けど、知るべきだった情報かもしれない。それは人それぞれ」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「それをどう捉えるかは、その人次第」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「オマエ…チビのくせに難しいコト言うんだな…」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「捉え方の問題だよ」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「そういえば、こんな話があったね」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ある女の話をしてみようか。彼女がどう思い、どうしたいのか」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            NPCの情報を二人に渡します
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            蒼馬 恋糸に八雲 仁の情報を渡します
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「なるほどね……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「でも――」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシは……」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「……雨宮」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「それで似て――」
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「晴嶺……悠稀……？」
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「サラはそんなこと一言も」
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「オレが、絡繰……？この感情は偽ものなのか？将来の夢も……ぜんぶ？」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「いやだ！！！うそだ！！うそだうそだ！！！！」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            部屋から飛び出していくツバキ
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「それを”心”と思うのは、……その答え、次第……だね」ﾎﾞｿﾘ
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「待て！ツバキ！」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「けど、アタシは」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「………」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「お前こんな重要な情報をすぐに言わずに隠していたのか……！他に隠していることはないだろうな」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシにとっては、どうでもいい情報だったからね」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「取捨選択された、ってだけだよ」
+      </p>
+      </div>
+            <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「すまないが強引にでも調べさせてもらう！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 10[4,6] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 器術 : 1 → 0
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「ツバキも心配だ、俺は後を追うぞ」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシは好きにさせてもらうよ」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            そう言って別々の道に歩き出す―――
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン終了
+      </div>
+      
+      <div class="kp LtoR-early">
+      
+            サイクル終了
+      </div>
+      <div class="kp LtoR-early">
+      
+            メインフェイズ終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg8"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            クライマックスフェイズ
+      </div>
+      <div class="kp LtoR-early">
+      
+            廃墟の中を黒い影が走る
+      </div>
+      <div class="kp LtoR-early">
+      
+            見慣れぬ壁、見慣れた窓、ツバキの記憶にはない、だが確かに懐かしいと感じる
+      </div>
+      <div class="kp LtoR-early">
+      
+            それこそが己でない自身の記憶が――自分自身が作られた存在である証なのだろうか
+      </div>
+      <div class="kp LtoR-early">
+      
+            混迷する思考のまま足を動かしつづける
+      </div>
+      <div class="kp LtoR-early">
+      
+            次第に呼吸が乱れ、足を止める
+      </div>
+      <div class="kp LtoR-early">
+      
+            息を整えながら顔をあげると、その場所に見覚えがあった
+      </div>
+      <div class="kp LtoR-early">
+      
+            これは間違いなく自身の記憶、初めてサラと出会った――つまり、自分が生まれた場所
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「はぁっ……はぁっ……、ここ、サラと………」
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「頭が、痛い……」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「おい！ツバキ待て……！」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「……イニ」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「どうした？大丈夫か！？」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「……オレって、なんなのかな」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+            <div class="kp LtoR-early">
+      
+            棺桶のような培養器が円のように設置されている
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「貴方もここで生まれたのね」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機達と同じ……」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「いや、当機達よりも――」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「兵器」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「オレが、同じ………」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「自分が兵器であることに驚いているのね、心があるみたいに」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「痛い……っ、なんだこれ……っ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「蜉蝣型に心はないと博士は言った、それでもともがら達が”生きていた意味”を証明するために……当機は心を手に入れる」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「わかんねぇよ…ッ　んな難しいこと言われても……オレ、バカだからよぉ、わかんねぇけど…」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「――サラがオレに”人生を楽しめ”って言ったんだ」
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg9"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            辺りは濃い影に包まれていく、廃屋の隙間から空を見上げると――巨大な鉄の塊が浮いている
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ここにいた！」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……へぇ、ここが」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――の為、やらせてもらうんだから！」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「久：兄弟……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            それぞれの目的のために――
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg8"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            戦闘開始
+      </div>
+      <div class="kp LtoR-early">
+      
+            ラウンド1プロット
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「恋糸――」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            奈落
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            2D6&gt;=5 （判定：掘削術） (2D6&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「にる、戦闘態勢」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「弓：了承」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット公開
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 奈落 ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット4
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            d66 (D66) ＞ 33
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            D66 (D66) ＞ 16
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            裏コード→玖号
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 器術 : 1 → 0
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「――ッ」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「朽：【器術】の損傷を確認」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            【土竜吼】どりゅうこう→玖号
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            2D6&gt;=5 （判定：掘削術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            2D6&gt;=12 （判定：身体操術） (2D6&gt;=12) ＞ 7[1,6] ＞ 7 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 追加 : 3 → 2
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「的確に急所を狙われ――ッ」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「泣：電磁シールドのガード不能」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            【神槍】しんそう→玖号
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG#4-1&gt;=5 （判定：手裏剣術） (SG-1@12#4&gt;=5) ＞ 11[5,6]-1 ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            2D6&gt;=7 （判定：身体操術） (2D6&gt;=7) ＞ 6[2,4] ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 追加 : 2 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット3
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="soma soma_nirubana right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            《蒼痲ノ宮》<br>指定特技：召喚術<br>効果　　：範囲攻撃/くらまし/撃ち/人数限定/射程低下<br>・攻撃を行う代わりに使用できる。自分のプロット値から3以内にいるキャラクターを好きなだけ選び、そのキャラクター全員を目標に選ぶ。目標の【生命力】を2点失わせる。どの特技分野の【生命力】を失うのかを、目標が選ぶことができる。<br>・【くらまし】が追加された奥義を使用したとき、その奥義の奥義破り判定にはマイナス2の修正がつく。<br>・【撃ち】が追加された奥義は、目標に選んだキャラクターに、さらに射撃戦ダメージを1点与えることができる。<br>・【人数限定】が追加された【範囲攻撃】は、二人のキャラクターまでしか目標に選ぶことができなくなる。<br>・【射程低下】が追加された奥義は、通常のものよりもプロット値の範囲が1狭い位置にいるキャラクターしか目標として選べなくなる。<br>演出　　："移動大伽藍"の中から召喚した使い魔を放ち攻撃を行う。<br><br>――空中機動仏塔からということもあり、破るのは困難であり、鋭い一撃が懐に迫る。<br>しかし、放つ側も至難の業であり狙える数は少ない。
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            対象は、仁さんとツバキくん！
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 妖術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 追加 : 2 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 謀術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 戦術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 忍術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット2
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            d66 (D66) ＞ 25
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            d66 (D66) ＞ 45
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            接近戦攻撃→玖号
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：潜伏術） (SG@12#2&gt;=5) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG&gt;=9 （判定：調査術） (SG@12#2&gt;=9) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「（猛攻……ッ、明らかにこれはデータ以上の――どうして？）」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            回想シーン
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            ――<br><br>―――<br><br>晴峰と雨宮は同じ孤児院の出身だった。<br>親を任務で失い絶望に暮れた俺たちだったが、<br>晴・雨・曇と名前に天気の文字が入っていたのがきっかけで3人でつるむことが多くなっていた。<br>夢を語りあい孤児院を出るときには親友となっていた。<br><br>…<br><br>…ある日1つの訃報が届く……<br><br>とある任務の最中に晴嶺が死去した……<br><br>そこから俺と雨宮の人生は一変した…<br>夢を諦め、雨宮は絡繰の研究に没頭し、俺も他流派の医療忍術や文献を読み漁った…<br>なんとしても晴峰を蘇らせるために……<br><br>しかし、雨宮もまた自身の研究が原因で命を落としてしまった。<br>「なんで…俺は…俺はどうしたら………」<br>俺は生きる意味を失い失意の末、研究だけを生きがいに生きていた。<br><br>月日が立ちある任務を受けることとなった。<br>そこで雷ツバキに出会った…<br><br>「晴峰！！………そんなわけ………」<br><br>最初は目を疑った……<br>まるで晴嶺の生き写しのような姿だったからだ…<br><br>彼は雨宮の作った絡繰を破壊しようとしていた。<br>他流派から危険と判断された絡繰だ、かなり危険な任務だ。<br><br>俺はもう大切な人を失いたくない…<br>「晴峰…必ず守る…」<br><br>固く決意し任務へと向かった…<br><br>―――<br><br>――
+      </p>
+      </div>
+      <div class="GM GM_PC4 right">
+      <span>GM</span>
+      <p>
+      
+            ●PC4【秘密】<br>あなたは「雨宮 沙羅」とは旧知の仲だった。<br>共通の友人である「晴嶺 悠稀(ﾊﾙﾐﾈ ﾕｳｷ)」という人物を交え、3人で過ごすことも多かった。<br><br>だが、とある任務の最中に晴嶺悠稀を失った。<br>その後、雨宮は研究に没頭するようになったが、彼女もまた自身の研究が原因で命を落としてしまった。<br>失意のあなたの前にまるで「晴嶺 悠稀」の生き写しのようなPC1が現れたのだ。<br>二人の友人を失ったあなたは、亡き友人の写し身であるPC1を護ることを心に決めた。<br><br>あなたの本当の使命は『PC1を死なせない』ことだ。
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「玖号――すまないがそのココロノカケラはゆずってもらう……」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            RCT ランダム分野表(1) ＞ 器術
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            RCｔ ランダム分野表(1) ＞ 器術
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 忍術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 妖術 : 1 → 0
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「グ……ッ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「にる！」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            【機功】→ツバキ
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG&gt;=5 （判定：身体操術） (SG@12#2&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「糾：ダメージの損傷が激しい、戦闘の継続は困難」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ GM ] ラウンド : 1 → 2
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「そんな――ッ」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            奈落
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：掘削術） (SG@12#2&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] がダイスシンボルを公開。出目は 6 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 奈落 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット6
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「急：【生命力】の回復」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「言われるまでも……ッない」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「窮：激しい損傷により不可侵領域「コード：蜉蝣」のロックが外れたのを感知」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「不可侵領域……？」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「求：自身を対象に【奥義】の発動」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「どういうこと……！」
+      </p>
+      </div>
+
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「急：説明する余裕なし」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……ッ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            ■奥義<br>《memento;RE[メメントリ]》<br>指定特技：絡繰術<br>効果　　：追加忍法/増やし/回数制限<br>【増やし】が追加された奥義の持ち主は、【追加忍法】で使用できるようになる攻撃忍法かサポート忍法の数を一つ増やすことができる。<br>【回数制限】が追加された奥義は、一回のセッションで二度しか使用できなくなる。【回数制限】が追加されたのが【追加忍法】の場合は、【追加忍法】で使用できる忍法を、一回のセッションでそれぞれ二度ずつしか使用できなくなる。<br>
+            ①教導<br>②魔界転生<br>③望郷<br>
+            演出　　：赤眼第二の能力、対象の記憶を引き出して視る。<br>コード蜉蝣とは開発者が蜉蝣型が心を持たないように施した、重要なエピソードに制限をかける特殊コードである。
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「――メメントリ！」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            兵糧丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 器術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 忍具 : 2 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 謀術 : 1 → 0
+      </div>
+      <div class="kyu_gou left">
+            <span>玖号</span>
+      <p>
+      
+            ②【魔界転生】
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG#6&gt;=5 （判定：絡繰術） (SG@12#6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            神通丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 忍具 : 1 → 0
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG#6&gt;=5 （判定：絡繰術） (SG@12#6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            遁甲符
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG#6&gt;=5 （判定：絡繰術） (SG@12#6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 忍具 : 3 → 2
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            遁甲符
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「クッ――なんだよ！？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 忍具 : 3 → 2
+      </div>
+            <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「勝手に……まさか蜉蝣型たちの想いが？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「――零号」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG#6&gt;=5 （判定：絡繰術） (SG@12#6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            【魔界転生】の効果により過去の重要な一幕を蘇らせる。ドラマシーンへと移行
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 謀術 : 0 → 1
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「（ここは……？）」
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg7"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            クライマックスドラマシーン
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：九号-------
+      </div>
+      <div class="kp LtoR-early">
+      
+            雨宮ラボ、エントランス
+      </div>
+      <div class="kp LtoR-early">
+      
+            辺りはまだ廃墟となる前の様子だ、整然とした廊下が奥へと連なっている
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「今日で玖号、君が起動してから１００日目だな」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「あらもうそんなたつのね」
+      </p>
+      </div>
+      <div class="ni_gou right">
+      <span>弐号</span>
+      <p>
+      
+            「やっと100日ですね」
+      </p>
+      </div>
+      <div class="yon_gou left">
+      <span>肆号</span>
+      <p>
+      
+            「おめでとう」
+      </p>
+      </div>
+      <div class="san_gou right">
+      <span>参号</span>
+      <p>
+      
+            「皆揃って記念日なんて……くだらないことを」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「まぁいいじゃないの」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「記念のついでだ。突然だがともがら達よ、諸君らの夢を語れ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「ともがら？」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「そう私たちはともがら……同じ蜉蝣を冠する仲間だろ？」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「ともがらとは夢を語り合い共有するものさ」
+      </p>
+      </div>
+      <div class="yon_gou left">
+      <span>肆号</span>
+      <p>
+      
+            「あら人間のようで楽しそうね」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「３人ほど任務でいないけど」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「遅いな？」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「話しているうちに帰ってくるわよ」
+      </p>
+      </div>
+      <div class="san_gou right">
+      <span>参号</span>
+      <p>
+      
+            「夢ぇ……随分夢見がちなこと」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「因みに私の夢は最強の絡繰兵器になることさ、君はどうだい？」
+      </p>
+      </div>
+      <div class="yon_gou left">
+      <span>肆号</span>
+      <p>
+      
+            「沢山の本に囲まれてのんびり暮らしたいわ」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「私は平和に暮らせてたらいいわね。兵器らしからぬ感想だけれども」
+      </p>
+      </div>
+      <div class="ni_gou right">
+      <span>弐号</span>
+      <p>
+      
+            「私は規律正しく生活していくだけですわ」
+      </p>
+      </div>
+      <div class="yon_gou left">
+      <span>肆号</span>
+      <p>
+      
+            「わたしも争いは嫌い……」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「なんだなんだ、皆平和主義かい？」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「まぁ、それも悪いとは言わないが」
+      </p>
+      </div>
+      <div class="san_gou right">
+      <span>参号</span>
+      <p>
+      
+            「揃いも揃って可愛げのない……」
+      </p>
+      </div>
+      <div class="san_gou right">
+      <span>参号</span>
+      <p>
+      
+            「もっとこう、夢っていうのはキボーとかに溢れているモノじゃありませんこと？」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「今の生活で私は満足しているってことかしら」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「意外だな参号、君は？」
+      </p>
+      </div>
+      <div class="san_gou right">
+      <span>参号</span>
+      <p>
+      
+            「ワタクシは……そうね」
+      </p>
+      </div>
+      <div class="san_gou right">
+      <span>参号</span>
+      <p>
+      
+            「可愛げのない姉妹達が少しは”カワイイ”というものを理解してくださることかしら」
+      </p>
+      </div>
+      <div class="san_gou right">
+      <span>参号</span>
+      <p>
+      
+            「伍号、あなたに差し上げた写真立て、まだかざってないでしょう？そういうところよ」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「あとで飾っておこうかしら」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「そういうかわいいがいいのね」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「フフ、では玖号。君は？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機には、ない」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「そうか」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「それなら、見つかるまで他の夢を手伝うなんてどうだ？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「夢を……手伝う」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「まぁ、それは素敵な事ね」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「君の機体モデルは夢見る決戦兵器だと博士が言っていた。すぐに見つかるさ」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            ビーッビーッ
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「糾：任務にあたっていた蜉蝣型の破壊を確認」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……！？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「陸号、漆号、捌号……！」
+      </p>
+      </div>
+      <div class="iti_gou right">
+      <span>壱号</span>
+      <p>
+      
+            「……至急、敵対勢力の確認――ッ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+      
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            回復判定
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            回想シーン
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            ■奥義<br>《memento;RE[メメントリ]》<br>指定特技：絡繰術<br>効果　　：追加忍法/増やし/回数制限<br>【増やし】が追加された奥義の持ち主は、【追加忍法】で使用できるようになる攻撃忍法かサポート忍法の数を一つ増やすことができる。<br>【回数制限】が追加された奥義は、一回のセッションで二度しか使用できなくなる。【回数制限】が追加されたのが【追加忍法】の場合は、【追加忍法】で使用できる忍法を、一回のセッションでそれぞれ二度ずつしか使用できなくなる。<br>
+            ①教導<br>②魔界転生<br>③望郷<br>
+            演出　　：赤眼第二の能力、対象の記憶を引き出して視る。<br>ともがら達との記憶を思い出し再び立ち上がる。
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            ③【望郷】
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            1d6 (1D6) ＞ 4
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG+3&gt;=5 （判定：記憶術） (SG+3@12#2&gt;=5) ＞ 6[2,4]+3 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 忍術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 妖術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 追加 : 0 → 3
+      </div>
+
+      <div class="kp LtoR-early">
+      
+            ドラマシーン終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg8"></div></div>
+    <div class="log">
+    
+    <div class="kyu_gou left">
+    <span>玖号</span>
+    <p>
+            
+        「この記憶は、ロックされていた――？」
+    </p>
+    </div>
+        
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「そう……わかった」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            行動終了
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット4
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            d66 (D66) ＞ 13
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            D66 (D66) ＞ 56
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="soma soma_nirubana right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            《蒼痲ノ宮》<br>指定特技：召喚術<br>効果　　：範囲攻撃/くらまし/撃ち/人数限定/射程低下<br>自分のプロット値から2以内のキャラクターを二人だけ選ぶ。目標の【生命力】を3点失わせる。どの特技分野の【生命力】を失うのかを、目標が選ぶことができる。<br>奥義破り-2の修正をつける。<br><br>演出　　："移動大伽藍"の中から召喚した使い魔を放ち攻撃を行う。<br><br>――空中機動仏塔からということもあり、破るのは困難であり、鋭い一撃が懐に迫る。<br>しかし、放つ側も至難の業であり狙える数は少ない。
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            対象：仁くん
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「（身体はとっくに限界を超えているのに……まだ動く）」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            奥義破り！！！
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG-2&gt;=7 （判定：結界術） (SG-2@12#2&gt;=7) ＞ 2[1,1]-2 ＞ 0 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 器術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 体術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 忍術 : 1 → 0
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            ■奥義<br>《回復ナノ粒子「アルペリカキシン」作動》<br>指定特技：潜伏術<br>効果　　：不死身/定め/回数制限<br><br>いつでも使用できる。1D6からセッション中にこの奥義を使用した回数を引いた値(最低0、最初の使用時は1D6から1を引いた値）だけ自分の【生命力】を回復し、すべての変調を回復することができる。<br><br>【定め】が追加された【不死身】は、回復する【生命力】の値が、5から【不死身】を使用した回数を引いた値(最初に使ったときに回復する【生命力】の値は4点）になる。<br><br>【回数制限】が追加された奥義は、一回のセッションで二度しか使用できなくなる。【回数制限】が追加されたのが【追加忍法】の場合は、【追加忍法】で使用できる忍法を、一回のセッションでそれぞれ二度ずつしか使用できなくなる。<br>演出　　：「強力な技ですね…その技ぜひうちに欲しい。（独り言で）データは取れた…あとはこれを…して…こうすれば……。」<br><br>指矩班の研究者がその身をもって技を受けることで忍法の解析・研究を深めるために考案された技術。瀕死の重傷を負うと体内に仕込まれた回復ナノ粒子が活性し使用者の傷を急速に癒す。だだし身体や脳への負荷が非常に高く、短い期間に複数回使用した場合には傷は治っても精神に異常をきたし廃人となってしまうことがある。<br> 
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 器術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 体術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 忍術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 戦術 : 0 → 1
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            裏コード→玖号
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=11 （判定：骨法術） (SG@12#2&gt;=11) ＞ 6[2,4] ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            赤腕→玖号
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：骨法術） (SG@12#2&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            回避判定放棄
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            RCT ランダム分野表(6) ＞ 妖術
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 追加 : 3 → 2
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            火達磨を受ける
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット1
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「救：回避判定の推奨」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            【神槍】しんそう→玖号
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG-1&gt;=5 （判定：手裏剣術） (SG-1@12#2&gt;=5) ＞ 5[2,3]-1 ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ GM ] ラウンド : 2 → 3
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            奈落
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：掘削術） (SG@12#2&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット公開
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 奈落 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット5
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            裏コード→玖号
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：暗号術） (SG@12#2&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            神通丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 忍具 : 2 → 1
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：暗号術） (SG@12#2&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 器術 : 1 → 0
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            土竜吼→恋糸さん
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：掘削術） (SG@12#2&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=9 （判定：骨法術） (SG@12#2&gt;=9) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット2
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            D66 (D66) ＞ 22
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            D66 (D66) ＞ 12
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            【春雷】しゅんらい→恋糸
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG&gt;=5 （判定：骨法術） (SG@12#2&gt;=5) ＞ 2[1,1] ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="soma soma_nirubana right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            ■奥義<br>《蒼痲ノ宮》<br>指定特技：召喚術<br>効果　　：範囲攻撃/くらまし/撃ち/人数限定/射程低下<br>自分のプロット値から2以内のキャラクターを二人だけ選ぶ。目標の【生命力】を3点失わせる。どの特技分野の【生命力】を失うのかを、目標が選ぶことができる。<br>奥義破り-2の修正をつける。<br><br>演出　　："移動大伽藍"の中から召喚した使い魔を放ち攻撃を行う。<br><br>――空中機動仏塔からということもあり、破るのは困難であり、鋭い一撃が懐に迫る。<br>しかし、放つ側も至難の業であり狙える数は少ない。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG-2&gt;=7 （判定：結界術） (SG-2@12#2&gt;=7) ＞ 8[2,6]-2 ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            対象：ツバキくん
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 体術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 謀術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 戦術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 妖術 : 1 → 0
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            ■奥義<br>《命にふさわしい》<br>指定特技：結界術<br>効果　　：不死身/定め/回数制限<br><br>いつでも使用できる。1D6からセッション中にこの奥義を使用した回数を引いた値(最低0、最初の使用時は1D6から1を引いた値）だけ自分の【生命力】を回復し、すべての変調を回復することができる。<br><br>【定め】が追加された【不死身】は、回復する【生命力】の値が、5から【不死身】を使用した回数を引いた値(最初に使ったときに回復する【生命力】の値は4点）になる。<br><br>【回数制限】が追加された奥義は、一回のセッションで二度しか使用できなくなる。【回数制限】が追加されたのが【追加忍法】の場合は、【追加忍法】で使用できる忍法を、一回のセッションでそれぞれ二度ずつしか使用できなくなる。
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 妖術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 器術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 体術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 謀術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット1
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            行動放棄
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ GM ] ラウンド : 3 → 4
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            奈落
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：掘削術） (SG@12#2&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 妖術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット公開
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット4
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            赤腕→恋糸さん
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：骨法術） (SG@12#2&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            神通丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 忍具 : 1 → 0
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：骨法術） (SG@12#2&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=5 （判定：骨法術） (SG@12#2&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット2
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="soma soma_nirubana right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            ■奥義<br>《蒼痲ノ宮》<br>指定特技：召喚術<br>効果　　：範囲攻撃/くらまし/撃ち/人数限定/射程低下<br>自分のプロット値から2以内のキャラクターを二人だけ選ぶ。目標の【生命力】を3点失わせる。どの特技分野の【生命力】を失うのかを、目標が選ぶことができる。<br>奥義破り-2の修正をつける。<br><br>演出　　："移動大伽藍"の中から召喚した使い魔を放ち攻撃を行う。<br><br>――空中機動仏塔からということもあり、破るのは困難であり、鋭い一撃が懐に迫る。<br>しかし、放つ側も至難の業であり狙える数は少ない。
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG-2&gt;=11 （判定：潜伏術） (SG-2@12#2&gt;=11) ＞ 8[3,5]-2 ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG-2&gt;=7 （判定：結界術） (SG-2@12#2&gt;=7) ＞ 6[1,5]-2 ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 妖術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 戦術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 忍術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 謀術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 器術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 妖術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット1
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            d66 (D66) ＞ 22
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            D66 (D66) ＞ 45
+            
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「玖：機功レーザーの承認を要求」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            兵糧丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 忍具 : 2 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 器術 : 0 → 1
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            接近戦攻撃→恋糸
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：縄術） (2D6&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=9 （判定：骨法術） (SG@12#2&gt;=9) ＞ 7[2,5] ＞ 7 ＞ 失敗
+            
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg10"></div></div>
+    <div class="log">
+    
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            ――――回想――――
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            窓一面が桃色の花びらでうまっている
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「――これは桜」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「……サクラ」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            鈴が転がるようなかろやかな声とは正反対に<br>ぽつりと機械的な声が落ちる
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「そう、春の花の名前。私の名前の沙羅も春の花なのよ」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「……サラ」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「―――そして、椿。あなたの名前も春の花。」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「……ツバ、キ」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「冬眠していた虫たちも、木々も、命が目覚める春。」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「あなたは、命にふさわしい」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            はじめて感じた感情は強烈な嵐のような、春の雷のような――――慕情
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            機械の身体の胸がきゅうと苦しくなる。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            この痛みはなんて呼べばいいんだろう。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「痛い。――ここに、雷が落ちたみたいで」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            胸をおさえながら彼女に告げる。
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「その言葉すごくいいわね。月が綺麗ってよりもずっといい。」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            開け放した窓から舞う桃色の花びらを見て笑う姿に
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            あなたにはこの世界の彩りがどう見えているのか知りたくなったんだ。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            たくさん言葉も教えてもらった。<br>たくさん想いも教えてもらった。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            それなのにサラを目の前にすると何も言えなくなる。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            ――サラがオレに重ねて誰かを見ているとしても。
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「桜の花びらが散るころ、私はもう死んでるかしら」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「――え？」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「……大丈夫。あなたはもう十分大きくなった、一人でもやっていける。」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「あなたの命は何人にも奪わせない。……たとえそれが、私の可愛い子たちを犠牲にすることになっても。」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            青天の霹靂。いつもそうだ。全部サラの手のひらの上。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            でも、これは……。
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「急に言われたってわかんねぇよ。ここから出たことだってないのに！」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「安心して、再起動して次に目覚めたらすべて忘れてる。一人の人間として生きていけるようにしてあるから。」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「私のことも、自分のことも……すべて忘れられるように。」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「でもこれだけは残しておくから。」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「あなたが蜉蝣型忍者だと知られるとあなたも危ない。……壱から玖型までの蜉蝣型忍者をすべて壊して。そうすれば、疑われないはずだから」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「そして、【完全な感情という機能】を得て、一人の人間として――雷ツバキとして人生を楽しんで。」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「……希望だけは、捨てないで。――――――さよなら。」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            次に目覚めた時、目の前で眠るように息絶えていた女性を見つけた。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            ここがどこなのか、彼女が誰なのか、何もわからない。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            でも、一つだけ確かに覚えていることがある。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            壱から玖型までの蜉蝣型忍者をすべて破壊すること。雷ツバキとして人生を楽しむこと。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            そして……みんなを守れるようになること。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            こんなに面倒くさいこと、すべて捨ててもいいはずなのに。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            心さえなかったのなら。
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            すべて捨てられたはずなのに。
+      </p>
+      </div>
+      <div class="GM GM_PC1 right">
+      <span>GM</span>
+      <p>
+      
+            ●PC1【秘密】<br>あなたは、本当は蜉蝣型の絡繰忍者の零号機であり、すべての蜉蝣型の要素を元に最後に作られた。<br>そのため、完全なものではないが感情に近い器官を有している。<br>あなたが起動した時、それが雨宮沙羅を見た最初で最後だった。<br>そして、彼女から２つのことを託されている。<br>・あなたを除くすべての蜉蝣型の忍者を破壊すること。<br>・【完全な感情という機能】を得て、その人生を謳歌すること。<br><br>あなたの本当の使命は『【完全な感情という機能】を得た状態で、クライマックスフェイズを終える』ことだ。<br>また、あなたはプライズ「ココロノカケラ：壱」を所持している。
+      </p>
+      </div>
+      <div class="GM right">
+      <span>GM</span>
+      <p>
+      
+            ●プライズ「ココロノカケラ：壱」<br>▼概要<br>PC1には感情に近い器官を搭載されており、その機能により疑似感情データが蓄積されている。<br>このデータ群を便宜上、「ココロノカケラ」と呼称する。<br><br>クライマックスフェイズの終了時、同様の規模のデータ群がもう一つあれば、蜉蝣型のキャラクターは【完全な感情という機能】を得ることができるだろう。<br>この器官は絡繰忍者であるPC1の主要機関に搭載されている。<br><br>※このプライズを奪われた状態でクライマックスフェイズを終了した場合、PC1は死亡する。<br>※このプライズはクライマックスの戦闘終了時の戦果でのみ獲得できる。<br><br>【効果】<br>このプライズを所持しているキャラクターはクライマックスフェイズにて回想シーンを２回使用できる
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg8"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 追加 : 5 → 2
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            何もしない
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ GM ] ラウンド : 4 → 5
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「零号……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット公開
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット3
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            d66 (D66) ＞ 66
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            D66 (D66) ＞ 35
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            土竜吼→ 恋糸
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：掘削術） (SG@12#2&gt;=5) ＞ 4[1,3] ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="soma soma_nirubana right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            ■奥義<br>《蒼痲ノ宮》<br>指定特技：召喚術<br>効果　　：範囲攻撃/くらまし/撃ち/人数限定/射程低下<br>自分のプロット値から2以内のキャラクターを二人だけ選ぶ。目標の【生命力】を3点失わせる。どの特技分野の【生命力】を失うのかを、目標が選ぶことができる。<br>奥義破り-2の修正をつける。<br><br>演出　　："移動大伽藍"の中から召喚した使い魔を放ち攻撃を行う。<br><br>――空中機動仏塔からということもあり、破るのは困難であり、鋭い一撃が懐に迫る。<br>しかし、放つ側も至難の業であり狙える数は少ない。
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=16 （判定：針術） (SG@12#2&gt;=16) ＞ 7[1,6] ＞ 7 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            ――――回想――――
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg11"></div></div>
+    <div class="log">
+    
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            ぐすん、ぐすん<br>幼い女の子の泣き声が聴こえる
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「どうして　わたしたちには　おとうさんとおかあさんがいないのかな」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「それは俺たちが孤児だからですよ」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            眼鏡の少年が答える
+      </p>
+      </div>
+      <div class="yuki right">
+      <span>晴嶺 悠稀(ﾊﾙﾐﾈ ﾕｳｷ)</span>
+      <p>
+      
+            「別にいなくたっていいじゃん　オレたち3人が家族なんだから」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            赤髪の三つ編みが揺れる
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            ――ああ　懐かしいな
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            そうだ、オレたちは……同じ孤児院で育って、いつも一緒で
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            同じ研究院に就職したあともみんなでつるんで……
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「俺は他流派の忍術の解析を研究しようと思ってます」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            骨ばった大きな手で眼鏡を押し上げながらつぶやく
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「へぇ　いいわね。私は人に類似した絡繰忍者をつくろうとおもって」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            艶やかな黒髪が踊る
+      </p>
+      </div>
+      <div class="yuki right">
+      <span>晴嶺 悠稀(ﾊﾙﾐﾈ ﾕｳｷ)</span>
+      <p>
+      
+            「オレはみんなを守れるような……強い肉体を手に入れる研究かな」
+      </p>
+      </div>
+      <div class="tubaki tubaki_aseri right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            懐かしい……？
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「ふふ、らしいわね。――悠稀」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            ――ああ、これ……
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            晴嶺 悠稀の記憶だ
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            オレって、やっぱりニセモノなんだ
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            みんなオレを見てるわけじゃない
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            いくら人に近づけたとして、オリジナルには勝てない
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            こんな気持ちになるくらいなら
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            心さえなかったなら
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            ――――回想おわり――――
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg8"></div></div>
+    <div class="log">
+    
+
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            兵糧丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 忍具 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 妖術 : 0 → 1
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG+1&gt;=7 （判定：結界術） (SG+1@12#2&gt;=7) ＞ 8[4,4]+1 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ちっ」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「（零号の記憶がメメントリを通して伝わってくる……）」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット2
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            なにもしない
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット1
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「なにやってるの！生きるんじゃないの！？」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「貴方は何がしたいのよ！」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「貴方の”心”を見せてよ！」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「恋糸……」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            接近戦攻撃→恋糸
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「さっきまでの貴方はなんだったのよ！」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG&gt;=5 （判定：縄術） (SG@12#2&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=9 （判定：骨法術） (SG@12#2&gt;=9) ＞ 11[5,6] ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機は……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ GM ] ラウンド : 5 → 6
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            奈落
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：掘削術） (SG@12#2&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            シノビ達の激しい攻防により建物は崩壊をし始める
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット公開
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 奈落 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット4
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            土竜吼→恋糸
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            SG&gt;=5 （判定：掘削術） (SG@12#2&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 器術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] 体術 : 1 → 0
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            仁は建物の崩壊に巻き込まれる
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            ■奥義<br>《回復ナノ粒子「アルペリカキシン」作動》<br>指定特技：潜伏術<br>効果　　：不死身/定め/回数制限<br>
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=7 （判定：砲術） (SG@12#2&gt;=7) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG+3&gt;=9 （判定：調査術） (SG+3@12#2&gt;=9) ＞ 5[2,3]+3 ＞ 8 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「うわ――ー…」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「させない！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「また守れないのか…」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「八雲……」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシの邪魔はしないで！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            仁　脱落
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット2
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            d66 (D66) ＞ 14
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            D66 (D66) ＞ 35
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            【機功】きこうを撃ちます
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            回想シーン
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg6"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            ―――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ―――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――目を閉じればあの光景が目に浮かぶ。
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ねぇ、ソーマ！」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「どうしたの。恋糸？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――懐かしき、彼女がいた時の光景。
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ソーマはなんで争いが嫌いなの？」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「それはね。私のような子はいない方がいいからよ」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「なんで？ソーマはイイコだよ」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「だって、私は作られた存在。伍号機……なのだから」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「でもソーマはアタシに色々教えてくれた！だから作られた存在だけじゃないっ。だからそんなこといわないでよっ」
+      </p>
+      </div>
+      <div class="go_gou left">
+      <span>伍号</span>
+      <p>
+      
+            「ありがと、恋糸」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――場面は変わり、燃え上がる家屋とバラバラに"殺&lt;こわ&gt;"されたソーマの姿
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――最後に言われた言葉は「君と過ごした日々は楽しかった」だった
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「なんで、ソーマがこんな目に合わなきゃいけないの」
+      </p>
+      </div>
+      <div class="soma soma_ikarinamida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ソーマはただ……生きていたかっただけなのに……！それなのに！！」
+      </p>
+      </div>
+      <div class="soma soma_ikarinamida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「それなのに！……なんで、殺&lt;こわ&gt;されなきゃいけなかったの……？」
+      </p>
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ソーマ、まっててね。アタシが仇を討つから。争いが嫌いなソーマには悪いけど、これだけは――譲れない」
+      </p>
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ソーマ、……貴方の名前をちょうだい。それが貴方の生きてた証。それが貴方の生きている証明。それがアタシが出来る貴方への贖罪」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「――"蒼馬" 恋糸。これからはこれがアタシの名前だ」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「"鬼燈" 恋糸は、捨ててしまおう」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ―
+      </div>
+      <div class="GM GM_PC3 right">
+      <span>GM</span>
+      <p>
+      
+            ●PC3【秘密】<br>あなたは蜉蝣型伍号機と親密な関係にあった。<br>だが、ある日に伍号機の住処に訪れると、燃え上がる家屋とバラバラに破壊された伍号機の姿が……。<br>彼女が最後に残した言葉は「君と過ごした日々は楽しかった」という一言だ。<br>そのときに君は見たのだ、PC1の姿を……そして誓った。<br>あのシノビを討つと。<br><br>あなたの本当の使命は『PC1を倒す』ことだ。
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg8"></div></div>
+    <div class="log">
+    
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシは、自分の大切な"子"だけを生き延びらせようとした雨宮が許せない！」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「アタシは、そのために殺されたソーマの仇を取るだけだ！！」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「雷 ツバキ！貴方だけは絶対に"壊&lt;ころ&gt;"してやる」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2+3&gt;=8 （判定：砲術） (SG+3@12#2&gt;=8) ＞ 8[2,6]+3 ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「弓：機功レーザーの承認を確認」
+      </p>
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「当たって！」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「球：射出」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG&gt;=7 （判定：手裏剣術） (SG@12#2&gt;=7) ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「――起動演算を変更」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            【機功】→ツバキ
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG&gt;=5 （判定：身体操術） (SG@12#2&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG-1&gt;=7 （判定：手裏剣術） (SG-1@12#2&gt;=7) ＞ 9[4,5]-1 ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            ピピｰｯ
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット1
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「恋糸、終わらせよう」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……うん。みんなの為、――ソーマのため」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「ニセモノなのに…いろんなものを壊してきたのに……」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「まだ、生きたいと願ってしまっている」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「零号……そんなことはない」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            接近戦攻撃→恋糸
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG&gt;=5 （判定：縄術） (SG@12#2&gt;=5) ＞ 8[2,6] ＞ 成功
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=9 （判定：骨法術） (SG@12#2&gt;=9) ＞ 8[2,6] ＞ 8 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 追加 : 2 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            極地 接近戦ダメージ1
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            RCT ランダム分野表(3) ＞ 忍術
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            RCT ランダム分野表(4) ＞ 謀術
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 忍術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 謀術 : 1 → 0
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            RCT ランダム分野表(3) ＞ 忍術
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 体術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ GM ] ラウンド : 6 → 7
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット公開
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット3
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="soma soma_nirubana right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            ■奥義<br>《蒼痲ノ宮》<br>指定特技：召喚術<br>効果　　：範囲攻撃/くらまし/撃ち/人数限定/射程低下<br>自分のプロット値から2以内のキャラクターを二人だけ選ぶ。目標の【生命力】を3点失わせる。どの特技分野の【生命力】を失うのかを、目標が選ぶことができる。<br>奥義破り-2の修正をつける。<br><br>演出　　："移動大伽藍"の中から召喚した使い魔を放ち攻撃を行う。<br><br>――空中機動仏塔からということもあり、破るのは困難であり、鋭い一撃が懐に迫る。<br>しかし、放つ側も至難の業であり狙える数は少ない。
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG-2&gt;=7 （判定：結界術） (SG-2@12#2&gt;=7) ＞ 11[5,6]-2 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット2
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「当たらないっ！？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            【機功】→ツバキ
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG&gt;=5 （判定：身体操術） (SG@12#2&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG-1&gt;=8 （判定：縄術） (SG-1@12#2&gt;=8) ＞ 11[5,6]-1 ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット1
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            接近戦攻撃→恋糸
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG&gt;=5 （判定：縄術） (SG@12#2&gt;=5) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=9 （判定：骨法術） (SG@12#2&gt;=9) ＞ 6[2,4] ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            RCT ランダム分野表(6) ＞ 妖術
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「零号……ッ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 妖術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 戦術 : 1 → 0
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「っ！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+           極地 接近戦ダメージ1
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            RCT ランダム分野表(1) ＞ 器術
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            RCT ランダム分野表(6) ＞ 妖術
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            RCT ランダム分野表(1) ＞ 器術
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 謀術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 追加 : 2 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 謀術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 器術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ GM ] ラウンド : 7 → 8
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット公開
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット3
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「生きてる価値なんてないって思っているのに……！」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            奥義破り！！
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            兵糧丸ばりばり
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 妖術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 蒼馬 恋糸  ] 忍具 : 2 → 1
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=7 （判定：召喚術） (SG@12#2&gt;=7) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            ＜回想シーン＞
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「多く人たちの記憶、感情に触れた」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「心なんて目に見えるものではないと当機は思い始めた」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「プライズやデータでもない」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「ただ感じればいい――だとしたら」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機にも、他の皆にも――」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            SG+3&gt;=10 （判定：記憶術） (SG+3@12#3&gt;=10) ＞ 3[1,2]+3 ＞ 6 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            恋糸とともに奥義破りを行う
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            火達磨により逆凪、接近ダメージ
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            RCT ランダム分野表(6) ＞ 妖術
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号(9) ver3.2 ] 妖術 : 1 → 0
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「クッ……零号、止まって」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「――命なんてどうでもいいと思ってたのに」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「サラの言葉が頭から離れない」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            【春雷】しゅんらい→玖号 
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG&gt;=17 （判定：縄術） (SG@12#2&gt;=17) ＞ 11[5,6] ＞ 11 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット2
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            接近戦攻撃をツバキくんに
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            SG@12#2&gt;=5 （判定：呪術） (SG@12#2&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            SG&gt;=12 （判定：結界術） (SG@12#2&gt;=12) ＞ 6[2,4] ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] 妖術 : 1 → 0
+      </div>
+      <div class="soma soma_ikari right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ソーマの……仇っ！」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「仇：敵対勢力の無力化を確認」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ツバキの身体が地に伏せる
+      </div>
+      <div class="kp LtoR-early">
+      
+            既にもう、立ち上がる力もない
+      </div>
+      <div class="kp LtoR-early">
+      
+            ここで、これが終わりなのだろうか
+      </div>
+      <div class="hatena left">
+      <span>？？？</span>
+      <p>
+      
+            「――――」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            頭に響くこの声は――
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「――雷ツバキとして人生を楽しんで」
+      </p>
+      </div>
+      <div class="sara left">
+      <span>雨宮 沙羅(ｱﾏﾐﾔ ｻﾗ)</span>
+      <p>
+      
+            「希望だけは、捨てないで」
+      </p>
+      </div>
+
+      <div class="kp LtoR-early">
+      
+            ツバキ　脱落
+      </div>
+            <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「恋糸、これ以上は――」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機達に蜉蝣型にも心はあるのでしょう？」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「当機は零号を――失いたくない」
+      </p>
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「誰にだってあるの…。たとえ機械でも……」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「そう…だね」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「きっと、これ以上の争いはソーマが嫌う争いだもの」
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「ありがとう」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……ただ、ソーマならそういうと思うから」
+      </p>
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ソーマ……」
+      </p>
+      </div>
+      <div class="soma right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            脱落で
+      </p>
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            ツバキを優しく見つめる
+      </p>
+      </div>
+
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            戦果：ツバキに対して【共感】を獲得
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            戦闘終了
+      </div>
+      <div class="kp LtoR-early">
+      
+            クライマックスフェイズ終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg12"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            ED
+      </div>
+      <div class="kp LtoR-early">
+      
+            研究所は激しい戦いの末、崩壊し犠牲者の有無もわからない
+      </div>
+      <div class="kp LtoR-early">
+      
+            これならば蜉蝣型の生死を誤魔化すことも可能だろう
+      </div>
+      <div class="kp LtoR-early">
+      
+            気絶した２人を抱えて、荒廃した花畑に出る
+      </div>
+      <div class="kyu_gou left">
+      <span>玖号</span>
+      <p>
+      
+            「にる、あなたはいいの？」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「Q：問題の意図が不明」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「博士の望みは、当機を破壊することで叶う」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「汲：……当ユニットは蜉蝣型玖号機の支援を【使命】としている」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「それ以上の命令はない」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「――そう」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「貴方も当機の”お気に入り”に入れておくね」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            ｷｭｳｩﾝ……
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「う……いってぇ……あれ、ここは――サラのラボじゃない……？」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            目の前の玖号を見つける
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「――ッ　……って、オマエ、オレのココロノカケラ奪わなかったのかよ」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「必要ないと判断した」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「ハッ、お人よしなんだな。……ってそうか、サラが作ったココロの半分、オマエも持ってるんだもんな」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「これは便宜上そうよばれているだけ、きっと心に形なんてない」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「そっか……もう持ってるモノをずっとオレは探してたのかな」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「なあ……オレはこっからどうしたらいいと思う？」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「どうしたらいい？」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「夢を持つの」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「人生を謳歌するんでしょ？」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「人は夢を持つことで希望や光を見出すことができる」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「――もしまだ何も見えないというのなら、当機が手伝ってもいい」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「……ヘヘッなんか、やっぱりサラに似てるな、オマエ」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「オマエ……じゃないや、キュウって、呼んでもいい？」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「キュウキュウうるさいのが増えそうだな……」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「仇：当ユニットの侮辱を検知、訂正を要求」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「それも悪くないか」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「キュウの……オレの姉さんたちでもあるんだけど……本当にごめん」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「謝ってすむことじゃないってわかってるけどよ……」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「姉さんたちが見れなかった景色を、キュウと一緒に見ていきたいって思ってるから」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「蜉蝣型は平和主義が多い、文句をいう者なんて……壱号は言うかも」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「でも壱号は……誰より仲間思いだからきっとこうする。あなたもともがらだから」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「サラらしい……いや、オレ達家族らしい、なんだな」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「っと　そろそろイニ起こさなきゃ。イニイイイイイ起きろ～～～！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「……ん、うぅ……ここは？」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「ツバキ！無事だったのか！！」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「戦いは…終わったのか…？」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「うん……キュウが助けてくれたんだ」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「そうか…」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「ツバキ、すまなかった。俺はお前を晴峰と重ねてしまっていた…お前はお前なのに…」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「玖号、ツバキを殺さないでくれてありがとう…」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「君も雨宮が残した大切なものだというのに…」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「礼は不要」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「貴方の記憶。いや、心に触れなければ――」
+      </p>
+      </div>
+      <div class="kyu_gou kyu_gou_Hi left">
+      <span>玖号</span>
+      <p>
+      
+            「当機も気づけなかったと思う」
+      </p>
+      </div>
+      <div class="tubaki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「オレの中には晴嶺 悠稀の記憶も残ってる。きっとサラがいれたんだ。だから――」
+      </p>
+      </div>
+      <div class="tubaki tubaki_egao right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「ありがとう。そんで、先に死んでごめんな、仁」
+      </p>
+      </div>
+      <div class="tubaki tubaki_naki right">
+      <span>雷 ツバキ</span>
+      <p>
+      
+            「今度はちゃんと、お前のところに帰ってきたよ」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「晴峰……雨宮。俺も前を向いて生きていかないとな、あいつらの為にも……」
+      </p>
+      </div>
+      <div class="jin left">
+      <span>八雲 仁</span>
+      <p>
+      
+            「ツバキ、ありがとう」
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg9"></div></div>
+    <div class="log">
+    
+      <div class="kp LtoR-early">
+      
+            ――一方そのころ
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ごめんね、ソーマ」
+      </p>
+      </div>
+      <div class="soma soma_namida right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「殺すことは……壊すことは出来なかった」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「ソーマはきっと争いを望んでないから、これが正しかったんだよね？」
+      </p>
+      </div>
+      <div class="soma soma_tozime right">
+      <span>蒼馬 恋糸</span>
+      <p>
+      
+            「……もう、"鬼燈" 恋糸に戻っても大丈夫かな？」
+      </p>
+      </div>
+      <div class="hozuki soma_namida right">
+      <span>鬼燈 恋糸</span>
+      <p>
+      
+            「でも、ソーマの残した…」
+      </p>
+      </div>
+      <div class="hozuki soma_namida right">
+      <span>鬼燈 恋糸</span>
+      <p>
+      
+            「蒼痲ノ宮はずっとずっと一緒だよね」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg13"></div></div>
+    <div class="log">
+    
+      <div class="nirubana left">
+      <span>ニルバーナ</span>
+      <p>
+      
+            「――――――」
+      </p>
+      </div>
+      <div class="nirubana left">
+      <span>ニルバーナ</span>
+      <p>
+      
+            「ﾋﾟｰ――ー」
+      </p>
+      </div>
+      <div class="nirubana left">
+      <span>ニルバーナ</span>
+      <p>
+      
+            「莨榊捷謾ｯ謠ｴ蝙狗峡遶玖ｻ碁％隕∝｡槭ル繝ｫ87繧医ｊ轣ｫ蜉帶髪謠ｴ隕ｳ貂ｬ讖溘↓繧倶ｸ我ｹ昴∈」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「Go；伍号支援型独立軌道要塞ニル87より火力支援観測機にる三九へ」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「期；蜉蝣型玖号機より得られた感情データの提出を要請」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「究：にる三九からニル87へ」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「今回獲得した感情及びログデータを送信」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「御；承認」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「――――――」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「誤；にる三九へ、データ改竄疑惑を提起する」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「誤；送信されたデータには多くの矛盾が見られる」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「誤；戦うために作られながら、争うことを嫌う者達」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「誤；真相を知り死を望みながらも生き続ける者」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「誤；心を望み、その機関を得る機会を得ながらも見逃す者」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「誤；復讐を望みながらも命を取り返さない者」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「誤；特定生命の面影を追いかけ、しかしそれを別の個体として定義しなおした者達」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「冴；このアンチノミーが改竄でないと？」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「究：ニル87へ解答を提起」
+      </p>
+      </div>
+      <div class="niru39 left">
+      <span>にる-三九</span>
+      <p>
+      
+            「感情によって行動するキャラクター達の行く先はデータによる演算は困難」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「――――――」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「悟；承認」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「互；矛盾し、絶えず相反する意思を持ち、迷い、淀み。なお生き続ける」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「悟；それが完全にして不完全な機能」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「”ココロ”」
+      </p>
+      </div>
+      <div class="niru87 right">
+      <span>ニル87</span>
+      <p>
+      
+            「悟；まさしくこれは、これこそが」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            「いのちにふさわしい」
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――――――――――――――――――――――
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg1"></div></div>
+    <div class="log">
+    
+      <div class="GM right">
+      <span>GM</span>
+      <p>
+      
+            功績点
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 玖号 ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 鬼燈 恋糸 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 八雲 仁 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 雷 ツバキ ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="GM right">
+      <span>GM</span>
+      <p>
+      
+            PC1:3<br>PC2:5<br>PC3:5<br>PC4:6<br>
+      </p>
+      </div>
+      </div>
+
+<br>
+</div></div>
+<script src="../logCon_Respon.js"></script>
+</body></html>
