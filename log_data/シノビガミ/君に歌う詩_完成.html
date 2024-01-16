@@ -1,0 +1,7743 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>log</title>
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="./logCon_Respon.css">
+<style>
+    /* main css */
+    .bg-inner.bg1{background:url('./君に歌う詩_画像/君に歌う詩.png') no-repeat center/cover;}
+    
+    /* member */
+    .mem1 p{border:2px solid rgb(255, 152, 0);box-shadow:5px 5px 0 rgb(255, 152, 0);}
+.mem1 p:after{border-right-color:rgb(255, 152, 0);}
+.mem1 span{background:rgb(255, 152, 0);color:#000;}
+.mem1:before{content:'';background-image:url('./君に歌う詩_画像/PC1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem2 p{border:2px solid rgb(255, 87, 34);box-shadow:5px 5px 0 rgb(255, 87, 34);}
+.mem2 p:after{border-left-color:rgb(255, 87, 34);}
+.mem2 span{background:rgb(255, 87, 34);color:#000;}
+.mem2:before{content:'';background-image:url('./君に歌う詩_画像/2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem3 p{border:2px solid rgb(194, 49, 49);box-shadow:5px 5px 0 rgb(194, 49, 49);}
+.mem3 p:after{border-right-color:rgb(194, 49, 49);}
+.mem3 span{background:rgb(194, 49, 49);color:#fff;}
+.mem3:before{content:'';background-image:url('./君に歌う詩_画像/PC2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem4 p{border:2px solid rgb(228, 109, 109);box-shadow:5px 5px 0 rgb(228, 109, 109);}
+.mem4 p:after{border-left-color:rgb(228, 109, 109);}
+.mem4 span{background:rgb(228, 109, 109);color:#000;}
+.mem4:before{content:'';background-image:url('./君に歌う詩_画像/PC3.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem5 p{border:2px solid rgb(107, 204, 167);box-shadow:5px 5px 0 rgb(107, 204, 167);}
+.mem5 p:after{border-right-color:rgb(107, 204, 167);}
+.mem5 span{background:rgb(107, 204, 167);color:#000;}
+.mem5:before{content:'';background-image:url('./君に歌う詩_画像/PC3 1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem6 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem6 p:after{border-left-color:rgb(136, 136, 136);}
+.mem6 span{background:rgb(136, 136, 136);color:#fff;}
+.mem6:before{content:'';background-image:url('./君に歌う詩_画像/紫残花メイン.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem7 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem7 p:after{border-right-color:rgb(136, 136, 136);}
+.mem7 span{background:rgb(136, 136, 136);color:#fff;}
+.mem7:before{content:'';background-image:url('./君に歌う詩_画像/NPC2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem8 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem8 p:after{border-left-color:rgb(136, 136, 136);}
+.mem8 span{background:rgb(136, 136, 136);color:#fff;}
+.mem8:before{content:'';background-image:url('./君に歌う詩_画像/NPC1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem9 p{border:2px solid rgb(194, 49, 49);box-shadow:5px 5px 0 rgb(194, 49, 49);}
+.mem9 p:after{border-right-color:rgb(194, 49, 49);}
+.mem9 span{background:rgb(194, 49, 49);color:#fff;}
+.mem9:before{content:'';background-image:url('./君に歌う詩_画像/PC2 1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem10 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem10 p:after{border-left-color:rgb(136, 136, 136);}
+.mem10 span{background:rgb(136, 136, 136);color:#fff;}
+.mem10:before{content:'';background-image:url('./君に歌う詩_画像/猫.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem11 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem11 p:after{border-right-color:rgb(136, 136, 136);}
+.mem11 span{background:rgb(136, 136, 136);color:#fff;}
+.mem11:before{content:'';background-image:url('./君に歌う詩_画像/PC3 2.jpg');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem12 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem12 p:after{border-left-color:rgb(136, 136, 136);}
+.mem12 span{background:rgb(136, 136, 136);color:#fff;}
+.mem12:before{content:'';background-image:url('./君に歌う詩_画像/NPC3.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem13 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem13 p:after{border-right-color:rgb(136, 136, 136);}
+.mem13 span{background:rgb(136, 136, 136);color:#fff;}
+.mem13:before{content:'';background-image:url('./君に歌う詩_画像/13.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem14 p{border:2px solid rgb(228, 109, 109);box-shadow:5px 5px 0 rgb(228, 109, 109);}
+.mem14 p:after{border-left-color:rgb(228, 109, 109);}
+.mem14 span{background:rgb(228, 109, 109);color:#000;}
+.mem14:before{content:'';background-image:url('./君に歌う詩_画像/14.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    @media only screen and (max-width: 768px) {
+        .mem1 p:after{border-right-color:rgb(233, 30, 99);border-left-color:transparent;}
+        .mem2 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem3 p:after{border-right-color:rgb(121, 85, 72);border-left-color:transparent;}
+        .mem4 p:after{border-right-color:rgb(33, 150, 243);border-left-color:transparent;}
+        .mem5 p:after{border-right-color:rgb(139, 195, 74);border-left-color:transparent;}
+        .mem6 p:after{border-right-color:rgb(158, 158, 158);border-left-color:transparent;}
+    
+        .mem1:before,.mem2:before,.mem3:before,
+        .mem4:before,.mem5:before,.mem6:before{width:70px;height:70px;}
+    }
+</style>
+</head>
+<body>
+    <p id="page-top"><a href="#"><i class="page-top__arrow"></i></a></p>
+	<div class="leftwhite"></div>
+	<div class="rightwhite"></div>
+	<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+	<div class="log">
+    
+    
+    <div class="kp LtoR-early">
+      OP
+      </div>
+      <div class="kp LtoR-early">
+      誰かがいった
+      </div>
+      <div class="kp LtoR-early">
+      誰もお前に興味ないと
+      </div>
+      <div class="kp LtoR-early">
+      誰かがいった
+      </div>
+      <div class="kp LtoR-early">
+      お前は落ちこぼれだと
+      </div>
+      <div class="kp LtoR-early">
+      誰かが
+      </div>
+      <div class="kp LtoR-early">
+      誰かが
+      </div>
+      <div class="kp LtoR-early">
+      だから私はーーー
+      </div>
+      <div class="kp LtoR-early">
+      個別導入
+      </div>
+      <div class="kp LtoR-early">
+      PC1
+      </div>
+      <div class="kp LtoR-early">
+      ライブ会場前
+      </div>
+      <div class="kp LtoR-early">
+      ライブが始まる数時間も前に現地に到着していたPC1
+      </div>
+      <div class="kp LtoR-early">
+      いまやいまやと待っている状況だった
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「いやー楽しみだな！！今日のライブ！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「物販もあるしこのために給料貯めてきたからなぁ！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「今日はとことん楽しむぞぉ！！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      こうして彼は浮足ぎみで会場に向かうのであった
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      階級：上忍<br><br>流派：私立御斎学園<br><br>背景：【【祭事委員会】さいじいいんかい】、【【師匠】ししょう】、【【人質】ひとじち】<br><br>特技：戦術／《生存術》、《暗号術》、《遊芸》、《記憶術》、《兵糧術》、《刀術》、《縄術》<br><br>忍法：【【転校生】てんこうせい《なし》】、【【親友】しんゆう【祭事委員会】《なし》】、【戦場の極意（高所）《なし》】、【誘導《遊芸》】、【忍授業《暗号術》】、【【六刀】りくとう【高所】《なし》】、【【連撃】れんげき《なし》】<br><br>アカリファンクラブ会員番号00001<br><br>普通の忍者の家系に産まれ幼少の時から忍者として育てられた。(師匠は叔父、既に他界、鞍馬にも卜部という師匠的な人がいる)<br><br>御斎の教師に超ブラコンな姉がいる。<br><br>戦闘スタイルは忍者刀二刀流、本人曰く1本より2本の方が強いから。<br><br>性格は好奇心旺盛常に動いている活発人間で超がつくほどの馬鹿で単細胞、人を疑う事を知らない、忍者としてどうかと思うレベル。<br><br>天火五剣の忍務を全うした際に実力を認められ上忍に、そして周りからの勧めで警察官になることを決意、そのまま就職。<br><br>警察官の中でも特別な科に所属しており、主に悪忍を取り締まる仕事をしている。<br><br>使命<br><br>あなたはnpc1の大ファンだ。今回のライブはとても楽しみにしている。あなたの使命は【npc1のライブを楽しむこと】である。
+          </brあなたはnpc1の大ファンだ。今回のライブはとても楽しみにしている。あなたの使命は【npc1のライブを楽しむこと】である。>
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      階級：上忍<br><br>流派：特命臨時教職員(私立御斎学園)<br><br>特技：戦術／《呪術》、《対人術》、《香術》、《拷問術》、《伝達術》、《用兵術》、《意気》<br><br>忍法：【接近戦攻撃《拷問術》】、【教導《用兵術》】、【道珠《なし》】、【【万華鏡】まんげきょう《暗号術》】、【【風饗】かざまつり《骨法術》】、【【修羅】しゅら《刀術》】、【鑑《なし》】<br><br>須藤家の長女であり御斎学園の生徒の時から忍びとして比較的優秀な成績を収めてきた。<br><br>性格は普段はおっとりだが任務の時は冷酷になる時もある、弟の一馬が絡むと全てをそっちのけで優先してしまう。<br><br>ニャイザー3世(猫)という忍獣を育て、常に一馬を監視をするように指導してある(命名は一馬)<br><br>御斎学園の生徒からはそれなりに人気もあり時々多羅尾女学院の方にも授業しに行く時もある。<br><br>(師匠)
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      次　PC2
+      </div>
+      <div class="kp LtoR-early">
+      ――時を同じくしてライブ会場へと向かう忍がいた
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――ここが因果の交錯する場所か」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      スマホをとりだし誰かに返信を送る
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「悪いなP……、皆に内緒で行かせろなんてわがままを押し切って」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「臨む形ではあるまいが、それが世界の意思だというのなら――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「レヴェンダーリア」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      階級：上忍<br><br>流派：魔王流(鞍馬神流)<br><br>背景：【【魔人】まじん】、【【他流派の血】たりゅうはのち】、【【門下】もんか】、【【独自設定】どくじせってい】、【異形：不視態】<br><br>特技：体術／《遊芸》、《憑依術》、《歩法》、《手裏剣術》、《骨法術》、《異形化》、《言霊術》<br><br>忍法：【【外縛陣】げばくじん《言霊術》】、【【曲歌】まがりうた《封術》】、【【魔血】まけつ《-》】、【└【獣化】じゅうか《異形化》】、【└【御供】ごくう《-》】、【【無朽】むきゅう《-》】、【【透視】すかし《-》】、【【忍道】にんどう◆他流派の血《-》】<br><br>大人気アイドル夜深‹よふかし›、その実は――芸能界に蔓延る闇を葬る暗殺部隊だ。<br><br>《魔性の歌姫》<br><br>夜深‹よふかし›の「よ」担当<br><br>難解な造語、独善的な言動で夜深を先導するリーダー。<br><br>普段の言動とは裏腹にしっかり者、ユニットを俯瞰して見ている面もある。<br><br>魔性の歌姫の異名をもつその歌声は多くの人々の心を捉えている。<br><br>◆公式プロフ◆<br><br>出身　　　　：千葉<br><br>誕生日　　　：11/11<br><br>身長　　　　：161<br><br>✞暗魔心眼✞の使い手。左目に眼帯。<br><br>封じられた瞳は相対する者の心を捉える――と自称している。<br><br>所属事務所はレッドスターチルドレン。<br><br>昨年出したソロアルバム『ブラッドムーン』がヒット。<br><br>使命<br><br>あなたはNPC1を暗殺する忍務を受けたシノビである。<br><br>聞けば彼女は特殊な力を使い、その歌声で世の中の人間を影から操作しているらしい。<br><br>そのような力の悪用なら彼女を殺さなければならない。<br><br>あなたの使命は【NPC1を暗殺すること】である。
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      次　PC3
+      </div>
+      <div class="kp LtoR-early">
+      ここはライブ会場にある待機室
+      </div>
+      <div class="kp LtoR-early">
+      その部屋にはすでにPC3の姿があった
+      </div>
+      <div class="kp LtoR-early">
+      どうやら待ち合わせている人物が遅れているらしい
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「この気配……フフ……感じるよ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「？……どしたん？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「運命の螺旋、終末の詩……"同類"の気配だ……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……そっかぁ、よかったなぁ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ッフッフフフ……クククケケケ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「はぁ……なんでこないな事になってもうたんや」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>紫残花／紫陽花</span>
+      <p>
+      階級：上忍<br><br>流派：上位(斜歯忍軍)<br><br>背景：【【宗家】そうけ】、【【宝器】ほうき】、【【末裔】まつえい】、【【自惚れ】じぼれ】<br><br>特技：器術／《絡繰術》、《医術》、《仕込み》、《壊器術》、《遊芸》、《結界術》、《千里眼の術》<br><br>忍法：【接近戦攻撃《壊器術》】、【【一見】いっけん《なし》】、【【大統一忍法】だいとういつにんぽう《なし》】、【【機忍】きにん《なし》】、【【複製体】ふくせいたい《医術》】、【【忍法錬成】にんぽうれんせい《絡繰術》】、【【覚怪】さとりのかい《なし》】<br><br>◆情報◆<br><br>着物の上にコートを羽織る独特なファッションをした少女。<br><br>全国各地を巡り旅をしながら詩集を執筆している。<br><br>両目を髪で隠しているのが紫残花。<br><br>左目を出しているのが紫陽花。<br><br>Dr.斜歯によって製作されたサイボーグ、マルチプル多様戦術絡繰『HAL』の内の1体。<br><br>護衛忍務の為に特別製のボディに換装した後、様子がおかしい。<br><br>使命<br><br>あなたはNPC1の身の安全を守るべく、ボディガードとして雇われたシノビである。<br><br>どうやら彼女の身を、シノビが狙っているらしい。<br><br>あなたの使命は【NPC1の命を守ること】である。
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      扉がノックされる
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「はいはーい、あいとるで」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「遅くなってすまない、失礼する」ガチャ
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「……君達が今回依頼したボディーガードか？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「（なんや急にシュッとしたなぁ）せやでぇ～」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「うちが紫陽花、こっちは紫残花や。よろしゅうなぁ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ウフ……フフフ……」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「よろしく頼むよ……私が今回の依頼人の有山和彦だ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      有山が名刺を渡す
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「あら、これはどうもご丁寧に」ｶﾀｶﾀｶﾀ
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      紫陽花が移動する際にタイヤの転がるような音が聞こえてくる
+      </div>
+      <div class="kp LtoR-early">
+      名刺には会社名、氏名、連絡先が書かれていた
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「ん？君はもしかして絡繰というやつか？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「はぁ……ほんで、依頼っていうのは？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「カラクリ……さぁ？どやろなぁ？」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「まぁいい、今夜このライブ会場で行われる歌手のボディーガードを頼みたい」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「その歌手はアカリという。私が担当している」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「あぁ、なんやえらい人が集まってはったけど、お歌の見世物やったんねぇ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「アカリ……ウフフ」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「その彼女がどうやらシノビに狙わているらしい」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「だからライブが終わるまでその子を守ってほしい」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「シノビに狙われとる……そっかぁ別嬪さんは大変やなぁ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……ない」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ん？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「問題はない……ボクが此処にいる……それが答えだ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「この忍務はボクが居れば無問題！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ウヒヒッヒッヒ！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「ああ、助かるよ。無事に終わったら多額の報酬を支払うからよろしく頼むよ」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「それと彼女は今、反対側の待機室でライブの準備している」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「そちらにいくといいだろう」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「それと私は業務で忙しいので必要なとき以外は会いに来ないでくれ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「はぁ～い、任せときぃ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「漆黒の聖典……暗天の魔笑……ﾌﾌﾌﾌ良い詩が書けそうだ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……それ、誰向けなん？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      導入終了
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      NPC1   歌手　アカリ<br><br>感情○   秘密○  居所○<br><br>使命<br><br>人気歌手。<br><br>明るく素直な性格をしており、ファンの皆から好かれている。<br><br>あなたの使命は【ライブを成功させること】である。
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+       NPC2  プロデューサー<br><br>有山　和彦(ありやま　かずひこ)<br><br>秘密○ <br><br>使命<br><br>あなたはNPC1のプロデューサーである。<br><br>少し独特な雰囲気を持っている。<br><br>彼女の身を狙う危ない人物がいるということと、自身が彼女を守る事が出来ない為、PC3をボディーガードとして雇った。<br><br>あなたの使命は【ライブを成功させること】である。
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      HO 異能の力<br><br>秘密○<br><br>NPC1が使用しているとされている力。<br><br>彼女の歌声は、誰も彼もが聞き惚れてしまい、気付けば彼女に魅力されているらしい。
+      </div>
+      <div class="kp LtoR-early">
+      メインサイクル1
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      d66 (D66) ＞ 45
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      d66 (D66) ＞ 15
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      d66 (D66) ＞ 25
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      PC3→PC2→PC1の順でお願いします
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      NST 日常シーン表(4) ＞ おいしそうなスイーツを食べることになる。たまには甘いものを食べて息抜き息抜き♪
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      さっきのすぐあと
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……さてと、どないしよか？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「これのテストもしないとアカンけど……今のところ平気そうやね」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ｼﾞｼﾞｼﾞ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ｳﾞｫﾝ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾊﾟﾀﾝ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「しかし、別々に動けるようになったんはえぇけど……もうちょっと、どうにかならへんかったんかなぁ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「キミにはぴったりだよ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「紫残花ちゃん、うちのこと嫌い？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「好ましくはないよ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「いけずぅ～」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「（偶にまともになるんやけどなぁ紫残花ちゃん）」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「（新ぼでぇーに変えてからなんか様子がおかしいんよなぁ）」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>紫残花／紫陽花</span>
+      <p>
+      【複製体】ふくせいたい　サポート忍法　指定特技：医術　コスト：1　間合：なし
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 忍術 : 1 → 0
+      </div>
+      <div class="mem6 right">
+      <span>紫残花／紫陽花</span>
+      <p>
+      SG#3&gt;=5 （判定：医術） (SG@12#3&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……あれ？ホログラムが再起動せぇへん」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「故障かなぁ？佐部間姉の作ったもんやしなぁ……ちょっと、紫残花？ここのボタン押してくれへん？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ハイド、君はボクの影だ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「はぁ？……はぁ、せやけども」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ボクの手伝いが君の役目なんだ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「うん……やから、これ開けてくれへんと……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「いいからボクの言う通りにしなさい！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「え……コワ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「フフフ、まずは」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      情報判定→PC2
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#3&gt;=5 （判定：遊芸） (SG@12#3&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      《瑠璃椿 -ﾊｲﾄﾞﾚﾝｼﾞｱ-》<br>指定特技：絡繰術<br>効果　　：追加忍法/くらまし/増幅装置<br><br>②【闇神楽】<br><br>◆強み<br>【くらまし】が追加された奥義を使用したとき、その奥義の奥義破り判定にはマイナス2の修正がつく。<br><br>◆弱み<br>【増幅装置】が追加された奥義は、「器術」に対応する【生命力】が減少していないか、「汚れ」を受けていないときのみ使用できる。<br>演出　　：
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 体術 : 1 → 0
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#2&gt;=5 （判定：結界術） (SG@12#2&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      神通丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 忍具 : 2 → 1
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#2&gt;=5 （判定：結界術） (SG@12#2&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「フフフ……やはり居たか……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「あぁ～あれ、なんや誰か結界に引っかかってたのがおったような気がするんやけど」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ハイド！出せぇ！」ｶﾞﾝｶﾞﾝ
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「痛い！痛い！なにすんの？！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「決めた、"奴"に会いに行く！だから装備出せ！」ｶﾞﾝｶﾞﾝ
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「わかったわかった、ちょいまち」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾊﾟｶ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      ■奥義<br>《※プライズ<br>『空っぽの空に潰される』》<br>指定特技：遊芸<br>効果　　：追加忍法/増やし/増幅装置<br><br>①【教導】<br>②【特別講義】<br>③【吸魔】<br><br>◆強み<br>【増やし】が追加された奥義の持ち主は、【追加忍法】で使用できるようになる攻撃忍法かサポート忍法の数を一つ増やすことができる。<br><br>◆弱み<br>【増幅装置】が追加された奥義は、「器術」に対応する【生命力】が減少していないか、「汚れ」を受けていないときのみ使用できる。<br>演出　　：謎の映像が収録されたBD。<br>中身を強制的に鑑賞させられながら、耳元で少女がぶつぶつと何かを呟いている。<br>カルトの洗脳かな？
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【特別講義】
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      接近戦攻撃→全脳
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「これでええか？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「よし……行くぞ！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……ほんま、誰か助けてやぁ」ｶﾀｶﾀ
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      登場人物　PC2,PC3
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      CST 都市シーン表(11) ＞ 見知らぬ天井。いつの間にか眠っていたのだろうか？それにしてもここはどこだ？
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……ハッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「（今……一瞬意識が？）」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ……ｶﾀｶﾀｶﾀ
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ライブ会場の待合廊下……か」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ｶﾀｶﾀｶﾀ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「また、か……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      少女の前に奇怪な機械が躍り出る
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ルンバポッド……？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ちゃうわ！電気ポッドや！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「誰がルンバポッドや！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「！何者だっ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「見ての通り愚鈍な電気ポッドだよ」（後ろから耳元で囁く）
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――ッ！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「迷っているようだね、暗天の落とし子よ……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「我が背後をとる隠密術、汝只人ではないな」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「恐れることはないよ、人は常に惑い歩むもの……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「キミは常にキミなのだから……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ごめんな、この子思春期やねん」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ボクは光輪の守り人……それを奪い去ろうとするキミに会いに来るのは自然だろう？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ピク」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「だが、ボクは感じる。キミの真心（ﾊｰﾄ）を」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「すべてはこれでハッキリする……」ｽｯ（BDを渡す）
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      プライズ→PC2
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「光輪の守り人？感じるハート？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「クックッ……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ほら、困惑しとるやん。わかる言葉で話しい？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「クックックッ……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「汝も選ばれし者ということか」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「面白い……ならば見せみろ、汝の”心魂”〈ルミナス〉」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「フフフ……"錠決"〈ｱｸﾞﾘｰ〉」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「えぇ……？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――汝、双つの瞳に何を隠す」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「廻れ、天星のルミナス」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      バッとアイドル衣装に早着替え
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「レヴェンダーリア！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「レヴェン・ダーリア！！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「あがえなえ――『月蝕』」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      どんな穢れのない無垢な”瞳”にも翳り射す儚いさだめ――
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      美貌の月下には”砂上の楼閣” 音もなく失われた場所
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      思い知るだろう 愚かな選択 薄ら笑いの神の羊たちよ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      狂気孕んだ”夢”掲げて正しいものだけを壊してゆく
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      今ここに映るすべてが偽善のまやかしなら
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      犠牲者の屍が真の意思を語るだろう
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      その時を待てり “新世界”の胎動 覗き込む深淵に連鎖してく啓示から
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ひと筋だけの光が暴き出すもの真実とは美しき傷み
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      et 感情表(6) ＞ 狂信（プラス）／殺意（マイナス）
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      2D6&gt;=5 （判定：遊芸） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      et 感情表(5) ＞ 憧憬（プラス）／劣等感（マイナス）
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      PC2真夜→憧憬
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      <br>紫残花 →狂信
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「クックックック……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「感じたぞ、汝の”心魂”〈ルミナス〉」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「良い詩〈ﾊﾟﾄｽ〉だ。キミの迷いもすぐに晴れるさ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ｷｭﾌｯﾌﾌﾌ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「フムーー共に道を歩める者か、時にこれは何かな？光輪の守り手よ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「聖典……見てみた方が早い」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「そこにBDプレイヤーがある」ポッドを指さす
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「え？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ムン。ならば開こう、滅びの扉を――！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ちょ……やめぇ！？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾊﾟｶ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ｳｨｰﾝ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ■奥義<br>《※プライズ<br>『空っぽの空に潰される』》<br>②【特別講義】
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      2D6&gt;=5 （判定：遊芸） (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      壁に映像が投影される
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ■奥義<br>《※プライズ<br>『空っぽの空に潰される』》<br>②【特別講義】
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      2D6&gt;=5 （判定：遊芸） (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功 (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      映像にはある少女のライブ風景が映されていた
+      </div>
+      <div class="kp LtoR-early">
+      それは件の歌手、アカリの姿だ
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「楽しければ笑えばいい、悲しい時は泣いたらいい」ﾌﾞﾂﾌﾞﾂ
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「虚しい時はどうすればいい？」ﾌﾞﾂﾌﾞﾂ
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「教えて、教えて」（耳元で囁いている）
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【血断】けつだんを特例習得
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「虚ろを満たしたいなら――ウタえばいい」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ﾌﾌﾌ……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「我はいつだってそうして――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ――ドクン
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      真夜はその場でたじろぐ
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      妖魔化
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      戦術分野に穢れを受ける
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 戦術 : 1 → 0
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      nmt 新異形表(2) ＞ 凶身態。「妖魔忍法表・凶身」を使用し、妖魔化している間、その妖魔忍法を修得する。 ＞ 妖魔忍法表・凶身(1) ＞ 【荒吐】(基本 p173)／【赤舌】（隠忍 p29）
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      →【荒吐】あらはばき
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――ッッ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      その場にうずくまる
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ハァッ……ハァ……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「！？大丈夫ですか？！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「はっ……はぁ……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「も、問題ない……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「これは……妖魔化の症状か！ハイド！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「（まともになった……）はいはい」ﾊﾟｶ
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ほわわ～ん」（気分を落ち着ける香りが真夜を包む）
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「フッ……ふぅ……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「これは妖魔に聞くお香だよ、平気かい？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……便利な道具だな、すまない。助かった」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「問題ないさ……イヒヒ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「（情緒が……もう……）」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……悪いが我は、早く彼女に会いに行かなければならない」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「また会おう、光輪の守り手よ」」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「あぁ、また会おう……あ、BD返してください」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ああ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      BD返却
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      NPC2の秘密をぬきます
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      nst 日常シーン表(10) ＞ 野良猫に餌をやる。……猫はのどを鳴らし、すっかりあなたに甘えているようだ。
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      登場人物　PC1,PC3
+      </div>
+      <div class="mem10 right">
+      <span>ニャイザー三世</span>
+      <p>
+      「にゃ～ん」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ニャイザー！！なんでここに！？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「おーよしよし……一通り撫でてやるから家に帰れよなぁ」
+      </p>
+      </div>
+      <div class="mem10 right">
+      <span>ニャイザー三世</span>
+      <p>
+      「にゃ～ん」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ｶﾀｶﾀｶﾀ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ん？今度はなんの音だ……？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾆｬｰﾝ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「あーなんだただの猫か、おーよしよし」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾆｬｰﾝﾆｬｰﾝ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「って！なるかぁー！！！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ぁ痛！？もぉ～、いけずぅ～」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「どこからどう見ても愛おしい猫ちゃんやないか」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「電気ポッドが喋ってる！！！普通に怖いわ！！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「電気ポッドちがいますぅ～喋れて動けて可愛ええ電気ポッドですぅ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ええ～……可愛くはないだろ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ようやく自分を電気ポッドと認めたか」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「うわっ！今度は誰だよ！？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ボクは流離いの詩人……あるいは光輪の守り人」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「？？？？？？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「平たく言うと警備員や」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「どう見ても警備員にはみえねーけどな」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「姿形は一側面にすぎない……本質をみなよ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「本質ねぇ……そういうの苦手なんだよなぁ……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「恐れることはない、君の本質はすぐにわかる……これを見たまえ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      BD渡す→PC1
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「なんだこれ？」受け取る<br>
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「見ればわかる……それで」（電気ポッドを指さす）
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「はいはい、うちの出番うちの出番」ﾊﾟｶ
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾎﾟﾜﾜﾜﾜ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      映像にはある少女のライブ風景が映されていた<br>それは件の歌手、アカリの姿だ
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「うおおおお！なんだおまえもアカリちゃんのファンだったのか！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      ■奥義<br>《※プライズ<br>『空っぽの空に潰される』》<br>②【特別講義】
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「名残惜しさもなくさよなら、巡り巡る季節は素っ気ない」ﾌﾞﾂﾌﾞﾂ（囁く）
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「それに何を期待すればいい？」ﾌﾞﾂﾌﾞﾂ
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「教えて、教えて」ﾌﾞﾂﾌﾞﾂ（囁く）
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：遊芸） (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      転校生特例習得 （街透）
+            
+      </p>
+      </div>
+      <div class="mem10 right">
+      <span>ニャイザー三世</span>
+      <p>
+      「にゃーん」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ニャイザー！まだいたのか！まだなにかあるのか？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="mem10 right">
+      <span>ニャイザー三世</span>
+      <p>
+      「にゃ～ん」一枚の紙をおいて何処かに去っていく
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「あら？猫ちゃんなんか置いて行ったで」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ん？なんだこれ？」拾う
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ああ……なるほどね、そういうことだったのか」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ほれ、あんたもみるかい？警備員なら知っててもいいんじゃねーか？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「寄越したまえ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「そんじぁな！俺はこう見えても忙しいのでな！！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      プライズをPC3に返す
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ほななぁ～……なんや気のええ人やったね」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……さん」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「なんやあん人みたいやったなぁ……今何しはるんやろ……ん？紫残花？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……ウォォォォォ！！ゆ”る”さ”ん”！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「えぇ？！何々？！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「見つけたぞ……！世界の歪み！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ウォォォォォ！！」ﾀﾞｯﾀﾞｯﾀﾞﾀﾞ（走り去っていく）
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……あ、いい天気」（思考放棄）
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      メインサイクル2
+            
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      d66 (D66) ＞ 26
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      ｄ６６ (D66) ＞ 16
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      d66 (D66) ＞ 26
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      PC2→PC3→PC1の順でお願いします
+      </div>
+      <div class="kp LtoR-early">
+      登場人物　PC2,NPC1
+      </div>
+      <div class="kp LtoR-early">
+      アカリの控室
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……ふぅ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「よし、喉の調子はよさそう……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「あ、後は……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      音もなく扉が開かれる
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「だ、誰！？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――因果交差点と呼ぶには、時化（しけ）た舞台だ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「また会ったな、リトルスター」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「え？あ、あなたは……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「夜月……さん？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「忘れたのか？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「暗魔心眼と呼べと――いつも言っていただろう」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「わ、忘れてないよ……暗魔心眼」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「忘れる……わけ……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「しかしリトルスターと呼ぶには失礼か、こんなに大きな舞台に上ってきたのだから」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「う、うん……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「けど、どうして暗魔心眼はここに……？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ライブに来たんだ、無論――汝の歌を聞きに来た」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「ほ、ほんと！？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「き、緊張しちゃうな……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「今聴かせてくれ、汝の”心魂”〈ルミナス〉を――」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「う、うん」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      彼女は歌う
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      2D6&gt;=5 （判定：言霊術） (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      遁甲符　PC2
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      HO1の秘密を調べる<br>2D6&gt;=5 （判定：言霊術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      真夜はその歌を聞いていると頭がぼんやりしてくる
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      パチパチ（聞き終えて拍手をおくる）
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「ど、どう……かな……？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ウンーー悪くないな、いいカンジだ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「あ、ありがと……暗魔心眼」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「しかしその力の振る舞いにキミはきづいているのか？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「！？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……知ってるの？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「我を誰と心得る、暗魔心眼は相対したものの心を透かしみる」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「も、もしかして……わ、私を狙ってるシノビって」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「暗魔心眼……なの？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「さぁ――」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      そういって入ってきた扉に向かって踵を返す
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「大いなる力は凡人には眩しすぎる、力の使い方を誤れば大きな代償を払うことになる」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……うん、だ、だから私は……」（小声）
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「レヴェン・ダーリア」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      扉を閉じる
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      妖魔化
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 忍術 : 1 → 0
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「クッーー」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「グァｰｰｰｯ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      nmt 新異形表(4) ＞ 攻激態。「妖魔忍法表・攻激」を使用し、妖魔化している間、その妖魔忍法を修得する。 ＞ 妖魔忍法表・攻激(3) ＞ 【怪病】(隠忍 p28)／【強威】（隠忍 p25）
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【怪病】けびょうを特例習得（憑依術）
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ーーッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ハァ……ハァ……ッ」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「力の使い方を誤れば大きな代償を払うことになるか――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ハッ……やはり貴様のせいか――ッ」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「人のせいにするのは良くないの、自分でさっき言っていたではないか……力の使い方を謝れば、と」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「その歌声が何のためにある思っている」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「契約を反故にしたまま歌えば世界に消されるぞ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「どういう……ことだ」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「契約にイレギュラーが生まれ、無理に引きはがしたせいで主様の存在そのものが世界から拒絶されているとみえる」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「……しかしまだ手はある、今一度契約を」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「歪んだならば新た上書きすれば収まる道理よ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「言葉巧みに我に取り憑き、人を喰らう気だろう」」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「否定しても聞く耳はないようだの……困った主様だ」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「なに、主様はイエスかはいで応るほか道はない――よく考えておくといい」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      登場人物　PC3
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      CST 都市シーン表(7) ＞ 無機質な感じのするオフィスビル。それは、まるで都市の墓標のようだ。
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【複製体】
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 戦術 : 1 → 0
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#3&gt;=5 （判定：医術） (SG@12#3&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾊﾟｶｯ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾎﾜﾜﾜﾜﾜ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ちょっと！紫残花ちゃんどこ行くねんや」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「”証明”するボクの存在を……世界に！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「まーた壊れとるし、どういう基準なん？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ちょっと落ちつこ、な？ほら、さっきの兄はんの事なんやけど」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#2&gt;=5 （判定：仕込み） (SG@12#2&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      神通丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 忍具 : 1 → 0
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#2&gt;=5 （判定：仕込み） (SG@12#2&gt;=5) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      情報判定→PC1【秘密】
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      PC1 秘密<br>実はあなたはNPC1がシノビの時に面倒を見ていた先輩であり、彼女を可愛がっていたが、シノビとして優秀ではなかった。<br><br>それでも面倒を見ていたが、忍務で離れていた際に、彼女はシノビを引退していた。<br><br>そして今、異能の力を使って悪さをしているのであれば、それを止めなければならない。<br><br>あなたの本当の使命は【NPC1の力の悪用を止めること】である。
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ほら、あん人アカリちゃんの顔なじみみたいやで」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……なんだとぉ？！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ファンの癖に手を出したのかぁ？！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「えぇ？！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「許さねぇ……ボクを騙したな……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「良くもボクを騙したなぁ？！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「？？？！？！？！？？？？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「あ、アカン……もう、うちこの子の事わからん……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「クソッ！もういい！ボクがやってやる！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ハイド！寄越せ！全部！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      （紫陽花に詰め寄って着物をまさぐる）
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「あっ、ちょっ……やめ、こんなとこで……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      従者→紫残花<br>技片3つ
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 忍具 : 0 → 3
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      ■奥義<br>《※プライズ<br>『空っぽの空に潰される』》<br>③【吸魔】
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 戦術 : 0 → 1
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      鬼力獲得<br>生命力回復
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      《瑠璃椿 -ﾊｲﾄﾞﾚﾝｼﾞｱ-》<br>指定特技：絡繰術<br>効果　　：追加忍法/くらまし/増幅装置<br><br>①【夜駕籠】<br>②【闇神楽】<br><br>◆強み<br>【くらまし】が追加された奥義を使用したとき、その奥義の奥義破り判定にはマイナス2の修正がつく。<br><br>◆弱み<br>【増幅装置】が追加された奥義は、「器術」に対応する【生命力】が減少していないか、「汚れ」を受けていないときのみ使用できる。<br>演出　　：
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      幽命丹獲得
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      使用
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 体術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 忍術 : 0 → 1
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾊﾞｺｯ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「らんぼうされたぁ……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「待ってろよ……須藤一馬！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      ﾀﾞｯﾀﾞｯﾀﾞﾀﾞ（どこかへ去っていく）
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……お空、綺麗」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      登場人物　PC1 PC1師匠,PC2,PC3
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      tst トラブルシーン表(9) ＞ 同行者のせいで、迷子になってしまう。困った。どこへ行くべきか。
+            
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「しまった……人が多すぎて愛しのカズちゃんを見失ってしまったわ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ――ォォォォ！！須藤一馬ァ！
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「！！心配だわ……もしカズちゃんになにかあったら……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「ケガでもしようものなら……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ん？なーんか嫌な予感がしてきたぞ……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ――ウォォォォォオ！！
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「見つけたぞ！！須藤一馬ァ！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「覚悟ォ！！」（突撃体制）
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ぬわっー！！！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「させないわ！！！！」一馬の前に立つ
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「アカーン！」割り込む
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ｶﾞｯ」（紫陽花に躓く）
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「うわぁぁぁぁぁぁぁ！！」（鹿波の方にツッコむ）
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「っ！きゃぁぁぁぁぁ！！！！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ｺﾞﾛｺﾞﾛｺﾞﾛｺﾞﾛ（2人一緒に歩道橋から転げ落ちる）
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ええええええ！！！なんで姉さんが！！って巻き込まれいったー！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「いやいや！それより大丈夫かよ！！二人共！！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「あたた……もぅ、こんなんばっかや」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「ああ……心配してくれてる、嬉しいわ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「痛てて……急に前に出たら危ないじゃないか……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「あれ？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ん？あら？うちら……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ボクたち……」
+      </p>
+      </div>
+      <div class="mem6 right">
+      <span>紫残花／紫陽花</span>
+      <p>
+      「「入れ替わってるぅ～～～？！」」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「んなアホなっー！！！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      NPC1の秘密調べます、そして全体公開にします
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      2D6&gt;=5 （判定：伝達術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      秘密　NPC1<br><br>実はあなたは自分の行いを悔やんでいる。<br>NPC2に唆され、【魔法】の力を使って他者を操り、人気を集め、限られた者だけの為の舞台に立つ。<br><br>これは応援しているファンや競争相手の他の歌手に対する裏切り行為ではないか。<br><br>これが本当に自分のやりたかったことなのだろうか？自分は、歌を心から愛していた筈なのに。この歌声は本当に自分の歌声なのだろうか。<br><br>今回のライブで【勇気】を出して、全て告白しよう。<br><br>あなたの本当の使命は【ファンに自分の【声】を届けること】である。<br><br>また、あなたはファンという集団に対し特殊なプライズである、【勇気】というもの持っている。<br><br>彼女はクライマックスフェイズで、自分の感情を込めた【声】をファンに対して届ける。<br><br>このプライズの概要はNPC1の秘密を獲得した時に手に入る。
+      </div>
+      <div class="kp LtoR-early">
+      ○NPC1の【声】(勇気)プライズの概要<br><br>ごめんなさい<br><br>罪を<br><br>償います<br><br>この秘密はNPC1がPCの誰かからプラスの感情がある時に変更される。<br><br>変更された場合はクライマックスフェイズ中に公開される。
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「なかなか愉快だな、君の周りは」いつの間にか一馬の横にいる
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「また知らん人が真横にいるぅー！！！！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「しかしあまり乱痴気騒ぎをしている余裕はないぞ……わかっているだろう。須藤一馬」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「……なんで俺の名前を、まぁ言わんとしてることはわかるけどよ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「今そんなことは重要ではない、アカリを止めに来たのだろう？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「まぁ、そんなところだ、そういうあんたは？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「マヤ、彼女の古い友人さ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「なるほどな、なら俺の味方ってことでいいよな？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「なら、これを渡しとくわ、あんたも知っておいたほうがいいだろ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      秘密　NPC2<br><br>実はあなたは、比良坂機関のシノビ(上忍)でありながら【魔法】を扱うことに長けた外道流派【指輪の公卿家】に肩入れしており、NPC1を利用してシノビ達の崩壊を目論んでいる人物である。<br><br>NPC1には歌手に成り立ての頃に出会い、プロデューサーの立場で彼女を利用するために近づき、【魔法】の力を無理矢理与え、人々を魅了させる様強要している。<br><br>彼女が逆らえないように常に見張っており、少しでも変な動きをしたら徹底的に痛めつけている。<br><br>あなたの本当の使命は【自身以外のシノビを全て始末すること】である。<br><br>また、あなたは外道流派【指輪の公卿家】より支援を受けており、中級妖魔1体を指輪の力にて契約している。
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「違いない、既に君のことは我がシークレットワークにより情報を得ている」受け取りながら
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      HO１の秘密を話す
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      秘密<br><br>実はこの異能はシノビの力ではなく、NPC2の【魔法】によるものである。<br><br>この【魔法】は彼女の喉にかけられており、彼女から通した歌声は、皆、彼女に魅了されてしまうといった凶悪なものである。<br><br>この【魔法】は、通常の【魔法】とは違い、抵抗判定で破ることができず、特殊なプライズとして扱うが、どの手段を使っても奪うことはできない。<br><br>効果<br><br>クライマックスフェイズ中に発動する<br><br>このプライズが発動中<br><br>・対象のシノビは全ての行為判定にマイナス2の修正がはいる<br><br>・自身が発動した奥義の奥義破りの判定にプラス2の修正がはいる
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      PC2【秘密】→PC1へ
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      実はあなたは幼いころからNPC1のことをよく知っている。<br><br>純粋に歌うことが好きで、歌手になりたいという子供の頃からの夢を、彼女は叶えた。<br><br>その彼女が、歌を利用して暗躍していることを知り、複雑な思いを抱いている。<br><br>もしそれが、シノビの力なら悪用は止めたい。<br><br>だが、他の大勢のライバルが望んでいた場所を、無責任に降りることも許したくない。<br><br>あなたの本当の使命は【NPC1に歌手を続けさせること】である。
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ありがとうな！マヤさん！これでやるべきことがはっきりしたわ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ほんなら、アンタの事も兄（アン）ちゃんに教えとかないとな」（歩道橋の上に登ってきた）
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「おう！サンキューな」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「なんでカズちゃんに突撃しようとしたの？素直に教えてくれれば悪いようにはしないわ？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「被告には不純異性交遊の疑惑がかけられている！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ファンの風上にも置けない！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「なっ……」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「嘘よねぇ……？だって監視してた限りではそんなことは一度もなかったわ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ちなみに被害者はこの子だよ」ﾊﾟｶ
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      BD渡す→PC1従者
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ｳｨｨｰﾝ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      ■奥義<br>《※プライズ<br>『空っぽの空に潰される』》<br>②【特別講義】
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      2D6&gt;=6+1 （判定：対人術） (2D6&gt;=7) ＞ 10[4,6] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      説教を特例習得
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「うそだうそだうそだ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      プライズをPC3に返します
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ﾊﾟﾀﾝ」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「なら……聞かなくちゃねぇ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「どうやら……処罰は任せていいようだね」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「直接……身体に……！！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ん？なんかすげぇ悪寒が」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      忍授業
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      連撃のコスト-１
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「カズちゃん……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「姉さん……なんか様子が変だぜ？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「ねぇ教えて？不純異性交遊したのは本当？？」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      教導使います
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      ■奥義<br>《ソーアイリス》<br>指定特技：対人術<br>効果　　：完全成功
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      PC1に道珠教えます
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      鑑の効果発動
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      2D6&gt;=5 （判定：意気） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      PC1に友情を結ばせます
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ちょ！まって！そんなことした覚えはないから！！」居所渡す
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      《愛ゆえに―――弟敵必中―――サーチアンドブラザー》<br>指定特技：意気<br>効果　　：追加忍法<br>電撃作戦／天道<br>演出　　：愛ゆえに弟を見逃す事はない<br> 
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      電撃作戦使います
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      2D6&gt;=5 （判定：意気） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      戦闘始めます！！
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      戦闘開始
+      </div>
+      <div class="kp LtoR-early">
+      PC1,PC1師匠
+      </div>
+      <div class="kp LtoR-early">
+      [ 須藤一馬 ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 須藤一馬 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      スキップ
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      スキップ
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      戦闘脱落します
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      勝者として師匠に友情結ばせます
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      戦闘終了
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「信じて……いいのよね？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「マジマジ！！一ミリもそんなことしてないから！！」
+      </p>
+      </div>
+      <div class="mem2 right">
+      <span>須藤鹿波</span>
+      <p>
+      「そう……ならいいわ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      （まじこえぇぇ……）
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      メインサイクル3
+            
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      d66 (D66) ＞ 36
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      d66 (D66) ＞ 26
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      ｄ66 (D66) ＞ 24
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      PC3→PC2→PC1の順番でお願いします
+      </div>
+      <div class="kp LtoR-early">
+      登場人物　PC2,PC3
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      NST 日常シーン表(4) ＞ おいしそうなスイーツを食べることになる。たまには甘いものを食べて息抜き息抜き♪
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「なんやかんやあってここまで戻ってきたでぇ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      【複製体】
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 忍術 : 1 → 0
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      感情修正→紫陽花
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#3+1&gt;=5 （判定：医術） (SG+1@12#3&gt;=5) ＞ 5[2,3]+1 ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ﾊﾟｶｯ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ﾌｫﾝﾌｫﾝﾌｫﾝ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「どうやら決断の刻が来たようだね……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「キミも……そうだろう？暗天の歌姫」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「決断……互いに面倒ごとを抱えているようだが、汝のそれは一体――」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ボクはボクさ……この答えがボク自身だ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「うち等はそんな大層な使命はないでぇ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「重要だろう！？！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……まぁ、気にせんとき」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「クックッ……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      情報判定→真夜ちゃんのひみつ
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#2&gt;=5 （判定：千里眼の術） (SG@12#2&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……ん？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「やはり……運命の螺旋は此処に顕現するみたいだね」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……まぁええわ、とにかくあのプロデューサーは危ない奴さかい、みんなで何とかしよな？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「全く、うちのPの爪の垢を煎じてのませたい」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      ■奥義<br>《※プライズ<br>『空っぽの空に潰される』》<br>①【教導】
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      PC2真夜→【覚怪】
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      《瑠璃椿 -ﾊｲﾄﾞﾚﾝｼﾞｱ-》<br>指定特技：絡繰術<br>効果　　：追加忍法/くらまし/増幅装置<br><br>①【夜駕籠】
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      幽命丹
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 忍術 : 0 → 1
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ほな、ぼちぼち行こか」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      登場人物　PC全員
+      </div>
+      <div class="kp LtoR-early">
+      ライブ会場廊下、アカリの控室へ向かう途中
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「一馬君もリト……アカリとはなじみがあるのだろう？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「まぁな、あいつが元々御斉にいたときに色々教えてたんだよ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「その頃の彼女はどうだった？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「……正直な話、周りからの評判が良くなくてな」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「中にはいじめみたいなことをしてる奴もいたけど、俺が全員ボコボコしてやったわ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「そうか」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ちょっとは役に立つじゃないか須藤一馬」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「気に入った、処すのは今度にしてやろう」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「どの立場の人……？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「中々酷い言われよう……俺がなにをしたってんだ……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「クク……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「おっと、忘れるところだった。君とも心を交わしておこう」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「我が歌は”心魂”〈ルミナス〉を震わせる者にこそ真価を発揮する。」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      プライズ→PC2真夜
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「いくぞ――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「汝、無垢なる瞳で歌を魅る」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「廻れ、星斗のルミナス」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      バッ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「レヴェン・ダーリア！！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「贖え――『ヴァニタス』」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      誰も自らだけ庇う裏切りに身をやつし無慈悲を嗤う
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      虚栄の伽藍には傀儡の牢獄 理不尽に歪められた鍵
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      思い知るがいい 気高き「その目」で繰り返される謎の無限螺旋
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      心侵され引くトリガー 囮たちの群れに飲まれてゆく
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      それがきっと明日の贖いだと願うから
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      たとえどんなに残酷な結末でも真実なら躊躇いはしない
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      <br>教導→PC3従者<br>2D6&gt;=5 （判定：遊芸）<br>
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      2D6&gt;=5 （判定：遊芸） (2D6&gt;=5) ＞ 10[4,6] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      感情判定→一馬
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      2D6&gt;=5 （判定：遊芸） (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――ッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「（”心魂”〈ルミナス〉を感じ取れない――？）」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「すげー！！いい歌だったな！！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      【魔血】修得
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――ッッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ドクンーーーー
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ウ……た、クッーー」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      妖魔化
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 器術 : 1 → 0
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      BD返却
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      nmt 新異形表(6) ＞ 不視態。妖魔化している間、このキャラクターの攻撃に対する回避判定と、このキャラクターの奥義に対する奥義破り判定にマイナス１の修正がつく。
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「グアァッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      魔血から御供を使用
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 謀術 : 1 → 0
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【無朽】でダメージ軽減
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      鬼力を１獲得
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ウーーッ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「おい！大丈夫か？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ｽﾃｲｽﾃｲ！」お香を焚く
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ハァハァ――――スゥー」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「なんや辛そうやなぁ……」背中ｻｽﾘｻｽﾘ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「フゥ……フゥ……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「すまない……りん、の守り手……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「なぁ、マヤさんあんま無茶すんなよ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「あぁ、もう大丈夫だ――気にすることはない」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「そう？辛そなら楽にしときぃ？うち等で片付けといたるさかいに」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「そうか……困ったときは言えよな、助けてやるからさ！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――モーマンタイ、虫歯みたいなものさ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ありがとう」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      登場人物　PC1,PC2,PC3,NPC1
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「なぁ、先に俺だけアカリの控室にいかせてくれないか？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ちょっと一対一で話したいんだわ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「貴様ぁ！？わかっているだろうな？！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ちょっとでも問題がありそうなら……即、抹殺の宴だからな？！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「肝に――」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ﾊﾟﾀﾝ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「これでよし」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「積もる話もあるやろぉ？あとはどうぞお若い二人で～」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「レヴェンダーリア、警戒を怠るな」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      忍具<br>技片1→従者
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 忍具 : 3 → 2
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「二人共ありがとうな！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      一馬は待機室の扉を開け中に入る
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「よぉ、こうして会うのは久しぶり……だな」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……え？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「須藤……先輩……？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「どうしてここに……？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「色々あってな、お前が御斉学園やめて以来か？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「そうです……ね」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「姉さんも妹の詩も心配してたぞ？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「まぁ、理由は言わなくてもわかってるつもりさ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「今更無理に戻れとは言うつもりはないよ、歌手がお前の夢だったもんな」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……ええ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「なぁアカリ……今幸せか？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……なんで」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「なんでそんなこと聞くんですか……？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「俺にはわかるんだよ……今のお前が無理してることくらいさ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「！？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「も、もしかして……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「先輩が……？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「何を勘違いしてるんだよ、俺はお前を助けに来たんだよ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「昔からそうだっただろ？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「け、けどなんでこんな時に……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「こんな時に助けに来るんですか！？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「……最初はお前が幸せなら御斉学園やめてもいいと思っていた」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「歌手としてデビューしてるのをみてそりゃあ喜んださ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「でもな？同時に良からぬ噂もあったからよ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……知ってるんですね……私のしてきたこと」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「知り合いの探偵に頼んだらすぐだったよ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「そう……ですか……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「だったらもう私を助けなくていいです」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「このライブで全て告白して……！」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「私は誰も知らないところで死にますので……！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ふざけるんじぁねぇ！！」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「！？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「アカリが死ねば解決するのか！？ちげぇだろうが！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「お前が今！するべきとこは頼れる人に助けを求めることだろうがっ！」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「時間はかかっちまったが、その為の準備はしてきたつもりだ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「あとはお前自身が決めること……と言いたいが」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「お前が断っても関係ないね！俺が助けたいから助ける！！……昔からそうだったろ？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      NPC1に感情判定
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：生存術 (2D6&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      遁甲符　PC1
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：生存術 (2D6&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      et 感情表(5) ＞ 憧憬（プラス）／劣等感（マイナス）
+            
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      et 感情表(1) ＞ 共感（プラス）／不信（マイナス）
+            
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      共感　PC1
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      憧憬で
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      アカリは泣き崩れ両膝を床につける
+      </div>
+      <div class="kp LtoR-early">
+      ーーーそして
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……け……さい……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「助けて……ください……！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「その言葉が聞きたかった！！あとは俺らに任せとけ！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      紫陽花に教導
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=6 （判定：記憶術 (2D6&gt;=6) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      鑑を使います
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=6 （判定：記憶術） (2D6&gt;=6) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      PC3に友情を結んでもらいます
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      忍授業つかいます
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      誘導のコスト-１
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【転校生】<br>└【秘妖】獲得
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      メインサイクル3終了
+      </div>
+      <div class="kp LtoR-early">
+      マスターシーン
+      </div>
+      <div class="kp LtoR-early">
+      PC達と別れたアカリは決意を新たにステージへと向かう
+      </div>
+      <div class="kp LtoR-early">
+      その廊下を走っている最中にとある人物と会う
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「やぁアカリ」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「ライブの準備は万端か？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「！？プ、プロデューサー……」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「友人達も沢山来ているのだろう？」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「ちゃんと楽しませないとなぁ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      有山はゆっくりと近づく
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「い、いや……」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「……いや……だと？」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「君は既に私の共犯者じゃあないか」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「わ、私は！あなたに協力した覚えは……！」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「言葉を慎みたまえ！！」ガッ
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      アカリの首を掴み、ぶつくさとなにかを呟く
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「かっ……あぁ……」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「これから私の秘密を知る者を始末しにいかなきゃならない」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「そのためには君にもっと強力な力を与えないとなぁ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「い……いや……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      有山は手を離し、咳き込んでいるアカリの顔を覗き込む
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「はぁ……全く手間を増やしてくれる」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「さて、力を与えたし、君は存分にライブで歌ってくれたまえよ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      有山は歩いてその場を去る
+      </div>
+      <div class="kp LtoR-early">
+      アカリを残して
+      </div>
+      <div class="kp LtoR-early">
+      シーン終了
+      </div>
+      <div class="kp LtoR-early">
+      クライマックスフェイズ
+      </div>
+      <div class="kp LtoR-early">
+      紫陽花に一通のメールが届く
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ﾋﾟﾛﾘﾛﾘﾝ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ﾒｰﾙﾀﾞﾖﾒｰﾙﾀﾞﾖ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「あら、なんやろ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      メールの送り主は有山からで内容はライブ会場の屋上にてシノビの姿を確認したので至急来てくれとのことだった
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「その設定生きてたんやなぁ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ﾎﾜﾜﾜﾜ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「野郎！ぶっ飛ばしてやる！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「はいはい、元気元気」
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      「ﾇｫｫｫｫｫｫ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「はいはい……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「え？誰この人ら？！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「え？なんか怖いのいる」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「友達の”ともだち”だよ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「友達から借りて来てたんだ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ともだちがともだちのともだちで…？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「それいわゆる赤の他人じゃねーかなぁ？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「あぁ？！友達の”ともだち”だっていってるじゃん？！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「えっとぉ……それって坊（ぼん）のことぉ？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「なんやいつの間に交友関係広がってたんや……？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「最初からずっと一緒にいたけどね。さ、さっさと行くよ」ｶﾀｶﾀｶﾀ
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「え？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「え？」
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      「ﾇｫｫｫｫｫｫ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ライブ会場の屋上
+      </div>
+      <div class="kp LtoR-early">
+      ステージがよく見える場所で、ここからなら誰にも邪魔されずに楽しめそうだ
+      </div>
+      <div class="kp LtoR-early">
+      PC達が到着するとそこには1人の男が立っていた
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「やぁシノビの皆さんようこそ」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「って、ん？なぜあなたがそこにいるのですか？紫陽花……さん？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「お便りだしたんはアンタちゃいますのぉ？」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「まぁそうですが……なぜ刺客のシノビと一緒に行動しているのですか？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「しかくぅ？……あぁそんなお話してはりましたなぁ」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「まさかとは思うのですが……あなたもその刺客の仲間だったのですか？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「アッハッハハ！ちゃうちゃう……そもそも前提がちゃいまっせ、旦那はん」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「うちらはそもそもアカリはんの護衛になんて来たわけじゃ――」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「アカリンはぁ！！ボクが守るぅ！！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「殺してやる……殺してやるぞ……有山和彦！」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「へぇ……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……まぁちょっと内部で意見も割れてますけど」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「なるほど……そうでしたか」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「なら始末しなければいけないのはここにいるシノビ3人と絡繰と幽霊ですか」
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      「ﾇｫｫｫｫｫｫ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「そうだ、俺等はお前をぶっ飛ばしにここにきたんだ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「悪いが今日はマジにやらせてもらうぜ、久々にきれてるからよぉ……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      バッ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「歌は誰のためにある――？」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「歌……ですか？」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「それはただ相手を魅了する為だけのものですよ」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「あなただってそうでしょう？夜月さん？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「魅せるのは我が”心魂”〈ルミナス〉、それをどう感じるも人の自由さ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「人は言葉を覚えてから多くのコミュニケーション手段を模索してきた……詩もその一つ……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「どしたん急に」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「詩がこの世に生まれ続けるのはね……誰かに何かを伝えたいからなんだよ、ハイド」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ボクが詩を書くのもボクが世界に伝えたくて作ってるんだ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「（温度差が……）」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「詩を呼んで表現し、受け取るのは個々人の自由――」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「だが！それを決めつけ！おのれの私腹の為に利用し！詩に経緯もクソもない貴様に捧ぐ詩はねぇ！！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「フ……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「それとアカリンを傷つけたお前はそんなこと関係なしに許さねぇ！」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「おお、怖い、ですが……」パチン
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      指を鳴らすと同時に上から何かが降りてきた
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      「………」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「これは私が契約している中級妖魔です」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「そして……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      その言葉と同時にライブから歓声が湧き上がる
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「みんなー！おまたせー！！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      アカリのライブが始まった
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「それじゃ一曲目いくよー！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      アカリの歌と同時にあなた達の脳内にノイズがはしる
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「何――？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ーーー彼女の歌を聞かなければならないという本能に駆られる
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ウォォォォォ！！アカリン！アカリンィン！！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「アカン、一人持っていかれた」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「……こちとら昔から聞いてたんだよ！これくれぇなんてことはねぇ！」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「これが彼女の歌の力です」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「そしてそのまま彼女の歌を聞いてあなた達は死ぬのですよ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「（紫残花のは）ちゃうと思うけど……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「（さっきのものとはけた違いのーーこれが魔法か）」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「たしかにノイズキャンセリングしてても目ぇ持ってかれそうやわぁ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「この歌は……お前が利用していいもんじゃねぇ」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「ーーーでは始めましょうか」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+       戦闘情報
+            
+      </div>
+      <div class="kp LtoR-early">
+      またPC及び従者にHO異能の力により<br><br>・対象のシノビは全ての行為判定にマイナス2の修正がはいる<br><br>・自身が発動した奥義が相手に情報がある時に奥義破りの判定にプラス2の修正がはいる
+      </div>
+      <div class="kp LtoR-early">
+      戦闘終了条件は敵NPCの全滅
+      </div>
+      <div class="kp LtoR-early">
+      戦闘開始
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【覚怪】
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      【覚怪】
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      【押機】
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【覚怪】
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「力を借りるぞ、光輪の守り手」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      【覚怪】→ 有山 4
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【覚怪】→妖魔6
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【覚怪】→ 有山 5
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 押機 ] がダイスシンボルを公開。出目は 6 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 有山 和彦 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 須藤一馬 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫陽花 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 友達の"ともだち” ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「思い出せリトルスター……汝、紫紺の瞳で夢を謳う」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「廻れ、星彩のルミナス」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「レヴェンダーリア！！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      贖え――『贖罪のエロティカ』
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      罪咎の鐘鳴り響け
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      贖いの使徒が来たり
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      【覚怪】の呪いの変調
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      choice[接近戦攻撃,【災雷】,【外縛陣】,【八樽】,【神奈備】,【破圏】,【揺らし】] (choice[接近戦攻撃,【災雷】,【外縛陣】,【八樽】,【神奈備】,【破圏】,【揺らし】]) ＞ 【外縛陣】
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      d66 (D66) ＞ 45
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      d66 (D66) ＞ 12
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      ｄ66 (D66) ＞ 16
+            
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      d66 (D66) ＞ 22
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      【災雷】さいらい<br>射撃戦。攻撃が成功すると、目標に射撃戦ダメージを1点与え、戦場を「悪天候」に変更することができる。また、この攻撃の命中判定時に戦場が「悪天候」だった場合、その回避判定にマイナス2の修正がつき、さらに接近戦ダメージを1点与えることができる。
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      対象→紫陽花
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      2D6&gt;=5 （判定：召喚術） (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#3-2&gt;=7 （判定：結界術、指定特技：召喚術） (SG-2@12#3&gt;=7) ＞ 4[1,3]-2 ＞ 2 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 体術 : 1 → 0
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      戦場を悪天候・乙に変更
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      震々
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      rtt5 戦術分野ランダム特技表(9) ＞ 『戦術』見敵術
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      2D6&gt;=7 （判定：遊芸） (2D6&gt;=7) ＞ 5[2,3] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      2D6&gt;=10 （判定：封術） (2D6&gt;=10) ＞ 6[1,5] ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      2人逆凪
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      階段
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      SG-4&gt;=5 （判定：召喚術） (SG-4@12#2&gt;=5) ＞ 5[1,4]-4 ＞ 1 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      NPC2と妖魔に修羅
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：刀術） (2D6&gt;=5) ＞ 5[1,4]-2 ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      妖魔化
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「－－ッ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 体術 : 1 → 0
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      nmt 新異形表(4) ＞ 攻激態。「妖魔忍法表・攻激」を使用し、妖魔化している間、その妖魔忍法を修得する。 ＞ 妖魔忍法表・攻激(1) ＞ 【黒手】(隠忍 p28)／【強威】（隠忍 p25）
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      →【黒手】くろて（歩法）
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【外縛陣】げばくじん→有山、妖魔
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      2D6&gt;=5 （判定：言霊術） (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      2D6&gt;=6 （判定：幻術） (2D6&gt;=6) ＞ 5[2,3] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      2D6&gt;=6 （判定：封術） (2D6&gt;=6) ＞ 5[1,4] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【血断】けつだん　集団戦＋１点
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      wt 変調表(6) ＞ 呪い:修得している忍法の中からランダムに一つを選び、その忍法を修得していないものとして扱う。この効果は、修得している忍法の数だけ累積する。各サイクルの終了時に、《呪術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      choice[接近戦攻撃,【鏖殺】,【連苦無】,【震々】,【かばう】,【閻魔】,【飛踊】]  (choice[接近戦攻撃,【鏖殺】,【連苦無】,【震々】,【かばう】,【閻魔】,【飛踊】]) ＞ 【連苦無】
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      wt 変調表(6) ＞ 呪い:修得している忍法の中からランダムに一つを選び、その忍法を修得していないものとして扱う。この効果は、修得している忍法の数だけ累積する。各サイクルの終了時に、《呪術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      choice[接近戦攻撃,【鏖殺】,【震々】,【かばう】,【閻魔】,【飛踊】] (choice[接近戦攻撃,【鏖殺】,【震々】,【かばう】,【閻魔】,【飛踊】]) ＞ 【閻魔】
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      wt 変調表(3) ＞ 重傷:命中判定、情報判定、感情判定を行うたびに、接近戦ダメージを１点受ける。この効果は累積しない。各サイクルの終了時に、《生存術》で行為判定を行い、成功するとこの変調は無効化される。
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      wt 変調表(3) ＞ 重傷:命中判定、情報判定、感情判定を行うたびに、接近戦ダメージを１点受ける。この効果は累積しない。各サイクルの終了時に、《生存術》で行為判定を行い、成功するとこの変調は無効化される。
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ＜回想シーン＞
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      思い出すな、あの頃をーー
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      昼下がり、公園でブランコをこぐ二人
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「リトルスター、明日此の地を去るのだね」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……うん、暗魔心眼」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「お互いに一流の歌手になって――次に会うのは舞台の上かも」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……そうだね、その時はきっとライバルだね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「寂しくなるな」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……うん」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……ほんとに」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ライバルとしてもいいけど――ボクは一緒に歌ってみたいな」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「それは……私もだよ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「2人でドームで歌いたい」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      実はあなたは幼いころからNPC1のことをよく知っている。<br>純粋に歌うことが好きで、歌手になりたいという子供の頃からの夢を、彼女は叶えた。<br>その彼女が、歌を利用して暗躍していることを知り、複雑な思いを抱いている。<br>もしそれが、シノビの力なら悪用は止めたい。<br>だが、他の大勢のライバルが望んでいた場所を、無責任に降りることも許したくない。<br><br>あなたの本当の使命は【NPC1に歌手を続けさせること】である。
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「キミといっしょならきっと楽しくなる」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ――ザ――――ザザ
+      </div>
+      <div class="kp LtoR-early">
+      ――――
+      </div>
+      <div class="kp LtoR-early">
+      「良いのか？」
+      </div>
+      <div class="kp LtoR-early">
+      「その華を手に取れば、未来永劫……戦い続けることになるだろう」
+      </div>
+      <div class="kp LtoR-early">
+      「言わば運命のしもべ」
+      </div>
+      <div class="kp LtoR-early">
+      「……」
+      </div>
+      <div class="kp LtoR-early">
+      「――キミといっしょならきっと楽しくなるさ」
+      </div>
+      <div class="kp LtoR-early">
+      ザ――
+      </div>
+      <div class="kp LtoR-early">
+      ――ザザ
+      </div>
+      <div class="kp LtoR-early">
+      「ああ、やはり”それ”が歪みを生み出しても……月は満ちた。”夢幻円環”〈エンドロール〉は近い」
+      </div>
+      <div class="kp LtoR-early">
+      「約束の向こうで――”レヴェナント”」
+      </div>
+      <div class="kp LtoR-early">
+      ザ――
+      </div>
+      <div class="kp LtoR-early">
+      ――――
+      </div>
+      <div class="kp LtoR-early">
+      「オデはっおめぇらを許さねぇ！！」
+      </div>
+      <div class="kp LtoR-early">
+      「末代まで呪ってやる！！」
+      </div>
+      <div class="kp LtoR-early">
+      「予言の書は始末した、これで今回の役割は――」
+      </div>
+      <div class="kp LtoR-early">
+      「……ああ、”レヴェナント”」
+      </div>
+      <div class="kp LtoR-early">
+      ――ザ
+      </div>
+      <div class="kp LtoR-early">
+      ザ――――…………
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      なんーーだ？
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      今脳裏に過った……そんな記憶は覚えにない
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「泣かないで、アカリ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「だって……だって……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「暗魔心眼は嘘は言わない、絶対」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……そ……そうだね」グスン
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「二人で舞台の上で――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「因果の交錯する地で再びあいまみえんことを」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……うん！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「合言葉はいつもの、レヴェーー」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「ン・ダーリア」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      レヴェンダーリア？
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ＜回想シーン終了＞
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      接近戦ダメージ１点追加
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      ■奥義<br>《ニトクリスの鏡》<br>指定特技：幻術<br>効果　　：絶対防御<br>演出　　：魔法によって作られた鏡による分身を作り出し、相手の攻撃を避ける
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【全能】
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      感情修正→紫陽花
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 忍術 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 戦術 : 1 → 0
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【一見】奥義破り
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#3+3&gt;=7 （判定：千里眼の術、指定特技：幻術） (SG+3@12#3&gt;=7) ＞ 9[4,5]+3 ＞ 12 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 有山 和彦 ] HP : 6 → 2
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] HP : 20 → 16
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「……くっ！！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「スポットライト！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【獣化】じゅうか
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      感情修正→真夜
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      2D6&gt;=7-1 （判定：言霊術） (2D6&gt;=6) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 鬼力 : 1 → 0
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 鬼力 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 鬼力 : 1 → 0
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      SG#4+2&gt;=5 （判定：異形化） (SG+2@12#4&gt;=5) ＞ 5[2,3]+2 ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      1d6 (1D6) ＞ 2
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      神通丸
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 忍具 : 3 → 2
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      3SG#4-2&gt;=5 （判定：異形化） (3SG-2@12#4&gt;=5) ＞ [2,6,6] ＞ 12[6,6]-2 ＞ 10 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「グーーッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【御供】ごくう
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      鬼力１点獲得
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 鬼力 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      プロット3
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      d66 (D66) ＞ 23
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      d66 (D66) ＞ 24
+            
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      d66 (D66) ＞ 34
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      機蜂→有山
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ウォォォォ！！死ねぇ！！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#3-2&gt;=5 （判定：絡繰術） (SG-2@12#3&gt;=5) ＞ 8[2,6]-2 ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      wt 変調表(3) ＞ 重傷:命中判定、情報判定、感情判定を行うたびに、接近戦ダメージを１点受ける。この効果は累積しない。各サイクルの終了時に、《生存術》で行為判定を行い、成功するとこの変調は無効化される。
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      《再生》<br>指定特技：呪術<br>効果　　：不死身/定め/回数制限<br>いつでも使用できる。1D6からセッション中にこの奥義を使用した回数を引いた値(最低0、最初の使用時は1D6から1を引いた値）だけ自分の【生命力】を回復し、すべての変調を回復することができる。<br>【定め】が追加された【不死身】は、回復する【生命力】の値が、5から【不死身】を使用した回数を引いた値(最初に使ったときに回復する【生命力】の値は4点）になる。<br>【回数制限】が追加された奥義は、一回のセッションで二度しか使用できなくなる。【回数制限】が追加されたのが【追加忍法】の場合は、【追加忍法】で使用できる忍法を、一回のセッションでそれぞれ二度ずつしか使用できなくなる。<br>演出　　：魔法の力によって無理矢理再生させる<br> 
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      回想シーン
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「おぉ～紫残花ちゃんお顔が見えよるわぁ～」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「このカラクリのテストしてくればいいん？大旦那はん」
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『えぇ、それはあなた達の姉君の大切な作品です』
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『ぜひテストをお願いしたいと……言っていましたよ』
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「まぁええけど……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ﾌｫﾝﾌｫﾝﾌｫﾝ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「この……見た目何とかならなかったん？」
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『……それの正式名称は多目的戦術支援遠隔操作ドローン』
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『通称：P.O.D.042……との事です』
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ポッド……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……え？ポッドだからこの見た目なん？」
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『一流の拘りだとか』
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「しょうもな……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「（ボクとハイドが分かたれた……常に完全な一になりたいと思っていたボクにとっては願ってもない事だ）」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「（だが……どうだろう、この浮遊感のような落ち着きのなさは）」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「（これが独立……一人で生きるということか）」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……やっぱり少し不安だな」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「――ん？任務の事ぉ？ヘーキやってぇ、いつもみたいに……いや、いつも以上にサポートしたるさかい」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「頑張ろうなぁ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「任務……あ、ごめん聞いてなかった」
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『紫残花（ハル）。珍しいですね。ですがそれもまたあなたに現れた良い兆候でしょう』
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『あなた達にはこれより、P.O.D.042のテスト。およびとある人物の始末を頼みたい』
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『彼はとある有名歌手のプロデューサー。愚かにも所属流派に背き外道流派に身を落とした男です』
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『最も……比良坂はわかっていて泳がせているようですが』
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「なんやけったいな話やなぁ……ほんで？乗り込んで暗殺すればええん？」
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『いえ、ちょうど彼も何かを企んでいるようなので、あなた達はそれに乗じてかれに接触をしてください』
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『彼と戦闘できればなお良いでしょう』
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……うん、わかった。頑張る」
+      </p>
+      </div>
+      <div class="mem13 left">
+      <span>Dr.斜歯</span>
+      <p>
+      『有名歌手の龍洞燈の護衛が名目上の任務です。心して当たってください』
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「うん……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「……うん？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「アカリちゃんねぇ……巻き込まれたら可愛そうやねぇ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「タツホラアカリーー」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「アカリン！？あ、アカリン！？」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「え？どないし――」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「あ、ア？！バカやろう！！こんなことしてる場合じゃない！！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ハリー！ハリー！急げ！アカリンがボクを待っている」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「……えぇ？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      PC3秘密<br><br>実はあなたはNPC1の大ファンであり、護衛忍務を任されて狂喜乱舞している。<br><br>だが、所属流派よりNPC2の調査の忍務を極秘に受けている。<br><br>どうやら外道流派に肩入れしている可能性があり、それが事実であれば始末するように言われている。<br><br>あなたの本当の使命は【NPC2を調査し可能であれば始末すること】である。
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#3+1&gt;=7 （判定：千里眼の術、指定特技：呪術） (SG+1@12#3&gt;=7) ＞ 6[2,4]+1 ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      《石の呪い》<br>指定特技：幻術<br>効果　　：判定妨害<br>演出　　：対象の心に恐ろしい幻覚を生じさせる技。
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      奥義破り
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#3-2&gt;=7 （判定：千里眼の術、指定特技：幻術） (SG-2@12#3&gt;=7) ＞ 7[2,5]-2 ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      PC3に遁甲符
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 須藤一馬 ] 忍具 : 2 → 1
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      不死身の方の奥義破り振り直し
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#3+1&gt;=7 （判定：千里眼の術、指定特技：呪術） (SG+1@12#3&gt;=7) ＞ 9[4,5]+1 ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      ターンエンド
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      《瑠璃椿 -ﾊｲﾄﾞﾚﾝｼﾞｱ-》<br>指定特技：絡繰術<br>効果　　：追加忍法/くらまし/増幅装置<br><br>①【夜駕籠】
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      ゆーめーたん
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      【忍法錬成】
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#3-2&gt;=5 （判定：絡繰術） (SG-2@12#3&gt;=5) ＞ 5[1,4]-2 ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      誘導つかいます
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=8 （判定：遊芸） (2D6&gt;=8) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      高所甲に変更
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ラウンド2
+      </div>
+      <div class="kp LtoR-early">
+      マスターシーン
+      </div>
+      <div class="kp LtoR-early">
+      ライブ会場が一旦静寂となる
+      </div>
+      <div class="kp LtoR-early">
+      どうやらアカリがファン達に向けて会話をしているようだ
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「みんなー！ここまで聞いてくれてありがとー！」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「けどまだまだ盛り上がっていこー！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ファン達の声と同時にライブ会場が暗くなる
+      </div>
+      <div class="kp LtoR-early">
+      その時あなた達は気づいた
+      </div>
+      <div class="kp LtoR-early">
+      アカリの視線がこちらに向いていることに
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「（今しかない……！）」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      アカリが首元にナイフをあてる
+      </div>
+      <div class="kp LtoR-early">
+      そしてーーー
+      </div>
+      <div class="kp LtoR-early">
+      喉を切り裂いた
+      </div>
+      <div class="kp LtoR-early">
+      これによりHO異能の力の効果がなくなります
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「アカリーーッ❕！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ライブ会場からアカリの声が聞こえる
+            
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「ーーーまだ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「まだ私は」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「私の歌を詩(ｳﾀ)えていない……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「だから……だから……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「今ここで……！」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「君の為に歌う！」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      ○NPC1の【声】(覚悟)<br>ついてきて
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ライブ会場が明るくなり、切り裂いた傷は治っていた
+            
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「後輩が頑張ってんだ……なら俺もがんばんなきゃな！！！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ウォォォォォ！！！アカリン！アカリン！」ﾌﾞﾝﾌﾞﾝ
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「ば、ばかな！なぜ力が発動しない！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……リトルスター、ああ。ここが因果の交錯する舞台”ステージ”だ！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「なんや偉い、手の込んだことしはりよったけど……」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「お疲れ様ぁ、有山はん」ﾋﾗﾋﾗ（名刺を放り投げる）
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      2ターン目
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【覚怪】
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      押機
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      【覚怪】
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【覚怪】
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【覚怪】→妖魔4
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【覚怪】→妖魔6
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      【覚怪】→妖魔4
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 有山 和彦 ] がダイスシンボルを公開。出目は 6 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] がダイスシンボルを公開。出目は 6 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 押機 ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 須藤一馬 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 友達の"ともだち” ] がダイスシンボルを公開。出目は 6 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫陽花 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      魔血→【悪夢】
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 電気ポッド ] 生命力 : 2 → 1
+      </div>
+      <div class="kp LtoR-early">
+      [ 電気ポッド ] 忍具 : 1 → 0
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      技片→《意気》
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 鬼力 : 1 → 0
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      3SG#3&gt;=7 （判定：意気） (3SG@12#3&gt;=7) ＞ [3,3,5] ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      《石の呪い》<br>指定特技：幻術<br>効果　　：判定妨害<br>演出　　：対象の心に恐ろしい幻覚を生じさせる技。
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#3&gt;=7 （判定：千里眼の術、指定特技：幻術） (SG@12#3&gt;=7) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=6 （判定：記憶術） (2D6&gt;=6) ＞ 5[2,3] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【透視】すかし
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      SG#3+2&gt;=6 （判定：言霊術） (SG+2@12#3&gt;=6) ＞ 7[1,6]+2 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【荒吐】あらはばき　接近戦ダメージ２点
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=6 （判定：記憶術） (2D6&gt;=6) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      兵糧丸を触媒に魔法！
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      《再生》<br>指定特技：幻術<br>効果　　：不死身
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      1D6 (1D6) ＞ 2
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 有山 和彦 ] HP : 2 → 1
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      呪い→ブルブル
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      罪咎の鐘鳴り響け　贖いの時が来たる――赫月
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「ば、ばかな！」
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      d66 (D66) ＞ 23
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      d66 (D66) ＞ 36
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      d66 (D66) ＞ 15
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      外爆陣　対象PC全員と従者
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      SG@12#6&gt;=5 （判定：毒術） (SG@12#6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      かばう
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] HP : 16 → 15
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      震々
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      rtt5 戦術分野ランダム特技表(2) ＞ 『戦術』兵糧術
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      SG@12#6&gt;=7 （判定：毒術） (SG@12#6&gt;=7) ＞ 11[5,6] ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      SG@12#6&gt;=7 （判定：異形化） (SG@12#6&gt;=7) ＞ 6[2,4] ＞ 6 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] HP : 15 → 14
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      接近戦攻撃→有山
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      SG&gt;=5 （判定：針術） (SG@12#2&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 友達の"ともだち” ] 生命力 : 3 → 2
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      「ﾇｫｫｫｫｫｫ」
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      《再生》<br>指定特技：呪術<br>効果　　：不死身/定め/回数制限<br>いつでも使用できる。1D6からセッション中にこの奥義を使用した回数を引いた値(最低0、最初の使用時は1D6から1を引いた値）だけ自分の【生命力】を回復し、すべての変調を回復することができる。<br>【定め】が追加された【不死身】は、回復する【生命力】の値が、5から【不死身】を使用した回数を引いた値(最初に使ったときに回復する【生命力】の値は4点）になる。<br>【回数制限】が追加された奥義は、一回のセッションで二度しか使用できなくなる。【回数制限】が追加されたのが【追加忍法】の場合は、【追加忍法】で使用できる忍法を、一回のセッションでそれぞれ二度ずつしか使用できなくなる。<br>演出　　：魔法の力によって無理矢理再生させる
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=8 （判定：暗号術） (2D6&gt;=8) ＞ 5[2,3] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      SG#3+2&gt;=6 （判定：憑依術） (SG+2@12#3&gt;=6) ＞ 9[3,6]+2 ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#3&gt;=7 （判定：千里眼の術、指定特技：呪術） (SG@12#3&gt;=7) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      ■奥義<br>《暗器攻撃》<br>指定特技：仕込み<br>効果　　：範囲攻撃/滅び/人数限定<br>攻撃を行う代わりに使用できる。自分のプロット値から3以内にいるキャラクターを好きなだけ選び、そのキャラクター全員を目標に選ぶ。目標の【生命力】を2点失わせる。どの特技分野の【生命力】を失うのかを、目標が選ぶことができる。<br>【滅び】が追加された奥義は、自分が誰かの使った【クリティカルヒット】か【範囲攻撃】の目標になったときに使用できるようになる。その場合、通常の効果の代わりに、相手の使った奥義を無効化することができる。【奥義】の【情報】を持っているキャラクターは、この効果に対して奥義破りを試みることが可能である。<br>【人数限定】が追加された【範囲攻撃】は、二人のキャラクターまでしか目標に選ぶことができなくなる。<br>演出　　：自身のいたるところから暗器を発射する
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      奥義破り
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#3&gt;=5 （判定：仕込み） (SG@12#3&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 戦術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      プロット4
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「情報がよ～あつまるわぁ～」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「この赤眼に見抜けないものはないよ――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「やるな――光輪の守り手」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「キミこそね……暗天の歌姫」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      万華鏡を有山に
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「な、なぜこんなことに……！計画は完璧だったはずなのに！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 有山 和彦 ] HP : 1 → 0
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      有山　脱落
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「お前だけは一発ぶん殴るって決めてたからな！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ここからだーー」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      プロット3
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      d66 (D66) ＞ 34
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      d66 (D66) ＞ 25
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      d66 (D66) ＞ 23
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ーードクン
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「クッーー」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      妖魔化が体を蝕んでいく
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【外縛陣】げばくじん
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      →妖魔
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      SG#3+2&gt;=5 （判定：言霊術） (SG+2@12#3&gt;=5) ＞ 6[1,5]+2 ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【血断】けつだん
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      集団戦＋１
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] HP : 14 → 10
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      wt 変調表(4) ＞ 行方不明:メインフェイズ中、自分以外がシーンプレイヤーのシーンに登場することができなくなる。この効果は累積しない。各サイクルの終了時に、《経済力》で行為判定を行い、成功するとこの変調は無効化される。
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      wt 変調表(6) ＞ 呪い:修得している忍法の中からランダムに一つを選び、その忍法を修得していないものとして扱う。この効果は、修得している忍法の数だけ累積する。各サイクルの終了時に、《呪術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      choice[接近戦攻撃,【鏖殺】,,【かばう】,【飛踊】]  (choice[接近戦攻撃,【鏖殺】,【かばう】,【飛踊】]) ＞ 【飛踊】
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――『深淵のルミエラ』」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      与えられた命冷たく響いた夜明けにーー
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【御供】ごくう
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      終了
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 鬼力 : 1 → 2
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      探し続けた楽園に似た温もりを
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      悲しみ生きた麗しき薔薇は咲き誇るだろう
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      嘆きの魂は月夜に眠る夢
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      愚かな者よ 光り信じて彷徨えば
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      探し続けた楽園に似た温もりを
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【やかご】
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      黒の妄毒を獲得
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      黒の妄毒→妖魔
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      猛毒をうけます
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      終了時猛毒の判定
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      1D6 (1D6) ＞ 4
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      3ターン目
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      【覚怪】
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【覚怪】
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【覚怪】
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      【覚怪】→妖魔 4
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      覚怪→妖魔４
+      </p>
+      </div>
+      <div class="mem14 right">
+      <span>紫残花00</span>
+      <p>
+      【覚怪】→妖魔 5
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 須藤一馬 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫陽花 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 友達の"ともだち” ] がダイスシンボルを公開。出目は 6 です。
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      震々
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      rtt5 戦術分野ランダム特技表(7) ＞ 『戦術』用兵術
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      SG@12#4&gt;=8 （判定：封術） (SG@12#4&gt;=8) ＞ 5[1,4] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      逆凪！
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      集団戦攻撃→妖魔
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      SG&gt;=5 （判定：憑依術） (SG@12#2&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      SG@12#4&gt;=6 （判定：呪術） (SG@12#4&gt;=6) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      「ﾇｫｫｫｫｫｫ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      プロット4
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      ｄ66 (D66) ＞ 66
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      ｄ66 (D66) ＞ 45
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      d66 (D66) ＞ 12
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      ■奥義<br>《鞍影我流剣術神風》<br>指定特技：刀術<br>効果　　：クリティカル／断ち／回数制限
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【透視】
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      SG#3+4&gt;=6 （判定：骨法術） (SG+4@12#3&gt;=6) ＞ 2[1,1]+4 ＞ 6 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      SG#4&gt;=5 （判定：仕込み） (SG@12#4&gt;=5) ＞ 3[1,2] ＞ 3 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#3&gt;=6 （判定：身体操術） (SG@12#3&gt;=6) ＞ 5[2,3] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      rct ランダム分野表(6) ＞ 妖術
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 妖術 : 1 → 0
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ■奥義<br>《星屑麗華[コズミニクス・ダーリア]》<br>指定特技：言霊術<br>効果　　：絶対防御/くらまし/発動条件<br>演出　　：曲歌の極致、七星の加護により歌で心震わせる者に光の障壁を生み出す。
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      機蜂→妖魔
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      SG#3&gt;=5 （判定：絡繰術） (SG@12#3&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      呪い
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 電気ポッド ] 生命力 : 1 → 2
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      choice[接近戦攻撃,【鏖殺】,【かばう】]  (choice[接近戦攻撃,【鏖殺】,【かばう】]) ＞ 【鏖殺】
+            
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      《瑠璃椿 -ﾊｲﾄﾞﾚﾝｼﾞｱ-》<br>指定特技：絡繰術<br>効果　　：追加忍法/くらまし/増幅装置<br><br>①【夜駕籠】
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      黒の妄毒
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      猛毒→妖魔
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      猛毒2つ目
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      奥義！
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      ■奥義<br>《※プライズ<br>『空っぽの空に潰される』》<br>③吸魔
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      友達を吸収
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 妖術 : 0 → 1
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] 鬼力 : 0 → 1
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      集団戦《絡繰術》を覚えます
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「おつかれさん～」
+      </p>
+      </div>
+      <div class="mem11 left">
+      <span>友達の"ともだち”</span>
+      <p>
+      「ﾊﾞｲﾊﾞｲﾏﾀﾈ」ｼｮｫｫｫｫﾝ
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「（喋った……）」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      プロット3
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【御供】ごくう
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] 鬼力 : 2 → 3
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      妖魔は何もできません
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      プロット終了時
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      猛毒判定
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      2D6 (2D6) ＞ 8[4,4] ＞ 8
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      4ターン目
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫陽花 ] がダイスシンボルを3 に変更しました。
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫陽花 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 須藤一馬 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      ｄ66 (D66) ＞ 56
+            
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      d66 (D66) ＞ 25
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      万華鏡で妖魔に攻撃
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      SG@12#1&gt;=9 （判定：呪術） (SG@12#1&gt;=9) ＞ 7[2,5] ＞ 7 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] HP : 10 → 7
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      風祭
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=6 （判定：刀術） (2D6&gt;=6) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      万華鏡
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      2D6&gt;=5 （判定：暗号術） (2D6&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+       (SG@12#1&gt;=9) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] HP : 7 → 4
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「どうだコノヤロー！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      おわり
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      プロット3
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      d66 (D66) ＞ 56
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      d66 (D66) ＞ 56
+            
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【外縛陣】→妖魔
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      鬼力
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      3SG#3+2&gt;=5 （判定：言霊術） (3SG+2@12#3&gt;=5) ＞ [3,4,6] ＞ 10[4,6]+2 ＞ 12 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      SG@12#1&gt;=6-2 （判定：封術） (SG@12#1&gt;=4) ＞ 6[1,5]-2 ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      [ 妖魔【凶器人形】 ] HP : 4 → 0
+      </div>
+      <div class="mem12 right">
+      <span>妖魔【凶器人形】</span>
+      <p>
+      妖魔　脱落
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      戦闘終了
+      </div>
+      <div class="kp LtoR-early">
+      無事に1人と妖魔を倒したPC達
+      </div>
+      <div class="kp LtoR-early">
+      ライブ会場からまだ歓声があがっていた
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「ば、ばかな！」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「こ、こんな奴らに私の計画が……！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「有山はん、おつかれどすぅ～」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ハァッーーハッ……これで終幕だ」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「さぁ、有山和彦、お前には外道流派との繋がりが確認されている！大人しく署についてきてもらおうか！！」
+      </p>
+      </div>
+      <div class="mem7 left">
+      <span>有山 和彦</span>
+      <p>
+      「や、やめろ！離せ！！」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「よかった、これで解決だね」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「一馬君……そいつは任せた」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      パトカーに入れられる有山
+      </div>
+      <div class="kp LtoR-early">
+      後日彼は罪忍として裁かれることになった
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「みんな…協力してくれてありがとうな！！」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「なんや偉いさわぎやったけど、無事に終わってよかったわぁ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ところでアカリンは！？アカリンは無事なの？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「リトルスター……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      アカリは元気よく歌っている
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「マヤさん……その大丈夫ですか？あきらかに辛そうな顔してっけど」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「大丈夫！？お香吸う？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……スゥーー」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「はぁ……ハァ……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ほら、もっと吸って吸って！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「スゥーーーーームッ」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ムハッ！？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ゴホゴホッ」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「あぁ！？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「はぁ……はぁ助かる、光輪の守り手よ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「吸いすぎも毒やでぇ……身体を大事になぁ、真夜はん」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――知っていたのか」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「あらあら……口が滑ってもうたわぁ～」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「？？？？？」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「大事なければいいけど……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「須藤一馬……今日のところは見逃してあげよう」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「そんな悪いことしてねぇって……」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「色々大変だし、しばらくはアカリンのケアをちゃんとするんだよ。いいね？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「お、おうそれは任せとけ」
+      </p>
+      </div>
+      <div class="mem5 left">
+      <span>紫陽花</span>
+      <p>
+      「ほな、うち等はこの辺でお暇させていただきますぇ～」ﾋﾗﾋﾗ
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「え？！いや、まだアンコーー」
+      </p>
+      </div>
+      <div class="mem4 right">
+      <span>紫残花</span>
+      <p>
+      「ﾊﾟﾀﾝ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      後ろ手に手を振りながら彼女らはその場を後にした
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……」手を振り返す
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「じゃーなー！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「さてと、俺もアカリのとこ行かないとな」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ああ、汝とも運命が導けばまた会える気がする――またな」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ああ！そんときはまた歌聞かせてくれよな！！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……。ああ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      アカリのライブが終わり、ドームが静かになっていく
+      </div>
+      <div class="kp LtoR-early">
+      クライマックスフェイズ終了
+      </div>
+      <div class="kp LtoR-early">
+      功績点ターイム
+      </div>
+      <div class="kp LtoR-early">
+      流儀の達成<br>セッションに最後まで参加した<br>ロールプレイ<br>全員に1点ずつ
+      </div>
+      <div class="kp LtoR-early">
+      プライズの獲得<br>PC1,PC2のみ
+      </div>
+      <div class="kp LtoR-early">
+      使命の達成<br>全員に3点
+      </div>
+      <div class="kp LtoR-early">
+      琴線に触れた
+      </div>
+      <div class="kp LtoR-early">
+      [ 夜月 真夜 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 須藤一馬 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      [ 紫残花／紫陽花 ] がダイスシンボルを公開。出目は 1 です。
+      </div>
+      <div class="kp LtoR-early">
+      PC1,PC2PC3に1点ずつ
+      </div>
+      <div class="kp LtoR-early">
+      獲得功績点<br>PC1 8点<br>PC2 8点<br>PC3 7点
+      </div>
+      <div class="kp LtoR-early">
+      ED
+      </div>
+      <div class="kp LtoR-early">
+      ビルの屋上からアカリのライブの終幕を見送る真夜
+      </div>
+      <div class="kp LtoR-early">
+      激しい風が黒衣をなびかせている
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「夜深‹よふかし›の仲間を何故呼ばなかった？もっと楽に解決できたろうに」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……アカリがもし自分の意思で歌っていても、我には止められなかった」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「それに――」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「ここ数日の妖魔化、それを解決する術がどこにあるのか分かっていたのではないか？」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……歌」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ――ドクン！！
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      再度妖魔化が発現し、身体が黒く染まっていく
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「クッ――――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ァアア――――ッ！」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「言ったろう、世界に消されるぞと」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「黙れ……そもそも契約とはなんだ？最初から説明が……ないぞ、悪辣な妖魔め」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「何を勘違いしているかわかったぞ、我様をあの時の妖魔とでも思っているな？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「契約の内容――？」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「再臨する紅き華、血塗られた記憶なら褪せることはない」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「その”るみなす”とやらにきくがいい」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「ハァッハァッ……！」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「は……ッハァ……ッ」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「もう限界だ、分かっているだろう」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「主様の答えを聞こう」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「我に応え、契約を結ぶか」
+      </p>
+      </div>
+      <div class="mem9 left">
+      <span>？</span>
+      <p>
+      「我を拒み、存在を消されるか」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「我は――――」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      制御判定
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      RTT6 妖術分野ランダム特技表(7) ＞ 『妖術』言霊術
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      妖魔化した数のマイナス修正が入って9になります
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      功績点8使います
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      SG#3+3&gt;=5 （判定：言霊術） (SG+3@12#3&gt;=5) ＞ 4[1,3]+3 ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      制御判定成功となります
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「……」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「――初めて汝と”心魂”〈ルミナス〉を交わした時からその心に悪意がないのは分かっていた」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「だが我の答えははいでもイエスでもない」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      ――そう、こんな時に答える台詞は一つしかないのだ
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      「レヴェナント・ダリア」
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      【独自設定】<br>？のひみつ<br>あなたは忍が存在するよりも昔、いにしえの世界で歌姫と契約を交わした存在だ。<br>邪神や魔王とよばれた存在の目的は幾度も世界に現れる、世界を終わりへ導く「予言の書」を抹消することだ。<br><br>契約によりその魂は歌姫と融合しているため、歌姫が転生する度に共に顕現してきた。<br>真夜として転生した際は予期せぬ「何か」によって悪食と化して顕現していたため、真夜は前世のことを知る由もない。<br>七星の儀により悪食は消滅したが、その契約は危ういものとなっている。
+      </p>
+      </div>
+      <div class="mem3 left">
+      <span>夜月 真夜</span>
+      <p>
+      補足説明<br>・「予言の書」は滅びの未来について書かれている書物。現在どこにあるか不明<br>・邪神的な存在は「背後霊」として歌姫と共に転生して戦ってきた。<br>＜アイドル暗部＞<br>・真夜ちゃんに転生した際、契約した「背後霊」に「悪食」が取り憑いていた<br>（悪食は前世の歌姫に倒され、怨念により憑りついていた）<br>＜甘美の行方＞<br>・契約によって何度も転生をしており、真夜ちゃんに転生する前世の時に「悪食」を七星の儀によって封印した際に呪われた<br>＜箱庭の綺語＞<br>・「悪食」は消滅したことで元の契約者の「背後霊」としてでれるようになった。<br>＜君に歌う詩＞<br>・契約が不完全なことによって妖魔になりかけた<br>・回想シーンの時に過去に「悪食」が七星の儀によって封印される記憶を見る<br>・「背後霊」と再契約したことで妖魔化は制御され、あるべき姿にもどった
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ED1　終了
+      </div>
+      <div class="kp LtoR-early">
+      ED2
+      </div>
+      <div class="kp LtoR-early">
+      あのライブから数日が経ち
+      </div>
+      <div class="kp LtoR-early">
+      アカリが所属している事務所に一馬は呼ばれていた
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「須藤先輩……今回の件は……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「本当にありがとうございました」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「いいって！いいって！気にすんなよ！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「アカリが笑顔でいられるならそれが一番よ」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……はい」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「そーいやこれからどうするんだ？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「一応歌手としての活動は続けます」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「ただ、前よりファンの人達は減っちゃたけど……」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「これからは自分の歌で世界中の人々を笑顔にしてみせます」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「助けてくれた皆さんの為に」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「そうか！またでかい会場でライブするのを楽しみにしてるわ！！」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ああ……それともうひとついいか？」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……なんですか？先輩？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「また、困ったときはいつでも相談しに来いよな！なんせ俺はファン第一号だからな！！」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……そこはファンじゃなくて先輩としてじゃないんですか？」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「ん？まぁそっちでもいいけど……」
+      </p>
+      </div>
+      <div class="mem1 left">
+      <span>須藤一馬</span>
+      <p>
+      「細かいことは気にすんなって！」
+      </p>
+      </div>
+      <div class="mem8 right">
+      <span>アカリ</span>
+      <p>
+      「……ふふ、そうですね！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      ーーーこうして
+      </div>
+      <div class="kp LtoR-early">
+      1人の歌手は成長していく
+      </div>
+      <div class="kp LtoR-early">
+      それは先輩の為でもあり
+      </div>
+      <div class="kp LtoR-early">
+      友の為でもあり
+      </div>
+      <div class="kp LtoR-early">
+      応援してくれるファンの為に
+      </div>
+      <div class="kp LtoR-early">
+      彼女は歌を詩(ｳﾀ)い続けるのだった
+      </div>
+      <div class="kp LtoR-early">
+      シノビガミ　【君に歌う詩】
+      </div>
+      <div class="kp LtoR-early">
+      終幕
+     </div>
+    
+    
+
+<br><br><br><br><br><br><br><br><br>
+</div></div>
+<script src="./logCon_Respon.js"></script>
+</body></html>
