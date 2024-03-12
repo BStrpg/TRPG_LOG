@@ -1,0 +1,8028 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>log</title>
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../logCon_Respon.css">
+<style>
+    /* main css */
+    .bg-inner.bg1{background:url('./緋色の死兆星/広場.jpg') no-repeat center/cover;}
+    .bg-inner.bg2{background:url('./緋色の死兆星/応接室.jpg') no-repeat center/cover;}
+    .bg-inner.bg3{background:url('./緋色の死兆星/廊下.jpg') no-repeat center/cover;}
+    .bg-inner.bg4{background:url('./緋色の死兆星/寝室.jpg') no-repeat center/cover;}
+    .bg-inner.bg5{background:url('./緋色の死兆星/崖.jpg') no-repeat center/cover;}
+    .bg-inner.bg6{background:url('./緋色の死兆星/1709438362530.png') no-repeat center/cover;}
+    .bg-inner.bg7{background:url('./緋色の死兆星/ダイニング.jpg') no-repeat center/cover;}
+    
+    /* member */
+    .kyohou p{border:2px solid rgb(103, 58, 183);box-shadow:5px 5px 0 rgb(103, 58, 183);}
+.kyohou p:after{border-right-color:rgb(103, 58, 183);}
+.kyohou span{background:rgb(103, 58, 183);color:#fff;}
+.kyohou:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(2\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_sakasa:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(1\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_kasige:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(3\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_egao:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(4\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_flash:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(5\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_guruguru:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(6\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_soccer:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(7\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_bakuha:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(8\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_theme:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(9\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_kurusii:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(10\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_u-mu:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(11\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_wakaranai:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(12\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_bikkuri:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(13\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_akire:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(14\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_syobon:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(15\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_ougi:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(1\).jpg');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyohou_aikyach:before{content:'';background-image:url('./緋色の死兆星/1709438362530.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.zyouga p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.zyouga p:after{border-left-color:rgb(136, 136, 136);}
+.zyouga span{background:rgb(136, 136, 136);color:#fff;}
+.zyouga:before{content:'';background-image:url('./緋色の死兆星/零女\ 条牙.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IV p{border:2px solid rgb(255, 192, 203);box-shadow:5px 5px 0 rgb(255, 192, 203);}
+.IV p:after{border-right-color:rgb(255, 192, 203);}
+.IV span{background:rgb(255, 192, 203);color:#000;}
+.IV:before{content:'';background-image:url('./緋色の死兆星/イヴ01.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IV_sekimen:before{content:'';background-image:url('./緋色の死兆星/イヴ02.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IV_sekimen_egao:before{content:'';background-image:url('./緋色の死兆星/イヴ03.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IV_sekimen_tun:before{content:'';background-image:url('./緋色の死兆星/イヴ04.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IV_purge:before{content:'';background-image:url('./緋色の死兆星/イヴsin_01.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IV_purge_niyari:before{content:'';background-image:url('./緋色の死兆星/イヴ02.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IV_purge_eti:before{content:'';background-image:url('./緋色の死兆星/イヴsin_ero.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IV_pink:before{content:'';background-image:url('./緋色の死兆星/イヴピンク.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IV_hanasu:before{content:'';background-image:url('./緋色の死兆星/イヴ話す.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo p{border:2px solid rgb(255, 0, 0);box-shadow:5px 5px 0 rgb(255, 0, 0);}
+.kyougo p:after{border-left-color:rgb(255, 0, 0);}
+.kyougo span{background:rgb(255, 0, 0);color:#fff;}
+.kyougo:before{content:'';background-image:url('./緋色の死兆星/暁。私服通常1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sihuku_egao:before{content:'';background-image:url('./緋色の死兆星/暁。私服通常2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sihuku_onigiri:before{content:'';background-image:url('./緋色の死兆星/暁。私服おにぎり.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sihuku_sikametura:before{content:'';background-image:url('./緋色の死兆星/暁。私服しかめつら.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sihuku_yaruze:before{content:'';background-image:url('./緋色の死兆星/暁。私服やるぜ.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sihuku_komaru1:before{content:'';background-image:url('./緋色の死兆星/暁。私服困った1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sihuku_komaru2:before{content:'';background-image:url('./緋色の死兆星/暁。私服困った2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sihuku_zannen:before{content:'';background-image:url('./緋色の死兆星/暁。私服残念.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sihuku_mogu:before{content:'';background-image:url('./緋色の死兆星/暁。私服食ってる.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sentou:before{content:'';background-image:url('./緋色の死兆星/暁。戦闘通常1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sentou_egao:before{content:'';background-image:url('./緋色の死兆星/暁。戦闘通常2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_sentou_tumuri:before{content:'';background-image:url('./緋色の死兆星/暁。戦闘つむり.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.kyougo_majin:before{content:'';background-image:url('./緋色の死兆星/暁。（アニメ）魔人通常.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.humituki p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.humituki p:after{border-right-color:rgb(136, 136, 136);}
+.humituki span{background:rgb(136, 136, 136);color:#fff;}
+.humituki:before{content:'';background-image:url('./緋色の死兆星/零女\ 文月.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mitama p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mitama p:after{border-left-color:rgb(136, 136, 136);}
+.mitama span{background:rgb(136, 136, 136);color:#fff;}
+.mitama:before{content:'';background-image:url('./緋色の死兆星/零女\ 御霊.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.utahime p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.utahime p:after{border-right-color:rgb(136, 136, 136);}
+.utahime span{background:rgb(136, 136, 136);color:#fff;}
+.utahime:before{content:'';background-image:url('./緋色の死兆星/綿月\ 歌姫.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB p{border:2px solid rgb(255, 182, 193);box-shadow:5px 5px 0 rgb(255, 182, 193);}
+.IB p:after{border-left-color:rgb(255, 182, 193);}
+.IB span{background:rgb(255, 182, 193);color:#000;}
+.IB:before{content:'';background-image:url('./緋色の死兆星/ロキシー.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_niya:before{content:'';background-image:url('./緋色の死兆星/ロキシー。02.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_tozi:before{content:'';background-image:url('./緋色の死兆星/ロキシー。03.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_ero:before{content:'';background-image:url('./緋色の死兆星/ロキシー。エロ.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_pink:before{content:'';background-image:url('./緋色の死兆星/ロキシー。ピンク.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_komaru:before{content:'';background-image:url('./緋色の死兆星/ロキシー。困る.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_okoru:before{content:'';background-image:url('./緋色の死兆星/ロキシー。怒る.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_yoyuu:before{content:'';background-image:url('./緋色の死兆星/ロキシー。余裕.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_hanasu:before{content:'';background-image:url('./緋色の死兆星/ロキシー。話す.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_hanasu2:before{content:'';background-image:url('./緋色の死兆星/ロキシー。話す02.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.IB_hanasu3:before{content:'';background-image:url('./緋色の死兆星/ロキシー。話す03.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.GM p:after{border-right-color:rgb(136, 136, 136);}
+.GM span{background:rgb(136, 136, 136);color:#fff;}
+.GM:before{content:'';background-image:url('9.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_iti:before{content:'';background-image:url('./緋色の死兆星/零女\ 逸星.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_uta:before{content:'';background-image:url('./緋色の死兆星/綿月\ 歌姫.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_huta:before{content:'';background-image:url('./緋色の死兆星/零女\ 文月.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_mitama:before{content:'';background-image:url('./緋色の死兆星/零女\ 御霊.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_yotuha:before{content:'';background-image:url('./緋色の死兆星/零女\ 夜葉.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_joga:before{content:'';background-image:url('./緋色の死兆星/零女\ 条牙.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_PC1:before{content:'';background-image:url('./緋色の死兆星/ぶどう\ \(2\).png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_PC2:before{content:'';background-image:url('./緋色の死兆星/ロキシー.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.GM_PC3:before{content:'';background-image:url('./緋色の死兆星/暁。私服通常1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.yoruha p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.yoruha p:after{border-left-color:rgb(136, 136, 136);}
+.yoruha span{background:rgb(136, 136, 136);color:#fff;}
+.yoruha:before{content:'';background-image:url('./緋色の死兆星/零女\ 夜葉.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.darekanokoe p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.darekanokoe p:after{border-right-color:rgb(136, 136, 136);}
+.darekanokoe span{background:rgb(136, 136, 136);color:#fff;}
+.darekanokoe:before{content:'';background-image:url('11.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.hosinosei1 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.hosinosei1 p:after{border-left-color:rgb(136, 136, 136);}
+.hosinosei1 span{background:rgb(136, 136, 136);color:#fff;}
+.hosinosei1:before{content:'';background-image:url('./緋色の死兆星/1.星の精.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.hosinosei2 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.hosinosei2 p:after{border-right-color:rgb(136, 136, 136);}
+.hosinosei2 span{background:rgb(136, 136, 136);color:#fff;}
+.hosinosei2:before{content:'';background-image:url('./緋色の死兆星/2.星の精.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.hosinosei3 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.hosinosei3 p:after{border-left-color:rgb(136, 136, 136);}
+.hosinosei3 span{background:rgb(136, 136, 136);color:#fff;}
+.hosinosei3:before{content:'';background-image:url('./緋色の死兆星/3.星の精.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.iv_hatena p{border:2px solid rgb(255, 182, 193);box-shadow:5px 5px 0 rgb(255, 182, 193);}
+.iv_hatena p:after{border-right-color:rgb(255, 182, 193);}
+.iv_hatena span{background:rgb(255, 182, 193);color:#000;}
+.iv_hatena:before{content:'';background-image:url('./緋色の死兆星/ロキシー.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi- p{border:2px solid rgb(255, 182, 193);box-shadow:5px 5px 0 rgb(255, 182, 193);}
+.rokishi- p:after{border-left-color:rgb(255, 182, 193);}
+.rokishi- span{background:rgb(255, 182, 193);color:#000;}
+.rokishi-:before{content:'';background-image:url('./緋色の死兆星/ロキシー.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_02:before{content:'';background-image:url('./緋色の死兆星/ロキシー。02.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_03:before{content:'';background-image:url('./緋色の死兆星/ロキシー。03.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_ero:before{content:'';background-image:url('./緋色の死兆星/ロキシー。エロ.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_pink:before{content:'';background-image:url('./緋色の死兆星/ロキシー。ピンク.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_yareyare:before{content:'';background-image:url('./緋色の死兆星/ロキシー。やれやれ.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_komaru:before{content:'';background-image:url('./緋色の死兆星/ロキシー。困る.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_okoru:before{content:'';background-image:url('./緋色の死兆星/ロキシー。怒る.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_hanasu:before{content:'';background-image:url('./緋色の死兆星/ロキシー。話す.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_hanasu2:before{content:'';background-image:url('./緋色の死兆星/ロキシー。話す02.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_hanasu3:before{content:'';background-image:url('./緋色の死兆星/ロキシー。話す03.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_sin:before{content:'';background-image:url('./緋色の死兆星/ロキシーsin_ero.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_sin_ero:before{content:'';background-image:url('./緋色の死兆星/ロキシーsin_エロ.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_sin_ero02:before{content:'';background-image:url('./緋色の死兆星/ロキシーsin_エロ02.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_sin_ero03:before{content:'';background-image:url('./緋色の死兆星/ロキシーsin_エロ03.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.rokishi-_sin_ero_komaru:before{content:'';background-image:url('./緋色の死兆星/ロキシーsin_困る.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    
+    @media only screen and (max-width: 768px) {
+        .kyohou p:after{border-right-color:rgb(103, 58, 183);border-left-color:transparent;}
+        .zyouga p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .IV p:after{border-right-color:rgb(255, 192, 203);border-left-color:transparent;}
+        .kyougo p:after{border-right-color:rgb(255, 0, 0);border-left-color:transparent;}
+        .humituki p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mitama p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .utahime p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .IB p:after{border-right-color:rgb(255, 182, 193);border-left-color:transparent;}
+        .GM p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .yoruha p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .darekanokoe p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .hosinosei1 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .hosinosei2 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .hosinosei3 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .iv_hatena p:after{border-right-color:rgb(255, 182, 193);border-left-color:transparent;}
+        .rokishi- p:after{border-right-color:rgb(255, 182, 193);border-left-color:transparent;}
+  
+        .kyohou:before,.zyouga:before,.IV:before,
+        .kyougo:before,.humituki:before,.mitama:before,
+        .utahime:before,.IB:before,.GM:before,
+        .yoruha:before,.darekanokoe:before,.hosinosei1:before,
+        .hosinosei2:before,.hosinosei3:before,.iv_hatena:before,
+        .rokishi-:before{width:70px;height:70px;}
+    }
+</style>
+</head>
+<body>
+    <p id="page-top"><a href="#"><i class="page-top__arrow"></i></a></p>
+	<div class="leftwhite"></div>
+	<div class="rightwhite"></div>
+	<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+	<div class="log">
+    
+        <div class="kp LtoR-early">
+
+            緋色の死兆星、それでは開始します。
+      </div>
+      <div class="kp LtoR-early">
+      
+            女系の巫女一族「零女家」は<br>傲慢な長女「零女 逸星」によって支配されていた。<br><br>彼女は、神話生物への知識や魔術で零女家の更なる発展を目論んでいた、が。<br><br>彼女は「死亡」した。そういうことにされた。<br><br>そして支配から逃れた残された家族は、後継者を決めることとなる。<br><br>しかし、その後継者の一人もまた、死亡。<br>後継者を決める晩餐会でもまた一人、奇妙な血の無い死体が出来上がる。<br><br>『クスクス。クスクス……』<br><br>「星の亡霊」は、死体を見て嘲笑った。
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――――――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ―――
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            あなた達はある日、それぞれの知人から「零女家」の晩餐会に招待されます。<br>零女家は比良坂機関に属する女系の巫女一族であり、つい最近までは長女の「零女 逸星」が支配していたと聞く。
+      </div>
+      <div class="kp LtoR-early">
+      
+            しかし、招待状には「逸星姉様が死んだので、跡取りを決める」<br>という風に書いてありました。
+      </div>
+      <div class="kp LtoR-early">
+      
+            あなた達は零女家の屋敷に向かい、インターホンを押す。
+      </div>
+      <div class="kp LtoR-early">
+      
+            すると、一人の青年が出て来ます。
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「どうもぉー！あなたが依頼人かしらー？」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「あぁ、探偵さんですね。お待ちしておりました」
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「よろしくねー！あ、この度はお気の毒ね」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「失礼します、綿月さんはご在宅でしょうか」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「こちらの住所が新しい邸宅だと伺っているのですが……」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「そうですね……。あ、歌姫さんのお知り合いの方ですね。歌姫さんなら応接室におります」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「確か、招待されていたイヴさんですか？」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「はい、お初にお目にかかります。わたくしは麝香会総合病院のイヴ・プロイフェンともうします」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            （応接室……？妙ね……）
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「ご丁寧にどうも……探偵さん？何かあったのですか？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「いいえー、何でもないわー、ｷｮﾎﾎ!」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「詳細は部屋に案内してからで、よろしいですか？」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「イヴさんも御一緒に」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「はい？……えぇ、まぁ構いませんけど」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「あら～一緒なの？よろしくね」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            と言って、二人は応接室に案内された。
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おーーーい！！！来たぜー！！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            （くっそバカでかい声）
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「えっと、逸星姉様のお知り合いの……暁さんですか？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうそう、俺俺！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あ…」頭をかく
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうです、暁ってもんです。」名刺をジャケットから出した
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            （ちゃんと何でも屋の名前を売らないといけないってこないだハローワークのおっちゃんに怒られたんだった）
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「あ、どうもありがとうございます。自分は逸星の弟の条牙と申します」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「どうも！よろしくっす！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「この度はお疲れさまでした！」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「ありがとうございます。こちらに来ていただいた詳細は、応接室で話させていただきます。」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            と言って、暁も応接室に案内される
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「妙ね……」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_mogu right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ん？」（何かを食べている）
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「客を一つの部屋に纏めるなんて聞いたこともないわ」
+      </p>
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg2"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            そして、応接室に入った三人は三人の女性が目に入る。
+      </div>
+      <div class="humituki left">
+      <span>零女 文月</span>
+      <p>
+      
+            「ねぇねぇ、なんで条牙が案内にいったんですか！」
+      </p>
+      </div>
+      <div class="humituki left">
+      <span>零女 文月</span>
+      <p>
+      
+            「零女家でいっちばん可愛いのは、この文月だって言うのに！」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「そもそも、逸星姉様と夜葉の死を話題に出したくも無いですわ」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「落ち着け、たまには条牙にも好き放題させてやれ」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「私は男だから、って理由で家族を蔑ろにしたくないんだ」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「御客人方、よく来てくださった。」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「どうも」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「それにイヴ、久しぶりだな」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_mogu right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ん。こんちは！」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「ごきげんよう歌姫」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「わたくしの他にもお友達を呼んでいたんですね」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「そうだな。第三者の視点の意見が欲しくて呼ばせてもらっている」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「もう！先に言ってくれればもっと相応しい格好で来たのに」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「その格好も似合っているし、問題ない」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「えぇ、ありがとう。そういう貴方も素敵よ」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            （お茶をすする）
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            こほん、と一区切りをつけるかのように声がする。
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「では、依頼の説明ですね。他の皆さんも、聞いといて下さい」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「逸星姉様が死んだ、というのは招待状にも書いた通り。今夜の晩餐会はその跡継ぎを決める話し合いの場でもあります」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「ですが、その後。四女の夜葉姉様が、亡くなられたのです」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「自殺か他殺かも分からない死に方でしたが、夜葉姉様は逸星姉様の死に大層不満げでしたから。他殺の可能性を考えてもいいんじゃないかって僕は思いました」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「でも、僕は零女家では地位が低い。だからこういうのは、外部の人間に公平に判断して貰うといいと思ったんです」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「だから探偵さん、この家の調査、お願いします」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            と、巨峰に向かってお辞儀をする
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「え？待って、ここで諸々をやるの？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「何でも屋の出番だな！」胸を強くたたく
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「身内が亡くなったのに公安は何もいってこなかったのですか？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「誰よアンタ！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「俺？俺ァ鏡護（キョウゴ）ってんだ！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「京極……」
+      </p>
+      </div>
+      <div class="IV IV_hanasu left">
+      <span>イヴ </span>
+      <p>
+      
+            「まさか……空手の？！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_egao right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あぁ！」（わかっていない）
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「一族のゴタゴタで依頼は出来ないですし、お願い出来るのは探偵だと思いましたので」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「他の二人は？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「まぁ、そうだな！逸星ちゃんに続いてこんなん起きちゃあ、俺の出番だよな」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「それぞれ、歌姫さんのご友人に、逸星姉様のご友人です」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「（微妙に答えになっていないような……）」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「第三者の視点で意見を頂きたく思いまして」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「あら、そうだったのですね。てっきり新居にお呼ばれしただけかと」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「では、逸星さんの遺体はどこで見つかったのかしら？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんだ？後継者を決める大会じゃなかったのか」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「それは……」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「こちらも、詳細までは聞いておりません。ただ、そういう連絡があったとまでしか」
+      </p>
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「はぁ……」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「家族なのに意外とそんなもんなんだな？」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「このお茶いい香りですね」（あんまり聞いてない）
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「じゃあなんで死んだことがわかるのよー！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_mogu right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あ、茶菓子もらいっと」（イヴの茶菓子をひょいっととる）
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「それは最もです。ですので、詳細についても探偵さんに調べてほしいと」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたも警察でしょー！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_mogu right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「猫探しならぬ死体探しか！」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「いや、まだ配属予定なので…」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_mogu right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんだ？兄ちゃん警察なのか」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「まぁ、知りたいことは……この家に起こっている事件の謎ですね。逸星姉様の謎、夜葉姉様の謎……」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたが一番謎よ……」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「あら、お茶請けがなくなっていますわ……」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「まあよくわかんねえけどわかったぜ！」
+      </p>
+      </div>
+      <div class="humituki left">
+      <span>零女 文月</span>
+      <p>
+      
+            「条牙ー、終わった？終わった？辛気臭い話、文月つかれたー」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「お客様、すみません。うちの男が……こういうのは、美味しいものを食べて忘れましょう。」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっ！いいねぇ」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「そうですね。では、晩餐会に案内しましょうか」
+      </p>
+      </div>
+
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg7"></div></div>
+    <div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            そしてあなた達は、零女家での食事を楽しみました。<br>チキンや色とりどりのサラダはとても豪華で美味しく、思わず箸が進む。<br>しかし、途中で文月の箸が止まり、青ざめた顔で席を立った。
+      </div>
+      <div class="humituki left">
+      <span>零女 文月</span>
+      <p>
+      
+            「ね、姉様……これ、マズいよ！ちょ、トイレトイレ！！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「あら、大丈夫？」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「……？ なんだ、変なものは入れてなかったはずだが」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「身体に異常も無いですし、しばし様子見としましょう。それより、一族の長となるべきが誰か、の話ですが……」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            （姉様……？）
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「どうしたのかしら？便秘？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_mogu right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんだ？うまいだろ」ガツガツ
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            その後、しばらくあなた達にとっては退屈かもしれない話が続く。<br>食後ということもあり、少しうとうとしてしまった。そんな時だった
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「きゃああああああああ！！！！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            トイレの方から、御霊の悲鳴が響く。
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「！？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「？！何事！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_mogu right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんだ？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            あなた達が現場に向かうと、そこには、傷だらけでピクリとも動かない<br>零女 文月の遺体が、トイレの綺麗な床の上にあった
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg6"></div></div>
+<div class="log">
+
+      <div class="kyohou kyohou_aikyach left">
+      <span>巨峰</span>
+      <p>
+      
+            シーン終
+      </p>
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg7"></div></div>
+<div class="log">
+      
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「きゃああああああああ！！！！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            トイレの方から、御霊の悲鳴が響く。
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「！？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「？！何事！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_mogu right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんだ？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            あなた達が現場に向かうと、そこには、傷だらけでピクリとも動かない<br>零女 文月の遺体が、トイレの綺麗な床の上にあった
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「今すぐ屋敷を封鎖しなさーい！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おいナース！脈はあるのか？！」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「これは……まさか……」
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「……お陀仏ですわ」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたへの好意は感じなかったけど」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_zannen right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「マジかよ…」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「！？」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「ほ、『星の亡霊』よ……」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「逸星姉様の亡霊が、文月姉様を殺したのよ……！！」
+      </p>
+      </div>
+      <div class="IB IB_tozi right">
+      <span>イヴ</span>
+      <p>
+      
+            「はぁ？『星の亡霊』？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「大丈夫？？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「・・・」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「来ないで！私は部屋に戻るわ！勝手に入ってこないで！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ちょっ、おい！！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            御霊はその場から立ち去ってしまった
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「弟！行きなさい！」
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「それは……所謂死亡フラグってやつでは」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「え、あ、はい！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            そして条牙もその場からいなくなった
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「なんてことだ……」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「まさか目の前で事件が起こるなんて……」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「ご愁傷様ね」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「ちょっとゾクゾクして参りましたわ」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「飯がうま過ぎて憤死したのか？」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「探偵さん、この殺人事件も解いてほしい。報酬に上乗せさせてもらう」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたも依頼人ってことね」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「この家に蔓延る謎を明らかにしてほしい」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「まかせなさーい！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_theme left">
+      <span>巨峰</span>
+      <p>
+      
+            「真実はいつも一つ」
+      </p>
+      </div>
+      <div class="kyohou kyohou_theme left">
+      <span>巨峰</span>
+      <p>
+      
+            「私はいずれも大粒よ」
+      </p>
+      </div>
+      <div class="kyohou kyohou_theme left">
+      <span>巨峰</span>
+      <p>
+      
+            「ｷｮﾎﾎﾎﾎﾎﾎﾎﾎ!!!!」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            導入終了
+      </div>
+
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg1"></div></div>
+    <div class="log">
+
+      <div class="kp LtoR-early">
+      
+            1サイクル目
+      </div>
+
+
+      <div class="kp LtoR-early">
+      
+            1.イヴ
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            初手ドラマシーン
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            mst 館シーン表(5) ＞ あなたは階段でふと足を止めた。何者かの足音が近づいているようだ。
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：イヴ、歌姫、巨峰、暁
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「フフ……なにやら盛り上がってきましたわね」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_zannen right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「まぁ、いい盛り上がり方ではねェけどな」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「まあそうね」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「そうだな」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「あぁ！身体が火照ってまいりました♡」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「あぁ、イヴの悪い癖が出てるな」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「ご飯になにか入ってたのかしら」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「うーん、ふつうにうまかったが」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「そちらの豊満な方が探偵さんで……そちらの美味しそう（直喩）な殿方はなんでしたでしょうか」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「俺か？俺はここいらで有名（になる予定）の何でも屋だ」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「何でもや……NGは？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「無いね！なんでもやるぜ！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「スタントマンだってやるし、紛争国にだって行くぜ」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「あらぁ♡……」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「それはすごいわねぇ」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「事件が終わったら早速使わせてもらいますわ」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そう褒めんな！お嬢ちゃん達もデキそうだな」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「何でも屋さんも今回は探偵役ですの？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっ、じゃあここに連絡してくれ」名刺を渡す
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ま、そういうことらしい」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「どうも♡」（名刺を谷間にしまう）
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっ」ガン見
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「なるほど……つまりこれは」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「二人の探偵による推理合戦！ということですわね♡」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「じゃああたしもこれ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうだな！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「そうなの？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう」食べる
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「あらご丁寧にどうも……あむっ♡」（妖艶に舐め回す）
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そっちも何でも屋だろ？葡萄ちゃん」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「アタシはれっきとした探偵よー！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「！？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「これはすまん、同業者かと」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「失礼しちゃうわね」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「観察力が足りてませんわよぉ♡ほら。見てあの虫眼鏡。どこからどうみても名探偵」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            （なぜかキョウゴの腕に胸を寄せて巨峰を指差す）
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっ」鼻の下を伸ばす
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「アリを観察してるのかなと思ったぜ」
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「そっちはよくわかってるじゃないの」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「どちらが名探偵か……わたくし、特等席で観覧させていただきますわ」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「とりあえず誰か文月さんに「殺意」を取得していたキャラ知らないかしら？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「ですがそうなると……もしやわたくしも容疑者の一人となるのでは……？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ま、俺はあくまで何でも屋だからな、探偵ちゃんには従うよ」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「殺意ねぇ～～」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「殺意……」
+      </p>
+      </div>
+      <div class="IB IB_tozi right">
+      <span>イヴ</span>
+      <p>
+      
+            「『殺意』？……まったくぅ」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「家族で殺意を持つことなんてありえねぇだろ！」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「歌姫ちゃんはどうかしらね？ホントにぃ♡」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「どうかしらね～」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「フ～♡」（歌姫の背後に回り耳元で息を吹きかける）
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「わあ！？」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「何をするイヴ！」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「フフッ……可愛い♡そう初心な反応されるとわたくし……我慢できなくなりそう♡」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            感情判定→巨峰
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：兵糧術） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            et 感情表(1) ＞ 共感（プラス）／不信（マイナス）
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            et 感情表(2) ＞ 友情（プラス）／怒り（マイナス）
+            
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            【薬師閨】
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            自分に対して、誰かがプラスの【感情】を獲得したときに使用できる。指定特技の判定に成功すると、「兵糧丸」を一つ獲得できる。
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            友情を取得
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：九ノ一の術） (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            共感を獲得wo
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            兵糧丸get
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ イヴ ] 忍具 : 4 → 5
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「あぁ、美味しい♡もう一粒いただけるかしら？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「あらあら～」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            シーン終了
+      </p>
+      </div>
+
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg1"></div></div>
+    <div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            2.暁
+      </div>
+      <div class="kp LtoR-early">
+      
+            シーン、登場人物継続
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そういや、あんた探偵ってことは潜入捜査とかもすんのか？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「まだやったことはないけどできるんじゃないかしらー？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんだ、やったことねェのか」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「今度教えてやるよ！変装して現場になじむのも大事だぜ」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「ま、考えとくわ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            （感情判定：変装術）
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            2D6&gt;=5 （判定：変装術） (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            et 感情表(3) ＞ 愛情（プラス）／妬み（マイナス）
+            
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            ET 感情表(2) ＞ 友情（プラス）／怒り（マイナス）
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            愛情を取得
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたは何の変装したことあるの？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ん？庭の木とかだな」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「わたくしは犬とか豚とかなら」
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「へえ、動物なのにやるじゃない」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうだろ！」どや顔
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            シーン終了
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg3"></div></div>
+    <div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            3.巨峰
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            mst 館シーン表(9) ＞ 長い廊下の途中。この屋敷は広すぎて、迷子になってしまいそうだ。
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：全員
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「犯人は大分絞れたわ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「何？やるな！！」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「まぁ♡巨峰ちゃんが一歩リードですわね」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「いえ、このまま事件解決になったら……鏡護さんは只の賑やかしですわよ？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ん？！それもそうか？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「俺もなんかしねェとな！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_u-mu left">
+      <span>巨峰</span>
+      <p>
+      
+            「犯人の候補はこの屋敷にいる全員、それと零女 逸星、零女 夜葉、そして零女 文月本人よ」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「ほらほら、がんばれ♡がんばれ♡」（鏡護の耳元で囁く）
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっふ」鼻の下を伸ばす
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ん？死んでるやつもいれてねェか？」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「姉様方もですか？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「ほんとに死んでるのぉ～？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「俺もなんか活躍しねぇとな！おーい御霊ちゃーん！！」ドアをバンバンと叩く
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「な、なによぉ！？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっ！生きてた！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「一人じゃあぶねぇぞ！！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            部屋は開くことはないが、中から声はする
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「次期当主になった感想はどうかしらー！」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「醜女衆の割には情けない方ですこと」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「今は誰にも会いたくないのよ！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「うーむ」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「当主に関しては、……！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「馬鹿！そんなこと言ってる場合じゃねえだろ！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「これ以上死人を出さないことが先決だ！」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「それには賛成だな」
+      </p>
+      </div>
+      <div class="IB IB_hanasu3 right">
+      <span>イヴ</span>
+      <p>
+      
+            「んまぁ～これ以上ない正論ティー。わたくし論破されました」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「あなたたちは更に死人が出ると思っているのね」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「うーん。そうとは言ってねェけどよ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「けど、なんかやな予感はすンだよ」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「犯人も目的もわからなければ想定するのは自然ではなくて？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「逆にこれ以上起きないと断言できるのならば。すでに犯人の目的がわかっているとでも？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうなのか？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「そうとも言えるわね」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「やるな！！」背中をバンと叩く
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「そうなのですか？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「でたわね」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「え？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「明らかに不自然な部分が一つあるわ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「うん？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「いやもっとあるけど」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_mogu right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうだな、葡萄おちたぞ」ヒョイパク
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「それは零女 条牙！あんたの依頼よ！」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「俺の……依頼？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「なぜあなたの【使命】は夜葉についてしか知りたがってないのかしらー！」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「そ、それは……」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「今死んだ文月ならともかく、逸星についてはなにか知ってるんじゃないのー？」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「それは……」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「それは……じゃないわよー！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「絞めるか？」指を鳴らす
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「その反応……何かやましいことでもあるのかしら？」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「やましいことなんてありませんよ！ただ、ちょっと言いづらいことなだけです」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「吐けー！」口に巨峰を詰め込む。兵糧術で条牙に調査判定
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            【枕事】
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            2D6&gt;=5 （判定：九ノ一の術） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            文月の【秘密】を調べろ
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：兵糧術） (SG+1@12#2&gt;=5) ＞ 8[3,5]+1 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="IB IB_hanasu3 right">
+      <span>イヴ</span>
+      <p>
+      
+            「巨峰ちゃん、それより死体を調べてみた方がよろしいのでは？」
+      </p>
+      </div>
+      <div class="GM GM_huta left">
+      <span>GM</span>
+      <p>
+      
+            【零女 文月の秘密】<br>あなたは、忍びの力すら使えずに殺された。<br>原因は、晩餐会で盛られた「毒」だ。<br>毒を盛られたことにいち早く気付いたあなたは<br>トイレに駆け込み、食事を吐こうとした。<br>しかし、その時「クスクス……」という声が聞こえた後、<br>犯人の姿すら見ることなく惨殺された。<br>① 晩餐会に参加していたNPCは、戦闘が起きた時に自動敗北し、妨害が無ければ死亡する。<br>② 晩餐会に参加していたPCは誰かが《毒術》or《医術》の補助判定に成功するまで、あらゆるサポート忍法の判定にー２、自分の回避判定にー１の修正がかかる。<br>③ 毒を盛られていないキャラには①と②の効果は適応されない。
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「それもそうね！」
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            PC2貴方は毒は盛られてません
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            あい
+      </p>
+      </div>
+      <div class="IB IB_tozi right">
+      <span>イヴ</span>
+      <p>
+      
+            「検視の結果、以上の情報が得られましたわ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「やるな！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「麝香会が毒を盛られるとはね……」
+      </p>
+      </div>
+      <div class="IB IB_tozi right">
+      <span>イヴ</span>
+      <p>
+      
+            「ホホ、お褒めいただき恐悦至極」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「毒……だなんて」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            解毒の補助判定
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「つまり…晩餐会に出てたやつはみんな危ないってことか？！」
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「まぁあの子、色仕掛け特攻みたいなところありましたし」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=6 （判定：兵糧術） (SG+1@12#2&gt;=6) ＞ 5[1,4]+1 ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            PC全員の毒は解除された
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「これでもう大丈夫ね！ｷｮﾎﾎ!」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう！サンキュー！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「やっぱまだ危なさそうだな」
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「そもそも、毒が盛られていたということは手配した方が怪しいのでは？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            文月に【分析】ぶんせき
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：記憶術） (SG+1@12#2&gt;=5) ＞ 10[4,6]+1 ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            命中判定+2
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「まだ【犯人から自分たちの身を守る】必要がありそうだ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「俺はなんでも屋だからよ、この辺を警護するぜ」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「がんばって🍇」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「がんばって❤」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう」鼻の下を伸ばす
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そこでよォ、葡萄ちゃん。次に危ないと思うのは誰だ？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「幽霊さんの動機が分かればねぇ」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「歌姫ちゃんは平気かしら……？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「もしかしたらわたくしも危ないカモ……！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あぁ、そうだ。みんなで生き残る必要がある！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「だが…俺も分身できるわけじゃねぇ。練習中だけどな！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_aikyach left">
+      <span>巨峰</span>
+      <p>
+      
+            シーン終
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            1サイクル目終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg4"></div></div>
+    <div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            マスターシーン
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            警護誰にします？
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            戦闘仕掛けた側もいけるんですよね？<br>であれば、歌姫で
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            了解しました
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            貴方は、「零女 御霊」に戦闘を仕掛けます
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            仕掛けるように心の中にささやかれます
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            どうやるんですかね？
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            いえ、今回はそのまま通ります
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            はい
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg4"></div></div>
+    <div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            夜が明け、朝になる
+      </div>
+      <div class="kp LtoR-early">
+      
+            PC1は、発見する
+      </div>
+      <div class="kp LtoR-early">
+      
+            御霊の死体を
+      </div>
+      <div class="kp LtoR-early">
+      
+            マスターシーン終了
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg6"></div></div>
+    <div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            2サイクル目
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            これって死んだ扱いになっている人は守れない（守る必要はない）ってことであってますか？
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            ぶっちゃけ、守ることはないですね
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            おｋです、つまり今回感情を結んで、結んでないひとを守れば確定で守れるか
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            あ、今回警護失敗したら特殊な乱入不可になっております
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            頑張って監視してね★
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            えぇ～！？
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            じゃあ感情結ぶ価値はないか…
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            それやったら監視の意味が薄れちゃう……薄味になっちゃう
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg4"></div></div>
+    <div class="log">
+
+
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            初手わたし
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            1.イヴ
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：PC全員、歌姫、条牙、御霊
+      </div>
+      <div class="kyohou kyohou_wakaranai left">
+      <span>巨峰</span>
+      <p>
+      
+            「噓ーー！！死んでるーー！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_sikametura right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「どうした！！」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「なんということでしょう……」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「また守れなかったのか…」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_sikametura right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「こっちだったか……」
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「鏡護さんが警備していたはずでは？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ねーちゃんが歌姫って言うからヨォ」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「そんな……御霊姉様」
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「え？わたくし昨晩は歌姫ちゃんと一緒に寝てましたわよ」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「この場合当主はどうなるのかしら？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「心配だったので」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「え？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「え？そうなのか？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「えぇ、こちらは鏡護さんが警備するというから……」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「じゃあ早く言ってくれよ…」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「つっても、まあ勘違いした俺が悪いか。すまん…」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「いえ、失態は次で取り返していただければモーマンタイですわ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あぁ…」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            感情判定→鏡護
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            イヴに感情修正
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            (《対人術》で交流をした)
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            SG+2&gt;=7 （判定：九ノ一の術） (SG+2@12#2&gt;=7) ＞ 11[5,6]+2 ＞ 13 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            et 感情表(1) ＞ 共感（プラス）／不信（マイナス）
+            
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            ET 感情表(4) ＞ 忠誠（プラス）／侮蔑（マイナス）
+            
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            共感を取得
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            （次こそ守る…！）　忠誠を取得
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            【薬師閨】
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：九ノ一の術） (SG+1@12#2&gt;=5) ＞ 3[1,2]+1 ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            【暗躍】
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            振り直し
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：九ノ一の術） (SG+1@12#2&gt;=5) ＞ 9[3,6]+1 ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            兵糧丸get
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ イヴ ] 忍具 : 5 → 6
+      </div>
+      <div class="IB IB_tozi right">
+      <span>イヴ</span>
+      <p>
+      
+            「ヨシヨシして差し上げますわ」
+      </p>
+      </div>
+      <div class="IB IB_tozi right">
+      <span>イヴ</span>
+      <p>
+      
+            「他の方は無事のようですね」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_sikametura right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ん。すまんな…」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「よしよし……ﾍﾟﾛｯ」（耳に舌を這わせる）
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            シーン終了
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg4"></div></div>
+    <div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            2.暁
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            MST 館シーン表(6) ＞ あなたに割り当てられた寝室。ベッドは柔らかく、調度品も高級なものばかりだが……。
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：暁、イヴ
+      </div>
+      <div class="kyougo kyougo_sihuku_sikametura right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            鏡護は落ち込んでいる…
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_sikametura right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「もっと話を聞いておくべきだったな」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――コン、コン
+      </div>
+      <div class="kyougo kyougo_sihuku_sikametura right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ん？誰だ」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「わたくしですわ」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_sikametura right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あぁ、看護師のねーちゃんか」
+      </p>
+      </div>
+      <div class="IV IV_sekimen left">
+      <span>イヴ </span>
+      <p>
+      
+            「フフ、ごきげんよう」ガチャリ
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「？　おう」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんかあったか？飯か？」
+      </p>
+      </div>
+      <div class="IV IV_sekimen left">
+      <span>イヴ </span>
+      <p>
+      
+            「……落ち込んでいるのね？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「…まぁな」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「守るって大見得切った割には守れなかったし、人死が出てるんだ」
+      </p>
+      </div>
+      <div class="IV IV_sekimen_tun left">
+      <span>イヴ </span>
+      <p>
+      
+            「……わかります。わたくしも仕事でミスをしたとき、よくお姉さまに叱られます」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうか、ミスするんだなあんたも」
+      </p>
+      </div>
+      <div class="IV IV_sekimen left">
+      <span>イヴ </span>
+      <p>
+      
+            「そんな時に一人でいると気が滅入ってしまって……だから」ｽｯ
+      </p>
+      </div>
+      <div class="IV IV_sekimen left">
+      <span>イヴ </span>
+      <p>
+      
+            鏡護の横に座る
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「うん？」
+      </p>
+      </div>
+      <div class="IV IV_sekimen_egao left">
+      <span>イヴ </span>
+      <p>
+      
+            「あなたが元気になれるまで……横にいてあげますね？」（寄りかかる）
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっ」鼻の下を伸ばす
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_sikametura right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            （やさしさが染みるぜ…）
+      </p>
+      </div>
+      <div class="IV IV_sekimen_egao left">
+      <span>イヴ </span>
+      <p>
+      
+            自然に鏡護の身体をまさぐりだす
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_sikametura right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「？！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            （据え膳食わぬは男の恥ッ！）
+      </p>
+      </div>
+      <div class="IV IV_sekimen_egao left">
+      <span>イヴ </span>
+      <p>
+      
+            「あら❤随分お元気だこと……」
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            ゴソゴソ
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そっちだってやる気じゃねえか…！」
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            「もう……言わせないでくださいまし❤」
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            「さぁ……来て♡」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――見せられないよ！
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            （調査判定をしようとしていた彼は）
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            「あなたに……もっと知ってほしいの❤」
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            【枕事】
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            &gt;感情修正
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            SG+1&gt;=5 （判定：九ノ一の術） (SG+1@12#2&gt;=5) ＞ 8[3,5]+1 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            忠誠ッッ！！！
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            イヴの【秘密】を調べなさい
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あぁ…♡」
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            「そう、ソコ……❤」
+      </p>
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            感情修正
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっ♡」
+      </p>
+      </div>
+      <div class="IV IV_pink left">
+      <span>イヴ </span>
+      <p>
+      
+            「はぁぁ……❤」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            2D6+1&gt;=5 （判定：生存術） (2D6+1&gt;=5) ＞ 9[3,6]+1 ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            せいこうしました（意味深）
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            choice[ペルソナ,秘密] (choice[ペルソナ,秘密]) ＞ 秘密
+            
+      </div>
+      <div class="GM GM_PC2 left">
+      <span>GM</span>
+      <p>
+      
+            【PC2の秘密】<br>気がついたら目の前に次女の死体があった<br>ズタボロに切り裂かれた死体からは、何故か血が流れていなかった。<br>口の中には、血の味が残っている<br>そっか、この遺体の血は、自分が啜ってしまったんだ……<br>まだ頭は、ぼーっとする……<br>① あなたは戦闘において「勝者になれ」と命じられることがある。<br>この命令に逆らうことは出来ない。<br>② あなたの【本当の使命】は「■■■■■■■■■」ことだ。
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――しばらくあと
+      </div>
+      <div class="IV IV_sekimen left">
+      <span>イヴ </span>
+      <p>
+      
+            「元気になりました？」ｼｭﾙ（服を着る）
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あぁ。ありがとよ。イヴ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            （同じく服を着る）
+      </p>
+      </div>
+      <div class="IV IV_sekimen left">
+      <span>イヴ </span>
+      <p>
+      
+            「フフッ、その調子ですよ……ﾁｭ」頬にキス
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう」鼻の下を伸ばす
+      </p>
+      </div>
+      <div class="IV IV_sekimen_tun left">
+      <span>イヴ </span>
+      <p>
+      
+            「お・ま・じ・な・い❤」
+      </p>
+      </div>
+      <div class="IV IV_sekimen_egao left">
+      <span>イヴ </span>
+      <p>
+      
+            「がんばってね❤」部屋を出ていく
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            名残惜しく見送る
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            シーン終了
+      </p>
+      </div>
+
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg3"></div></div>
+    <div class="log">
+
+
+
+      <div class="kp LtoR-early">
+      
+            3.巨峰
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            mst 館シーン表(9) ＞ 長い廊下の途中。この屋敷は広すぎて、迷子になってしまいそうだ。
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            登場人物：PC全員
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「……終わったかしら」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんのことだ？！」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「あら？こんなところで何してるの？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「少し二度寝が過ぎてしまいましたわねふわぁあ～」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そ、そうだな！」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「失礼、わたくし普段は夜型でして」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうなのか？さっきは…」ハッ
+      </p>
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「あら、そ」
+      </p>
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「……ったく何受粉してんのよ」
+      </p>
+      </div>
+      <div class="IB IB_niya right">
+      <span>イヴ</span>
+      <p>
+      
+            「？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「おしべとめしべの話ですの？ところで自家受粉する時って何考えてるのかしら？興味があるのだけれど」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あ、あはは…」
+      </p>
+      </div>
+      <div class="kyohou kyohou_wakaranai left">
+      <span>巨峰</span>
+      <p>
+      
+            「おだまり！！」
+      </p>
+      </div>
+      <div class="IB IB_tozi right">
+      <span>イヴ</span>
+      <p>
+      
+            やれやれといった表情
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            バツが悪そうにする
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「で、あんた大丈夫なの？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「血吸われてない？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ん？なにもないぞ」キスマーク
+      </p>
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「そう」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「血？犯人は蚊か何かでして？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「文月を殺したのはあんたよー！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「俺ェ？！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「イ　ヴ！」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「はぁ？イヴ……わたくしですの？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうなのか？！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「けど、昨日は歌姫と寝てたって言ってたし、それなら歌姫が死んでないとおかしくないか？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「まぁ確かに自分のことは罪深い女だと思ったこともありますけども」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「そうそう！アリバイもありますわよ！」つ【ペルソナ】
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたも生きてるじゃない！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「確かに…？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「いや俺は寝てなんｋ・・・」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「ん？この香りは」ｽﾝｽﾝ（鏡護の身体を嗅ぐ）
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「黒幕は誰よー！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ん？さっきのか？」逆に頭を嗅ぐ
+      </p>
+      </div>
+      <div class="IB IB_tozi right">
+      <span>イヴ</span>
+      <p>
+      
+            「……なるほどぉ？大体スッキリ理解してきましたわ」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru1 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「よくわかんねぇけど、解決したってことか？」
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「ともかく、このイヴを操る黒幕こそが真犯人だと？」
+      </p>
+      </div>
+      <div class="IB IB_hanasu right">
+      <span>イヴ</span>
+      <p>
+      
+            「それならわたくしを晩餐会に呼びつけた方が怪しいのでは？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「そうよ実行犯女！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ちょちょ待てよ、イヴが実行犯ってことか？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「まぁ多分そうですわね状況証拠的に」
+      </p>
+      </div>
+      <div class="IB IB_hanasu3 right">
+      <span>イヴ</span>
+      <p>
+      
+            「ん～心神喪失状態にあり責任能力がなかったので無罪を主張しますわ」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「【使命】で分かるほど逸星を嫌ってた歌姫があんたをよんで零女家を殺させたに違いないんだからー！！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「死人が人を呼んであやつった、と？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「はあ？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「嫌ってたのは逸星だけではなくて？むしろ遺産狙いで残りを始末していってる方が腑に落ちますわ」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「どのみちこの時点で……家督の継承権はどちらにあるのかしらね？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「いえ、そういえば歌姫ちゃんは常夜でしたわね」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「……もしかするとこの事件、死者に口あるかもしれませんわよ？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「難しい話だ…俺にはよくわからん」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「ホホ……探偵さん、それで真犯人は結局どなたなのかしら？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_u-mu left">
+      <span>巨峰</span>
+      <p>
+      
+            「これは『チェーホフの銃』ね」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「それはいったい？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_u-mu left">
+      <span>巨峰</span>
+      <p>
+      
+            「弾の入った銃が舞台上にあるならそれは使われなければならない」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「銃？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「そして死体の見つからない死人は生きていなければならないのよーー！！ｷｮﾎﾎﾎﾎﾎﾎﾎﾎ!!!!」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「てことは、見つかっていない死体は…！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「だれだっけ？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            調査術で逸星を調査判定
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「長女の逸星さんですわ」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG&gt;=5 （判定：調査術） (SG@12#2&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="GM GM_iti left">
+      <span>GM</span>
+      <p>
+      
+            【零女 逸星の秘密】<br>あなたは、研究していた「星の精」の使役魔術や「死後、亡霊として現世に留まる方法」について記録に残していた。<br>どうやら、自分が死んだ後も亡霊として現世に残り、跡継ぎに憑依して、零女家を支配し続ける予定だったらしい。<br>書物は処分を依頼した、はずなのだが処分業者は途中で音信不通になった。<br>なので、対抗策を残された一族の者で用意した。<br><br>① この秘密を獲得したPCはプライズ「イブン＝グハジの粉」を獲得する。<br>このプライズは各キャラが１シーンにつき１回、１キャラに対して使用出来る。<br>このプライズ所持者は戦闘中、自分の手番に好きな特技の判定に成功することで、<br>目標の習得している忍法【鬼影】を無効化出来るようになる。<br>また、このプライズをメインフェイズ中に亡霊に憑依されているキャラに使用することで、亡霊を可視化することが出来る。
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            プライズは、巨峰が所持
+      </p>
+      </div>
+      <div class="kyohou kyohou_wakaranai left">
+      <span>巨峰</span>
+      <p>
+      
+            「本当に亡霊ってことある！？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「さあ出ておいでー！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「イブン＝グハジの粉」をイヴに使う
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            イブン＝グハジの粉をイヴに振りかけた瞬間
+      </div>
+      <div class="kp LtoR-early">
+      
+            零女 夜葉がイヴの背後に現れる
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「こんなものが、この家にあったのですね」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「あら？どちらさま？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「本当に出るとは驚きだぜ」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「ですが、まだ終わりませんわ。星の精で文月を殺して、御霊も殺せましたわ」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「あとは、アイツだけ……」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            そのような事を呟いてイヴの背後から消えていった
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「そしてあっさり自白したわね……」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「アイツ…？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「あっ、待ちなさーい！」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「……どなた？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「えっと、四女でいいのよね？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「あれが例の……」
+      </p>
+      </div>
+      <div class="GM GM_PC2 left">
+      <span>GM</span>
+      <p>
+      
+            【PC2の秘密：憑依解除】<br>あなたは、零女 夜葉に取り憑かれていた。<br>夜葉の命令により星の精が零女の人間を殺害した後、あなたは星の精のように遺体の血を啜らされたのだ。そして、その罪を擦り付けようとさせられていたことに、あなたは気付く。<br>零女 夜葉は、歌姫を恨んでいる事が明らかである。<br>零女夜葉に歌姫は命を狙われている為助けたいと思う。<br>あなたの【本当の使命】は「零女夜葉を倒す」ことに変更される。
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「では黒幕は逸星ではなく夜葉の方だったと」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「歌姫を残していたのは彼女に疑いを向けさせる為だったのね！！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんてことしやがる…」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「つまり次女と三女の犯行は夜葉によって起こされたイヴの犯行だった」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あぁ、そういうことになるか」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「間違いなく次に狙われるのは歌姫ちゃん」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「アイツと言ってたからには、そうなるな」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「イヴという実行犯が居なくなった今、他に使うものがいるのかあるいは……」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「他？」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「実行犯のことですわ」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「『星の精』とやらを出してくるのかあるいは……」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あぁ。」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「適正があるのは血縁…か？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「GM！犯人が分かったわ！皆を「高所」に呼んでちょうだい！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_aikyach left">
+      <span>巨峰</span>
+      <p>
+      
+            シーン終
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg5"></div></div>
+    <div class="log">
+
+
+      <div class="kp LtoR-early">
+      
+            巨峰の呼びかけにより全員が集まった
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「探偵さん、犯人がわかったんですか！？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_u-mu left">
+      <span>巨峰</span>
+      <p>
+      
+            「ええ」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「一体どなたが……」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「犯人…」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="kyohou kyohou_u-mu left">
+      <span>巨峰</span>
+      <p>
+      
+            「私が条牙の依頼に感じた違和感。逸星の失踪が事件の鍵で夜葉はただの被害者と思っていたわ」
+      </p>
+      </div>
+      <div class="kyohou kyohou_guruguru left">
+      <span>巨峰</span>
+      <p>
+      
+            「つまり……」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「つまり？」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            ｺﾞｸﾘ
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「かくかくしかじかぴちぴちちゃぱちゃぱで「犯人は零女 夜葉 」！！！あんたよ！！！」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「なっ、夜葉が犯人だって！？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「今あんたの後ろいるわ！」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「ちょっと探偵さん？夜葉さんはもうお亡くなりになっているのではなくて？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そのはず…だが、俺は見たんだ」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「夜葉姉様を見たんですか…？」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「そうよ！あんたを不憫にでも思ってたのかしら！」
+      </p>
+      </div>
+      <div class="darekanokoe left">
+      <span>誰かの声</span>
+      <p>
+      
+            「憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「？！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたの妙な依頼文が四女だけを気にかけてただけだったのは予想外だったけどね！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「ばかーーーーー！！」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「え……」
+      </p>
+      </div>
+      <div class="kyohou kyohou_aikyach left">
+      <span>巨峰</span>
+      <p>
+      
+            シーン終
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            クライマックスに移行します
+      </div>
+
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg1"></div></div>
+    <div class="log">
+
+
+      <div class="darekanokoe left">
+      <span>誰かの声</span>
+      <p>
+      
+            「憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い憎い」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「何がって？姉様の、一族の叡智を放棄しようとしたアイツらが」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「お姉様を殺した此奴らが許さない」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「まさか、逸星姉様の仇を……？！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「え？そうなの？」
+      </p>
+      </div>
+      <div class="IB IB_komaru right">
+      <span>イヴ</span>
+      <p>
+      
+            「う～ん見当違いでしたわね」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「そうよ！姉様を殺した、文月が！御霊が！……歌姫が許せなかったのよ！！」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「だから、お前を殺す」
+      </p>
+      </div>
+      <div class="kyohou kyohou_guruguru left">
+      <span>巨峰</span>
+      <p>
+      
+            「どうなってんのよ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「結局、私怨で家族争いしてたってのかよ…」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「それはどちらにせよ変わりませんわよ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            クライマックス戦闘開始
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「これが星の精……」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「とりあえずぶちのめせばいいってことだな」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「……なるほど、中々楽しめそうですわね」
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            「ﾌﾟｪｴｴ！」
+      </p>
+      </div>
+      <div class="hosinosei2 left">
+      <span>星の精2</span>
+      <p>
+      
+            「プェエエ！！」
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            「ﾌﾟｪ~‼」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「憎い憎い憎い憎い」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「おかげでとんだ休日になってしまいましたわ」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou_egao right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「お前ら、無茶はすんなよ！命だいじに、だ」
+      </p>
+      </div>
+      <div class="IV IV_sekimen_egao left">
+      <span>イヴ </span>
+      <p>
+      
+            「はい❤」
+      </p>
+      </div>
+      <div class="kyohou kyohou_wakaranai left">
+      <span>巨峰</span>
+      <p>
+      
+            「いやーーーー！！キモイーー！」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「もちろんですわぁ」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            鏡護の声に三人分の答えが返ってきた
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――三人？
+      </div>
+      <div class="IV IV_sekimen left">
+      <span>イヴ </span>
+      <p>
+      
+            「フフ……」
+      </p>
+      </div>
+      <div class="IB IB_ero right">
+      <span>イヴ</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="IB right">
+      <span>イヴ</span>
+      <p>
+      
+            「あら？イヴ、いつの間にいたの？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「？！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「え！？何？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            そこにはイヴと同じ姿をした人物がもう一人……！？
+      </div>
+      <div class="IV IV_sekimen_tun left">
+      <span>イヴ </span>
+      <p>
+      
+            「先ほど皆様が崖にいって帰ってきた辺りからです。お姉さま」
+      </p>
+      </div>
+      <div class="iv_hatena left">
+      <span>イヴ？</span>
+      <p>
+      
+            「あぁ……そういえば正気に戻ったのね」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「ここにきて登場人物増えるの？？」
+      </p>
+      </div>
+      <div class="iv_hatena left">
+      <span>イヴ？</span>
+      <p>
+      
+            「はい？何言ってるの？わたくしは導入からずっといましたわよ？」
+      </p>
+      </div>
+      <div class="iv_hatena left">
+      <span>イヴ？</span>
+      <p>
+      
+            【隠蔽】を解除し【双子】を使用
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「イヴは二人いたのか？」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「はぁ？？」
+      </p>
+      </div>
+      <div class="iv_hatena left">
+      <span>イヴ？</span>
+      <p>
+      
+            【接近戦攻撃】→【雷電】<br>【枕事】→【肉吸】<br>【暗躍】→【喚符】
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「申し遅れました、わたくしはイヴ・プロイフェンの姉、ロキシー・プロイフェンですわ」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「ホホ……ちょっとイヴの真似をしていたらこの有様……計算外でございましてよ」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            【喚符】
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            遁甲符（地獄札）を消費
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ ロキシー ] 忍具 : 6 → 5
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            【狐狗狸】を召喚
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「さぁ！盛り上がっていきましょう！」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「ナースコール！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あ、あぁ！」
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            「コール入りました！イヴ脱ぎます！」ﾊﾞｻｯ
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロットオープン
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「やめーい！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 巨峰 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ ロキシー ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 零女 夜葉 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 暁 鏡護 ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            1D6 (1D6) ＞ 1
+            
+      </p>
+      </div>
+      <div class="hosinosei2 left">
+      <span>星の精2</span>
+      <p>
+      
+            1D6 (1D6) ＞ 1
+            
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            1D6 (1D6) ＞ 3
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou_egao right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「俺から行くぜ！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou_egao right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            【瞬転】しゅんてん
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou_egao right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            2D6&gt;=5 （判定：変装術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou_egao right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            【波濤】はとう &gt; 星の精3
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou_egao right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3sg&gt;=7 (3SG@12#2&gt;=7) ＞ [2,3,6] ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            2D6&gt;=8 （判定：隠形術） (2D6&gt;=8) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 星の精3 ] 生命力 : 4 → 3
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            WT 変調表(3) ＞ 重傷:命中判定、情報判定、感情判定を行うたびに、接近戦ダメージを１点受ける。この効果は累積しない。各サイクルの終了時に、《生存術》で行為判定を行い、成功するとこの変調は無効化される。
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou_egao right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ッラァ！」
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            「プェーッ」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【強女】
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：九ノ一の術） (SG@12#3&gt;=6) ＞ 6[1,5] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            相手に回避判定-1
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【修羅】
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            対象はPCとこっくり
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=5 （判定：毒術） (SG@12#3&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「くそ、全体攻撃かよ！」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「くたばれくたばれくたばれ」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おい、避けれるか！？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            &gt;ロキシーへ感情修正
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「きっつ❤」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=6 （判定：医術） (SG@12#2&gt;=6) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=7 （判定：兵糧術） (SG+1@12#2&gt;=7) ＞ 11[5,6]+1 ＞ 12 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=7 （判定：生存術） (3SG@12#4&gt;=7) ＞ [1,3,3] ＞ 6[3,3] ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            2D6&gt;=8 （判定：召喚術） (2D6&gt;=8) ＞ 3[1,2] ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            脱落
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 暁 鏡護 ] 頑健 : 2 → 1
+      </div>
+      <div class="IV IV_purge_eti left">
+      <span>イヴ </span>
+      <p>
+      
+            「あぁん♡」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あっ？！イヴ！」気が逸れた
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「なにやってんのよー！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            d66 (D66) ＞ 34
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            d66 (D66) ＞ 23
+            
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            d６６ (D66) ＞ 23
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「どうなってんだ？！さっきのは幻か？」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            d66 (D66) ＞ 44
+            
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            d66 (D66) ＞ 33
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            星の精3に【銃躙】
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG&gt;=5 （判定：砲術） (SG@12#2&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_flash left">
+      <span>巨峰</span>
+      <p>
+      
+            「ｷｮﾎﾎﾎﾎﾎﾎﾎﾎ!!!!」
+      </p>
+      </div>
+      <div class="kyohou kyohou_flash left">
+      <span>巨峰</span>
+      <p>
+      
+            RTT6　混交 妖術分野ランダム特技表(4) ＞ 『妖術』死霊術
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            感情修正→巨峰
+      </p>
+      </div>
+      <div class="kyohou kyohou_flash left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=8 （判定：兵糧術） (SG+1@12#2&gt;=8) ＞ 7[3,4]+1 ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_soccer left">
+      <span>巨峰</span>
+      <p>
+      
+            「いっけーーー！！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_soccer left">
+      <span>巨峰</span>
+      <p>
+      
+            1d6 (1D6) ＞ 2
+            
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            2D6&gt;=12 （判定：隠形術） (2D6&gt;=12) ＞ 8[3,5] ＞ 8 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_soccer left">
+      <span>巨峰</span>
+      <p>
+      
+            回想シーン
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            あなたは探偵として、目の前の謎を解く責務がある。<br>謎を解くのは、被害者を減らすため。<br><br>このままではきっと第二第三の殺人が起きるだろう。<br>その前に、謎を解かないと……！<br><br>① あなたが犯人の名前を当てることで、<br>その犯人とのクライマックスフェイズへと移行する。
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「怪盗ジョーカーのようにはミスはもうしないわ！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_theme left">
+      <span>巨峰</span>
+      <p>
+      
+            「真実はいつも一つ！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_theme left">
+      <span>巨峰</span>
+      <p>
+      
+            「私はいずれも大粒よ！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_soccer left">
+      <span>巨峰</span>
+      <p>
+      
+            「いっけーーー！！」
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            「ぷぇ！？」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            【肉吸】
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            →こっくり1
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=5 （判定：兵糧術） (SG@12#2&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            蠱獲箱獲得
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「ｼﾞｭﾎﾞｼﾞｭﾙﾙﾙｼﾞｭﾎﾞﾎﾞ」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            《《鮮血魔嬢》》<br>指定特技：九ノ一の術<br>効果　　：判定妨害/<br>くらまし+裁き/回数制限+術式開示<br>演出　　：血こそが私の糧であり、<br>星を紅く輝かせる光となるの
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「邪魔させるかッ！！」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG-2&gt;=5 （判定：九ノ一の術） (SG-2@12#2&gt;=5) ＞ 7[3,4]-2 ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG&gt;=7 （判定：香術） (SG@12#2&gt;=7) ＞ 8[4,4] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=7 （判定：分身の術） (3SG@12#4&gt;=7) ＞ [3,3,6] ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="IV IV_purge_eti left">
+      <span>イヴ </span>
+      <p>
+      
+            「あっ❤あっあっ❤」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「ふぅ……」（蠱獲箱を持つ）
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            蠱獲箱を使用《封術》にて判定
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            回想シーン
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「そう、あれは昨日の事……」ﾎﾟﾜﾝﾎﾟﾜﾝ
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            【ひみつ】<br>実はあなたはイヴ本人ではなく、双子の姉の"ロキシー・プロイフェン"である。<br>妹が珍しく1人で遊びに出掛けたのを見て(男漁りだと睨んだあなたはお溢れに預かろうと)跡をつけた結果、零女家へと辿り着いた。<br>どうやら本当に友人の家へ遊びに来ただけの様子だ。<br>しかし今更1人で帰宅するのも癪なので、イヴのフリをして屋敷内を探索していたところ、様子のおかしい妹と出くわした。<br><br>顔が赤く、呼吸も乱れ、返事がしどろもどろだ。<br>キメセクでもしていたのだろうか？<br><br>何にせよこのまま放置するわけにはいかない！<br>落ち着くまで簀巻にしてトイレに放り込んでおいた。寂しそうだったのでボブ27号(張型)も入れておいた。<br>満足したら出てくるだろう。<br><br>あとは戻ってくるまでイヴのフリを続けていれば問題はない。まるでない。全く。
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「イヴ、暇だしお〇んぽにでもいきませんこと？」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「せっかくの休日に……あいにくですがわたくしは先約があるので」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「（先約？あのイヴに……？あやしい）」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「（これは……欺瞞！）」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「ついてっちゃお♪」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「（そのあとは零女家に着いてすぐに気が付きましたわ）」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「（マジで友人居たんだ、と）」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「（わたくしにはいないのに……）」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「（癪に障ったのでイヴのふりしてパーティナイしてやりますわ）」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「（とかしていたら様子のおかしいイヴと出くわして……）」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ――零女家トイレ
+      </div>
+      <div class="IV IV_sekimen left">
+      <span>イヴ </span>
+      <p>
+      
+            「（ムムムーー）」（拘束）
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「そのままだと一発で逮捕ですわ。クスリが抜けるまでそこで大人しくしていなさいな」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「寂しくないようにボブを置いて行ってあげますわね」ｽﾞﾌﾟﾌﾟ
+      </p>
+      </div>
+      <div class="IV IV_sekimen left">
+      <span>イヴ </span>
+      <p>
+      
+            「――ッ❤❤」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「……そのあと、あの事件が起こってしまいましたわ」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「なんかトイレで死んでるし……イヴはいないし……」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「……あれ？もしかして半分くらいわたくしの仕業……？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんてことしてんだッ！？！」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「オホホッ！ごめん遊ばせ！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「なんなのこいつら……」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「曲りなりにもナースだろ！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            ロキシーへ感情修正
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            回想終了
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            +3回想
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG+4&gt;=8 （判定：召喚術） (SG+4@12#2&gt;=8) ＞ 9[3,6]+4 ＞ 13 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            星の精2を封印
+      </p>
+      </div>
+      <div class="hosinosei2 left">
+      <span>星の精2</span>
+      <p>
+      
+            「ぷぇええ！」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「ゲットですわぁ～♡」
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            接近戦攻撃→きょほう
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            2D6&gt;=5 （判定：拷問術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            （慰めてくれたのはどっちだったんだ？）
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「っと！あぶねぇ！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=5 （判定：分身の術） (3SG@12#4&gt;=5) ＞ [1,1,2] ＞ 3[1,2] ＞ 3 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ッ！変なこと考えてんじゃねぇ、俺！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            &gt;神通丸使用
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 暁 鏡護 ] 忍具 : 4 → 3
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=5 （判定：分身の術） (3SG@12#4&gt;=5) ＞ [6,6,6] ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「うおぉぉぉぉぉぉ！！！！」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 暁 鏡護 ] 頑健 : 1 → 2
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ハァァァァッ！！！護る！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=8 （判定：分身の術） (3SG@12#4&gt;=8) ＞ [1,3,6] ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 星の精3 ] 生命力 : 3 → 0
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「すごいじゃないあんた」
+      </p>
+      </div>
+      <div class="hosinosei3 right">
+      <span>星の精3</span>
+      <p>
+      
+            「プシュゥゥゥ……」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「なかなかやるじゃない」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あぁ！だが…まだ邪念がいっぱいあるみたいだ、気を付けるぜ…」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【制圧】
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            ロキシーの居所消費して、<br>砲術で判定してくれ
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=9 （判定：医術） (SG@12#2&gt;=9) ＞ 5[2,3] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            ■奥義<br>《不撓の誓約》<br>指定特技：怪力<br>効果　　：《絶対防御》<br>【強み】くらまし/護り/流し<br>【弱み】防御低下/最低速度/術式開示<br>効果：プロ3以上必須かつ使用時奥義開示。3点軽減。2人選択可、射撃DMG時射程3以内に射程1DMG。<br>演出　　：「うおおおおぉ！！｣<br>「生き残るんだ！みんなで！！」<br>彼は本気である。至って本気である。<br>ちょっとうるさい。<br> 
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=9 （判定：拷問術） (SG@12#3&gt;=9) ＞ 5[2,3] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            2D6&gt;=9 （判定：拷問術） (2D6&gt;=9) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「させねぇ！！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            彼の盾は夜葉の攻撃を弾く！！<br>そして、その攻撃はそのまま彼女に返す！
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「なんでなんでなんでなんで」
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            かばう
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 星の精1 ] 生命力 : 4 → 3
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そっちも護る盾がいるんだな！」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「あら❤かっこいい」ﾂﾂｰ（背中を指でなぞる）
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            ラウンド2
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="kyougo kyougo_sentou_tumuri right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっ」鼻の下を伸ばしかけるが首を振る
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            ■奥義<br>《麝香術式・心肺蘇生(イノチガエシ)》<br>指定特技：憑依術<br>効果　　：黄泉神<br>演出　　：麝香会の医療技術は世界一ィィィ！！たとえすでに息絶え死後数日を経過した肉体であろうとその絶技によって再起させることが可能！
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            「電気ショック準備完了❤」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「蘇生開始❤」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            いつのまにか持ってこられていた死体袋に電気マッサージを行う
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「ｱｧｧ……」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「ヨシ！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「？！」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「なんで、なんでよ、なんでさ！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたの秘密教えて」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「これが麝香会に伝わる秘術」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「生き返ったのか？…幽霊もいるし、まああり得るのか？」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「ｳｺﾞｺﾞ……」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            【喚符】
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            1d6 (1D6) ＞ 2
+            
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            遁甲符（地獄札）消費
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            魔像
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロットオープン
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 巨峰 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ ロキシー ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 暁 鏡護 ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 零女 夜葉 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            1D6 (1D6) ＞ 5
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「呻き声しかでないじゃない！」
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            d66 (D66) ＞ 44
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            「続いてナースコール！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            d66 (D66) ＞ 55
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「コール入りましたぁ！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            【瞬転】しゅんてん
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            SG@12#4&gt;=5 （判定：変装術） (SG@12#4&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            【波濤】はとう &gt; 夜葉
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=5 （判定：分身の術） (3SG@12#4&gt;=5) ＞ [3,6,6] ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「オラァ！！！」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            遁甲符
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ア！？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=5 （判定：分身の術） (3SG@12#4&gt;=5) ＞ [2,3,6] ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=7 （判定：九ノ一の術） (SG@12#3&gt;=7) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            神通丸
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=7 （判定：九ノ一の術） (SG@12#3&gt;=7) ＞ 5[2,3] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 零女 夜葉 ] 生命力 : 7 → 6
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            WT 変調表(1) ＞ 故障:すべての忍具が使用不能になる。この効果は累積しない。各サイクルの終了時に、《絡繰術》で行為判定を行い、成功するとこの変調は無効化される。
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そんなんじゃ止まんねぇぞ！！」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「くそくそくそくそ」
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            接近戦攻撃→巨峰
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            &gt;【囮方】おとりかた
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「敵はこっちだ！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=5 （判定：分身の術） (3SG@12#4&gt;=5) ＞ [1,2,6] ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            2D6&gt;=5 （判定：拷問術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=8 （判定：分身の術） (3SG@12#4&gt;=8) ＞ [2,3,5] ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「フンッ！！」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            D66 (D66) ＞ 45
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            d66 (D66) ＞ 13
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            d66 (D66) ＞ 56
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            d66 (D66) ＞ 46
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            付喪神
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            rtt1 器術分野ランダム特技表(8) ＞ 『器術』縄術
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            夜葉、星の精1
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=7 （判定：拷問術） (SG@12#3&gt;=7) ＞ 6[1,5] ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            2D6&gt;=7 （判定：拷問術） (2D6&gt;=7) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            星の精1に「イブン＝グハジの粉」
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：兵糧術） (SG+1@12#2&gt;=5) ＞ 8[2,6]+1 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            鬼影消滅
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            星の精1に【銃躙】
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            SG&gt;=5 （判定：砲術） (SG@12#2&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            RTT6　混交 妖術分野ランダム特技表(4) ＞ 『妖術』死霊術
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero03 right">
+      <span>ロキシー</span>
+      <p>
+      
+            感情修正→巨峰
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            感情修正→巨峰
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+2&gt;=8 （判定：兵糧術） (SG+2@12#2&gt;=8) ＞ 8[4,4]+2 ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            SG&gt;=5 （判定：砲術） (SG@12#2&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_kasige left">
+      <span>巨峰</span>
+      <p>
+      
+            「３粒」
+      </p>
+      </div>
+      <div class="kyohou kyohou_flash left">
+      <span>巨峰</span>
+      <p>
+      
+            「それがあんたを殺す巨砲の致死量よー！ｷｮﾎﾎﾎﾎﾎﾎﾎﾎ!!!!」
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            「ぷぇっ」
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            2D6&gt;=12 （判定：隠形術） (2D6&gt;=12) ＞ 3[1,2] ＞ 3 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 星の精1 ] 生命力 : 3 → 0
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【強女】
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：九ノ一の術） (SG@12#3&gt;=6) ＞ 10[4,6] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            スペ値下げる
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            対象はPCと従者
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@11#3&gt;=5 （判定：毒術） (SG@11#3&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「ｷｮﾎﾎﾎﾎﾎﾎﾎﾎ!!!!」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            《《我々一等星》》<br>指定特技：毒術<br>効果　　：完全成功/響き/回数制限<br>演出　　：私が逸星姉様の後を継ぐの。<br>知識も地位も、何もかもね。
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=6 （判定：九ノ一の術） (SG@12#2&gt;=6) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            SG@12#4&gt;=5 （判定：見敵術） (SG@12#4&gt;=5) ＞ 4[1,3] ＞ 4 ＞ ファンブル
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=6 （判定：記憶術） (SG+1@12#2&gt;=6) ＞ 9[3,6]+1 ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            D6 (1D6) ＞ 5
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=6 （判定：医術） (SG@12#2&gt;=6) ＞ 6[2,4] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=7 （判定：生存術） (3SG@12#4&gt;=7) ＞ [4,5,5] ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            2D6&gt;=7 （判定：野戦術） (2D6&gt;=7) ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            SG&gt;=7 （判定：兵糧術） (SG@12#2&gt;=7) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            2D6&gt;=12 （判定：隠形術） (2D6&gt;=12) ＞ 10[4,6] ＞ 10 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero03 right">
+      <span>ロキシー</span>
+      <p>
+      
+            【雷電】→夜葉
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero03 right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：死霊術） (SG@12#3&gt;=6) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+            
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            遁甲符
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ ロキシー ] 忍具 : 5 → 3
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：死霊術） (SG@12#3&gt;=6) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            遁甲符（兵糧丸）
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            choice[拷問術,絡繰術,手練,九ノ一の術,毒術,死霊術,呪術] (choice[拷問術,絡繰術,手練,九ノ一の術,毒術,死霊術,呪術]) ＞ 手練
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「今度は！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            ■奥義<br>《不撓の誓約》<br>指定特技：怪力<br>効果　　：《絶対防御》<br>【強み】くらまし/護り/流し<br>【弱み】防御低下/最低速度/術式開示<br>
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="hosinosei1 right">
+      <span>星の精1</span>
+      <p>
+      
+            2D6&gt;=9 （判定：拷問術） (2D6&gt;=9) ＞ 7[1,6] ＞ 7 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=8 （判定：拷問術） (SG@12#3&gt;=8) ＞ 9[3,6] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ッ！邪魔されたッ！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「御霊ァー！！！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「ああっ！」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「ふふふふふ。姉様の仇」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「アァァァァ！！」
+      </p>
+      </div>
+      <div class="mitama right">
+      <span>零女 御霊</span>
+      <p>
+      
+            「ｷﾞｭｱｧｧ……」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【吸精】
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「結局秘密なんだったのかしら」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=5 （判定：死霊術） (SG@12#3&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【血奪】
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=5 （判定：死霊術） (SG@12#3&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 零女 夜葉 ] 生命力 : 6 → 7
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【金毛】継続で入ります
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【制圧】
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            暁くんに、砲術判定を申請
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「かかってこい！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=7 （判定：生存術） (3SG@12#4&gt;=7) ＞ [4,4,5] ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット終了時
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            退場
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            暴威の回復
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            マヒ
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=11 （判定：拷問術） (SG@12#3&gt;=11) ＞ 5[1,4] ＞ 5 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            故障
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=5 （判定：絡繰術） (SG@12#3&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            3ラウンド目
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            奥義破り
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：呪術） (SG@12#3&gt;=6) ＞ 6[2,4] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「蘇生！蘇生解除！蘇生！」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            【喚符】
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            遁甲符（神通丸）消費
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ ロキシー ] 忍具 : 3 → 2
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            魔像
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「なんだッ！？蘇生はできないのか？」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            「御臨終です……」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「クソッ！！！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「また守れなかった…」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            プロット公開
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ ロキシー ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 巨峰 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 暁 鏡護 ] がダイスシンボルを公開。出目は 5 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 零女 夜葉 ] がダイスシンボルを公開。出目は 4 です。
+      </div>
+      <div class="kyougo kyougo_sentou right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「許さねぇ！！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            妖魔化
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 暁 鏡護 ] 器術 : 1 → 0
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「アアアアアア！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            NMT 新異形表(6) ＞ 不視態。妖魔化している間、このキャラクターの攻撃に対する回避判定と、このキャラクターの奥義に対する奥義破り判定にマイナス１の修正がつく。
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「お前を止めて見せる！！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            【瞬転】しゅんてん
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「お客様困りますお客様ぁぁ！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            SG@12#4&gt;=5 （判定：変装術） (SG@12#4&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            《《鮮血魔嬢》》<br>指定特技：九ノ一の術<br>効果　　：判定妨害/<br>くらまし+裁き/回数制限+術式開示<br>演出　　：血こそが私の糧であり、<br>星を紅く輝かせる光となるの
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            2D6&gt;=6 （判定：見敵術） (2D6&gt;=6) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「止められるもんなら止めて見せろ！！」
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            爪牙
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「イヴ！サンキュー！」
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            2D6&gt;=6 （判定：仕込み） (2D6&gt;=6) ＞ 11[5,6] ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 零女 夜葉 ] 生命力 : 7 → 6
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            「もう、落ち着いてください」ﾌｰ（夜葉の耳に息を吹きかける）
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「だああ。いい加減にしろ！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう、後でな」頭を撫でる
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            【波濤】はとう　&gt;　夜葉
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=5 （判定：分身の術） (3SG@12#4&gt;=5) ＞ [2,3,4] ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=7 （判定：九ノ一の術） (SG@12#3&gt;=7) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「フッ！！それでこそ！！」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「ふーふー」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【強女】
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=6 （判定：九ノ一の術） (SG@12#3&gt;=6) ＞ 8[3,5] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            回避-1
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            【修羅】
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=5 （判定：毒術） (SG@12#3&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            対象は全員
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            【囮方】おとりかた　&gt;　イヴ（魔像）
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「させねぇぜ！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG&gt;=7 （判定：兵糧術） (SG@12#2&gt;=7) ＞ 11[5,6] ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=5 （判定：分身の術） (3SG@12#4&gt;=5) ＞ [1,4,6] ＞ 10[4,6] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            暁に感情修正
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=7 （判定：生存術） (3SG@12#4&gt;=7) ＞ [1,3,4] ＞ 7[3,4] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG-1@12#4&gt;=7 （判定：生存術） (3SG-1@12#4&gt;=7) ＞ [2,5,5] ＞ 10[5,5]-1 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「巨峰もサンキュ！！」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG-1&gt;=6 （判定：医術） (SG-1@12#2&gt;=6) ＞ 7[2,5]-1 ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「ｷｮﾎﾎ!」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「なんだよ、ほんとなんだよ！」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            d66 (D66) ＞ 13
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            d66 (D66) ＞ 15
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            d66 (D66) ＞ 11
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            付喪神
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            rtt1 器術分野ランダム特技表(7) ＞ 『器術』衣装術
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            →夜葉
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3&gt;=8 （判定：拷問術） (SG@12#3&gt;=8) ＞ 7[2,5] ＞ 7 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            【肉吸】
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=5 （判定：兵糧術） (SG@12#2&gt;=5) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            獣心香獲得
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            獣心香
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=6 （判定：九ノ一の術） (SG@12#2&gt;=6) ＞ 7[1,6] ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            イヴに狂信を取らせる
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            【薬師閨】
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=5 （判定：兵糧術） (SG@12#2&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            兵糧丸獲得
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ ロキシー ] 忍具 : 2 → 3
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="kyohou kyohou_ougi left">
+      <span>巨峰</span>
+      <p>
+      
+            ■奥義<br>《怒りの葡萄》<br>指定特技：兵糧術<br>効果　　：追加忍法/巡らし/回数制限<br>演出　　：オクラホマ州の農家の息子である主人公のトム・ジョードは、その場の激情で人を殺し、4年間の懲役刑から仮釈放で実家に戻ってきた。彼の家族の農場はダストボウルで耕作不能となり、生活に窮した家族は、オクラホマを引き払い、仕事があると耳にしたカリフォルニア州に一族あげて引っ越そうとしているところだった。トムは一族や、説教師のジム・ケイシーなどとともに、カリフォルニアへの旅に合流した。
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            夜葉に【魔拳】
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「巨砲の次は武道を食らいなさーい！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：兵糧術） (SG+1@12#2&gt;=5) ＞ 6[2,4]+1 ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            RTT6　混交 妖術分野ランダム特技表(8) ＞ 『妖術』幻術
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG&gt;=6 （判定：記憶術） (SG@12#2&gt;=6) ＞ 11[5,6] ＞ 11 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：兵糧術） (SG+1@12#2&gt;=5) ＞ 6[2,4]+1 ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            RTT6　混交 妖術分野ランダム特技表(11) ＞ 『妖術』憑依術
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            感情修正
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=7 （判定：瞳術） (SG+1@12#2&gt;=7) ＞ 5[1,4]+1 ＞ 6 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            お金
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 巨峰 ] 忍具 : 6 → 5
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：兵糧術） (SG+1@12#2&gt;=5) ＞ 4[2,2]+1 ＞ 5 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            RTT6　混交 妖術分野ランダム特技表(8) ＞ 『妖術』幻術
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            感情修正　「いけぇぇぇ！！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：記憶術） (SG+1@12#2&gt;=5) ＞ 8[4,4]+1 ＞ 9 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin right">
+      <span>ロキシー</span>
+      <p>
+      
+            「イっちゃうぅぅ❤❤」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=5 （判定：兵糧術） (SG+1@12#2&gt;=5) ＞ 6[1,5]+1 ＞ 7 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            RTT6　混交 妖術分野ランダム特技表(11) ＞ 『妖術』憑依術
+            
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            SG+1&gt;=7 （判定：瞳術） (SG+1@12#2&gt;=7) ＞ 9[4,5]+1 ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            SG@12#3-4&gt;=7 （判定：毒術） (SG-4@12#3&gt;=7) ＞ 8[3,5]-4 ＞ 4 ＞ 失敗
+            
+      </p>
+      </div>
+      <div class="IV IV_purge left">
+      <span>イヴ </span>
+      <p>
+      
+            「キョホウ様からブドウの差し入れで～す❤」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            奥義！！
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            《《我々一等星》》<br>指定特技：毒術<br>効果　　：完全成功/響き/回数制限<br>演出　　：私が逸星姉様の後を継ぐの。<br>知識も地位も、何もかもね。
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            SG&gt;=6 （判定：医術 (SG@12#2&gt;=6) ＞ 10[5,5] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            3SG@12#4&gt;=7 （判定：生存術） (3SG@12#4&gt;=7) ＞ [1,4,6] ＞ 10[4,6] ＞ 10 ＞ 成功
+            
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「ｷｮﾎﾎﾎﾎﾎﾎﾎﾎ!!!!イキなさーーーーい！！」
+      </p>
+      </div>
+      <div class="yoruha right">
+      <span>零女 夜葉</span>
+      <p>
+      
+            「くそぉおおおおおおおおお」
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            夜葉は、そう叫びながら燃え上がるように消え去った
+      </div>
+      <div class="kp LtoR-early">
+      
+            戦闘終了です
+      </div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+<div class="log">
+
+      <div class="kp LtoR-early">
+      
+            巨峰から放たれた目にも止まらないブドウの数々が真犯人を襲う
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「これで事件解決ね！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「やるな！！探偵ッ！！」
+      </p>
+      </div>
+      <div class="kyohou kyohou_egao left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたもすけべなのにやるじゃない！」
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「だ、誰がスケベだ！」
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_sin_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「スケベじゃないんですか？❤」
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「・・・」
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「ま、そこは置いといてだ！」
+      </p>
+      </div>
+
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg1"></div></div>
+    <div class="log">
+
+
+
+      <div class="kp LtoR-early">
+      
+            エンディング
+      </div>
+      <div class="kp LtoR-early">
+      
+            貴方達は、この家の亡霊とも呼べる存在を倒すことが出来た
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「そうか……この一族に受け継がれる存在がこんな事に悪用されるのだな」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「あーもう一回言ってくれ」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「ちょっとよく話がわからないのだけど」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「みんな、助かった。これでこの家は大丈夫のようだ」
+      </p>
+      </div>
+      <div class="kyohou kyohou_guruguru left">
+      <span>巨峰</span>
+      <p>
+      
+            「？？？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_yaruze right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「お？おう！」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「？お前たち、逸星の秘密を知っているんじゃないのか？」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「なんにせよ歌姫が無事でよかったです」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「護れなかったやつもいるけど、な」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「あそこに亡霊や、星の精について書かれていたではないか」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「？？？あ、そういえばあの幽霊あんたらが逸星を殺したとかいってたけど」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「………」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「……歌姫さん」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「自分、見てしまったんです。逸星姉様を歓楽街で」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「それで、姉様たちが何か仕込んだんでしょう？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「生きてたのか？！」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「そうだ。文月の薬で精神を壊させてもらった」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「それが、あの薬物中毒みたいな目してた原因だったんですね」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「それで、姉様が死んだことにして報告させてもらいました」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「……ん？」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「今は肉体は生きてるかもしれないですが、心はしんでいるようなものです」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「そうか……」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「つまりそれって、あなたの素人判断ってこと？」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「体は生きていても、か」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「え？じゃあ何？あなたが勝手に死亡扱いにしちゃったってことかしら？」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「だってそうでしょう？生きていたら命を狙われるかもしれない。それだったら死んだことにしてた方が何かと安全でしょう」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「生きてるのに、死んだ扱いされた方がつらくねぇか？」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「い、一体誰に……？」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「僕は権力争いに巻き込まれて死にたくないんですよ」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「歌姫さんたちにでしょう」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「？？？」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「それって……黙っておけばよかっただけなのではなくて？巻き込まれたくないのなら」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「……」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「その……『死亡』の報告をしたばっかりに一連の事件起きてない？」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「まさか、夜葉姉様がこんなことをするとは思ってなかったんですよ」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「あんたがはぐらかすから逸星を疑ったじゃないのー！本当に使えないわね」
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「うーん……」
+      </p>
+      </div>
+      <div class="zyouga right">
+      <span>零女 条牙</span>
+      <p>
+      
+            「それは……本当の事を云うかどうかって」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「まぁまぁ姉さまも巨峰さんもその辺にしておいてあげましょう」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうだな」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「彼も彼なりに精一杯だったのですよ」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「俺は難しいことわかんねえけど、逸星ちゃんが生きてたんなら俺は嬉しいよ」頭をかく
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「大体殺人ミステリーに幽霊なんて出すんじゃないわよー！！」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「ばかーーーーー！！」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「さ、飯でも食おうぜ」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「な、なら食事の準備をさせてもらおう」
+      </p>
+      </div>
+      <div class="kyohou left">
+      <span>巨峰</span>
+      <p>
+      
+            「え！？今？いいけど」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「今後についても話す必要もあるし、報酬についてもな」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_onigiri right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「俺おにぎりな！具だくさんの奴で！」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「あ、そういえば晩餐会はどうなりました？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_onigiri right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「晩餐会か…また毒入りは勘弁しろよな？」
+      </p>
+      </div>
+      <div class="IV left">
+      <span>イヴ </span>
+      <p>
+      
+            「色々あって結局何も食べれてませんもの」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「そうだな」チラ
+      </p>
+      </div>
+      <div class="rokishi- right">
+      <span>ロキシー</span>
+      <p>
+      
+            「～♪～♪」口笛
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「腹いっぱいになりゃ、きっといいことも思いつくさ」
+      </p>
+      </div>
+      <div class="IV IV_sekimen_egao left">
+      <span>イヴ </span>
+      <p>
+      
+            「そうですね……さ、イキましょう？」鏡護の腕に抱きつく
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おっ、おう」ドギマギ
+      </p>
+      </div>
+      <div class="rokishi- rokishi-_ero right">
+      <span>ロキシー</span>
+      <p>
+      
+            「あっ！……わたくしも一緒にイキますわ」（逆側の腕に抱きつく）
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「おう！？」
+      </p>
+      </div>
+      <div class="utahime left">
+      <span>綿月 歌姫</span>
+      <p>
+      
+            「まったく、イヴのやつは……。姉妹揃ってこうなのか？」
+      </p>
+      </div>
+      <div class="kyougo kyougo_sihuku_komaru2 right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「は、はは…」鼻の下が伸びまくっている
+      </p>
+      </div>
+      <div class="kyohou kyohou_akire left">
+      <span>巨峰</span>
+      <p>
+      
+            「はいはいめしあがれ～～」
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            兵糧丸を口に放り込む
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            「よし、いくぞ！」みなぎっている
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            こうして、零女家の事件は終わった
+      </div>
+      <div class="kp LtoR-early">
+      
+            それぞれのシノビは次の任務へと旅立つことだろう。
+      </div>
+      <div class="kp LtoR-early">
+      
+            だが、これから先、関係が忘れられない存在はいるであろう
+      </div>
+      <div class="kp LtoR-early">
+      
+            名探偵巨ホウ<br>緋色の死兆星　END
+      </div>
+
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg1"></div></div>
+    <div class="log">
+
+
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            功績点
+      </p>
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ ロキシー ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ GM ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 暁 鏡護 ] がダイスシンボルを公開。出目は 2 です。
+      </div>
+      <div class="kp LtoR-early">
+      
+            [ 巨峰 ] がダイスシンボルを公開。出目は 3 です。
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            &lt;鏡護の秘密&gt;<br>あなたは逸星が宿していた「星の精」という神話生物について知っている。<br>血を吸うまでは透明のその化け物が、次女を殺害したのではないかと睨んでいる。<br><br>① あなたは１～２サイクル終了時、好きなNPC,PC1人を監視出来る。<br>監視していたキャラが誰かに戦闘を仕掛けた、または仕掛けられた場合、あなたはその戦闘に乱入出来る。<br>（使命的に自分たちとなっているので、NPC,PCが一人消されるごとに使命達成の功績点が1点ずつ減少していくことになります）
+      </p>
+      </div>
+      <div class="kyougo right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            →2点（御霊を守れなかったため-1）
+      </p>
+      </div>
+      <div class="GM left">
+      <span>GM</span>
+      <p>
+      
+            PC1:1.1.1.1.0.3.<br>PC2:1.1.1.1.2.3.<br>PC3:1.1.1.0.2.2.
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            制御判定
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            RTT6 妖術分野ランダム特技表(7) ＞ 『妖術』言霊術
+            
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            &gt;功績点を7点使用（達成値が10→3に）
+      </p>
+      </div>
+      <div class="kyougo kyougo_majin right">
+      <span>暁 鏡護</span>
+      <p>
+      
+            SG&gt;=3 (SG@12#2&gt;=3) ＞ 6[1,5] ＞ 6 ＞ 成功
+            
+      </p>
+      </div>
+
+    </div></div>
+
+    <div class="bg-sp">
+        <div class="bg-over"><div class="bg-inner bg1"></div></div>
+    <div class="log">
+
+
+      <div class="GM GM_uta left">
+      <span>GM</span>
+      <p>
+      
+            【綿月 歌姫の秘密】<br>あなたは文月がトイレに行った後、PC2が文月の殺された現場、トイレから出て来る所を目撃している。<br>つまり、PC2が犯人ということだろうか？<br>でも、私と親しくしてくれてるPC2のことは、信じたい……<br>① あなたの【本当の使命】は「PC2を信じる」ことだ。
+      </p>
+      </div>
+      <div class="GM GM_mitama left">
+      <span>GM</span>
+      <p>
+      
+            【零女 御霊の秘密】<br>白無垢一色の髪を持つ零女の人間は<br>「内容物」によって髪の色と能力が変わる。<br>しかし、逸星が宿していた「星の精」は、<br>血を吸うことで「内容物」を奪うことが出来る。<br>きっと、逸星の亡霊が今も血を求めて彷徨っているのよ……！<br>動機ならある、だって、逸星を殺したのは、私たちなんだから……！<br><br>犯人がNPCを殺害するたび、犯人は追加生命力１点とNPCが修得していた一部の忍法を獲得していく。
+      </p>
+      </div>
+      <div class="GM GM_yotuha left">
+      <span>GM</span>
+      <p>
+      
+            【零女 夜葉の秘密】<br>私は歌姫、文月、御霊を許さない。<br>逸星が一族に齎した異星の知識、神話生物、それらに詳しい教団との繋がり。<br>アイツらはそれの繋がりを、叡智を、逸星を追放した後に断ち切るって言い出した。<br>あの知識は零女には不要な禁忌の力だって。<br>零女の更なる発展の為には、手段なんて選んでられないのに。<br>だから、私はアイツらを死んでも許さない……<br><br> あなたの【本当の使命】は<br>「綿月歌姫、零女文月、零女御霊を殺す」ことだ。
+      </p>
+      </div>
+      <div class="GM GM_joga left">
+      <span>GM</span>
+      <p>
+      
+            【零女 条牙の秘密】<br>実はこの前、逸星姉様を歓楽街で見たんです。<br>もっとも、男の大人に囲まれて、惚けた表情して、薬物中毒みたいな目してましたけど。<br>たぶん、他の姉様方が何か仕込んだんでしょう。<br>逸星姉様を没落させるために。<br>僕は権力争いに加わりたくないですし、死にたくないんですけど。<br>この物語をグッドエンドで終わらせたいですから、出来ることはしますよ。<br>① このNPCがメインサイクルに登場しているとき、PCはあらゆる判定に＋１の修正がかかる。<br>② このNPCは遁甲符を３枚所持しており、時と場合に応じて使用・受け渡しを行う。
+      </p>
+      </div>
+      </div>
+
+<br><br>
+</div></div>
+<script src="../logCon_Respon.js"></script>
+</body></html>
