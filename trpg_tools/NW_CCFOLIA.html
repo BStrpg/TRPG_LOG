@@ -103,7 +103,7 @@
     }
     // チャパレ作成
     function chatPalet(charaData) {
-      var chatPaletData = "NW@{C値}#{F値}\n  ======戦闘値=====\n{行動値}NW@{C値}#{F値} 【行動値】\n{命中}NW@{C値}#{F値} 【命中】\n{魔導}NW@{C値}#{F値} 【魔導】\n{回避}NW@{C値}#{F値} 【回避】\n{物攻}NW@{C値}#{F値} 【物攻】\n{魔攻}NW@{C値}#{F値} 【魔攻】\n{物防}NW@{C値}#{F値} 【物防】\n{魔防}NW@{C値}#{F値} 【魔防】\n  \n  ======能力値=====\n{筋力}NW@{C値}#{F値} 【筋力】\n{器用}NW@{C値}#{F値} 【器用】\n{感覚}NW@{C値}#{F値} 【感覚】\n{意思}NW@{C値}#{F値} 【意思】\n{理知}NW@{C値}#{F値} 【理知】\n{幸運}NW@{C値}#{F値} 【幸運】\n  \n  ======特技=====\n";
+      var chatPaletData = "NW@{C値}#{F値}\n  ======戦闘値=====\n{行動値}NW@{C値}#{F値} 【行動値】\n{命中}NW@{C値}#{F値} 【命中】\n{魔導}NW@{C値}#{F値} 【魔導】\n{回避}NW@{C値}#{F値} 【回避】\n{物攻}NW@{C値}#{F値} 【物攻】\n{魔攻}NW@{C値}#{F値} 【魔攻】\n{物防}NW@{C値}#{F値} 【物防】\n{魔防}NW@{C値}#{F値} 【魔防】\n  \n  ======能力値=====\n{筋力}NW@{C値}#{F値} 【筋力】\n{器用}NW@{C値}#{F値} 【器用】\n{感覚}NW@{C値}#{F値} 【感覚】\n{理知}NW@{C値}#{F値} 【理知】\n{意思}NW@{C値}#{F値} 【意思】\n{幸運}NW@{C値}#{F値} 【幸運】\n  \n  ======特技=====\n";
       $.each(charaData.effect_name, function (i, val) {
         if (String(charaData.effect_name[i]).length) {
           chatPaletData = chatPaletData.concat("【", charaData.effect_name[i], "】：", charaData.effect_timing[i], "：", charaData.effect_hantei[i]
@@ -138,8 +138,8 @@
           { label: "筋力", value: charaData.NP1 },
           { label: "器用", value: charaData.NP2 },
           { label: "感覚", value: charaData.NP3 },
-          { label: "意思", value: charaData.NP5 },
           { label: "理知", value: charaData.NP4 },
+          { label: "意思", value: charaData.NP5 },
           { label: "幸運", value: charaData.NP6 },
           { label: "行動値", value: charaData.BSUM1 },
           { label: "命中", value: charaData.BSUM2 },
