@@ -1,0 +1,5479 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>log</title>
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../logCon_Respon.css">
+<style>
+    /* main css */
+    .bg-inner.bg1{background:url('./渋谷ラビリンス/haikeia.jpg') no-repeat center/cover;}
+    
+    /* member */
+    .mem1 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem1 p:after{border-right-color:rgb(136, 136, 136);}
+.mem1 span{background:rgb(136, 136, 136);color:#fff;}
+.mem1:before{content:'';background-image:url('./渋谷ラビリンス/1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem2 p{border:2px solid rgb(233, 30, 99);box-shadow:5px 5px 0 rgb(233, 30, 99);}
+.mem2 p:after{border-left-color:rgb(233, 30, 99);}
+.mem2 span{background:rgb(233, 30, 99);color:#000;}
+.mem2:before{content:'';background-image:url('./渋谷ラビリンス/2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem2-2:before{content:'';background-image:url('./渋谷ラビリンス/2-2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem3 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem3 p:after{border-right-color:rgb(136, 136, 136);}
+.mem3 span{background:rgb(136, 136, 136);color:#fff;}
+.mem3:before{content:'';background-image:url('./渋谷ラビリンス/3.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem4 p{border:2px solid rgb(224, 224, 224);box-shadow:5px 5px 0 rgb(224, 224, 224);}
+.mem4 p:after{border-left-color:rgb(224, 224, 224);}
+.mem4 span{background:rgb(224, 224, 224);color:#000;}
+.mem4:before{content:'';background-image:url('./渋谷ラビリンス/4.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem5 p{border:2px solid rgb(242, 156, 151);box-shadow:5px 5px 0 rgb(242, 156, 151);}
+.mem5 p:after{border-right-color:rgb(242, 156, 151);}
+.mem5 span{background:rgb(242, 156, 151);color:#000;}
+.mem5:before{content:'';background-image:url('./渋谷ラビリンス/5.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem6 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem6 p:after{border-left-color:rgb(136, 136, 136);}
+.mem6 span{background:rgb(136, 136, 136);color:#fff;}
+.mem6:before{content:'';background-image:url('./渋谷ラビリンス/6.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem7 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem7 p:after{border-right-color:rgb(136, 136, 136);}
+.mem7 span{background:rgb(136, 136, 136);color:#fff;}
+.mem7:before{content:'';background-image:url('./渋谷ラビリンス/7.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem8 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem8 p:after{border-left-color:rgb(136, 136, 136);}
+.mem8 span{background:rgb(136, 136, 136);color:#fff;}
+.mem8:before{content:'';background-image:url('./渋谷ラビリンス/8.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem9 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem9 p:after{border-right-color:rgb(136, 136, 136);}
+.mem9 span{background:rgb(136, 136, 136);color:#fff;}
+.mem9:before{content:'';background-image:url('./渋谷ラビリンス/9.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem10 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem10 p:after{border-left-color:rgb(136, 136, 136);}
+.mem10 span{background:rgb(136, 136, 136);color:#fff;}
+.mem10:before{content:'';background-image:url('./渋谷ラビリンス/10.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem11 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem11 p:after{border-right-color:rgb(136, 136, 136);}
+.mem11 span{background:rgb(136, 136, 136);color:#fff;}
+.mem11:before{content:'';background-image:url('./渋谷ラビリンス/11.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem12 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem12 p:after{border-left-color:rgb(136, 136, 136);}
+.mem12 span{background:rgb(136, 136, 136);color:#fff;}
+.mem12:before{content:'';background-image:url('./渋谷ラビリンス/12.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    
+    @media only screen and (max-width: 768px) {
+        .mem1 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem2 p:after{border-right-color:rgb(233, 30, 99);border-left-color:transparent;}
+        .mem3 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem4 p:after{border-right-color:rgb(224, 224, 224);border-left-color:transparent;}
+        .mem5 p:after{border-right-color:rgb(242, 156, 151);border-left-color:transparent;}
+        .mem6 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+    
+        .mem1:before,.mem2:before,.mem3:before,
+        .mem4:before,.mem5:before,.mem6:before{width:70px;height:70px;}
+    }
+</style>
+</head>
+<body>
+    <p id="page-top"><a href="#"><i class="page-top__arrow"></i></a></p>
+	<div class="leftwhite"></div>
+	<div class="rightwhite"></div>
+	<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+	<div class="log">
+    
+        <div class="kp LtoR-early">
+
+      
+            ある日突然渋谷が絶界になってしまった。<br>渋谷に立ち並ぶビル達が作り上げる迷宮。そして絶界内に吹きすさぶ異質な風。<br>このままではこの風が絶界を超えて外にまで漏れ出して、未曽有の大災害を引き起こしてしまう。<br>予言に導かれた神子達はその破滅の未来を変えるため、絶界解放に乗り出すのだった。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            アマデウスシナリオ「渋谷ラビリンス」 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            -PC1合流まで- 
+          
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「やっほー、ちょっと渋谷ってところがやばくなってるらしいから、見てきてほしいんだけど」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「たぶんそこに、誰かしらいるから協力して何とかしてきてくれたらいいなー」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ロキ……まさかお前がやったのではないな？」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「ひどいなあ。今回は何もやってないさ」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ならいいが……」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「スレイプニール参る！」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「ってことで君なら大丈夫だからいってみよう」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            と言うことで、各々同じような事を言われて向かうのであった、 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            では。万神殿に入ると、ホールでは同じく予言を授かったPC達が合流します。 
+          
+        </div>
+        <div class="mem3 left">
+        <span>？？</span>
+        <p>
+        
+              
+            『――ますか……』 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            ホールに集った神子たちにどこからか声が聞こえてくる 
+          
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「……？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『――聞こえますか、我が兄弟達よ』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『今、あなた達の脳に直接話しかけています』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「!?」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「何者！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『わたしの名はホワイトアクト。諸事情により万神殿へ行けないためこのような形であなた達に合流しました』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「そのような神子もおるのか！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「我が名はスレイプニール！オーディン様に仕える神馬である！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「あぁーー！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「いたぁいたぁ！アンタね！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「渋谷に行くのに同行するアマデウスっていうのはぁ！！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「ププー……ほんとに赤べこじゃない！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「赤べこ……？」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「あれぇ！もう一人いるって聞いてるけどまだ来てないのぉ？おっそーい」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「なるほど、日本にも相当名を馳せた神馬がいるようだな」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「神馬ぁ！アンタ馬鹿ぁ！？あかべこはおもちゃでしょぉ！？」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「???」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ふふ……中々愉快な旅になりそうですね』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「……？」辺りを見回す 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「今誰かいたぁ……？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『お嬢さん、わたしはホワイトアクト。あなたは？』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「はぁん！？」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「何よこれぇ！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「まさかこれがアマデウスだっていうのォ！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『落ち着いてください、諸事情により文字だけで来ているだけです。人間ですよ、私も』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「俺は神馬だ」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「やかましいわ！？」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「まともな人間がいないじゃない！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「神の子が集まればこのような事もあろう」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『なんにせよ、皆神の血を分けた兄弟……仲良くしましょうね』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「うぅ……こんなスカポンタンどもと一緒で予言を解決できるわけないじゃない……！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            では、みなさんは案内され 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            その扉を開く 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            部屋の扉を開けると、そこは床と壁が大理石で作られたギリシャ風の大広間になっていた。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            広間の奥には玉座があり、精悍な顔つきで鍛え抜かれた身体を持った青年が深く腰掛けて座っている。 
+          
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「よく来たな、お前達が今回予言を授かった神子達か？」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            彼の大きく響く声は、大理石で出来た部屋中に広がり、あなた達の耳にもよく届く。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            この青年こそがギリシア神話で最も有名な英雄・ヘラクレスだ。彼は万神殿に集まる神子達の冒険のサポートをしており、時折こうして絶界の詳細を告げることもある。 
+          
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「まずは腹ごしらえだな。たしか日本には腹が減っては戦はできんという言葉があるらしいからな。」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「ちょっと待ちなさいよぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「まずは腹ごしらえだ」 
+          
+        </p>
+        </div>
+
+        <div class="kp LtoR-early">
+        
+              
+            ヘラクレスはそう言うと、手を2回叩く。その音を合図に扉が開き、豪華なギリシャ風の衣装を身にまとった給仕が、御馳走が乗せられた皿を手に持ち、手際よく広間にある大理石で出来た豪奢なテーブルに並べていく。<br>皿に乗せられているのは肉、肉、肉、果物、肉、酒と英雄らしく豪華な食事ばかりだ。 
+          
+        </div>
+
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「このメンツでアイランドに挑ませるって正気ぃ！？馬鹿じゃないのぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「人選は俺は知らん。誰を連れてくるかはそいつらの判断だったからな」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ほほ……』 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「ま、遠慮するな。お前達の為に用意したんだぞ。」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「一人、一人？食えるか知らんが」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「これはいい！やはり食事とはこうでなくてはな！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「口がないのに食べられるわけないでしょぉ！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『わたしのことはご心配なく、どうぞ遠慮せずに』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「『ファミチキ下さい』って出てるじゃない！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            まぁ、ヘラクレスはそう言うや否や、豪快に肉にかぶりつき、樽に入ったままの酒を水でも飲むかのようにぐびぐびと飲み干していった。<br>その姿はまるで自分が食べたいから用意したのではないかと疑いたくなるほどまでの食いつきっぷりだった。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            自由人しかいませんね 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『店員さんはいないようですね……神貸だけ置いておきますか』 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「んで、今の状況を説明する」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『お願いします……これ揚げ鳥だな』 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「一つ目、今東京にある渋谷が絶界化し、迷宮となっている」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「二つ目、迷宮となっている以外にも、植物や建物を腐敗している風が吹いている」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「その風は異質なもので、少しずつ渋谷の絶界から外界へと漏れ出しており、完全に魔界となってしまった後ではこの風を止める術はなくなってしまう」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「今回は魔界化の侵攻も早いため、一刻も早く迷宮を突破し絶界を解放する必要がある」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「ということだ」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「それは大変だな！」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>ヘラクレス</span>
+        <p>
+        
+              
+            「だから神子であるお前たちに頼んでいるんだ」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「……もぐ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『なるほど、そして我々に預言が下されたのですね』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ふむ、たしかに風が不気味だと思っていましたが……しかしここは……』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「存在がやかましいわね……、まぁこのホオベニさんに任せなさい。スカポンタンしかいなくたって解決できるんだから」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ---予言：PC1---<br>≪暗示≫<br>あなたは未来の光景を幻視した。<br>世界中の植物が病魔に侵されて人々が飢餓に喘いでいる。<br>このままではやがて人類は滅亡してしまうだろう。<br>あなたの【任務】は渋谷の絶界を解放し、この未来を回避することだ。 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ---予言：PC2---<br>≪暗示≫<br>渋谷の迷宮は複雑で、闇雲に進んでも絶対に攻略することはできない。<br>どうにかしてこの迷宮の攻略方法を見つけなればならない。<br>あなたの【任務】は迷宮の攻略方法を見つけ、踏破することだ。 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ---予言：PC3---<br>≪暗示≫<br>この迷宮は常に変化を繰り返しており、一度通った道も時間がたてば別の道に代わってしまうようだ。<br>行きたい場所に行くのは難しいことだろう。<br>あなたの【任務】はこの絶界を解放することだ。<br> 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            1D6 活力 (1D6) ＞ 4
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 『ホワイトアクト』 ] 活力 : 0 → 4 
+          
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            1D6 活力 (1D6) ＞ 6
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            2d6 活力 (2D6) ＞ 4[2,2] ＞ 4
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 活力 : 0 → 4 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 最大値 : 0 → 19 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 『ホワイトアクト』 ] 神貨 : 0 → 1 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 『ホワイトアクト』 ] 最大値 : 0 → 16 
+          
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RD-0 (RD&gt;=4) ＞ [6,1] ＞ 1_ファンブル！[1]
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ft ファンブル表(5) ＞ 心に大きな乱れが生まれる。自分の属性に対応した変調を受ける（黒なら絶望、赤なら憤怒、青なら臆病1、緑なら堕落、白なら恥辱）。
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB-0 (RB&gt;=4) ＞ [3,3] ＞ 3_失敗[3青] / 3_失敗[3青]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード青 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RB-0 (RB&gt;=4) ＞ [4,2] ＞ 4_成功[4緑] / 2_失敗[2赤]
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            ムード赤<br>アクション４ 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 頬紅 ] 神貨 : 0 → 4 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ぴえん……』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「やる気あるのォ！？」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            これから、三人は渋谷の絶界へと向かうのであった。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            導入おわり 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            冒険フェイズ 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            あなた達は、渋谷にあるコーヒーショップ「カカオ」から出る。<br>するとそこは見慣れた渋谷の街ではなく、背の高いビルが壁の様に連なり、まるで迷宮のように入り組んだ構造をしていた。<br>いつもは賑やかな大通りは人一人見当たらず、窓から見えるビルの中にも誰かがいる様子はない。<br>空は月も見えず真っ暗で、明かりになるのはビルから漏れる蛍光灯の明かりだけだ。<br>あなた達はまるでここが地下のような錯覚に陥ることだろう。<br> 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『そういえば言い忘れていました……』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『実はわたしは既に迷宮にいます』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『予言が下った後すぐにここに駆けつけていたのですが……ふふ、迷いました』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「アンタは今ここにいるでしょぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『皆さんどの辺にいますか？』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「待っていろ！今助けに行く！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「うっ！何だこの風は……！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ありがとうございます兄弟。しかしここは渋谷迷宮……』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『合流できることを祈りましょう』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「俺の体が腐っていく……何故……？」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            絶望 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「馬鹿ぁ！むやみに突っ走ったら危ないでしょぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            1d6 迷宮 (1D6) ＞ 6
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            6：迷宮の行き止まりに粘土と木で作られた祠が建てられている。元々渋谷にあったものとは思えないが…？ 
+          
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ゴホッゴホッ」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ホワイトアウト！どこにいる！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ホワイトアクトに調査判定 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RA-0 (RA&gt;=4) ＞ [1,3,1] ＞ 1_ファンブル！[1黒] / 3_失敗[3青] / 1_ファンブル！[1黒]
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード青 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ft ファンブル表(2) ＞ 仲間に迷惑をかけてしまう。自分以外のPC全員の【生命力】が1点減少する。
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 『ホワイトアクト』 ] 生命力 : 12 → 11 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] 生命力 : 11 → 10 
+          
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「どこにいる！ひゃっ！？なんだこの泥は！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            祠を蹴り飛ばす 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            神聖な力に阻まれましょう 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「!?」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            神聖な力により仲間二人にスレイブニールの蹴りが跳ね返る 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ぐわあああああ！！』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ホワイトアウトー！！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「キャッ！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ホオズキーー！！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「ゴルァ！祠はけっちゃダメでしょォ！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ぶ、無事です……』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「おのれ怪物め！姿を現せ！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            シーン終了 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            1d6 (1D6) ＞ 5
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            5：疫病に侵され全ての植物が枯れた植物園。神からの恩恵を用いれば植物を再生させることができるかもしれない。<br>　　効果：シーンプレイヤーは≪愛≫で判定を行う。判定に成功した場合、親神の属性の領域にインガを1つ配置する。　※この判定は任意で行うことができる。 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB++-0   (RB&gt;=4) ＞ [5,6] ＞ 5_成功[5白] / 6_スペシャル！[6任意]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード緑<br>アクション5 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『インガが満ちるのを感じます』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            スレイプニールRと交流 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『兄弟、迷宮探索には落ち着きが必要です』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『何事も壊せばいいというものではない……』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「うむ……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『心配せずとも怪物が現れればそちらで合流できるでしょう』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「済まない……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『今は言葉――文字だけの交流でも心配ありません。あなた達の活躍を期待しています』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB++-0   (RB&gt;=4) ＞ [6,1] ＞ 6_スペシャル！[6任意] / 1_ファンブル！[1黒]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード黒<br>アクション6スペ 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ room ] 絶望の闇 : 0 → 1 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            お互いに思いを獲得 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            rt 関係表(2) ＞ 同情（プラス）／侮蔑（マイナス）
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            rt 関係表(6) ＞ 大切（プラス）／面倒（マイナス）
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            同情を取得 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            大切 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「赤べこが文字に諭されている……、夢？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            蜜の口（カーメイド）使用！ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            対象にした相手の変調を回復できる 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            絶望を回復！ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『心に希望を持つのです！それが我々の力の根源！絶望を振り払うのです！』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「うおおおお！力が漲る！言葉とはここまで強いものなのか！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『え？』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『いや、まさか治るとは……結構単純なんですね』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ありがとう！我が兄弟よ！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「多分風邪の時に見る夢だこれ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            シーン終了 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            1d6 (1D6) ＞ 1
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            1：入り組んだビル街の迷宮。ビルから漏れる蛍光灯の灯りだけが頼りだ。 
+          
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「他の奴らなんて当てにならないんだからぁ！自分でなんとかするしかないでしょぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            術式：英雄の武具 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RA++-1  (RA-1&gt;=4) ＞ [4,5,4]-1 ＞ 3_失敗[4緑] / 4_成功[5白] / 3_失敗[4緑]
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            アクション４<br>ムード白 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            自分の槌に【必殺】＋１ 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            シーン終了 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            2サイクル目 最後のサイクル 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            誰かがシーン表を振る前に真実を公開する 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            真実公開 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ≪真実≫<br>あなたは親神から『アリアドネの糸』というアイテムを託されている。<br>「これはクレタ王ミノスの娘、アリアドネが迷宮に挑む英雄に道案内のために渡した糸玉だ。<br>これを使えば一度だけ自分の望んだ場所に行くことができるだろう。だが、使えるのは一度だけだ、使い所に気を付けるように」<br><br>○アリアドネの糸<br>このアイテムは自分を含める誰かが、使用するシーンNoを決める直前に使用できる。<br>一度だけ『迷宮シーン表』の任意のシーンNoを選択することができる。<br>この効果は予言を公開した直後に自動的に使用され、一度使用しか使用できない。<br><br>≪トリガー≫<br>誰かが使用するシーンNoを決定する直前<br>--- 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ---迷宮シーン表---<br>1：入り組んだビル街の迷宮。ビルから漏れる蛍光灯の灯りだけが頼りだ。<br>2：全国展開されているコンビニだ。陳列棚にはたくさんの食べ物が並べられている。<br>　　効果：シーンプレイヤーは≪日常≫で判定を行う。判定に成功した場合、『食糧』を1つ入手する。<br>3：僅かながらの自然が残る寂れた公園に辿り着く。ベンチや自動販売機があり、休憩するには丁度良いだろう。<br>　　効果：シーンに登場しているPCは通常の行動とは別に[休憩]を行うことができる。<br>4：突如、ハーピィが上空から襲いかかってくる。武器を手に取り撃退するしかないだろう。<br>　　効果：シーンプレイヤーは≪武勇≫で判定を行う。判定に失敗した場合、シーンプレイヤーは「重症2」の変調を受ける。<br>5：疫病に侵され全ての植物が枯れた植物園。神からの恩恵を用いれば植物を再生させることができるかもしれない。<br>　　効果：シーンプレイヤーは≪愛≫で判定を行う。判定に成功した場合、親神の属性の領域にインガを1つ配置する。　※この判定は任意で行うことができる。<br>6：迷宮の行き止まりに粘土と木で作られた祠が建てられている。元々渋谷にあったものとは思えないが…？ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            4ハーピィが襲ってくる！ 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            4：突如、ハーピィが上空から襲いかかってくる。武器を手に取り撃退するしかないだろう。<br>　　効果：シーンプレイヤーは≪武勇≫で判定を行う。判定に失敗した場合、シーンプレイヤーは「重症2」の変調を受ける。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            うわああ！突然空からハーピィの群れが！！ 
+          
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ぬわー！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RB-1 (RB-1&gt;=4) ＞ [4,3]-1 ＞ 3_失敗[4緑] / 2_失敗[3青]
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード青 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「くっ！なんなのだ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『スレイプニーーール！！！R』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「散々じゃない！厄除けどころか役寄せの人形なんじゃないのぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「俺は人形ではない！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『逆に考えれば我々はその分幸運を享受できるのでは？』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「厄を引き受けてるってことぉ！？」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「とりあえずお前は無事そうでよかったホワイトアウト」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『そういう人形は大体、最後には火の中にくべられると聞きます』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『えぇ、ご心配なく。私は平気です』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「残る謎はホオヅキか」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「暴かせてもらうぞ！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「アンタたちの存在のほうが謎でしょぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RA-1 (RA-1&gt;=4) ＞ [6,5,1]-1 ＞ 5_スペシャル！[6任意] / 4_成功[5白] / 0_ファンブル！[1黒]
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード赤 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            アクション５ 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ホオベニの謎を調査 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「ていうかあたしはホオベニよ！間違えてるんじゃないわよ！！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            ≪真実≫<br>この迷宮を作り出した怪物はどうやらギリシア神話に関係する存在のようだ。<br>もしかしたらそれが迷宮踏破の糸口になるかもしれない。<br>○効果<br>この≪真実≫が公開されたとき、【予言：渋谷迷宮】が出現する。<br><br><br>≪トリガー≫<br>自分以外の誰かが【調査判定】に成功した時<br>--- 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ---予言：渋谷迷宮---<br>≪暗示≫<br>渋谷のビルが並び作られた迷宮。<br>迷宮は常に動き続け、その姿を変えている。<br> 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ハハハ！道が開けたぞ！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『素晴らしい！これで問題解決に一歩近づきましたね』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ここにきての手掛かり……私も調べてみましょう』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            1d6 シーン (1D6) ＞ 5
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            5：疫病に侵され全ての植物が枯れた植物園。神からの恩恵を用いれば植物を再生させることができるかもしれない。<br>　　効果：シーンプレイヤーは≪愛≫で判定を行う。判定に成功した場合、親神の属性の領域にインガを1つ配置する。　※この判定は任意で行うことができる。 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB+2-1   (RB+1&gt;=4) ＞ [4,4]+1 ＞ 5_成功[4緑] / 5_成功[4緑]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード緑 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『インガが満ち足りてきます……植物たちに命の芽吹きを！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            渋谷迷宮調べる 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『渋谷迷宮……その謎に一人の神子が挑む――！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB+2-1 (RB+1&gt;=4) ＞ [6,4]+1 ＞ 7_スペシャル！[6任意] / 5_成功[4緑]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード赤<br>アクション5 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            こうかい 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ---予言：渋谷迷宮---<br>≪真実≫<br>この迷宮のビルには12星座が刻まれている。<br>星の並びの通りに進んでいけばこの迷宮を突破することができるかもしれない<br>○効果<br>『マスターシーン：迷宮の踏破』が発生する。<br><br>≪トリガー≫<br>いつでも公開できる<br>---<br> 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『これは……！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「さっきから一人で何をﾌﾞﾂﾌﾞﾂ言ってるのよぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『えぇ、説明しましょう。この迷宮には我々を導く１２星座が刻まれています』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『これを辿れば怪物の元へと進めるかもしれません！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「１２星座ぁ……？そんなもの」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「なるほどな！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「あら！ちょうど赤べこちゃんのうしろに書いてあるの「おうし坐」じゃない！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「やっぱりそっくりじゃない！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「俺のことか？」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「一体どこが……」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            マスターシーンに移行します 
+          
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            【2.迷宮の踏破】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ふふ……』 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            渋谷迷宮の謎を解き、迷宮を歩いている神子達の目の前にビル街の大通りに巨大な玉座が見えてくる。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            そこには顔が勇猛な雄牛、まるで岩のようにごつごつと硬い筋肉を持った男性の身体をした半人半獣の怪物、ミノタウロスが鎮座していた。<br>そしてミノタウロスのその眼は赤色に真っ赤に染まり狂気を宿していた。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            ミノタウロスはあなた達の姿を認めると、悠然と玉座から立ち上がり、両手に持った戦斧を勢いよく地面に叩き付け巨大な咆哮を上げる。<br>咆哮は空気を震わせると、その衝撃によってビルの窓ガラスが割れる。<br>ひとしきり咆哮を挙げた後、一度深く腰を落とすと、バネのように鍛え抜かれた両脚で勢いよく、あなた達の方へ迫ってきたのだった。<br> 
+          
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            偵察からー 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            偵察 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB+2-1 (RB+1&gt;=4) ＞ [6,3]+1 ＞ 7_スペシャル！[6任意] / 4_成功[3青]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            パラグラフ1を偵察 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード赤<br>アクション4 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            様子見 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『なるほど……このような術式を持っているようですねえ』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ところで、ひとついいですか？』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『皆さん、今どこにいますか？』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「どこってさっきから何の話してるのよ！目の前にいるでしょぉ！？」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「怪物と戦う頃に合流するのではなかったのか」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『いえ、星座を追ってきたのですが……途中で途切れていて……』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『迷ってしまったようです……』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「そうか……」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            トマホークを偵察 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RA-1 (RA-1&gt;=4) ＞ [2,3,4]-1 ＞ 1_失敗[2赤] / 2_失敗[3青] / 3_失敗[4緑]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『すみません！到着するまで持ちこたえておいてください！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            介入！<br>達成値+1 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード赤 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            アクション4 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            成功！ 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「うおお！トマホークが読める！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『大丈夫！わたしは兄弟たちについています！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            戦斧を偵察 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RC-1 (RC-1&gt;=4) ＞ [5]-1 ＞ 4_成功[5]
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 重傷 : 0 → 2 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 生命力 : 15 → 11 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『なんか大変ですね』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「他人事じゃないでしょぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ホワイトアウトー！早く来てくれー！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] がダイスシンボルを公開。出目は 1 です。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] がダイスシンボルを公開。出目は 1 です。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ room ] パラグラフ : 0 → 1 
+          
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ・傷つける魔の杖”レーヴァテイン”（補助・黒赤・なし）呪具、刃 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            自分が命中判定を行う直前に使用できる。その判定を【霊力】で行うことができるようになる。 武器：威力2D6　必殺2　特攻「鳥、翼、金」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RB+2-1 (RB+1&gt;=4) ＞ [6,4]+1 ＞ 7_スペシャル！[6任意] / 5_成功[4緑]
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            ➡ケイオス 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            武器+破滅の色+パラグラフ＝ダメージ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            武器+1d6+1= 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            2d6+1d6（特攻）+1d6（必殺）+1d6（破滅）+1（パラ）= 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            アクション　スペシャル<br>ムード　緑 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            5d6+1 (5D6+1) ＞ 20[2,3,4,5,6]+1 ＞ 21
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ ミノタウロス ] 本体生命力 : 40 → 27 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『すばらしい……！』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ・合体変形（補助・赤緑・なし）機械 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「牛はもう足りてるでしょぉ！！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            好きな時に使用できる。自分が習得している「機械」タグのついたギフトを1つ封印する。自分の生命力を［2D6+自分のレベル］点回復するか、自分の武器の「特攻」か「軽減」のタグ1つを好きなものに書き換えることができる。 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            支援機構を封印 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            レーヴァテインの特攻、鳥→獣 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ・傷つける魔の杖”レーヴァテイン”（補助・黒赤・なし）呪具、刃 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            自分が命中判定を行う直前に使用できる。その判定を【霊力】で行うことができるようになる。 武器：威力2D6　必殺2　特攻「鳥、翼、金」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RA+2-1 (RA+1&gt;=4) ＞ [4,1,6]+1 ＞ 5_成功[4緑] / 2_ファンブル！[1黒] / 7_スペシャル！[6任意]
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            アクション　スペシャル 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード　緑 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            7d6+1　うおおおおお！！ (7D6+1) ＞ 25[1,1,2,4,5,6,6]+1 ＞ 26
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「……ロキィィィ！！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「さっきは疑って悪かったぁぁぁ！！」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「面白そう？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ロキ様……！なにとぞ！なにとぞご慈悲を……！これこの通り』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            親神の協力でダメージ+1 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「えー」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「裏切りの方が面白くない？」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ﾄｳｻﾝ!!!」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「もう少し戦ってる姿みてみたくない？」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「それに君は、オーディンの方がいいんだろう？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『いやでも何もできずに沈んでいく怪物ってのも乙なもんじゃないですかね』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ｵﾈｶﾞｲｼﾏｽ!!」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「んー。次はもっと面白いの見せてくれる？」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「神に誓おう！！」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「うん。わかった。"今回"だけだよ？」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ｱﾘｶﾞﾄｳｺﾞｻﾞﾏｽ!!我がﾁﾁよ！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ ミノタウロス ] 本体生命力 : 27 → 0 
+          
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「この勝利をオーディンと我がﾁﾁへ捧げよう！！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            BRT 戦果表(3) ＞ 好きな領域にインガを1つ置く。
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            BRT 戦果表(2) ＞ 1D6神貨を獲得する。
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            1d6 (1D6) ＞ 5
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            白に 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『どうやら、二人だけで片付けてしまったようですね』 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            神子達の攻勢により、ミノタウロスは片膝をつく。<br>もはや戦える程の体力はなく、肩で息をし、満身創痍の様子だ。<br>そしてその目は先ほどの狂気は宿しておらず、穏やかな目をしている。 
+          
+        </div>
+        <div class="mem8 right">
+        <span>ミノタウロス</span>
+        <p>
+        
+              
+            「既に遅い…。直に天の雄牛は復活するだろう…。お前達の力ではあいつを倒すことはできない。」<br> 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「お前も偵察を手伝ったではないか」 
+          
+        </p>
+        </div>
+        <div class="mem8 right">
+        <span>ミノタウロス</span>
+        <p>
+        
+              
+            「この迷宮も直に崩壊する。封じ込めるのもそろそろ限界だ、早く逃げろ神子達よ。命を粗末にすることはあるまい」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            ミノタウロスの口から、獣の言葉とは異なる人間の言葉が紡がれる。<br>それだけ言うとミノタウロスはその場に崩れ落ち、光となって消滅する。<br>光となって消滅すると、玉座の背後にそびえ立っていた高いビルも消滅し、奥底へと続く迷宮が開かれたのだった。<br> 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『お待ちなさい！……逝ってしまわれましたか』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『どうやら彼は真の脅威を封じ込めていたようですね』 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「へぇ。さっきのミノタウロスはこの迷宮の病魔を風で振りまく怪物を封じ込めてたんだ」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「なぜ俺たちは戦っていたのだ」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「それで風のせいで本人？やつも正気を失って誰彼構わず襲ったわけか」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「攻撃されたら倒すしかないでしょお！」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「なるほど」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「さ、迷宮の主は消えたようだよ。さっさとこの元凶をなんとかしてみなよ」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「君、わかってるよね？」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ああ！ﾁﾁｳｴ!」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            親神が予言を告げる。<br>この未来を回避するためには、迷宮の奥底に潜む怪物を倒さなければならない。だが、怪物の力は凶悪だ。<br>もしかしたら神子達だけの力では倒すことができないかもしれない。<br>怪物への有効な攻撃手段はその怪物の伝承に糸口があるものだ。<br>奥底の怪物は『天の鎖』によって力を封じられて英雄に討伐された怪物だと伝わっている。おそらく『天の鎖』もこの絶界内に存在することだろう。<br>まずはこれを探し出して怪物に挑むのだ。<br><br>○効果<br>この≪真実≫が公開されたとき、【予言：天の鎖】が出現する。<br>≪トリガー≫<br>迷宮の主を撃破後、いつでも公開できる。 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ---予言：天の鎖---<br>≪暗示≫<br>メソポタミア神話において、天の雄牛を拘束し力を封じた鎖。<br>この絶界内のどこかにあるというが…？<br>※この予言への【調査判定】は『迷宮シーン表』のシーンNo6を使用している時のみ行える<br> 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「今から天の鎖を差がなきゃいけないってことぉ！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ふふ……』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ご安心なさい、兄弟』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「できるわけないでしょお！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『あなたならできます、いえやるのです』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『迷宮の奥底で待っていますよ……』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「お前ならできる！ホオヅキ！！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「『本当にやばいよ！』って書いてあるじゃない！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「馬鹿ぁ！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            1d6 (1D6) ＞ 5
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            5：疫病に侵され全ての植物が枯れた植物園。神からの恩恵を用いれば植物を再生させることができるかもしれない。<br>　　効果：シーンプレイヤーは≪愛≫で判定を行う。判定に成功した場合、親神の属性の領域にインガを1つ配置する。　※この判定は任意で行うことができる。 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『がっ……ダメ！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RC+1-1   (RC&gt;=4) ＞ [4] ＞ 4_成功[4]
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            赤を増やす 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ハッ……俺の蹴りを防いだあの祠……まさかアレが……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『もはや最後の希望は我々の手に託されたようですね……』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            術式 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            英雄の武具➡スレイプニールR 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RA+2-1  (RA+1&gt;=4) ＞ [2,6,4]+1 ＞ 3_失敗[2赤] / 7_スペシャル！[6任意] / 5_成功[4緑]
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            アクション　４<br>ムード　スペシャル黒 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「もう天の鎖に頼ってる時間はないんだから自分たちで何とかするしかないでしょお！？」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「赤べこちゃん！レーヴァティン出しなさいよ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『なるほど、流石は鍛冶神の子。天の鎖にたよらずともあなたがその剣をうち直すと？』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「なるほど！さすがはスパイストスの子！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『やはり……天才か』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「天の雄牛なら空を飛ぶでしょお！？」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            レーヴァテイに対空Aを付与 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『グッド！もはや負けようがありませんね』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「すごいぞ！まるで生まれ変わったようだ！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「馬鹿ぁ！天の鎖がなかったらこれでも勝てるかわからないんだから！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『兄弟がまるで赤い牡牛のように……』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「いや！もはや負ける気がしない！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『兄弟達よ、我々の力を合わせこの苦難を乗り越えましょう！』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「おう！！！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            シーン終了 
+          
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            マスターシーン：天の雄牛の復活 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            迷宮の主・ミノタウロスを撃破し、ビルの並ぶ大通りを進んでいくと、やがて迷宮の最奥へと到達する。<br>そこには泥と木で出来た巨大な神殿があり、頂上へと続く長い階段が設けられている。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            階段を登りきると、そこには祭壇があり、祭壇の中央には巨大な金製の棺桶が置かれていた。<br>棺桶の蓋はかすかに浮いており、そこからは白い霧のような煙が漏れ出して空へと登っている。<br>そうしてあなた達が棺桶の様子を観察していると、突然蓋が勢いよく弾き飛ばされると同時に大量の白い霧が上空へと吹き出す。<br>白い霧は渋谷の街の上空を白い霧で見たす。そうすると、霧は集まりその姿形を別のものへと変形させていった。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            その姿は、空を覆い尽くさんばかりの金色の巨大な体躯を持ち、宝石で出来た群青色の立派な角を生やした雄牛だった。<br>この怪物こそが渋谷を絶界にし、世界に飢餓をもたらす風を運ぶ『天の雄牛』、グガランナである。<br>グガランナは一声金属のような甲高い声で啼く。その啼き声と共に口からは大量の白い霧が吹きだし風に乗り絶界内に吹きすさぶ。<br>風にさらされた植物は枯れ、迷宮のビルまでもが黒く変色しボロボロと崩れ去っていく。<br>そしてグガランナはあなた達に方を向き、敵意を向けた眼差しで臨戦態勢を取るのだった。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            決戦フェイズの開始 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 生命力 : 11 → 9 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『これが、天の牡牛！』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            4d4 八咫鏡（虚影） (4D4) ＞ 9[1,1,3,4] ＞ 9
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            偵察→破壊の疾駆 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB+2-1 (RB+1&gt;=4) ＞ [3,1]+1 ＞ 4_成功[3青] / 2_ファンブル！[1黒]
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            奮起 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード黒<br>アクション4 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            奮起！青 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            1d6+2 (1D6+2) ＞ 3[3]+2 ＞ 5
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            1d6+1 (1D6+1) ＞ 6[6]+1 ＞ 7
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 『ホワイトアクト』 ] 生命力 : 11 → 16 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 生命力 : 9 → 13 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 生命力 : 9 → 14 
+          
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            奮起　赤 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            1d6+1 (1D6+1) ＞ 4[4]+1 ＞ 5
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] 生命力 : 10 → 15 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            様子見 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ・親神の恵み（補助・※・なし）悪戯、変化、宝物 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            自分が判定を行うとき、その判定が自分の親神の権能に関するものであれば、判定のサイコロを振る前に使用できる。自分の【生命力】を2点消費するたび、その判定の達成値を1点上昇する。ただし、【生命力】は[自分の属性と同じ領域の覚醒段階×2]点までしか消費できない。 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ・親神の恵み（補助・※・なし）悪戯、変化、宝物 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            自分が判定を行うとき、その判定が自分の親神の権能に関するものであれば、判定のサイコロを振る前に使用できる。自分の【生命力】を2点消費するたび、その判定の達成値を1点上昇する。ただし、【生命力】は[自分の属性と同じ領域の覚醒段階×2]点までしか消費できない。 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ところで……』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『上ですか？』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「宝物のタグが見つからないぞロキぃ！！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「上って何！」 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「あの宝石で出来た角はなんなのだ！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『いや、さっき皆さん下ってたので下にいるのかと思って……』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「天の牛なんだから上にいるに決まっているでしょお！！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 生命力 : 14 → 12 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『す、すみません！今向かってますので！』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            飢餓の吐息を調査 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RA-1 (RA-1&gt;=4) ＞ [1,3,3]-1 ＞ 0_ファンブル！[1黒] / 2_失敗[3青] / 2_失敗[3青]
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「うおおおおお！俺は神馬スレイプニールだああああ！！！」゜〇。〇゜〇。〇 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「アンタは牛でしょぉ！？」 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「そうだろうロキ！！！」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>ロキ</span>
+        <p>
+        
+              
+            「え？なんのことかな？」 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード青 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「えっ」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] がダイスシンボルを公開。出目は 1 です。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ room ] パラグラフ : 1 → 1 
+          
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            破壊の疾駆に攻撃 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ・傷つける魔の杖”レーヴァテイン”（補助・黒赤・なし）呪具、刃 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            自分が命中判定を行う直前に使用できる。その判定を【霊力】で行うことができるようになる。 武器：威力2D6　必殺2　特攻「鳥、翼、金」 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RA+2-1 (RA+1&gt;=4) ＞ [2,3,3]+1 ＞ 3_失敗[2赤] / 4_成功[3青] / 4_成功[3青]
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード赤 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            アクション３ 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RB+1-1  (RB&gt;=4) ＞ [6,2] ＞ 6_スペシャル！[6任意] / 2_失敗[2赤]
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード赤 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            アクション　スペシャル 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「うおおおおお！！」ﾍﾞｺﾍﾞｺ 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ room ] パラグラフ : 1 → 2 
+          
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            TGT 目標表(3) ＞ 非道。PCの中でもっとも低いランクの【武勇】の持ち主一人を目標に選ぶ。もっとも低いランクの持ち主が複数いる場合、その中から、もっとも低いモッドの持ち主一人を目標に選ぶ。モッドも同じ値だった場合、GMがその中から自由に一人目標を選ぶ。
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RB+1-1  (RB&gt;=4) ＞ [4,5] ＞ 4_成功[4緑] / 5_成功[5白]
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード白 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            アクション4 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            2D6+2+2 エイミング (2D6+2+2) ＞ 10[4,6]+2+2 ＞ 14
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ・合体変形（補助・赤緑・なし）機械 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            好きな時に使用できる。自分が習得している「機械」タグのついたギフトを1つ封印する。自分の生命力を［2D6+自分のレベル］点回復するか、自分の武器の「特攻」か「軽減」のタグ1つを好きなものに書き換えることができる。 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            変形合体を封印 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「赤べこちゃん！？」 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            2d6+2 (2D6+2) ＞ 10[4,6]+2 ＞ 12
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 生命力 : 12 → 19 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 生命力 : 19 → 5 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『スレイプニール！！！！RR』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ぐああああ！！」ﾍﾞｺﾍﾞｺﾍﾞｺ 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            破壊の疾駆に攻撃 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            破壊の疾駆に攻撃 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RB+2-1 (RB+1&gt;=4) ＞ [5,5]+1 ＞ 6_成功[5白] / 6_成功[5白]
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            2D6+4 (2D6+4) ＞ 2[1,1]+4 ＞ 6
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ふ、二人とも！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「特効つかないじゃない！対空も宝石もないのはおかしいでしょお！！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            2D6 飢餓の吐息 (2D6) ＞ 7[1,6] ＞ 7
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 生命力 : 5 → 0 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] 生命力 : 15 → 8 
+          
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            FWT 致命傷表(2) ＞ 苦痛の悲鳴をあげ、無惨にも崩れ落ちる。そのキャラクターは行動不能になる。また、黒の領域のインガが1つ増える。
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ぐああああああ！！！！！」ﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺ 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「ウワァーッ！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ room ] 絶望の闇 : 1 → 2 
+          
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            2D6 破壊の疾駆 (2D6) ＞ 6[1,5] ＞ 6
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] 生命力 : 8 → 2 
+          
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            護符 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            2D6 (2D6) ＞ 2[1,1] ＞ 2
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] 生命力 : 2 → 1 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ room ] パラグラフ : 2 → 1 
+          
+        </div>
+        <div class="mem10 right">
+        <span>ナレーション</span>
+        <p>
+        
+              
+            絶体絶命の二人の元に聞きなれた声が響く 
+          
+        </p>
+        </div>
+        <div class="mem10 right">
+        <span>ナレーション</span>
+        <p>
+        
+              
+            『……皆さん！お待たせしました！』 
+          
+        </p>
+        </div>
+        <div class="mem10 right">
+        <span>ナレーション</span>
+        <p>
+        
+              
+            日の出の様な眩き輝きがあたりを照らす 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ホワイトアクト！ただいま惨上です！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「う……ホ、ホワイトアクトぉ……？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『今こそ！我らの力を合わせる時です！』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ホワイト……アウト……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ホオベニさん！あなたならスレイプニールRを助けられます！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「なにを……もう赤べこちゃんこんなになってるのよ！今更どうにもならないでしょお！？」 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『あなたの神に祈るのです！その祈りが神に届けば！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「……！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「助けてよ！へパイストス！！！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            赤べこを対象にコインを２個消費 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] 神貨 : 4 → 2 
+          
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RC+1-2   (RC-1&gt;=4) ＞ [1]-1 ＞ 0_ファンブル！[1]
+          
+        </p>
+        </div>
+        <div class="mem11 left">
+        <span>ヘパイストス</span>
+        <p>
+        
+              
+            「いや、僕の子よ。さすがにそれじゃ何とも出来ないよ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『えぇ？！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「だめじゃない！！」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            FT ファンブル表(4) ＞ あまりの失敗に、みんなの態度が変わる。自分に対して一番高い【想い】の値を持っているキャラクター全員の、【想い】の属性が反転する。
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『あれれぇ？！』 
+          
+        </p>
+        </div>
+        <div class="mem11 left">
+        <span>ヘパイストス</span>
+        <p>
+        
+              
+            「いやぁ、それはないよ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            攻撃→飢餓 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「馬鹿ぁ！役立たず！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            謳う魔剣(オルナ) 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            武器：2D6 安定性3 必殺2<br> 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RS-2 (RS-2&gt;=4) ＞ [5,3,5,3]-2 ＞ 3_失敗[5白] / 1_失敗[3青] / 3_失敗[5白] / 1_失敗[3青]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード白<br>アクション5（スペ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『うおおおおおお！！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            19ダメージ 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ グガランナ ] 本体生命力 : 55 → 41 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            謳う魔剣(オルナ) 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ホオベニに交流 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB+2-2   (RB&gt;=4) ＞ [5,3] ＞ 5_成功[5白] / 3_失敗[3青]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード青<br>アクション5（スペ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            お互いに【感情】かくとく 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            rt 関係表(4) ＞ 信頼（プラス）／疑い（マイナス）
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            ｒｔ 関係表(2) ＞ 同情（プラス）／侮蔑（マイナス）
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            同情 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            信頼 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            蜜の口（カーメイド） 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「アンタ……どうして、此処まで絶望的なのにあきらめないのよぉ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『まだ生きている！我々は！決してあきらめてはいけない！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『それが弱きものを守る――神子だ！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB-1-2  (RB-3&gt;=4) ＞ [3,5]-3 ＞ 0_失敗[3青] / 2_失敗[5白]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード青<br>アクション5（スペ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            回避！ 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ room ] パラグラフ : 1 → 2 
+          
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            TGT 目標表(6) ＞ 単純。もっとも数値が低いパラグラフにいるPC一人を目標に選ぶ。全員が欄外にいる場合、欄外にいるPC全員を目標に選ぶ。
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB-1-2  (RB-3&gt;=4) ＞ [2,4]-3 ＞ -1_失敗[2赤] / 1_失敗[4緑]
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            2D6+2+4 エイミング (2D6+2+4) ＞ 7[1,6]+2+4 ＞ 13
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 『ホワイトアクト』 ] 生命力 : 16 → 3 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ぐわああああああ！！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            破壊の疾駆に攻撃 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ホオベニさん！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RB+2-2 (RB&gt;=4) ＞ [3,5] ＞ 3_失敗[3青] / 5_成功[5白]
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ room ] 絶望の闇 : 2 → 3 
+          
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            2D6 破壊の疾駆 (2D6) ＞ 8[3,5] ＞ 8
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ぐわああああああ！！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「ウワアァ――っ！」 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            FWT 致命傷表(6) ＞ 奇跡的に持ちこたえる。【生命力】1点で踏みとどまる。
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            FWT 致命傷表(4) ＞ 強烈な一撃を受けて気絶する。そのキャラクターは行動不能になる。
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            供物 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            FWT 致命傷表(1) ＞ 絶望的な攻撃を受ける。そのキャラクターは死亡する。
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「へ、ヘパ……」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] 神貨 : 2 → 1 
+          
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            1D6  (1D6) ＞ 6
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『後は頼みます』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「ヘパイストス……ッ」 
+          
+        </p>
+        </div>
+        <div class="mem11 left">
+        <span>ヘパイストス</span>
+        <p>
+        
+              
+            「全く、ここまでやるとは思わなかったよ」 
+          
+        </p>
+        </div>
+        <div class="mem11 left">
+        <span>ヘパイストス</span>
+        <p>
+        
+              
+            「少しはやるんだろう？」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            追撃 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『これは……！』 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] 生命力 : 1 → 0 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『兄弟……！わたしに光をくれるのですね！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            FWT  致命傷表(5) ＞ 意識はあるが、立ち上がることができない。そのキャラクターは行動不能になる。次のシーンになったら【生命力】が1点に回復する。
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            歎願！ 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 『ホワイトアクト』 ] 神貨 : 1 → 0 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB+2-3   (RB-1&gt;=4) ＞ [6,5]-1 ＞ 5_スペシャル！[6任意] / 4_成功[5白]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード6緑<br>アクション5(スペ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『まだ、倒れている場合ではありませんよ兄弟！』 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 『ホワイトアクト』 ] 生命力 : 3 → 16 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ 蛇ヶ崎 ホオベニ ] 生命力 : 0 → 17 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『神よ！奇跡を与えたもう！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「……！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『目覚めましたか、兄弟』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「これが――デウスのの奇跡ってことぉ？！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            【追撃】頭脳 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB+2-3 (RB-1&gt;=4) ＞ [6,1]-1 ＞ 5_スペシャル！[6任意] / 0_ファンブル！[1黒]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『逃がしませんよ！』 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            ■■■■■■■■■■■■■■■■ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『兄弟……兄弟……』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『聞こえますか……あなたはここで死んでいい馬ではありません』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『死の淵より目覚め……彼の悪逆の牛を屠るのです』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            甘露をささげて泣きの歎願チャンス！ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB+2-3   (RB-1&gt;=4) ＞ [5,2]-1 ＞ 4_成功[5白] / 1_失敗[2赤]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            ムード赤<br>アクション5（スペ 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「……そうだ……俺は」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「スレイプニールだ！！！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ スレイプニールR ] 生命力 : 0 → 19 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『なんとかなれーっ！』 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ・傷つける魔の杖”レーヴァテイン”（補助・黒赤・なし）呪具、刃 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            自分が命中判定を行う直前に使用できる。その判定を【霊力】で行うことができるようになる。 武器：威力2D6　必殺2　特攻「鳥、翼、金」 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            本体を攻撃 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RA+2-3 (RA-1&gt;=4) ＞ [4,3,4]-1 ＞ 3_失敗[4緑] / 2_失敗[3青] / 3_失敗[4緑]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『べこっ？！』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『……』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「悪夢ならさめて……」 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「ミノタウルスの言う通りであった……」 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「天の雄牛……強すぎる……」ﾍﾞｺ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『まだだっ！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『兄弟の分まで私が届かせる！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            謳う魔剣(オルナ)→本体 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            武器：2D6 安定性3 必殺2<br> 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RS-3 (RS-3&gt;=4) ＞ [1,5,6,5]-3 ＞ -2_ファンブル！[1黒] / 2_失敗[5白] / 3_スペシャル！[6任意] / 2_失敗[5白]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            2d6+2d6+3d6+1d6+1=ダメージ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            8d6+1 ダメージ (8D6+1) ＞ 25[1,2,2,3,3,4,5,5]+1 ＞ 26
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            3D6 (3D6) ＞ 13[3,4,6] ＞ 13
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ グガランナ ] 本体生命力 : 41 → 28 
+          
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            介入 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ グガランナ ] 本体生命力 : 28 → 27 
+          
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            介入 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ グガランナ ] 本体生命力 : 27 → 26 
+          
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            1D2 (1D2) ＞ 1
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            べこ 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RB+1-3  (RB-2&gt;=4) ＞ [3,6]-2 ＞ 1_失敗[3青] / 4_スペシャル！[6任意]
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ムード青 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            TGT 目標表(5) ＞ 豪快。PCの中でもっとも高いランクの【武勇】の持ち主一人を目標に選ぶ。もっとも高いランクの持ち主が複数いる場合、その中から、もっとも高いモッドの持ち主一人を目標に選ぶ。モッドも同じ値だった場合、GMがその中から自由に一人目標を選ぶ。
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB-1-3  (RB-4&gt;=4) ＞ [3,6]-4 ＞ -1_失敗[3青] / 2_スペシャル！[6任意]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『無駄ぁ！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            本体に攻撃 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            1d6 (1D6) ＞ 6
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            1D6 (1D6) ＞ 6
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            7d6+3 (7D6+3) ＞ 22[1,1,2,4,4,4,6]+3 ＞ 25
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            3D6 (3D6) ＞ 13[3,4,6] ＞ 13
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            [ グガランナ ] 本体生命力 : 26 → 14 
+          
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            飢餓の吐息に妨害 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RC+1-3   (RC-2&gt;=4) ＞ [1]-2 ＞ -1_ファンブル！[1]
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            FT ファンブル表(6) ＞ 周囲から活気が失われる。運命の輪のなかから、黒以外の領域のインガがすべて1つずつ減少する。
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            choice[いいよー,あきらめろー,もういっかい]  ＞ もういっかい
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>グガランナ</span>
+        <p>
+        
+              
+            choice[いいよー,あきらめろー,もういっかい] ＞ あきらめろー
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『ここまで、ですか……』 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            突然迷宮内に強風が巻き起こった。<br>迷宮の通路を風が吹き通ると途中にある植物は枯れ、建物は腐りボロボロと崩れ去っていく。 
+          
+        </div>
+        <div class="mem12 right">
+        <span>---</span>
+        <p>
+        
+              
+            「迷宮が崩れるぞ！早く脱出するんだ！」 
+          
+        </p>
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            不意に親神の忠告の声が聞こえてくきた。<br>あなた達は親神の声に導かれるままなんとか迷宮を脱出する。<br>それと同時に渋谷の絶界が完全に魔界となり、渋谷は人類の歴史から抹消され、渋谷の街があった場所には未知の病魔が巣くう荒地だけが残ることになった。 
+          
+        </div>
+        <div class="kp LtoR-early">
+        
+              
+            この荒地の病魔は少しずつ世界へと風と共に流れ出て、いずれはその牙を人類に剥くことだろう。 
+          
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            NMT 悪夢表(2) ＞ 絶望の闇の中、悲痛な叫びが聞こえてくる。事件の被害者たちだろうか。あなたは、救えなかったのだ。【日常】で判定を行う。失敗すると、「絶望」の呪いを受ける。
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            nmt 悪夢表(6) ＞ 絶望の闇の中を必死で逃げ出した。背後から仲間の声が聞こえた気がする。しかし、あなたは振り返ることができなかった。【日常】で判定を行う。失敗すると、「恥辱」の呪いを受ける。
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            nmt 悪夢表(2) ＞ 絶望の闇の中、悲痛な叫びが聞こえてくる。事件の被害者たちだろうか。あなたは、救えなかったのだ。【日常】で判定を行う。失敗すると、「絶望」の呪いを受ける。
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            RB-3 (RB-3&gt;=4) ＞ [3,4]-3 ＞ 0_失敗[3青] / 1_失敗[4緑]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            RB-3 (RB-3&gt;=4) ＞ [5,4]-3 ＞ 2_失敗[5白] / 1_失敗[4緑]
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            RD-3 (RD-3&gt;=4) ＞ [2,3]-3 ＞ -1_失敗[2]
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『なんと不甲斐ない結果を……くっ！』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            ﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺﾍﾞｺ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『わたしが道に迷わなければ……!』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「けど、生きてるじゃない」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『兄弟……！』 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>蛇ヶ崎 ホオベニ</span>
+        <p>
+        
+              
+            「アンタが言ってたんでしょお！失敗は取り戻せないけど、まだ私達は終わったわけじゃないんだから」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『……！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『そう……我々は神子！一度や二度の敗北でくじけてはいられません！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『兄弟！ありがとうございます』 
+          
+        </p>
+        </div>
+        <div class="mem2-2 right">
+        <span>スレイプニールR</span>
+        <p>
+        
+              
+            「そうだべこ！迷っても道は道だべこ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『えぇ……！二人とも！行きましょう！』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>『ホワイトアクト』</span>
+        <p>
+        
+              
+            『わたしたちの戦いはこれからです！』 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>GM</span>
+        <p>
+        
+              
+            渋谷ラビリンス END... 
+          
+        </p>
+        </div>
+        </div>
+<br>
+</div></div>
+<script src="../logCon_Respon.js"></script>
+</body></html>
