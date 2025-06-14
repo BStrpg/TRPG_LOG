@@ -1,0 +1,7963 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>log</title>
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../logCon_Respon.css">
+<style>
+    /* main css */
+    .bg-inner.bg1{background:url('./灰燼に帰す画像/灰燼.png') no-repeat center/cover;}
+    
+    /* member */
+    .mem1 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+    .mem1 p:after{border-right-color:rgb(136, 136, 136);}
+    .mem1 span{background:rgb(136, 136, 136);color:#fff;}
+    .mem1:before{content:'';background-image:url('1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem2 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+    .mem2 p:after{border-left-color:rgb(136, 136, 136);}
+    .mem2 span{background:rgb(136, 136, 136);color:#fff;}
+    .mem2:before{content:'';background-image:url('2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem3 p{border:2px solid rgb(244, 67, 54);box-shadow:5px 5px 0 rgb(244, 67, 54);}
+    .mem3 p:after{border-right-color:rgb(244, 67, 54);}
+    .mem3 span{background:rgb(244, 67, 54);color:#000;}
+    .mem3:before{content:'';background-image:url('./灰燼に帰す画像/PC1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem3b:before{content:'';background-image:url('./灰燼に帰す画像/PC1_.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}   
+    .mem3c:before{content:'';background-image:url('6.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem4 p{border:2px solid rgb(0, 188, 212);box-shadow:5px 5px 0 rgb(0, 188, 212);}
+    .mem4 p:after{border-left-color:rgb(0, 188, 212);}
+    .mem4 span{background:rgb(0, 188, 212);color:#000;}
+    .mem4:before{content:'';background-image:url('./灰燼に帰す画像/PC2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem4b:before{content:'';background-image:url('5.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem5 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+    .mem5 p:after{border-right-color:rgb(136, 136, 136);}
+    .mem5 span{background:rgb(136, 136, 136);color:#fff;}
+    .mem5:before{content:'';background-image:url('5.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem6 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+    .mem6 p:after{border-left-color:rgb(136, 136, 136);}
+    .mem6 span{background:rgb(136, 136, 136);color:#fff;}
+    .mem6:before{content:'';background-image:url('6.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem7 p{border:2px solid rgb(233, 30, 99);box-shadow:5px 5px 0 rgb(233, 30, 99);}
+    .mem7 p:after{border-right-color:rgb(233, 30, 99);}
+    .mem7 span{background:rgb(233, 30, 99);color:#000;}
+    .mem7:before{content:'';background-image:url('./灰燼に帰す画像/PC3.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem7b:before{content:'';background-image:url('./灰燼に帰す画像/奥義.jpg');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem7c:before{content:'';background-image:url('./灰燼に帰す画像/PC3_.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem8 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+    .mem8 p:after{border-left-color:rgb(136, 136, 136);}
+    .mem8 span{background:rgb(136, 136, 136);color:#fff;}
+    .mem8:before{content:'';background-image:url('8.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem9 p{border:2px solid rgb(153, 76, 3);box-shadow:5px 5px 0 rgb(153, 76, 3);}
+    .mem9 p:after{border-right-color:rgb(153, 76, 3);}
+    .mem9 span{background:rgb(153, 76, 3);color:#fff;}
+    .mem9:before{content:'';background-image:url('./灰燼に帰す画像/PC4.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem10 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+    .mem10 p:after{border-left-color:rgb(136, 136, 136);}
+    .mem10 span{background:rgb(136, 136, 136);color:#fff;}
+    .mem10:before{content:'';background-image:url('10.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem11 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+    .mem11 p:after{border-right-color:rgb(136, 136, 136);}
+    .mem11 span{background:rgb(136, 136, 136);color:#fff;}
+    .mem11:before{content:'';background-image:url('11.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem12 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+    .mem12 p:after{border-left-color:rgb(136, 136, 136);}
+    .mem12 span{background:rgb(136, 136, 136);color:#fff;}
+    .mem12:before{content:'';background-image:url('12.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    .mem13 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+    .mem13 p:after{border-right-color:rgb(136, 136, 136);}
+    .mem13 span{background:rgb(136, 136, 136);color:#fff;}
+    .mem13:before{content:'';background-image:url('13.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    
+    @media only screen and (max-width: 768px) {
+        .mem1 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem2 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem3 p:after{border-right-color:rgb(244, 67, 54);border-left-color:transparent;}
+        .mem4 p:after{border-right-color:rgb(0, 188, 212);border-left-color:transparent;}
+        .mem5 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem6 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem7 p:after{border-right-color:rgb(233, 30, 99);border-left-color:transparent;}
+        .mem8 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem9 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem10 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem11 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem12 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem13 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+ 
+        .mem1:before,.mem2:before,.mem3:before,
+        .mem4:before,.mem5:before,.mem6:before,
+        .mem7:before,.mem8:before,.mem9:before,
+        .mem10:before,.mem11:before,.mem12:before,
+        .mem13:before{width:70px;height:70px;}
+    }
+</style>
+</head>
+<body>
+    <p id="page-top"><a href="#"><i class="page-top__arrow"></i></a></p>
+	<div class="leftwhite"></div>
+	<div class="rightwhite"></div>
+	<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+	<div class="log">
+    
+        <div class="kp">
+    
+          
+            真夜中。静かな山あいの里に、火の手があがる。<br>それはまるで意思を持った生き物のように、建物を、人を、飲み込んでいく。<br>火を消し止めんとする人々。炎の中、何かを探して奔走する者たち。<br>そして、混乱の渦の中に、身を寄せ合って逃げる二人の姿があった。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            全てのものは、いずれ灰へと至る 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ――灰燼に帰す 
+          
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ■導入1 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            人里離れた山奥に、その里はありました。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            村人たちが呼ぶに、「煙谷の里」。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            どの流派にも属さないシノビ達がひっそりと、そして平穏に暮らしている小さな村です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            自分たちが食べる分だけの食糧を栽培・狩猟し、日用品は融通しあう。二週間に一度ほどある朝市では、村の外からの品物も少しは手に入りますが、ほとんどの必需品は村の中でやりくりする。そんな牧歌的な生活が営まれています。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            今は普通の日常の昼間 
+          
+        </div>
+        <div class="kp">
+        
+              
+            PC1とPC2はそんな煙谷の里に来てから数年といったところでしょうか。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            村人たちとも打ち解け、村の営みにもすっかり馴染んでいる頃です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            村の広場では明日の朝市の準備が進められています。山奥では手に入りにくい品と、村でとれた食料品などを交換するのもこの日ですね。<br>お二人はその準備に一緒に参加していることでしょう 
+          
+        </div>
+        <div class="mem2 right">
+        <span>村人1</span>
+        <p>
+        
+              
+            「カイくん、雪鬼くんお手伝いありがと。いつも助かるよ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「気にしなくていいよとーも、君はもえちゃっかのお得意さまだからね～ぇ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……いえ」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>村人2</span>
+        <p>
+        
+              
+            「雪鬼くん、うちで作った燻製肉があるんだがねえ、味見してみてくれないかい？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「あ、うん……ありがとうおじさん」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            村人たちが気さくに話しかけてきます。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            和やかに、いつもと変わらぬ様子で朝市の準備は進められました。 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さん、ここはやっぱりいい村だね」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「そうだねぇ、……ようやく腰を据えられるかもしれないねぇーえ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            いやぁ。平和平和 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ――その夜。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            カイくん。真夜中、眠りについていたあなたは、焦げ臭さを感じてふと目を覚まします。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            気のせいではありません。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            家の中にはまだ火の気配こそないものの、すでに煙が充満し始めています。
+          
+        </div>
+        <div class="kp">
+        
+              
+            へいわ、でした。 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……！しまった、ガスを切り忘れたか…！？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「フフ、そんなはずはなぃよねーぇ、これは……」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ――導入1 了 
+          
+        </p>
+        </div>
+
+      <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+           〇PC1<br>君はPC2の兄/姉だ。天涯孤独の君に残されたのは、PC2だけ。各地を放浪しながら、二人で身を寄せ合うようにして生きてきた。<br>煙谷の里には長く滞在し、里の人々にも良くしてもらった。ここを安住の地にしようかと思っていた矢先の大火に、君は戸惑いつつもPC2の身を案じている。<br>君の【使命】は「PC2を無事に生き延びさせる」ことだ。
+          
+        </p>
+        </div>
+
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            〇PC2<br>
+君はPC1の弟/妹だ。故郷を失った君に残されたのはPC1だけ。各地を放浪しながら、二人で身を寄せ合うようにして生きてきた。<br>煙谷の里には長く滞在し、里の人々にも良くしてもらった。だが突然の大火に、君は混乱している。<br>君の【使命】は「無事に生き延びる」ことだ。
+          
+        </p>
+        </div>
+
+
+
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ●導入2 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            PC3、あなたは上司の呼び出しを受けて、執務室へやってきました。 
+          
+        </div>
+        <div class="mem6 right">
+        <span>上司</span>
+        <p>
+        
+              
+            「『煙谷の里』と呼ばれる場所に、シノビが守っている秘宝があるらしい」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>上司</span>
+        <p>
+        
+              
+            「その情報は秘匿され、里の外部から詳細を知ることは難しい……と、いわれているね」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「そうかそうか」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>上司</span>
+        <p>
+        
+              
+            「だが斜歯忍軍の調査力にかかれば、その限りではない。わかるね？」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>上司</span>
+        <p>
+        
+              
+            「君には急ぎここへ向かい、秘宝を回収してきてほしい。手段は問わない」 
+          
+        </p>
+        </div>
+        <div class="mem6 right">
+        <span>上司</span>
+        <p>
+        
+              
+            「よろしくな」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「ようするにこのわしにうってつけの忍務ということじゃな」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            指示書に書かれた通りの道筋を通れば、煙谷の里へは簡単にたどり着けます。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            秘宝は里の洞窟に安置されている……ということです。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            では、深夜。すっかり寝静まった煙谷の里。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            蒋 虻紗が村へ入り込んだ少し後でしょうか。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            どこかから焦げた匂いが漂ってきます。
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ｳｫｫｫｫｫｫﾝ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「なんじゃなんじゃ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            匂いのもとへ行ってみる 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            さて、気になってかなんでかきっと里の方を見に行くと―― 
+          
+        </div>
+        <div class="kp">
+        
+              
+            炎上中ですね 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「おお！燃えておるぞ！！」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            導入2 了 
+          
+        </p>
+        </div>
+
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+        〇PC3<br>君はこの煙谷の里で守られているという秘宝を調査しにきた忍だ。その秘宝の力を手に入れることができれば、斜歯忍軍の研究はまた一歩完成に近づくに違いない。村に火の手があがったのを見て、君は秘宝を確保するべく行動を開始した。<br>君の【使命】は「斜歯忍軍に貢献できる技術を手に入れて帰る」ことだ。
+          
+        </p>
+        </div>
+
+
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+             ●導入3 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            真夜中。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            いつもの寝床で眠りについていた頃でしょうか。 
+          
+        </div>
+        <div class="mem8 right">
+        <span>アナウンス</span>
+        <p>
+        
+              
+            ――ﾌｧﾝﾌｧﾝﾌｧﾝ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            スヤスヤ… 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「！」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            その眠りは比良坂機関からの連絡で妨げられます。 
+          
+        </div>
+        <div class="mem8 right">
+        <span>アナウンス</span>
+        <p>
+        
+              
+            『煙谷の里にて異常発生。直ちに調査に向かわれたし』
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            煙谷の里に到着したポンチさんは、村が炎に包まれているのを目撃します。 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「なんだニャ！？新モンスターかニャ！？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「燃えてるニャー！！」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            火の手はかなり激しく、放っておけば村は壊滅してしまうでしょう。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            あなたの前に、炎の中から逃げ延びた村人が飛び出してきます。 
+          
+        </div>
+        <div class="mem10 right">
+        <span>一般通過村人B</span>
+        <p>
+        
+              
+            「ああ！　あんた、村の外から来た人かい！？　助けてくれ、火が！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ニャ！？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「まかせろニャ！！！」 
+          
+        </p>
+        </div>
+        <div class="mem10 right">
+        <span>一般通過村人B</span>
+        <p>
+        
+              
+            「全部燃えて……」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            ちっちゃい手で水をバシャバシャしている 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            そうしても火は消えず 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「これじゃ消えないニャ・・・」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            村人が言い終わるか否かというところで、背後で燻っていた炎が突然燃え上がり、村人を飲み込みます。 
+          
+        </div>
+        <div class="mem10 right">
+        <span>一般通過村人B</span>
+        <p>
+        
+              
+            「ギャアアアアア！！！！」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            村人は必死に地面を転がって火を消そうとしますが、それも空しく、あっという間に焼かれて動かなくなってしまいました。 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ニャ・・・」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            貴方は、原因がなんなのか、どうすれば収まるか―― 
+          
+        </div>
+        <div class="kp">
+        
+              
+            調べることでしょう 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「許さんニャ！！」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            導入 了 
+          
+        </p>
+        </div>
+
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            〇PC4<br>君はこの里を監視していた比良坂機関の忍だ。深夜、異常を察知したあなたは急ぎ煙谷に訪れ、そしてなす術もなく燃えていく里を目にした。この里では重要な秘宝が守られていたはずだ。それを失うわけにはいかない。<br>君の【使命】は「大火の原因を特定し、消し止める」ことだ。
+          
+        </p>
+        </div>
+
+
+
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            1サイクル目 最終サイクル 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            調べることが可能：<br>各PC秘密<br>プライズ「冥府の水差」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ◆プライズ「冥府の水差」<br>細かな装飾が施された、美しい水差。青銅でできており、簡単には壊れそうにない。また、水は入っていない。<br>所持者はいつでも、このプライズの【秘密】を見ることができる。（所持していなくとも情報判定は可能） 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            わたしせんて 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            サイクル1 シーン1<br>登場人物：雪鬼,カイ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            焼け落ちる里シーン表 1D6 焼け落ちる里シーン表(4) ＞ 村人が集う井戸。井戸屋形が燃え落ち、消炭になっている。いつもは人々の憩いの場だが、人の姿はない。
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――寒い」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「あらら……派手に燃えてるね～ぇ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            目の前の業火を目にしながら彼は身をこわばわせる 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「寒いかい？ユキ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……ううん、大丈夫」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さん、村の人は平気かな？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「この火の手では全員無事とはいかないだろうねーぇ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「近くの人だけでも助けていくかい？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……うん」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「お世話になったから……助けたい」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「お得意さんのひろみちゃん、お肉屋さんのダンゾウさん、無事ににげらているかぁーな」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            感情判定 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：詐術） (2D6&gt;=6) ＞ 8[2,6] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            et 感情表(4) ＞ 忠誠（プラス）／侮蔑（マイナス）
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            ET 感情表(5) ＞ 憧憬（プラス）／劣等感（マイナス）
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            忠誠を 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            憧憬 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……ユキ、無理はするなよ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「うん、兄さんも」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            シーン終了 
+          
+        </p>
+        </div>
+        <div class="mem11 left">
+        <span>一般通過村人A</span>
+        <p>
+        
+              
+            「ｷﾞｬｱｱｱｱｱｱｱｱ」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            一般通過村人A終了のお知らせ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            焼け落ちる里シーン表 1D6 焼け落ちる里シーン表(2) ＞ 燃え上がる民家の間を行く。家の持ち主だろうか、村人が火を消そうとしているが、まさに焼け石に水のようだ。
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            登場:全員登場 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>村人2</span>
+        <p>
+        
+              
+            「オラの家がぁあああああ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「危ないニャ！！！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「おお燃えておるわー」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「おじさん、助けに来たよ……下がってて」 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>村人2</span>
+        <p>
+        
+              
+            「ゆ、き…」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「そこのお前ら、火を消すから手伝うのじゃ！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ンン？消防車……？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「任せろニャア！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「消防車が喋ったニャ！？」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            貴方たちは、炎を消そうとそれぞれの業を使う 
+          
+        </div>
+        <div class="kp">
+        
+              
+            しかし、火は消えず。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            逆に、君たちを阻むかのように燃え広がるのだった 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「やっぱりダメなのかニャ・・・」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「くっ……！火が強い……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……ユキ、下がるんだ。ダンゾウさんはもう助からないよぉーだね」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「バケツリレーじゃ！皆でこれを回すのじゃ！」水を入れた水指を渡す 
+          
+        </p>
+        </div>
+        <div class="mem5 left">
+        <span>村人2</span>
+        <p>
+        
+              
+            「ｷﾞｬｱｱｱｱｱｱｱ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「おっちゃあああああああああああああん！？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「『おかしも』を忘れてしまったんだニャ・・・」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「おじさん……っ！どうして……っ！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「バケツじゃ足りないニャ！！これはッ！！」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            では、カイくん蒋 虻紗から水差し渡されたけど受け取る？ 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……あれ？消防車は？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            水を受け渡しながら 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            バトンリレーしたいらしいけど、次誰に渡します？ 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「斜歯が作った火が消える水差じゃ受け取れえええーーー」PC番号順に水指を渡す 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            はい。 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「くっ……【氷針】」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            青年が火に手をかざし氷塊を放つがたちまちに溶けていく 
+          
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「無駄じゃ！早くこれを使うのじゃ！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「そんなんじゃだめだニャ！！水差しなんてのも効くはずがないニャ！！」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「何を言うとるのじゃこの畜生め！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「あれ、これ……？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「なに遊んでるのニャ！！もうこの家はダメニャ！！逃げろニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「そんなっ……！おじさんが……おじさんの店が」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「そんなことはどうでもよい！早く水差を使うのじゃ！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「そのようだぁーね、この炎自体どうやら特殊なようだ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「のじゃのじゃうるさいのニャ！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「え？何……？それなら消えるの？」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「だからこの特別な水差を使うのニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「逃げられていそうな人だけ助けるほうが効率的かもねェ～え」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「真似したニャ！！訴訟ニャ！！」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「行為判定は水差を使った後じゃ！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「おじょーちゃんも宝物は大事にするニャ！！」カイから取り上げてショウボウシャに返そうとする 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ユキ、ヒロミちゃんを助けに急ごうか」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「おう、はよ使わんかい！」雪鬼を水差で殴る 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            D66 (D66) ＞ 11
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 16
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「痛っ……？！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            防げなかった 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「まぁ～ったく、君も水差しじゃなくその消防車を使って鎮火活動をしたまえ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さん……？」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            水差しは雪鬼が触りました。 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「うぐっ……！あ、頭がぁ……！」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「ほう」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            水差に触れると突然、雪鬼は頭を押さえて苦しみだし膝を折って地面に倒れこんだ 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ユキ……」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「やり過ぎたようじゃ、すまんかったのぉ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「毒入りだったのかニャ！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……う、うわぁぁあ！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……毒ね」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            突然叫び出したかと思うと、わき目もふらずどこかへと走り去っていった 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            退場します 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「なんでそうなるのじゃ！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「はぁ……メンドくさいことしないでほしいな～ぁ、殺されたいの？君」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「違うのかニャ！？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「次にあったら殺すから」雪鬼を追いかける 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            じゃあポンチの秘密を調べます 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG&gt;=5 （判定：火術） (SG@12#2&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「うーむ、うまくいかんのぉ」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「じゃあの、ネコ太」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「やっぱり消えないじゃないかニャ！！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「すまんの」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ボクの名はポンチだニャ！！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「じゃあのチ〇ポ！」去る 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            シーン終えるにゃ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「だれがチンポニャ！！！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 26
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            D66 (D66) ＞ 66
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            焼け落ちる里シーン表 1D6 焼け落ちる里シーン表(1) ＞ ぱちぱちと火の爆ぜる音が聞こえる。この辺りには大きな火の気配はないようだ……それとも、もう全てが燃え尽きてしまった後か。
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……ユキ、どこだ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            燃え尽きた灰屋の前で少年がたたずんでいる 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――寒い」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ユキ……！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……触れてしまったのだぁ～ね」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さんは、知ってたの……？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「――知らないほうがいいこともある」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……皆は、村の人たちは……？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「どうかな、ほとんど灰になってしまったようだぁーね」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「こんな廃れた村でこれだけの火災、半分も残っていたらいいほうかもしれないねぇ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……また、無くなっちゃったね」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さんだけだ……俺の傍に残ってくれるのは」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「いつも……いつも、そうだ。俺を暖めてくれる人達が現れたと思ったら、皆、焔の中に消えていく」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さんが何かしてるんじゃないかって……思ってたんだ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「けど違ったんだね……ごめん」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「人形焼き」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「人形焼きを燃やしてしまっただけさ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ぼかぁ、ついうっかり火の扱いをたがえてしまうかぁらね～ぇ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「たまには多く焦がしてしまうこともあるさ、それはすべて私の過失にすぎない」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「君が何かを案ずるひつようはないのさぁーあ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「俺は……兄さんがいればいい」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「もう、おじさんたちも、皆……いなくなちゃったから」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ぼくらは手の届く範囲の大事なものだけを守れればいい、それ以外はどうだっていいのさ……人が伸ばせる範囲はかぎられているのだぁーからね」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            情報判定→蒋 虻紗 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            感情修正 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            2D6&gt;=4 （判定：火術） (2D6&gt;=4) ＞ 7[3,4] ＞ 7 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……さっき消防車みたいな珍妙な輩がいたねェ、炎を通じて彼女の心の炎をみたけれど」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「彼女こそが放火した犯人に違いないようだ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「消防車なのに……？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「あれはハスバのシノビだろうね、このタイミングで外部のシノビ……見かけない人だから怪しいとはおもていたんだぁーよ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「そうなんだ……どうする？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……ぼくらの平穏な暮らしの落とし前はつけてもらおうか」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「うん、わかったよ兄さん」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            少年は振り返り、灰塵に帰した廃屋を見る 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――寒い」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            シーン終了 
+          
+        </p>
+        </div>
+        <div class="mem12 right">
+        <span>一般通過村人C</span>
+        <p>
+        
+              
+            「ｳﾞｧ……ｳﾞ……」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            どこかで一般通過村人Cの息絶える音がする 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            焼け落ちる里シーン表 1D6 焼け落ちる里シーン表(6) ＞ ごうごうと巻き上がる炎。一体何が燃えているのかも判別がつかないほどだ。火は逃げる村人を追い立てるように、その魔手を伸ばす。
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>村人1</span>
+        <p>
+        
+              
+            「ｧ…ｱ…」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「まずいニャ！！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「おお、チ〇ポではないか！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「違うニャ！！淑女がなんてことを言ってるのニャ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「おう」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「・・・？」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「ところでなにをしておるのじゃ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「その火は消えんぞ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「早く助けるニャ！！消防車！！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「うーむ火元を調べるしかなさそうじゃが」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「調べる前に消せ！！！！！ニ゛ャ゛」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「仕方ないのお、もう一度やってみるか。ファイヤー！」ｼﾞｬﾊﾞｰ 
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>村人1</span>
+        <p>
+        
+              
+            2D6 (2D6) ＞ 3[1,2] ＞ 3
+          
+        </p>
+        </div>
+        <div class="mem2 right">
+        <span>村人1</span>
+        <p>
+        
+              
+            燃えました 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「アチッチ！？！！！？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ニ゛ャー！！殺される！！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「お姉さん！……そんな……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「あなたは……何をしに来たんですか？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「あ。あのときのにーちゃんニャ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「うーむやっぱり特殊な炎じゃの」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「俺たちは、この村で……ただ平和に暮らしていただけなのに」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「・・・」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「村の人たちも……」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「おう！……名前はなんだったかの？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ボクはポンチだニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「わしは蒋 虻紗」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「すべて燃えてしまう……」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「燃やさせないニャ！！そのためにきたんだニャ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「すべて燃えてしまうよ調子はどうじゃ？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さんはあなたを殺す気です」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「俺の……俺たちの為に」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ニャ・・・推測でしかないけど、ちょっと待ってほしいのニャ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「そんなこと言ってたのお……」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ちょっと気になることがあるのニャ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「なんじゃ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「じつは詳しくは言えないんニャが、ニャントカカントカということかもしれないんだニャ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「はぁ？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「君は……よく見たら村の猫じゃないのか？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「違うニャ。ニャンターなのニャ。」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「ニャンター？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ニャンター歴はニャんと2年あるのニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「ここは危ないから……その人と一緒に山を下りるんだ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「それはすごいことなのかの？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「そうはいかんのニャ。ボクは消し止めるために来たんだニャ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「そう、すごいことなのニャ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……助けに来たの？じゃあ誰か生きていましたか……？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「彼のことがちょっくら気になってるのニャ・・・さっきマダムから聞いたんニャが」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：流言の術） (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「・・・！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「おお、なんと言ってたんじゃ？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ニャンと・・・」コソコソ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            PC3にPC1の秘密を渡す 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【慢心】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：詐術） (2D6&gt;=5) ＞ 10[5,5] ＞ 10 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            野望を与える 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「ほう、では特別にこのわしのすごい水差の秘密を教えてやろう」水差の秘密をチ〇ポに渡す 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……聞いてない」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「またそれかニャ・・・」決してチ〇ポではないのニャ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「すべて燃えてしまうにも教えてやったらどうじゃ？仲間外れはかわいそうじゃ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「やらんニャ！！あいつにはなんか悪口言われた気がするのニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「もう、いい……どうせすべて灰になるんだ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            シーンから退場します 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「チ〇ポ女はたぶん大丈夫な気がするんだニャ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「燃えているようだが大丈夫なんじゃな。よかったのお」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ニャ。大は、小を・・・ニャ。」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            -シーン終了- 
+          
+        </p>
+        </div>
+        <div class="mem13 left">
+        <span>そこらへんの人</span>
+        <p>
+        
+              
+            死にました 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：憑依術）野望の回復判定 (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「キャンプで回復ニャ」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+             ■クライマックスフェイズ 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            貴方たち全員は、助ける助けないにしても里の様子を見て 
+          
+        </div>
+        <div class="kp">
+        
+              
+            広場にしようかな。広場に集まることでしょう 
+          
+        </div>
+        <div class="kp">
+        
+              
+            火災はまだ鎮火してません 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「チンカニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さん、あそこにいるよ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「手強いのおー」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「おやおやお～や」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ニャ！へんなやつ勢ぞろいしたのニャ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「次にあったらころすといったよねぇーえ、まだいてくれて助かったよ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「村を燃やし尽くしたのはきみだよねーぇ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「なにを言うておるのじゃ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……お得意さんのお姉さんを燃やしていたよ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「あれはそう見えただけじゃ！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「燃やすっていうのは燃やされる覚悟はあるってことだよね～ぇ、ぼくの炎でこの村同様灰にしてあげよう」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「今更訂正するの……？どうして悲しみもしなかったの……？」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「その言葉そっくりそのまま返すわ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「大して関わり合いがなかったから？」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「燃やしたって言った方が燃やしたんじゃ！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「まあそうじゃの」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「子供の喧嘩するニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「そうだよね……気にすることはない……そういうことだよね」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「だから……兄さんだけが残ってくれればそれでいい……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「寒い……寒いんだ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「そうとぉ～も！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ユキ。大切なものを守ることが何よりタイセツだろう」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「火を消すのではなかったのか！？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「もう、何も残っていないよ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「手遅さーぁ、君も骨まで燃やし尽くしてあげよう」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「いつまで話し込んでんのニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「なんでこうなるのじゃ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            君たちは話し合いでは決まらないことを理解した 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「まったくじゃ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            ならば、拳で……力で相手をひれ伏せるしかない 
+          
+        </div>
+        <div class="kp">
+        
+              
+            相手の生殺与奪の権を奪うのだ 
+          
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ――戦闘開始！！ 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 0 → 1 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【吹雪】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：召喚術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] がダイスシンボルを公開。出目は 2 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【一夜城】 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG&gt;=5 （判定：登術） (SG@12#2&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「またかああああ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            接近戦攻撃 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            →消防しゃ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            SG#4&gt;=5 （判定：詐術） (SG@12#4&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ｒｃｔ ランダム分野表(5) ＞ 戦術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 戦術 : 1 → 0 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「にょわああああ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――消えてくれ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「タル爆弾行くのニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            &gt;【桜火】おうかをカイくんに 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【凶手】きょうしゅ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#3&gt;=5 （判定：砲術） (SG@12#3&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「もう一回ニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 3[1,2] ＞ 3 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ファンブルニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            &gt;神通丸 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍具 : 2 → 1 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 10[4,6] ＞ 10 ＞ スペシャル(【生命力】1点か変調一つを回復)
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「やったニャ。」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「すごいチンポニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「神通丸ゲットニャ！！」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍具 : 1 → 2 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【慢心】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            SG#4&gt;=5 （判定：詐術） (SG@12#4&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            野望受けるにゃ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            感情修正→カイ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ボクはつよいのニャ！」野望を獲得 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            1D6  (1D6) ＞ 5
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「5点ニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ユキ！」フブキを利用する 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：火術） (2D6&gt;=6) ＞ 5[2,3] ＞ 5 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            神通丸 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] 忍具 : 3 → 2 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：火術） (2D6&gt;=6) ＞ 11[5,6] ＞ 11 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            &gt;遁甲符 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍具 : 2 → 1 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：火術） (2D6&gt;=6) ＞ 5[1,4] ＞ 5 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「にーちゃん・・・あんたはわるくないけど、多分とめなきゃいけないひとなのニャ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            &gt;回想シーン 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【導入】<br>君はこの里を監視していた比良坂機関の忍だ。深夜、異常を察知したあなたは急ぎ煙谷に訪れ、そしてなす術もなく燃えていく里を目にした。この里では重要な秘宝が守られていたはずだ。それを失うわけにはいかない。<br>君の【使命】は「大火の原因を特定し、消し止める」ことだ。<br><br>【使命】<br>大火の原因を特定し、消し止める<br><br>★秘密<br>君は「灰燼種（かいじんしゅ）」を探している。この里の結界に、その反応があったのだ。<br>「灰燼種」は多くの人命を奪うことで永い時を生きている存在だ。この火災も、やつの仕業だろう。<br>「灰燼種」を殺せば火は消しとめられる。やつをこのまま生かしておくのは危険だ。<br>君の【本当の使命】は「灰燼種の命を絶つ」ことだ。 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「灰燼種とかいう新種はここで倒さなきゃならないのニャ！！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さん！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            &gt;6ダメージニャ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            カイに吹雪で1ダメージ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「これがニャンター歴二年の力か……！」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] 妖術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] 戦術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] 謀術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] 忍術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] 器術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] 体術 : 1 → 0 
+          
+        </div>
+        
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            その時！爆弾が大爆発した！！ 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「君は敵、だったのかぁーい？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「にーちゃん。気持ちはわかる。けど・・・ダメだニャ」手は止めない 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「そうかい、全ての命に測りなど存在しない」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ぼくの灯が消される番が回ってきたというのなら、それを受け入れよう」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「・・・生き物の、定命ニャ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「既にこの身は灰となりかけている、最後に願うは、このかがり火がユキに届くように」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「にいちゃん、申し訳ないけど弟の命はもらうニャ。」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「そのために立ちだかってくるから・・・しかたないのニャ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さん……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「そうか……君は俺を殺しに来たんだね？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「そうだニャ。」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            『灰燼種』 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……そのためなら村の人を見捨ててもよかったの？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「見捨てないことも何度もしたけど・・・ダメだったのニャ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「そうだったかの？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……俺が死ねば兄さんが悲しむ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「君たちも見たと思うのニャ。どんなに手を尽くしても・・・助からないニャ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 1 → 2 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【吹雪】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            SG#4&gt;=5 （判定：召喚術） (SG@12#4&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【一夜城】 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6&gt;=5 （判定：登術） (SG@12#6&gt;=5) ＞ 10[5,5] ＞ 10 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            高所 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【飛筒】 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            晴らしで成功 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【機械兵団】 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            対象雪鬼 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#7&gt;=6 （判定：火術） (SG@12#7&gt;=6) ＞ 6[2,4] ＞ 6 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「ぬああああ！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【氷針】→ちんぽ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            SG#4&gt;=5 （判定：水術） (SG@12#4&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            ちんぽじゃないニャ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#4-2&gt;=8 （判定：砲術） (SG-2@12#4&gt;=8) ＞ 4[2,2]-2 ＞ 2 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            神通丸にゃ
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍具 : 1 → 0 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#4-2&gt;=8 （判定：砲術） (SG-2@12#4&gt;=8) ＞ 4[2,2]-2 ＞ 2 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            RCT ランダム分野表(1) ＞ 器術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 器術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 追加生命力 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 戦術 : 1 → 0 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【氷針】の効果で野望を重傷に置き換える 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            ■奥義<br>《必殺！大タル爆弾！》<br>指定特技：憑依術<br>効果　　：炎神/祟り/大いなる怒り<br><br>・プロット値1以内の好きなキャラクター全員を目標に選ぶ。<br>ランダムに特技分野二つを選び、目標の【生命力】を失わせる。<br>すでに失っている【生命力】の場合代わりに「火達磨(基本p66)」の変調を与える<br>・範囲攻撃としても使用可能<br>・使用後はランダムな変調をうける<br>演出　　：大きなタルを持ち上げ、<br>自爆特攻覚悟で突撃する。 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            ■奥義<br>《氷哭ノ封》<br>指定特技：《呪術》<br>効果　　：絶対防御/障り/警護情報<br>演出　　：　敵の刃が振るわれる瞬間、彼の白い息が濃くなった。<br>　冷気が奔り、雪が舞い上がる。<br>　世界が瞬間、閉じる。<br><br>　――寒い。<br>　そのひと言とともに、彼の周囲に氷の結界が展開される。<br>　それは花弁のように重なり合った無数の氷壁。<br>　音も熱も通さぬ、静謐と絶対の障壁。<br><br>　どんな衝撃も、攻撃も、その内側には届かない。<br>　彼はそこに、ただ一人、寒さに震えながら立ち尽くす。<br>　けれど、その氷の中にいる限り――誰にも、何も、届かない。 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            WT 変調表(2) ＞ マヒ:修得している特技の中からランダムに一つを選び、その特技が使用不能になる。この効果は、修得している特技の数だけ累積する。各サイクルの終了時に、《身体操術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            WT 変調表(2) ＞ マヒ:修得している特技の中からランダムに一つを選び、その特技が使用不能になる。この効果は、修得している特技の数だけ累積する。各サイクルの終了時に、《身体操術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            choice[砲術,罠術,流言の術,憑依術,隠形術,壊器術] (choice[砲術,罠術,流言の術,憑依術,隠形術,壊器術]) ＞ 罠術
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            choice[砲術,流言の術,憑依術,隠形術,壊器術] (choice[砲術,流言の術,憑依術,隠形術,壊器術]) ＞ 砲術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 2 → 3 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【吹雪】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：召喚術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 56
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 13
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【飛筒】成功 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【機械兵団】 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            対象雪鬼 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6&gt;=6 （判定：火術） (SG@12#6&gt;=6) ＞ 8[2,6] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=7 （判定：水術） (2D6&gt;=7) ＞ 11[5,6] ＞ 11 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            wt 変調表(2) ＞ マヒ:修得している特技の中からランダムに一つを選び、その特技が使用不能になる。この効果は、修得している特技の数だけ累積する。各サイクルの終了時に、《身体操術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            choice[火術,登術,飛術,隠形術,傀儡の術,野戦術] (choice[火術,登術,飛術,隠形術,傀儡の術,野戦術]) ＞ 野戦術
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【慢心】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：詐術） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【氷針】→ポンチ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：水術） (2D6&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            神通丸 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼 ] 忍具 : 2 → 1 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：水術） (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#4-1&gt;=12 （判定：隠形術） (SG-1@12#4&gt;=12) ＞ 8[3,5]-1 ＞ 7 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ■奥義<br>《ファイヤーウォール 》<br>指定特技：火術<br>効果　　：絶対防御<br>演出　　：某銀行のコンピュータセキュリティ専門家であるジャック・スタンフィールドは、業界最高と言われるセキュリティシステムを構築した優秀なエンジニアでもあった。そんな彼は近々行われる銀行合併のための諸問題の対策に追われていた。そんな折、紳士然とした男・コックスが彼のオフィスを訪ねてくるが、やがて彼は本性を表し、家族を人質に取ったと脅した上で、ジャックにセキュリティを破る手助けをさせようとする。しかし、合併準備中の関係で強盗達が予定していなかった問題が発生。このままでは1億ドルを強奪することはできない。<br>そこで、ジャックは別の方法で自ら構築したセキュリティを破るよう命令される。 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 体術 : 1 → 0 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【氷針】の効果で重傷→マヒ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            wt 変調表(4) ＞ 行方不明:メインフェイズ中、自分以外がシーンプレイヤーのシーンに登場することができなくなる。この効果は累積しない。各サイクルの終了時に、《経済力》で行為判定を行い、成功するとこの変調は無効化される。
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            choice[流言の術,憑依術,隠形術,壊器術]  (choice[流言の術,憑依術,隠形術,壊器術]) ＞ 憑依術
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【桜火】おうかを雪鬼に 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#3&gt;=11 （判定：隠形術） (SG@12#3&gt;=11) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 体術 : 0 → 1 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「すごいぞチ〇ポ！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            神咒で得た兵糧丸を用いて麻痺（砲術）をさらに回復 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            1D6  (1D6) ＞ 1
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=8 （判定：水術） (2D6&gt;=8) ＞ 6[3,3] ＞ 6 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼 ] 戦術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 3 → 4 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【吹雪】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：召喚術） (2D6&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【桜火】おうかを雪鬼に使用 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#6&gt;=5 （判定：砲術） (SG@12#6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ■奥義<br>《ファイヤーウォール 》<br>指定特技：火術<br>効果　　：絶対防御<br>演出　　：某銀行のコンピュータセキュリティ専門家であるジャック・スタンフィールドは、業界最高と言われるセキュリティシステムを構築した優秀なエンジニアでもあった。そんな彼は近々行われる銀行合併のための諸問題の対策に追われていた。そんな折、紳士然とした男・コックスが彼のオフィスを訪ねてくるが、やがて彼は本性を表し、家族を人質に取ったと脅した上で、ジャックにセキュリティを破る手助けをさせようとする。しかし、合併準備中の関係で強盗達が予定していなかった問題が発生。このままでは1億ドルを強奪することはできない。<br>そこで、ジャックは別の方法で自ら構築したセキュリティを破るよう命令される。 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：水術） (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            rct ランダム分野表(4) ＞ 謀術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 謀術 : 1 → 0 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 56
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ｄ６６ (D66) ＞ 66
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【飛筒】成功 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「あまりの展開に変形しわすれておったわ！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【機械兵団】成功 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=7 （判定：水術） (2D6&gt;=7) ＞ 6[1,5] ＞ 6 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「食らえい！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6&gt;=11 （判定：傀儡の術） (SG@12#6&gt;=11) ＞ 4[1,3] ＞ 4 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            接近戦攻撃→ぽん 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：詐術） (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            wt 変調表(6) ＞ 呪い:修得している忍法の中からランダムに一つを選び、その忍法を修得していないものとして扱う。この効果は、修得している忍法の数だけ累積する。各サイクルの終了時に、《呪術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            wt 変調表(6) ＞ 呪い:修得している忍法の中からランダムに一つを選び、その忍法を修得していないものとして扱う。この効果は、修得している忍法の数だけ累積する。各サイクルの終了時に、《呪術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            rct ランダム分野表(5) ＞ 戦術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍術 : 1 → 0 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            1d5 (1D5) ＞ 4
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            1d5 (1D5) ＞ 1
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【吹雪】呪い 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            接近戦攻撃呪われる 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 4 → 5 
+          
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 4 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【飛筒】成功 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【機械兵団】成功 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：水術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6&gt;=11 （判定：傀儡の術） (SG@12#6&gt;=11) ＞ 5[1,4] ＞ 5 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            wt 変調表(1) ＞ 故障:すべての忍具が使用不能になる。この効果は累積しない。各サイクルの終了時に、《絡繰術》で行為判定を行い、成功するとこの変調は無効化される。
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            wt 変調表(5) ＞ 忘却:修得している【感情】の中からランダムに一つを選び、その【感情】を持っていないものとして扱う。この効果は、修得している【感情】の数だけ累積する。各サイクルの終了時に、《記憶術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【桜火】おうかを雪鬼に 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【凶手】きょうしゅ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#5&gt;=5 （判定：砲術） (SG@12#5&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#5&gt;=5 （判定：砲術） (SG@10#5&gt;=5) ＞ 5[1,4] ＞ 5 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#5&gt;=5 （判定：砲術） (SG@10#5&gt;=5) ＞ 9[3,6] ＞ 9 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=8 （判定：水術） (2D6&gt;=8) ＞ 10[5,5] ＞ 10 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            接近戦攻撃→ポンチ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：詐術） (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#5&gt;=11 （判定：砲術） (SG@10#5&gt;=11) ＞ 8[2,6] ＞ 8 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            回想シーン 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            ★秘密<br>君はこの煙谷の里で人々に優しくしてもらった。村人たちに感謝しており、この火災にも心を痛めている。だが、君はこの里に来た頃の記憶が一部ない。その頃に何があったのか、少しだけ気がかりだ。 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「俺たちはただこの里で安らかに過ごしていればよかったんだ……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「それを邪魔するなら……」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ■奥義<br>《ファイヤーウォール 》<br>指定特技：火術<br>効果　　：完全防御<br>演出　　：某銀行のコンピュータセキュリティ専門家であるジャック・スタンフィールドは、業界最高と言われるセキュリティシステムを構築した優秀なエンジニアでもあった。そんな彼は近々行われる銀行合併のための諸問題の対策に追われていた。そんな折、紳士然とした男・コックスが彼のオフィスを訪ねてくるが、やがて彼は本性を表し、家族を人質に取ったと脅した上で、ジャックにセキュリティを破る手助けをさせようとする。しかし、合併準備中の関係で強盗達が予定していなかった問題が発生。このままでは1億ドルを強奪することはできない。<br>そこで、ジャックは別の方法で自ら構築したセキュリティを破るよう命令される。 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：水術） (2D6&gt;=6) ＞ 5[1,4] ＞ 5 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「チ〇ポはやらせん！」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 5 → 6 
+          
+        </div>
+        <div class="kp">
+        
+              
+            シノビたちの戦いは激化し、炎をまた鎮火せず 
+          
+        </div>
+        <div class="kp">
+        
+              
+            このラウンドより極地とかす 
+          
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            プロットオープン 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 1 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            待機 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【桜火】おうかを雪鬼に使用 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【凶手】きょうしゅ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#3&gt;=5 （判定：砲術） (SG@12#3&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            なにもできない 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            極地ダメージ 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ユキ……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「燃えろ……、この地ごとあがなうてきを焼き尽くせ」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3&gt;=20 （判定：砲術） (SG@10#3&gt;=20) ＞ 6[2,4] ＞ 6 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6&gt;=11 （判定：傀儡の術） (SG@12#6&gt;=11) ＞ 6[2,4] ＞ 6 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：水術） (2D6&gt;=6) ＞ 4[1,3] ＞ 4 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            rct ランダム分野表(3) ＞ 忍術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 忍術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 6 → 7 
+          
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【一夜城】 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6&gt;=5 （判定：登術） (SG@12#6&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 46
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 22
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            接近戦攻撃→ぽんち 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：詐術） (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#4-1&gt;=11 （判定：砲術） (SG-1@12#4&gt;=11) ＞ 7[2,5]-1 ＞ 6 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【桜火】おうか 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【凶手】きょうしゅ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#3+0&gt;=5 （判定：砲術） (SG@12#3&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3+0&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3+0&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=8 （判定：水術） (2D6&gt;=8) ＞ 8[3,5] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            おうぎい 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義破り！！ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：水術） (2D6&gt;=6) ＞ 4[1,3] ＞ 4 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            極地 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#3+0&gt;=20 （判定：砲術） (SG@12#3&gt;=20) ＞ 7[3,4] ＞ 7 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            rct ランダム分野表(6) ＞ 妖術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 妖術 : 1 → 0 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            rct ランダム分野表(6) ＞ 妖術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 妖術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 7 → 8 
+          
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【一夜城】 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6&gt;=5 （判定：登術） (SG@12#6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【飛筒】成功 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【機械兵団】成功 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=7 （判定：水術） (2D6&gt;=7) ＞ 9[4,5] ＞ 9 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 11
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 26
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【桜火】おうか 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【凶手】きょうしゅ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            wt 変調表(5) ＞ 忘却:修得している【感情】の中からランダムに一つを選び、その【感情】を持っていないものとして扱う。この効果は、修得している【感情】の数だけ累積する。各サイクルの終了時に、《記憶術》で行為判定を行い、成功するとこの変調はすべて無効化される。
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#3+0&gt;=5 （判定：砲術） (SG@12#3&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3+0&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 10[5,5] ＞ 10 ＞ スペシャル(【生命力】1点か変調一つを回復)
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 妖術 : 0 → 1 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            1d6 (1D6) ＞ 3
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=8 （判定：水術） (2D6&gt;=8) ＞ 9[3,6] ＞ 9 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【神咒】かじりで兵糧丸 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍具 : 0 → 1 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            接近戦攻撃→ポンチ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：詐術） (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            故障直す 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+             (2D6) ＞ 9[4,5] ＞ 9
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            1ｄ6 (1D6) ＞ 3
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍具 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍術 : 0 → 1 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#3+0&gt;=7 （判定：隠形術） (SG@12#3&gt;=7) ＞ 3[1,2] ＞ 3 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義破り！！ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：水術） (2D6&gt;=6) ＞ 5[1,4] ＞ 5 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            極地 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6&gt;=11 （判定：傀儡の術） (SG@12#6&gt;=11) ＞ 11[5,6] ＞ 11 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            rct ランダム分野表(4) ＞ 謀術
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ｒｃｔ ランダム分野表(6) ＞ 妖術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 妖術 : 1 → 0 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            rct ランダム分野表(1) ＞ 器術
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            rct ランダム分野表(3) ＞ 忍術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 体術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼 ] 忍術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 8 → 9 
+          
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 1 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 3 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【飛筒】成功 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【桜火】おうか 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【凶手】きょうしゅ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#3+0&gt;=5 （判定：砲術） (SG@12#3&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 妖術 : 0 → 1 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            【神咒】かじりで兵糧丸獲得 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍具 : 0 → 1 
+          
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3+0&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@10#3+0&gt;=5 （判定：砲術） (SG@10#3&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=8 （判定：水術） (2D6&gt;=8) ＞ 5[1,4] ＞ 5 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼 ] 体術 : 1 → 0 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            ぱす 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            極地 
+          
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            対象自分 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            兵糧丸でマヒ（憑依術）を回復 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 忍具 : 1 → 0 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6&gt;=11 （判定：傀儡の術） (SG@12#6&gt;=11) ＞ 6[2,4] ＞ 6 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：水術） (2D6&gt;=6) ＞ 9[4,5] ＞ 9 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            SG@12#3+0&gt;=6 （判定：憑依術） (SG@12#3&gt;=6) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ｒｃｔ ランダム分野表(6) ＞ 妖術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 謀術 : 1 → 0 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            兵糧丸 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            rct ランダム分野表(1) ＞ 器術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 忍具 : 2 → 1 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 謀術 : 0 → 1 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] 妖術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ｄ６６ (D66) ＞ 25
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 12
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【飛筒】成功 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【機械兵団】成功 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=7 （判定：水術） (2D6&gt;=7) ＞ 6[2,4] ＞ 6 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            接近戦攻撃 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：詐術） (2D6&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG#6-1&gt;=9 （判定：傀儡の術） (SG-1@12#6&gt;=9) ＞ 5[1,4]-1 ＞ 4 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：水術） (2D6&gt;=6) ＞ 6[1,5] ＞ 6 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            兵糧丸 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            rct ランダム分野表(6) ＞ 妖術
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 忍具 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 謀術 : 1 → 0 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            wt 変調表(1) ＞ 故障:すべての忍具が使用不能になる。この効果は累積しない。各サイクルの終了時に、《絡繰術》で行為判定を行い、成功するとこの変調は無効化される。
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 謀術 : 0 → 1 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼 ] 妖術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] 謀術 : 1 → 0 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼 ] 謀術 : 1 → 0 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] ラウンド : 9 → 10 
+          
+        </div>
+        <div class="kp">
+        
+              
+            プロットオープン 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 14
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 11
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【飛筒】成功 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【機械兵団】成功 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=7 （判定：水術） (2D6&gt;=7) ＞ 6[2,4] ＞ 6 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【氷針】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            SG#5&gt;=5 （判定：水術） (SG@12#5&gt;=5) ＞ 5[1,4] ＞ 5 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            勝者：蒋 虻紗 
+          
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「勝っ……た」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼 ] 器術 : 1 → 0 
+          
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            転がっている人が三人いますが、誰か死亡させて誰が生き残らせますか？ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            pc2だけ死亡させます 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            choice[チンポ死ぬ,死なない] (choice[チンポ死ぬ,死なない]) ＞ チンポ死ぬ
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ポンチ・・・だにゃ・・・」死 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「がはっ……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「そうか……死ぬのか……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さん……俺、生きたよ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「チンポ……ニャンターの強さ、しかと胸に焼き付けたぞ！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            戦果:チンポに憧憬 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「だから……兄さんも……生きてね」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「灰燼種・・・討伐クリア・・・ニャ・・・」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「すべて燃えてしまう もすまんの」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「何分針じゃこれ？」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ☞エンディングへ 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            —――――――――――<br>—――――――
+          
+        </div>
+        <div class="kp">
+        
+              
+            昔々、ある所に灰燼種という不死の存在がいました。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            彼らは集団に溶け込み、そして自分以外の者の命を奪うことで永い時を生きることが出来る種族です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            彼らの寿命が尽きようとすると、原因不明に火災を引き起こすのでした。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            もし、その火災で一人だけ生き残った人間がいたのなら灰燼種かもしれません。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ほとんどの灰燼種は無自覚にこの特性をもって生まれてきます。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            話は少し時が過ぎ去った頃の話にしようか。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            10年前のある時に燃え尽きた村に一人の少年がいました。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            少年の名前は雪鬼。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            そして、その少年を見つけた人物。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ――火宮 カイ。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            舞い散る灰と燃え盛る炎をその赤茶の瞳に照らしながら、ユキと初めて出会った頃を思い出す 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ーー突然の背後からの爆発で意識はずっと朦朧としている。<br>目に映るのは舞い散る灰と、かすかな吹雪 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ユキが戦っているに違いない、最後の力であたりの灰を燃やして戦場を極地と化す。 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「寒いだろう――ユキ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「お前は人の灯を奪わなければ生きていけないのだから」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ちょうど、今みたいな景色だったかぁーな」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            ――――― 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ーー 
+          
+        </div>
+        <div class="kp">
+        
+              
+            焼け落ちた集落の灰の中に、一筋――薄氷の煌めきを見つける 
+          
+        </div>
+        <div class="mem3c left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「おやおや……君は生き残ってしまったんだぁーね」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            幼子は灰だらけになりながらも、必死に生きようともがいている 
+          
+        </div>
+        <div class="mem3c left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……君たちは生きることが許されない種族なんだってねーぇ」 
+          
+        </p>
+        </div>
+        <div class="mem4-3 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――ぃ」 
+          
+        </p>
+        </div>
+        <div class="mem3c left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「――ただ生きること、存在そのものを否定される生物、なんとも哀れだ」 
+          
+        </p>
+        </div>
+        <div class="mem3c left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ン？」 
+          
+        </p>
+        </div>
+        <div class="mem4-3 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――寒いよ……寒いんだ……」 
+          
+        </p>
+        </div>
+        <div class="mem4-3 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「なのに……みんな冷たくなっちゃう」 
+          
+        </p>
+        </div>
+        <div class="mem3c left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「フフ、哀れで、惨めで……それでいて――」 
+          
+        </p>
+        </div>
+        <div class="mem3c left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「とても愛らしい」 
+          
+        </p>
+        </div>
+        <div class="mem3c left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「その煌めき、消すには惜しい」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            青年は幼子を抱えてその場を立ち去る 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ーー 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ユキ、随分おいしそうにたべるねぇ。そんなに気に入ったかい？それ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「うん……あまいし……あったかい」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ハハ、そんなに好きならいっそ人形焼き屋さんでもやろおかーぁ？」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「食べ物屋さん？……うん」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「兄さんがやるなら俺も手伝うよ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            ユキの頭に手を置く 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            共に過ごした１０年は楽しい、流浪の旅であった 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「（あれから１０年、いろんなことがあったねぇーえ）」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            ユキの命が足り無くなる度、いろんな街を灰にしてしまった 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「（仕方ないよねーぇ、生きるために他者の命を奪うなんてだれしもがしていることだからね）」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            しかし、「あの時」<br>ここに来る前の村で……君は火種が自分にあることに気が付いてしまった 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            ――それは無垢な君の心を傷つけた 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            自責で自分を殺してしまうほどに 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            ーー 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ――灰と焔。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            目の前に広がる惨状を目にしながら少年は身を震わす 
+          
+        </div>
+        <div class="kp">
+        
+              
+            身に降りかかっていた不幸が実の所、己によってもたらされたものだという真実 
+          
+        </div>
+        <div class="kp">
+        
+              
+            歯を鳴らし、絞り出すように声を出す 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「俺が……皆を……殺したんだ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「ずっと……そうなんだろ……？兄さん」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……何だってそう思うんだい？確かに僕らの周りではちょぉーっと火災が多いけどもねぇ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「たまたま、偶然、さ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――嘘だッ！兄さんは嘘をついてるッ！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「だってそうなんだろ？調べたよ……俺は”灰燼種”ってやつなんだって」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「皆の命を糧にして……ははっ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「あらら……、面倒なことになっちゃった」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「俺を暖めてくれた人達――魚屋さんのおじさんも、手毬屋のおばあちゃんもみんな」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――俺がやったんだ」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「それにいずれ兄さんも――ならっ！」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            周囲の気温が急速に上昇する、その熱は術者をも滅ぼす勢いだ 
+          
+        </div>
+        <div class="kp">
+        
+              
+            カイは炎の中に飛び込み、ユキの手を取る 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「愚かだねぇ、哀れで、まったく――しょうがない子だ……」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            カイは自分の炎でユキの息を止め、意識を失わせる 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「はぁ、どうしたものかぁーな……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「そういえば、煙……？けむりたに？だったか？あの村にあれがあったねぇ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「冥府の水差」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「あれを使って君の記憶を変えるしかないか……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「フフ……そうだな、火災の原因は人形焼きにでもしておこうかなーぁ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            意識のないユキを抱えて目的の村へと向かう 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ーー 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ―――― 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ――そして現在 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ――冷たい。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            まぶたの裏に残るのは、赤い光の残像だった。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            灼けるような熱、音を飲み込む爆炎、すべてを呑み込む光。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            その中で青年は、確かに終わったはずだった。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            だが今、火宮カイは、氷の中で目を覚ました。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            焼け爛れていたはずの肌は、氷の膜に優しく覆われていた。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            自身の辺りだけが、白い静寂に包まれている。 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……走馬灯でも見ていたようだ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「これは……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「――――！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ユキ……？」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            氷の檻を炎熱で溶かして、外を見渡す 
+          
+        </div>
+        <div class="kp">
+        
+              
+            焼けた里。<br>炎は誰も襲う事なく、力を失い消えていた。 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「……ッ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            視線の先には灰を被った弟 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ーーいや、弟だった物を見つめる 
+          
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「あらら」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「なぜ、どうして君が死んでいるんだーぃ？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「どうして？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「どうして…どうして」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「――どうしてどうしてどうしてどうして」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「まさか、ぼくを……生かすために？」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ウフ、フハハハハ！！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ハハハハハ！！！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ハハハ！ぼくを守る為に死んだっていうのか！！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ハハハハハ！！ぼくが君の本当の家族の仇とも知らず！！」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「愚かな……純粋で、哀れで、脆く、儚い……だから、故に」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「愛しい弟よ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ぼくはね、君がいたから、愛を知れたから、人間でいられたのだよ」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「烈火の怪人、それが君の種族を滅ぼしたシノビの呼び名だよ……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「もう、戻れないねぇ……」 
+          
+        </p>
+        </div>
+        <div class="mem3 left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「全てを焼きつす、それが僕の生き方」 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「寒いだろうユキ、今温かくしてあげるねーぇ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            弟の亡骸を煉獄の炎で灰に変える 
+          
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「さぁ行こうユキ」 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「まずはそこのゴミ共を塵にしようねぇ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            灰燼がかつての姿を取る 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            「――」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「今度はなんじゃー！？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「あれは・・・烈火種だニャ？！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「はぁ？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「新種だニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「なんじゃと！？」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            特殊戦闘開始した！ 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] 特殊 : 0 → 1 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【吹雪】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：召喚術） (2D6&gt;=5) ＞ 10[5,5] ＞ 10 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「チンポ！まだたてるか？」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「チンポじゃないニャ！でも立ってるニャ！」 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「あと1乙したら終わりニャ・・・」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ ポンチ ] がダイスシンボルを公開。出目は 5 です。 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 56
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 24
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            d66　「なぜ保険に入っとらんのじゃ」 (D66) ＞ 23
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            ★秘密<br>君とPC2は、血のつながった家族ではない。<br>10年ほど前、焼け落ちた村で一人取り残されていたところを君が助けたのだ。多くの苦難を二人で共にするうち、君はPC2に本物の家族のような愛情を抱くようになった。君は悲しい記憶を持つPC2のために、この里に伝わる「冥府の水差」の力でPC2の記憶を消した。<br>PC2が「冥府の水差」に触れると、記憶は蘇るだろう。<br>君にはもう一つ【秘密】がある。 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            ◇もう一つの秘密<br>PC2は「灰燼種（かいじんしゅ）」と呼ばれる存在だ。「灰燼種」は集団の中に溶け込み、自分以外の者の命を奪うことで永い時を生き続けている。君とPC2がこれまで身を寄せてきた村や里はことごとく災害に見舞われて滅んでしまった。それを知ったPC2は悲しみ、もう自分の命を長らえさせたくないと言った。だが、君にとってそれは受け入れがたいことだった。だからPC2の記憶を奪ったのだ。<br>この大火もPC2がこの里にとどまっていたせいだと君にはわかっている。だが、ここで里を滅ぼさなければPC2は長くは持たないだろう。PC2の命を長らえさせるためには、犠牲も仕方がない。 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「報酬金保険の団子は今日売り切れてたのニャ・・・」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ★秘密<br>火災の原因は君ではない。君が秘宝「冥府の水差」を盗み出した頃、何者かが里に火を放ったのだ。火災に乗じて里を逃げ出そうとしたのだが、どうも秘宝の様子がおかしい。このままでは、持ち帰っても成果にならないかもしれない。<br>なんとか元に戻さなくては。君はプライズ「冥府の水差」を所持している。<br>君の【本当の使命】は「プライズを完全な状態で持ち帰る」ことだ。 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            接近戦攻撃→消防車 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：詐術） (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            ●プライズの秘密<br>この水差には本来、絶えない水がたたえられている。<br>その水を飲むと、望んだ記憶を忘れることができる。<br>水が入っていないということは、誰かがその効果を使用したということだ。このプライズの効果を取り戻すには、水を飲んだ者が水差に触れて記憶を取り戻す必要がある。記憶が取り戻された時、この【秘密】を知っている者はその記憶の内容を見ることができる。<br>さらに、このプライズは最後に水を飲んだ者の精神とリンクしており、その者が本懐を遂げる（【使命】を達成する）と破壊される。 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「こんなふざけた有象無象に、ぼくらの平穏がうばわれるとはねーぇ」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG@12#6-1&gt;=8 （判定：隠形術） (SG-1@12#6&gt;=8) ＞ 8[2,6] -1 ＞ 7 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「報いを受けよ」 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            奥義！ 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            ■奥義<br>《終火[オワリビ]》<br>指定特技：火術<br>効果　　：クリティカルヒット/断ち・乱れ/回数制限・最低速度<br>演出　　：全てを灰に帰す、終焉の火。<br>命の灯が消えるまでその炎は燃え続ける。 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「結局お前が燃やしたのではないか！！」 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            対象→ポンチ 
+          
+        </p>
+        </div>
+        <div class="mem9 left">
+        <span>ポンチ</span>
+        <p>
+        
+              
+            「ポンチ・・・だニャ・・・」 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【一夜城】 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG@12#6&gt;=5 （判定：登術） (SG@12#6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「ぬあーん！」 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            ◇PC2失った記憶<br>君は思い出した。君は「灰燼種（かいじんしゅ）」と呼ばれる存在だ。「灰燼種」は集団の中に溶け込み、自分以外の者の命を奪<br>うことで永い時を生き続けている。君とPC1がこれまで身を寄せてきた村や里はことごとく災害に見舞われて滅んでしまった。そのことを不審に思った君は、自分の出自を調べ、そしてその正体を知ってしまったのだ。この大火も、君が死なない限り消えることはない。<br>自分が生きるために村人たちを犠牲にすることは、君の心に重くのしかかるだろう。しかし、PC1が君を大事に思っていることもよくわかっている。<br>君はこれ以降、クライマックスフェイズ開始までの好きなタイミングで【本当の使命】を「里の大火を消し止める」に変更することができる。 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「失せよ」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] 妖術 : 1 → 0 
+          
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「フ……身体が限界を迎えていたか」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ GM ] 特殊 : 1 → 2 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            【吹雪】 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：召喚術） (2D6&gt;=5) ＞ 6[2,4] ＞ 6 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            [ 雪鬼  ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 火宮 カイ ] がダイスシンボルを公開。出目は 4 です。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            [ 蒋 虻紗 ] がダイスシンボルを公開。出目は 6 です。 
+          
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 22
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            d66 (D66) ＞ 56
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【飛筒】成功 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            【機械兵団】 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            対象:他二人 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG@12#6&gt;=6 （判定：火術） (SG@12#6&gt;=6) ＞ 6[3,3] ＞ 6 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            接近戦攻撃→消防車 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：詐術） (2D6&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            SG@12#6&gt;=8 （判定：隠形術） (SG@12#6&gt;=8) ＞ 5[1,4] ＞ 5 ＞ ファンブル
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「なんなんじゃ！大人しく死んでおれ！全て燃えてしまう！」 
+          
+        </p>
+        </div>
+        <div class="mem7b left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ハハハ、燃えてしまえばいいじゃないか」 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            奥義破り 
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            2D6&gt;=6 （判定：水術） (2D6&gt;=6) ＞ 8[4,4] ＞ 8 ＞ 成功
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            2D6&gt;=5 （判定：火術） (2D6&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗
+          
+        </p>
+        </div>
+        <div class="mem4 right">
+        <span>雪鬼</span>
+        <p>
+        
+              
+            奥義！！ 
+          
+        </p>
+        </div>
+        <div class="mem7 left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「ぎょああああああ！！」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            氷の壁がカイを【吹雪】から守る 
+          
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「ぐ……ぁぁ」 
+          
+        </p>
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            戦闘終了！ 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「身体の調子が悪い……まだあのクソ猫の傷を引きずるか……」 
+          
+        </p>
+        </div>
+        <div class="mem3b left">
+        <span>火宮 カイ</span>
+        <p>
+        
+              
+            「チーーこのままではユキを”維持”できない」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            そう言い残してカイはユキを抱きかかえ、戦闘を離脱する 
+          
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「ぐぉぉ……水差は守った……ぞ……」 
+          
+        </p>
+        </div>
+        <div class="mem7c left">
+        <span>蒋 虻紗</span>
+        <p>
+        
+              
+            「」 
+          
+        </p>
+        </div>
+        <div class="kp">
+        
+              
+            予期せぬ事態、予期せぬ出来事が起こった。 
+          
+        </div>
+        <div class="kp">
+        
+              
+            ひとまずは、この事件は終了したのであった。 
+          
+        </div>
+        <div class="mem1 left">
+        <span>GM</span>
+        <p>
+        
+              
+            ...END。 
+          
+        </p>
+        </div>
+        </div>
+
+<br><br><br><br><br><br><br><br><br>
+</div></div>
+<script src="../logCon_Respon.js"></script>
+</body></html>
+
