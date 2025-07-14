@@ -1,0 +1,3137 @@
+<!DOCTYPE HTML><html><head>
+<title>log</title>
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../logCon_Respon.css">
+<style>/* member */
+
+/* main css */
+    .bg-inner.bg1{background:url('./歯車サーカス団_アイコン/背景01.png') no-repeat center/cover;}
+
+.memNPC p{border:2px solid rgb(244, 67, 54);box-shadow:5px 5px 0 rgb(244, 67, 54);}
+.memNPC p:after{border-left-color:rgb(244, 67, 54);}
+.memNPC span{background:rgb(244, 67, 54);color:#000;}
+.memNPC:before{content:'';background-image:url('./歯車サーカス団_アイコン/NPC.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.memPC1 p{border:2px solid rgb(3, 169, 244);box-shadow:5px 5px 0 rgb(3, 169, 244);}
+.memPC1 p:after{border-right-color:rgb(3, 169, 244);}
+.memPC1 span{background:rgb(3, 169, 244);color:#000;}
+.memPC1:before{content:'';background-image:url('./歯車サーカス団_アイコン/PC1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.memPC2 p{border:2px solid rgb(0, 150, 136);box-shadow:5px 5px 0 rgb(0, 150, 136);}
+.memPC2 p:after{border-left-color:rgb(0, 150, 136);}
+.memPC2 span{background:rgb(0, 150, 136);color:#fff;}
+.memPC2:before{content:'';background-image:url('./歯車サーカス団_アイコン/PC2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.memPC3 p{border:2px solid rgb(255, 193, 7);box-shadow:5px 5px 0 rgb(255, 193, 7);}
+.memPC3 p:after{border-right-color:rgb(255, 193, 7);}
+.memPC3 span{background:rgb(255, 193, 7);color:#000;}
+.memPC3:before{content:'';background-image:url('./歯車サーカス団_アイコン/PC3.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.memPC4 p{border:2px solid rgb(233, 30, 99);box-shadow:5px 5px 0 rgb(233, 30, 99);}
+.memPC4 p:after{border-left-color:rgb(233, 30, 99);}
+.memPC4 span{background:rgb(233, 30, 99);color:#000;}
+.memPC4:before{content:'';background-image:url('./歯車サーカス団_アイコン/PC4.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.memButai p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.memButai p:after{border-left-color:rgb(136, 136, 136);}
+.memButai span{background:rgb(136, 136, 136);color:#fff;}
+.memButai:before{content:'';background-image:url('./歯車サーカス団_アイコン/BUTAI.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    @media only screen and (max-width: 768px) {
+        .memNPC p:after{border-right-color:rgb(244, 67, 54);border-left-color:transparent;}
+        .memPC1 p:after{border-right-color:rgb(3, 169, 244);border-left-color:transparent;}
+        .memPC2 p:after{border-right-color:rgb(0, 150, 136);border-left-color:transparent;}
+        .memPC3 p:after{border-right-color:rgb(255, 193, 7);border-left-color:transparent;}
+        .memPC4 p:after{border-right-color:rgb(233, 30, 99);border-left-color:transparent;}
+        .memButai p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+
+      
+    
+        .memPC1:before,.memPC2:before,
+        .memPC3:before,.memPC4:before,.memNPC:before,
+        .memButai:before{width:70px;height:70px;}
+    }
+
+/* ページ遷移ボタン */
+div.page_box{
+  display: flex;
+  gap: 12px;
+  position: relative;
+  margin-bottom: 12px;
+  margin-left: 100px;
+  z-index: 999;
+}
+a.page_btn_width{
+  max-width: 196px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  color: #000000;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  position: relative;
+  transition-duration: 0.2s;
+}
+a.page_btn_width:hover {
+  background: rgb(57, 228, 202);
+  color: #fff;
+}
+a.page_btn_width:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  margin-top: -6px;
+}
+a.page_btn {
+  max-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  text-align: left;
+  text-decoration: none;
+  position: relative;
+  transition-duration: 0.2s;
+}
+a.page_btn:hover {
+  background: rgb(57, 228, 202);
+  color: #fff;
+}
+a.page_btn_OFF {
+  max-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  color: rgb(123, 123, 123);
+  font-size: 16px;
+  text-align: left;
+  text-decoration: none;
+  position: relative;
+  pointer-events: none;
+}
+
+</style>
+
+</head><body>
+    <p id="page-top"><a href="#"><i class="page-top__arrow"></i></a></p>
+	<div class="leftwhite"></div>
+	<div class="rightwhite"></div>
+	<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+	<div class="log">
+
+<div class="kp left">
+
+    ■トレーラー<br>
+夕焼けに赤く染まるサーカステント。<br>
+今日も人で溢れた客席は期待に胸を膨らませる。<br>
+<br>
+心臓の高鳴りとともに、あなたたちは舞台の上に立つ。<br>
+鳴り止まぬ拍手、歓声、煌びやかなライト、そして──<br>
+<br>
+巷で話題のサーカス団「歯車サーカス」<br>
+魔法のような演出と人間離れしたパフォーマンスは人々を魅了する。<br>
+彼らには特別な力がある──シノビの力が。<br>
+その舞台裏には知られざる"使命"と"過去"が潜む。<br>
+<br>
+今宵はそんなサーカス団の大舞台。<br>
+そして囁かれる、ひとつの噂。<br>
+「神器を盗んだシノビが、サーカスをやっている」<br>
+<br>
+太陽が燃え尽きるとき、舞台の幕が上がる。<br>
+シノビガミ【シノブ、歯車サーカス団】
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    シノブ、歯車サーカス団 開演！ 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    忘れてしまった誰かの記憶と、忘れられない誰かの願いが交わる場所── 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    そう、ここは《歯車サーカス団》。 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    さあ……わたしの大切な団員たちを、ご紹介しましょう。 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    まずは、我らが舞台の華。<br>一枚のトランプで現実を煙に巻き、ひとさじの魔法で心を奪う。<br>看板手品師── マナ。 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    PC1：マナ・アストレア ‹手品師›<br>
+鞍馬神流/廻鴉<br>
+中忍<br>
+年齢：19<br>
+信念：律<br>
+<br>
+あなたは「歯車サーカス」の看板役者だ。<br>
+完璧な演技、華やかな演出、そのどれもが観客を魅了する。<br>
+大舞台の当日、ルアージュが口にした「神器を盗んだシノビ」の噂は、胸に引っかかって離れない。<br>
+あなたの中に、小さな違和感が灯る。<br>
+使命：【神器の噂を調べること】<br>
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    ポーカフェイスで観客を欺き手品師としてサーカス団の看板を背負っている。<br>
+<br>
+同じサーカス団の人達とは仕事仲間として接している。ポーカフェイスは舞台裏でも続いている。<br>
+何を思われても構わない。仕事だから。<br>
+<br>
+「これからも仕事はちゃんとやるよ」
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    次に現れるのは、赤い蝶のように舞う娘。<br>空中ブランコを操るその姿に、観客は時を忘れます。<br>蠱惑の微笑みをたたえる空中少女── みゆき。 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    PC2：伊賀崎 みゆき ‹曲芸師›<br>
+比良坂機関<br>
+中忍<br>
+年齢：18<br>
+信念：和<br>
+<br>
+あなたは比良坂機関の名家の出身だ。<br>
+幼いころから才能に恵まれず、劣等感に苦しんでいた。<br>
+居場所を求め、「歯車サーカス」の一員となった。<br>
+──この舞台こそが、あなたの誇れる居場所だ。<br>
+そんな中、「神器を盗んだシノビ」の噂を聞いたあなたはどこか他人事ではないと感じていた。<br>
+使命：【劇を成功させ、観客を楽しませること】
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    比良坂機関の名家である伊賀崎家の出身。<br>
+幼いころから才能に恵まれなかったため、家を継がせたがっていた親族からの風当たりが強く、耐えきれず家出同然で姿を消した。<br>
+居場所を転々としている中、たまたま巡業に来ていた歯車サーカスを見て入団を希望。<br>
+<br>
+陰謀・工作・諜報などといった比良坂機関の忍達が主に行う忍術とみゆきの性質が全く合わず、本人は出来損ないだという劣等感に苛まれている。<br>
+サーカスで評価されているので、身体能力だけは自信があり「自分にはこれしかない」と思い込んでいる。<br>
+<br>
+出来の良い妹がいて、仲は良好。<br>
+比良坂の情報網を使ってまでみゆきの居場所を探してきた為、交流は絶っていない。
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    続きますは我らが団長。<br>鋭き眼光で獣を従え、優しき心で団を守る。<br>舞台の統率者── カバキ。 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    PC3：カバキ ‹団長›<br>
+隠忍の血統/土蜘蛛<br>
+中忍<br>
+年齢：24<br>
+信念：情<br>
+<br>
+あなたは「歯車サーカス」の団長だ。<br>
+サーカスは人気の絶頂を迎えている。<br>
+笑顔と歓声に包まれるそれは、何よりも愛しい時間。<br>
+神器の噂が本当なら──<br>
+それは、すべてを失う兆しかもしれない。<br>
+使命：【劇を成功させ、観客を楽しませること】
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    里はなく、両親もいない。<br>
+山奥でひとり、ひっそりと生きていたが同郷が起こした神器絡みの事件で住処をなくす。<br>
+まつろわぬ者の末裔として生きてきたため戸籍もなく、事件がきっかけで同じ流派の忍びも嫌っているため頼れる者はいない。<br>
+住処をもとめて渡り歩いてたころ、街中で大道芸人のパフォーマンスを見て、これなら自分も稼げそうだと思ったのがサーカスの始まり。<br>
+<br>
+一人で生きてきたため表情筋が死んでいるが、喜怒哀楽はちゃんとあるタイプ。<br>
+人とのコミュニケーションは街に出てからネットで覚えたため、よくないインターネットに染まっている。
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    そしてミユキの相棒、誰よりも優雅で、誰よりも雄々しい空の姫君。<br>空中アクロバットを華麗に舞う道化── バージル。 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+     PC4：バージル・グリフィン ‹道化師›<br>
+ハグレモノ/咎眼流<br>
+中忍<br>
+年齢：23<br>
+信念：忠<br>
+<br>
+あなたは「歯車サーカス」の道化師だ。<br>
+笑いを届け、空気を和ませるのがピエロの役割だ。<br>
+ルアージュとは家族、または家族のような関係。（細かい関係はプレイヤーが決めてよい）<br>
+使命：【劇を成功させ、観客を楽しませること】
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+「さぁさぁ！皆々様ァ〜ん！楽しい楽しいひと時をアタシ達と一緒に作りましょう？観客も立派な花形スターなんだからァん！」<br>
+<br>
+歯車サーカスの道化師担当でオネェ。<br>
+
+性格は快活で楽しい事・面白い事大好きで観客だけでなく団員たちも笑顔にするために日々隠れて努力している。<br>
+
+基本的には怒ることはないが団員やルアージュの事を悪く言われたり傷つけるような事があれば静かに【オネェ】から【漢】に変わる。<br>
+
+昔、自身がオネェである事で悩んでいる期間にルアージュが寄り添ってくれ、それ以降家族のように過ごしている。
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    最後にわたしは舞台の袖の歯車。<br>糸を引き、影を操り、ただ静かに、皆様に夢と希望を送る。<br>人形遣い── ルアージュ。 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    NPC：ルアージュ ‹人形遣い›<br>
+鞍馬神流/蓮華王拳<br>
+上忍<br>
+年齢：-<br>
+信念：忠<br>
+<br>
+人形使いルアージュ<br>
+演者もこなすが主な役割は演目の進行と舞台装置を操る引き立て役だ。<br>
+使命：【劇を滞りなく進めること】
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    ……さあ、幕を開けましょう。 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ＊導入 
+  
+
+</div>
+<div class="kp left">
+
+
+    ――  
+  
+
+</div>
+<div class="kp left">
+
+
+    ――――  
+  
+
+</div>
+<div class="kp left">
+
+
+    歯車はまわる、くるくると 
+  
+</div>
+<div class="kp left">
+
+
+    規則正しく、時の流れを刻むように 
+
+</div>
+<div class="kp left">
+
+
+    ―――― 
+</div>
+<div class="kp left">
+
+
+    ―― 
+  
+</div>
+<div class="kp left">
+
+
+    舞台は海辺の町に鎮座する大きな劇場、辺りは人が行き交い浮き足立つような賑やかな様子。 
+  
+</div>
+<div class="kp left">
+
+
+    その人だかりの殆どは今宵開かれる舞台の観客達で、開場の時を待ちわびるようにざわめきで包まれていた。 
+
+</div>
+<div class="kp left">
+
+
+    サーカステントの天井を、赤く染める夕陽が差し込む。  
+  
+</div>
+<div class="kp left">
+
+
+    テントの奥。 <br>
+    そこでは、あなたたち―― <br>
+    歯車サーカス団の団員たちが、リハーサルを終えたばかりの空気を共有していた。 
+  
+</div>
+<div class="kp left">
+
+
+    空中ブランコのロープをチェックする者。 
+  
+</div>
+<div class="kp left">
+
+
+     足元の仕掛けを再確認する者。 
+  
+</div>
+<div class="kp left">
+
+
+     化粧の最後の一筆を整える者。 
+  
+</div>
+<div class="kp left">
+
+
+     イメージトレーニングしながら、静かに息を整える者。 
+  
+</div>
+<div class="kp left">
+
+
+     そして――
+  
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「働きたくないでござる！！！！！！！！！！！！！！！！！！！！！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+     テント内に団長カバキの声が木霊する。 <br>
+     団員たちは、どこか諦めたように「またか」と目配せしあった。
+  
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「んもぉ〜カバキちゃんたらぁん、本番前にダメヨォ〜」<br> 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「働いたら負けかなと思ってる」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「団長、ロープのチェック終わりましたよお〜。」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「いつまでそれやりますか。いつでも始められます」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「団長なのにこの扱い……そこにシビれる!あこがれるゥ!」<br> 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「もういいですか？幕を開けますよ」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「エンドレスエイトか？」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「まだ、開演まではもう一刻ほどありますよ。マナ様」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「マターリしていってね」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「いつまでこの団長に付き合うの、、、。」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「カバキちゃんも終わったら好きなものでも食べてゆっくりして良いから頑張りましょ！ね？」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「わたし甘いもの食べたいです〜」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「あらぁ！良いわねぇ〜！！賛成よ〜」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「ホットケーキキボンヌ」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「流石姉様、開演前のナーバスな団長をたしなめられるのは姉様だけですね」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「アフォガード、、、。」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「マナのデレ、ｷﾀ━━━━(ﾟ∀ﾟ)━━━━!!」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「みぃんな作ったげるわぁん！！可愛い子達なんだからぁん！」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「バージルのお手製か　胸が熱くなるな」<br> 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「胸熱です〜」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「舞台が終わったら……皆で食べましょう」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+     ルアージュが、演目台本を抱えたまま近づいてくる。 どこか浮かれたような表情でこう呟いた。
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「そういえば、変な噂を耳にしました。 <br>
+    　――“神器を盗んだシノビが、サーカスをやってるらしい”って」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「なん……だと……!?」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「あ、その話ならわたしも街で聞きました〜」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「確かに……私も街で聞いたわねぇ」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「あほくさ　漏れは神器の話題が一番嫌いなんだよ」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「――――終了――――」<br> 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「はいはい再開再開」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「再開すな　DQNが！」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「DQNじゃないですう！」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「神器sage」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「団長黙って。ホットケーキ食べれなくしますよ」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「涙　腺　崩　壊」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「それで、、、。いつ聞いたんですか。その話」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「えっと……わたしはサーカスってお前の所なんじゃないかーって、
+    　お昼買いに行った時、森の情報屋さんに聞かれましたね」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「確かにそう易々サーカス団なんてないですからね。」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「とりあえずわかんないです！って答えておきました！」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「GJ」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「漏れの団に神器をつかってる香具師なんていない！異論は認めない　( ｰ`дｰ´)ｷﾘｯ」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「……」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    あなたたちは一抹の不安を胸に抱えたまま、舞台の幕が上がるまでの休憩に入る。
+  
+</div>
+<div class="kp left">
+
+
+    メインフェイズ 
+  
+</div>
+<div class="kp left">
+
+
+    セッションの途中舞台演目を行うシーンがあります。 
+  
+</div>
+<div class="kp left">
+
+
+    「演目シーン」<br>各PCは自分のパフォーマンスを演出し、演出に沿った指定特技で判定を行う。<br>成功したら同じシーンに登場しているキャラクターを一人選び、感情判定を行う。<br>この感情判定では、感情表を振らずに互いに好きな感情を獲得できる。 
+  
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    【絆】の効果
+    バージルに友情の【感情】を獲得 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    サイクル１ 順序 <br>
+    カバキ→マナ→みゆき→バージル 
+  
+</div>
+<div class="kp left">
+
+
+    サイクル１　シーン１（PC3：カバキ）  <br>
+    登場人物：カバキ、マナ <br>
+    舞台シーン表 1D5 舞台シーン表(4) ＞ テント屋上
+
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「……マナ　屋上へ行こうぜ　久しぶりにキレちまったよ（キレてない）」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「それは拒否権ありますか」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「異論は認めない」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「（これが噂のパワハラか……）分かりました」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「……どうしてそんなに神器の話をしたがるんだ？訳が分からないよ」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「神器は多くの争いの火種になってるんだぞ」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「団の和を乱すのは……やめてくれまいか」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「ただ噂が本当なのかみんな気になるだけです。 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「嘘だｯｯｯｯｯ！！！！」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「むしろ何故そこまで隠したがるのか、、。」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    情報判定→マナ 
+    《鳥獣術》（Twitter）でマナの裏垢を探ります 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    2D6&gt;=5 （判定：鳥獣術） (2D6&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ●PC1-秘密<br><br>シノビ世界の秩序を守ることこそが誇りであり、そのために生きてきた。<br>神器にまつわる異常事態を放置すれば、いずれ災厄を生む。<br><br>あなたの使命は【噂の神器の欠片が本物ならば、破壊することだ】。 
+
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「（これがマナの裏垢……ッ！見つけたぞッ）」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「（なんか嫌な予感がする）」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「盛　り　上　が　っ　て　ま　い　り　ま　し　た」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「マナ……犯人はヤスだ」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「帰るぞ」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「、、、なんですか」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    シーン終了 
+
+</div>
+<div class="kp left">
+
+
+    サイクル１　シーン２（PC1：マナ・アストレア） <br>
+    登場人物：団長(PC3)以外 <br>
+    舞台シーン表 1D5 舞台シーン表(3) ＞ 近くの浜辺
+
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「潮風が気持ちいいですね〜」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「急にごめんなさい。聞きたい事があって」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「ききたいこと、ですか？」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「ぜーんぜん！構わないわよぉん？なにが聞きたいのかしら、マナちゃん」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「神器のことで。団長は話たがらなかったけど気になってしまって。」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「露骨に話したくなさそうでしたねえ」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「私から話せることはありませんね、姉様はどうですか？」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「神器ねぇ……？私自身もさっき話してたくらいしか分からないのよねぇ……」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「、、、そうですよね。ちょっと団長にもう少し聞いてみます。ダメなら人質（パソコン）を取ります。」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「団長からインターネット取り上げたら泣いちゃいそうですね〜」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    情報判定→カバキ 
+    《罠術》でカバキの情報という情報を取る 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「それは……流石に団長が可哀そうですね」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    【人質】の効果
+    秘密を選ぶ対象をルアージュに変更 
+ 
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    情報判定→ルアージュ
+    2D6&gt;=5 （判定：罠術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ●NPC-秘密<br>あなたの正体は神器「逆神の欠片」である。<br><br>あなたの本当の使命は【PC達に真相を伝えることだ】<br>★NPCと感情を結ぶことでハンドアウト『真相』を入手できる。 
+
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「（最悪。違う人の情報取っちゃった。）」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「だめですよ、人の個人情報を不正に暴くのは犯罪です」 
+    
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ルアージュはマナの手をそっと取り、その瞳をまっすぐに見つめた。
+  
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「、、、最悪。」
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    マナは苛立ちを隠さず、ルアージュの手を振り払った。
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「……気に障りましたか」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「、、、。これからどうするかよく考えて。」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「私は知らないから。、、、ふん」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「あんたたちぃ！そんな辛気臭い顔してないの！」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「もう少ししたら開演なんだからケンカはな・し・よ♡」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「すみません姉様、マナ様も」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    シーン終了 
+
+</div>
+<div class="kp left">
+
+
+    サイクル１　シーン３（PC2：伊賀崎みゆき） <br>
+    登場人物：全員  <br>
+    舞台シーン表 1D5 舞台シーン表(5) ＞ 舞台装置
+
+</div>
+<div class="kp left">
+
+
+    今日も舞台で活躍する予定の舞台装置だ。 <br>
+    ルアージュが操るそのカラクリは古びていながらも丁寧に整備されている。 
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    情報判定→バージル 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    2D6&gt;=5 （判定：調査術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ●PC4-秘密<br>あなたが神器の欠片を盗んだ犯人だ。<br>あなたはプライズ、「神器」を持っている 
+  
+
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    （こういう暗躍やら交渉ごとやらは苦手ですけど……頑張らないとですね〜） 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「今　北　産　業」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「どうしたんですか？」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「何かあった？みゆきちゃん？」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「団長に<br>
+    　お話あるから<br>
+    　こっち来て♡」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「……ﾄｩﾝｸ♡」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「なんでこの人が団長なんだろうか」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「バージルさんとマナさんにはお願いがあって、小道具の確認してほしいんですう」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「良いわよぉ〜任せておいて〜」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「分かりました。」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    2人から少し距離を取ったところで、みゆきはカバキに小声で耳打ちした。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「団長、ちょっと教えて欲しいんですけどさっきマナさんと屋上行ってましたあ？」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「おん」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「分かった事があるなら、私の分かった事も教えるので交換しませんか？」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「おｋ」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「わくてかです〜」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「キタコレ」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    情報交換 <br>
+    みゆき→PC4の【秘密】を渡す <br>
+    カバキ→PC1の【秘密】を渡す
+
+</div>
+<div class="kp left">
+
+
+    ●PC4-秘密<br><br>あなたが神器の欠片を盗んだ犯人だ。<br>あなたはプライズ、「神器」を持っている 
+  
+
+</div>
+<div class="kp left">
+
+
+    ●PC1-秘密<br><br>シノビ世界の秩序を守ることこそが誇りであり、そのために生きてきた。<br>神器にまつわる異常事態を放置すれば、いずれ災厄を生む。<br><br>あなたの使命は【噂の神器の欠片が本物ならば、破壊することだ】。 
+  
+
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「バージルさんマナさんありがとうございます〜」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「お安い御用よん！」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「いえ。大丈夫ですよ。」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    みゆきはマナにこっそりとメモを渡す。 <br>
+    そこには「情報交換しましょう。ここに残ってください」と記されている。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「じゃあ団長さんはムチのお手入れお願いしますね〜」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「<br>　　　　　　ﾊ,,ﾊ
+    　<br>
+    　<br>　　　　　（ ﾟωﾟ )　　お断りします
+    　<br>
+    　<br>　　　　／　　 　＼
+    　<br>
+   　 <br>　 ((⊂ 　） 　 ﾉ＼つ))
+    　<br>
+  　  <br>　　　　　（＿⌒ヽ
+   　 <br>
+  　  <br>　　　　　　ヽ　ﾍ　}
+  　  <br>
+  　  <br>　ε≡Ξ　ﾉノ ｀J
+   　 <br>」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「団長には難しいお仕事ですもんね。」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「（´・ω・`）.;:……（´・ω...:.;::..（´・;::: .:.;: ｻﾗｻﾗ..」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「ダメよぉ、マナちゃん。カバキちゃんに優しくしてあげなきゃ」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「、、人には無理なことがありますから。」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「さすオネ」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「2人とも団長を手伝ってあげてください〜」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「私、もう少しここでチェックしたいことがあるので、、、。」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「さ、カバキちゃんもムチの手入れ頑張りましょ？」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「これがオネェのヌクモリティ……」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    バージルがカバキの手伝いをしに行ったところで、みゆきがマナに向き直る。 
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「マナさん、わたしマナさんともっと仲良くできると思うんですよお」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    　「、、、はぁ。それで？情報って？」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「神器の話です〜」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「！！そうですか、、。」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    情報交換 <br>
+    みゆき→PC4の【秘密】を渡す <br>
+    マナ→NPCの【秘密】を渡す
+
+</div>
+<div class="kp left">
+
+
+    ●NPC-秘密<br>あなたの正体は神器「逆神の欠片」である。<br><br>あなたの本当の使命は【PC達に真相を伝えることだ】<br>★NPCと感情を結ぶことでハンドアウト『真相』を入手できる。 
+
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「ね？仲良くできますよ？」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「、、。」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「さて、みんな準備進んでますかね〜？」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    マナから離れ、みゆきは自分の演目を確認しに行く。 
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「どうかなされましたか？みゆき様。こちらは片付きましたよ」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+     みゆきがじっと見つめていることに気づいたルアージュは、小首を傾げて目を瞬かせる。
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「……？私の顔に何かついてますか？」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+     少し間を置いて、みゆきがふっと笑う。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「ん〜……わたしはルアージュちゃんとも仲良く出来るかなと思って」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「クス、何年やってきたと思っているんですか、みゆき様。私は皆さまとずっとこのサーカスを続けていたいです」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「そうだよね、わたしも続けていたい……」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「とりあえず、もう一回ブランコ確認してきますね〜」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    シーン終了 
+
+</div>
+<div class="kp left">
+
+
+    サイクル１　シーン４（PC4：バージル・グリフィン） <br>
+    登場人物：マナ、バージル、ルアージュ <br>
+    舞台シーン表 1D5 舞台シーン表(4) ＞ テント屋上
+  
+
+</div>
+<div class="kp left">
+
+
+    沈みゆく夕陽が海を赤く染める。 <br>
+    開演の時は、目前に迫っていた。
+  
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「さて……話したい事があるの」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「一つ、私の話にのってくれないかしら？もちろんタダって訳じゃないわ」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「、、私へのメリットは？」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「私からは……そうね、あなたが知らない情報を提供ってことでどうかしら？」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「情報ね、、、。私はどうしたらいいの？」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「ちょっとあの子の話を聞きたいのよ……心配症なの、私」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「あの子？」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「ルーちゃんの事」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「あぁ。、、、分かった」     
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「勘違いしないで、今回だけだから。別に毎回はしないから。」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「ありがとう……今日のアフォガード、期待してて」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「フン、、。」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    《分身の術》で片割れにみゆき（PC2）の【秘密】を探らせます 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    感情修正＋<br> 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    2D6&gt;+1=5 （判定：分身の術） (2D6&gt;=5) ＞ 7[2,5]+1 ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    感情共有
+    マナ→PC2の【秘密】獲得
+  
+
+</div>
+<div class="kp left">
+
+
+    ●PC2-秘密<br><br>一族に代々伝わる家宝──神器の欠片が何者かに盗まれた。<br>当主より神器捜索と犯人の始末を命じられている。<br>噂の審議が本当ならば……。<br><br>あなたの使命は【神器の欠片を盗んだ犯人を倒すことだ】 
+
+</div>
+<div class="kp left">
+
+
+    情報交換 <br>
+    （PC2の秘密を調べたので） <br>
+    マナ→NPCの【秘密】を渡す
+
+</div>
+<div class="kp left">
+
+
+    ●NPC-秘密<br>あなたの正体は神器「逆神の欠片」である。<br><br>あなたの本当の使命は【PC達に真相を伝えることだ】<br>★NPCと感情を結ぶことでハンドアウト『真相』を入手できる。 
+  
+
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「あらあら……」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「でもありがとう、あの子のことも知れたし私としては大助かりだわ」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「だから今回だけ。もうしない。」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「あ……マナ様、姉様、ここにいたんですね。団長がもう始まるから集まれって」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「、、、分かった。」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「あらぁ！ルーちゃん、ありがとね！呼びにきてくれて！」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「はい」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「マナ様、まだ浮かない顔をされていますね……何か、ありましたか？」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「、、別に、、。何もない。」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「私がカバキちゃんに優しくしてってお願いしてたのよぉん！」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「いいから！、、。行くよ。」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「は、はいっ」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「行きましょ行きましょ♡」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    シーン終了 
+
+</div>
+<div class="kp left">
+
+
+    サイクル１　マスターシーン 
+  
+</div>
+<div class="kp left">
+
+
+    舞台の幕が上がる直前の舞台袖 
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「では皆様、準備はよろしいですね。大舞台の開演です」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ルアージュが団員に声をかける。 
+  
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「あぁ！楽しみだわぁん！」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「本番前はいつもどきどきします」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「団長がアップを始めたようです」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「失敗しないでよね。特に団長。」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    期待と不安を胸に、面々は舞台へと向かう
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「では――」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    花火が夜空に高く打ち上がり、その光に照らされて幕が静かに上がる。
+  
+</div>
+<div class="kp left">
+
+
+    少女のナレーションと共に現れる主役たち。 
+  
+</div>
+<div class="kp left">
+
+
+    空を舞う銀のブランコ、妖精のような少女みゆきが旋回し、 それを追ってしなやかに舞うのは、空の華、バージル。 
+  
+</div>
+<div class="kp left">
+
+
+    炎と共に現れた猛獣たちを率いる団長カバキが一声唸り、 静かに現れたマナは、トランプ一枚で現実を塗り替える奇術を披露する。 
+  
+</div>
+<div class="kp left">
+
+
+    その影で糸を引き、舞台装置を操るルアージュ。 
+  
+</div>
+<div class="kp left">
+
+
+    ―――― 
+  
+</div>
+<div class="kp left">
+
+
+    サーカス団は客たちを魅了し続け、その演目はとめどなく続く。
+  
+</div>
+<div class="kp left">
+
+
+    演目シーン 順序
+    みゆき→カバキ→バージル→マナ
+ 
+</div>
+<div class="kp left">
+
+
+    サイクル２[演目シーン]　シーン５（PC2：伊賀崎みゆき） <br>
+    登場人物：みゆき、バージル、ルアージュ 
+
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「まずは、簡単なのからいきますよ〜」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    舞台の中心で、ミユキは軽やかな笑みを浮かべながら、一人の客を指名した。 <br>
+    指差した客席から、すぐに元気な声が返ってくる。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「はい！わんちゃんです！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    続けて、別の子どもが声を上げる。 <br>
+    くるくると手を動かしながら、ミユキはカラフルな風船を次々とねじっていく。
+
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「お花とちょうちょです！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    その瞬間、舞台上にスポットライトがふわりと灯る。 <br>
+    舞台袖では、ルアージュが真剣な表情で照明盤に手を添えていた。 <br>
+    ミユキの動きにぴたりと合わせ、光を追わせるように操作している。
+  
+</div>
+<div class="kp left">
+
+
+    完成したバルーンを手渡し、観客の笑顔を確認すると、ミユキはくるりとターンしてステージ中央に戻る。 <br>
+    舞台袖から道具をひとつ取り出し、ミユキは頭上に軽やかに放る。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「まずは、ひとつ！」
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    音楽が切り替わり、スポットライトの光もテンポに合わせて揺れ動く。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「つぎは、ふたつ！　さーんっ、よーんっ！」
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ミユキは息を弾ませながら、五つ目の道具を放り上げた。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「５つでーすっ！」
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「きゃー！素敵よぉん！！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    拍手と歓声が響く中、ミユキは満面の笑みを浮かべたまま、ジャグリングを見事に締めくくる。 <br>
+    一礼をすると、彼女は風のように軽やかにステージ袖へと姿を消す。 <br>
+    場内が静まり、ルアージュの操作するスポットライトが上空へと移動する。 <br>
+ <br>
+    やがて光の先に、天井のブランコへと移ったミユキの姿が浮かび上がる。 <br>
+    観客の視線は、その一挙手一投足に釘付けとなった。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「バージルさん、よろしくお願いしますね」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「任せてみゆきちゃん！さぁさぁ！観客の皆々様ぁん！次は私も加わって楽しい空のショーをお届けしちゃうわぁん！」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「いきますよー！」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「瞬き厳禁なんだからぁ〜」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ルアージュが舞台装置を巧みに操り、ブランコはまるで重力を無視したかのように、二人をあり得ない軌道へと送り出す。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「ハイッ」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「よっ……と！」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    演出判定 （成功すると特別な感情判定を行う） <br>
+    2D6&gt;=5 （判定：飛術） (2D6&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    感情判定→ルアージュ
+    2D6&gt;=5 （判定：飛術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    空中での大胆なジャンプ――見事に成功。 <br>
+    そして二人は息を合わせて無事に着地し、ブランコの演目は大きな歓声の中、華やかに幕を下ろした。
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「（今までで一番決まってましたよ！みゆき様！）」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    みゆきに友情 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    ルアージュに友情 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    【心憶】こころおぼえ　対象：みゆき  <br>
+    そのセッションの間、目標が行う命中判定にプラス1の修正をつける。 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    あなたは今のルアージュの笑顔にどこか違和感を覚える。 <br>
+    舞台の熱気が残る中で、その笑みだけが妙に冷たく、遠く見えた。 <br>
+ <br>
+    胸の奥に正体の掴めない不安がそっと影を落とす。
+   
+</div>
+<div class="kp left">
+
+
+    シーン終了 
+
+</div>
+<div class="kp left">
+
+
+    サイクル２[演目シーン]　シーン６（PC3：カバキ） <br>
+    登場人物：カバキ、バージル
+
+</div>
+<div class="kp left">
+
+
+    ♪Welcome to ようこそジャパリパーク～♪ <br>
+    軽快な音楽が舞台に流れはじめ、ステージに現れたのは団長・カバキ。
+  
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「いつまでも自宅警備員はしてられないからな……」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「（Ｕ＾ω＾）わんわんお！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    カバキが手袋を外し、指揮者のように手を振ると、獰猛な猛獣がまるで忠犬のようにおとなしくなり芸をはじめる 
+  
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「可愛いわぁん！さっすが我らが団長！こんなに恐ろしい猛獣たちも団長の前では形無しヨォん！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ……それもそのはず、カバキの指先からは、 <br>
+    人間の目には見えないほどの細かな蜘蛛の糸が出ており、猛獣を操っていた  <br>
+    バージルの持った輪をくぐり、火を超え、カバキの元へ戻っていく  <br>
+    鞭も使わず見えない手綱をにぎるその姿は、まるで魔法のようだった―― 
+  
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「……ふぅ」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    「ぽまえら、後は任せた。止まるんじゃねぇぞ……」 
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    演出判定 （成功すると特別な感情判定を行う） <br>
+    2D6&gt;=5 （判定：騎乗術） (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    感情判定→バージル <br>
+    2D6&gt;=5 （判定：騎乗術） (2D6&gt;=5) ＞ 8[4,4] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+    バージルに友情 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    カバキに友情 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    シーン終了 
+
+</div>
+<div class="kp left">
+
+
+    サイクル２[演目シーン]　シーン７（PC4：バージル・グリフィン） <br>
+    登場人物：バージル、ルアージュ
+ 
+</div>
+<div class="kp left">
+
+
+    先ほどまでの陽気な雰囲気が嘘のように、舞台は静まり返る。 <br>
+    中央には、深々と頭を垂れたバージルの姿。 <br>
+    まるで操り手を求める、寂しげな傀儡のように。
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「さて、次にステージに躍り出るのは稀代の道化」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「（行きますよ姉様）」 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「(えぇ、頼むわね)」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ルアージュの指先がわずかに動く。
+    その瞬間、ピアノ線のように細く煌めく糸がバージルの四肢へと伸び、音もなく絡みつく。 <br>
+    糸に操られるまま、バージルの身体は宙へと引き上げられた。
+  
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「私は道化、皆々様のための道化」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    空中に浮かぶバージルの身体が、意志とは無関係に四方へと動き出す。 <br>
+    まるで関節を無視したかのように、異様な軌道で踊りはじめるその姿に、客席からは不安げなざわめきが漏れる。
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「人形繰りならぬ、道化繰り！ここからが本番です！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    そんな心配をよそにバージルの表情は終始にこやかだった。 <br>
+    笑みを浮かべたまま、静かに、優しく告げる。
+  
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    「私は大丈夫よ皆々様、これが道化ですもの♩」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    その言葉に舞台の緊張は解け、客席から一斉に黄色い声援が飛び交った。
+  
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    演出判定 （成功すると特別な感情判定を行う）
+    2D6&gt;=5 （判定：瞳術） (2D6&gt;=5) ＞ 9[4,5] ＞ 9 ＞ 成功
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    感情判定→ルアージュ
+    2D6&gt;=5 （判定：瞳術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    【苦労忍】：0→1
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「（華麗です姉様、いつも通りの素敵な姉様）」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    シーン終了 
+
+</div>
+<div class="kp left">
+
+
+    サイクル２[演目シーン]　シーン８（PC1：マナ・アストレア） <br>
+    登場人物：マナ、ミユキ
+
+</div>
+<div class="kp left">
+
+
+    薄暗い照明の中、マナが舞台中央に静かに立つ。手には一束のトランプを握っている。 <br>
+    傍らには、控えめに構える助手のみゆきが並ぶ。
+  
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「さて、今宵は、、特別な助手をご用意しました。」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「はーい！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    みゆきは元気いっぱいに声を上げた。 <br>
+    マナの手元でトランプの束がひらりと舞い、観客の視線が一斉に集まる。
+  
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「この中に一枚だけ死のカードがあります。それを引けば助手は、、。」 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「それでは、助手の運命を観客の皆さんに選んでいただきましょう。死神のカードを引いたら助手は死。それ以外なら生き延びれるでしょう。」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    緊張感が徐々に高まる中、観客の誰かが選ばれたカードをそっと引き、みゆきに手渡した。 <br>
+    マナは掌に手をかざし、静かに促す。 
+  
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「それではみゆきさん、、そのカードを皆さんに見せてください。」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    みゆきは深呼吸をひとつ、そして胸を張ってカードを掲げる。
+  
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「これです！！！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    マナの瞳がカードを見つめる。微かな笑みを浮かべながら、声に力を込めて言った。
+  
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「ハートの2ですね。どうやら、助手は生き延びたみたいです。」 
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    「よかったです〜！！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    だがその瞬間、マナはそっとみゆきに近づき、静かに手をかざす。 <br>
+    するとみゆきの髪の後ろから、一枚の死神のカードがひらりと舞い落ちた。 
+  
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    「これは奇術ですから。」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    客席からどよめきと歓声が巻き起こった。
+  
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    演出判定 （成功すると特別な感情判定を行う）
+    2D6&gt;=5 （判定：罠術） (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    感情判定→みゆき
+    2D6&gt;=5 （判定：罠術） (2D6&gt;=5) ＞ 8[2,6] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="memPC2 right">
+<span>伊賀崎　みゆき</span>
+<p>
+
+    マナに共感 
+  
+</p>
+</div>
+<div class="memPC1 left">
+<span>マナ・アストレア</span>
+<p>
+
+    みゆきに共感 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    シーン終了 
+
+</div>
+<div class="kp left">
+
+
+    サイクル２[演目シーン]　マスターシーン
+ 
+</div>
+<div class="kp left">
+
+
+    舞台の暗闇に静かに一筋の光が差し込む。 <br>
+    その光の中にルアージュがゆっくりと姿を現した。
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「続いての演目は私の繰り出す、大絡繰！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    舞台の中央。 <br>
+    観客の喝采がひときわ高まったその瞬間── <br>
+    闇の底から、ギィ、ギィ、と音を立てて、それは現れた。 
+  
+</div>
+<div class="kp left">
+
+
+    金属とも骨ともつかぬ質感。 <br>
+    一片の刃のように鋭く、また楽器のように艶やかでもある。 <br>
+    組み上げられたのは、異形の巨体。 
+  
+</div>
+<div class="memButai right">
+<span>舞台装置-[ル・アージュ・ドール]</span>
+<p>
+
+    「ギッ……、ギッ……」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「無数の歯車とゼンマイで構築された機械仕掛けの怪物――ル・アージュ・ドール」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「高さは六間。その胴は、無数の歯車が螺旋状に絡み合い、絶えず回転しています。」
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「この怪物は、ただの見せ物ではありません」
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「そう――ただ滅びを演じるために創られた、過ぎ去りし“過去”の残響」 
+  
+</p>
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「それに立ち向かうのは我らがスターの皆々様、壮絶な戦い、その大一番。心にやきつけてくださいませ！」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    メインフェイズ戦闘開始
+    ラウンド１ 
+
+</div>
+<div class="kp left">
+
+
+    [ GM ] がダイスシンボルを公開。出目は 5 です。 
+  
+</div>
+<div class="kp left">
+
+
+    [ バージル・グリフィン ] がダイスシンボルを公開。出目は 5 です。 
+  
+</div>
+<div class="kp left">
+
+
+    [ カバキ ] がダイスシンボルを公開。出目は 3 です。 
+  
+</div>
+<div class="kp left">
+
+
+    [ マナ・アストレア ] がダイスシンボルを公開。出目は 3 です。 
+  
+</div>
+<div class="kp left">
+
+
+    [ 伊賀崎　みゆき ] がダイスシンボルを公開。出目は 2 です。 
+  
+</div>
+<div class="kp left">
+
+
+    ラウンド１　プロット５ 
+  
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    D66 (D66) ＞ 33
+  
+</p>
+</div>
+<div class="memPC3 left">
+<span>カバキ</span>
+<p>
+
+     (D66) ＞ 24
+  
+</p>
+</div>
+<div class="memButai right">
+<span>舞台装置-[ル・アージュ・ドール]</span>
+<p>
+
+    d66 (D66) ＞ 16
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    怪鳥をドールに 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    2D6&gt;=5 （判定：登術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="memButai right">
+<span>舞台装置-[ル・アージュ・ドール]</span>
+<p>
+
+    回避判定
+    2D6&gt;=11 （判定：火術） (2D6&gt;=11) ＞ 9[4,5] ＞ 9 ＞ 失敗
+  
+</p>
+</div>
+<div class="memButai right">
+<span>舞台装置-[ル・アージュ・ドール]</span>
+<p>
+
+    爆破→バージル 
+  
+</p>
+</div>
+<div class="memButai right">
+<span>舞台装置-[ル・アージュ・ドール]</span>
+<p>
+
+    2D6&gt;=5 （判定：火術） (2D6&gt;=5) ＞ 5[2,3] ＞ 5 ＞ 成功
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    回避判定
+    2D6&gt;=8 （判定：潜伏術） (2D6&gt;=8) ＞ 8[3,5] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="memButai right">
+<span>舞台装置-[ル・アージュ・ドール]</span>
+<p>
+
+    【自動反撃】
+    この忍法を修得したキャラクターへ攻撃を行ったキャラクターは、《絡繰術》で判定を行う。失敗すると射撃戦ダメージを1点を受ける。
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    2D6&gt;=9 （判定：潜伏術） (2D6&gt;=9) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    [ 舞台装置-[ル・アージュ・ドール] ] 【生命力】 : 10 → 0 <br>
+    ※舞台装置は一撃で破壊される
+  
+</div>
+<div class="memButai right">
+<span>舞台装置-[ル・アージュ・ドール]</span>
+<p>
+
+    「ギ……」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    それは本来、演出のためだけに仕込まれた小さな衝突 <br>
+    大歯車の“心臓”に届くはずのない、些細な一撃だった。 <br>
+    だが――  <br>
+    歯車がひとつ、カタン、と傾く。 <br>
+ <br>
+    そのわずかな狂いが連鎖し、全ての歯車が次々と狂い、絡まり、軋み、叫び──  <br>
+    静かに、音もなく、止まった。
+  
+</div>
+<div class="kp left">
+
+
+    「……カチ」<br> 
+  
+</div>
+<div class="kp left">
+
+
+    乾いた小さな音が、舞台全体の空気を凍らせた。 <br>
+    舞台の中心にそびえていた機構が、繰り手の命令を無視するかのように、ゆっくりと崩れはじめる。
+  
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    「――っ」 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    崩れ落ちた先にいたのは―――― 
+  
+</div>
+<div class="kp left">
+
+
+    ――――<br> 
+  
+</div>
+<div class="kp left">
+
+
+    ―― 
+  
+</div>
+<div class="kp left">
+
+
+    バージルは戦果としてルアージュと感情を結べます 
+
+</div>
+<div class="memNPC right">
+<span>ルアージュ</span>
+<p>
+
+    バージルに愛情 
+  
+</p>
+</div>
+<div class="memPC4 right">
+<span>バージル・グリフィン</span>
+<p>
+
+    ルアージュに愛情 
+  
+</p>
+</div>
+<div class="kp left">
+
+
+    ハンドアウト『真相』 ※秘匿<br>あなた達が今いるこの舞台は『夢の世界』だ。<br><br>数年前、歯車サーカスは元の世界でも人々を魅了する人気劇団だった。<br>──異なる背景を持つ者たちが力を合わせ、奇跡のような舞台を繰り広げていた。<br>しかし、その栄光の絶頂で起きた「舞台事故」をきっかけに劇団は解散した。<br><br>「夢の世界」<br>輝けるあの頃を繰り返す世界。<br>神器の欠片、その核心触れない限り、繰り返していることに気づくことはない。<br><br>★『真相』を手に入れたPCは手に入れているハンドアウトの「隠された秘密」を取得できる。 
+  
+</div>
+<div class="kp left">
+
+
+    ◆PC2-隠された秘密<br>『真相』を思い出す。<br>あなたはシノビの家に生まれながらその力を一切持たなかった一般人だ。<br>夢の中でだけでシノビの力を扱える。<br>あなたは家宝の神器「逆神の欠片」を盗み、団員を廃劇場へと呼び出して夢の世界へ誘った。<br>――全ては唯一つの居場所を守るため。<br><br>あなたの本当の使命は【夢を終わらせないことだ】 
+  
+</div>
+<div class="kp left">
+
+
+    ◆PC4-隠された秘密<br>『真相』を知る。<br>あの事故でルアージュは帰らぬ人となった。<br>誰もが自分を責め、何も語れないまま、劇団は自然消滅した。<br><br>これが夢や幻だとしても再び彼女を失うことはできない。<br><br>あなたの本当の使命は【家族を失わないことだ】 
+
+</div>
+<div class="kp left">
+
+
+    ―― <br> 
+  
+</div>
+<div class="kp left">
+
+
+    ――――  
+  
+</div>
+<div class="kp left">
+
+
+    歯車はまわる、くるくると 
+  
+</div>
+<div class="kp left">
+
+
+    規則正しく、時の流れを刻むように 
+  
+</div>
+
+  <div class="kp left">
+    <p>
+      <a class="page_btn_width" href="シノブ、歯車サーカス団_後編.html">サイクル000000……</a>
+    </p>
+  </div>
+
+</div></div>
+<script src="../logCon_Respon.js"></script>
+<br><br><br><br><br><br><br><br><br>
+</body></html>
