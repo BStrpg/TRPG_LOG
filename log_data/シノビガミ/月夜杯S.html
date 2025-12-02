@@ -1,0 +1,8691 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>log</title>
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../logCon_Respon.css">
+<style>
+     /* main css */
+    .bg-inner.bg1{background:url('./月夜杯S/背景：月夜.png') no-repeat center/cover;}
+    .bg-inner.bg2{background:url('./月夜杯S/背景_シノビガミ_キャンパス.jpg') no-repeat center/cover;}
+    .bg-inner.bg3{background:url('./月夜杯S/背景：洋館前.png') no-repeat center/cover;}
+    .bg-inner.bg4{background:url('./月夜杯S/背景_シノビガミ_洋館の廊下と階段.jpg') no-repeat center/cover;}
+    .bg-inner.bg5{background:url('./月夜杯S/背景：寮部屋.png') no-repeat center/cover;}
+    .bg-inner.bg6{background:url('./月夜杯S/背景：カフェテリア.png') no-repeat center/cover;}
+    .bg-inner.bg7{background:url('./月夜杯S/背景_シノビ_舞踏会の会場_モブなし.jpg') no-repeat center/cover;}
+    .bg-inner.bg8{background:url('./月夜杯S/夜の中庭.png') no-repeat center/cover;}
+
+    
+    /* member */
+    .mem1 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem1 p:after{border-right-color:rgb(136, 136, 136);}
+.mem1 span{background:rgb(136, 136, 136);color:#fff;}
+.mem1:before{content:'';background-image:url('./月夜杯S/GM.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem2 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem2 p:after{border-left-color:rgb(136, 136, 136);}
+.mem2 span{background:rgb(136, 136, 136);color:#fff;}
+.mem2:before{content:'';background-image:url('2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem3 p{border:2px solid rgb(244, 67, 54);box-shadow:5px 5px 0 rgb(244, 67, 54);}
+.mem3 p:after{border-right-color:rgb(244, 67, 54);}
+.mem3 span{background:rgb(244, 67, 54);color:#000;}
+.mem3:before{content:'';background-image:url('./月夜杯S/ツヨメ.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem3-1:before{content:'';background-image:url('./月夜杯S/火口\ ツヨメ.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem3-2:before{content:'';background-image:url('./月夜杯S/火口\ ツヨメ奥義.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem3-3:before{content:'';background-image:url('./月夜杯S/火口\ ツヨメ覚醒.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem3-4:before{content:'';background-image:url('./月夜杯S/火口\ ツヨメSD.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem4 p{border:2px solid rgb(224, 224, 224);box-shadow:5px 5px 0 rgb(224, 224, 224);}
+.mem4 p:after{border-left-color:rgb(224, 224, 224);}
+.mem4 span{background:rgb(224, 224, 224);color:#000;}
+.mem4:before{content:'';background-image:url('./月夜杯S/伏見源二.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem4-1:before{content:'';background-image:url('./月夜杯S/伏見源二\ 全身.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem4-2:before{content:'';background-image:url('./月夜杯S/伏見源二微笑み.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem4-3:before{content:'';background-image:url('./月夜杯S/伏見源二目閉じ.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem4-4:before{content:'';background-image:url('./月夜杯S/伏見源二SD.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem4-5:before{content:'';background-image:url('./月夜杯S/伏見源二奥義.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem5 p{border:2px solid rgb(103, 58, 183);box-shadow:5px 5px 0 rgb(103, 58, 183);}
+.mem5 p:after{border-right-color:rgb(103, 58, 183);}
+.mem5 span{background:rgb(103, 58, 183);color:#fff;}
+.mem5:before{content:'';background-image:url('./月夜杯S/メイコ1-1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem5-1:before{content:'';background-image:url('./月夜杯S/メイコ1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem5-2:before{content:'';background-image:url('./月夜杯S/メイコ2-2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem5-3:before{content:'';background-image:url('./月夜杯S/メイコ2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem5-4:before{content:'';background-image:url('./月夜杯S/メイコSD.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem6 p{border:2px solid rgb(224, 224, 224);box-shadow:5px 5px 0 rgb(224, 224, 224);}
+.mem6 p:after{border-left-color:rgb(224, 224, 224);}
+.mem6 span{background:rgb(224, 224, 224);color:#000;}
+.mem6:before{content:'';background-image:url('./月夜杯S/イチズ1-1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem6-1:before{content:'';background-image:url('./月夜杯S/イチズ1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem6-2:before{content:'';background-image:url('./月夜杯S/イチズ2-2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem6-3:before{content:'';background-image:url('./月夜杯S/イチズ2.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem6-4:before{content:'';background-image:url('./月夜杯S/イチズSD.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem7 p{border:2px solid rgb(255, 87, 34);box-shadow:5px 5px 0 rgb(255, 87, 34);}
+.mem7 p:after{border-right-color:rgb(255, 87, 34);}
+.mem7 span{background:rgb(255, 87, 34);color:#000;}
+.mem7:before{content:'';background-image:url('./月夜杯S/オウジ1-1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem7-1:before{content:'';background-image:url('./月夜杯S/オウジ1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem7-2:before{content:'';background-image:url('./月夜杯S/オウジSD.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem8 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem8 p:after{border-left-color:rgb(136, 136, 136);}
+.mem8 span{background:rgb(136, 136, 136);color:#fff;}
+.mem8:before{content:'';background-image:url('8.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem9 p{border:2px solid rgb(96, 125, 139);box-shadow:5px 5px 0 rgb(96, 125, 139);}
+.mem9 p:after{border-right-color:rgb(96, 125, 139);}
+.mem9 span{background:rgb(96, 125, 139);color:#fff;}
+.mem9:before{content:'';background-image:url('./月夜杯S/ヨウタ1-1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem9-1:before{content:'';background-image:url('./月夜杯S/ヨウタ1.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem9-2:before{content:'';background-image:url('./月夜杯S/ヨウタ.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem10 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem10 p:after{border-left-color:rgb(136, 136, 136);}
+.mem10 span{background:rgb(136, 136, 136);color:#fff;}
+.mem10:before{content:'';background-image:url('10.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem11 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem11 p:after{border-right-color:rgb(136, 136, 136);}
+.mem11 span{background:rgb(136, 136, 136);color:#fff;}
+.mem11:before{content:'';background-image:url('11.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+.mem12 p{border:2px solid rgb(136, 136, 136);box-shadow:5px 5px 0 rgb(136, 136, 136);}
+.mem12 p:after{border-left-color:rgb(136, 136, 136);}
+.mem12 span{background:rgb(136, 136, 136);color:#fff;}
+.mem12:before{content:'';background-image:url('12.png');background-size:contain;background-repeat:no-repeat;background-position:center center;width:90px;height:90px;}
+    
+    @media only screen and (max-width: 768px) {
+        .mem1 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem2 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem3 p:after{border-right-color:rgb(244, 67, 54);border-left-color:transparent;}
+        .mem4 p:after{border-right-color:rgb(224, 224, 224);border-left-color:transparent;}
+        .mem5 p:after{border-right-color:rgb(103, 58, 183);border-left-color:transparent;}
+        .mem6 p:after{border-right-color:rgb(224, 224, 224);border-left-color:transparent;}
+        .mem7 p:after{border-right-color:rgb(255, 87, 34);border-left-color:transparent;}
+        .mem8 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem9 p:after{border-right-color:rgb(96, 125, 139);border-left-color:transparent;}
+        .mem10 p:after{border-right-color:rgb(136, 136, 136);border-left-color:transparent;}
+        .mem11 p:after{border-right-color:rgb(244, 67, 54);border-left-color:transparent;}
+        .mem12 p:after{border-right-color:rgb(224, 224, 224);border-left-color:transparent;}
+    
+        .mem1:before,.mem2:before,.mem3:before,
+        .mem4:before,.mem5:before,.mem6:before,
+        .mem7:before,.mem8:before,.mem9:before,
+        .mem10:before,.mem11:before,.mem12:before{width:70px;height:70px;}
+
+    }
+</style>
+</head>
+
+<body>
+    <p id="page-top"><a href="#"><i class="page-top__arrow"></i></a></p>
+	<div class="leftwhite"></div>
+	<div class="rightwhite"></div>
+	<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+	<div class="log">
+    
+
+<div class="kp LtoR-early">
+
+  ●トレーラー<br>私立御斎学園で毎年行われる舞踏会「月夜杯」。2名一組のデュオで、息のあった動き、優雅さを競います。<br>　しかし、これは単なるダンスのお披露目会ではありません。この学園は忍者育成機関。一般生徒たち観衆の前で、ダンスをしながら秘かにライバルたちと戦う忍法合戦、死闘の場でもあるのです。そしてアナタに下った密命は月夜杯での優勝と、……。<br>　パートナー選びから、すでに戦いの火蓋は切って落とされています。 
+  
+
+
+</div>
+
+
+
+
+<div class="kp LtoR-early">
+
+    シノビガミ『月夜杯』 
+
+
+</div>
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    1.導入<br>2.メインフェイズ<br>3.クライマックスフェイズ<br>4.ED 
+  
+</p>
+</div>
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg2"></div></div>
+<div class="log">
+
+<div class="kp LtoR-early">
+
+    ――午後の光が差し込む御斎学園の中庭。<br>紅葉の影が芝生を染め、遠くでは吹奏楽部の練習音が風に乗って聞こえてくる。 
+  
+
+
+</div>
+
+
+
+
+
+<div class="kp LtoR-early">
+
+    二人が向かう先は「金羊館（きんようかん）」。<br>学外からの賓客をもてなすために建てられたアール・ヌーヴォー様式の洋館だ。<br>白磁のような壁面、緩やかな曲線を描く鉄柵、そしてステンドグラス越しに揺れる秋の陽光。<br>生徒たちの間では「一度は入ってみたい憧れの社交場」として名高い場所である。<br><br>――そんな金羊館へと二人が向かうのは、「月夜杯（つくよはい）」についての説明会へ参加するためだ。<br> 
+  
+
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    一週間後、学園を挙げての華やかな舞踏会が開かれる。<br>優雅さと絆、そして忍の技量を競う大会――その代表として、彼らが選ばれたのだ。 
+  
+
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    広大な学園の敷地の中で、二人の影が偶然に交差した。 
+
+
+</div>
+
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    □HO：月夜杯<br>私立御斎学園で例年、秋になると開かれる舞踏会。<br>各寮の代表が二人一組（男性同士、女性同士もＯＫ）で参加し、優雅さやどれだけ二人の息があっているのかを競う。<br>優勝者には、学園でもっとも優雅なカップルであるという栄誉に加え、賞金が送られる。<br>また、優勝者が所属している寮の生徒たちには、豪華サロン「金羊館」の特別貴賓室の使用が一年間許可される。<br>優勝者は永遠の絆で結ばれるという伝説も残っている。<br>※このハンドアウトに【秘密】はない 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……おやおや」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「辛気臭そうな凡愚が歩いていると思えば」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「知った顔ではないか、伏見源二」 
+  
+</p>
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「何を呆けている、まさかこの余の顔を忘れたか？」 
+  
+</p>
+</div>
+
+<div class="mem3 mem3-1 left">
+<span>火口 ツヨメ</span>
+<p>
+
+
+    PC1： 火口 ツヨメ（ヒグチ ツヨメ）<br>
+比良坂機関/【醜女衆】<br>
+年齢：17歳　高等部2年<br>
+信念：我 
+
+</p>
+</div>
+
+<div class="mem1 mem3-4 left">
+<span>GM</span>
+<p>
+
+      
+    ■PC1　推奨：比良坂機関<br>あなたは最近編入したばかりの比良坂機関の外部聴講生だ。<br>入寮した比良坂寮の先輩に推薦され、今年の「月夜杯」の代表者に選ばれた。<br>寮の仲間の信頼に応えるためにも優勝しなければならない。<br>　あなたの【使命】は、「月夜杯」に優勝することだ。 
+  
+</p>
+</div>
+
+
+<div class="mem3 mem3-1 left">
+<span>火口 ツヨメ</span>
+<p>
+
+
+特技：火術、壊器術、歩法、調査術、傀儡の術、召喚術<br>
+忍法：接近戦攻撃、【黄泉軍】、【連撃】、【見畏】、【揺らし】
+
+
+</p>
+</div>
+
+<div class="mem3 mem3-1 left">
+<span>火口 ツヨメ</span>
+<p>
+
+
+醜女衆の名門、火口家の箱入り娘。<br>
+文武両道なんでもこなせる器量を持つが一般常識には偏りがある。<br>
+「女は強かに」を信条に持ち、特に男に対しては高飛車な態度をとることが多い。<br>
+常夜の降霊術によって契約した炎の妖魔の仮面を纏って戦う、灼炎のマスカレードの異名を持つ
+<br><br>
+趣味は絵画、音楽の鑑賞。<br>
+好きな食べ物はボロネーゼ。
+<br><br><br>
+
+「月夜杯を制するのは他の誰もない、余であると最初から決まっているのだ――」 
+
+</p>
+</div>
+
+
+
+
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「む、君は…」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「最近編入した火口殿であるな」 
+  
+</p>
+</div>
+
+<div class="mem4 mem4-1 right">
+<span>伏見 源二</span>
+<p>
+
+
+        PC2：伏見 源二（フシミ ゲンジ）<br>
+斜歯忍軍/【鍔鑿組】<br>
+年齢：16歳　高等部2年<br>
+信念：律
+
+</p>
+</div>
+
+
+
+<div class="mem1 mem4-4 left">
+<span>GM</span>
+<p>
+
+      
+    ■PC2　推奨：斜歯忍軍<br>あなたは斜歯寮の寮生だ。斜歯忍軍の外部聴講生で、今年の「月夜杯」の代表者に選ばれた。<br>寮の仲間の信頼に応えるためにも優勝しなければならない。<br>　あなたの【使命】は、「月夜杯」に優勝することだ。 
+  
+</p>
+</div>
+
+<div class="mem4 mem4-1 right">
+<span>伏見 源二</span>
+<p>
+
+
+    特技：水術、登術、掘削術、遁走術、傀儡の術、野戦術<br>
+忍法：接近戦攻撃、【機忍】、【水霊】、【土竜吼】、【一夜城】
+<br><br>
+背景：【元八武衆】
+
+
+</p>
+</div>
+
+
+<div class="mem4 mem4-1 right">
+<span>伏見 源二</span>
+<p>
+
+
+    冷静な努力家として評判があり、寮内でも便りにされているが、心を深く開いた相手は一人もいない。<br>
+感情を見せないのは過去の喪失が関わっている。 
+
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「何……？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ここにいるということは、もしや君も月夜杯に出るのか？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様に答える義理などない」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ぬ、それもそうだ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「君もなどと言っていたが、よもやお前のような凡愚が月夜杯にでるというのは余の聞き違いか？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「俺にも答える義理なんかないね」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「しかし俺はこれからここに用があるんだ、もう行ってもいいかな」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ハ、つまらぬ意趣返しを……お前が出ることなど既に知れているわ。比良坂に知らぬことなしよ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「斜歯も落ちたものだな、貴様のようなものが引きずりだされるとは」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「もううるさいな、君も同じところに行くんだろ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「もうすぐ時間だ、早くいくぞ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「フン、ついてくることを許可してやろう」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「…」 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    秋の陽が傾き始め、金羊館へと続く銀杏並木が一面、黄金色に染まっていた。風が吹くたび、はらはらと舞い落ちる葉が、まるで舞踏会の幕開けを告げる紙吹雪のようにきらめく。 
+
+
+</div>
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg3"></div></div>
+<div class="log">
+
+<div class="kp LtoR-early">
+
+    あなたたちが並木道を抜け、金羊館の前に辿り着いたとき、その玄関先で所在なげに立ち尽くすひとりの少女の姿があった。制服の袖を握りしめ、そわそわと足元を見つめている。 
+
+
+</div>
+
+
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「……うぅ……どうして」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「軒先で何をしている？」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「……え？……ひぇええ！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「おいおい、怖がらせてるじゃあないか」 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+  彼女はツヨメに気づくと、驚いたように顔を上げ、柱に隠れてしまった 
+  
+
+
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「なんだと？こやつが勝手に驚いただけであろう」 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    柱から顔を覗かせ、怯えながらも二人を見ている 
+
+
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「…君は何をしていたんだい？」 
+  
+</p>
+</div>
+
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「……あ、あのっ、す、すみません……月夜杯の説明会って……ここで、あってますでしょうか？」 
+  
+</p>
+</div>
+
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「あ、あたしみたいなのが、いきなり話しかけちゃって、す、すみません、スミマセン！」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+  その声はやけに早口で、どこか落ち着かない。目を泳がせながら、彼女は自分に言い聞かせるように呟く。 
+
+
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「女ならばおどおどするな、騒々しい」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「ひ、ひぃ！……すいませんスイマセン！」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……会場はここであっている」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「そ、そうですよね……」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「……あたしなんかが、こんな晴れがましい建物に足を踏み入れるなんて……」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「そんな、不埒なこと、ダメに決まってるのに……ああ、でも、ここで帰ったら寮の先輩たちに何をされるか分からないし……ああああっ……」 
+  
+</p>
+</div>
+<div class="mem5 mem5-1 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    ■NPC4：安達ヶ原メイコ（あだちがはら・めいこ）<br>あなたは中等部三年の隠忍寮の寮生だ。<br>妖魔の血を引いており、特別な力の持ち主として御斎学園に保護された。<br>特別監視対象。内向的な性格で舞踏会のようなイベントは苦手だが、無理矢理代表に選ばれたようだ。<br>友だちを欲しがっている。<br>　あなたの【使命】は、「月夜杯」に優勝することだ。 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「わかるか？伏見源二、本来貴様のような凡愚がこのような反応をすべきなのだ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「いちいち突っかかってくるなよ、君が話すとややこしいことになる…」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「蓑虫寮の代表だな」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「そうなのか。俺たちも同じ、月夜杯の代表者だよ」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「え、あ、あなたたちも……」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「け、けどそうですよね、本来あなた達みたいにキラキラした人たちの場なんですから……」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「そんな場所に……スイマセンスイマセン！」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    涙をこらえるような声であなたたちに謝りたおすメイコ<br><br>そのとき――凛とした声が、秋風の中に澄んで響いた 
+
+
+</div>
+
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「あなたたちも月夜杯の参加者かしら？何かお困りごとでも？」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    あなたたちが振り向くと、そこには長身の少女が立っていた。まっすぐな瞳でこちらを見つめている。<br>鞍馬寮の外部聴講生――上泉イチズ。その立ち姿にはどこか気品がある。 
+
+
+</div>
+
+<div class="mem6 mem6-1 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    ■NPC3：上泉イチズ（かみいずみ・いちず）<br>あなたは高等部三年の鞍馬寮の寮生だ。<br>鞍馬神流からの外部聴講生で、後輩の女子生徒にファンが多い。<br>少し脳筋気味な武道一直線の女子である。<br>武道会だと勘違いして参加したが、参加したからには優勝しなければと思っている。<br>　あなたの【使命】は、「月夜杯」に優勝することだ。 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ようやく話しの通じる相手が出てきたか、困っているのはこやつだけだ」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そうなの？あなたたち、月夜杯に参加なさるのでしょう？」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「参加するのは初めてではなくて？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「いや、俺らは外部聴講生だから初めてだ」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「でしょう？なら、一緒にいきましょう。案内しますわ」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    彼女はメイコに目をやると、その不安げな様子を見て、ふっと柔らかく笑った。
+
+</div>
+
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「さぁ、あなたも」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「えぇ……は、はいぃ」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+ その声には不思議な安心感があった。<br>ためらう間もなく、イチズはくるりと踵を返し、金羊館の扉へと歩き出す。 
+  
+
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+   メイコは一瞬ためらったが、次の瞬間、袖を握る手を離し、その背中を追って小走りに続く。<br>あなたたちも自然とその流れに導かれるように、イチズの後に続いた。
+
+</div>
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg4"></div></div>
+<div class="log">
+
+<div class="kp LtoR-early">
+
+   扉がゆっくりと開く。<br>ホールの扉を抜けた先――<br>そこは、まるで別世界のような眩さだった。<br>光り輝くシャンデリアが頭上にきらめき、磨き抜かれた床には無数の足音と笑い声が反射している。<br>すでに三十人以上の生徒が集まっており、それぞれがペア候補を探して談笑していた。 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+  そんな中、ひときわ目立つ存在がいた。<br>女生徒たちに囲まれ、あちこちから歓声を浴びる少年――榊原オウジ。 
+
+
+</div>
+
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「えっと、申し訳ないです、ボク、もう予定が……いえ、その……！」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    きらりと光る茶髪に、柔らかな笑み。制服の着こなしもどこか洗練されており、その佇まいは学園の王子様と呼ぶにふさわしい。
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    だが、今の彼はその人気に困り果てているようだった<br>人波の中で苦笑いを浮かべながら、オウジは逃げるように身を翻し、あなたたちのもとへと駆け寄ってきた。 
+
+
+</div>
+
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「先輩も参加されるんですね！」 
+  
+</p>
+</div>
+<div class="mem7 mem7-1 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    ■NPC1：榊原オウジ（さかきばら・おうじ）<br>あなたは高等部一年の御斎寮の寮生だ。<br>名家の生まれの一般生徒で忍者としての力はもたない。<br>性格は王子様系で物腰は柔らかく、多くの生徒たちから好かれている。<br>次期生徒会長候補だという噂もある。<br>　あなたの【使命】は、「月夜杯」に優勝することだ。 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「えぇ、貴方もでしたのね」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「はい！そちらの方は……先輩のパートナーの方ですか？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「俺か？いや、先ほど会ったばかりだ」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「そうだったんですね……スイマセン早とちりを。ボクは榊原オウジと申します。お手柔らかによろしくお願いいたします！」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    眉を顰める 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    その笑顔はあまりに爽やかで、まるでスポットライトを浴びた俳優のようだ。<br>だが、その裏にどこか計算された余裕を感じるのは、忍びの血を引く者の勘だろうか。 
+
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「俺は高等部2年、伏見源二だ」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「よろしくお願いします先輩！」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「フン、殊勝な態度だな。よろしくしてやってもいい」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「ふつつかものですが、よろしくお願いします！」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    やがて、ホールの空気が静まり返った。 
+
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    「――キィンッ」<br><br><br><br><br>マイクのハウリング音が、全員の注意を引く。<br>舞台の上に立っていたのは、祭事委員会の生徒だった。彼女は丁寧に一礼すると、透き通る声で告げる 
+
+
+</div>
+
+
+<div class="mem8 right">
+<span>祭事委員</span>
+<p>
+
+      
+    「各寮の代表の方々、ようこそお集まりいただきました。これより、今年の『月夜杯』についてご説明いたします」 
+  
+</p>
+</div>
+<div class="mem8 right">
+<span>祭事委員</span>
+<p>
+
+      
+    「まずは――」 
+  
+</p>
+</div>
+<div class="mem2 right">
+<span>？？？</span>
+<p>
+
+      
+    「ちょっとまった─────！！！」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    祭事委員の説明が始まろうとしたその瞬間――<br>ホールの扉が勢いよく開かれ、乾いた音が広間に響き渡った。 
+
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    突然の叫びに、ざわついていた参加者たちの視線が一斉に入口へと向かう。<br>そこに立っていたのは、一人の少年――岡野ヨウタだった。 
+
+
+</div>
+
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「悪い悪い、助っ人の用事が立て込んでてよ。でも、ギリギリ遅刻じゃないよな？」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+  そう言って笑う彼の顔には、焦りの色などまるでない。<br>飄々とした態度――それでいて芯の強さを感じさせるその姿は、忍法特待生の名に恥じぬものだった。
+
+</div>
+
+
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「さ、オレに遠慮しないで説明を始めてくれよ」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    肩をすくめながら軽口を叩くヨウタに、周囲の生徒たちは苦笑を漏らす。 
+
+
+</div>
+
+<div class="mem9 mem9-1 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    ■NPC2：岡野ヨウタ（おかの・ようた）<br>あなたは高等部二年のハグレモノ寮の寮生だ。<br>とても貧乏だが、忍法特待生としてスカウトされた。<br>金に困っているようで、金銭とひきかえに様々な部活の助っ人を行っている。<br>守銭奴として知られるが、かわした約束は守るという評判だ。<br>　あなたの【使命】は、「月夜杯」の優勝賞金を手に入れることだ。 
+  
+</p>
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    場の空気が少し和らぐ中、彼は当然のようにあなたたちの方へ歩み寄った。
+
+</div>
+
+
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「へぇ、お前らも出場すんのか」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「愚か者め、既に説明は始まっている。遅刻者は失格だったか？」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「馬鹿いえセーフだセーフ！」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「岡野、声がでかいぞ…」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「おぉワリィワリィ……って伏見、お前が参加するなんてな」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「いいじゃん、楽しみになってきた」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    ――軽やかに見えて、底の見えない少年。<br>岡野ヨウタの登場により、華やかな舞踏会の空気は、ほんの少しだけ戦いの匂いを帯びはじめた。 
+
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    ヨウタに促され、祭事委員の生徒が一歩前へ進み出る。<br>ダンスホールに響くのは、わずかな靴音と、咳払いの音だけだった。 
+  
+
+
+</div>
+
+
+
+<div class="mem8 right">
+<span>祭事委員</span>
+<p>
+
+      
+    「――コホン。では、これより『月夜杯』のルールを説明します」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    その声がマイクを通して響くと、ホールの照明がやや落とされ、<br>会場全体が一瞬、静寂に包まれる。<br>煌めく照明の中、誰もが次の言葉を待っていた。 
+
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    祭事委員は、淡々と一般生徒向けのルールを読み上げていく。<br>――だが、その合間に忍者たちの耳へだけ、別の“声”が届いた。<br>それは、忍び語りの術による密やかな伝達。<br>「忍びに課されたもう一つの月夜杯ルール」が、彼らの脳裏に刻まれる。
+
+</div>
+
+<div class="mem8 right">
+<span>祭事委員</span>
+<p>
+
+      
+    ●大会ルール<br>・舞踏会は、これより一週間後（2サイクル後）、満月の夜に開かれる。<br>・舞踏会までにパートナーを見つけること。すでに成立したペアのいずれかをパートナーにすることはできない。<br>・舞踏会中、忍者生徒は、一般生徒に直接手を出してはいけない。<br>・舞踏会中、審査員は参加者の舞踏を審査し、残りペアが三組になるまで、落選させていく。落選したペアは観客席に戻る。<br>・最終的にホールに残った三組で衆人環視の中、一般生徒に気づかれないよう、踊りながら戦闘を行う。<br>・戦闘から誰かが脱落すると、そのペアごと脱落する。<br>・プロット時、ペアは同じプロットになる。プレイヤーとペアを組んでいるNPCは、そのプレイヤーが行ったプロットと同じ値になる。PC同士がペアになった場合、二人で相談してプロットを行う。<br>・NPCは「心を開いている」状態だと、パートナーの望むタイミングで奥義を使用してくれる。心を開く条件は、各NPCの【秘密】に書いてある。<br>・優勝したペアは互いに好きな【感情】を獲得できる。 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    やがて説明が終わると、ざわめきが戻る。<br>参加者たちは視線を交わしながら、自然と周囲を見渡した。<br>――おそらく、最後まで勝ち残るのはこの中の三組。 
+
+</div>
+
+
+
+<div class="mem8 right">
+<span>祭事委員</span>
+<p>
+
+      
+    「月夜杯までの間、このダンスホールは代表選手のために開放します」 
+  
+</p>
+</div>
+<div class="mem8 right">
+<span>祭事委員</span>
+<p>
+
+      
+    「各位、練習にはげんでください。それでは一週間後、御斎学園生徒にふさわしい活躍を期待します」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「フ、誰と組もうが月夜杯を制するのは他の誰もない余であると最初から決まっている」口元から笑みがかすかに見える 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「大口たたく前に、組んでもらえるように性格を改めるんだな」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「とはいえ、組む相手が勝利に関わりそうであるな」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    祭事委員の言葉を最後に、拍手が湧き起こる。<br>光がゆっくりと戻り、音楽が再び流れ始めた。<br>だが――忍の者たちの耳には、鼓動の音しか響いていない。<br><br>こうして、「月夜杯」へ向けた一週間が始まる。 
+
+
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    導入〆 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    メインフェイズ 
+  
+</p>
+</div>
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg5"></div></div>
+<div class="log">
+
+
+<div class="kp LtoR-early">
+      
+    [ GM ] サイクル : 0 → 1 
+  
+</div>
+
+<div class="kp LtoR-early">
+      
+    [ GM ] シーン : 0 → 1 
+  
+
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    月夜杯シーン表 1D6 月夜杯シーン表(6) ＞ 学生寮の一室。モダンな内装が設えられ、綺麗に整理整頓された部屋は快適そうだ。よく見ると住人の趣味や性格が見えてくるようだ。
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    登場人物：火口ツヨメ、伏見源二 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+ 源二は自室のの部屋をノックする音に気付く 
+
+
+</div>
+
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「誰だ、こんな夜遅くに」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「出るのが遅い」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「…閉めてもいいか」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「不許可だ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「月夜杯についてだろう、人目に触れるから中に入ってくれ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「そうだ、話が早い男は嫌いじゃない」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「君は誰かとパートナーをもう組んだのか」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……まだだ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「そういう貴様は決めているのか？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「…まだ誰とも組んでいない」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「フン、それもそうだろうな。わざわざ貴様のような凡愚を選ぶのは好き者くらいだろう」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「そんな罵倒を聞くために部屋に入れたわけじゃないんだが」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「本題を言ってくれ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「フ、そう言うな。貴様にも悪くない話を持ち出してやろうというのだ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「――特別に、余の家来になることを許可しても良いぞ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「むむむ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「嬉しくて声も出ないようだな、何も言わずともよい――余の誘いを断る人間など存在しないのだから」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「……君には俺よりもふさわしい人物がいると思う」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「そんなことは百も承知だ、下らぬ遠慮などいらんぞ？」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「俺の参加にはある目的があるんだ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「すまないがほかをあたってくれ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「何？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ハハハ、貴様のような凡愚も冗談をいうのだな」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「――」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……まさかとは思うが本心ではあるまいな？」 
+  
+</p>
+</div>
+<div class="mem4 mem4-2 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「…憎からず思ってくれて嬉しかったよ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「何を勘違いしている」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様のような凡愚と組まなければ、試合の均衡が崩れると思ったにすぎない」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「愚か者には過ぎた施しであったようだな、今日はこれで失礼する」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「お互い全力を尽くそう」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    源二の部屋を後にし、廊下を急ぎ足で歩く 
+  
+
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+      
+    コツコツと窓を叩く音に気づく、窓を見ると比良坂御用達の伝書鳩が羽ばたいている 
+  
+
+
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    『情報判定』誰か一人を選んで判定に使用する特技を指定！ 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    メイコチャンを調べる 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：調査術） (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    情報を受け取る 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    シーン終了 
+  
+</p>
+</div>
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg6"></div></div>
+<div class="log">
+
+
+
+<div class="kp LtoR-early">
+
+    [ GM ] シーン : 1 → 2 
+
+
+</div>
+
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    月夜杯シーン表 1D6 月夜杯シーン表(2) ＞ 学食のカフェテリア。生徒たちがまばらに席につき、思い思い談笑している。
+  
+</p>
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    登場人物：火口ツヨメ、伏見源二、上泉イチズ、安達ヶ原メイコ 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    カフェテリアの前を通り過ぎると、聞き覚えのある声に呼び止められる 
+
+
+</div>
+
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そこのあなた！伏見くんだったかしら」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    経緯は不明だが月夜杯に参加する女子3人がお茶をしていた 
+
+
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「やあ、見慣れない組み合わせだな」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そうかしら？前にも金羊館のまえであったじゃない」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「ど……どうしてあたしがまで……」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「男以外を集めた結果だが？」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「ひぃ！」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そんなに怖がらないの」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「見ての通り、親睦を深めるためにお茶をしていたところなの。あなたもどうかしら？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「祭事があるまでの余興にすぎぬが、余興とは存外大事なものだ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「規律が服を着ているような貴様には到底似合わないがな」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「えぇ、火口さんがおっしゃる通り月夜杯に参加する者同士、仲良くしたいの」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「あなたは火口さんとも知り合いみたいだし、お話を聞かせてくださらない？」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「うぅ……」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+ 
+ メイコは今にも死にそうな表情で助けを求める視線を送ってきている 
+
+
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ああ、じゃあ人もいるし改めて月夜杯の情報が欲しいかな」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「えぇ、よろしくてよ。さ、こちらに」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    イチズは手招きすると火口の横の席を引き、そこに伏見を座らせる。 
+
+
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「どうも。みたところ、安達ヶ原殿も初めての参加か？」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そうね、わたくしはずいぶん昔に1度だけ……それいがいは初めてね」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「けどこの前会った榊原くんは常連よ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ほう……」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「とても強かには見えないが」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「彼は名家の生まれで、この学園でも強い影響力を持っていますわ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「パートナーは皆どのように選ぶのですか？」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そうね……前はたしか相手の方から声をかけられたから」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「基本的に男性の方から声をかけることが多いみたいだけど……別に男女混合である必要はありませんわ」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「わたくしとしては……まぁ、折角の機会だしどなたか殿方を探してみようと思っているけれど……お三方は？」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「あたしはぁ……あ、あたしみたいなのと踊ってくれる人なんて……」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「俺は経験者を探してみようと思う…勝つために」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    ピク 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「――ほう」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「火口殿は？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ほうほう」口元に笑みを浮かべる 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様以外のダレカトに決まっているわ」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「あら？火口さんたちは仲がいいと思ってたのだけれど……」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「イチズ、口を慎めよ？このような凡愚とは死んでも願い下げだ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ああ、別に悪くないぞ？」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そ、そうなの……噂になっていたからてっきり……」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「噂だと？」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「あ、あたしも聞きました……火口さんが夜中に角逆寮の男子練へ行ってたって」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「自信満々で入っていって、意気消沈して出てきたって」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「ちょ、ちょっと安達ケ原さん？！」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「え？……あ」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「むむむ」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+   メイコは恐る恐るツヨメの顔を見やる。
+
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「法螺話」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「本当に下々、俗世は下らん噂程好きだな」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「この余が男の部屋を訪ねるなど有り得ん」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そ、そうでしたの！そうよね……おほほ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「そうだ」<br>空になったティーカップを口に運ぶ 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「（噂は知らないけれど、実はこの目で見たのよね……）」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「そうだな」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ではこれにて失礼する、情報ありがとう」 
+  
+</p>
+</div>
+<div class="mem5 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「え……あ、じゃあ、あたしも……」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そ、そうね！ごめんなさい、呼び止めてしまって」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    『情報判定』誰か一人を選んで判定に使用する特技を指定！ 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    上泉イチズ殿を調べる 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6 2D6&gt;=5 （判定：遁走術） (2D6) ＞ 6[1,5] ＞ 6
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    シーン終了 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ GM ] サイクル : 1 → 2
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ GM ] シーン : 2 → 0 
+
+</div>
+
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg7"></div></div>
+<div class="log">
+
+
+
+<div class="kp LtoR-early">
+
+    [ GM ] シーン : 0 → 1 
+
+</div>
+
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    月夜杯シーン表 1D6 月夜杯シーン表(5) ＞ ダンスホール。月夜杯の練習のためか、多くの生徒たちがダンスの練習を行っている。みんな気合充分だ。
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    登場人物：火口ツヨメ、伏見源二、榊原オウジ、岡野ヨウタ 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ここがホール……悪くないダンスホールだが、余好みではないな」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「まぁ良い、所詮は武舞台――」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「お、トップバッター火口じゃねぇか」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「何？」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「噂になってんぜ、月夜杯の説明が終わったその日に男子寮にアタックかけに行った女がいるって」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「まぁ、空振りだったみたいだけどな！ガハハ！」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ほう、わけのわからぬことを言う貴様は岡野腐れ与太話太郎とかいったか？」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「岡野情報通太郎だよろしくな」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「岡野、それは違うんだ」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「あ？何がだ？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「火口殿は俺の部屋に来たがアタックではない」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「世間話だ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「えぇ……？」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「嘘だろお前……」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+ ヨウタは同情したような目線をツヨメに向ける
+
+</div>
+
+
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「それはそうと岡野、お前もうパートナー決めたのか」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「え？い、いやまだだけど？」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「お前だって人に尋ねてばっかりで決めてないんだろ？」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「（こいつわざとやってるのか判断に困るな……）」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「おや、あなたたちは……こんにちは！」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「月夜杯のお話ですか？僕も混ぜてもらえませんか？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「許可する」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「おう、ボンボンか」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「ありがとうございます。実は中々パートナーになっていただく方が見つからなくて……失礼ながらみなさんもですか？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「どいつもこいつも愚図ばかりで選びかねている」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「はぁ、弱ったな……今年は自分から誘おうかと思っていたのに、こんな時に限って既に決まった方ばかりで」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「はは、火口先輩のお眼鏡に掛かる方はさぞ幸運なんでしょうね」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「あぁ！そうだな！（精一杯の気づかい）」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「…火口殿は口はこうだが実力は確かだしな」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    ピク 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「榊原、貴様は経験が豊富なようだったな、優勝したことはあるのか？」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「はい！初等部の時に何度か」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「たしか優勝者には賞金もあるんだよな」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「けどそれは全部パートナーのおかげですよ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「立場をわきまえるくらいの礼節は知っているようだな」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「えぇ、そうですよ。お小遣い程度ですけど」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「はは、恐縮です」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「小遣い……ボンボンにはそんなもんか。羨ましいねぇ～」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「岡野先輩ならきっと優勝できますよ！」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「はぁ、そうかい」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「優勝すれば、永遠の絆を得られるとのことだが、榊原君はどうなんだい」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「えぇ！それはもちろん……今でもよくしてもらってますよ！」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ふん、法螺話とかわらぬ戯言だろう」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「そうか…伝説は確かなようだな」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    『情報判定』誰か一人を選んで判定に使用する特技を指定！ 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    オウジの情報 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：調査術） (2D6&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「なんだ？」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「いえ、火口先輩のパートナーがまだ決まっていないのであれば……僕となんていかがですか？」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「えっ」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「え？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ほう」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「む」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「いや……なんでも……ないです……」（ツヨメと源二を交互に見ながら） 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「何もおかしいことなどないだろう、優勝候補者を選ぶのは当然だ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「どうしてもというのであれば、考えておいてやっても良い」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「火口先輩ほどの方ならきっと今年の優勝旗は手に入ったも同然ですよ」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「よかった！いい返事を期待していますね」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「伏見おまえ……いいのか？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「榊原君、火口君のあれはOKだと思ってくれ」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「えっ！そうなんですか！」 
+  
+</p>
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「凡愚、燃やされたくなければ二度と余を知ったような口をきくなよ」口元に笑みを浮かべる 
+  
+</p>
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「岡野、俺たちも早く決めないとな」 
+  
+</p>
+</div>
+
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「」 
+  
+</p>
+</div>
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg4"></div></div>
+<div class="log">
+
+<div class="kp LtoR-early">
+
+    [ GM ] シーン : 1 → 2 
+
+</div>
+
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    月夜杯シーン表 1D6 月夜杯シーン表(4) ＞ 金羊館。学外からの賓客をもてなすための洋館。赤い絨毯にマホガニー色の腰壁などアールヌーボー風の調度が美しい。 
+  
+</p>
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    登場人物：火口ツヨメ、伏見源二、上泉イチズ 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「上泉先輩！」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「伏見くん？ごきげんよう」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「どうしたのかしら？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「実は、相談がありまして」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「相談？何かしら」 
+  
+</p>
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「月夜杯、俺と一緒に出てほしいです」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「え？わ、わたくしと？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「はい、先輩なら参加経験がありますし」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「（こ、これって三角関係ってものよね……？けれど……）」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「俺、あまり仲のいい女性がいないもので困っていたんです」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そ、そうなの……？」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「（伏見くん……実直で可愛い後輩だわ……）」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「（結局火口さんの件はわたくしの勘違いだったみたいだし）」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「……わかったわ。わたくしでよければ、是非」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ありがとうございます」 
+  
+</p>
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    伏見と上泉はペアになりました 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「うれしいわ……頑張りましょうね」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「よろしくお願いします」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    『情報判定』誰か一人を選んで判定に使用する特技を指定！ 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    感情修正 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    岡野を調べます 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：水術） (2D6&gt;=8) ＞ 6[1,5] ＞ 6 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    成功↑ 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「それじゃあ、頑張りましょうね伏見くん」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    そういいながら伏見の手を握る 
+
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「はい、今日はありがとうございました」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「おやおや」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「どうやら貴様のような凡愚でも相手を見繕えたようだな、まさに僥倖というものだな」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「おや、火口殿」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「火口さん。ごきげんよう」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「えぇ、彼とパートナーになったの」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ごきげんよう」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「まぁ”そんなことは”余にはどうでも良いことだ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「何か用があったのか、火口殿」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「そうだ、聞く価値もないそんな瑣末事よりも大事な話がな」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「あら、席を外した方がいいかしら？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「すぐに終わる話だ」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「（なんだか火口さん……怒ってる？）」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「どうしたんだ、話なら聞くぞ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「明日の舞踏会、どうにも裏が燻っているようだ。鼻につく」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    NPC4の情報を伝える 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    NPC2の情報を伝える 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様ら、何か知っているか？」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ■NPC2岡野ヨウタの秘密：<br>あなたの一族には「覇王眼」と呼ばれる家宝が伝わっていた。<br>しかし、過去にある忍者に奪われ、今は「金羊館」の特別貴賓室に隠されている。<br>あなたの【本当の使命】は、優勝して特別貴賓室に入り「覇王眼」を取り返すことだ。<br>あなたは【判定妨害】の奥義を持っており、自分に何らかの忍具をくれたキャラクターに心を開く。 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ■NPC4安達ヶ原メイコの秘密：<br>あなたは人間社会に混乱をもたらそうとする危険分子「夜獣の裔（やじゅうのすえ）」の一員だ。<br>あなたは結社から「月夜杯」の舞台上で、榊原オウジを暗殺せよという忍務を受けている。<br>あなたの【本当の使命】は、榊原オウジを暗殺することである。榊原オウジは以下のいずれかの条件を満たすと暗殺される。<br>・榊原のペアが脱落したとき、まだあなたが戦場にいる。<br>・あなたが榊原とペアを組む。<br>あなたは【範囲攻撃】の奥義を持っており、自分と同じような危険分子のキャラクターに心を開く。 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そ、そんな……安達ケ原さんが？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「明日の舞踏会、雲行きが怪しそうだな」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「火口殿、パートナーは決まったんだろ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ああ、王子と組むことにした」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様より、気遣いができて、お前より女のエスコートもうまい。お前より顔もいいしな」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「そうか、オウジも優勝経験のある凄腕だしな。いい勝負ができそうだよ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ハハ、そうだな」 
+  
+</p>
+</div>
+<div class="mem6 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「……そうね、彼の事は火口さんにお願いしましょう」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「良かったな凡愚、”仲のいい女性がいない”貴様が女と組むとは思わなかったが、楽しみにしているよ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ああ、楽しみにしていてくれ」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    シーン終了 
+  
+</p>
+</div>
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg7"></div></div>
+<div class="log">
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    マスターシーン 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    登場人物：火口ツヨメ、榊原オウジ 
+  
+</p>
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+   二人と別れた後、オウジから呼び出しがかかった。 
+  
+
+</div>
+
+
+
+
+
+<div class="kp LtoR-early">
+
+    返事を聞かせてほしいということでダンスホールで落ち合う事となった 
+
+</div>
+
+
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「火口先輩！よかった来ていただいたんですね」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「それで……パートナーの件なんですけど」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ああ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「特別に余の手を取ることを許可する」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ツヨメとオウジはペアになりました 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「よかった……断られたらどうなることかと……」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「なにせ……」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「ボクの目的を知っているようだからな」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+   今までの柔らかな笑みが嘘だったかのように目の前の男の表情が変わる 
+
+</div>
+
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「やれやれ……本当に君たちシノビは余計なことばかりしてくれる」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「まぁいい、君が馬鹿じゃないことくらいはわかっている。せいぜい役に立ってくれよ？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「不敬である。貴様の立場など知ったことではない」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ただ勝率が高い者を選んだだけだ」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「ほう、弁えてるじゃないか」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「余は負けるのが嫌いだ……何事に置いても。勝つためにはどんな手段を取ろうと構わない」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「そうかい？そういう割には随分とご執心してたみたいだけど」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「それ以上踏み込むことは許可しない」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「おっと！失恋話は犬も食わないか……失礼失礼」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    男は挑発的な視線をツヨメに向ける
+
+</div>
+
+
+
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「ま、期待しているよ”先輩”」 
+  
+</p>
+</div>
+<div class="kp LtoR-early">
+
+    男は後ろ手を振りながらダンスホールを後にする 
+
+</div>
+
+
+
+
+
+
+<div class="kp LtoR-early">
+
+    満月の夜、雲一つなかった夜に暗雲が立ち込め始めた 
+
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    シーン終了 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    メインフェイズ終了 
+  
+</p>
+</div>
+
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg7"></div></div>
+<div class="log">
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    クライマックスフェイズ 
+  
+</p>
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    煌びやかなシャンデリアの光が、ダンスホールの床を照らしていた。<br>磨き上げられた大理石の床には、天井の光が幾重にも反射し、<br>その中央に、今年の代表たちが集う。 
+ 
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+      
+    観客席は吹き抜けの上階にまでぎっしりと埋まり、生徒たちが息をのんで見下ろしていた。 
+  
+
+</div>
+
+
+
+
+<div class="kp LtoR-early">
+
+    ――優勝杯の返還が始まる。<br>昨年の覇者たちが壇上に上がり、銀の杯を祭事委員へと手渡すと、<br>ホール全体に拍手が湧き上がった。 
+  
+
+</div>
+
+<div class="mem8 right">
+<span>祭事委員</span>
+<p>
+
+      
+    「――これより、御斎学園月夜杯を開催します！」 
+  
+</p>
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+      
+    宣言と同時に、オーケストラの弦が弾ける。<br>ホールに満ちる旋律は、まるで夜を照らす月光そのもの。<br>リズムに導かれるように、少年少女たちが舞い始めた。 
+  
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    絹の裾が揺れ、靴音が重なり合う。<br>一組、また一組と、音楽の波に溶けていくように踊る。<br>華やかな笑顔の裏に、競い合う心の火がちらついていた。 
+  
+
+</div>
+
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「凡愚め、あのような硬い動きで最後まで残る気はあるのか？」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「そっちこそ、キチンとリードについてきたまえ」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    やがて――審査員の札が上がる。<br>ひとつ、またひとつ。<br>札が上がるたびに、ペアは静かに退場していく。<br>歓声とため息が交錯し、ホールの熱はさらに高まる。 
+
+
+</div>
+
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「リードしている気になっているのか？凡人に合わせているのだ、加減が難しい」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「わかってないな……激しくすればいいってもんじゃない」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「学生らしく魅せることも大事なのさ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「だんだん人が減ってきましたね」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そうね、けど最後まで油断は禁物でしてよ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ダンスは任せてください、最近岡野とずっと練習してたんで」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そうなの？なら、遠慮せずにいくわね？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「どうぞ。それにしても、今日の先輩の格好は…」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「すごいです」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そ、そう？……ちょっと大胆だったかしら」 
+  
+</p>
+</div>
+<div class="mem4 mem4-2 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「いえ、先輩らしい選択だと思います」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「（両脇の寒暖差が……）」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    そして、残ったのは三組。<br>舞台に立つのは、PCたちと、名を馳せるNPCたち。<br>光の中、視線が交わり、微かな緊張が走る。<br>誰もが感じていた――ここからが本当の「舞踏会」だ、と。 
+ 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    オーケストラが再び高らかに鳴り響く。<br>月夜杯の夜、真なる勝負が幕を開けた。 
+  
+
+</div>
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    戦闘開始！ 
+  
+</p>
+</div>
+
+<div class="mem9 mem9-2 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      ハグレモノ<br>
+    特技：火術、遁走術、隠形術、隠蔽術、野戦術、瞳術<br>
+忍法：接近戦攻撃、【爆破】、【返し技】、【連撃】、【刃隠】
+
+  
+</p>
+</div>
+
+
+<div class="mem6 mem6-4 right">
+<span>上泉 イチズ</span>
+<p>
+
+     鞍馬神流<br> 
+    特技：砲術、走法、刀術、盗聴術、見敵術、結界術<br>
+忍法：接近戦攻撃、【時雨】、【無拍子】、【陽炎】、【後の先】
+  
+</p>
+</div>
+
+<div class="mem5 mem5-4 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      隠忍の血統<br>
+    特技：針術、飛術、詐術、召喚術、言霊術、千里眼の術<br>
+忍法：接近戦攻撃、【流星雨】、【痛打】、【サトリ】、【鬼影】
+
+  
+</p>
+</div>
+
+
+<div class="mem7 mem7-2 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「権謀術数」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    兵糧丸、神通丸を獲得 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    メイコとイチズにマヒ 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「ふん、これ以上手を煩わさせるなよ？」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    choice[《砲術》,《走法》,《刀術》,《盗聴術》,《見敵術》,《結界術》] (choice[《砲術》,《走法》,《刀術》,《盗聴術》,《見敵術》,《結界術》]) ＞ 《盗聴術》
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ご苦労、貴様はこれで用済みだ」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    choice[《針術》,《飛術》,《詐術》,《召喚術》,《言霊術》,《千里眼の術》] (choice[《針術》,《飛術》,《詐術》,《召喚術》,《言霊術》,《千里眼の術》]) ＞ 《千里眼の術》
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「さぁここからだ、余の舞いを高みからみるがいい」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    王子を空中に放り投げる 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「落ちてくるまでには終わる」 
+  
+</p>
+</div>
+<div class="mem7 left">
+<span>榊原 オウジ</span>
+<p>
+
+      
+    「ッ！」 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ GM ] ラウンド : 0 → 1 
+
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    サトリ 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：言霊術） (2D6&gt;=8) ＞ 9[3,6] ＞ 9 ＞ 成功
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    戦闘に参加しているキャラクターの中から一人を目標に選ぶ。指定特技の判定に成功すると、1~6の好きな数字を宣言する。その数字が目標のプロットのサイコロの目と同じだったら、「呪い」の変調を与える。 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    sc4 ツヨメ c(4) ＞ 4
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] がダイスシンボルを公開。出目は 1 です。 <br>
+   [ 安達ヶ原 メイコ / 岡野 ヨウタ ] がダイスシンボルを公開。出目は 4 です。 <br>
+   [ 伏見 源二 / 上泉 イチズ ] がダイスシンボルを公開。出目は 2 です。 <br>
+
+</div>
+ 
+  
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット4 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    d66 (D66) ＞ 36
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    d66 (D66) ＞ 25
+  
+</p>
+</div>
+
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem5 mem5-3 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    ■奥義<br>《群針角》<br>指定特技：針術<br>効果　　：範囲攻撃<br>演出　　：額から伸びた角が無数の針に分裂し<br>て周囲に降り注ぐ。 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    《群針角》<br>効果　　：範囲攻撃<br>目標→ゲンジ、イチズ、ツヨメ 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 忍術 : 1 → 0 <br>
+    [ 火口 ツヨメ ] 戦術 : 1 → 0 
+
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 伏見 源二 ] 妖術 : 1 → 0 <br>
+    [ 伏見 源二 ] 体術 : 1 → 0 
+
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 上泉 イチズ ] 生命力 : 6 → 4
+
+</div>
+
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    何もしない 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット2 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    D66 (D66) ＞ 16
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    D66 (D66) ＞ 46
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「フン、女らしい良い技だ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    【水霊】みずち<br>目標→メイコ 
+  
+</p>
+</div>
+<div class="mem4 mem4-2 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=5 -2（判定：水術）  (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    1D6  (1D6) ＞ 6
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    遁甲符 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 安達ヶ原 メイコ ] 忍具 : 2 → 1 
+
+</div>
+
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=5 -2（判定：水術） (2D6&gt;=5) ＞ 6[3,3] -2 ＞ 4 ＞ 失敗
+  
+</p>
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「なんてこった」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「いい動きでしたわ！」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    【時雨】→メイコ、ツヨメ 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    陽炎 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：刀術） (2D6&gt;=5) ＞ 7[2,5] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：砲術） (2D6&gt;=5) ＞ 12[6,6] ＞ 12 ＞ スペシャル(【生命力】1点か変調一つを回復)
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    1d6 (1D6) ＞ 5
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    遁甲符 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……ッ」 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ ヨウタ ] 忍具 : 2 → 1
+
+</div>
+
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「――息があっている」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ほう」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「あぶねぇ！」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：砲術） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「愛の力というやつか、そうかそうか見せつけてくれるな」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「くっ……！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「つ、つよい…！」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG-2&gt;=9 （判定：針術、指定特技：砲術） (SG-2@12#2&gt;=9) ＞ 8[2,6]-2 ＞ 6 ＞ 失敗
+  
+</p>
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    2D6-2&gt;=7 （判定：火術） (2D6-2&gt;=7) ＞ 7[3,4]-2 ＞ 5 ＞ 失敗
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 安達ヶ原 メイコ ] 生命力 : 6 → 4 
+
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 体術 : 1 → 0
+
+</div>
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット1 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    【黄泉軍】→メイコ 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=7 （判定：傀儡の術） (SG@12#2&gt;=7) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+  
+</p>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「（余が調子を狂わせるなど……！）」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ラウンド終了 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ GM ] ラウンド : 1 → 2 
+
+</div>
+
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット 
+  
+</p>
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] がダイスシンボルを公開。出目は 1 です。<br>
+    [ 伏見 源二 / 上泉 イチズ ] がダイスシンボルを公開。出目は 3 です。    <br> 
+    [ 安達ヶ原 メイコ / 岡野 ヨウタ ] がダイスシンボルを公開。出目は 4 です。 <br>
+
+</div>
+
+
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    無拍子 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：砲術、指定特技：盗聴術） (2D6&gt;=8) ＞ 10[5,5] ＞ 10 ＞ 成功
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「こちらへ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「助かります！」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「チィ！」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット4 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    D66 (D66) ＞ 24
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    D66 (D66) ＞ 56
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    〆 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「権謀術数もものともしないか……、やりおるわ」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    流星雨 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    目標：全員 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    痛打 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：針術） (SG@12#2&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 7[3,4] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：野戦術、指定特技：召喚術） (2D6&gt;=8) ＞ 8[4,4] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=7 （判定：結界術、指定特技：召喚術） (2D6&gt;=7) ＞ 4[2,2] ＞ 4 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：野戦術） (2D6&gt;=8) ＞ 8[3,5] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「獣は見境いという者を知らんらしいな」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem9 mem9-1 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    ■奥義<br>《目は口ほどにモノを言い》<br>指定特技：瞳術<br>効果　　：判定妨害<br>演出　　：にらみつけた対象の心的外傷を思い出させ、集中を途切れさせる。 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    ■奥義<br>《目は口ほどにモノを言い》<br>指定特技：瞳術<br>→目標はツヨメ 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    判定失敗 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 妖術 : 1 → 0 <br>
+    [ 火口 ツヨメ ] 器術 : 1 → 0 
+
+</div>
+
+
+
+<div class="mem6 mem6-3 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    ■奥義<br>《鉄骨護身》<br>指定特技：結界術<br>効果　　：絶対防御<br>演出　　：自分の骨に刻まれた結界術式を起動し、そのこうどを極限まで高めて攻撃を受け止める。 
+  
+</p>
+</div>
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「（伏見くんにかっこ悪いところは見せられないわ！）」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット2 
+  
+</p>
+</div>
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    D66 (D66) ＞ 26
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    D66 (D66) ＞ 35
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    【土竜吼】→メイコ 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6-2&gt;=5 （判定：掘削術） (2D6-2&gt;=5) ＞ 8[2,6]-2 ＞ 6 ＞ 成功
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG&gt;=10 （判定：飛術、指定特技：掘削術） (SG@12#2&gt;=10) ＞ 7[1,6] ＞ 7 ＞ 失敗
+  
+</p>
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    回想シーン 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ■PC2の秘密3：<br>あなたはある人物に恋している。<br>導入フェイズ終了時に、NPCの中から好きなキャラクター一人を選び、その人物の名前をこっそりGMに伝えること。<br>あなたは「月夜杯」を通して、その人物と仲良くなりたいと思っている。<br>　あなたの【本当の使命】は、選んだNPCとペアを組み、<br>パートナーの【使命】（あれば【本当の使命】）を達成することだ。<br>もしPC①があなたより先にそのNPCとペアを組んだ場合、【本当の使命】は「月夜杯」でPC①を脱落させることになる。 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    ダメージ上昇 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 安達ヶ原 メイコ ] 生命力 : 4 → 2
+
+</div>
+
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    時雨 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    →メイコ、ツヨメ 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：砲術） (2D6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    神通丸 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 上泉 イチズ ] 忍具 : 2 → 1 
+
+</div>
+
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：砲術） (2D6&gt;=5) ＞ 4[1,3] ＞ 4 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    遁甲符使用 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 伏見 源二 ] 忍具 : 2 → 1 
+
+</div>
+
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：砲術） (2D6&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「ッ！（足がっ……！）」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ドンマイです…」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット1 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「さっきから」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「いちゃいちゃ、いちゃいちゃと――」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「忌まわしい」 
+  
+</p>
+</div>
+<div class="mem3 mem3-2 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem3 mem3-2 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    ■奥義<br>《仮面舞踏会＜マスカレード＞》<br>指定特技：火術<br>効果　　：クリティカルヒット<br><br>攻撃を行う代わりに使用できる。自分のプロット値から1以内にいるキャラクター一人を目標に選ぶ。ランダムに特技分野四つを選び、目標の【生命力】を失わせる(すでに失っている【生命力】が選ばれた場合、どの特技分野の【生命力】を失うのかを、目標が選ぶことができる)。<br>演出　　：炎の仮面を相手の顔面に憑依させて、一気に発火させる。灼熱の奥義。 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「燃やしつくしてくれる！」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    対象→イチズ 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「――！」 
+  
+</p>
+</div>
+<div class="mem4 mem4-5 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem4 mem4-5 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    ■奥義<br>《【幽影地吼】ゆうえいちこう》<br>指定特技：掘削術<br>効果　　：絶対防御<br>同じシーンに登場しているキャラクターが【生命力】を失ったときに使用できる(ただし、【生命力】を消費したときには使用できない)。【生命力】を失ったキャラクターの中から一人を目標に選ぶ。目標の【生命力】の減少の中から好きな4点分を軽減することがでさる（0点未満にはならない）。<br>演出　　：伏見ゲンジが静かに息を吐くと、<br>足元の影が地中へ沈み込み、低い咆哮のような震動が走る。<br>次の瞬間、影から弾かれるようにゲンジが現れ、霧で覆いつくす。 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「伏見……源二！」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様ァ……！貴様というやつは！！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「火口殿！君というやつは」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「あ、ありがとう……」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「どうしていつもいつも、余の思い通りにいかぬのだッ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「君は…俺が憎いのではないのか」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「なぜ先輩にばかり！」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「何故忘れる、なぜ気づかない、何故離れていく……」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「なんかすごいことになってんな……」 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ GM ] ラウンド : 2 → 3 
+
+</div>
+
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    烈火の如く仮面の炎が燃え盛る 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    サトリ 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG&gt;=8 （判定：言霊術、指定特技：千里眼の術） (SG@12#2&gt;=8) ＞ 8[2,6] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    sc2 イチズ c(2) ＞ 2
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「（何してるんだろうあの人たち……）」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] がダイスシンボルを公開。出目は 3 です。 <br>
+    [ 安達ヶ原 メイコ / 岡野 ヨウタ ] がダイスシンボルを公開。出目は 2 です。<br>
+    [ 伏見 源二 / 上泉 イチズ ] がダイスシンボルを公開。出目は 2 です。 
+
+</div>
+
+
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    choice[【接近戦攻撃《刀術》】,【時雨《砲術》】,【陽炎《刀術》】,【無拍子《盗聴術》】,【後の先《なし》】] (choice[【接近戦攻撃《刀術》】,【時雨《砲術》】,【陽炎《刀術》】,【無拍子《盗聴術》】,【後の先《なし》】]) ＞ 【後の先《なし》】
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット3 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    【接近戦攻撃】→ゲンジ 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    兵糧丸 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 忍具 : 4 → 3 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 妖術 : 0 → 1 
+
+</div>
+
+
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「――ッ」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    神通丸使用 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 忍具 : 3 → 2 
+
+</div>
+
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「上手くいかないことばかり……」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「それでも」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「届かないなら、届くまで燃やしてやろう！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：野戦術） (2D6&gt;=8) ＞ 11[5,6] ＞ 11 ＞ 成功
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    ■奥義<br>《目は口ほどにモノを言い》<br>瞳術 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=10 （判定：傀儡の術） (2D6&gt;=10) ＞ 9[4,5] ＞ 9 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=7 （判定：見敵術、指定特技：瞳術） (2D6&gt;=7) ＞ 8[2,6] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「わたくしを見なさい」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「伏見……お前さすがに……」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「なんだ？」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「せめて……顔くらいみてやれよ」 
+  
+</p>
+</div>
+
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「この――」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「まだだ！」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    【連撃】 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    【接近戦攻撃】→ゲンジ 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：召喚術） (SG@12#2&gt;=5) ＞ 11[5,6] ＞ 11 ＞ 成功
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：野戦術） (2D6&gt;=8) ＞ 3[1,2] ＞ 3 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「くっ…」 
+  
+</p>
+</div>
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    ■奥義<br>《鉄骨護身》<br>指定特技：結界術 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=7 （判定：召喚術） (SG@12#2&gt;=7) ＞ 7[1,6] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：野戦術、指定特技：結界術） (2D6&gt;=8) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    神通丸 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ ヨウタ ] 忍具 : 1 → 0 
+
+</div>
+
+
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：野戦術、指定特技：結界術） (2D6&gt;=8) ＞ 10[4,6] ＞ 10 ＞ 成功
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「邪魔だては許さん！」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「クッ！」 
+  
+</p>
+</div>
+<div class="mem4 mem4-5 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    兵糧丸使用 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 忍具 : 2 → 1 
+
+</div>
+
+<div class="kp LtoR-early">
+
+      
+    [ 火口 ツヨメ ] 器術 : 0 → 1 
+
+</div>
+
+
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=6 （判定：壊器術） (SG@12#2&gt;=6) ＞ 7[2,5] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    2D6&gt;=9 （判定：隠蔽術、指定特技：掘削術） (2D6&gt;=9) ＞ 10[4,6] ＞ 10 ＞ 成功
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    RCT ランダム分野表(4) ＞ 謀術
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 伏見 源二 ] 謀術 : 1 → 0 <br>
+    [ 伏見 源二 ] 忍術 : 1 → 0     
+
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット2 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    D66 (D66) ＞ 26
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    D66 (D66) ＞ 15
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    D66 (D66) ＞ 15
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    D66 (D66) ＞ 12
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    ■奥義<br>《群針角》<br>指定特技：針術 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    →ツヨメ 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「岡野、お前らパートナーじゃないのか」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「邪魔しないで」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「だけどよぉ……このままじゃああんまりだろ」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「ちょっと話くらい……」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「邪魔」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「えぇ……」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「（なんかすげぇ雰囲気変わってるし……）」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    2D6&gt;=7 （判定：火術、指定特技：針術） (2D6&gt;=7) ＞ 4[2,2] ＞ 4 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=7 （判定：火術） (SG@12#2&gt;=7) ＞ 6[1,5] ＞ 6 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ッ……」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    D66 (D66) ＞ 14
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    D66 (D66) ＞ 14
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    D66 (D66) ＞ 25
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    D66 (D66) ＞ 15
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    時雨→メイコ、ツヨメ 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    陽炎 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：刀術） (2D6&gt;=5) ＞ 8[3,5] ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：砲術） (2D6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「こ、この女ァ……！」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様さえいなければ！」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「？」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「余が……ッ」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「余が先に好きだったのに……！！」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    回想シーン！ 
+  
+</p>
+</div>
+
+
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg1"></div></div>
+<div class="log">
+
+<div class="kp LtoR-early">
+
+  「伏見の男にだけは絶対に負けるな」
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    母に幾度も聞かされてきた言葉だ。 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+   火口は女系の忍び貴族として圧倒的地位を誇る名家。 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    伏見の一族とは常に任務の功績で競り合ってきた過去があるらしい。
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    幼き時から、火口を継ぐものとして厳しい教えを受けてきた。<br>伏見源二とであったのは未熟な下忍の頃だ。 
+ 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    ―――― 
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    ―― 
+
+</div>
+
+
+<div class="mem11 left">
+<span>ツヨメ</span>
+<p>
+
+      
+    「お前が伏見源二だな！」 
+  
+</p>
+</div>
+<div class="mem12 right">
+<span>ゲンジ</span>
+<p>
+
+      
+    「そうだ！オレこそ伏見ゲンジ！」 
+  
+</p>
+</div>
+<div class="mem11 left">
+<span>ツヨメ</span>
+<p>
+
+      
+    「母上から聞いていたよりも弱そうな男だ！」 
+  
+</p>
+</div>
+<div class="mem12 right">
+<span>ゲンジ</span>
+<p>
+
+      
+    「なんだと！？おまえこそ名をなのれい！」 
+  
+</p>
+</div>
+<div class="mem11 left">
+<span>ツヨメ</span>
+<p>
+
+      
+    「火口ツヨメ、貴様を倒す女だ……覚えておくがいい」 
+  
+</p>
+</div>
+<div class="mem12 right">
+<span>ゲンジ</span>
+<p>
+
+      
+    「ひぐちつよめだな！オレはおまえなんかにまけないぞ！」 
+  
+</p>
+</div>
+<div class="mem12 right">
+<span>ゲンジ</span>
+<p>
+
+      
+    「おまえなんか、ちっちゃくてよわそうなやつなんかに！」 
+  
+</p>
+</div>
+<div class="mem11 left">
+<span>ツヨメ</span>
+<p>
+
+      
+    「男が女に勝とうなど笑止千万、次の任務で勝負してやってもいい！」 
+  
+</p>
+</div>
+<div class="mem12 right">
+<span>ゲンジ</span>
+<p>
+
+      
+    「いいだろう！負けたほうが勝ったほうの言うこと何でもひとつ、聞くってのはどうだ」 
+  
+</p>
+</div>
+<div class="mem11 left">
+<span>ツヨメ</span>
+<p>
+
+      
+    「良かろう、結果は知れているのだから――」 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    ―― 
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    ―――― 
+
+</div>
+
+
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    そうして始まった関係は、共に競いあう日々は互いに切磋琢磨する日々といってもよかった 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    ある日、伏見源二が任務に失敗して助からない状態だと聞いたとき、私がはじめに感じたのは――あるいは喪失だったのかもしれない 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    斜歯忍軍の特殊技術により、命だけは取り留めたようだが、生身の身体と記憶のほとんどを失っているようだった。 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    再び出会った時、誰とも知らぬ人間と会話されているようで。苦し紛れに出たのはいつもの悪態。 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    素直になれない自分が悪い、そんなことは分かっている。それでも―― 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    回想シーン終わり 
+  
+</p>
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ■PC1　秘密2：<br>あなたは代々続く名門忍者の家系に生まれた。<br>あなたの親はPC②の家をライバル視しており、<br>PC②には負けないようにと厳しく育てられてきた。<br>しかし、あなたはそんなPC②のことを憎からず想っており、<br>秘かに仲良くなりたいと願っている。<br>　あなたの【本当の使命】は、PC②とペアを組み「月夜杯」で優勝することだ。<br>もしPC②とペアを組めなかった場合、【本当の使命】は「月夜杯」でPC②とペアを組んだNPCを脱落させることになる。 
+  
+</p>
+</div>
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg7"></div></div>
+<div class="log">
+
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=6 （判定：火術） (SG@12#2&gt;=6) ＞ 6[2,4] ＞ 6 ＞ 成功
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「ッ！避けられた？！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    【土竜吼】→メイコ 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6-2&gt;=5 （判定：掘削術） (2D6-2&gt;=5) ＞ 9[4,5]-2 ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG&gt;=10 （判定：飛術、指定特技：掘削術） (SG@12#2&gt;=10) ＞ 8[3,5] ＞ 8 ＞ 失敗
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ 安達ヶ原 メイコ ] 生命力 : 2 → 1 
+
+</div>
+
+
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    接近戦攻撃→ゲンジ 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：隠形術） (2D6&gt;=5) ＞ 6[1,5] ＞ 6 ＞ 成功
+  
+</p>
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=10 （判定：登術） (2D6&gt;=10) ＞ 10[4,6] ＞ 10 ＞ 成功
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    連撃 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    接近戦攻撃→ゲンジ 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：隠形術） (2D6&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=10 （判定：登術） (2D6&gt;=10) ＞ 9[4,5] ＞ 9 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    神通丸使用 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 伏見 源二 ] 忍具 : 1 → 0 
+
+</div>
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=10 （判定：登術） (2D6&gt;=10) ＞ 8[2,6] ＞ 8 ＞ 失敗
+  
+</p>
+</div>
+
+
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「このッ……バカ野郎！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    RCT ランダム分野表(1) ＞ 器術
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 伏見 源二 ] 器術 : 1 → 0
+
+</div>
+
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「痛いぞ岡野！」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「言っても聞かねぇからだろ！」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「暑苦しい……」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ラウンド終了 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 器術 : 1 → 0 <br>
+    [ 火口 ツヨメ ] 妖術 : 1 → 0     <br><br><br>
+
+</div>
+
+<div class="kp LtoR-early">
+
+    [ GM ] ラウンド : 3 → 4 
+
+</div>
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    極地に変更 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット 
+  
+</p>
+</div>
+
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    【サトリ】 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG&gt;=8 （判定：言霊術、指定特技：千里眼の術） (SG@12#2&gt;=8) ＞ 10[5,5] ＞ 10 ＞ 成功
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    sc2 イチズ c(2) ＞ 2
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] がダイスシンボルを公開。出目は 5 です。<br>
+    [ 安達ヶ原 メイコ / 岡野 ヨウタ ] がダイスシンボルを公開。出目は 5 です。 <br>
+    [ 伏見 源二 / 上泉 イチズ ] がダイスシンボルを公開。出目は 4 です。 
+
+</div>
+
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    無拍子 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=8 （判定：砲術、指定特技：盗聴術） (2D6&gt;=8) ＞ 7[3,4] ＞ 7 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「クッ！」 
+  
+</p>
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット5 
+  
+</p>
+</div>
+
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    D66 (D66) ＞ 23
+  
+</p>
+</div>
+
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    D66 (D66) ＞ 24
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    D66 (D66) ＞ 12
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「メイコ！」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「？」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様、私に協力しろ」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「？」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……王子の首はくれてやる」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「信用する価値がない」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「あなたを仕留めて忍務を果たす」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    ■奥義<br>《群針角》<br>指定特技：針術 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    →ツヨメ 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「（――流石にここで考えを改めるほど愚かではないか）」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=7 （判定：火術） (SG@12#2&gt;=7) ＞ 10[4,6] ＞ 10 ＞ 成功
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    兵糧丸使用 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+        [ 火口 ツヨメ ] 器術 : 0 → 1 <br>
+        [ 火口 ツヨメ ] 忍具 : 1 → 0 
+
+</div>
+
+
+
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「面倒が多いこと多いこと……」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「それらを全て覆す、嫉妬の炎を喰らうがいい」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    【黄泉軍】→伏見源二 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：傀儡の術） (SG@12#2&gt;=5) ＞ 6[3,3] ＞ 6 ＞ 成功
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    遁甲符使用 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 上泉 イチズ ] 忍具 : 1 → 0
+
+</div>
+
+
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：傀儡の術） (SG@12#2&gt;=5) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「やらせないっ！」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「この女」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「上泉イチズゥ……」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    接近戦攻撃→ゲンジ 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    SG#5&gt;=5 （判定：隠形術） (SG@12#5&gt;=5) ＞ 3[1,2] ＞ 3 ＞ ファンブル
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様さえいなければ……ッ」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「すまねぇ……俺には見ていることしかできねぇんだ……」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット4 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    D66 (D66) ＞ 22
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    D66 (D66) ＞ 55
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「さぁ、伏見くん」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「先輩…」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    【接近戦攻撃】→メイコ 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6-2&gt;=5 （判定：野戦術） (2D6-2&gt;=5) ＞ 10[4,6]-2 ＞ 8 ＞ 成功
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    ■奥義<br>《目は口ほどにモノを言い》<br>指定特技：瞳術 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    奥義破り 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=7 （判定：見敵術、指定特技：瞳術） (2D6&gt;=7) ＞ 2[1,1] ＞ 2 ＞ ファンブル
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=12 （判定：野戦術） (2D6&gt;=12) ＞ 6[1,5] ＞ 6 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    6→1で失敗 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    【一夜城】 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=10 （判定：水術） (2D6&gt;=10) ＞ 10[4,6] ＞ 10 ＞ 成功
+  
+</p>
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    戦場を極地→水中に変更
+  
+</p>
+</div>
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    時雨→メイコ、ツヨメ 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    陽炎 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：刀術） (2D6&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    SG#4&gt;=5 （判定：砲術） (SG@12#4&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG-2&gt;=9 （判定：針術、指定特技：砲術） (SG-2@12#2&gt;=9) ＞ 6[2,4]-2 ＞ 4 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    神通丸使用 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 安達ヶ原 メイコ ] 忍具 : 1 → 0 
+
+</div>
+
+
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    SG-2&gt;=9 （判定：針術、指定特技：砲術） (SG-2@12#2&gt;=9) ＞ 3[1,2]-2 ＞ 1 ＞ 失敗
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 安達ヶ原 メイコ ] 生命力 : 1 → 0 
+
+</div>
+
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そこっ！」 
+  
+</p>
+</div>
+<div class="mem5 mem5-2 left">
+<span>安達ヶ原 メイコ</span>
+<p>
+
+      
+    「ぅ……！」 
+  
+</p>
+</div>
+<div class="mem9 left">
+<span>岡野 ヨウタ</span>
+<p>
+
+      
+    「チッ……ここまでか」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    メイコ、ヨウタペア脱落 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ラウンド終了 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ GM ] ラウンド : 4 → 5 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 器術 : 1 → 0 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+
+
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] がダイスシンボルを公開。出目は 1 です。 <br>
+    [ 伏見 源二 / 上泉 イチズ ] がダイスシンボルを公開。出目は 4 です。 
+
+</div>
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    無拍子 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    SG#4&gt;=8 （判定：砲術、指定特技：盗聴術） (SG@12#4&gt;=8) ＞ 7[3,4] ＞ 7 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット4 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    〆 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    〆 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット1 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    【黄泉軍】→ゲンジ 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：傀儡の術） (SG@12#2&gt;=5) ＞ 5[1,4] ＞ 5 ＞ 成功
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「伏見源二ィ！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=13 （判定：野戦術） (2D6&gt;=13) ＞ 7[2,5] ＞ 7 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem4 mem4-5 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「ぬぅああああ！」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=6 （判定：壊器術） (SG@12#2&gt;=6) ＞ 10[4,6] ＞ 10 ＞ 成功
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「届け……ッ！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    WT 変調表(3) ＞ 重傷:命中判定、情報判定、感情判定を行うたびに、接近戦ダメージを１点受ける。この効果は累積しない。各サイクルの終了時に、《生存術》で行為判定を行い、成功するとこの変調は無効化される。
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ラウンド終了 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ GM ] ラウンド : 5 → 6 
+
+</div>
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] がダイスシンボルを公開。出目は 6 です。<br> 
+    [ 伏見 源二 / 上泉 イチズ ] がダイスシンボルを公開。出目は 3 です。
+
+</div>
+
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット6 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    【黄泉軍】→イチズ 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：傀儡の術） (SG@12#2&gt;=5) ＞ 4[2,2] ＞ 4 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット3 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    【一夜城】 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=10 （判定：水術） (2D6&gt;=10) ＞ 7[2,5] ＞ 7 ＞ 失敗
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ GM ] ラウンド : 6 → 7 
+
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] がダイスシンボルを公開。出目は 6 です。 <br>
+    [ 伏見 源二 / 上泉 イチズ ] がダイスシンボルを公開。出目は 4 です。 
+
+</div>
+
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット6 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    【黄泉軍】→イチズ 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    SG&gt;=5 （判定：傀儡の術） (SG@12#2&gt;=5) ＞ 3[1,2] ＞ 3 ＞ 失敗
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    プロット4 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    D66 (D66) ＞ 25
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    D66 (D66) ＞ 55
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「伏見源二……」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「本当に何もかも――」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「覚えていないんだな」 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「あの日の約束も……」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「これが終わったら…」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「少し話し合わないか？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    2D6&gt;=5 （判定：水術） (2D6&gt;=5) ＞ 7[1,6] ＞ 7 ＞ 成功
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    奥義！！ 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    重傷防ぐ 
+  
+</p>
+</div>
+<div class="mem3 mem3-3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「――ッ」 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ 火口 ツヨメ ] 謀術 : 1 → 0 
+
+</div>
+
+
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「…」 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    戦闘終了！ 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    勝者：ゲンジ＆イチズペア！ 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    戦果：お互いに好きな【感情】を得ることができます 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    イチズ→ゲンジ　愛情 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    ゲンジ→イチズ　憧憬 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    ゲンジ→ツヨメ　共感 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「優勝したのね……わたくしたち」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「そうか…本当に…」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「…」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「ありがとう……これで夢が叶ったわ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「先輩…俺と一緒に戦ってくれてありがとうございます」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「先輩、先輩の夢って？」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「えぇ、こちらこそ」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「そうね……ふふ」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「一つは卒業までに月夜杯で優勝する事」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「もう一つは……」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「？」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「……」（ゲンジを見つめる） 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「けど……伏見くんの瞳にはわたくしは映ってなさそうね」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「いえ……きっと誰もあなたの瞳にはうつらないのかも」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    少女は困ったように笑みを浮かべると背を向ける 
+
+</div>
+
+
+
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「……だけど、だからこそ」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「自分から映りに来ている人の事を大切にしてあげた方がいいのではなくて？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「お…」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「俺には先輩の話が難しいです」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「ふふ、そう？」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「なら、簡単にしてあげる」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「ちゃんと、顔を見てあげなさい」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「…はい」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「わかりました」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    彼ら、彼女らの栄誉が称えられ、客席からは二人を称えるように拍手が浴びせられる 
+
+</div>
+
+
+
+<div class="mem8 right">
+<span>祭事委員</span>
+<p>
+
+      
+    「お二人とも優勝おめでとうございます。特別貴賓室へとお越しください」 
+  
+</p>
+</div>
+<div class="mem6 mem6-2 right">
+<span>上泉 イチズ</span>
+<p>
+
+      
+    「……じゃあ、またね。伏見くん」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「上泉先輩！ありがとうございました！」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    彼女はゲンジから離れ、一人で歩きだし優勝杯を受け取る 
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    周囲からは拍手と同時に困惑の声が漏れていた 
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    なにしろ先ほどまで仲睦まじく踊っていた相方がこの場にはいない 
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    2人を祝福する優勝杯は、一人の少女の手に収まっている 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    こうして、この年の月夜杯は奇妙な幕引きを迎えることとなった――
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    ―――― 
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    ―― 
+
+</div>
+
+
+</div></div>
+
+<div class="bg-sp">
+    <div class="bg-over"><div class="bg-inner bg8"></div></div>
+<div class="log">
+
+<div class="kp LtoR-early">
+
+    ――月の光が差し込む御斎学園の中庭。<br>紅葉の影が芝生を染め、遠くでは吹奏楽部の演奏と、観衆のざわめきが風に乗って聞こえてくる 
+  
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    金羊館から背を向け走り去る、少女の姿があった。 
+
+</div>
+
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「二人が優勝杯を受け取る所など、見る価値もない」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「余は負けたのだ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「何もかも足りず、届かず、叶わずで」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「伏見を倒せ？不穏分子を消せ？そんなのもうどうでもいい…」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「この暗がりで一人は危ないぞ？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「やっと見つけた」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……貴様」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「何の用だ、勝ちを気取っていた余の無様を笑いに来たか？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「さっき話があるっていったじゃないか、いなくなってて探したぞ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……凡愚と話すことなどない」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「君になくとも俺にはあるね」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「君、「オレ」のことを知ってるんだろう？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「説明会の日、君と話して懐かしさを覚えたんだ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……だとして、今の貴様には関係のないことだ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「そうなんだ、今の俺には…なにもない」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「心まで機械になったか？どうしようもなく哀れな――」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「（違う）」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「（そんなことを言いたいんじゃない――）」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「俺はオレのことを知りたい。<br>　あのとき失くしたものがあったはずなんだ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「伏見源二……」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「火口殿にその手伝いをしてほしい」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「俺と、…なんていえばいいんだ？」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「なかよくしてくれ？」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……手」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「手を取ることを許可する」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「ありがとう」 
+  
+</p>
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……」俯いて黙りこくる 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+瞬く間の静寂に月夜が射す。
+照らされたフェイスベールの奥、少女の表情がかすかに見える。     
+
+</div>
+
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「……知らんだろうから教えてやろう」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様はあの日、余に負けたあの日から――」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「一生余の家来なのだから」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「分かったか凡愚？貴様は下で、余が上ということだ！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「これで仲なおり…と言いたかったが」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「君というやつは」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「刃向かうきか？余の許可なく、他の女を選びおったことは許していない！」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様は余の前では、呼吸一つでさえ許可制だ」 
+  
+</p>
+</div>
+<div class="mem4 mem4-3 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「はいはい、早く寮に戻りたまえ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「貴様！信じておらんな」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「まぁいい、これからじっくりわからせてやる」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「今後話しがしたいときには俺の部屋には入らないでくれよな」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「――おのれ……！」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「せいぜいひと時の勝利の美酒に酔いしれるがいい！！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「また勝負してもいいぞ」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「君は小さくて弱そうだからな、手加減してやるよ」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「フン、一度の敗北で終わるほど、私は安い女ではないと知らしめてやる」 
+  
+</p>
+</div>
+<div class="mem3 left">
+<span>火口 ツヨメ</span>
+<p>
+
+      
+    「首を洗って待っていろ！凡愚！」 
+  
+</p>
+</div>
+<div class="mem4 right">
+<span>伏見 源二</span>
+<p>
+
+      
+    「また明日な」 
+  
+</p>
+</div>
+
+
+<div class="kp LtoR-early">
+
+    2人の男女が月に照らされている 
+
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    彼らは共に舞踏会を踊ったパートナーではない 
+
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    だがそれでも、互いを想いあうことはできるのだろう 
+
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+    月だけが彼らの行く末を見守っている 
+
+
+</div>
+
+
+
+<div class="kp LtoR-early">
+
+――
+
+</div>
+
+
+<div class="kp LtoR-early">
+
+    ―――― 
+
+</div>
+
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    シノビガミ『月夜杯』fin 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    功績点 
+  
+</p>
+</div>
+
+<div class="kp LtoR-early">
+
+    [ GM ] がダイスシンボルを公開。出目は 2 です。 <br>
+    [ 火口 ツヨメ ] がダイスシンボルを公開。出目は 2 です。 <br>
+    [ 伏見 源二 ] がダイスシンボルを公開。出目は 1 です。 
+
+</div>
+
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ツヨメ：3点<br>ゲンジ：8点 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ■NPC1榊原オウジの秘密：<br>あなたは一般生徒の一人として、私立御斎学園における忍者の影響力を低下させようと思っている。<br>忍者は、あくまで自分たちエリートに使われる存在であるべきだと考えているのだ。<br>オウジは、クライマックスフェイズで戦闘に参加することはないが脱落もしない。<br>この【秘密】を獲得したPCが、オウジとペアになった場合、クライマックスフェイズ開始時に、以下の二つの「権謀術数」の効果を発動する。<br>・好きな忍具を二つ獲得する。<br>・この【秘密】を知らないキャラクターの中から二人を選び「マヒ」の変調を与える。<br>オウジとペアになったPCが優勝すると、そのPCは追加で功績点を1点獲得する。 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    ■NPC3上泉イチズの秘密：<br>あなたは恋愛に憧れており、この機会にステディな関係の彼氏をつくりたいと思っている。<br>あなたは、この【秘密】を一番最初に見た男性キャラクターに対して「愛情」の【感情】を獲得する。<br>あなたは【絶対防御】の奥義を持っており、自分がプラスの【感情】を持っているキャラクターに心を開く。 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    PC1の秘密（いずれか一つを選ぶこと）<br>■PC1　秘密1：<br>あなたは代々続く名門忍者の家系に生まれた。<br>あなたの親はPC②の家をライバル視しており、<br>PC②には負けないようにと厳しく育てられてきた。<br>PC②も月夜杯に参加するなら、絶対に負けるわけにはいかない。<br>　あなたの【本当の使命】は、「月夜杯」でPC②を脱落させることだ。<br><br><br>■PC1　秘密2：<br>あなたは代々続く名門忍者の家系に生まれた。<br>あなたの親はPC②の家をライバル視しており、<br>PC②には負けないようにと厳しく育てられてきた。<br>しかし、あなたはそんなPC②のことを憎からず想っており、<br>秘かに仲良くなりたいと願っている。<br>　あなたの【本当の使命】は、PC②とペアを組み「月夜杯」で優勝することだ。<br>もしPC②とペアを組めなかった場合、【本当の使命】は「月夜杯」でPC②とペアを組んだNPCを脱落させることになる。<br><br><br>■PC1　秘密3：<br>あなたは比良坂機関から特命を受けている。<br>「月夜杯」に表の世に危害をもたらそうとする<br>危険分子が紛れていることが判明しており、<br>その人物の討伐命令を受けているのだ。<br>　あなたの【本当の使命】は、危険分子の【使命】を妨害することである。 
+  
+</p>
+</div>
+<div class="mem1 left">
+<span>GM</span>
+<p>
+
+      
+    PC2の秘密（いずれか一つを選ぶこと）<br>■PC2の秘密1：<br>あなたは代々続く名門忍者の家系に生まれた。<br>あなたの親はPC①の家をライバル視しており、<br>PC①には負けないようにと厳しく育てられてきた。<br>PC①も月夜杯に参加するなら、絶対に負けるわけにはいかない。<br>　あなたの【本当の使命】は、「月夜杯」でPC①を脱落させることだ。<br><br><br>■PC2の秘密2：<br>あなたは忍者による世界征服を企んでいる危険分子、<br>世界征服同好会の一員である。<br>「金羊館」に隠された秘宝「覇王眼」を入手するため大会に参加した。<br>この「覇王眼」の持ち主は、人の心を自在に操ることができると言われている。<br>　あなたの【本当の使命】は、「覇王眼」のありかに関する【情報】を獲得し、それを入手することである。<br><br><br>■PC2の秘密3：<br>あなたはある人物に恋している。<br>導入フェイズ終了時に、NPCの中から好きなキャラクター一人を選び、その人物の名前をこっそりGMに伝えること。<br>あなたは「月夜杯」を通して、その人物と仲良くなりたいと思っている。<br>　あなたの【本当の使命】は、選んだNPCとペアを組み、<br>パートナーの【使命】（あれば【本当の使命】）を達成することだ。<br>もしPC①があなたより先にそのNPCとペアを組んだ場合、【本当の使命】は「月夜杯」でPC①を脱落させることになる。 
+  
+</p>
+</div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br>
+</div></div>
+<script src="../logCon_Respon.js"></script>
+</body></html>
+
+
+
