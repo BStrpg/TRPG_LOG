@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<title>MONOSiriChan</title>
+<html>
+  <head>
+    <meta http-equiv="content-type" charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* CSSはじまり */
+      iframe {
+        /* margin: 0 auto; */
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100%;
+      }
+
+      .OPframe {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100%;
+        z-index: 999;
+        /* background-color: #ffde59; */
+      }
+      .maya{
+        background-color: #FA8181;
+      }
+      .seiran{
+        background-color: #EDD0FF;
+      }
+      .cammy{
+        background-color: #45FF90;
+      }
+      .eris{
+        background-color: #ffde59;
+      }
+
+      .mono{
+        background-color: #000000;
+      }
+
+      .Pmaya{background: url(./logo/MONO_Siri_logo_01.gif) center no-repeat;}
+      .Pseiran{background: url(./logo/MONO_Siri_logo_02.gif) center no-repeat;}
+      .Pcammy{background: url(./logo/MONO_Siri_logo_03.gif) center no-repeat;}
+      .Peris{background: url(./logo/MONO_Siri_logo_04.gif) center no-repeat;}
+      .Pmono{background: url(./logo/MONOSiriChan.gif) center no-repeat;}
+      .img_OP{
+        width: 60vw;
+        height: 60vh;
+        /* margin:0; */
+        /* background: url(./logo/MONO_Siri_logo_01.gif) center no-repeat; */
+        background-size: contain;
+      }
+
+      .OP-enter-active,
+      .OP-leave-active {
+        transition: all 0.4s;
+      }
+      .OP-enter,
+      .OP-leave-to {
+        opacity: 0;
+      }
+      /* CSSここまで */
+    </style>
+  </head>
+  <body>
+    <main id="app">
+      <transition name="OP">
+        <div v-show="loadingActive" class="OPframe mono">
+            <p class="img_OP Pmono"></p>
+        </div>
+      </transition>
+      <iframe
+        src="https://script.google.com/macros/s/AKfycbw20vzOG7-vOoezAQCqy4HHmu6c0Jbk6HlKlSUGtYYPqu-boOp7ex_3aDg3xDQKkdT2Gg/exec"
+        allow="clipboard-read; clipboard-write"
+      ></iframe>
+    </main>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+            loadingActive : true, // ローディング画面
+            logoName: ['maya','seiran','cammy','eris'],
+            random: '',
+        },
+        // computed: {
+
+        // },
+        mounted: function () {
+          // this.randomLogo();
+
+          // 初期化
+          setTimeout(this.loadingToggle, 2000);
+        },
+        methods: {
+          // ローディング変更
+          loadingToggle() {
+            this.loadingActive = !this.loadingActive;
+          },
+          randomLogo() {
+             this.random = 0 + Math.floor( Math.random() * 4 );
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
