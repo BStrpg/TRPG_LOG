@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MONOsiri表</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      /* background-color: #fff; */
+      color: #000;
+    }
+
+    .copy-cell {
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .copy-cell:hover {
+      background-color: #f0f0f0;
+    }
+
+    .copy-cell:active {
+      background-color: #303030;
+    }
+
+    .cell-content {
+      display: inline-block;
+      width: 100%;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .tabs button {
+      padding: 6px 10px;
+    }
+
+    /* PC用はそのまま */
+    .nav-tabs .nav-item .nav-link {
+      padding: 6px 10px;
+    }
+
+    /* スマホ用：横幅均等 */
+    @media (max-width: 768px) {
+
+      .nav-tabs {
+        display: flex !important;
+      }
+
+      .nav-tabs .nav-item {
+        flex: 1 1 0;
+        /* 均等に広がる */
+      }
+
+      .nav-tabs .nav-item .nav-link {
+        text-align: center;
+        /* 文字も中央 */
+        width: 100%;
+      }
+    }
+
+    section {
+      margin-bottom: 24px;
+      margin: 1%;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #999;
+      padding: 6px;
+      vertical-align: top;
+    }
+
+    th.roll,
+    td.roll {
+      width: 60px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    /* PC以上の幅で横並び */
+    @media (min-width: 769px) {
+      .table-wrapper {
+        width: 48%;
+        display: inline-block;
+        vertical-align: top;
+        /* margin: 1%; */
+      }
+    }
+
+    .card {
+      border: 1px solid #000;
+    }
+
+    .card-header {
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .badge {
+      cursor: pointer;
+    }
+
+    .text-left {
+      text-align: left !important;
+    }
+</style>
+</head>
+
+<body>
+
+  <div id="app" class="container py-3 bg-white">
+
+    <!-- タブ -->
+    <ul class="nav nav-tabs mb-3">
+      <li class="nav-item" v-for="(tab, i) in tabs" :key="i">
+        <button class="nav-link" :class="{ active: currentTab === i }" @click="currentTab = i"
+          :style="currentTab===i ? 'background-color:#212529;color:white;' : 'background-color:#f8f9fa;color:black;'">
+          {{ tab.name }}
+        </button>
+      </li>
+    </ul>
+
+    <!-- 表表示 -->
+    <section v-for="table in tabs[currentTab].tables" :key="table.title" class="mb-4"
+      :class="{'table-wrapper': table.useWrapper}">
+      <div class="card border-dark">
+        <div class="card-header bg-dark text-white">
+          {{ table.title }}
+          <span v-show="table.dice">
+            <!-- 複数dice対応 -->
+            <span v-for="(d, i) in (Array.isArray(table.dice) ? table.dice : [table.dice])" :key="i"
+              class="badge btn btn-outline-secondary copy-cell" @click.stop="copyCell(d)">
+              {{ d }}
+            </span>
+          </span>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped mb-0">
+            <thead class="table-dark">
+              <tr>
+                <th v-for="(col, i) in table.columns || ['1D6', '説明']" :key="i" class="text-center">
+                  {{ col }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(row, r) in table.rows" :key="r">
+                <template v-if="!table.columns">
+                  <td class="text-center">{{ row.roll }}</td>
+                  <td class="copy-cell" @click="copyText(row.text)" title="クリックでコピー">
+                    <div class="cell-content"
+                      v-html="table.leftAlignCols?.includes(2) ? row.text.replace(/。/g,'。<br>') : row.text"></div>
+                  </td>
+                </template>
+
+                <template v-else>
+                  <td
+                    v-for="(cell, c) in (row.cols ? (row.roll !== undefined ? [row.roll, ...row.cols] : row.cols) : [row.roll, row.text])"
+                    :key="c" :class="[
+      row.roll !== undefined && c === 0 ? 'roll' : '', 
+      c > 0 && table.leftAlignCols?.includes(c) ? 'text-left' : 'text-center',
+      'copy-cell'
+    ]" @click.stop="copyCell(cell)">
+                    <div class="cell-content"
+                      v-html="c > 0 && table.leftAlignCols?.includes(c) ? cell.replace(/。/g,'。<br>') : cell"></div>
+                  </td>
+                </template>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          currentTab: 0,
+
+          tabs: [
+            {
+              name: '基本',
+              tables: [
+                {
+                  title: 'ファンブル表',
+                  dice: 'FT',
+                  leftAlignCols: [2],
+                  rows: [
+                    { roll: 1, text: '何か調子がおかしい…　そのサイクルの間、すべての行為判定にマイナス１の修正がつく。' },
+                    { roll: 2, text: 'しまった！　好きな忍具を１つ失ってしまう。' },
+                    { roll: 3, text: '情報が漏れる！　あなた以外のキャラクターは、あなたの持っている【秘密】か【居所】の中から、好きなものをそれぞれ一つ知ることができる。' },
+                    { roll: 4, text: '油断した！　術の制御に失敗し、好きな【生命力】を１点失う。' },
+                    { roll: 5, text: '敵の陰謀か？　罠にかかり、ランダムに選んだ変調一つを受ける。' },
+                    { roll: 6, text: 'ふう…　危ないところだった…　特に何も起こらない。' }
+                  ]
+                },
+                {
+                  title: '感情表',
+                  dice: 'ET',
+                  useWrapper: true,
+                  columns: ['1D6', 'プラス', 'マイナス'],
+                  rows: [
+                    { roll: 1, cols: ['共感', '不信'] },
+                    { roll: 2, cols: ['友情', '怒り'] },
+                    { roll: 3, cols: ['愛情', '妬み'] },
+                    { roll: 4, cols: ['忠誠', '侮蔑'] },
+                    { roll: 5, cols: ['憧憬', '劣等感'] },
+                    { roll: 6, cols: ['狂信', '殺意'] }
+                  ]
+                },
+                {
+                  title: '六道表',
+                  dice: 'ET',
+                  useWrapper: true,
+                  columns: ['1D6', '信念', '説明'],
+                  leftAlignCols: [2],
+                  rows: [
+                    { roll: 1, cols: ['凶', '社会や自分自身の破を破壊や闘争、崩壊に巻き込もうとする。'] },
+                    { roll: 2, cols: ['律', '矛盾や弱さを許すことができず、それを正そうとする。'] },
+                    { roll: 3, cols: ['我', '金や名誉、力、自らの理想、安全を手に入れようとする。'] },
+                    { roll: 4, cols: ['情', '家族や友人、恋人など、身近な誰かを愛し、護ろうとする。'] },
+                    { roll: 5, cols: ['忠', '自らの流派や思想、人物に共感し、彼らに殉じようとする。'] },
+                    { roll: 6, cols: ['和', '多くの人が幸せになる未来を信じ、互いに分かり合える道を模索する。'] }
+                  ]
+                },
+                {
+                  title: 'プライズ表',
+                  dice: 'PT',
+                  columns: ['2D6', 'プライズ', '効果'],
+                  leftAlignCols: [2],
+                  rows: [
+                    { roll: 2, cols: ['爆弾', '行為判定にファンブルすると、1D6点の射撃戦ダメージを受ける。その後、このプライズは破壊される。ゲーム終了時に、このプライズを持っていると、功績点を1点獲得する。'] },
+                    { roll: 3, cols: ['集中', '戦闘シーンのとき、1ラウンドに使用できる忍法のコストが1点上昇する。'] },
+                    { roll: 4, cols: ['再生', 'サイクルの終了時に、【生命力】が1点回復する。'] },
+                    { roll: 5, cols: ['障壁', '目標値が10以上の回避判定にプラス1の修正を得る。'] },
+                    { roll: 6, cols: ['加速', '自分が攻撃忍法を使用した時、その回避判定にマイナス1の修正を与えることができる。'] },
+                    { roll: 7, cols: ['治癒', 'ドラマシーンで回復判定を行った際、さらに【生命力】を1点回復するか、変調を1つ回復することができる。'] },
+                    { roll: 8, cols: ['断絶', '誰かが自分を対象とした情報判定や感情判定を行おうとした時、マイナス1の修正を与えることができる。'] },
+                    { roll: 9, cols: ['加護', '自分が集団戦ダメージを受けた時、それを射撃戦ダメージに変更することができる。'] },
+                    { roll: 10, cols: ['記憶', 'ランダムに選んだ特技1種を所持しているものとして扱う。'] },
+                    { roll: 11, cols: ['業物', 'もう1つ【接近戦攻撃】の忍法を特例修得する。その指定特技は、プライズを獲得した時に、獲得したキャラクターが設定することができる。'] },
+                    { roll: 12, cols: ['呪詛', 'さらに2回「プライズ効果表」を振り、その2つの効果をあわせ持つ。このプライズの所持者は、サイクルの終了時に、1点の接近戦ダメージを受ける。'] }
+                  ]
+                }
+
+
+              ]
+            },
+            {
+              name: '変調表',
+              tables: [
+                {
+                  title: '変調表',
+                  dice: 'WT',
+                  columns: ['1D6', '変調', '回復特技', '効果', '累積'],
+                  leftAlignCols: [3],
+                  rows: [
+                    { roll: 1, cols: ['故障', '《絡繰術》', 'すべての忍具が使用不能になる。', '累積しない'] },
+                    { roll: 2, cols: ['マヒ', '《身体操術》', '修得している特技の中からランダムに一つを選び、その特技が使用不能になる。', '特技の数だけ累積'] },
+                    { roll: 3, cols: ['重傷', '《生存術》', '命中判定、情報判定、感情判定を行うたびに、接近戦ダメージを１点受ける。', '累積しない'] },
+                    { roll: 4, cols: ['行方不明', '《経済力》', 'メインフェイズ中、自分以外がシーンプレイヤーのシーンに登場することができなくなる。', '累積しない'] },
+                    { roll: 5, cols: ['忘却', '《記憶術》', '修得している【感情】の中からランダムに一つを選び、その【感情】を持っていないものとして扱う。', '感情の数だけ累積'] },
+                    { roll: 6, cols: ['呪い', '《呪術》', '修得している忍法の中からランダムに一つを選び、その忍法を修得していないものとして扱う。', '忍法の数だけ累積'] }
+                  ]
+                },
+                {
+                  title: '戦国変調表',
+                  dice: 'GWT',
+                  columns: ['1D6', '変調', '効果', '回復', '累積'],
+                  leftAlignCols: [3],
+                  rows: [
+                    { roll: 1, cols: ['催眠', '《意気》', '戦闘に参加したとき、戦闘開始時、もしくはこの変調を受けたときに【生命力】を１点減少しないと、その戦闘から自動的に脱落する。', '累積しない'] },
+                    { roll: 2, cols: ['火達磨', 'シーン終了時', 'ファンブル値が１上昇し、ファンブル時に１点の接近戦ダメージを受ける。', '累積する'] },
+                    { roll: 3, cols: ['猛毒', '《毒術》', '戦闘に参加した時、ラウンドの終了時にサイコロを１個振る。その目が奇数だったら、【生命力】を１点減少する。', '累積する'] },
+                    { roll: 4, cols: ['飢餓', '《兵糧術》', '戦闘に参加した時、ラウンドの終了時にサイコロを１個振る。その目が偶数だったら、【生命力】を１点減少する。', '累積する'] },
+                    { roll: 5, cols: ['残刃', '《拷問術》', '回復判定や忍法、忍具の効果によって【生命力】を回復できなくなる（変調を回復することはできる）。', '累積しない'] },
+                    { roll: 6, cols: ['野望', '《憑依術》', '命中判定にプラス１、それ以外のあらゆる行為判定にマイナス１の修正がつく。', '累積しない'] }
+                  ]
+                },
+                {
+                  title: '妖術変調対応表',
+                  dice: ['YWT1', 'YWT2'],
+                  useWrapper: true,
+                  columns: ['1D6', '得意分野', '現代', '戦国'],
+                  rows: [
+                    { roll: 1, cols: ['器術', '故障', '催眠'] },
+                    { roll: 2, cols: ['体術', 'マヒ', '火達磨'] },
+                    { roll: 3, cols: ['忍術', '重傷', '猛毒'] },
+                    { roll: 4, cols: ['謀術', '行方不明', '飢餓'] },
+                    { roll: 5, cols: ['戦術', '忘却', '残刃'] },
+                    { roll: 6, cols: ['妖術', '呪い', '野望'] }
+                  ]
+                },
+                {
+                  title: '剣魂（共鳴変調表）',
+                  // dice: '',
+                  columns: ['プラス', 'マイナス'],
+                  useWrapper: true,
+                  rows: [
+                    { cols: ['共感／故障', '不信感／催眠'] },
+                    { cols: ['友情／マヒ', '怒り／火達磨'] },
+                    { cols: ['愛情／重傷', '妬み／猛毒'] },
+                    { cols: ['忠誠／行方不明', '侮蔑／飢餓'] },
+                    { cols: ['情景／忘却', '劣等感／残刃'] },
+                    { cols: ['狂信／呪い', '殺意／野望'] }
+                  ]
+                }
+
+              ]
+            },
+            {
+              name: '戦場表',
+              tables: [
+
+                /* ===== 戦場表：甲 ===== */
+                {
+                  title: '戦場表',
+                  dice: ['BT', 'BNT'],
+                  columns: ['1D6', '戦場', '甲', '乙'],
+                  leftAlignCols: [2, 3],
+                  rows: [
+                    { roll: 1, cols: ['平地', '特になし', '射撃戦の命中判定にプラス１の修正がつく。'] },
+                    { roll: 2, cols: ['水中', '回避判定にマイナス２の修正がつく。', '判定でスペシャルしても【生命力】が回復する効果は発生しない。'] },
+                    { roll: 3, cols: ['高所', 'ファンブルすると接近戦ダメージを１点受ける。', '各ラウンドに使用できる忍法のコストの最大値が１減少する。'] },
+                    { roll: 4, cols: ['悪天候', 'すべての攻撃忍法の間合が１上昇する。', 'サポート忍法の指定特技の判定にマイナス２の修正がつく。'] },
+                    { roll: 5, cols: ['雑踏', '行為判定のとき、ファンブル値が１上昇する。', '奥義破り判定にマイナス１の修正がつく。'] },
+                    { roll: 6, cols: ['極地', 'GMはラウンドの終わりに１Ｄ６を振る。ラウンド以下の目が出ると、接近戦ダメージを１点受ける。脱落した者は、ランダムに変調を受ける。', 'ファンブルすると集団戦ダメージを１点受ける。'] }
+                  ]
+                }
+
+              ]
+            },
+            {
+              name: '功績点',
+              tables: [
+                {
+                  title: '功績点の条件',
+                  // dice: 'BT , BNT',
+                  columns: ['条件', '説明', '点数'],
+                  leftAlignCols: [1],
+                  rows: [
+                    { cols: ['流儀の達成', 'そのセッション内で、各流派に設定された流儀に関する行動に成功している。もしくは、そのセッション内で、一度でも各流派に設定された敵に勝利したり、仇敵の【使命】の妨害に成功している。', '1点'] },
+                    { cols: ['セッションに最後まで参加した', 'クライマックスフェイズに参加し、その戦闘シーンから脱落しなかった。', '1点'] },
+                    { cols: ['ロールプレイ', 'プレイヤーが、そのキャラクターに設定された感情や言念をうまく演じていた。', '1点'] },
+                    { cols: ['プライズの獲得', 'セッション中にプライズを獲得した。最初から持っていた場合は、それに含まない。', '1点'] },
+                    { cols: ['琴線に触れた', '各プレイヤーは、そのセッションでもっとも琴線に触れたキャラクター一人を選び、そのキャラクターに1点の功績点を与えることができる。ただし、自分を選ぶことはできない。誰も選ばないことは可能である。', '1点'] },
+                    { cols: ['使命の達成', 'そのセッションで渡された【使命】（本当の使命】があればそちら）に成功している。', '3点'] }
+                  ]
+                },
+                {
+                  title: '任務失敗表',
+                  // dice: 'BT , BNT',
+                  rows: [
+                    { roll: 1, text: '有名 （p125）／異端（p125）' },
+                    { roll: 2, text: '面汚し （p126）／武人（p125）' },
+                    { roll: 3, text: '抜け忍（p125）／気まぐれ（p125）' },
+                    { roll: 4, text: '邪恋 （p125）／諦観（p125）' },
+                    { roll: 5, text: '冷たい心（p126）／純心（p125）' },
+                    { roll: 6, text: '政治的対立（p126）／旧怨（p126）' }
+                  ]
+                }
+              ]
+            },
+            {
+              name: '異形表',
+              tables: [
+                {
+                  title: '異形表',
+                  dice: ['MT', 'MTR'],
+                  leftAlignCols: [2],
+                  rows: [
+                    { roll: 1, text: '「妖魔忍法表A」で、ランダムに忍法を決定する。妖魔化している間、その妖魔忍法を修得しているものとして扱う。この異形は、違う種類の妖魔忍法である限り、違う異形として扱う。' },
+                    { roll: 2, text: '「妖魔忍法表B」で、ランダムに忍法を決定する。妖魔化している間、その妖魔忍法を修得しているものとして扱う。この異形は、違う種類の妖魔忍法である限り、違う異形として扱う。' },
+                    { roll: 3, text: '「妖魔忍法表C」で、ランダムに忍法を決定する。妖魔化している間、その妖魔忍法を修得しているものとして扱う。この異形は、違う種類の妖魔忍法である限り、違う異形として扱う。' },
+                    { roll: 4, text: '妖魔化している間、戦闘中、1ラウンドに使用できる忍法のコストが、自分のプロット値+3点になり、装備忍法の【揺音】を修得する。' },
+                    { roll: 5, text: '妖魔化している間、【接近戦攻撃】によって与える接近戦ダメージが2点になる。' },
+                    { roll: 6, text: '妖魔化している間、このキャラクターの攻撃に対する回避判定と、このキャラクターの奥義に対する奥義破り判定にマイナス1の修正がつく。' }
+                  ]
+                },
+                {
+                  title: '妖魔忍法表A',
+                  dice: 'DSA',
+                  useWrapper: true,
+                  rows: [
+                    { roll: 1, text: '【震々】(基本p.172)' },
+                    { roll: 2, text: '【神隠】(基本p.172)' },
+                    { roll: 3, text: '【夜雀】(基本p.172)' },
+                    { roll: 4, text: '【猟犬】(基本p.172)' },
+                    { roll: 5, text: '【逢魔時】(基本p.172)' },
+                    { roll: 6, text: '【狂骨】(基本p.172)' }
+                  ]
+                },
+                {
+                  title: '妖魔忍法表B',
+                  dice: 'DSB',
+                  useWrapper: true,
+                  rows: [
+                    { roll: 1, text: '【野衾】(基本p.172)' },
+                    { roll: 2, text: '【付喪神】(基本p.172)' },
+                    { roll: 3, text: '【見越】(基本p.172)' },
+                    { roll: 4, text: '【木魂】(基本p.172)' },
+                    { roll: 5, text: '【鵺】(基本p.172)' },
+                    { roll: 6, text: '【生剥】(基本p.172)' }
+                  ]
+                },
+                {
+                  title: '妖魔忍法表C',
+                  dice: 'DSC',
+                  useWrapper: true,
+                  rows: [
+                    { roll: 1, text: '【百眼】(基本p.173)' },
+                    { roll: 2, text: '【呑口】(基本p.173)' },
+                    { roll: 3, text: '【荒吐】(基本p.173)' },
+                    { roll: 4, text: '【怨霊】(基本p.173)' },
+                    { roll: 5, text: '【鬼火】(基本p.173)' },
+                    { roll: 6, text: '【蛭子】(基本p.173)' }
+                  ]
+                }
+              ]
+            },
+            {
+              name: '新異形表',
+              tables: [
+                {
+                  title: '新異形表',
+                  dice: ['NMT', 'NMTR'],
+                  columns: ['1D6', '異形', '説明'],
+                  leftAlignCols: [2],
+                  rows: [
+                    { roll: 1, cols: ['異霊態', '「妖魔忍法表・異霊」を使用し、妖魔化している間、その妖魔忍法を修得する。'] },
+                    { roll: 2, cols: ['凶身態', '「妖魔忍法表・凶身」を使用し、妖魔化している間、その妖魔忍法を修得する。'] },
+                    { roll: 3, cols: ['神化態', '「妖魔忍法表・神化」を使用し、妖魔化している間、その妖魔忍法を修得する。'] },
+                    { roll: 4, cols: ['攻激態', '「妖魔忍法表・攻激」を使用し、妖魔化している間、その妖魔忍法を修得する。'] },
+                    { roll: 5, cols: ['業魔態', '妖魔化している間、戦闘中、各ラウンドに使用できる忍法のコストの合計が、自分のプロット値＋３点になり、装備忍法の【揺音】（基本 p85）を修得する。'] },
+                    { roll: 6, cols: ['不視態', '妖魔化している間、このキャラクターの攻撃に対する回避判定と、このキャラクターの奥義に対する奥義破り判定にマイナス１の修正がつく。'] }
+                  ]
+
+                },
+                {
+                  title: '妖魔忍法表・異霊',
+                  dice: 'DSN1',
+                  useWrapper: true,
+                  rows: [
+                    { roll: 1, text: '【逢魔時】(基本 p172)／【虚舟】（隠忍 p28）' },
+                    { roll: 2, text: '【神隠】(基本 p172)／【夢喰】（隠忍 p28）' },
+                    { roll: 3, text: '【狂骨】(基本 p172)／【金毛】（隠忍 p28）' },
+                    { roll: 4, text: '【木魂】(基本 p172)／【朽縄】（隠忍 p28）' },
+                    { roll: 5, text: '【付喪神】(基本 p172)／【香魂】（隠忍 p28）' },
+                    { roll: 6, text: '【生剥】(基本 p172)／【三尸】（隠忍 p28）' }
+                  ]
+                },
+                {
+                  title: '妖魔忍法表・凶身',
+                  dice: 'DSN2',
+                  useWrapper: true,
+                  rows: [
+                    { roll: 1, text: '【荒吐】(基本 p173)／【赤舌】（隠忍 p29）' },
+                    { roll: 2, text: '【鬼火】(基本 p173)／【大太郎】（隠忍 p29）' },
+                    { roll: 3, text: '【怨霊】(基本 p173)／【白面】（隠忍 p29）' },
+                    { roll: 4, text: '【呑口】(基本 p173)／【邪魅】（隠忍 p29）' },
+                    { roll: 5, text: '【百眼】(基本 p173)／【鬼胎】（隠忍 p29）' },
+                    { roll: 6, text: '【蛭子】(基本 p173)／【岩肌】（隠忍 p29）' }
+                  ]
+                },
+                {
+                  title: '妖魔忍法表・神化',
+                  dice: 'DSN3',
+                  useWrapper: true,
+                  rows: [
+                    { roll: 1, text: '【鵺】(基本 p172)／【朱盤】（隠忍 p29）' },
+                    { roll: 2, text: '【野衾】(基本 p172)／【長壁】（隠忍 p29）' },
+                    { roll: 3, text: '【震々】(基本 p172)／【物気】（隠忍 p29）' },
+                    { roll: 4, text: '【見越】(基本 p172)／【紙舞】（隠忍 p29）' },
+                    { roll: 5, text: '【夜雀】(基本 p172)／【目競】（隠忍 p29）' },
+                    { roll: 6, text: '【猟犬】(基本 p172)／【置行】（隠忍 p29）' }
+                  ]
+                },
+                {
+                  title: '妖魔忍法表・攻激',
+                  dice: 'DSN4',
+                  useWrapper: true,
+                  rows: [
+                    { roll: 1, text: '【黒手】(隠忍 p28)／【強威】（隠忍 p25）' },
+                    { roll: 2, text: '【業弓】(隠忍 p28)／【強威】（隠忍 p25）' },
+                    { roll: 3, text: '【怪病】(隠忍 p28)／【強威】（隠忍 p25）' },
+                    { roll: 4, text: '【鏖殺】(隠忍 p28)／【強威】（隠忍 p25）' },
+                    { roll: 5, text: '【精霊風】(隠忍 p28)／【強威】（隠忍 p25）' },
+                    { roll: 6, text: '【雷獣】(隠忍 p28)／【強威】（隠忍 p25）' }
+                  ]
+                }
+
+              ]
+            }
+
+          ]
+        }
+      },
+      methods: {
+        copyCell(text) {
+          navigator.clipboard.writeText(text)
+            .then(() => console.log('コピー: ' + text))
+            .catch(err => console.error('コピー失敗', err));
+        }
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+
+</html>
