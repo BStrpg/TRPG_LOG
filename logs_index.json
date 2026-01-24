@@ -1,5 +1,49 @@
 [
   {
+    "id": "fb10c436-cef4-4800-b55c-484d2b0b22bb",
+    "title": "Trick or Treat !!",
+    "scenario": "Trick or Treat !!",
+    "system": "アマデウス",
+    "gm": "Unknown",
+    "players": [],
+    "summary": "Imported via system scan.",
+    "path": "log_data/アマデウス/Trick or Treat !!.html",
+    "createdAt": 1769244328722
+  },
+  {
+    "id": "6f295d2b-cdbf-45e5-bf6d-43d3aa4523bf",
+    "title": "アマテラスvol.1",
+    "scenario": "アマテラスvol.1",
+    "system": "アマデウス",
+    "gm": "Unknown",
+    "players": [],
+    "summary": "Imported via system scan.",
+    "path": "log_data/アマデウス/アマテラスvol.1.html",
+    "createdAt": 1769244328722
+  },
+  {
+    "id": "122a8044-fa59-4177-af05-8a37977c0624",
+    "title": "アマテラスvol.2",
+    "scenario": "アマテラスvol.2",
+    "system": "アマデウス",
+    "gm": "Unknown",
+    "players": [],
+    "summary": "Imported via system scan.",
+    "path": "log_data/アマデウス/アマテラスvol.2.html",
+    "createdAt": 1769244328722
+  },
+  {
+    "id": "eea7727e-7c3f-4260-b04b-933c00baae23",
+    "title": "渋谷ラビリンス",
+    "scenario": "渋谷ラビリンス",
+    "system": "アマデウス",
+    "gm": "Unknown",
+    "players": [],
+    "summary": "Imported via system scan.",
+    "path": "log_data/アマデウス/渋谷ラビリンス.html",
+    "createdAt": 1769244328722
+  },
+  {
     "id": "3a697e79-0408-4838-8960-5b3c895b881b",
     "title": "あの夏、お姉様と湖のほとりで",
     "scenario": "あの夏、お姉様と湖のほとりで",
@@ -55,39 +99,6 @@
     "createdAt": 1769241450290
   },
   {
-    "id": "647992df-216a-4199-82cd-711067bf78df",
-    "title": "アマテラスvol.1",
-    "scenario": "アマテラスvol.1",
-    "system": "その他TRPG",
-    "gm": "Unknown",
-    "players": [],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/その他TRPG/アマテラスvol.1.html",
-    "createdAt": 1769241450290
-  },
-  {
-    "id": "125eb578-c0ca-44f6-8477-1c63158e5b3a",
-    "title": "アマテラスvol.2",
-    "scenario": "アマテラスvol.2",
-    "system": "その他TRPG",
-    "gm": "Unknown",
-    "players": [],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/その他TRPG/アマテラスvol.2.html",
-    "createdAt": 1769241450290
-  },
-  {
-    "id": "81a1a1f3-8121-4150-acb6-28429a63eaa6",
-    "title": "アマデウス『Trick or Treat !!』",
-    "scenario": "アマデウス『Trick or Treat !!』",
-    "system": "その他TRPG",
-    "gm": "Unknown",
-    "players": [],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/その他TRPG/アマデウス『Trick or Treat !!』.html",
-    "createdAt": 1769241450290
-  },
-  {
     "id": "c96dba98-841e-41e7-81b0-f6342d06f45a",
     "title": "スタリィドール『狩りの国』",
     "scenario": "スタリィドール『狩りの国』",
@@ -129,17 +140,6 @@
     "players": [],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/その他TRPG/モノミュ『恐怖のからくり実験博士!』.html",
-    "createdAt": 1769241450290
-  },
-  {
-    "id": "68e44127-e015-48c8-a3ae-bea6c5ff1502",
-    "title": "渋谷ラビリンス",
-    "scenario": "渋谷ラビリンス",
-    "system": "その他TRPG",
-    "gm": "Unknown",
-    "players": [],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/その他TRPG/渋谷ラビリンス.html",
     "createdAt": 1769241450290
   },
   {
