@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS_LOG_TERMINAL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ark-bg: #0a0a0a;
+            --ark-accent: #00d8ff;
+            --ark-studio: #ffcf00;
+        }
+
+        body {
+            background-color: var(--ark-bg);
+            color: #ffffff;
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* 背景グリッド */
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        /* スキャンライン */
+        .scanline {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        /* ロゴ周りの装飾パーツ */
+        .logo-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--ark-accent);
+        }
+
+        /* タクティカルカード */
+        .module-card {
+            background: #111;
+            border-left: 2px solid #333;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card:hover {
+            transform: translateX(10px);
+            background: #161616;
+        }
+
+        .module-card.archives:hover { border-left-color: var(--ark-accent); }
+        .module-card.studio:hover { border-left-color: var(--ark-studio); }
+
+        .ark-angle {
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+
+        .badge {
+            font-family: 'JetBrains Mono';
+            font-size: 10px;
+            font-weight: 900;
+            padding: 2px 8px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <div class="scanline"></div>
+
+    <div class="relative z-10 w-full max-w-6xl px-6 py-12">
+        <!-- HEADER SECTION -->
+        <div class="flex flex-col md:flex-row items-center gap-10 mb-20 justify-center">
+            <div class="relative w-40 h-40 bg-white flex items-center justify-center shadow-2xl">
+                <span class="text-black font-black text-7xl tracking-tighter">BS</span>
+                <div class="logo-corner -top-2 -left-2 border-r-0 border-b-0"></div>
+                <div class="logo-corner -bottom-2 -right-2 border-l-0 border-t-0"></div>
+            </div>
+            
+            <div class="text-center md:text-left">
+                <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
+                    <span class="badge bg-[#00d8ff] text-black">Terminal_V3.2</span>
+                    <span class="text-white/20 font-mono text-[10px] uppercase tracking-widest italic">Neural Hub Controller</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black italic tracking-tighter uppercase leading-none mb-2">
+                    BS_Terminal
+                </h1>
+                <p class="text-[#00d8ff] font-mono text-xs md:text-sm tracking-[0.5em] uppercase opacity-70">
+                    Neural Network Terminal / TRPG Protocol
+                </p>
+            </div>
+        </div>
+
+        <!-- MODULE SELECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            <!-- ARCHIVES MODULE -->
+            <a href="https://session-log-arc.vercel.app/" class="module-card archives group p-8 flex flex-col justify-between h-64">
+                <div class="flex justify-between items-start">
+                    <div class="flex flex-col">
+                        <span class="badge bg-[#00d8ff]/10 text-[#00d8ff] border border-[#00d8ff]/20 mb-2 w-fit">Module_01</span>
+                        <h2 class="text-4xl font-black italic uppercase tracking-tighter group-hover:text-[#00d8ff] transition-colors">Log_Archives</h2>
+                    </div>
+                    <div class="text-[#00d8ff] opacity-0 group-hover:opacity-100 transition-all">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-xs text-white/40 font-mono uppercase tracking-widest italic">Database access & Reading protocol</p>
+                    <p class="text-sm text-white/60 leading-relaxed">
+                        身内でプレイしたセッションログのアーカイブ。自動解析、タグ検索、高精細なリーディング体験。
+                    </p>
+                </div>
+            </a>
+
+            <!-- STUDIO MODULE -->
+            <a href="./studio/" class="module-card studio group p-8 flex flex-col justify-between h-64">
+                <div class="flex justify-between items-start">
+                    <div class="flex flex-col">
+                        <span class="badge bg-[#ffcf00]/10 text-[#ffcf00] border border-[#ffcf00]/20 mb-2 w-fit">Module_02</span>
+                        <h2 class="text-4xl font-black italic uppercase tracking-tighter group-hover:text-[#ffcf00] transition-colors">Log_Studio</h2>
+                    </div>
+                    <div class="text-[#ffcf00] opacity-0 group-hover:opacity-100 transition-all">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-xs text-white/40 font-mono uppercase tracking-widest italic">Visual styling & Content authoring</p>
+                    <p class="text-sm text-white/60 leading-relaxed">
+                        ココフォリアログの編集・整形。テーマ選択、カットイン挿入、タクティカルな視覚演出の付与。
+                    </p>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="mt-20 border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-2 h-2 bg-[#00d8ff] animate-pulse"></div>
+                <span class="text-[10px] font-black text-white/20 uppercase tracking-[0.4em]">Hub_Status: Online_Ready</span>
+            </div>
+            <div class="text-[10px] font-mono text-white/10 uppercase tracking-widest italic">
+                Authorized access only / Node_BS_Terminal_01
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
