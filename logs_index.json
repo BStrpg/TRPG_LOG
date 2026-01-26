@@ -5,7 +5,10 @@
     "scenario": "Trick or Treat !!",
     "system": "アマデウス",
     "gm": "BS",
-    "players": ["ターキー","しゃちょう"],
+    "players": [
+      "ターキー",
+      "しゃちょう"
+    ],
     "summary": "Imported via system scan.",
     "path": "log_data/アマデウス/Trick or Treat !!.html",
     "createdAt": 1769244328722
@@ -16,7 +19,11 @@
     "scenario": "アマテラスは引きこもりたい",
     "system": "アマデウス",
     "gm": "BS",
-    "players": ["SKY","紅織","しゃちょう"],
+    "players": [
+      "SKY",
+      "紅織",
+      "しゃちょう"
+    ],
     "summary": "Imported via system scan.",
     "path": "log_data/アマデウス/アマテラスvol.1.html",
     "createdAt": 1769244328722
@@ -27,7 +34,11 @@
     "scenario": "アマテラスは引きこもりたい@2",
     "system": "アマデウス",
     "gm": "BS",
-    "players": ["SKY","紅織","しゃちょう"],
+    "players": [
+      "SKY",
+      "紅織",
+      "しゃちょう"
+    ],
     "summary": "Imported via system scan.",
     "path": "log_data/アマデウス/アマテラスvol.2.html",
     "createdAt": 1769244328722
@@ -38,7 +49,11 @@
     "scenario": "渋谷ラビリンス",
     "system": "アマデウス",
     "gm": "紅織",
-    "players": ["SKY","BS","しゃちょう"],
+    "players": [
+      "SKY",
+      "BS",
+      "しゃちょう"
+    ],
     "summary": "Imported via system scan.",
     "path": "log_data/アマデウス/渋谷ラビリンス.html",
     "createdAt": 1769244328722
@@ -49,7 +64,11 @@
     "scenario": "あの夏、お姉様と湖のほとりで",
     "system": "CoC",
     "gm": "眠藻",
-    "players": ["BS","しゃちょう","ターキー"],
+    "players": [
+      "BS",
+      "しゃちょう",
+      "ターキー"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/CoC/あの夏、お姉様と湖のほとりで.html",
     "createdAt": 1769241450290
@@ -60,7 +79,13 @@
     "scenario": "巡る妖精",
     "system": "CoC",
     "gm": "眠藻",
-    "players": ["BS","しゃちょう","ターキー","まつこ","昴瑠中尉"],
+    "players": [
+      "BS",
+      "しゃちょう",
+      "ターキー",
+      "まつこ",
+      "昴瑠中尉"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/CoC/巡る妖精.html",
     "createdAt": 1769241450290
@@ -71,7 +96,11 @@
     "scenario": "理不尽スケベの館",
     "system": "CoC",
     "gm": "眠藻",
-    "players": ["BS","しゃちょう","ターキー"],
+    "players": [
+      "BS",
+      "しゃちょう",
+      "ターキー"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/CoC/理不尽スケベの館.html",
     "createdAt": 1769241450290
@@ -82,7 +111,11 @@
     "scenario": "理不尽スケベ密室",
     "system": "CoC",
     "gm": "眠藻",
-    "players": ["BS","しゃちょう","ターキー"],
+    "players": [
+      "BS",
+      "しゃちょう",
+      "ターキー"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/CoC/理不尽スケベ密室.html",
     "createdAt": 1769241450290
@@ -93,7 +126,12 @@
     "scenario": "誰がロックを殺すのか",
     "system": "CoC",
     "gm": "眠藻、紅織",
-    "players": ["BS","まつこ","ターキー","SKY"],
+    "players": [
+      "BS",
+      "まつこ",
+      "ターキー",
+      "SKY"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/CoC/誰がロックを殺すのか.html",
     "createdAt": 1769241450290
@@ -104,7 +142,12 @@
     "scenario": "スタリィドール『狩りの国』",
     "system": "その他TRPG",
     "gm": "しゃちょう",
-    "players": ["BS","ターキー","SKY","眠藻"],
+    "players": [
+      "BS",
+      "ターキー",
+      "SKY",
+      "眠藻"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/その他TRPG/スタリィドール『狩りの国』.html",
     "createdAt": 1769241450290
@@ -137,40 +180,60 @@
     "scenario": "モノミュ『恐怖のからくり実験博士!』",
     "system": "その他TRPG",
     "gm": "しゃちょう",
-    "players": ["BS","ターキー","赤子星","眠藻"],
+    "players": [
+      "BS",
+      "ターキー",
+      "赤子星",
+      "眠藻"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/その他TRPG/モノミュ『恐怖のからくり実験博士!』.html",
     "createdAt": 1769241450290
   },
-    {
+  {
     "id": "6a378f12-7413-49fe-84d6-0918a7181e8c",
     "title": "刀光剣影",
     "scenario": "刀光剣影",
     "system": "シノビガミ",
     "gm": "あげパン",
-    "players": ["BS","SKY","パル","まつこ"],
+    "players": [
+      "BS",
+      "SKY",
+      "パル",
+      "まつこ"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/刀光剣影.html",
     "createdAt": 1769241450290
   },
-      {
+  {
     "id": "a6dbadbb-f116-43a2-8420-cded3a2b5678",
     "title": "竜騰虎闘",
     "scenario": "竜騰虎闘",
     "system": "シノビガミ",
     "gm": "あげパン",
-    "players": ["BS","SKY","パル","まつこ"],
+    "players": [
+      "BS",
+      "SKY",
+      "パル",
+      "まつこ"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/竜騰虎闘.html",
     "createdAt": 1769241450290
   },
-   {
+  {
     "id": "1822c108-b90a-4ae1-9932-4a0783e8a83c",
     "title": "カナリア",
     "scenario": "カナリア",
     "system": "シノビガミ",
     "gm": "あげパン",
-    "players": ["BS","SKY","パル","まつこ"],
+    "players": [
+      "BS",
+      "SKY",
+      "パル",
+      "まつこ"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/カナリア.html",
     "createdAt": 1769241450290
@@ -181,7 +244,12 @@
     "scenario": "志操堅固",
     "system": "シノビガミ",
     "gm": "あげパン",
-    "players": ["BS","SKY","パル","まつこ"],
+    "players": [
+      "BS",
+      "SKY",
+      "パル",
+      "まつこ"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/志操堅固.html",
     "createdAt": 1769241450290
@@ -192,7 +260,11 @@
     "scenario": "厳正なる抽選の結果とか関係なくない？",
     "system": "シノビガミ",
     "gm": "BS",
-    "players": ["まつこ","SKY","紅織"],
+    "players": [
+      "まつこ",
+      "SKY",
+      "紅織"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/『厳正なる抽選の結果とか関係なくない？』.html",
     "createdAt": 1769241450290
@@ -214,7 +286,12 @@
     "scenario": "アイドルあらいぶっ！",
     "system": "シノビガミ",
     "gm": "BS",
-    "players": ["SKY","眠藻","赤子星","紅織"],
+    "players": [
+      "SKY",
+      "眠藻",
+      "赤子星",
+      "紅織"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/あらいぶっ！.html",
     "createdAt": 1769241450290
@@ -225,7 +302,12 @@
     "scenario": "命にふさわしい",
     "system": "シノビガミ",
     "gm": "BS",
-    "players": ["SKY","紅織","なかじま","スルメ"],
+    "players": [
+      "SKY",
+      "紅織",
+      "なかじま",
+      "スルメ"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/『命にふさわしい』.html",
     "createdAt": 1769241450290
@@ -236,7 +318,12 @@
     "scenario": "おシノビ温泉",
     "system": "シノビガミ",
     "gm": "BS",
-    "players": ["あげパン","パル","SKY","紅織"],
+    "players": [
+      "あげパン",
+      "パル",
+      "SKY",
+      "紅織"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/おシノビ温泉.html",
     "createdAt": 1769241450290
@@ -247,7 +334,12 @@
     "scenario": "その涙は誰のもの？",
     "system": "シノビガミ",
     "gm": "あげパン",
-    "players": ["BS","しゃちょう","ターキー","パル(SKY)"],
+    "players": [
+      "BS",
+      "しゃちょう",
+      "ターキー",
+      "パル(SKY)"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/その涙は誰のもの？.html",
     "createdAt": 1769241450290
@@ -258,7 +350,12 @@
     "scenario": "クトゥルフ(忍神)",
     "system": "シノビガミ",
     "gm": "しゃちょう",
-    "players": ["BS","SKY","ターキー","紅織"],
+    "players": [
+      "BS",
+      "SKY",
+      "ターキー",
+      "紅織"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/クトゥルフ(忍神).html",
     "createdAt": 1769241450290
@@ -269,7 +366,12 @@
     "scenario": "夢見る決戦兵器",
     "system": "シノビガミ",
     "gm": "BS",
-    "players": ["赤子星","眠藻","まつこ","SKY"],
+    "players": [
+      "赤子星",
+      "眠藻",
+      "まつこ",
+      "SKY"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/シノビガミ『夢見る決戦兵器』ログ.html",
     "createdAt": 1769241450290
@@ -302,7 +404,11 @@
     "scenario": "ダンザイ",
     "system": "シノビガミ",
     "gm": "SKY",
-    "players": ["あげパン","なかじま","スルメ"],
+    "players": [
+      "あげパン",
+      "なかじま",
+      "スルメ"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/ダンザイ.html",
     "createdAt": 1769241450290
@@ -313,7 +419,10 @@
     "scenario": "出口なし",
     "system": "シノビガミ",
     "gm": "紅織",
-    "players": ["BS","SKY"],
+    "players": [
+      "BS",
+      "SKY"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/出口なし.html",
     "createdAt": 1769241450290
@@ -335,7 +444,12 @@
     "scenario": "夜に灯りを、君には陽だまりを",
     "system": "シノビガミ",
     "gm": "SKY",
-    "players": ["BS","ターキー","しゃちょう","紅織"],
+    "players": [
+      "BS",
+      "ターキー",
+      "しゃちょう",
+      "紅織"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/夜.html",
     "createdAt": 1769241450290
@@ -346,7 +460,12 @@
     "scenario": "断罪",
     "system": "シノビガミ",
     "gm": "BS",
-    "players": ["SKY","しゃちょう","眠藻","よみ"],
+    "players": [
+      "SKY",
+      "しゃちょう",
+      "眠藻",
+      "よみ"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/断罪部屋.html",
     "createdAt": 1769241450290
@@ -357,7 +476,10 @@
     "scenario": "月夜杯P",
     "system": "シノビガミ",
     "gm": "BS",
-    "players": ["パル","紅織"],
+    "players": [
+      "パル",
+      "紅織"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/月夜杯P.html",
     "createdAt": 1769241450290
@@ -368,7 +490,10 @@
     "scenario": "月夜杯S",
     "system": "シノビガミ",
     "gm": "BS",
-    "players": ["BS","sasamin"],
+    "players": [
+      "BS",
+      "sasamin"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/月夜杯S.html",
     "createdAt": 1769241450290
@@ -379,7 +504,11 @@
     "scenario": "朝晨星_BS",
     "system": "シノビガミ",
     "gm": "BS",
-    "players": ["SKY","紅織","あげパン"],
+    "players": [
+      "SKY",
+      "紅織",
+      "あげパン"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/朝晨星_あげ03.html",
     "createdAt": 1769241450290
@@ -401,7 +530,11 @@
     "scenario": "桜咲く頃",
     "system": "シノビガミ",
     "gm": "パル",
-    "players": ["BS","SKY","あげパン"],
+    "players": [
+      "BS",
+      "SKY",
+      "あげパン"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/桜咲く頃.html",
     "createdAt": 1769241450290
@@ -412,7 +545,12 @@
     "scenario": "楽園",
     "system": "シノビガミ",
     "gm": "紅織",
-    "players": ["BS","SKY","赤子星","眠藻"],
+    "players": [
+      "BS",
+      "SKY",
+      "赤子星",
+      "眠藻"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/楽園.html",
     "createdAt": 1769241450290
@@ -423,7 +561,10 @@
     "scenario": "湖の底に花沈む",
     "system": "シノビガミ",
     "gm": "紅織",
-    "players": ["BS","SKY"],
+    "players": [
+      "BS",
+      "SKY"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/湖の底に花沈む.html",
     "createdAt": 1769241450290
@@ -434,7 +575,12 @@
     "scenario": "灰燼に帰す",
     "system": "シノビガミ",
     "gm": "紅織",
-    "players": ["BS","SKY","ターキー","しゃちょう"],
+    "players": [
+      "BS",
+      "SKY",
+      "ターキー",
+      "しゃちょう"
+    ],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/灰燼に帰す.html",
     "createdAt": 1769241450290
@@ -448,17 +594,6 @@
     "players": [],
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/甘美.html",
-    "createdAt": 1769241450290
-  },
-  {
-    "id": "c68c457e-3e5b-4dbb-8c1b-f11199a1332a",
-    "title": "甘美の行方",
-    "scenario": "甘美の行方",
-    "system": "シノビガミ",
-    "gm": "Unknown",
-    "players": [],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/甘美の行方.html",
     "createdAt": 1769241450290
   },
   {
