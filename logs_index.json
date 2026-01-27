@@ -222,7 +222,10 @@
     ],
     "summary": "疲弊した肉体と心を癒すべく、彼らは向かう。\n目指すは、癒やしの秘湯『おシノビ温泉』！",
     "path": "log_data/シノビガミ/おシノビ温泉.html",
-    "createdAt": 1769241450290
+    "createdAt": 1769241450290,
+    "series": [
+      "天火五剣騒乱"
+    ]
   },
   {
     "id": "1b244887-6f88-40e1-974d-8cce44ddf669",
@@ -570,7 +573,7 @@
     "createdAt": 1769241450290,
     "series": "Rouage comme d'habitude"
   },
-    {
+  {
     "id": "80dfedc5-cd3d-485b-8aca-fa1acdea21ff",
     "title": "シノブ、歯車サーカス団_前編",
     "scenario": "シノブ、歯車サーカス団",
@@ -639,7 +642,7 @@
     "path": "log_data/シノビガミ/黄昏夜見路行.html",
     "createdAt": 1769241450290
   },
-    {
+  {
     "id": "6a378f12-7413-49fe-84d6-0918a7181e8c",
     "title": "刀光剣影",
     "scenario": "刀光剣影",
