@@ -1,5 +1,16 @@
 [
   {
+    "id": "d7c1a672-00f6-4b07-b6ae-860c70e7ccd1",
+    "title": "箱庭の綺語all",
+    "scenario": "箱庭の綺語all",
+    "system": "シノビガミ",
+    "gm": "Unknown",
+    "players": [],
+    "summary": "Imported via system scan.",
+    "path": "log_data/シノビガミ/箱庭の綺語all.html",
+    "createdAt": 1769523382758
+  },
+  {
     "id": "689f46af-2270-4231-a9cd-711e1cd7b6bf",
     "title": "命にふさわしい",
     "scenario": "命にふさわしい",
