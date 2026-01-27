@@ -193,194 +193,6 @@
     "createdAt": 1769241450290
   },
   {
-    "id": "6a378f12-7413-49fe-84d6-0918a7181e8c",
-    "title": "刀光剣影",
-    "scenario": "刀光剣影",
-    "system": "シノビガミ",
-    "gm": "あげパン",
-    "players": [
-      "BS",
-      "SKY",
-      "パル",
-      "まつこ"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/刀光剣影.html",
-    "createdAt": 1769241450290,
-    "series": "天火五剣騒乱"
-  },
-  {
-    "id": "a6dbadbb-f116-43a2-8420-cded3a2b5678",
-    "title": "竜騰虎闘",
-    "scenario": "竜騰虎闘",
-    "system": "シノビガミ",
-    "gm": "あげパン",
-    "players": [
-      "BS",
-      "SKY",
-      "パル",
-      "まつこ"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/竜騰虎闘.html",
-    "createdAt": 1769241450290,
-    "series": "天火五剣騒乱"
-  },
-  {
-    "id": "1822c108-b90a-4ae1-9932-4a0783e8a83c",
-    "title": "カナリア",
-    "scenario": "カナリア",
-    "system": "シノビガミ",
-    "gm": "あげパン",
-    "players": [
-      "BS",
-      "SKY",
-      "パル",
-      "まつこ"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/カナリア.html",
-    "createdAt": 1769241450290,
-    "series": "天火五剣騒乱"
-  },
-  {
-    "id": "0f0076b9-b856-46a4-8358-5d154f9e7cb9",
-    "title": "志操堅固",
-    "scenario": "志操堅固",
-    "system": "シノビガミ",
-    "gm": "あげパン",
-    "players": [
-      "BS",
-      "SKY",
-      "パル",
-      "まつこ"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/志操堅固.html",
-    "createdAt": 1769241450290,
-    "series": "天火五剣騒乱"
-  },
-  {
-    "id": "27eacbf8-8acf-48fc-b3f4-9045cf9f4060",
-    "title": "アイドル暗部！",
-    "scenario": "アイドル暗部！",
-    "system": "シノビガミ",
-    "gm": "赤子星",
-    "players": [
-      "SKY",
-      "眠藻",
-      "BS",
-      "紅織"
-    ],
-    "summary": "スポットライトを浴びるアイドルグループ「夜深」！\nその姿は世を忍ぶ仮の姿……\n彼女達の正体は、芸能界にはびこる闇を消していく暗殺部隊だった！",
-    "externalUrl": "https://bstrpg.github.io/Yofukashi_idol_anbu/",
-    "path": "",
-    "createdAt": 1769241450290,
-    "series": "夜深-アイドル暗部-"
-  },
-  {
-    "id": "b8db51f8-2c2a-4dfd-be3e-4ceb207202f8",
-    "title": "甘美の行方",
-    "scenario": "甘美の行方",
-    "system": "シノビガミ",
-    "gm": "SKY",
-    "players": [
-      "赤子星",
-      "眠藻",
-      "BS",
-      "紅織"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/甘美.html",
-    "createdAt": 1769241450290,
-    "series": "夜深-アイドル暗部-"
-  },
-  {
-    "id": "af3419f3-db0f-4d94-99a0-e8256a032bd7",
-    "title": "箱庭の綺語",
-    "scenario": "箱庭の綺語",
-    "system": "シノビガミ",
-    "gm": "紅織",
-    "players": [
-      "SKY",
-      "眠藻",
-      "BS",
-      "赤子星"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/箱庭.html",
-    "createdAt": 1769241450290,
-    "series": "夜深-アイドル暗部-"
-  },
-  {
-    "id": "20c7d61a-dd0b-41cc-8bd8-18d2727ba572",
-    "title": "出口なし",
-    "scenario": "出口なし",
-    "system": "シノビガミ",
-    "gm": "紅織",
-    "players": [
-      "BS",
-      "SKY"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/出口なし.html",
-    "createdAt": 1769241450290,
-    "series": "夜深-アイドル暗部-"
-  },
-  {
-    "id": "0e8c3eef-37bd-4f13-859d-4820af2fbf54",
-    "title": "厳正なる抽選の結果とか関係なくない？",
-    "scenario": "厳正なる抽選の結果とか関係なくない？",
-    "system": "シノビガミ",
-    "gm": "BS",
-    "players": [
-      "まつこ",
-      "SKY",
-      "紅織"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/『厳正なる抽選の結果とか関係なくない？』.html",
-    "createdAt": 1769241450290,
-    "series": "夜深-アイドル暗部-"
-  },
-  {
-    "id": "ca3d5b21-65fb-497b-8ad8-683bf23645f0",
-    "title": "君に歌う詩",
-    "scenario": "君に歌う詩",
-    "system": "シノビガミ",
-    "gm": "あげパン",
-    "players": [
-      "BS",
-      "SKY",
-      "パル"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/君に歌う詩_完成.html",
-    "createdAt": 1769241450290,
-    "series": [
-      "夜深-アイドル暗部-",
-      "天火五剣騒乱",
-      "花の在処は何処と知る"
-    ]
-  },
-  {
-    "id": "b3760764-5cc9-410d-9278-dfb9079bebbe",
-    "title": "アイドルあらいぶっ！",
-    "scenario": "アイドルあらいぶっ！",
-    "system": "シノビガミ",
-    "gm": "BS",
-    "players": [
-      "SKY",
-      "眠藻",
-      "赤子星",
-      "紅織"
-    ],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/あらいぶっ！.html",
-    "createdAt": 1769241450290,
-    "series": "夜深-アイドル暗部-"
-  },
-  {
     "id": "689f46af-2270-4231-a9cd-711e1cd7b6bf",
     "title": "命にふさわしい",
     "scenario": "命にふさわしい",
@@ -459,30 +271,6 @@
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/シノビガミ『夢見る決戦兵器』ログ.html",
     "createdAt": 1769241450290
-  },
-  {
-    "id": "80dfedc5-cd3d-485b-8aca-fa1acdea21ff",
-    "title": "シノブ、歯車サーカス団_前編",
-    "scenario": "シノブ、歯車サーカス団",
-    "system": "シノビガミ",
-    "gm": "SKY",
-    "players": [],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/シノブ、歯車サーカス団_前編.html",
-    "createdAt": 1769241450290,
-    "series": "Rouage comme d'habitude"
-  },
-  {
-    "id": "8017c252-4c87-44f2-b001-ce54e08c1330",
-    "title": "シノブ、歯車サーカス団_後編",
-    "scenario": "シノブ、歯車サーカス団",
-    "system": "シノビガミ",
-    "gm": "SKY",
-    "players": [],
-    "summary": "Imported from existing repository storage.",
-    "path": "log_data/シノビガミ/シノブ、歯車サーカス団_後編.html",
-    "createdAt": 1769241450290,
-    "series": "Rouage comme d'habitude"
   },
   {
     "id": "13e9c376-2df4-4d08-a3a0-b43ae7553377",
@@ -782,6 +570,30 @@
     "createdAt": 1769241450290,
     "series": "Rouage comme d'habitude"
   },
+    {
+    "id": "80dfedc5-cd3d-485b-8aca-fa1acdea21ff",
+    "title": "シノブ、歯車サーカス団_前編",
+    "scenario": "シノブ、歯車サーカス団",
+    "system": "シノビガミ",
+    "gm": "SKY",
+    "players": [],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/シノブ、歯車サーカス団_前編.html",
+    "createdAt": 1769241450290,
+    "series": "Rouage comme d'habitude"
+  },
+  {
+    "id": "8017c252-4c87-44f2-b001-ce54e08c1330",
+    "title": "シノブ、歯車サーカス団_後編",
+    "scenario": "シノブ、歯車サーカス団",
+    "system": "シノビガミ",
+    "gm": "SKY",
+    "players": [],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/シノブ、歯車サーカス団_後編.html",
+    "createdAt": 1769241450290,
+    "series": "Rouage comme d'habitude"
+  },
   {
     "id": "71f35d42-737b-4b09-978a-670d4c20cf30",
     "title": "遺産相続",
@@ -826,6 +638,194 @@
     "summary": "Imported from existing repository storage.",
     "path": "log_data/シノビガミ/黄昏夜見路行.html",
     "createdAt": 1769241450290
+  },
+    {
+    "id": "6a378f12-7413-49fe-84d6-0918a7181e8c",
+    "title": "刀光剣影",
+    "scenario": "刀光剣影",
+    "system": "シノビガミ",
+    "gm": "あげパン",
+    "players": [
+      "BS",
+      "SKY",
+      "パル",
+      "まつこ"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/刀光剣影.html",
+    "createdAt": 1769241450290,
+    "series": "天火五剣騒乱"
+  },
+  {
+    "id": "a6dbadbb-f116-43a2-8420-cded3a2b5678",
+    "title": "竜騰虎闘",
+    "scenario": "竜騰虎闘",
+    "system": "シノビガミ",
+    "gm": "あげパン",
+    "players": [
+      "BS",
+      "SKY",
+      "パル",
+      "まつこ"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/竜騰虎闘.html",
+    "createdAt": 1769241450290,
+    "series": "天火五剣騒乱"
+  },
+  {
+    "id": "1822c108-b90a-4ae1-9932-4a0783e8a83c",
+    "title": "カナリア",
+    "scenario": "カナリア",
+    "system": "シノビガミ",
+    "gm": "あげパン",
+    "players": [
+      "BS",
+      "SKY",
+      "パル",
+      "まつこ"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/カナリア.html",
+    "createdAt": 1769241450290,
+    "series": "天火五剣騒乱"
+  },
+  {
+    "id": "0f0076b9-b856-46a4-8358-5d154f9e7cb9",
+    "title": "志操堅固",
+    "scenario": "志操堅固",
+    "system": "シノビガミ",
+    "gm": "あげパン",
+    "players": [
+      "BS",
+      "SKY",
+      "パル",
+      "まつこ"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/志操堅固.html",
+    "createdAt": 1769241450290,
+    "series": "天火五剣騒乱"
+  },
+  {
+    "id": "27eacbf8-8acf-48fc-b3f4-9045cf9f4060",
+    "title": "アイドル暗部！",
+    "scenario": "アイドル暗部！",
+    "system": "シノビガミ",
+    "gm": "赤子星",
+    "players": [
+      "SKY",
+      "眠藻",
+      "BS",
+      "紅織"
+    ],
+    "summary": "スポットライトを浴びるアイドルグループ「夜深」！\nその姿は世を忍ぶ仮の姿……\n彼女達の正体は、芸能界にはびこる闇を消していく暗殺部隊だった！",
+    "externalUrl": "https://bstrpg.github.io/Yofukashi_idol_anbu/",
+    "path": "",
+    "createdAt": 1769241450290,
+    "series": "夜深-アイドル暗部-"
+  },
+  {
+    "id": "b8db51f8-2c2a-4dfd-be3e-4ceb207202f8",
+    "title": "甘美の行方",
+    "scenario": "甘美の行方",
+    "system": "シノビガミ",
+    "gm": "SKY",
+    "players": [
+      "赤子星",
+      "眠藻",
+      "BS",
+      "紅織"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/甘美.html",
+    "createdAt": 1769241450290,
+    "series": "夜深-アイドル暗部-"
+  },
+  {
+    "id": "af3419f3-db0f-4d94-99a0-e8256a032bd7",
+    "title": "箱庭の綺語",
+    "scenario": "箱庭の綺語",
+    "system": "シノビガミ",
+    "gm": "紅織",
+    "players": [
+      "SKY",
+      "眠藻",
+      "BS",
+      "赤子星"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/箱庭.html",
+    "createdAt": 1769241450290,
+    "series": "夜深-アイドル暗部-"
+  },
+  {
+    "id": "20c7d61a-dd0b-41cc-8bd8-18d2727ba572",
+    "title": "出口なし",
+    "scenario": "出口なし",
+    "system": "シノビガミ",
+    "gm": "紅織",
+    "players": [
+      "BS",
+      "SKY"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/出口なし.html",
+    "createdAt": 1769241450290,
+    "series": "夜深-アイドル暗部-"
+  },
+  {
+    "id": "0e8c3eef-37bd-4f13-859d-4820af2fbf54",
+    "title": "厳正なる抽選の結果とか関係なくない？",
+    "scenario": "厳正なる抽選の結果とか関係なくない？",
+    "system": "シノビガミ",
+    "gm": "BS",
+    "players": [
+      "まつこ",
+      "SKY",
+      "紅織"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/『厳正なる抽選の結果とか関係なくない？』.html",
+    "createdAt": 1769241450290,
+    "series": "夜深-アイドル暗部-"
+  },
+  {
+    "id": "ca3d5b21-65fb-497b-8ad8-683bf23645f0",
+    "title": "君に歌う詩",
+    "scenario": "君に歌う詩",
+    "system": "シノビガミ",
+    "gm": "あげパン",
+    "players": [
+      "BS",
+      "SKY",
+      "パル"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/君に歌う詩_完成.html",
+    "createdAt": 1769241450290,
+    "series": [
+      "夜深-アイドル暗部-",
+      "天火五剣騒乱",
+      "花の在処は何処と知る"
+    ]
+  },
+  {
+    "id": "b3760764-5cc9-410d-9278-dfb9079bebbe",
+    "title": "アイドルあらいぶっ！",
+    "scenario": "アイドルあらいぶっ！",
+    "system": "シノビガミ",
+    "gm": "BS",
+    "players": [
+      "SKY",
+      "眠藻",
+      "赤子星",
+      "紅織"
+    ],
+    "summary": "Imported from existing repository storage.",
+    "path": "log_data/シノビガミ/あらいぶっ！.html",
+    "createdAt": 1769241450290,
+    "series": "夜深-アイドル暗部-"
   },
   {
     "id": "9488da77-0c5a-4927-b8e0-8c98331752a4",
