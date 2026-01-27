@@ -93,7 +93,7 @@
       "しゃちょう",
       "紅織"
     ],
-    "summary": "Imported from existing repository storage.",
+    "summary": "「無明の森」日の光を失った、鬱蒼とした深き森。足を踏み入れるは「灯りの御子」\n光を鎖す新月の夜にのみその道は開かれる。",
     "path": "log_data/シノビガミ/夜.html",
     "createdAt": 1769241450290
   },
@@ -203,7 +203,6 @@
     "path": "log_data/シノビガミ/桜咲く頃.html",
     "createdAt": 1769241450290
   },
-
   {
     "id": "e88e9351-c78f-44a3-b5df-d24ba5e80f7f",
     "title": "湖の底に花沈む",
@@ -283,7 +282,7 @@
     "createdAt": 1769241450290,
     "series": "花の在処は何処と知る"
   },
-    {
+  {
     "id": "9a2f3eaf-6714-4b46-b9e0-9dea4589f797",
     "title": "楽園",
     "scenario": "楽園",
@@ -518,7 +517,6 @@
       "天火五剣騒乱"
     ]
   },
-
   {
     "id": "27eacbf8-8acf-48fc-b3f4-9045cf9f4060",
     "title": "アイドル暗部！",
@@ -830,7 +828,8 @@
     "summary": "Imported from existing repository storage.",
     "path": "log_data/歯車の塔のスカイノーツ/翡翠色の乙女を追え！.html",
     "createdAt": 1769241450290
-  },  {
+  },
+  {
     "id": "fb10c436-cef4-4800-b55c-484d2b0b22bb",
     "title": "Trick or Treat !!",
     "scenario": "Trick or Treat !!",
