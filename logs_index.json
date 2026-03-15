@@ -1,12 +1,12 @@
 [
   {
     "id": "40ae5264-edda-4428-ac37-03a34cd1573b",
-    "title": "『夜に灯りを、君には陽だまりを』",
-    "scenario": "『夜に灯りを、君には陽だまりを』",
+    "title": "『夜に灯りを、君には陽だまりを』長正編",
+    "scenario": "『夜に灯りを、君には陽だまりを』長正編",
     "system": "シノビガミ",
-    "gm": "Unknown",
+    "gm": "SKY",
     "players": [],
-    "summary": "Imported via system scan.",
+    "summary": "「無明の森」日の光を失った、鬱蒼とした深き森。足を踏み入れるは「灯りの御子」　光を鎖す新月の夜にのみその道は開かれる。",
     "path": "log_data/シノビガミ/『夜に灯りを、君には陽だまりを』.html",
     "createdAt": 1773559134316
   },
@@ -15,9 +15,10 @@
     "title": "『朝晨星』凪",
     "scenario": "『朝晨星』凪",
     "system": "シノビガミ",
-    "gm": "Unknown",
+    "gm": "紅織",
     "players": [],
-    "summary": "Imported via system scan.",
+    "summary": "巨星墜つ――天光流が頭領がその命を終えた。門外不出の究極奥義【超新星】は誰に継承されるのか
+",
     "path": "log_data/シノビガミ/『朝晨星』凪.html",
     "createdAt": 1773559134316
   },
@@ -26,9 +27,9 @@
     "title": "九楽市妖魔騒動",
     "scenario": "九楽市妖魔騒動",
     "system": "シノビガミ",
-    "gm": "Unknown",
+    "gm": "あげパン",
     "players": [],
-    "summary": "Imported via system scan.",
+    "summary": "地方都市の近くで妖魔が出たとシノビ界隈で騒がれている。この事態を解決するためにシノビが派遣された。",
     "path": "log_data/シノビガミ/九楽市妖魔騒動.html",
     "createdAt": 1773559134316
   },
@@ -37,9 +38,9 @@
     "title": "乱雲は城の中で",
     "scenario": "乱雲は城の中で",
     "system": "シノビガミ",
-    "gm": "Unknown",
+    "gm": "あげパン",
     "players": [],
-    "summary": "Imported via system scan.",
+    "summary": "尾張の城下町に、織田信長が遺した“ある大事な物”の噂が広まる。それを求め、戦国の闇に生きるシノビたちが密かに集い、争いの火蓋が切られる。",
     "path": "log_data/シノビガミ/乱雲は城の中で.html",
     "createdAt": 1773559134316
   },
@@ -48,9 +49,9 @@
     "title": "友愛",
     "scenario": "友愛",
     "system": "シノビガミ",
-    "gm": "Unknown",
+    "gm": "紅織",
     "players": [],
-    "summary": "Imported via system scan.",
+    "summary": "シノビたちは過去の任務で出会い、絆で結ばれている……と、思っていた。シノビたちが繰り広げる三角関係の行く末に、果たして平穏はあるのか？",
     "path": "log_data/シノビガミ/友愛.html",
     "createdAt": 1773559134316
   },
@@ -59,9 +60,10 @@
     "title": "朝晨星 sideT",
     "scenario": "朝晨星 sideT",
     "system": "シノビガミ",
-    "gm": "Unknown",
+    "gm": "紅織",
     "players": [],
-    "summary": "Imported via system scan.",
+    "summary": "巨星墜つ――天光流が頭領がその命を終えた。門外不出の究極奥義【超新星】は誰に継承されるのか
+",
     "path": "log_data/シノビガミ/朝晨星 sideT.html",
     "createdAt": 1773559134316
   },
