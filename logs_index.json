@@ -71,10 +71,17 @@
     "scenario": "朝晨星 sideT",
     "system": "シノビガミ",
     "gm": "紅織",
-    "players": [],
+    "players": [
+      "スルメ",
+      "ターキー",
+      "まゆ"
+    ],
     "summary": "巨星墜つ――天光流が頭領がその命を終えた。門外不出の究極奥義【超新星】は誰に継承されるのか",
     "path": "log_data/シノビガミ/朝晨星 sideT.html",
-    "createdAt": 1773559134316
+    "createdAt": 1757721600000,
+    "series": [
+      "朝晨星"
+    ]
   },
   {
     "id": "3cdf89f1-ca7f-4bde-b859-6a73f3de98b7",
