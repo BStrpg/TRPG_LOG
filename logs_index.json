@@ -1,5 +1,24 @@
 [
   {
+    "id": "ff616b88-051a-430d-a7c5-80dd0fb9a3ab",
+    "title": "シノブ、歯車サーカス団 sideP",
+    "scenario": "シノブ、歯車サーカス団 sideP",
+    "system": "シノビガミ",
+    "gm": "パル",
+    "players": [
+      "ターキー",
+      "紅織",
+      "赤子星",
+      "Tomatsu"
+    ],
+    "summary": "巷で話題のサーカス団「歯車サーカス」。太陽が燃え尽きるとき、舞台の幕が上がる。",
+    "series": [
+      "Rouage comme d'habitude"
+    ],
+    "createdAt": 1773446400000,
+    "path": "log_data/シノビガミ/シノブ、 歯車サーカス団.html"
+  },
+  {
     "id": "809ab9cb-e691-4076-8232-104fc8975300",
     "title": "現世の鬼、巫女の涙",
     "scenario": "現世の鬼、巫女の涙",
