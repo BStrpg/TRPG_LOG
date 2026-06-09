@@ -1,5 +1,23 @@
 [
   {
+    "id": "4125b7ed-331a-4195-81b5-48e9f45ddf54",
+    "title": "蛇足 side.A",
+    "scenario": "蛇足 side.A",
+    "system": "シノビガミ",
+    "gm": "BS",
+    "players": [
+      "あげパン",
+      "紅織",
+      "赤子星"
+    ],
+    "summary": "数年前、世間を騒がせた大量殺人事件――。決着をつけるため、シノビたちは再び街を彷徨う。",
+    "series": [
+      "蛇影連続惨殺事件後日談"
+    ],
+    "createdAt": 1771027200000,
+    "path": "log_data/シノビガミ/蛇足 side.A.html"
+  },
+  {
     "id": "3cdd4c2d-a7ab-4159-991a-63333c3abe6a",
     "title": "『焔の鼓動』",
     "scenario": "『焔の鼓動』",
