@@ -1,5 +1,20 @@
 [
   {
+    "id": "3cdd4c2d-a7ab-4159-991a-63333c3abe6a",
+    "title": "『焔の鼓動』",
+    "scenario": "『焔の鼓動』",
+    "system": "シノビガミ",
+    "gm": "BS",
+    "players": [
+      "紅織",
+      "パル"
+    ],
+    "summary": "襲い来る刺客。胸に秘めた覚悟。――これは、二人が終わりへ至る道程だ。",
+    "series": [],
+    "createdAt": 1770768000000,
+    "path": "log_data/シノビガミ/『焔の鼓動』.html"
+  },
+  {
     "id": "414ae817-a68e-4422-8a9a-92e9df35e9b5",
     "title": "桑港殺忍事件 side.PT",
     "scenario": "桑港殺忍事件 side.PT",
