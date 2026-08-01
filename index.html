@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -10,7 +9,13 @@
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;700;900&display=swap"
         rel="stylesheet">
     <style>
-        html {
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: var(--ark-bg);
+            color: #ffffff;
+            font-family: 'Noto Sans JP', sans-serif;
             -webkit-text-size-adjust: 100%;
             text-size-adjust: 100%;
         }
@@ -19,18 +24,6 @@
             --ark-bg: #0a0a0a;
             --ark-accent: #00d8ff;
             --ark-studio: #ffcf00;
-        }
-
-        body {
-            background-color: var(--ark-bg);
-            color: #ffffff;
-            font-family: 'Noto Sans JP', sans-serif;
-            margin: 0;
-            overflow: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
         }
 
         /* 背景グリッド */
@@ -42,13 +35,14 @@
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
             pointer-events: none;
+            z-index: 1;
         }
 
         /* スキャンライン */
         .scanline {
             position: fixed;
             inset: 0;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.1) 50%);
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.12) 50%);
             background-size: 100% 4px;
             pointer-events: none;
             z-index: 100;
@@ -57,152 +51,246 @@
         /* ロゴ周りの装飾パーツ */
         .logo-corner {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             border: 2px solid var(--ark-accent);
         }
 
         /* タクティカルカード */
         .module-card {
-            background: #111;
-            border-left: 2px solid #333;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(17, 17, 17, 0.85);
+            backdrop-filter: blur(4px);
+            border-left: 3px solid #333;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
 
         .module-card:hover {
-            transform: translateX(10px);
+            transform: translateX(6px);
             background: #161616;
         }
 
         .module-card.archives:hover {
             border-left-color: var(--ark-accent);
+            box-shadow: -4px 0 15px -3px rgba(0, 216, 255, 0.2);
         }
 
         .module-card.studio:hover {
             border-left-color: var(--ark-studio);
-        }
-
-        .ark-angle {
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+            box-shadow: -4px 0 15px -3px rgba(255, 207, 0, 0.2);
         }
 
         .badge {
-            font-family: 'JetBrains Mono';
+            font-family: 'JetBrains Mono', monospace;
             font-size: 10px;
             font-weight: 900;
             padding: 2px 8px;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-
+        /* カスタムスクロールバー（スマホ閲覧時） */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00d8ff;
+        }
     </style>
 </head>
 
-<body>
+<body class="flex flex-col justify-between items-center relative overflow-x-hidden min-h-screen md:h-screen md:overflow-hidden">
     <div class="grid-bg"></div>
     <div class="scanline"></div>
 
-    <div class="relative z-10 w-full max-w-6xl px-6 py-12">
+    <main class="relative z-10 w-full max-w-6xl px-4 sm:px-6 py-6 md:py-8 my-auto flex flex-col justify-between h-full max-h-[100vh]">
+        
         <!-- HEADER SECTION -->
-        <div class="flex flex-col md:flex-row items-center gap-10 mb-20 justify-center">
-            <div class="relative w-40 h-40 bg-white flex items-center justify-center shadow-2xl">
-                <span class="text-black font-black text-7xl tracking-tighter">BS</span>
+        <header class="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-6 md:mb-8 justify-center shrink-0">
+            <!-- LOGO: 大きさは崩さずキープ -->
+            <div class="relative w-28 h-28 sm:w-36 sm:h-36 bg-white flex items-center justify-center shadow-2xl shrink-0">
+                <span class="text-black font-black text-6xl sm:text-7xl tracking-tighter select-none">BS</span>
                 <div class="logo-corner -top-2 -left-2 border-r-0 border-b-0"></div>
                 <div class="logo-corner -bottom-2 -right-2 border-l-0 border-t-0"></div>
             </div>
 
             <div class="text-center md:text-left">
-                <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
-                    <span class="badge bg-[#00d8ff] text-black">Terminal_V3.2</span>
-                    <span class="text-white/20 font-mono text-[10px] uppercase tracking-widest italic">Neural Hub
-                        Controller</span>
+                <div class="flex items-center gap-3 justify-center md:justify-start mb-1 sm:mb-2">
+                    <span class="badge bg-[#00d8ff] text-black">Terminal_V3.5</span>
+                    <span class="text-white/30 font-mono text-[10px] uppercase tracking-widest italic">Neural Hub Controller</span>
                 </div>
-                <h1 class="text-6xl md:text-8xl font-black italic tracking-tighter uppercase leading-none mb-2">
+                <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black italic tracking-tighter uppercase leading-none mb-1 sm:mb-2">
                     LOG_Terminal
                 </h1>
-                <p class="text-[#00d8ff] font-mono text-xs md:text-sm tracking-[0.5em] uppercase opacity-70">
+                <p class="text-[#00d8ff] font-mono text-[10px] sm:text-xs md:text-sm tracking-[0.3em] sm:tracking-[0.5em] uppercase opacity-70">
                     Neural Network Terminal / TRPG Protocol
                 </p>
             </div>
-        </div>
+        </header>
 
-        <!-- MODULE SELECTION -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- MODULE SELECTION (2 Column Category Group) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto w-full my-auto shrink">
+            
+            <!-- Category 1: LOG ARCHIVES GROUP -->
+            <div class="space-y-3 sm:space-y-4">
+                <div class="flex items-center gap-2 border-b border-[#00d8ff]/30 pb-1">
+                    <div class="w-2 h-2 bg-[#00d8ff]"></div>
+                    <span class="text-xs font-mono font-bold text-[#00d8ff] tracking-wider uppercase">01. Log Archives Category</span>
+                </div>
 
-            <!-- ARCHIVES MODULE -->
-            <a href="https://session-log-arc.vercel.app/"
-                class="module-card archives group p-8 flex flex-col justify-between h-64">
-                <div class="flex justify-between items-start">
-                    <div class="flex flex-col">
-                        <span
-                            class="badge bg-[#00d8ff]/10 text-[#00d8ff] border border-[#00d8ff]/20 mb-2 w-fit">Module_01</span>
-                        <h2
-                            class="text-4xl font-black italic uppercase tracking-tighter group-hover:text-[#00d8ff] transition-colors">
-                            Log_Archives</h2>
-                    </div>
-                    <div class="text-[#00d8ff] opacity-0 group-hover:opacity-100 transition-all">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m9 18 6-6-6-6" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="space-y-2">
-                    <p class="text-xs text-white/40 font-mono uppercase tracking-widest italic">Database access &
-                        Reading protocol</p>
-                    <p class="text-sm text-white/60 leading-relaxed">
-                        セッションログ アーカイブ<br>
-                        身内でプレイしたTRPGセッションログの閲覧を目的としています。<br>
-                        他者を貶める目的や、不適切な利用は固く禁じます
-                    </p>
-                </div>
-            </a>
+                <div class="grid grid-cols-1 gap-3 sm:gap-4">
+                    <!-- LOG ARCHIVES -->
+                    <a href="https://session-log-arc.vercel.app/"
+                        class="module-card archives group p-4 sm:p-5 flex flex-col justify-between border-r border-t border-b border-white/5 rounded-r">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex flex-col">
+                                <span class="badge bg-[#00d8ff]/10 text-[#00d8ff] border border-[#00d8ff]/20 mb-1 w-fit">Module_01-A</span>
+                                <h2 class="text-xl sm:text-2xl font-black italic uppercase tracking-tighter group-hover:text-[#00d8ff] transition-colors">
+                                    Log_Archives
+                                </h2>
+                            </div>
+                            <div class="text-[#00d8ff] opacity-40 group-hover:opacity-100 transition-all transform group-hover:translate-x-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-white/40 font-mono uppercase tracking-widest italic mb-1">Database access & Reading protocol</p>
+                            <p class="text-xs text-white/60 leading-relaxed">
+                                身内でプレイしたTRPGセッションログの閲覧用アーカイブ。
+                            </p>
+                        </div>
+                    </a>
 
-            <!-- STUDIO MODULE -->
-            <a href="https://log-creator.vercel.app/"
-                class="module-card studio group p-8 flex flex-col justify-between h-64">
-                <div class="flex justify-between items-start">
-                    <div class="flex flex-col">
-                        <span
-                            class="badge bg-[#ffcf00]/10 text-[#ffcf00] border border-[#ffcf00]/20 mb-2 w-fit">Module_02</span>
-                        <h2
-                            class="text-4xl font-black italic uppercase tracking-tighter group-hover:text-[#ffcf00] transition-colors">
-                            Log_Studio</h2>
-                    </div>
-                    <div class="text-[#ffcf00] opacity-0 group-hover:opacity-100 transition-all">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m9 18 6-6-6-6" />
-                        </svg>
-                    </div>
+                    <!-- CHARACTER DB (新規) -->
+                    <a href="https://shinobigami-chara-db.vercel.app/"
+                        class="module-card archives group p-4 sm:p-5 flex flex-col justify-between border-r border-t border-b border-white/5 rounded-r">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex flex-col">
+                                <span class="badge bg-[#00d8ff]/10 text-[#00d8ff] border border-[#00d8ff]/20 mb-1 w-fit">Module_01-B</span>
+                                <h2 class="text-xl sm:text-2xl font-black italic uppercase tracking-tighter group-hover:text-[#00d8ff] transition-colors">
+                                    Character_DB
+                                </h2>
+                            </div>
+                            <div class="text-[#00d8ff] opacity-40 group-hover:opacity-100 transition-all transform group-hover:translate-x-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-white/40 font-mono uppercase tracking-widest italic mb-1">PC / NPC Directory & Status</p>
+                            <p class="text-xs text-white/60 leading-relaxed">
+                                登録キャラクターのデータ・設定閲覧データベース。
+                            </p>
+                        </div>
+                    </a>
                 </div>
-                <div class="space-y-2">
-                    <p class="text-xs text-white/40 font-mono uppercase tracking-widest italic">Visual styling & Content
-                        authoring</p>
-                    <p class="text-sm text-white/60 leading-relaxed">
-                        ログの編集・整形ツール<br>
-                        ココフォリアから抽出したログの編集・整形を行えます。<br>
-                        PC専用です。
-                    </p>
-                </div>
-            </a>
+            </div>
 
-        </div>
+            <!-- Category 2: STUDIO & TOOLS GROUP -->
+            <div class="space-y-3 sm:space-y-4">
+                <div class="flex items-center gap-2 border-b border-[#ffcf00]/30 pb-1">
+                    <div class="w-2 h-2 bg-[#ffcf00]"></div>
+                    <span class="text-xs font-mono font-bold text-[#ffcf00] tracking-wider uppercase">02. Studio & Tools Category</span>
+                </div>
+
+                <div class="grid grid-cols-1 gap-3 sm:gap-4">
+                    <!-- LOG STUDIO -->
+                    <a href="https://log-creator.vercel.app/"
+                        class="module-card studio group p-3.5 sm:p-4 flex flex-col justify-between border-r border-t border-b border-white/5 rounded-r">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="flex flex-col">
+                                <span class="badge bg-[#ffcf00]/10 text-[#ffcf00] border border-[#ffcf00]/20 mb-1 w-fit">Module_02-A</span>
+                                <h2 class="text-lg sm:text-xl font-black italic uppercase tracking-tighter group-hover:text-[#ffcf00] transition-colors">
+                                    Log_Studio
+                                </h2>
+                            </div>
+                            <div class="text-[#ffcf00] opacity-40 group-hover:opacity-100 transition-all transform group-hover:translate-x-1">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-white/40 font-mono uppercase tracking-widest italic mb-0.5">Visual styling & Authoring</p>
+                            <p class="text-xs text-white/60 leading-tight">
+                                ココフォリアログの編集・整形ツール（PC推奨）。
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- 忍法 DB (新規) -->
+                    <a href="https://bstrpg.github.io/TRPG_LOG/trpg_tools/monosiriChan.html"
+                        class="module-card studio group p-3.5 sm:p-4 flex flex-col justify-between border-r border-t border-b border-white/5 rounded-r">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="flex flex-col">
+                                <span class="badge bg-[#ffcf00]/10 text-[#ffcf00] border border-[#ffcf00]/20 mb-1 w-fit">Module_02-B</span>
+                                <h2 class="text-lg sm:text-xl font-black italic uppercase tracking-tighter group-hover:text-[#ffcf00] transition-colors">
+                                    MonosiriChan
+                                </h2>
+                            </div>
+                            <div class="text-[#ffcf00] opacity-40 group-hover:opacity-100 transition-all transform group-hover:translate-x-1">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-white/40 font-mono uppercase tracking-widest italic mb-0.5">Skill & Ability Index</p>
+                            <p class="text-xs text-white/60 leading-tight">
+                                シノビガミ等の忍法・効果・構成検索用データベース。
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- 各種表まとめ (新規) -->
+                    <a href="https://bstrpg.github.io/TRPG_LOG/trpg_tools/MONOsiri%E8%A1%A8.html"
+                        class="module-card studio group p-3.5 sm:p-4 flex flex-col justify-between border-r border-t border-b border-white/5 rounded-r">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="flex flex-col">
+                                <span class="badge bg-[#ffcf00]/10 text-[#ffcf00] border border-[#ffcf00]/20 mb-1 w-fit">Module_02-C</span>
+                                <h2 class="text-lg sm:text-xl font-black italic uppercase tracking-tighter group-hover:text-[#ffcf00] transition-colors">
+                                    Monosiri表
+                                </h2>
+                            </div>
+                            <div class="text-[#ffcf00] opacity-40 group-hover:opacity-100 transition-all transform group-hover:translate-x-1">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-white/40 font-mono uppercase tracking-widest italic mb-0.5">Quick Reference & Charts</p>
+                            <p class="text-xs text-white/60 leading-tight">
+                                ランダム表・判定表・セッション用リファレンスまとめ。
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </section>
 
         <!-- FOOTER -->
-        <footer class="mt-20 border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-4">
+        <footer class="mt-6 md:mt-4 border-t border-white/10 pt-4 flex flex-col md:flex-row justify-between items-center gap-2 shrink-0">
+            <div class="flex items-center gap-3">
                 <div class="w-2 h-2 bg-[#00d8ff] animate-pulse"></div>
-                <span class="text-[10px] font-black text-white/20 uppercase tracking-[0.4em]">Hub_Status:
-                    Online_Ready</span>
+                <span class="text-[10px] font-black text-white/30 uppercase tracking-[0.3em]">Hub_Status: Online_Ready</span>
             </div>
-            <div class="text-[10px] font-mono text-white/10 uppercase tracking-widest italic">
+            <div class="text-[10px] font-mono text-white/20 uppercase tracking-widest italic">
                 Authorized access only / Node_BS_Terminal_01
             </div>
         </footer>
-    </div>
+    </main>
 </body>
 
 </html>
