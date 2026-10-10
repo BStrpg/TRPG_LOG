@@ -1,5 +1,20 @@
 [
   {
+    "id": "89fcd84f-36f3-4d41-8cef-0a07a2cb23f8",
+    "title": "探偵の友達 side.ST",
+    "scenario": "探偵の友達 side.ST",
+    "system": "フタリソウサ",
+    "gm": "紅織",
+    "players": [
+      "しゃちょう",
+      "ターキー"
+    ],
+    "summary": "PCたちは、仲間の刑事たちとともに、取調室で捕まった爆弾魔と対峙をしていました。\n不敵な爆弾魔と話しながら、仕掛けてきた爆弾を解いていくことになるでしょう。\n",
+    "series": [],
+    "createdAt": 1789257600000,
+    "path": "log_data/フタリソウサ/探偵の友達 side.ST.html"
+  },
+  {
     "id": "51986201-de01-4143-8f2b-4f501e90d5c6",
     "title": "追討 side.A",
     "scenario": "追討 side.A",
