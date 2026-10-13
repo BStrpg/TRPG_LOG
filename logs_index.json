@@ -1,5 +1,20 @@
 [
   {
+    "id": "03a31e48-da61-437c-9a2c-b8a4ec089b4b",
+    "title": "トキシラズを回収せよ！",
+    "scenario": "トキシラズを回収せよ！",
+    "system": "シノビガミ",
+    "gm": "パル",
+    "players": [
+      "紅織",
+      "あげパン"
+    ],
+    "summary": "トキシラズを回収せよ",
+    "series": [],
+    "createdAt": 1791590400000,
+    "path": "log_data/シノビガミ/トキシラズを回収せよ！.html"
+  },
+  {
     "id": "1b6e8bfc-1059-4e67-b253-a16458bcd107",
     "title": "追討 side.P",
     "scenario": "追討 side.P",
