@@ -1,5 +1,19 @@
 [
   {
+    "id": "8d70103a-d456-445e-89d8-f447f2269676",
+    "title": "アイドル暗部-Blooming-",
+    "scenario": "アイドル暗部-Blooming-",
+    "system": "シノビガミ",
+    "gm": "紅織",
+    "players": [],
+    "summary": "スポットライトを浴びるアイドルグループ〘Blooming〙！\nその姿は世を忍ぶ仮の姿……\n実は彼らは、芸能界にはびこる闇を消していく暗殺部隊だった！",
+    "series": [
+      "アイドル暗部-Blooming-"
+    ],
+    "createdAt": 1795219200000,
+    "path": "log_data/シノビガミ/アイドル暗部-Blooming-.html"
+  },
+  {
     "id": "03a31e48-da61-437c-9a2c-b8a4ec089b4b",
     "title": "トキシラズを回収せよ！",
     "scenario": "トキシラズを回収せよ！",
